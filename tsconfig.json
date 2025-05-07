@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "allowUnreachableCode": true,
-    "allowUnusedLabels": true,
     "alwaysStrict": true,
     "esModuleInterop": true,
     "exactOptionalPropertyTypes": true,
