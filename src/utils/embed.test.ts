@@ -34,10 +34,12 @@ describe('unpackEmbedUrl', () => {
       Promise.resolve('<html><body>Something to stream;1280x720, 834.6 MB<script>(eval(function(p,a,c,k,e,d){...}))</script></body></html>'),
     );
 
-    const { url, resolution, size } = await parsePackedEmbed('https://some-url.test');
-    expect(url).toBe('https://streaming-url.mp4');
-    expect(resolution).toBe('720p');
-    expect(size).toBe('834.6 MB');
+    const parsePackedEmbedResult = await parsePackedEmbed('https://some-url.test');
+    expect(parsePackedEmbedResult).toStrictEqual({
+      url: 'https://streaming-url.mp4',
+      resolution: '720p',
+      size: '834.6 MB',
+    });
   });
 
   test('resolution and size return "?" if not found', async () => {
@@ -46,9 +48,11 @@ describe('unpackEmbedUrl', () => {
       Promise.resolve('<html><body>Something to stream<script>(eval(function(p,a,c,k,e,d){...}))</script></body></html>'),
     );
 
-    const { url, resolution, size } = await parsePackedEmbed('https://some-url.test');
-    expect(url).toBe('https://streaming-url.mp4');
-    expect(resolution).toBe('?');
-    expect(size).toBe('?');
+    const parsePackedEmbedResult = await parsePackedEmbed('https://some-url.test');
+    expect(parsePackedEmbedResult).toStrictEqual({
+      url: 'https://streaming-url.mp4',
+      resolution: '?',
+      size: '?',
+    });
   });
 });
