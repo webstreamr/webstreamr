@@ -1,7 +1,6 @@
 import type { Config } from 'jest';
 
 const config: Config = {
-  cacheDirectory: './cache/jest',
   collectCoverage: true,
   collectCoverageFrom: [
     './src/**/*.ts',
