@@ -14,5 +14,6 @@ jobs:
           build-args: |
             MANIFEST_ID="community.webstreamr"
             MANIFEST_NAME="WebStreamr"
+            MANIFEST_VERSION="0.0.0"
           push: false
           tags: webstreamr/webstreamr:latest
