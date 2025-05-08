@@ -1,0 +1,16 @@
+name: Release
+on:
+  push:
+    tags:
+      - 'v*'
+  pull_request:
+    types: [closed]
+jobs:
+  update_release_draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Draft Release
+        uses: release-drafter/release-drafter@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
