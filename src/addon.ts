@@ -9,7 +9,7 @@ const handlers: Handler[] = [
 
 const manifest: Manifest = {
   id: process.env['MANIFEST_ID'] || '',
-  version: '0.1.0', // x-release-please-version
+  version: '0.2.0', // x-release-please-version
   name: process.env['MANIFEST_NAME'] || '',
   description: `Provides HTTP URLs from streaming websites.`,
   resources: [
