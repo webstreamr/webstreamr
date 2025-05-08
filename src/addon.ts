@@ -8,9 +8,9 @@ const handlers: Handler[] = [
 ];
 
 const manifest: Manifest = {
-  id: process.env['MANIFEST_ID'] || '',
+  id: process.env['MANIFEST_ID'] || 'webstreamr',
   version: '0.2.0', // x-release-please-version
-  name: process.env['MANIFEST_NAME'] || '',
+  name: process.env['MANIFEST_NAME'] || 'WebStreamr',
   description: `Provides HTTP URLs from streaming websites.`,
   resources: [
     'stream',
