@@ -1,10 +1,11 @@
 import addon from './addon';
 
 describe('addon', () => {
-  test('manifest can be retrieved', () => {
+  test('manifest can be retrieved with defaults', () => {
     expect(addon.manifest).toStrictEqual(
       expect.objectContaining({
-        id: 'community.webstreamr',
+        id: 'webstreamr',
+        name: 'WebStreamr',
       }),
     );
   });
