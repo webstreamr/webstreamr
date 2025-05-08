@@ -1,11 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    ":maintainLockFilesWeekly",
+    ":rebaseStalePrs"
   ],
+  "assignees": ["webstreamr"],
   "configMigration": true,
   "osvVulnerabilityAlerts": true,
   "postUpdateOptions": [
     "npmDedupe"
+  ],
+  "packageRules": [
+    {
+      "description": "Automerge non-major updates",
+      "matchUpdateTypes": ["minor", "patch", "digest", "lockFileMaintenance"],
+      "automerge": true
+    }
   ]
 }
