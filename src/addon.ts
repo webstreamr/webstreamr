@@ -6,7 +6,7 @@ const manifest: Manifest = {
   id: process.env['MANIFEST_ID'] || '',
   version: '0.0.1',
   name: process.env['MANIFEST_NAME'] || '',
-  description: 'Provides HTTP streams from scraped websites. Currently supports KinoKiste (DE) and MeineCloud (DE).',
+  description: 'Provides HTTP URLs from streaming websites. Currently supports KinoKiste (DE) and MeineCloud (DE).',
   resources: [
     'stream',
   ],

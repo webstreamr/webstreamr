@@ -1,6 +1,6 @@
 {
   "name": "webstreamr",
-  "description": "Provides HTTP streams from scraped websites.",
+  "description": "Provides HTTP URLs from streaming websites.",
   "version": "0.0.1",
   "type": "commonjs",
   "scripts": {
