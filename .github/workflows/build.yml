@@ -1,6 +1,5 @@
-name: build.yml
-on:
-  push:
+name: Build
+on: push
 jobs:
   docker:
     runs-on: ubuntu-latest
