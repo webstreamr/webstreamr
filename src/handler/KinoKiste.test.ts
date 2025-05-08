@@ -1,7 +1,9 @@
 import fs from 'node:fs';
 import slugify from 'slugify';
+import { KinoKiste } from './KinoKiste';
 import { cachedFetchText } from '../utils';
-import { handleKinoKiste } from './kinokiste';
+
+const kinokiste = new KinoKiste();
 
 jest.mock('./../utils/fetch', () => ({
   cachedFetchText: jest.fn(),
@@ -11,26 +13,20 @@ jest.mock('./../utils/fetch', () => ({
 );
 
 describe('KinoKiste', () => {
-  test('does not handle movies', async () => {
-    const streams = await handleKinoKiste({ type: 'movie', id: 'tt29141112' });
-
-    expect(streams).toHaveLength(0);
-  });
-
   test('does not handle non imdb series', async () => {
-    const streams = await handleKinoKiste({ type: 'series', id: 'kitsu:123' });
+    const streams = await kinokiste.handle('kitsu:123');
 
     expect(streams).toHaveLength(0);
   });
 
   test('handles non-existent series gracefully', async () => {
-    const streams = await handleKinoKiste({ type: 'series', id: 'tt12345678:1:1' });
+    const streams = await kinokiste.handle('tt12345678:1:1');
 
     expect(streams).toHaveLength(0);
   });
 
   test('handle imdb black mirror s2e4', async () => {
-    const streams = await handleKinoKiste({ type: 'series', id: 'tt2085059:2:4' });
+    const streams = await kinokiste.handle('tt2085059:2:4');
 
     expect(streams).toHaveLength(2);
     expect(streams[0]).toStrictEqual({

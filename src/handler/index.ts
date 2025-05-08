@@ -1,3 +1,3 @@
-export * from './kinokiste';
-export * from './meinecloud';
+export * from './KinoKiste';
+export * from './MeineCloud';
 export * from './types';

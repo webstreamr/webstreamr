@@ -1,7 +1,9 @@
 import fs from 'node:fs';
 import slugify from 'slugify';
+import { MeineCloud } from './MeineCloud';
 import { cachedFetchText } from '../utils';
-import { handleMeineCloud } from './meinecloud';
+
+const meinecloud = new MeineCloud();
 
 jest.mock('./../utils/fetch', () => ({
   cachedFetchText: jest.fn(),
@@ -11,26 +13,20 @@ jest.mock('./../utils/fetch', () => ({
 );
 
 describe('MeineCloud', () => {
-  test('does not handle series', async () => {
-    const streams = await handleMeineCloud({ type: 'series', id: 'tt2085059:2:4' });
-
-    expect(streams).toHaveLength(0);
-  });
-
   test('does not handle non imdb movies', async () => {
-    const streams = await handleMeineCloud({ type: 'movie', id: 'kitsu:123' });
+    const streams = await meinecloud.handle('kitsu:123');
 
     expect(streams).toHaveLength(0);
   });
 
   test('handles non-existent movies gracefully', async () => {
-    const streams = await handleMeineCloud({ type: 'movie', id: 'tt12345678' });
+    const streams = await meinecloud.handle('tt12345678');
 
     expect(streams).toHaveLength(0);
   });
 
   test('handle imdb the devil\'s bath', async () => {
-    const streams = await handleMeineCloud({ type: 'movie', id: 'tt29141112' });
+    const streams = await meinecloud.handle('tt29141112');
 
     expect(streams).toHaveLength(2);
     expect(streams[0]).toStrictEqual({
