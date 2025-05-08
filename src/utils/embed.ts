@@ -1,5 +1,6 @@
 import { unpack } from 'unpacker';
 import { cachedFetchText } from './fetch';
+import { scanFromResolution } from './resolution';
 
 const LINK_REGEXPS = [
   /sources:\[{file:"(.*?)"/, // dropload, supervideo
@@ -7,20 +8,20 @@ const LINK_REGEXPS = [
 
 interface ParsePackedEmbedResult {
   url: string;
-  resolution: string;
-  size: string;
+  resolution: string | undefined;
+  size: string | undefined;
 }
 
-const findResolution = (html: string): string => {
-  const match = html.match(/\d{3,}x(\d{3,}),/);
+const findResolution = (html: string): string | undefined => {
+  const match = html.match(/(\d{3,}x\d{3,}),/);
 
-  return match && match[1] ? `${match[1]}p` : '?';
+  return match && match[1] ? scanFromResolution(match[1]) : undefined;
 };
 
-const findSize = (html: string): string => {
+const findSize = (html: string): string | undefined => {
   const sizeMatch = html.match(/([\d.]+) ?([GM]B)/);
 
-  return sizeMatch && sizeMatch[1] && sizeMatch[2] ? `${sizeMatch[1]} ${sizeMatch[2]}` : '?';
+  return sizeMatch && sizeMatch[1] && sizeMatch[2] ? `${sizeMatch[1]} ${sizeMatch[2]}` : undefined;
 };
 
 export const parsePackedEmbed = async (url: string): Promise<ParsePackedEmbedResult> => {

@@ -43,12 +43,12 @@ type RequestConfig = Record<string, boolean | string | number>;
 
 const sortStreams = (streams: HandlerStream[]): void => {
   streams.sort((a, b) => {
-    const resolutionComparison = parseInt(b.resolution) - parseInt(a.resolution);
+    const resolutionComparison = parseInt(b.resolution ?? '0') - parseInt(a.resolution ?? '0');
     if (resolutionComparison !== 0) {
       return resolutionComparison;
     }
 
-    return parseFloat(b.size) - parseFloat(a.size);
+    return parseFloat(b.size ?? '0') - parseFloat(a.size ?? '0');
   });
 };
 

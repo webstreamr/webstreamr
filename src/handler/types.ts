@@ -1,6 +1,6 @@
 import { Stream } from 'stremio-addon-sdk';
 
-export type HandlerStream = Stream & { resolution: string; size: string };
+export type HandlerStream = Stream & { resolution: string | undefined; size: string | undefined };
 
 export interface Handler {
   readonly id: string;

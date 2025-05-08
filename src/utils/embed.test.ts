@@ -42,7 +42,7 @@ describe('unpackEmbedUrl', () => {
     });
   });
 
-  test('resolution and size return "?" if not found', async () => {
+  test('resolution and size return undefined if not found', async () => {
     (unpack as jest.Mock).mockReturnValue('{sources:[{file:"https://streaming-url.mp4"}');
     (cachedFetchText as jest.Mock).mockReturnValue(
       Promise.resolve('<html><body>Something to stream<script>(eval(function(p,a,c,k,e,d){...}))</script></body></html>'),
@@ -51,8 +51,8 @@ describe('unpackEmbedUrl', () => {
     const parsePackedEmbedResult = await parsePackedEmbed('https://some-url.test');
     expect(parsePackedEmbedResult).toStrictEqual({
       url: 'https://streaming-url.mp4',
-      resolution: '?',
-      size: '?',
+      resolution: undefined,
+      size: undefined,
     });
   });
 });
