@@ -6,6 +6,7 @@ describe('addon', () => {
       expect.objectContaining({
         id: 'webstreamr',
         name: 'WebStreamr',
+        description: 'Provides HTTP URLs from streaming websites.',
       }),
     );
   });
