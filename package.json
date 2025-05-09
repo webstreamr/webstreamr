@@ -6,10 +6,10 @@
   "scripts": {
     "analyse": "tsc --noEmit",
     "build": "rm -rf ./dist && tsc",
-    "dev": "nodemon src/server.ts",
+    "dev": "nodemon src/index.ts",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "start": "node dist/server.js",
+    "start": "node dist/index.js",
     "test": "jest",
     "ci": "npm run lint && npm run analyse && npm run test"
   },
@@ -31,14 +31,15 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0",
+    "express": "^5.1.0",
     "make-fetch-happen": "^14.0.3",
     "slugify": "^1.6.6",
-    "stremio-addon-sdk": "^1.6.10",
     "unpacker": "^1.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.26.0",
     "@stylistic/eslint-plugin": "^4.2.0",
+    "@types/express": "^5.0.1",
     "@types/jest": "^29.5.14",
     "@types/make-fetch-happen": "^10.0.4",
     "@types/node": "^22.15.3",
