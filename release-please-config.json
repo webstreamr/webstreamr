@@ -51,7 +51,7 @@
     }
   ],
   "extra-files": [
-    "src/addon.ts"
+    "src/utils/manifest.ts"
   ],
   "packages": {
     ".": {
