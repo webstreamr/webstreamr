@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.2](https://github.com/webstreamr/webstreamr/compare/v0.4.1...v0.4.2) (2025-05-10)
+
+
+### Bug Fixes
+
+* use correct index path in Dockerfile ([22a15fb](https://github.com/webstreamr/webstreamr/commit/22a15fbec0ad84067bf1e184c3be3bc8e28519a1))
+
+
+### Tests
+
+* improve fetch fixture handling ([630bb94](https://github.com/webstreamr/webstreamr/commit/630bb94de71fc9113babb79b27b57aa256042dcc))
+
 ## [0.4.1](https://github.com/webstreamr/webstreamr/compare/v0.4.0...v0.4.1) (2025-05-09)
 
 
