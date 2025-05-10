@@ -1,16 +1,6 @@
-import fs from 'node:fs';
-import slugify from 'slugify';
 import { KinoKiste } from './KinoKiste';
-import { cachedFetchText } from '../utils';
 
 const kinokiste = new KinoKiste();
-
-jest.mock('./../utils/fetch', () => ({
-  cachedFetchText: jest.fn(),
-}));
-(cachedFetchText as jest.Mock).mockImplementation(
-  (url: string) => fs.readFileSync(`${__dirname}/fixtures/kinokiste/${slugify(url)}`).toString(),
-);
 
 describe('KinoKiste', () => {
   test('does not handle non imdb series', async () => {

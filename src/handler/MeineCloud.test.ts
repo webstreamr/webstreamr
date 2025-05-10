@@ -1,16 +1,6 @@
-import fs from 'node:fs';
-import slugify from 'slugify';
 import { MeineCloud } from './MeineCloud';
-import { cachedFetchText } from '../utils';
 
 const meinecloud = new MeineCloud();
-
-jest.mock('./../utils/fetch', () => ({
-  cachedFetchText: jest.fn(),
-}));
-(cachedFetchText as jest.Mock).mockImplementation(
-  (url: string) => fs.readFileSync(`${__dirname}/fixtures/meinecloud/${slugify(url)}`).toString(),
-);
 
 describe('MeineCloud', () => {
   test('does not handle non imdb movies', async () => {
