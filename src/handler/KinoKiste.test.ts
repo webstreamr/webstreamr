@@ -1,16 +1,6 @@
-import fs from 'node:fs';
-import slugify from 'slugify';
 import { KinoKiste } from './KinoKiste';
-import { cachedFetchText } from '../utils';
 
 const kinokiste = new KinoKiste();
-
-jest.mock('./../utils/fetch', () => ({
-  cachedFetchText: jest.fn(),
-}));
-(cachedFetchText as jest.Mock).mockImplementation(
-  (url: string) => fs.readFileSync(`${__dirname}/fixtures/kinokiste/${slugify(url)}`).toString(),
-);
 
 describe('KinoKiste', () => {
   test('does not handle non imdb series', async () => {
@@ -31,22 +21,22 @@ describe('KinoKiste', () => {
     expect(streams).toHaveLength(2);
     expect(streams[0]).toStrictEqual({
       behaviorHints: {
-        group: 'webstreamr-kinokiste-supervideo',
+        group: 'webstreamr-supervideo',
       },
-      name: 'WebStreamr DE | 720p',
+      name: 'WebStreamr 720p',
       resolution: '720p',
       size: '699.8 MB',
-      title: 'KinoKiste - supervideo | 💾 699.8 MB | 🇩🇪',
+      title: 'SuperVideo | 💾 699.8 MB | 🇩🇪',
       url: expect.stringMatching(/^https:\/\/.*?.m3u8/),
     });
     expect(streams[1]).toStrictEqual({
       behaviorHints: {
-        group: 'webstreamr-kinokiste-dropload',
+        group: 'webstreamr-dropload',
       },
-      name: 'WebStreamr DE | 720p',
+      name: 'WebStreamr 720p',
       resolution: '720p',
       size: '699.8 MB',
-      title: 'KinoKiste - dropload | 💾 699.8 MB | 🇩🇪',
+      title: 'Dropload | 💾 699.8 MB | 🇩🇪',
       url: expect.stringMatching(/^https:\/\/.*?.m3u8/),
     });
   });

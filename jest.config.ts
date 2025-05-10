@@ -3,12 +3,12 @@ import type { Config } from 'jest';
 const config: Config = {
   collectCoverage: true,
   collectCoverageFrom: [
-    './src/**/*.ts',
-    '!./src/**/index.ts',
-    '!./src/**/types.ts',
-    '!./src/landingTemplate.ts',
+    '<rootDir>/src/**/*.ts',
+    '!<rootDir>/src/**/index.ts',
+    '!<rootDir>/src/**/types.ts',
+    '!<rootDir>/src/landingTemplate.ts',
   ],
-  coverageDirectory: 'coverage',
+  coverageDirectory: '<rootDir>/coverage',
   coverageProvider: 'babel',
   coverageThreshold: {
     global: {
@@ -18,7 +18,9 @@ const config: Config = {
       statements: 100,
     },
   },
+  resetModules: true,
   restoreMocks: true,
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   testEnvironment: 'node',
   transform: {
     '^.+.tsx?$': ['ts-jest', {}],

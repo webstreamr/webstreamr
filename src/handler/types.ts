@@ -1,6 +1,4 @@
-import { Stream } from 'stremio-addon-sdk';
-
-export type HandlerStream = Stream & { resolution: string | undefined; size: string | undefined };
+import { StreamWithMeta } from '../types';
 
 export interface Handler {
   readonly id: string;
@@ -11,5 +9,5 @@ export interface Handler {
 
   readonly languages: string[];
 
-  readonly handle: (id: string) => Promise<HandlerStream[]>;
+  readonly handle: (id: string) => Promise<StreamWithMeta[]>;
 }

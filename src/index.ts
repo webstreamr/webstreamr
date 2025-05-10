@@ -1,8 +1,8 @@
 import express, { NextFunction, Request, Response } from 'express';
 import { landingTemplate } from './landingTemplate';
-import { Handler, HandlerStream, KinoKiste, MeineCloud } from './handler';
+import { Handler, KinoKiste, MeineCloud } from './handler';
 import { buildManifest, fulfillAllPromises, logInfo } from './utils';
-import { Config } from './types';
+import { Config, StreamWithMeta } from './types';
 
 const addon = express();
 
@@ -81,7 +81,7 @@ addon.get('/:config/stream/:type/:id.json', async function (req: Request, res: R
     return;
   }
 
-  const streams: HandlerStream[] = [];
+  const streams: StreamWithMeta[] = [];
   const handlerPromises = selectedHandlers.map(async (handler) => {
     if (!handler.contentTypes.includes(type)) {
       return;

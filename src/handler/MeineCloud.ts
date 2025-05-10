@@ -1,7 +1,8 @@
 import * as cheerio from 'cheerio';
 import slugify from 'slugify';
 import { Handler } from './types';
-import { cachedFetchText, fulfillAllPromises, parseImdbId, parsePackedEmbed } from '../utils';
+import { cachedFetchText, fulfillAllPromises, parseImdbId } from '../utils';
+import { EmbedExtractorRegistry } from '../embed-extractor';
 
 export class MeineCloud implements Handler {
   readonly id = 'meinecloud';
@@ -20,32 +21,19 @@ export class MeineCloud implements Handler {
     const html = await cachedFetchText(`https://meinecloud.click/movie/${parseImdbId(id).id}`);
 
     const $ = cheerio.load(html);
-    const streamsPromises = $('[data-link!=""]')
-      .map((_i, el) => ({
-        group: slugify($(el).text()),
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        url: $(el).attr('data-link')!
-          .replace(/^(https:)?\/\//, 'https://')
-          .replace('/e/', '/')
-          .replace('/embed-', '/'),
-      }))
-      .toArray()
-      .filter(({ url }) => url.match(/dropload|supervideo/))
-      .map(async ({ group, url }) => {
-        const { url: finalUrl, resolution, size } = await parsePackedEmbed(url);
 
-        return {
-          url: finalUrl,
-          name: `WebStreamr DE | ${resolution}`,
-          title: `${this.label} - ${group} | 💾 ${size} | 🇩🇪`,
-          behaviorHints: {
-            group: `webstreamr-${this.id}-${group}`,
-          },
-          resolution,
-          size,
-        };
-      });
-
-    return fulfillAllPromises(streamsPromises);
+    return fulfillAllPromises(
+      $('[data-link!=""]')
+        .map((_i, el) => ({
+          embedId: slugify($(el).text()),
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          embedUrl: $(el).attr('data-link')!
+            .replace(/^(https:)?\/\//, 'https://'),
+        }))
+        .toArray()
+        .filter(({ embedId }) => embedId.match(/^(dropload|supervideo)$/))
+        .map(({ embedId, embedUrl }) => EmbedExtractorRegistry[embedId]?.extract(embedUrl, 'de'))
+        .filter(stream => stream !== undefined),
+    );
   };
 }

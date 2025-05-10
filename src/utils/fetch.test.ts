@@ -1,4 +1,5 @@
-import { cachedFetchText } from './fetch';
+const realFetchModule = jest.requireActual('./fetch');
+const cachedFetchText = realFetchModule.cachedFetchText;
 
 global.console = {
   ...console,

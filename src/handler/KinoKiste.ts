@@ -1,7 +1,8 @@
 import * as cheerio from 'cheerio';
 import slugify from 'slugify';
 import { Handler } from './types';
-import { ImdbId, cachedFetchText, fulfillAllPromises, parseImdbId, parsePackedEmbed } from '../utils';
+import { ImdbId, cachedFetchText, fulfillAllPromises, parseImdbId } from '../utils';
+import { EmbedExtractorRegistry } from '../embed-extractor';
 
 export class KinoKiste implements Handler {
   readonly id = 'kinokiste';
@@ -24,23 +25,27 @@ export class KinoKiste implements Handler {
       return Promise.resolve([]);
     }
 
-    const streamsPromises = (await this.fetchStreamData(imdbId, seriesPageUrl))
-      .map(async ({ group, url }) => {
-        const { url: finalUrl, resolution, size } = await parsePackedEmbed(url);
+    const html = await cachedFetchText(seriesPageUrl);
 
-        return {
-          url: finalUrl,
-          name: `WebStreamr DE | ${resolution}`,
-          title: `${this.label} - ${group} | 💾 ${size} | 🇩🇪`,
-          behaviorHints: {
-            group: `webstreamr-${this.id}-${group}`,
-          },
-          resolution,
-          size,
-        };
-      });
+    const $ = cheerio.load(html);
 
-    return fulfillAllPromises(streamsPromises);
+    return fulfillAllPromises(
+      $(`[data-num="${imdbId.series}x${imdbId.episode}"]`).map((_i, urlWrapperElement) => {
+        return $(urlWrapperElement).siblings('.mirrors').children('[data-link]')
+          .map((_i, urlElement) => ({
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            embedId: slugify($(urlElement).attr('data-m')!),
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            embedUrl: $(urlElement).attr('data-link')!
+              .replace(/^(https:)?\/\//, 'https://'),
+          }))
+          .toArray()
+          .filter(({ embedId }) => embedId.match(/^(dropload|supervideo)$/));
+      })
+        .toArray()
+        .map(({ embedId, embedUrl }) => EmbedExtractorRegistry[embedId]?.extract(embedUrl, 'de'))
+        .filter(stream => stream !== undefined),
+    );
   };
 
   private fetchSeriesPageUrl = async (imdbId: ImdbId): Promise<string | undefined> => {
@@ -51,26 +56,5 @@ export class KinoKiste implements Handler {
     return $('.item-video a[href]:first')
       .map((_i, el) => $(el).attr('href'))
       .get(0);
-  };
-
-  private fetchStreamData = async (imdbId: ImdbId, seriesPageUrl: string): Promise<{ group: string; url: string }[]> => {
-    const html = await cachedFetchText(seriesPageUrl);
-
-    const $ = cheerio.load(html);
-
-    return $(`[data-num="${imdbId.series}x${imdbId.episode}"]`).map((_i, urlWrapperElement) => {
-      return $(urlWrapperElement).siblings('.mirrors').children('[data-link]')
-        .map((_i, urlElement) => ({
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          group: slugify($(urlElement).attr('data-m')!),
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          url: $(urlElement).attr('data-link')!
-            .replace(/^(https:)?\/\//, 'https://')
-            .replace('/e/', '/')
-            .replace('/embed-', '/'),
-        }))
-        .toArray()
-        .filter(({ url }) => url.match(/dropload|supervideo/));
-    }).toArray();
   };
 }
