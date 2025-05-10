@@ -2,7 +2,7 @@ import * as cheerio from 'cheerio';
 import slugify from 'slugify';
 import { Handler } from './types';
 import { ImdbId, cachedFetchText, fulfillAllPromises, parseImdbId } from '../utils';
-import { EmbedExtractorRegistry } from '../embed-extractor';
+import { EmbedExtractor, EmbedExtractorRegistry } from '../embed-extractor';
 
 export class KinoKiste implements Handler {
   readonly id = 'kinokiste';
@@ -30,20 +30,16 @@ export class KinoKiste implements Handler {
     const $ = cheerio.load(html);
 
     return fulfillAllPromises(
-      $(`[data-num="${imdbId.series}x${imdbId.episode}"]`).map((_i, urlWrapperElement) => {
-        return $(urlWrapperElement).siblings('.mirrors').children('[data-link]')
-          .map((_i, urlElement) => ({
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            embedId: slugify($(urlElement).attr('data-m')!),
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            embedUrl: $(urlElement).attr('data-link')!
-              .replace(/^(https:)?\/\//, 'https://'),
-          }))
-          .toArray()
-          .filter(({ embedId }) => embedId.match(/^(dropload|supervideo)$/));
-      })
+      $(`[data-num="${imdbId.series}x${imdbId.episode}"]`)
+        .siblings('.mirrors')
+        .children('[data-link]')
+        .map((_i, urlElement) => ({
+          embedId: slugify($(urlElement).attr('data-m') as string),
+          embedUrl: ($(urlElement).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://'),
+        }))
         .toArray()
-        .map(({ embedId, embedUrl }) => EmbedExtractorRegistry[embedId]?.extract(embedUrl, 'de'))
+        .filter(({ embedId }) => embedId.match(/^(dropload|supervideo)$/))
+        .map(({ embedId, embedUrl }) => (EmbedExtractorRegistry[embedId] as EmbedExtractor).extract(embedUrl, 'de'))
         .filter(stream => stream !== undefined),
     );
   };

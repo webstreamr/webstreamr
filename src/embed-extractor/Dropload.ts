@@ -10,14 +10,13 @@ export class Dropload implements EmbedExtractor {
     const normalizedUrl = url.replace('/e/', '').replace('/embed-', '/');
     const html = await cachedFetchText(normalizedUrl);
 
-    const resolutionMatch = html.match(/(\d{3,}x\d{3,}),/);
-    const resolution = resolutionMatch && resolutionMatch[1] ? scanFromResolution(resolutionMatch[1]) : undefined;
+    const resolution = scanFromResolution((html.match(/(\d{3,}x\d{3,}),/) as string[])[1] as string);
 
-    const sizeMatch = html.match(/([\d.]+) ?([GM]B)/);
-    const size = sizeMatch && sizeMatch[1] && sizeMatch[2] ? `${sizeMatch[1]} ${sizeMatch[2]}` : undefined;
+    const sizeMatch = html.match(/([\d.]+) ?([GM]B)/) as string[];
+    const size = `${sizeMatch[1]} ${sizeMatch[2]}`;
 
     return {
-      url: await extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
+      url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
       name: `WebStreamr ${resolution}`,
       title: `${this.label} | 💾 ${size} | ${iso2ToFlag(language)}`,
       behaviorHints: {

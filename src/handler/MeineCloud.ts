@@ -2,7 +2,7 @@ import * as cheerio from 'cheerio';
 import slugify from 'slugify';
 import { Handler } from './types';
 import { cachedFetchText, fulfillAllPromises, parseImdbId } from '../utils';
-import { EmbedExtractorRegistry } from '../embed-extractor';
+import { EmbedExtractor, EmbedExtractorRegistry } from '../embed-extractor';
 
 export class MeineCloud implements Handler {
   readonly id = 'meinecloud';
@@ -26,13 +26,11 @@ export class MeineCloud implements Handler {
       $('[data-link!=""]')
         .map((_i, el) => ({
           embedId: slugify($(el).text()),
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          embedUrl: $(el).attr('data-link')!
-            .replace(/^(https:)?\/\//, 'https://'),
+          embedUrl: ($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://'),
         }))
         .toArray()
         .filter(({ embedId }) => embedId.match(/^(dropload|supervideo)$/))
-        .map(({ embedId, embedUrl }) => EmbedExtractorRegistry[embedId]?.extract(embedUrl, 'de'))
+        .map(({ embedId, embedUrl }) => (EmbedExtractorRegistry[embedId] as EmbedExtractor).extract(embedUrl, 'de'))
         .filter(stream => stream !== undefined),
     );
   };
