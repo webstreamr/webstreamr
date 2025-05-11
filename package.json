@@ -30,10 +30,10 @@
     "node": "^22.0.0"
   },
   "dependencies": {
+    "@isaacs/ttlcache": "^1.4.1",
     "bytes": "^3.1.2",
     "cheerio": "^1.0.0",
     "express": "^5.1.0",
-    "lru-cache": "^11.1.0",
     "make-fetch-happen": "^14.0.3",
     "slugify": "^1.6.6",
     "unpacker": "^1.0.1",

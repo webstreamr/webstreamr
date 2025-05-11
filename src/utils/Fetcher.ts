@@ -1,17 +1,17 @@
 import { FetchInterface, FetchOptions } from 'make-fetch-happen';
+import TTLCache from '@isaacs/ttlcache';
 import UserAgent from 'user-agents';
-import { LRUCache } from 'lru-cache';
 import { logInfo } from './log';
 import { Context } from '../types';
 
 export class Fetcher {
   private readonly fetch: FetchInterface;
 
-  private readonly cache: LRUCache<string, string>;
+  private readonly cache: TTLCache<string, string>;
 
   constructor(fetch: FetchInterface) {
     this.fetch = fetch;
-    this.cache = new LRUCache({ max: 128 });
+    this.cache = new TTLCache({ max: 1024, ttl: 86400000 }); // 24h
   }
 
   readonly text = async (ctx: Context, uriOrRequest: string | Request, opts?: FetchOptions): Promise<string> => {
