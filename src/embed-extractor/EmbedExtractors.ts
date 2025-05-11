@@ -8,7 +8,7 @@ export class EmbedExtractors {
     this.embedExtractors = embedExtractors;
   }
 
-  readonly handle = async (url: string, language: string): Promise<StreamWithMeta> => {
+  readonly handle = async (url: URL, language: string): Promise<StreamWithMeta> => {
     const embedExtractor = this.embedExtractors.find(embedExtractor => embedExtractor.supports(url));
 
     if (undefined === embedExtractor) {

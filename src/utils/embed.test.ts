@@ -21,8 +21,8 @@ describe('extractUrlFromPacked', () => {
   });
 
   test('finds link', async () => {
-    (unpack as jest.Mock).mockReturnValue('{sources:[{file:"https://streaming-url.mp4"}');
+    (unpack as jest.Mock).mockReturnValue('{sources:[{file:"https://streaming.test/something.mp4"}');
 
-    expect(extractUrlFromPacked('eval(function(p,a,c,k,e,d){...}))', [/sources:\[{file:"(.*?)"/])).toBe('https://streaming-url.mp4');
+    expect(extractUrlFromPacked('eval(function(p,a,c,k,e,d){...}))', [/sources:\[{file:"(.*?)"/]).href).toBe('https://streaming.test/something.mp4');
   });
 });

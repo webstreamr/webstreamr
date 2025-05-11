@@ -40,9 +40,9 @@ export class KinoKiste implements Handler {
       $(`[data-num="${imdbId.series}x${imdbId.episode}"]`)
         .siblings('.mirrors')
         .children('[data-link]')
-        .map((_i, el) => ($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://'))
+        .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
-        .filter(embedUrl => embedUrl.match(/(dropload|supervideo)/))
+        .filter(embedUrl => embedUrl.host.match(/(dropload|supervideo)/))
         .map(embedUrl => this.embedExtractors.handle(embedUrl, 'de')),
     );
   };
