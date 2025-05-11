@@ -1,5 +1,5 @@
-const realFetchModule = jest.requireActual('./fetch');
-const cachedFetchText = realFetchModule.cachedFetchText;
+import { Fetcher } from './Fetcher';
+import makeFetchHappen from 'make-fetch-happen';
 
 global.console = {
   ...console,
@@ -15,17 +15,19 @@ jest.mock('make-fetch-happen', () => ({
   },
 }));
 
+const fetcher = new Fetcher(makeFetchHappen.defaults());
+
 describe('fetch', () => {
-  test('cachedFetchText throws if the response is not OK', async () => {
+  test('text throws if the response is not OK', async () => {
     mockedFetch.mockResolvedValue({ ok: false, status: 500, statusText: 'some error happened' });
 
-    await expect(cachedFetchText('https://some-url.test')).rejects.toThrow(new Error('HTTP error: 500 - some error happened'));
+    await expect(fetcher.text('https://some-url.test')).rejects.toThrow(new Error('HTTP error: 500 - some error happened'));
   });
 
-  test('cachedFetchText passes response through if it is OK', async () => {
+  test('text passes response through if it is OK', async () => {
     mockedFetch.mockResolvedValue({ ok: true, text: () => Promise.resolve('some text') });
 
-    const responseText = await cachedFetchText('https://some-url.test');
+    const responseText = await fetcher.text('https://some-url.test');
 
     expect(responseText).toBe('some text');
   });

@@ -5,5 +5,7 @@ export interface EmbedExtractor {
 
   readonly label: string;
 
-  readonly extract: (embedUrl: string, language: string) => Promise<StreamWithMeta>;
+  readonly supports: (url: string) => boolean;
+
+  readonly extract: (url: string, language: string) => Promise<StreamWithMeta>;
 }

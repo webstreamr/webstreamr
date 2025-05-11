@@ -1,8 +1,7 @@
 import * as cheerio from 'cheerio';
-import slugify from 'slugify';
 import { Handler } from './types';
-import { ImdbId, cachedFetchText, fulfillAllPromises, parseImdbId } from '../utils';
-import { EmbedExtractor, EmbedExtractorRegistry } from '../embed-extractor';
+import { ImdbId, fulfillAllPromises, parseImdbId, Fetcher } from '../utils';
+import { EmbedExtractors } from '../embed-extractor';
 
 export class KinoKiste implements Handler {
   readonly id = 'kinokiste';
@@ -12,6 +11,14 @@ export class KinoKiste implements Handler {
   readonly contentTypes = ['series'];
 
   readonly languages = ['de'];
+
+  private readonly fetcher: Fetcher;
+  private readonly embedExtractors: EmbedExtractors;
+
+  constructor(fetcher: Fetcher, embedExtractors: EmbedExtractors) {
+    this.fetcher = fetcher;
+    this.embedExtractors = embedExtractors;
+  }
 
   readonly handle = async (id: string) => {
     if (!id.startsWith('tt')) {
@@ -25,7 +32,7 @@ export class KinoKiste implements Handler {
       return Promise.resolve([]);
     }
 
-    const html = await cachedFetchText(seriesPageUrl);
+    const html = await this.fetcher.text(seriesPageUrl);
 
     const $ = cheerio.load(html);
 
@@ -33,19 +40,15 @@ export class KinoKiste implements Handler {
       $(`[data-num="${imdbId.series}x${imdbId.episode}"]`)
         .siblings('.mirrors')
         .children('[data-link]')
-        .map((_i, urlElement) => ({
-          embedId: slugify($(urlElement).attr('data-m') as string),
-          embedUrl: ($(urlElement).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://'),
-        }))
+        .map((_i, el) => ($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://'))
         .toArray()
-        .filter(({ embedId }) => embedId.match(/^(dropload|supervideo)$/))
-        .map(({ embedId, embedUrl }) => (EmbedExtractorRegistry[embedId] as EmbedExtractor).extract(embedUrl, 'de'))
-        .filter(stream => stream !== undefined),
+        .filter(embedUrl => embedUrl.match(/(dropload|supervideo)/))
+        .map(embedUrl => this.embedExtractors.handle(embedUrl, 'de')),
     );
   };
 
   private fetchSeriesPageUrl = async (imdbId: ImdbId): Promise<string | undefined> => {
-    const html = await cachedFetchText(`https://kinokiste.live/serien/?do=search&subaction=search&story=${imdbId.id}`);
+    const html = await this.fetcher.text(`https://kinokiste.live/serien/?do=search&subaction=search&story=${imdbId.id}`);
 
     const $ = cheerio.load(html);
 

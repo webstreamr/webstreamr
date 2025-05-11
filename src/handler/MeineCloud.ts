@@ -1,8 +1,7 @@
 import * as cheerio from 'cheerio';
-import slugify from 'slugify';
 import { Handler } from './types';
-import { cachedFetchText, fulfillAllPromises, parseImdbId } from '../utils';
-import { EmbedExtractor, EmbedExtractorRegistry } from '../embed-extractor';
+import { Fetcher, fulfillAllPromises, parseImdbId } from '../utils';
+import { EmbedExtractors } from '../embed-extractor';
 
 export class MeineCloud implements Handler {
   readonly id = 'meinecloud';
@@ -13,25 +12,29 @@ export class MeineCloud implements Handler {
 
   readonly languages = ['de'];
 
+  private readonly fetcher: Fetcher;
+  private readonly embedExtractors: EmbedExtractors;
+
+  constructor(fetcher: Fetcher, embedExtractors: EmbedExtractors) {
+    this.fetcher = fetcher;
+    this.embedExtractors = embedExtractors;
+  }
+
   readonly handle = async (id: string) => {
     if (!id.startsWith('tt')) {
       return Promise.resolve([]);
     }
 
-    const html = await cachedFetchText(`https://meinecloud.click/movie/${parseImdbId(id).id}`);
+    const html = await this.fetcher.text(`https://meinecloud.click/movie/${parseImdbId(id).id}`);
 
     const $ = cheerio.load(html);
 
     return fulfillAllPromises(
       $('[data-link!=""]')
-        .map((_i, el) => ({
-          embedId: slugify($(el).text()),
-          embedUrl: ($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://'),
-        }))
+        .map((_i, el) => ($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://'))
         .toArray()
-        .filter(({ embedId }) => embedId.match(/^(dropload|supervideo)$/))
-        .map(({ embedId, embedUrl }) => (EmbedExtractorRegistry[embedId] as EmbedExtractor).extract(embedUrl, 'de'))
-        .filter(stream => stream !== undefined),
+        .filter(embedUrl => embedUrl.match(/(dropload|supervideo)/))
+        .map(embedUrl => this.embedExtractors.handle(embedUrl, 'de')),
     );
   };
 }

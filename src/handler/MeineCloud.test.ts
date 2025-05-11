@@ -1,6 +1,11 @@
 import { MeineCloud } from './MeineCloud';
+import { Fetcher } from '../utils';
+import { Dropload, EmbedExtractors, SuperVideo } from '../embed-extractor';
+jest.mock('../utils/Fetcher');
 
-const meinecloud = new MeineCloud();
+// @ts-expect-error No constructor args needed
+const fetcher = new Fetcher();
+const meinecloud = new MeineCloud(fetcher, new EmbedExtractors([new Dropload(fetcher), new SuperVideo(fetcher)]));
 
 describe('MeineCloud', () => {
   test('does not handle non imdb movies', async () => {

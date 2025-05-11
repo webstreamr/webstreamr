@@ -1,14 +1,22 @@
 import { EmbedExtractor } from './types';
-import { cachedFetchText, extractUrlFromPacked, iso2ToFlag, scanFromResolution } from '../utils';
+import { extractUrlFromPacked, Fetcher, iso2ToFlag, scanFromResolution } from '../utils';
 
 export class Dropload implements EmbedExtractor {
   readonly id = 'dropload';
 
   readonly label = 'Dropload';
 
+  private readonly fetcher: Fetcher;
+
+  constructor(fetcher: Fetcher) {
+    this.fetcher = fetcher;
+  }
+
+  readonly supports = (url: string): boolean => null !== url.match(/dropload/);
+
   readonly extract = async (url: string, language: string) => {
     const normalizedUrl = url.replace('/e/', '').replace('/embed-', '/');
-    const html = await cachedFetchText(normalizedUrl);
+    const html = await this.fetcher.text(normalizedUrl);
 
     const resolution = scanFromResolution((html.match(/(\d{3,}x\d{3,}),/) as string[])[1] as string);
 

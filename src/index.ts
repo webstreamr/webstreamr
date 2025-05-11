@@ -1,14 +1,27 @@
 import express, { NextFunction, Request, Response } from 'express';
+import makeFetchHappen from 'make-fetch-happen';
 import { landingTemplate } from './landingTemplate';
 import { Handler, KinoKiste, MeineCloud } from './handler';
-import { buildManifest, fulfillAllPromises, logInfo } from './utils';
+import { Dropload, EmbedExtractors, SuperVideo } from './embed-extractor';
+import { buildManifest, Fetcher, fulfillAllPromises, logInfo } from './utils';
 import { Config, StreamWithMeta } from './types';
+import fs from 'node:fs';
+import * as os from 'node:os';
 
 const addon = express();
 
+const fetcher = new Fetcher(makeFetchHappen.defaults({
+  cachePath: `${fs.realpathSync(os.tmpdir())}/webstreamr`,
+}));
+
+const embedExtractors = new EmbedExtractors([
+  new Dropload(fetcher),
+  new SuperVideo(fetcher),
+]);
+
 const handlers: Handler[] = [
-  new KinoKiste(),
-  new MeineCloud(),
+  new KinoKiste(fetcher, embedExtractors),
+  new MeineCloud(fetcher, embedExtractors),
 ];
 
 addon.use((_req: Request, res: Response, next: NextFunction) => {

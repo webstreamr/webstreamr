@@ -1,6 +1,11 @@
 import { KinoKiste } from './KinoKiste';
+import { Dropload, EmbedExtractors, SuperVideo } from '../embed-extractor';
+import { Fetcher } from '../utils';
+jest.mock('../utils/Fetcher');
 
-const kinokiste = new KinoKiste();
+// @ts-expect-error No constructor args needed
+const fetcher = new Fetcher();
+const kinokiste = new KinoKiste(fetcher, new EmbedExtractors([new Dropload(fetcher), new SuperVideo(fetcher)]));
 
 describe('KinoKiste', () => {
   test('does not handle non imdb series', async () => {

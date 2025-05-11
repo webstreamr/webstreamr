@@ -20,7 +20,6 @@ const config: Config = {
   },
   resetModules: true,
   restoreMocks: true,
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   testEnvironment: 'node',
   transform: {
     '^.+.tsx?$': ['ts-jest', {}],
