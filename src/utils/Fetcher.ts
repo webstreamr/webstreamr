@@ -7,11 +7,11 @@ import { Context } from '../types';
 export class Fetcher {
   private readonly fetch: FetchInterface;
 
-  private readonly cache: TTLCache<string, string>;
+  private readonly ipUserAgentCache: TTLCache<string, string>;
 
   constructor(fetch: FetchInterface) {
     this.fetch = fetch;
-    this.cache = new TTLCache({ max: 1024, ttl: 86400000 }); // 24h
+    this.ipUserAgentCache = new TTLCache({ max: 1024, ttl: 86400000 }); // 24h
   }
 
   readonly text = async (ctx: Context, uriOrRequest: string | Request, opts?: FetchOptions): Promise<string> => {
@@ -37,14 +37,14 @@ export class Fetcher {
   };
 
   private readonly createUserAgentForIp = (ip: string): string => {
-    let userAgent = this.cache.get(ip);
+    let userAgent = this.ipUserAgentCache.get(ip);
     if (userAgent) {
       return userAgent;
     }
 
     userAgent = (new UserAgent()).toString();
 
-    this.cache.set(ip, userAgent);
+    this.ipUserAgentCache.set(ip, userAgent);
 
     return userAgent;
   };

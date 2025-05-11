@@ -5,15 +5,15 @@ import { Context, UrlResult } from '../types';
 export class EmbedExtractors {
   private readonly embedExtractors: EmbedExtractor[];
 
-  private readonly cache: TTLCache<string, UrlResult>;
+  private readonly urlResultCache: TTLCache<string, UrlResult>;
 
   constructor(embedExtractors: EmbedExtractor[]) {
     this.embedExtractors = embedExtractors;
-    this.cache = new TTLCache({ max: 1024, ttl: 900000 }); // 15m
+    this.urlResultCache = new TTLCache({ max: 1024, ttl: 900000 }); // 15m
   }
 
   readonly handle = async (ctx: Context, url: URL, language: string): Promise<UrlResult> => {
-    let urlResult = this.cache.get(url.href);
+    let urlResult = this.urlResultCache.get(url.href);
     if (urlResult) {
       return urlResult;
     }
@@ -24,7 +24,7 @@ export class EmbedExtractors {
     }
 
     urlResult = await embedExtractor.extract(ctx, url, language);
-    this.cache.set(url.href, urlResult);
+    this.urlResultCache.set(url.href, urlResult);
 
     return urlResult;
   };
