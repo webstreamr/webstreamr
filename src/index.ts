@@ -9,6 +9,7 @@ import fs from 'node:fs';
 import * as os from 'node:os';
 
 const addon = express();
+addon.set('trust proxy', true);
 
 const fetcher = new Fetcher(makeFetchHappen.defaults({
   cachePath: `${fs.realpathSync(os.tmpdir())}/webstreamr`,
@@ -100,7 +101,7 @@ addon.get('/:config/stream/:type/:id.json', async function (req: Request, res: R
       return;
     }
 
-    const handlerStreams = await handler.handle(id);
+    const handlerStreams = await handler.handle({ ip: req.ip as string }, id);
     logInfo(`${handler.id} returned ${handlerStreams.length} streams`);
 
     streams.push(...handlerStreams);

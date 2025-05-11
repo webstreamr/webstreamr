@@ -1,4 +1,4 @@
-import { StreamWithMeta } from '../types';
+import { Context, StreamWithMeta } from '../types';
 
 export interface EmbedExtractor {
   readonly id: string;
@@ -7,5 +7,5 @@ export interface EmbedExtractor {
 
   readonly supports: (url: URL) => boolean;
 
-  readonly extract: (url: URL, language: string) => Promise<StreamWithMeta>;
+  readonly extract: (ctx: Context, url: URL, language: string) => Promise<StreamWithMeta>;
 }

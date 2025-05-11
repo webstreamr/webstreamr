@@ -1,5 +1,7 @@
 import { Manifest, ManifestConfig, Stream } from 'stremio-addon-sdk';
 
+export interface Context { ip: string }
+
 export type ManifestWithConfig = Manifest & { config: ManifestConfig[] };
 
 export type Config = Record<string, string>;

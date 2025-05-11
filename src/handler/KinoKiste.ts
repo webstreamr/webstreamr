@@ -2,6 +2,7 @@ import * as cheerio from 'cheerio';
 import { Handler } from './types';
 import { ImdbId, fulfillAllPromises, parseImdbId, Fetcher } from '../utils';
 import { EmbedExtractors } from '../embed-extractor';
+import { Context } from '../types';
 
 export class KinoKiste implements Handler {
   readonly id = 'kinokiste';
@@ -20,19 +21,19 @@ export class KinoKiste implements Handler {
     this.embedExtractors = embedExtractors;
   }
 
-  readonly handle = async (id: string) => {
+  readonly handle = async (ctx: Context, id: string) => {
     if (!id.startsWith('tt')) {
       return Promise.resolve([]);
     }
 
     const imdbId = parseImdbId(id);
 
-    const seriesPageUrl = await this.fetchSeriesPageUrl(imdbId);
+    const seriesPageUrl = await this.fetchSeriesPageUrl(ctx, imdbId);
     if (!seriesPageUrl) {
       return Promise.resolve([]);
     }
 
-    const html = await this.fetcher.text(seriesPageUrl);
+    const html = await this.fetcher.text(ctx, seriesPageUrl);
 
     const $ = cheerio.load(html);
 
@@ -43,12 +44,12 @@ export class KinoKiste implements Handler {
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
         .filter(embedUrl => embedUrl.host.match(/(dropload|supervideo)/))
-        .map(embedUrl => this.embedExtractors.handle(embedUrl, 'de')),
+        .map(embedUrl => this.embedExtractors.handle(ctx, embedUrl, 'de')),
     );
   };
 
-  private fetchSeriesPageUrl = async (imdbId: ImdbId): Promise<string | undefined> => {
-    const html = await this.fetcher.text(`https://kinokiste.live/serien/?do=search&subaction=search&story=${imdbId.id}`);
+  private fetchSeriesPageUrl = async (ctx: Context, imdbId: ImdbId): Promise<string | undefined> => {
+    const html = await this.fetcher.text(ctx, `https://kinokiste.live/serien/?do=search&subaction=search&story=${imdbId.id}`);
 
     const $ = cheerio.load(html);
 
