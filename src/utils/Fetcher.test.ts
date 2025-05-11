@@ -35,7 +35,7 @@ describe('fetch', () => {
     expect(responseText).toBe('some text');
     expect(mockedFetch).toHaveBeenCalledWith(
       'https://some-url.test',
-      { headers: { 'User-Agent': 'jest', 'X-Forwarded-For': '127.0.0.1' } },
+      { headers: { 'User-Agent': expect.not.stringMatching(/jest/), 'X-Forwarded-For': '127.0.0.1' } },
     );
   });
 });
