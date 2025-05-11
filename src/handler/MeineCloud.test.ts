@@ -30,8 +30,8 @@ describe('MeineCloud', () => {
       url: expect.any(URL),
       label: 'SuperVideo',
       sourceId: 'supervideo',
-      height: '720',
-      size: '1.0 GB',
+      height: 720,
+      bytes: 1073741824,
       language: 'de',
     });
     expect(streams[0]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
@@ -39,8 +39,8 @@ describe('MeineCloud', () => {
       url: expect.any(URL),
       label: 'Dropload',
       sourceId: 'dropload',
-      height: '1080',
-      size: '1.3 GB',
+      height: 1080,
+      bytes: 1395864371,
       language: 'de',
     });
     expect(streams[1]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);

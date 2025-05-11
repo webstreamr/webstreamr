@@ -10,7 +10,7 @@ export interface UrlResult {
   url: URL;
   label: string;
   sourceId: string;
-  height: string | undefined;
-  size: string | undefined;
+  height: number | undefined;
+  bytes: number | undefined;
   language: string | undefined;
 }

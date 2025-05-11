@@ -30,8 +30,8 @@ describe('KinoKiste', () => {
       url: expect.any(URL),
       label: 'SuperVideo',
       sourceId: 'supervideo',
-      height: '720',
-      size: '699.8 MB',
+      height: 720,
+      bytes: 733793484,
       language: 'de',
     });
     expect(streams[0]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
@@ -39,8 +39,8 @@ describe('KinoKiste', () => {
       url: expect.any(URL),
       label: 'Dropload',
       sourceId: 'dropload',
-      height: '720',
-      size: '699.8 MB',
+      height: 720,
+      bytes: 733793484,
       language: 'de',
     });
     expect(streams[1]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);

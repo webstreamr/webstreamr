@@ -1,6 +1,7 @@
 import { EmbedExtractor } from './types';
 import { extractUrlFromPacked, Fetcher } from '../utils';
 import { Context } from '../types';
+import bytes from 'bytes';
 
 export class Dropload implements EmbedExtractor {
   readonly id = 'dropload';
@@ -19,17 +20,16 @@ export class Dropload implements EmbedExtractor {
     const normalizedUrl = url.toString().replace('/e/', '').replace('/embed-', '/');
     const html = await this.fetcher.text(ctx, normalizedUrl);
 
-    const height = (html.match(/\d{3,}x(\d{3,}),/) as string[])[1];
+    const heightMatch = html.match(/\d{3,}x(\d{3,}),/) as string[];
 
-    const sizeMatch = html.match(/([\d.]+) ?([GM]B)/) as string[];
-    const size = `${sizeMatch[1]} ${sizeMatch[2]}`;
+    const sizeMatch = html.match(/([\d.]+ ?[GM]B)/) as string[];
 
     return {
       url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
       label: this.label,
       sourceId: this.id,
-      height,
-      size,
+      height: parseInt(heightMatch[1] as string) as number,
+      bytes: bytes.parse(sizeMatch[1] as string) as number,
       language,
     };
   };

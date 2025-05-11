@@ -7,6 +7,7 @@ import { buildManifest, Fetcher, fulfillAllPromises, iso2ToFlag, logInfo } from 
 import { Config, UrlResult } from './types';
 import fs from 'node:fs';
 import * as os from 'node:os';
+import bytes from 'bytes';
 
 const addon = express();
 addon.set('trust proxy', true);
@@ -109,12 +110,12 @@ addon.get('/:config/stream/:type/:id.json', async function (req: Request, res: R
   await fulfillAllPromises(handlerPromises);
 
   urlResults.sort((a, b) => {
-    const heightComparison = parseInt(b.height ?? '0') - parseInt(a.height ?? '0');
+    const heightComparison = (b.height ?? 0) - (a.height ?? 0);
     if (heightComparison !== 0) {
       return heightComparison;
     }
 
-    return parseFloat(b.size ?? '0') - parseFloat(a.size ?? '0');
+    return (b.bytes ?? 0) - (a.bytes ?? 0);
   });
 
   logInfo(`Return ${urlResults.length} streams`);
@@ -126,8 +127,8 @@ addon.get('/:config/stream/:type/:id.json', async function (req: Request, res: R
     }
 
     let title = urlResult.label;
-    if (urlResult.size) {
-      title += ` | 💾 ${urlResult.size}`;
+    if (urlResult.bytes) {
+      title += ` | 💾 ${bytes.format(urlResult.bytes, { unitSeparator: ' ' })}`;
     }
     if (urlResult.language) {
       title += ` | ${iso2ToFlag(urlResult.language)}`;
