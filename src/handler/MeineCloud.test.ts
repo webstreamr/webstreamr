@@ -27,24 +27,22 @@ describe('MeineCloud', () => {
 
     expect(streams).toHaveLength(2);
     expect(streams[0]).toStrictEqual({
-      behaviorHints: {
-        group: 'webstreamr-supervideo',
-      },
-      name: 'WebStreamr 720p',
-      resolution: '720p',
+      url: expect.any(URL),
+      label: 'SuperVideo',
+      sourceId: 'supervideo',
+      height: '720',
       size: '1.0 GB',
-      title: 'SuperVideo | 💾 1.0 GB | 🇩🇪',
-      url: expect.stringMatching(/^https:\/\/.*?.m3u8/),
+      language: 'de',
     });
+    expect(streams[0]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
     expect(streams[1]).toStrictEqual({
-      behaviorHints: {
-        group: 'webstreamr-dropload',
-      },
-      name: 'WebStreamr 1080p',
-      resolution: '1080p',
+      url: expect.any(URL),
+      label: 'Dropload',
+      sourceId: 'dropload',
+      height: '1080',
       size: '1.3 GB',
-      title: 'Dropload | 💾 1.3 GB | 🇩🇪',
-      url: expect.stringMatching(/^https:\/\/.*?.m3u8/),
+      language: 'de',
     });
+    expect(streams[1]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
   });
 });

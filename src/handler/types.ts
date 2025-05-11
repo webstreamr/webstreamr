@@ -1,4 +1,4 @@
-import { Context, StreamWithMeta } from '../types';
+import { Context, UrlResult } from '../types';
 
 export interface Handler {
   readonly id: string;
@@ -9,5 +9,5 @@ export interface Handler {
 
   readonly languages: string[];
 
-  readonly handle: (ctx: Context, id: string) => Promise<StreamWithMeta[]>;
+  readonly handle: (ctx: Context, id: string) => Promise<UrlResult[]>;
 }

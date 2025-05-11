@@ -1,5 +1,5 @@
 import { EmbedExtractor } from './types';
-import { extractUrlFromPacked, Fetcher, iso2ToFlag, scanFromResolution } from '../utils';
+import { extractUrlFromPacked, Fetcher } from '../utils';
 import { Context } from '../types';
 
 export class Dropload implements EmbedExtractor {
@@ -19,20 +19,18 @@ export class Dropload implements EmbedExtractor {
     const normalizedUrl = url.toString().replace('/e/', '').replace('/embed-', '/');
     const html = await this.fetcher.text(ctx, normalizedUrl);
 
-    const resolution = scanFromResolution((html.match(/(\d{3,}x\d{3,}),/) as string[])[1] as string);
+    const height = (html.match(/\d{3,}x(\d{3,}),/) as string[])[1];
 
     const sizeMatch = html.match(/([\d.]+) ?([GM]B)/) as string[];
     const size = `${sizeMatch[1]} ${sizeMatch[2]}`;
 
     return {
-      url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]).toString(),
-      name: `WebStreamr ${resolution}`,
-      title: `${this.label} | 💾 ${size} | ${iso2ToFlag(language)}`,
-      behaviorHints: {
-        group: `webstreamr-${this.id}`,
-      },
-      resolution,
+      url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
+      label: this.label,
+      sourceId: this.id,
+      height,
       size,
+      language,
     };
   };
 }

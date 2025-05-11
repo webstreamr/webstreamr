@@ -3,8 +3,8 @@ import makeFetchHappen from 'make-fetch-happen';
 import { landingTemplate } from './landingTemplate';
 import { Handler, KinoKiste, MeineCloud } from './handler';
 import { Dropload, EmbedExtractors, SuperVideo } from './embed-extractor';
-import { buildManifest, Fetcher, fulfillAllPromises, logInfo } from './utils';
-import { Config, StreamWithMeta } from './types';
+import { buildManifest, Fetcher, fulfillAllPromises, iso2ToFlag, logInfo } from './utils';
+import { Config, UrlResult } from './types';
 import fs from 'node:fs';
 import * as os from 'node:os';
 
@@ -95,29 +95,54 @@ addon.get('/:config/stream/:type/:id.json', async function (req: Request, res: R
     return;
   }
 
-  const streams: StreamWithMeta[] = [];
+  const urlResults: UrlResult[] = [];
   const handlerPromises = selectedHandlers.map(async (handler) => {
     if (!handler.contentTypes.includes(type)) {
       return;
     }
 
-    const handlerStreams = await handler.handle({ ip: req.ip as string }, id);
-    logInfo(`${handler.id} returned ${handlerStreams.length} streams`);
+    const handlerUrlResults = await handler.handle({ ip: req.ip as string }, id);
+    logInfo(`${handler.id} returned ${handlerUrlResults.length} urls`);
 
-    streams.push(...handlerStreams);
+    urlResults.push(...handlerUrlResults);
   });
   await fulfillAllPromises(handlerPromises);
 
-  streams.sort((a, b) => {
-    const resolutionComparison = parseInt(b.resolution ?? '0') - parseInt(a.resolution ?? '0');
-    if (resolutionComparison !== 0) {
-      return resolutionComparison;
+  urlResults.sort((a, b) => {
+    const heightComparison = parseInt(b.height ?? '0') - parseInt(a.height ?? '0');
+    if (heightComparison !== 0) {
+      return heightComparison;
     }
 
     return parseFloat(b.size ?? '0') - parseFloat(a.size ?? '0');
   });
 
-  logInfo(`Return ${streams.length} streams`);
+  logInfo(`Return ${urlResults.length} streams`);
+
+  const streams = urlResults.map((urlResult) => {
+    let name = 'WebStreamr';
+    if (urlResult.height) {
+      name += ` ${urlResult.height}p`;
+    }
+
+    let title = urlResult.label;
+    if (urlResult.size) {
+      title += ` | 💾 ${urlResult.size}`;
+    }
+    if (urlResult.language) {
+      title += ` | ${iso2ToFlag(urlResult.language)}`;
+    }
+
+    return {
+      url: urlResult.url.toString(),
+      name,
+      title,
+      behaviourHints: {
+        group: `webstreamr-${urlResult.sourceId}`,
+      },
+    };
+  });
+
   res.send(JSON.stringify({ streams }));
 });
 

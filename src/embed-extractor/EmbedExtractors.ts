@@ -1,5 +1,5 @@
 import { EmbedExtractor } from './types';
-import { Context, StreamWithMeta } from '../types';
+import { Context, UrlResult } from '../types';
 
 export class EmbedExtractors {
   private readonly embedExtractors: EmbedExtractor[];
@@ -8,7 +8,7 @@ export class EmbedExtractors {
     this.embedExtractors = embedExtractors;
   }
 
-  readonly handle = async (ctx: Context, url: URL, language: string): Promise<StreamWithMeta> => {
+  readonly handle = async (ctx: Context, url: URL, language: string): Promise<UrlResult> => {
     const embedExtractor = this.embedExtractors.find(embedExtractor => embedExtractor.supports(url));
 
     if (undefined === embedExtractor) {

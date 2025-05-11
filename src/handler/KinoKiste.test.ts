@@ -27,24 +27,22 @@ describe('KinoKiste', () => {
 
     expect(streams).toHaveLength(2);
     expect(streams[0]).toStrictEqual({
-      behaviorHints: {
-        group: 'webstreamr-supervideo',
-      },
-      name: 'WebStreamr 720p',
-      resolution: '720p',
+      url: expect.any(URL),
+      label: 'SuperVideo',
+      sourceId: 'supervideo',
+      height: '720',
       size: '699.8 MB',
-      title: 'SuperVideo | 💾 699.8 MB | 🇩🇪',
-      url: expect.stringMatching(/^https:\/\/.*?.m3u8/),
+      language: 'de',
     });
+    expect(streams[0]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
     expect(streams[1]).toStrictEqual({
-      behaviorHints: {
-        group: 'webstreamr-dropload',
-      },
-      name: 'WebStreamr 720p',
-      resolution: '720p',
+      url: expect.any(URL),
+      label: 'Dropload',
+      sourceId: 'dropload',
+      height: '720',
       size: '699.8 MB',
-      title: 'Dropload | 💾 699.8 MB | 🇩🇪',
-      url: expect.stringMatching(/^https:\/\/.*?.m3u8/),
+      language: 'de',
     });
+    expect(streams[1]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
   });
 });

@@ -5,4 +5,3 @@ export * from './language';
 export * from './log';
 export * from './manifest';
 export * from './promise';
-export * from './resolution';
