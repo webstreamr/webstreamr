@@ -23,7 +23,7 @@ export class MeineCloud implements Handler {
 
   readonly handle = async (ctx: Context, id: string) => {
     if (!id.startsWith('tt')) {
-      return Promise.resolve([]);
+      return [];
     }
 
     const html = await this.fetcher.text(ctx, new URL(`https://meinecloud.click/movie/${parseImdbId(id).id}`));

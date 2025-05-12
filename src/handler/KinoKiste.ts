@@ -23,14 +23,14 @@ export class KinoKiste implements Handler {
 
   readonly handle = async (ctx: Context, id: string) => {
     if (!id.startsWith('tt')) {
-      return Promise.resolve([]);
+      return [];
     }
 
     const imdbId = parseImdbId(id);
 
     const seriesPageUrl = await this.fetchSeriesPageUrl(ctx, imdbId);
     if (!seriesPageUrl) {
-      return Promise.resolve([]);
+      return [];
     }
 
     const html = await this.fetcher.text(ctx, seriesPageUrl);
