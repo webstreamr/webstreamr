@@ -29,7 +29,7 @@ describe('MostraGuarda', () => {
     expect(streams[0]).toStrictEqual({
       url: expect.any(URL),
       label: 'SuperVideo',
-      sourceId: 'supervideo',
+      sourceId: 'supervideo_it',
       height: 720,
       bytes: 1181116006,
       countryCode: 'it',
@@ -38,7 +38,7 @@ describe('MostraGuarda', () => {
     expect(streams[1]).toStrictEqual({
       url: expect.any(URL),
       label: 'Dropload',
-      sourceId: 'dropload',
+      sourceId: 'dropload_it',
       height: 720,
       bytes: 1181116006,
       countryCode: 'it',

@@ -27,7 +27,7 @@ export class SuperVideo implements EmbedExtractor {
     return {
       url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
       label: this.label,
-      sourceId: this.id,
+      sourceId: `${this.id}_${countryCode.toLowerCase()}`,
       height: parseInt(heightAndSizeMatch[1] as string) as number,
       bytes: bytes.parse(heightAndSizeMatch[2] as string) as number,
       countryCode,

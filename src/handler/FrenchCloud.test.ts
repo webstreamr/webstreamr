@@ -29,7 +29,7 @@ describe('FrenchCloud', () => {
     expect(streams[0]).toStrictEqual({
       url: expect.any(URL),
       label: 'SuperVideo',
-      sourceId: 'supervideo',
+      sourceId: 'supervideo_fr',
       height: 720,
       bytes: 966682214,
       countryCode: 'fr',
@@ -38,7 +38,7 @@ describe('FrenchCloud', () => {
     expect(streams[1]).toStrictEqual({
       url: expect.any(URL),
       label: 'Dropload',
-      sourceId: 'dropload',
+      sourceId: 'dropload_fr',
       height: 720,
       bytes: 966682214,
       countryCode: 'fr',

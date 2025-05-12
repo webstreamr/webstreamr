@@ -29,7 +29,7 @@ export class Dropload implements EmbedExtractor {
     return {
       url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
       label: this.label,
-      sourceId: this.id,
+      sourceId: `${this.id}_${countryCode.toLowerCase()}`,
       height: parseInt(heightMatch[1] as string) as number,
       bytes: bytes.parse(sizeMatch[1] as string) as number,
       countryCode,

@@ -29,7 +29,7 @@ describe('MeineCloud', () => {
     expect(streams[0]).toStrictEqual({
       url: expect.any(URL),
       label: 'SuperVideo',
-      sourceId: 'supervideo',
+      sourceId: 'supervideo_de',
       height: 720,
       bytes: 1073741824,
       countryCode: 'de',
@@ -38,7 +38,7 @@ describe('MeineCloud', () => {
     expect(streams[1]).toStrictEqual({
       url: expect.any(URL),
       label: 'Dropload',
-      sourceId: 'dropload',
+      sourceId: 'dropload_de',
       height: 1080,
       bytes: 1395864371,
       countryCode: 'de',
