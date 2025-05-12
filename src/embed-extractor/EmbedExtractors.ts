@@ -9,7 +9,7 @@ export class EmbedExtractors {
 
   constructor(embedExtractors: EmbedExtractor[]) {
     this.embedExtractors = embedExtractors;
-    this.urlResultCache = new TTLCache({ max: 1024, ttl: 900000 }); // 15m
+    this.urlResultCache = new TTLCache({ max: 1024 });
   }
 
   readonly handle = async (ctx: Context, url: URL, language: string): Promise<UrlResult> => {
@@ -24,7 +24,7 @@ export class EmbedExtractors {
     }
 
     urlResult = await embedExtractor.extract(ctx, url, language);
-    this.urlResultCache.set(url.href, urlResult);
+    this.urlResultCache.set(url.href, urlResult, { ttl: embedExtractor.ttl });
 
     return urlResult;
   };

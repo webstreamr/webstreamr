@@ -5,6 +5,8 @@ export interface EmbedExtractor {
 
   readonly label: string;
 
+  readonly ttl: number;
+
   readonly supports: (url: URL) => boolean;
 
   readonly extract: (ctx: Context, url: URL, language: string) => Promise<UrlResult>;

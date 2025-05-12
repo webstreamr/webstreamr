@@ -8,6 +8,8 @@ export class Dropload implements EmbedExtractor {
 
   readonly label = 'Dropload';
 
+  readonly ttl = 900000; // 15m
+
   private readonly fetcher: Fetcher;
 
   constructor(fetcher: Fetcher) {

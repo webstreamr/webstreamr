@@ -8,6 +8,8 @@ export class SuperVideo implements EmbedExtractor {
 
   readonly label = 'SuperVideo';
 
+  readonly ttl = 900000; // 15m
+
   private readonly fetcher: Fetcher;
 
   constructor(fetcher: Fetcher) {
