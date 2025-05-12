@@ -2,12 +2,6 @@ import { Fetcher } from './Fetcher';
 import makeFetchHappen from 'make-fetch-happen';
 import { Context } from '../types';
 
-global.console = {
-  ...console,
-  error: jest.fn(),
-  info: jest.fn(),
-};
-
 const mockedFetch = jest.fn();
 jest.mock('make-fetch-happen', () => ({
   __esModule: true,

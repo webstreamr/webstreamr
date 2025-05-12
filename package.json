@@ -38,7 +38,8 @@
     "make-fetch-happen": "^14.0.3",
     "slugify": "^1.6.6",
     "unpacker": "^1.0.1",
-    "user-agents": "^1.1.536"
+    "user-agents": "^1.1.536",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.26.0",

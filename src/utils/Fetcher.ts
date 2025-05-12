@@ -1,21 +1,24 @@
 import { FetchInterface, FetchOptions } from 'make-fetch-happen';
 import TTLCache from '@isaacs/ttlcache';
 import UserAgent from 'user-agents';
-import { logInfo } from './log';
+import { Logger, createLogger } from 'winston';
 import { Context } from '../types';
 
 export class Fetcher {
   private readonly fetch: FetchInterface;
 
+  private readonly logger: Logger;
+
   private readonly ipUserAgentCache: TTLCache<string, string>;
 
-  constructor(fetch: FetchInterface) {
+  constructor(fetch: FetchInterface, logger: Logger | undefined = undefined) {
     this.fetch = fetch;
+    this.logger = logger || createLogger();
     this.ipUserAgentCache = new TTLCache({ max: 1024, ttl: 86400000 }); // 24h
   }
 
   readonly text = async (ctx: Context, uriOrRequest: string | Request, opts?: FetchOptions): Promise<string> => {
-    logInfo(`Fetch ${uriOrRequest}`);
+    this.logger.info(`Fetch ${uriOrRequest}`);
 
     const response = await this.fetch(
       uriOrRequest,

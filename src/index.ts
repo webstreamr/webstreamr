@@ -1,10 +1,11 @@
 import express, { NextFunction, Request, Response } from 'express';
 import makeFetchHappen from 'make-fetch-happen';
 import { flag } from 'country-emoji';
+import winston from 'winston';
 import { landingTemplate } from './landingTemplate';
 import { Handler, KinoKiste, MeineCloud } from './handler';
 import { Dropload, EmbedExtractors, SuperVideo } from './embed-extractor';
-import { buildManifest, Fetcher, logError, logInfo } from './utils';
+import { buildManifest, Fetcher } from './utils';
 import { Config, UrlResult } from './types';
 import fs from 'node:fs';
 import * as os from 'node:os';
@@ -13,10 +14,27 @@ import bytes from 'bytes';
 const addon = express();
 addon.set('trust proxy', true);
 
-const fetcher = new Fetcher(makeFetchHappen.defaults({
-  cachePath: `${fs.realpathSync(os.tmpdir())}/webstreamr`,
-  maxSockets: 5,
-}));
+const logger = winston.createLogger({
+  transports: [
+    new winston.transports.Console({
+      format: winston.format.combine(
+        winston.format.cli(),
+        winston.format.timestamp(),
+        winston.format.printf(({ level, message, timestamp }) => {
+          return `${timestamp} ${level}: ${message}`;
+        }),
+      ),
+    }),
+  ],
+});
+
+const fetcher = new Fetcher(
+  makeFetchHappen.defaults({
+    cachePath: `${fs.realpathSync(os.tmpdir())}/webstreamr`,
+    maxSockets: 5,
+  }),
+  logger,
+);
 
 const embedExtractors = new EmbedExtractors([
   new Dropload(fetcher),
@@ -80,13 +98,13 @@ addon.get('/:config/stream/:type/:id.json', async function (req: Request, res: R
   const type: string = req.params['type'] || '';
   const id: string = req.params['id'] || '';
 
-  logInfo(`Search stream for type "${type}" and id "${id}"`);
+  logger.info(`Search stream for type "${type}" and id "${id}"`);
 
   res.setHeader('Content-Type', 'application/json');
 
   const selectedHandlers = handlers.filter(handler => handler.id in config);
   if (selectedHandlers.length === 0) {
-    logInfo('No handlers configured, bail out');
+    logger.info('No handlers configured, bail out');
 
     res.send(JSON.stringify({
       streams: [{
@@ -106,11 +124,11 @@ addon.get('/:config/stream/:type/:id.json', async function (req: Request, res: R
 
     try {
       const handlerUrlResults = await handler.handle({ ip: req.ip as string }, id);
-      logInfo(`${handler.id} returned ${handlerUrlResults.length} urls`);
+      logger.info(`${handler.id} returned ${handlerUrlResults.length} urls`);
 
       urlResults.push(...handlerUrlResults);
     } catch (err) {
-      logError(`${handler.id} error: ` + err);
+      logger.error(`${handler.id} error: ` + err);
     }
   });
   await Promise.all(handlerPromises);
@@ -124,7 +142,7 @@ addon.get('/:config/stream/:type/:id.json', async function (req: Request, res: R
     return (b.bytes ?? 0) - (a.bytes ?? 0);
   });
 
-  logInfo(`Return ${urlResults.length} streams`);
+  logger.info(`Return ${urlResults.length} streams`);
 
   const streams = urlResults.map((urlResult) => {
     let name = 'WebStreamr';
@@ -155,5 +173,5 @@ addon.get('/:config/stream/:type/:id.json', async function (req: Request, res: R
 
 const port = parseInt(process.env['PORT'] || '51546');
 addon.listen(port, () => {
-  logInfo(`Add-on Repository URL: http://127.0.0.1:${port}/manifest.json`);
+  logger.info(`Add-on Repository URL: http://127.0.0.1:${port}/manifest.json`);
 });
