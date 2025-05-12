@@ -25,6 +25,7 @@ export class Fetcher {
           ...opts?.headers,
           'User-Agent': this.createUserAgentForIp(ctx.ip),
           'X-Forwarded-For': ctx.ip,
+          'X-Real-IP': ctx.ip,
         },
       },
     );
