@@ -3,4 +3,3 @@ export * from './embed';
 export * from './imdb';
 export * from './log';
 export * from './manifest';
-export * from './promise';

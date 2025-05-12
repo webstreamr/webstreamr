@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import { Handler } from './types';
-import { ImdbId, fulfillAllPromises, parseImdbId, Fetcher } from '../utils';
+import { ImdbId, parseImdbId, Fetcher } from '../utils';
 import { EmbedExtractors } from '../embed-extractor';
 import { Context } from '../types';
 
@@ -37,7 +37,7 @@ export class KinoKiste implements Handler {
 
     const $ = cheerio.load(html);
 
-    return fulfillAllPromises(
+    return Promise.all(
       $(`[data-num="${imdbId.series}x${imdbId.episode}"]`)
         .siblings('.mirrors')
         .children('[data-link]')

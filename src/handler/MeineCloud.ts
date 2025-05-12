@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import { Handler } from './types';
-import { Fetcher, fulfillAllPromises, parseImdbId } from '../utils';
+import { Fetcher, parseImdbId } from '../utils';
 import { EmbedExtractors } from '../embed-extractor';
 import { Context } from '../types';
 
@@ -30,7 +30,7 @@ export class MeineCloud implements Handler {
 
     const $ = cheerio.load(html);
 
-    return fulfillAllPromises(
+    return Promise.all(
       $('[data-link!=""]')
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()

@@ -4,7 +4,7 @@ import { flag } from 'country-emoji';
 import { landingTemplate } from './landingTemplate';
 import { Handler, KinoKiste, MeineCloud } from './handler';
 import { Dropload, EmbedExtractors, SuperVideo } from './embed-extractor';
-import { buildManifest, Fetcher, fulfillAllPromises, logInfo } from './utils';
+import { buildManifest, Fetcher, logError, logInfo } from './utils';
 import { Config, UrlResult } from './types';
 import fs from 'node:fs';
 import * as os from 'node:os';
@@ -104,12 +104,16 @@ addon.get('/:config/stream/:type/:id.json', async function (req: Request, res: R
       return;
     }
 
-    const handlerUrlResults = await handler.handle({ ip: req.ip as string }, id);
-    logInfo(`${handler.id} returned ${handlerUrlResults.length} urls`);
+    try {
+      const handlerUrlResults = await handler.handle({ ip: req.ip as string }, id);
+      logInfo(`${handler.id} returned ${handlerUrlResults.length} urls`);
 
-    urlResults.push(...handlerUrlResults);
+      urlResults.push(...handlerUrlResults);
+    } catch (err) {
+      logError(`${handler.id} error: ` + err);
+    }
   });
-  await fulfillAllPromises(handlerPromises);
+  await Promise.all(handlerPromises);
 
   urlResults.sort((a, b) => {
     const heightComparison = (b.height ?? 0) - (a.height ?? 0);
