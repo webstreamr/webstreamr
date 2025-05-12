@@ -4,7 +4,7 @@
   "version": "0.7.1",
   "type": "commonjs",
   "scripts": {
-    "analyse": "tsc --noEmit",
+    "analyse": "tsc --noEmit --project ./tsconfig.dev.json",
     "build": "rm -rf ./dist && tsc",
     "dev": "nodemon src/index.ts",
     "lint": "eslint",
