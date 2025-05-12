@@ -51,10 +51,6 @@ addon.use((_req: Request, res: Response, next: NextFunction) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', '*');
 
-  if (process.env['NODE_ENV'] === 'production') {
-    res.setHeader('Cache-Control', 'max-age=3600, public');
-  }
-
   next();
 });
 
