@@ -1,0 +1,41 @@
+import * as cheerio from 'cheerio';
+import { Handler } from './types';
+import { Fetcher, parseImdbId } from '../utils';
+import { EmbedExtractors } from '../embed-extractor';
+import { Context } from '../types';
+
+export class FrenchCloud implements Handler {
+  readonly id = 'frenchcloud';
+
+  readonly label = 'FrenchCloud';
+
+  readonly contentTypes = ['movie'];
+
+  readonly languages = ['fr'];
+
+  private readonly fetcher: Fetcher;
+  private readonly embedExtractors: EmbedExtractors;
+
+  constructor(fetcher: Fetcher, embedExtractors: EmbedExtractors) {
+    this.fetcher = fetcher;
+    this.embedExtractors = embedExtractors;
+  }
+
+  readonly handle = async (ctx: Context, id: string) => {
+    if (!id.startsWith('tt')) {
+      return [];
+    }
+
+    const html = await this.fetcher.text(ctx, new URL(`https://frenchcloud.cam/movie/${parseImdbId(id).id}`));
+
+    const $ = cheerio.load(html);
+
+    return Promise.all(
+      $('[data-link!=""]')
+        .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
+        .toArray()
+        .filter(embedUrl => embedUrl.host.match(/(dropload|supervideo)/))
+        .map(embedUrl => this.embedExtractors.handle(ctx, embedUrl, 'fr')),
+    );
+  };
+}
