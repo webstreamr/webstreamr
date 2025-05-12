@@ -48,13 +48,15 @@ export class KinoKiste implements Handler {
     );
   };
 
-  private fetchSeriesPageUrl = async (ctx: Context, imdbId: ImdbId): Promise<string | undefined> => {
-    const html = await this.fetcher.text(ctx, `https://kinokiste.live/serien/?do=search&subaction=search&story=${imdbId.id}`);
+  private fetchSeriesPageUrl = async (ctx: Context, imdbId: ImdbId): Promise<URL | undefined> => {
+    const html = await this.fetcher.text(ctx, new URL(`https://kinokiste.live/serien/?do=search&subaction=search&story=${imdbId.id}`));
 
     const $ = cheerio.load(html);
 
-    return $('.item-video a[href]:first')
+    const url = $('.item-video a[href]:first')
       .map((_i, el) => $(el).attr('href'))
       .get(0);
+
+    return url !== undefined ? new URL(url) : url;
   };
 }

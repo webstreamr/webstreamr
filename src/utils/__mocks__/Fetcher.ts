@@ -5,13 +5,13 @@ import slugify from 'slugify';
 import { Context } from '../../types';
 
 export class Fetcher {
-  readonly text = async (_ctx: Context, uriOrRequest: string, opts?: FetchOptions): Promise<string> => {
-    const path = `${__dirname}/../__fixtures__/Fetcher/${slugify(uriOrRequest)}`;
+  readonly text = async (_ctx: Context, url: URL, opts?: FetchOptions): Promise<string> => {
+    const path = `${__dirname}/../__fixtures__/Fetcher/${slugify(url.href)}`;
 
     if (fs.existsSync(path)) {
       return fs.readFileSync(path).toString();
     } else {
-      const text = await (await makeFetchHappen.defaults()(uriOrRequest, opts)).text();
+      const text = await (await makeFetchHappen.defaults()(url.href, opts)).text();
 
       fs.writeFileSync(path, text);
 

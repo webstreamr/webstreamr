@@ -19,21 +19,23 @@ describe('fetch', () => {
   test('text throws if the response is not OK', async () => {
     mockedFetch.mockResolvedValue({ ok: false, status: 500, statusText: 'some error happened' });
 
-    await expect(fetcher.text(ctx, 'https://some-url.test')).rejects.toThrow(new Error('HTTP error: 500 - some error happened'));
+    await expect(fetcher.text(ctx, new URL('https://some-url.test/'))).rejects.toThrow(new Error('HTTP error: 500 - some error happened'));
   });
 
   test('text passes successful response through setting headers', async () => {
     mockedFetch.mockResolvedValue({ ok: true, text: () => Promise.resolve('some text') });
 
-    const responseText = await fetcher.text(ctx, 'https://some-url.test', { headers: { 'User-Agent': 'jest' } });
+    const responseText = await fetcher.text(ctx, new URL('https://some-url.test/'), { headers: { 'User-Agent': 'jest' } });
 
     expect(responseText).toBe('some text');
     expect(mockedFetch).toHaveBeenCalledWith(
-      'https://some-url.test',
+      'https://some-url.test/',
       {
         headers: {
           'User-Agent': expect.not.stringMatching(/jest/),
+          'Forwarded': 'for=127.0.0.1',
           'X-Forwarded-For': '127.0.0.1',
+          'X-Forwarded-Proto': 'https',
           'X-Real-IP': '127.0.0.1',
         },
       },

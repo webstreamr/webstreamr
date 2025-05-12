@@ -26,7 +26,7 @@ export class MeineCloud implements Handler {
       return Promise.resolve([]);
     }
 
-    const html = await this.fetcher.text(ctx, `https://meinecloud.click/movie/${parseImdbId(id).id}`);
+    const html = await this.fetcher.text(ctx, new URL(`https://meinecloud.click/movie/${parseImdbId(id).id}`));
 
     const $ = cheerio.load(html);
 

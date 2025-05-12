@@ -17,17 +17,19 @@ export class Fetcher {
     this.ipUserAgentCache = new TTLCache({ max: 1024, ttl: 86400000 }); // 24h
   }
 
-  readonly text = async (ctx: Context, uriOrRequest: string | Request, opts?: FetchOptions): Promise<string> => {
-    this.logger.info(`Fetch ${uriOrRequest}`);
+  readonly text = async (ctx: Context, url: URL, opts?: FetchOptions): Promise<string> => {
+    this.logger.info(`Fetch ${url}`);
 
     const response = await this.fetch(
-      uriOrRequest,
+      url.href,
       {
         ...opts,
         headers: {
           ...opts?.headers,
           'User-Agent': this.createUserAgentForIp(ctx.ip),
+          'Forwarded': `for=${ctx.ip}`,
           'X-Forwarded-For': ctx.ip,
+          'X-Forwarded-Proto': url.protocol.slice(0, -1),
           'X-Real-IP': ctx.ip,
         },
       },
