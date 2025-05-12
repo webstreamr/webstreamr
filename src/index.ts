@@ -3,7 +3,7 @@ import makeFetchHappen from 'make-fetch-happen';
 import { flag } from 'country-emoji';
 import winston from 'winston';
 import { landingTemplate } from './landingTemplate';
-import { FrenchCloud, Handler, KinoKiste, MeineCloud } from './handler';
+import { FrenchCloud, Handler, KinoKiste, MeineCloud, MostraGuarda } from './handler';
 import { Dropload, EmbedExtractors, SuperVideo } from './embed-extractor';
 import { buildManifest, Fetcher } from './utils';
 import { Config, UrlResult } from './types';
@@ -43,6 +43,7 @@ const handlers: Handler[] = [
   new FrenchCloud(fetcher, embedExtractors),
   new KinoKiste(fetcher, embedExtractors),
   new MeineCloud(fetcher, embedExtractors),
+  new MostraGuarda(fetcher, embedExtractors),
 ];
 
 addon.use((_req: Request, res: Response, next: NextFunction) => {
