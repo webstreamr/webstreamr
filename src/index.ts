@@ -14,6 +14,7 @@ addon.set('trust proxy', true);
 
 const fetcher = new Fetcher(makeFetchHappen.defaults({
   cachePath: `${fs.realpathSync(os.tmpdir())}/webstreamr`,
+  maxSockets: 5,
 }));
 
 const embedExtractors = new EmbedExtractors([
