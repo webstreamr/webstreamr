@@ -16,6 +16,18 @@
       "description": "Automerge non-major updates",
       "matchUpdateTypes": ["minor", "patch", "digest", "lockFileMaintenance"],
       "automerge": true
+    },
+    {
+     "description": "Update types once per week",
+      "matchDatasources": ["npm"],
+      "matchPackageNames": ["/^@types/"],
+      "extends": ["schedule:weekly"]
+    },
+    {
+      "description": "Update user-agents once per month",
+      "matchDatasources": ["npm"],
+      "matchPackageNames": ["/^user-agents$/"],
+      "extends": ["schedule:monthly"]
     }
   ]
 }
