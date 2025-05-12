@@ -9,7 +9,7 @@ const fetcher = new Fetcher();
 const mostraguarda = new MostraGuarda(fetcher, new EmbedExtractors([new Dropload(fetcher), new SuperVideo(fetcher)]));
 const ctx: Context = { ip: '127.0.0.1' };
 
-describe('FrenchCloud', () => {
+describe('MostraGuarda', () => {
   test('does not handle non imdb movies', async () => {
     const streams = await mostraguarda.handle(ctx, 'kitsu:123');
 
