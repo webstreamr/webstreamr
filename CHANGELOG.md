@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.1](https://github.com/webstreamr/webstreamr/compare/v0.10.0...v0.10.1) (2025-05-12)
+
+
+### Bug Fixes
+
+* remove cache-control headers ([4da2567](https://github.com/webstreamr/webstreamr/commit/4da2567ab21ff16ebc068326e07e5190d6a66a2b))
+
 ## [0.10.0](https://github.com/webstreamr/webstreamr/compare/v0.9.0...v0.10.0) (2025-05-12)
 
 
