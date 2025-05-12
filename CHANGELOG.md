@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.9.0](https://github.com/webstreamr/webstreamr/compare/v0.8.0...v0.9.0) (2025-05-12)
+
+
+### Features
+
+* **handler:** add MostraGuarda ([02c9ae3](https://github.com/webstreamr/webstreamr/commit/02c9ae3b1b7b384a4c3a98861b4a26e32b40ed5e))
+* **manifest:** show supported content types for each config/handler ([23eb87e](https://github.com/webstreamr/webstreamr/commit/23eb87e9db00d60b132527deb2815dd526be5212))
+
 ## [0.8.0](https://github.com/webstreamr/webstreamr/compare/v0.7.1...v0.8.0) (2025-05-12)
 
 
