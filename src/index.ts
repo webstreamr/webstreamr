@@ -1,9 +1,10 @@
 import express, { NextFunction, Request, Response } from 'express';
 import makeFetchHappen from 'make-fetch-happen';
+import { flag } from 'country-emoji';
 import { landingTemplate } from './landingTemplate';
 import { Handler, KinoKiste, MeineCloud } from './handler';
 import { Dropload, EmbedExtractors, SuperVideo } from './embed-extractor';
-import { buildManifest, Fetcher, fulfillAllPromises, iso2ToFlag, logInfo } from './utils';
+import { buildManifest, Fetcher, fulfillAllPromises, logInfo } from './utils';
 import { Config, UrlResult } from './types';
 import fs from 'node:fs';
 import * as os from 'node:os';
@@ -132,7 +133,7 @@ addon.get('/:config/stream/:type/:id.json', async function (req: Request, res: R
       title += ` | 💾 ${bytes.format(urlResult.bytes, { unitSeparator: ' ' })}`;
     }
     if (urlResult.language) {
-      title += ` | ${iso2ToFlag(urlResult.language)}`;
+      title += ` | ${flag(urlResult.language)}`;
     }
 
     return {

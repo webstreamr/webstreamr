@@ -1,4 +1,4 @@
-import { iso2ToFlag } from './language';
+import { flag } from 'country-emoji';
 import { Handler } from '../handler';
 import { Config, ManifestWithConfig } from '../types';
 
@@ -29,7 +29,7 @@ export const buildManifest = (handlers: Handler[], config: Config): ManifestWith
     manifest.config.push({
       key: handler.id,
       type: 'checkbox',
-      title: `${handler.languages.map(language => iso2ToFlag(language) + ' ' + language.toUpperCase()).join(', ')} | ${handler.label}`,
+      title: `${handler.languages.map(language => flag(language) + ' ' + language.toUpperCase()).join(', ')} | ${handler.label}`,
       ...(handler.id in config && { default: 'checked' }),
     });
   });
