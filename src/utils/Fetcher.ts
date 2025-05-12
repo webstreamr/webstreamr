@@ -1,19 +1,19 @@
 import { FetchInterface, FetchOptions } from 'make-fetch-happen';
 import TTLCache from '@isaacs/ttlcache';
 import UserAgent from 'user-agents';
-import { Logger, createLogger } from 'winston';
+import winston from 'winston';
 import { Context } from '../types';
 
 export class Fetcher {
   private readonly fetch: FetchInterface;
 
-  private readonly logger: Logger;
+  private readonly logger: winston.Logger;
 
   private readonly ipUserAgentCache: TTLCache<string, string>;
 
-  constructor(fetch: FetchInterface, logger: Logger | undefined = undefined) {
+  constructor(fetch: FetchInterface, logger: winston.Logger) {
     this.fetch = fetch;
-    this.logger = logger || createLogger();
+    this.logger = logger;
     this.ipUserAgentCache = new TTLCache({ max: 1024, ttl: 86400000 }); // 24h
   }
 

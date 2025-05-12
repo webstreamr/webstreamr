@@ -1,5 +1,6 @@
-import { Fetcher } from './Fetcher';
 import makeFetchHappen from 'make-fetch-happen';
+import winston from 'winston';
+import { Fetcher } from './Fetcher';
 import { Context } from '../types';
 
 const mockedFetch = jest.fn();
@@ -10,7 +11,7 @@ jest.mock('make-fetch-happen', () => ({
   },
 }));
 
-const fetcher = new Fetcher(makeFetchHappen.defaults());
+const fetcher = new Fetcher(makeFetchHappen.defaults(), winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
 
 describe('fetch', () => {
   const ctx: Context = { ip: '127.0.0.1' };
