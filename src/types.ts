@@ -12,5 +12,5 @@ export interface UrlResult {
   sourceId: string;
   height: number | undefined;
   bytes: number | undefined;
-  language: string | undefined;
+  countryCode: string | undefined;
 }

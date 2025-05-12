@@ -32,7 +32,7 @@ describe('MeineCloud', () => {
       sourceId: 'supervideo',
       height: 720,
       bytes: 1073741824,
-      language: 'de',
+      countryCode: 'de',
     });
     expect(streams[0]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
     expect(streams[1]).toStrictEqual({
@@ -41,7 +41,7 @@ describe('MeineCloud', () => {
       sourceId: 'dropload',
       height: 1080,
       bytes: 1395864371,
-      language: 'de',
+      countryCode: 'de',
     });
     expect(streams[1]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
   });

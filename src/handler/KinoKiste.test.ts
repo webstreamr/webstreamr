@@ -32,7 +32,7 @@ describe('KinoKiste', () => {
       sourceId: 'supervideo',
       height: 720,
       bytes: 733793484,
-      language: 'de',
+      countryCode: 'de',
     });
     expect(streams[0]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
     expect(streams[1]).toStrictEqual({
@@ -41,7 +41,7 @@ describe('KinoKiste', () => {
       sourceId: 'dropload',
       height: 720,
       bytes: 733793484,
-      language: 'de',
+      countryCode: 'de',
     });
     expect(streams[1]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
   });

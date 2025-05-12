@@ -32,7 +32,7 @@ describe('FrenchCloud', () => {
       sourceId: 'supervideo',
       height: 720,
       bytes: 966682214,
-      language: 'fr',
+      countryCode: 'fr',
     });
     expect(streams[0]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
     expect(streams[1]).toStrictEqual({
@@ -41,7 +41,7 @@ describe('FrenchCloud', () => {
       sourceId: 'dropload',
       height: 720,
       bytes: 966682214,
-      language: 'fr',
+      countryCode: 'fr',
     });
     expect(streams[1]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
   });

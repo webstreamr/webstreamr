@@ -154,8 +154,8 @@ addon.get('/:config/stream/:type/:id.json', async function (req: Request, res: R
     if (urlResult.bytes) {
       title += ` | 💾 ${bytes.format(urlResult.bytes, { unitSeparator: ' ' })}`;
     }
-    if (urlResult.language) {
-      title += ` | ${flag(urlResult.language)}`;
+    if (urlResult.countryCode) {
+      title += ` | ${flag(urlResult.countryCode)}`;
     }
 
     return {

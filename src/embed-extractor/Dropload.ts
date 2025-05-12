@@ -18,7 +18,7 @@ export class Dropload implements EmbedExtractor {
 
   readonly supports = (url: URL): boolean => null !== url.host.match(/dropload/);
 
-  readonly extract = async (ctx: Context, url: URL, language: string) => {
+  readonly extract = async (ctx: Context, url: URL, countryCode: string) => {
     const normalizedUrl = url.toString().replace('/e/', '').replace('/embed-', '/');
     const html = await this.fetcher.text(ctx, new URL(normalizedUrl));
 
@@ -32,7 +32,7 @@ export class Dropload implements EmbedExtractor {
       sourceId: this.id,
       height: parseInt(heightMatch[1] as string) as number,
       bytes: bytes.parse(sizeMatch[1] as string) as number,
-      language,
+      countryCode,
     };
   };
 }

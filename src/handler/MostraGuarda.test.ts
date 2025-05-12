@@ -32,7 +32,7 @@ describe('MostraGuarda', () => {
       sourceId: 'supervideo',
       height: 720,
       bytes: 1181116006,
-      language: 'it',
+      countryCode: 'it',
     });
     expect(streams[0]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
     expect(streams[1]).toStrictEqual({
@@ -41,7 +41,7 @@ describe('MostraGuarda', () => {
       sourceId: 'dropload',
       height: 720,
       bytes: 1181116006,
-      language: 'it',
+      countryCode: 'it',
     });
     expect(streams[1]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
   });

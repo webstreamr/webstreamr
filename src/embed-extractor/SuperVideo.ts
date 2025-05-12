@@ -18,7 +18,7 @@ export class SuperVideo implements EmbedExtractor {
 
   readonly supports = (url: URL): boolean => null !== url.host.match(/supervideo/);
 
-  readonly extract = async (ctx: Context, url: URL, language: string) => {
+  readonly extract = async (ctx: Context, url: URL, countryCode: string) => {
     const normalizedUrl = url.toString().replace('/e/', '/').replace('/embed-', '/');
     const html = await this.fetcher.text(ctx, new URL(normalizedUrl));
 
@@ -30,7 +30,7 @@ export class SuperVideo implements EmbedExtractor {
       sourceId: this.id,
       height: parseInt(heightAndSizeMatch[1] as string) as number,
       bytes: bytes.parse(heightAndSizeMatch[2] as string) as number,
-      language,
+      countryCode,
     };
   };
 }

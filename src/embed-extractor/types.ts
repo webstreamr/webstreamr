@@ -9,5 +9,5 @@ export interface EmbedExtractor {
 
   readonly supports: (url: URL) => boolean;
 
-  readonly extract: (ctx: Context, url: URL, language: string) => Promise<UrlResult>;
+  readonly extract: (ctx: Context, url: URL, countryCode: string) => Promise<UrlResult>;
 }

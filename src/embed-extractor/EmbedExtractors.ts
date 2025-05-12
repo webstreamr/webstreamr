@@ -12,7 +12,7 @@ export class EmbedExtractors {
     this.urlResultCache = new TTLCache({ max: 1024 });
   }
 
-  readonly handle = async (ctx: Context, url: URL, language: string): Promise<UrlResult> => {
+  readonly handle = async (ctx: Context, url: URL, countryCode: string): Promise<UrlResult> => {
     let urlResult = this.urlResultCache.get(url.href);
     if (urlResult) {
       return urlResult;
@@ -23,7 +23,7 @@ export class EmbedExtractors {
       throw new Error(`No embed extractor found that supports url ${url}`);
     }
 
-    urlResult = await embedExtractor.extract(ctx, url, language);
+    urlResult = await embedExtractor.extract(ctx, url, countryCode);
     this.urlResultCache.set(url.href, urlResult, { ttl: embedExtractor.ttl });
 
     return urlResult;
