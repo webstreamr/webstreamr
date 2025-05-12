@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.10.0](https://github.com/webstreamr/webstreamr/compare/v0.9.0...v0.10.0) (2025-05-12)
+
+
+### Features
+
+* **handler:** add VerHdLink ([44e140c](https://github.com/webstreamr/webstreamr/commit/44e140c696178075e1cafc79a788ae477ebb702d))
+
+
+### Bug Fixes
+
+* add language to sourceId for better grouping / binge watching ([3d4129f](https://github.com/webstreamr/webstreamr/commit/3d4129fbd9575c8227a98c6c094ff7fc9ace78e9))
+
+
+### Code Refactoring
+
+* rename language to countryCode to avoid confusion ([8ba6fdb](https://github.com/webstreamr/webstreamr/commit/8ba6fdb5dff1a946b9f4eedaeb7538539a342491))
+
+
+### Tests
+
+* **handler:** use correct name in describe block ([9145e9c](https://github.com/webstreamr/webstreamr/commit/9145e9c3f69c474b1e18448eb1e10876a2e7fb2a))
+
 ## [0.9.0](https://github.com/webstreamr/webstreamr/compare/v0.8.0...v0.9.0) (2025-05-12)
 
 
