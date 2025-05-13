@@ -1,5 +1,6 @@
 import express, { NextFunction, Request, Response } from 'express';
 import axios from 'axios';
+import axiosRetry from 'axios-retry';
 import { setupCache } from 'axios-cache-interceptor';
 import winston from 'winston';
 import { FrenchCloud, Handler, KinoKiste, MeineCloud, MostraGuarda, VerHdLink } from './handler';
@@ -19,7 +20,10 @@ const logger = winston.createLogger({
   ],
 });
 
-const fetcher = new Fetcher(setupCache(axios), logger);
+setupCache(axios);
+axiosRetry(axios, { retries: 3, retryDelay: axiosRetry.exponentialDelay });
+
+const fetcher = new Fetcher(axios, logger);
 
 const embedExtractors = new EmbedExtractorRegistry(logger, fetcher);
 

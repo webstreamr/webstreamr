@@ -32,6 +32,7 @@
   "dependencies": {
     "@isaacs/ttlcache": "^1.4.1",
     "axios-cache-interceptor": "^1.8.0",
+    "axios-retry": "^4.5.0",
     "bytes": "^3.1.2",
     "cheerio": "^1.0.0",
     "country-emoji": "^1.5.6",
