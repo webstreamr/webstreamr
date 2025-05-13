@@ -267,9 +267,15 @@ export function landingTemplate(manifest: ManifestWithConfig) {
       <h2 class="description">${manifest.description || ''}</h2>
 
       <div class="separator"></div>
-      
+
+      <p>
+        The source code can be found on <a href="https://github.com/webstreamr/webstreamr" target="_blank">GitHub</a>
+      </p>
+
+      <div class="separator"></div>
+
       ${process.env['CONFIGURATION_DESCRIPTION'] || ''}
-      
+
       <div class="separator"></div>
 
       <h3 class="gives">This addon has more :</h3>
