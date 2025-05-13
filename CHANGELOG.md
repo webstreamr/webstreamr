@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.11.0](https://github.com/webstreamr/webstreamr/compare/v0.10.1...v0.11.0) (2025-05-13)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency typescript-eslint to v8.32.1 ([#37](https://github.com/webstreamr/webstreamr/issues/37)) ([11fa19c](https://github.com/webstreamr/webstreamr/commit/11fa19c1650a0b9dc5a294ecb4d67a9727f1495b))
+* **manifest:** don't show language codes next to flags ([ce6aca5](https://github.com/webstreamr/webstreamr/commit/ce6aca5c776b76c06184cab4be9caa9059b40788))
+
+
+### Features
+
+* **handler:** return handler issues as streams for better visibility ([d4db807](https://github.com/webstreamr/webstreamr/commit/d4db80789a1a8648d01f9a08d4f74f91e2d91b38))
+
+
+### Code Refactoring
+
+* extract stream resolving and add tests ([5665c6a](https://github.com/webstreamr/webstreamr/commit/5665c6a6ff375e0600eb2a7c4b7cb3e5ca768a5a))
+* **routes:** use router via controllers ([15a53de](https://github.com/webstreamr/webstreamr/commit/15a53de504d19e321b8ca233b539269e63a914f4))
+* simplify embed extractor handling and hide away internals ([68a7a41](https://github.com/webstreamr/webstreamr/commit/68a7a41606fe84c23f9484cdb253288d6afb09f6))
+
 ## [0.10.1](https://github.com/webstreamr/webstreamr/compare/v0.10.0...v0.10.1) (2025-05-12)
 
 
