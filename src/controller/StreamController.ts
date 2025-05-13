@@ -1,22 +1,22 @@
 import { Request, Response, Router } from 'express';
-import { Stream } from 'stremio-addon-sdk';
-import { Handler } from '../handler';
-import { Config, UrlResult } from '../types';
-import bytes from 'bytes';
-import { flag } from 'country-emoji';
 import winston from 'winston';
+import { Handler } from '../handler';
+import { Config } from '../types';
+import { StreamResolver } from '../utils';
 
 export class StreamController {
   public readonly router: Router;
 
   private readonly logger: winston.Logger;
   private readonly handlers: Handler[];
+  private readonly streamResolver: StreamResolver;
 
-  constructor(logger: winston.Logger, handlers: Handler[]) {
+  constructor(logger: winston.Logger, handlers: Handler[], streams: StreamResolver) {
     this.router = Router();
 
     this.logger = logger;
     this.handlers = handlers;
+    this.streamResolver = streams;
 
     this.router.get('/:config/stream/:type/:id.json', this.getStream.bind(this));
   }
@@ -28,83 +28,11 @@ export class StreamController {
 
     this.logger.info(`Search stream for type "${type}" and id "${id}"`);
 
-    res.setHeader('Content-Type', 'application/json');
-
     const selectedHandlers = this.handlers.filter(handler => handler.id in config);
-    if (selectedHandlers.length === 0) {
-      this.logger.info('No handlers configured, bail out');
 
-      res.send(JSON.stringify({
-        streams: [{
-          name: 'WebStreamr',
-          title: '⚠️ No handlers found. Please re-configure the plugin.',
-          ytId: 'E4WlUXrJgy4',
-        }],
-      }));
-      return;
-    }
+    const streams = await this.streamResolver.resolve({ ip: (req.ip as string) }, selectedHandlers, type, id);
 
-    const streams: Stream[] = [];
-
-    const urlResults: UrlResult[] = [];
-    const handlerPromises = selectedHandlers.map(async (handler) => {
-      if (!handler.contentTypes.includes(type)) {
-        return;
-      }
-
-      try {
-        const handlerUrlResults = await handler.handle({ ip: req.ip as string }, id);
-        this.logger.info(`${handler.id} returned ${handlerUrlResults.length} urls`);
-
-        urlResults.push(...(handlerUrlResults.filter(handlerUrlResult => handlerUrlResult !== undefined)));
-      } catch (err) {
-        streams.push({
-          name: 'WebStreamr',
-          title: `❌ Error with handler "${handler.id}". Please check the logs or create an issue if this persists.`,
-          ytId: 'E4WlUXrJgy4',
-        });
-        this.logger.error(`${handler.id} error: ` + err);
-      }
-    });
-    await Promise.all(handlerPromises);
-
-    urlResults.sort((a, b) => {
-      const heightComparison = (b.height ?? 0) - (a.height ?? 0);
-      if (heightComparison !== 0) {
-        return heightComparison;
-      }
-
-      return (b.bytes ?? 0) - (a.bytes ?? 0);
-    });
-
-    this.logger.info(`Return ${urlResults.length} streams`);
-
-    streams.push(
-      ...urlResults.map((urlResult) => {
-        let name = 'WebStreamr';
-        if (urlResult.height) {
-          name += ` ${urlResult.height}p`;
-        }
-
-        let title = urlResult.label;
-        if (urlResult.bytes) {
-          title += ` | 💾 ${bytes.format(urlResult.bytes, { unitSeparator: ' ' })}`;
-        }
-        if (urlResult.countryCode) {
-          title += ` | ${flag(urlResult.countryCode)}`;
-        }
-
-        return {
-          url: urlResult.url.toString(),
-          name,
-          title,
-          behaviourHints: {
-            group: `webstreamr-${urlResult.sourceId}`,
-          },
-        };
-      }),
-    );
-
+    res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({ streams }));
   };
 }

@@ -4,7 +4,7 @@ import winston from 'winston';
 import { FrenchCloud, Handler, KinoKiste, MeineCloud, MostraGuarda, VerHdLink } from './handler';
 import { EmbedExtractorRegistry } from './embed-extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
-import { Fetcher } from './utils';
+import { Fetcher, StreamResolver } from './utils';
 import fs from 'node:fs';
 import * as os from 'node:os';
 
@@ -50,7 +50,7 @@ addon.use((_req: Request, res: Response, next: NextFunction) => {
 
 addon.use('/', (new ConfigureController(handlers)).router);
 addon.use('/', (new ManifestController(handlers)).router);
-addon.use('/', (new StreamController(logger, handlers)).router);
+addon.use('/', (new StreamController(logger, handlers, new StreamResolver(logger))).router);
 
 addon.get('/', (_req: Request, res: Response) => {
   res.redirect('/configure');
