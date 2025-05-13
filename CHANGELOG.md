@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.1](https://github.com/webstreamr/webstreamr/compare/v0.11.0...v0.11.1) (2025-05-13)
+
+
+### Miscellaneous Chores
+
+* add link to GitHub on configure page, improve content type info ([1be7564](https://github.com/webstreamr/webstreamr/commit/1be75645d3cb9da507b8636453d21e6519cdaacc))
+
 ## [0.11.0](https://github.com/webstreamr/webstreamr/compare/v0.10.1...v0.11.0) (2025-05-13)
 
 
