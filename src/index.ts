@@ -1,12 +1,11 @@
 import express, { NextFunction, Request, Response } from 'express';
-import makeFetchHappen from 'make-fetch-happen';
+import axios from 'axios';
+import { setupCache } from 'axios-cache-interceptor';
 import winston from 'winston';
 import { FrenchCloud, Handler, KinoKiste, MeineCloud, MostraGuarda, VerHdLink } from './handler';
 import { EmbedExtractorRegistry } from './embed-extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
 import { Fetcher, StreamResolver } from './utils';
-import fs from 'node:fs';
-import * as os from 'node:os';
 
 const logger = winston.createLogger({
   transports: [
@@ -20,13 +19,7 @@ const logger = winston.createLogger({
   ],
 });
 
-const fetcher = new Fetcher(
-  makeFetchHappen.defaults({
-    cachePath: `${fs.realpathSync(os.tmpdir())}/webstreamr`,
-    maxSockets: 5,
-  }),
-  logger,
-);
+const fetcher = new Fetcher(setupCache(axios), logger);
 
 const embedExtractors = new EmbedExtractorRegistry(fetcher);
 

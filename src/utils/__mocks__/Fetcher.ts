@@ -1,17 +1,16 @@
-import { FetchOptions } from 'make-fetch-happen';
-import makeFetchHappen from 'make-fetch-happen';
 import fs from 'node:fs';
+import Axios, { AxiosRequestConfig } from 'axios';
 import slugify from 'slugify';
 import { Context } from '../../types';
 
 export class Fetcher {
-  readonly text = async (_ctx: Context, url: URL, opts?: FetchOptions): Promise<string> => {
+  readonly text = async (_ctx: Context, url: URL, config?: AxiosRequestConfig): Promise<string> => {
     const path = `${__dirname}/../__fixtures__/Fetcher/${slugify(url.href)}`;
 
     if (fs.existsSync(path)) {
       return fs.readFileSync(path).toString();
     } else {
-      const text = await (await makeFetchHappen.defaults()(url.href, opts)).text();
+      const text = (await Axios.create().get(url.href, config)).data;
 
       fs.writeFileSync(path, text);
 

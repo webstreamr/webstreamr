@@ -1,36 +1,28 @@
-import makeFetchHappen from 'make-fetch-happen';
 import winston from 'winston';
+import axios from 'axios';
+import AxiosMockAdapter from 'axios-mock-adapter';
 import { Fetcher } from './Fetcher';
 import { Context } from '../types';
 
-const mockedFetch = jest.fn();
-jest.mock('make-fetch-happen', () => ({
-  __esModule: true,
-  default: {
-    defaults: () => mockedFetch,
-  },
-}));
+const axiosMock = new AxiosMockAdapter(axios);
 
-const fetcher = new Fetcher(makeFetchHappen.defaults(), winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
+const fetcher = new Fetcher(axios, winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
 
 describe('fetch', () => {
   const ctx: Context = { ip: '127.0.0.1' };
 
-  test('text throws if the response is not OK', async () => {
-    mockedFetch.mockResolvedValue({ ok: false, status: 500, statusText: 'some error happened' });
-
-    await expect(fetcher.text(ctx, new URL('https://some-url.test/'))).rejects.toThrow(new Error('HTTP error: 500 - some error happened'));
-  });
-
   test('text passes successful response through setting headers', async () => {
-    mockedFetch.mockResolvedValue({ ok: true, text: () => Promise.resolve('some text') });
+    axiosMock.onGet().reply(200, 'some text');
+    const axiosSpy = jest.spyOn(axios, 'get');
 
-    const responseText = await fetcher.text(ctx, new URL('https://some-url.test/'), { headers: { 'User-Agent': 'jest' } });
+    const responseText1 = await fetcher.text(ctx, new URL('https://some-url.test/'));
+    const responseText2 = await fetcher.text(ctx, new URL('https://some-url.test/'), { headers: { 'User-Agent': 'jest' } });
 
-    expect(responseText).toBe('some text');
-    expect(mockedFetch).toHaveBeenCalledWith(
-      'https://some-url.test/',
-      {
+    expect(responseText1).toBe('some text');
+    expect(responseText2).toStrictEqual(responseText1);
+
+    expect(axiosSpy).toHaveBeenCalledWith(
+      'https://some-url.test/', {
         headers: {
           'User-Agent': expect.not.stringMatching(/jest/),
           'Forwarded': 'for=127.0.0.1',

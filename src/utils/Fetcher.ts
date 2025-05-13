@@ -1,31 +1,31 @@
-import { FetchInterface, FetchOptions } from 'make-fetch-happen';
+import { AxiosInstance, AxiosRequestConfig } from 'axios';
 import TTLCache from '@isaacs/ttlcache';
 import UserAgent from 'user-agents';
 import winston from 'winston';
 import { Context } from '../types';
 
 export class Fetcher {
-  private readonly fetch: FetchInterface;
+  private readonly axios: AxiosInstance;
 
   private readonly logger: winston.Logger;
 
   private readonly ipUserAgentCache: TTLCache<string, string>;
 
-  constructor(fetch: FetchInterface, logger: winston.Logger) {
-    this.fetch = fetch;
+  constructor(axios: AxiosInstance, logger: winston.Logger) {
+    this.axios = axios;
     this.logger = logger;
     this.ipUserAgentCache = new TTLCache({ max: 1024, ttl: 86400000 }); // 24h
   }
 
-  readonly text = async (ctx: Context, url: URL, opts?: FetchOptions): Promise<string> => {
+  readonly text = async (ctx: Context, url: URL, config?: AxiosRequestConfig): Promise<string> => {
     this.logger.info(`Fetch ${url}`);
 
-    const response = await this.fetch(
+    const response = await this.axios.get(
       url.href,
       {
-        ...opts,
+        ...config,
         headers: {
-          ...opts?.headers,
+          ...config?.headers,
           'User-Agent': this.createUserAgentForIp(ctx.ip),
           'Forwarded': `for=${ctx.ip}`,
           'X-Forwarded-For': ctx.ip,
@@ -35,11 +35,7 @@ export class Fetcher {
       },
     );
 
-    if (!response.ok) {
-      throw new Error(`HTTP error: ${response.status} - ${response.statusText}`);
-    }
-
-    return await response.text();
+    return response.data;
   };
 
   private readonly createUserAgentForIp = (ip: string): string => {
