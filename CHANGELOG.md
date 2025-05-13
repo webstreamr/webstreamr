@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.12.0](https://github.com/webstreamr/webstreamr/compare/v0.11.2...v0.12.0) (2025-05-13)
+
+
+### Miscellaneous Chores
+
+* **extractor:** log more infos ([349c26c](https://github.com/webstreamr/webstreamr/commit/349c26c9b53495b10b7836f92fc8ab9868f167ae))
+
+
+### Features
+
+* **fetcher:** add retry capability using axios-retry ([1c1ffcd](https://github.com/webstreamr/webstreamr/commit/1c1ffcd19b37d6b24c93677fc30b35b44e64cab2))
+
 ## [0.11.2](https://github.com/webstreamr/webstreamr/compare/v0.11.1...v0.11.2) (2025-05-13)
 
 

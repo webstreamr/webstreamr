@@ -1,7 +1,7 @@
 {
   "name": "webstreamr",
   "description": "Provides HTTP URLs from streaming websites.",
-  "version": "0.11.2",
+  "version": "0.12.0",
   "type": "commonjs",
   "scripts": {
     "analyse": "tsc --noEmit --project ./tsconfig.dev.json",
