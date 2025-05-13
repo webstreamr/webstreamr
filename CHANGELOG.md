@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.2](https://github.com/webstreamr/webstreamr/compare/v0.11.1...v0.11.2) (2025-05-13)
+
+
+### Code Refactoring
+
+* **fetcher:** switch to axios for hopefully better errors ([41d2f23](https://github.com/webstreamr/webstreamr/commit/41d2f238129125d548fde7930f55a74fb712087d))
+
 ## [0.11.1](https://github.com/webstreamr/webstreamr/compare/v0.11.0...v0.11.1) (2025-05-13)
 
 
