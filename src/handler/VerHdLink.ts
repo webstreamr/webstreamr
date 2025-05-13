@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import { Handler } from './types';
 import { Fetcher, parseImdbId } from '../utils';
-import { EmbedExtractors } from '../embed-extractor';
+import { EmbedExtractorRegistry } from '../embed-extractor';
 import { Context } from '../types';
 
 export class VerHdLink implements Handler {
@@ -14,9 +14,9 @@ export class VerHdLink implements Handler {
   readonly languages = ['es', 'mx'];
 
   private readonly fetcher: Fetcher;
-  private readonly embedExtractors: EmbedExtractors;
+  private readonly embedExtractors: EmbedExtractorRegistry;
 
-  constructor(fetcher: Fetcher, embedExtractors: EmbedExtractors) {
+  constructor(fetcher: Fetcher, embedExtractors: EmbedExtractorRegistry) {
     this.fetcher = fetcher;
     this.embedExtractors = embedExtractors;
   }
@@ -45,7 +45,7 @@ export class VerHdLink implements Handler {
           return $('[data-link!=""]', el)
             .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
             .toArray()
-            .filter(embedUrl => embedUrl.host.match(/(dropload|supervideo)/))
+            .filter(embedUrl => !embedUrl.host.match(/verhdlink/))
             .map(embedUrl => this.embedExtractors.handle(ctx, embedUrl, countryCode));
         }),
     );

@@ -53,7 +53,7 @@ export class StreamController {
         const handlerUrlResults = await handler.handle({ ip: req.ip as string }, id);
         this.logger.info(`${handler.id} returned ${handlerUrlResults.length} urls`);
 
-        urlResults.push(...handlerUrlResults);
+        urlResults.push(...(handlerUrlResults.filter(handlerUrlResult => handlerUrlResult !== undefined)));
       } catch (err) {
         this.logger.error(`${handler.id} error: ` + err);
       }

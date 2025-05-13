@@ -1,18 +1,24 @@
 import TTLCache from '@isaacs/ttlcache';
 import { EmbedExtractor } from './types';
 import { Context, UrlResult } from '../types';
+import { Fetcher } from '../utils';
+import { Dropload } from './Dropload';
+import { SuperVideo } from './SuperVideo';
 
-export class EmbedExtractors {
+export class EmbedExtractorRegistry {
   private readonly embedExtractors: EmbedExtractor[];
 
   private readonly urlResultCache: TTLCache<string, UrlResult>;
 
-  constructor(embedExtractors: EmbedExtractor[]) {
-    this.embedExtractors = embedExtractors;
+  constructor(fetcher: Fetcher) {
+    this.embedExtractors = [
+      new Dropload(fetcher),
+      new SuperVideo(fetcher),
+    ];
     this.urlResultCache = new TTLCache({ max: 1024 });
   }
 
-  readonly handle = async (ctx: Context, url: URL, countryCode: string): Promise<UrlResult> => {
+  readonly handle = async (ctx: Context, url: URL, countryCode: string): Promise<UrlResult | undefined> => {
     let urlResult = this.urlResultCache.get(url.href);
     if (urlResult) {
       return urlResult;
@@ -20,7 +26,7 @@ export class EmbedExtractors {
 
     const embedExtractor = this.embedExtractors.find(embedExtractor => embedExtractor.supports(url));
     if (undefined === embedExtractor) {
-      throw new Error(`No embed extractor found that supports url ${url}`);
+      return undefined;
     }
 
     urlResult = await embedExtractor.extract(ctx, url, countryCode);

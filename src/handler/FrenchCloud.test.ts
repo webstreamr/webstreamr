@@ -1,29 +1,29 @@
 import { FrenchCloud } from './FrenchCloud';
 import { Fetcher } from '../utils';
-import { Dropload, EmbedExtractors, SuperVideo } from '../embed-extractor';
+import { EmbedExtractorRegistry } from '../embed-extractor';
 import { Context } from '../types';
 jest.mock('../utils/Fetcher');
 
 // @ts-expect-error No constructor args needed
 const fetcher = new Fetcher();
-const frenchcloud = new FrenchCloud(fetcher, new EmbedExtractors([new Dropload(fetcher), new SuperVideo(fetcher)]));
+const handler = new FrenchCloud(fetcher, new EmbedExtractorRegistry(fetcher));
 const ctx: Context = { ip: '127.0.0.1' };
 
 describe('FrenchCloud', () => {
   test('does not handle non imdb movies', async () => {
-    const streams = await frenchcloud.handle(ctx, 'kitsu:123');
+    const streams = await handler.handle(ctx, 'kitsu:123');
 
     expect(streams).toHaveLength(0);
   });
 
   test('handles non-existent movies gracefully', async () => {
-    const streams = await frenchcloud.handle(ctx, 'tt12345678');
+    const streams = await handler.handle(ctx, 'tt12345678');
 
     expect(streams).toHaveLength(0);
   });
 
   test('handle imdb the devil\'s bath', async () => {
-    const streams = await frenchcloud.handle(ctx, 'tt29141112');
+    const streams = (await handler.handle(ctx, 'tt29141112')).filter(stream => stream !== undefined);
 
     expect(streams).toHaveLength(2);
     expect(streams[0]).toStrictEqual({

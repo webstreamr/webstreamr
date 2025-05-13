@@ -2,7 +2,7 @@ import express, { NextFunction, Request, Response } from 'express';
 import makeFetchHappen from 'make-fetch-happen';
 import winston from 'winston';
 import { FrenchCloud, Handler, KinoKiste, MeineCloud, MostraGuarda, VerHdLink } from './handler';
-import { Dropload, EmbedExtractors, SuperVideo } from './embed-extractor';
+import { EmbedExtractorRegistry } from './embed-extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
 import { Fetcher } from './utils';
 import fs from 'node:fs';
@@ -28,10 +28,7 @@ const fetcher = new Fetcher(
   logger,
 );
 
-const embedExtractors = new EmbedExtractors([
-  new Dropload(fetcher),
-  new SuperVideo(fetcher),
-]);
+const embedExtractors = new EmbedExtractorRegistry(fetcher);
 
 const handlers: Handler[] = [
   new FrenchCloud(fetcher, embedExtractors),
