@@ -5,12 +5,14 @@ import { MeineCloud, MostraGuarda } from '../handler';
 import { Fetcher } from './Fetcher';
 import { Context } from '../types';
 jest.mock('../utils/Fetcher');
-const streamResolver = new StreamResolver(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
+
+const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
+const streamResolver = new StreamResolver(logger);
 const ctx: Context = { ip: '127.0.0.1' };
 
 // @ts-expect-error No constructor args needed
 const fetcher = new Fetcher();
-const embedExtractorRegistry = new EmbedExtractorRegistry(fetcher);
+const embedExtractorRegistry = new EmbedExtractorRegistry(logger, fetcher);
 const meineCloud = new MeineCloud(fetcher, embedExtractorRegistry);
 const mostraGuarda = new MostraGuarda(fetcher, embedExtractorRegistry);
 

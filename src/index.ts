@@ -21,7 +21,7 @@ const logger = winston.createLogger({
 
 const fetcher = new Fetcher(setupCache(axios), logger);
 
-const embedExtractors = new EmbedExtractorRegistry(fetcher);
+const embedExtractors = new EmbedExtractorRegistry(logger, fetcher);
 
 const handlers: Handler[] = [
   new FrenchCloud(fetcher, embedExtractors),

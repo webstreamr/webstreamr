@@ -1,11 +1,13 @@
+import winston from 'winston';
 import { EmbedExtractorRegistry } from './EmbedExtractorRegistry';
 import { Context } from '../types';
 import { Fetcher } from '../utils';
 jest.mock('../utils/Fetcher');
 
+const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 // @ts-expect-error No constructor args needed
 const fetcher = new Fetcher();
-const embedExtractors = new EmbedExtractorRegistry(fetcher);
+const embedExtractors = new EmbedExtractorRegistry(logger, fetcher);
 
 describe('EmbedExtractorRegistry', () => {
   const ctx: Context = { ip: '127.0.0.1' };
