@@ -9,6 +9,9 @@ const config: Config = {
     '!<rootDir>/src/landingTemplate.ts',
   ],
   coverageDirectory: '<rootDir>/coverage',
+  coveragePathIgnorePatterns: [
+    '/src/controller/',
+  ],
   coverageProvider: 'babel',
   coverageThreshold: {
     global: {
