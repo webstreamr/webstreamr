@@ -29,7 +29,7 @@ export const buildManifest = (handlers: Handler[], config: Config): ManifestWith
     manifest.config.push({
       key: handler.id,
       type: 'checkbox',
-      title: `${handler.languages.map(language => `${flag(language)} ${language.toUpperCase()}`).join(', ')} | ${handler.label} (${handler.contentTypes.join(', ')})`,
+      title: `${handler.languages.map(language => flag(language)).join(' ')} | ${handler.label} (${handler.contentTypes.join(', ')})`,
       ...(handler.id in config && { default: 'checked' }),
     });
   });
