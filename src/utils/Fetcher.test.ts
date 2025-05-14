@@ -27,6 +27,7 @@ describe('fetch', () => {
         headers: {
           'User-Agent': expect.not.stringMatching(/jest/),
           'Forwarded': 'for=127.0.0.1',
+          'Referer': 'https://some-url.test',
           'X-Forwarded-For': '127.0.0.1',
           'X-Forwarded-Proto': 'https',
           'X-Real-IP': '127.0.0.1',
@@ -54,6 +55,7 @@ describe('fetch', () => {
         headers: {
           'User-Agent': expect.not.stringMatching(/jest/),
           'Forwarded': 'for=127.0.0.1',
+          'Referer': 'https://some-url.test',
           'X-Forwarded-For': '127.0.0.1',
           'X-Forwarded-Proto': 'https',
           'X-Real-IP': '127.0.0.1',
