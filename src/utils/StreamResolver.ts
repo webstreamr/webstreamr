@@ -30,7 +30,7 @@ export class StreamResolver {
       }
 
       try {
-        const handlerUrlResults = await handler.handle(ctx, id);
+        const handlerUrlResults = await handler.handle(ctx, type, id);
         this.logger.info(`${handler.id} returned ${handlerUrlResults.length} urls`);
 
         urlResults.push(...(handlerUrlResults.filter(handlerUrlResult => handlerUrlResult !== undefined)));

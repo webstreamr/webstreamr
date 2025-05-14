@@ -13,19 +13,19 @@ const ctx: Context = { ip: '127.0.0.1' };
 
 describe('VerHdLink', () => {
   test('does not handle non imdb movies', async () => {
-    const streams = await handler.handle(ctx, 'kitsu:123');
+    const streams = await handler.handle(ctx, 'movie', 'kitsu:123');
 
     expect(streams).toHaveLength(0);
   });
 
   test('handles non-existent movies gracefully', async () => {
-    const streams = await handler.handle(ctx, 'tt12345678');
+    const streams = await handler.handle(ctx, 'movie', 'tt12345678');
 
     expect(streams).toHaveLength(0);
   });
 
   test('handle titanic', async () => {
-    const streams = (await handler.handle(ctx, 'tt0120338')).filter(stream => stream !== undefined);
+    const streams = (await handler.handle(ctx, 'movie', 'tt0120338')).filter(stream => stream !== undefined);
 
     expect(streams).toHaveLength(4);
     expect(streams[0]).toStrictEqual({

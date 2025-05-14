@@ -13,19 +13,19 @@ const ctx: Context = { ip: '127.0.0.1' };
 
 describe('Eurostreaming', () => {
   test('does not handle non imdb series', async () => {
-    const streams = await handler.handle(ctx, 'kitsu:123');
+    const streams = await handler.handle(ctx, 'series', 'kitsu:123');
 
     expect(streams).toHaveLength(0);
   });
 
   test('handles non-existent series gracefully', async () => {
-    const streams = await handler.handle(ctx, 'tt12345678:1:1');
+    const streams = await handler.handle(ctx, 'series', 'tt12345678:1:1');
 
     expect(streams).toHaveLength(0);
   });
 
   test('handle imdb black mirror s2e4', async () => {
-    const streams = (await handler.handle(ctx, 'tt2085059:2:4')).filter(stream => stream !== undefined);
+    const streams = (await handler.handle(ctx, 'series', 'tt2085059:2:4')).filter(stream => stream !== undefined);
 
     expect(streams).toHaveLength(2);
     expect(streams[0]).toStrictEqual({

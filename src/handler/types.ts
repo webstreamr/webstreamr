@@ -9,5 +9,5 @@ export interface Handler {
 
   readonly languages: string[];
 
-  readonly handle: (ctx: Context, id: string) => Promise<(UrlResult | undefined)[]>;
+  readonly handle: (ctx: Context, type: string, id: string) => Promise<(UrlResult | undefined)[]>;
 }

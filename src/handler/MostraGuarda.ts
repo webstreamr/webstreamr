@@ -21,7 +21,7 @@ export class MostraGuarda implements Handler {
     this.embedExtractors = embedExtractors;
   }
 
-  readonly handle = async (ctx: Context, id: string) => {
+  readonly handle = async (ctx: Context, _type: string, id: string) => {
     if (!id.startsWith('tt')) {
       return [];
     }
