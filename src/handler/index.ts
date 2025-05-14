@@ -1,3 +1,4 @@
+export * from './CineHDPlus';
 export * from './FrenchCloud';
 export * from './KinoKiste';
 export * from './MeineCloud';

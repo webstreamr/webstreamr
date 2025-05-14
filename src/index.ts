@@ -3,7 +3,7 @@ import axios from 'axios';
 import axiosRetry from 'axios-retry';
 import { setupCache } from 'axios-cache-interceptor';
 import winston from 'winston';
-import { FrenchCloud, Handler, KinoKiste, MeineCloud, MostraGuarda, VerHdLink } from './handler';
+import { CineHDPlus, FrenchCloud, Handler, KinoKiste, MeineCloud, MostraGuarda, VerHdLink } from './handler';
 import { EmbedExtractorRegistry } from './embed-extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
 import { Fetcher, StreamResolver } from './utils';
@@ -28,11 +28,16 @@ const fetcher = new Fetcher(axios, logger);
 const embedExtractors = new EmbedExtractorRegistry(logger, fetcher);
 
 const handlers: Handler[] = [
-  new FrenchCloud(fetcher, embedExtractors),
+  // ES / MX
+  new CineHDPlus(fetcher, embedExtractors),
+  new VerHdLink(fetcher, embedExtractors),
+  // DE
   new KinoKiste(fetcher, embedExtractors),
   new MeineCloud(fetcher, embedExtractors),
+  // FR
+  new FrenchCloud(fetcher, embedExtractors),
+  // IT
   new MostraGuarda(fetcher, embedExtractors),
-  new VerHdLink(fetcher, embedExtractors),
 ];
 
 const addon = express();
