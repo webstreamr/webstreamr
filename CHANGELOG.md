@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.14.0](https://github.com/webstreamr/webstreamr/compare/v0.13.0...v0.14.0) (2025-05-14)
+
+
+### Miscellaneous Chores
+
+* **fetcher:** always set same URL host as referer ([281cba8](https://github.com/webstreamr/webstreamr/commit/281cba8da188eaf3136fdaed08fc836ac1dabf15))
+
+
+### Features
+
+* **fetcher:** retry all 4xx requests too ([728bc7e](https://github.com/webstreamr/webstreamr/commit/728bc7ecba01e3dce80cf9e234b752cecdf6db34))
+
+
+### Code Refactoring
+
+* **handler:** also pass content type to handle() ([956ba68](https://github.com/webstreamr/webstreamr/commit/956ba68550776d6888acb47d01bbe1c690198e36))
+
 ## [0.13.0](https://github.com/webstreamr/webstreamr/compare/v0.12.0...v0.13.0) (2025-05-14)
 
 
