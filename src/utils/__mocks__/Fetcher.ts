@@ -17,4 +17,18 @@ export class Fetcher {
       return text;
     }
   };
+
+  readonly textPost = async (_ctx: Context, url: URL, data: unknown, config?: AxiosRequestConfig): Promise<string> => {
+    const path = `${__dirname}/../__fixtures__/Fetcher/post-${slugify(url.href)}-${slugify(JSON.stringify(data))}`;
+
+    if (fs.existsSync(path)) {
+      return fs.readFileSync(path).toString();
+    } else {
+      const text = (await Axios.create().post(url.href, data, config)).data;
+
+      fs.writeFileSync(path, text);
+
+      return text;
+    }
+  };
 }

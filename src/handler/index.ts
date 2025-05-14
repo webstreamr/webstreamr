@@ -1,4 +1,5 @@
 export * from './CineHDPlus';
+export * from './Eurostreaming';
 export * from './FrenchCloud';
 export * from './KinoKiste';
 export * from './MeineCloud';

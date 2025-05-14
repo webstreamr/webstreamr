@@ -22,7 +22,35 @@ describe('fetch', () => {
     expect(responseText2).toStrictEqual(responseText1);
 
     expect(axiosSpy).toHaveBeenCalledWith(
-      'https://some-url.test/', {
+      'https://some-url.test/',
+      {
+        headers: {
+          'User-Agent': expect.not.stringMatching(/jest/),
+          'Forwarded': 'for=127.0.0.1',
+          'X-Forwarded-For': '127.0.0.1',
+          'X-Forwarded-Proto': 'https',
+          'X-Real-IP': '127.0.0.1',
+        },
+      },
+    );
+  });
+
+  test('textPost passes successful response through setting headers', async () => {
+    axiosMock.onPost().reply(200, 'some text');
+    const axiosSpy = jest.spyOn(axios, 'post');
+
+    const responseText1 = await fetcher.textPost(ctx, new URL('https://some-url.test/'), { foo: 'bar' });
+    const responseText2 = await fetcher.textPost(ctx, new URL('https://some-url.test/'), { foo: 'bar' }, { headers: { 'User-Agent': 'jest' } });
+
+    expect(responseText1).toBe('some text');
+    expect(responseText2).toStrictEqual(responseText1);
+
+    expect(axiosSpy).toHaveBeenCalledWith(
+      'https://some-url.test/',
+      {
+        foo: 'bar',
+      },
+      {
         headers: {
           'User-Agent': expect.not.stringMatching(/jest/),
           'Forwarded': 'for=127.0.0.1',

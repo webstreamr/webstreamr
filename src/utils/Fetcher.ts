@@ -20,22 +20,31 @@ export class Fetcher {
   readonly text = async (ctx: Context, url: URL, config?: AxiosRequestConfig): Promise<string> => {
     this.logger.info(`Fetch ${url}`);
 
-    const response = await this.axios.get(
-      url.href,
-      {
-        ...config,
-        headers: {
-          ...config?.headers,
-          'User-Agent': this.createUserAgentForIp(ctx.ip),
-          'Forwarded': `for=${ctx.ip}`,
-          'X-Forwarded-For': ctx.ip,
-          'X-Forwarded-Proto': url.protocol.slice(0, -1),
-          'X-Real-IP': ctx.ip,
-        },
-      },
-    );
+    const response = await this.axios.get(url.href, this.getConfig(ctx, url, config));
 
     return response.data;
+  };
+
+  readonly textPost = async (ctx: Context, url: URL, data: unknown, config?: AxiosRequestConfig): Promise<string> => {
+    this.logger.info(`Fetch post ${url}`);
+
+    const response = await this.axios.post(url.href, data, this.getConfig(ctx, url, config));
+
+    return response.data;
+  };
+
+  private readonly getConfig = (ctx: Context, url: URL, config?: AxiosRequestConfig): AxiosRequestConfig => {
+    return {
+      ...config,
+      headers: {
+        ...config?.headers,
+        'User-Agent': this.createUserAgentForIp(ctx.ip),
+        'Forwarded': `for=${ctx.ip}`,
+        'X-Forwarded-For': ctx.ip,
+        'X-Forwarded-Proto': url.protocol.slice(0, -1),
+        'X-Real-IP': ctx.ip,
+      },
+    };
   };
 
   private readonly createUserAgentForIp = (ip: string): string => {

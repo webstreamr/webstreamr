@@ -3,7 +3,16 @@ import axios from 'axios';
 import axiosRetry from 'axios-retry';
 import { setupCache } from 'axios-cache-interceptor';
 import winston from 'winston';
-import { CineHDPlus, FrenchCloud, Handler, KinoKiste, MeineCloud, MostraGuarda, VerHdLink } from './handler';
+import {
+  CineHDPlus,
+  Eurostreaming,
+  FrenchCloud,
+  Handler,
+  KinoKiste,
+  MeineCloud,
+  MostraGuarda,
+  VerHdLink,
+} from './handler';
 import { EmbedExtractorRegistry } from './embed-extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
 import { Fetcher, StreamResolver } from './utils';
@@ -37,6 +46,7 @@ const handlers: Handler[] = [
   // FR
   new FrenchCloud(fetcher, embedExtractors),
   // IT
+  new Eurostreaming(fetcher, embedExtractors),
   new MostraGuarda(fetcher, embedExtractors),
 ];
 
