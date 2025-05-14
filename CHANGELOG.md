@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.13.0](https://github.com/webstreamr/webstreamr/compare/v0.12.0...v0.13.0) (2025-05-14)
+
+
+### Features
+
+* **handler:** add CineHDPlus (es/mx series) ([7f26047](https://github.com/webstreamr/webstreamr/commit/7f2604725021e8ba1ce6befd1ec837d2a9931d9b))
+* **handler:** add Eurostream (it series) ([c6d9bfb](https://github.com/webstreamr/webstreamr/commit/c6d9bfb01b5831de8fad10cd6edfa84b837463b5))
+
 ## [0.12.0](https://github.com/webstreamr/webstreamr/compare/v0.11.2...v0.12.0) (2025-05-13)
 
 
