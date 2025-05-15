@@ -269,7 +269,7 @@ export function landingTemplate(manifest: ManifestWithConfig) {
       <div class="separator"></div>
 
       <p>
-        The source code can be found on <a href="https://github.com/webstreamr/webstreamr" target="_blank">GitHub</a>
+        The source code can be found on <a href="https://github.com/webstreamr/webstreamr" target="_blank">GitHub</a>.
       </p>
 
       <div class="separator"></div>
