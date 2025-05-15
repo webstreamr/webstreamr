@@ -37,13 +37,13 @@ export class Fetcher {
     return {
       ...config,
       headers: {
-        ...config?.headers,
         'User-Agent': this.createUserAgentForIp(ctx.ip),
         'Forwarded': `for=${ctx.ip}`,
         'Referer': `${url.protocol}//${url.host}`,
         'X-Forwarded-For': ctx.ip,
         'X-Forwarded-Proto': url.protocol.slice(0, -1),
         'X-Real-IP': ctx.ip,
+        ...config?.headers,
       },
     };
   };
