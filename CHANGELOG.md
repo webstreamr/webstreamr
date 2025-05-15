@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.14.1](https://github.com/webstreamr/webstreamr/compare/v0.14.0...v0.14.1) (2025-05-15)
+
+
+### Miscellaneous Chores
+
+* add missing dot after GitHub link ([91a6935](https://github.com/webstreamr/webstreamr/commit/91a6935a91e08ab6d99c9fd119e46c6c832c6065))
+* **deps:** update dependency ts-jest to v29.3.3 ([#44](https://github.com/webstreamr/webstreamr/issues/44)) ([acd29d8](https://github.com/webstreamr/webstreamr/commit/acd29d8f39b2c84e613d82832e9269b73fa07240))
+
+
+### Bug Fixes
+
+* add back cache-control headers ([c1da2d5](https://github.com/webstreamr/webstreamr/commit/c1da2d5552b8b9f7e64d21bcc3984975b7210e36))
+* **fetcher:** do not overwrite config ([e8ed101](https://github.com/webstreamr/webstreamr/commit/e8ed101176bda776b1650ed1d561affa8070963c))
+
 ## [0.14.0](https://github.com/webstreamr/webstreamr/compare/v0.13.0...v0.14.0) (2025-05-14)
 
 
