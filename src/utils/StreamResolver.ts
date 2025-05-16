@@ -52,7 +52,12 @@ export class StreamResolver {
         return heightComparison;
       }
 
-      return b.bytes - a.bytes;
+      const bytesComparison = b.bytes - a.bytes;
+      if (bytesComparison !== 0) {
+        return bytesComparison;
+      }
+
+      return a.label.localeCompare(b.label);
     });
 
     this.logger.info(`Return ${urlResults.length} streams`);

@@ -66,17 +66,17 @@ describe('resolve', () => {
       {
         url: expect.any(String),
         name: 'WebStreamr 720p',
-        title: 'SuperVideo | 💾 1.1 GB | 🇮🇹',
+        title: 'Dropload | 💾 1.1 GB | 🇮🇹',
         behaviourHints: {
-          bingeGroup: 'webstreamr-supervideo_it',
+          bingeGroup: 'webstreamr-dropload_it',
         },
       },
       {
         url: expect.any(String),
         name: 'WebStreamr 720p',
-        title: 'Dropload | 💾 1.1 GB | 🇮🇹',
+        title: 'SuperVideo | 💾 1.1 GB | 🇮🇹',
         behaviourHints: {
-          bingeGroup: 'webstreamr-dropload_it',
+          bingeGroup: 'webstreamr-supervideo_it',
         },
       },
       {
