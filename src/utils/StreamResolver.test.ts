@@ -59,7 +59,7 @@ describe('resolve', () => {
         url: expect.any(String),
         name: 'WebStreamr 1080p',
         title: 'Dropload | 💾 1.3 GB | 🇩🇪',
-        behaviourHints: {
+        behaviorHints: {
           bingeGroup: 'webstreamr-dropload_de',
         },
       },
@@ -67,7 +67,7 @@ describe('resolve', () => {
         url: expect.any(String),
         name: 'WebStreamr 720p',
         title: 'Dropload | 💾 1.1 GB | 🇮🇹',
-        behaviourHints: {
+        behaviorHints: {
           bingeGroup: 'webstreamr-dropload_it',
         },
       },
@@ -75,7 +75,7 @@ describe('resolve', () => {
         url: expect.any(String),
         name: 'WebStreamr 720p',
         title: 'SuperVideo | 💾 1.1 GB | 🇮🇹',
-        behaviourHints: {
+        behaviorHints: {
           bingeGroup: 'webstreamr-supervideo_it',
         },
       },
@@ -83,7 +83,7 @@ describe('resolve', () => {
         url: expect.any(String),
         name: 'WebStreamr 720p',
         title: 'SuperVideo | 💾 1 GB | 🇩🇪',
-        behaviourHints: {
+        behaviorHints: {
           bingeGroup: 'webstreamr-supervideo_de',
         },
       },
@@ -91,7 +91,7 @@ describe('resolve', () => {
         url: expect.any(String),
         name: 'WebStreamr',
         title: 'DoodStream | 🇩🇪',
-        behaviourHints: {
+        behaviorHints: {
           bingeGroup: 'webstreamr-doodstream_de',
           notWebReady: true,
           proxyHeaders: {
@@ -105,7 +105,7 @@ describe('resolve', () => {
         url: expect.any(String),
         name: 'WebStreamr',
         title: 'DoodStream | 🇮🇹',
-        behaviourHints: {
+        behaviorHints: {
           bingeGroup: 'webstreamr-doodstream_it',
           notWebReady: true,
           proxyHeaders: {

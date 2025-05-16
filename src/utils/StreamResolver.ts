@@ -81,7 +81,7 @@ export class StreamResolver {
           url: urlResult.url.toString(),
           name,
           title,
-          behaviourHints: {
+          behaviorHints: {
             bingeGroup: `webstreamr-${urlResult.sourceId}`,
             ...(urlResult.requestHeaders !== undefined && {
               notWebReady: true,
