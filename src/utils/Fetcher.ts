@@ -37,7 +37,7 @@ export class Fetcher {
     return {
       ...config,
       headers: {
-        'User-Agent': this.getUserAgentForIp(ctx.ip),
+        'User-Agent': this.createUserAgentForIp(ctx.ip),
         'Forwarded': `for=${ctx.ip}`,
         'Referer': `${url.origin}`,
         'X-Forwarded-For': ctx.ip,
@@ -48,7 +48,7 @@ export class Fetcher {
     };
   };
 
-  public readonly getUserAgentForIp = (ip: string): string => {
+  private readonly createUserAgentForIp = (ip: string): string => {
     let userAgent = this.ipUserAgentCache.get(ip);
     if (userAgent) {
       return userAgent;

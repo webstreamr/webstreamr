@@ -94,38 +94,6 @@ describe('resolve', () => {
       {
         url: expect.any(String),
         name: 'WebStreamr',
-        title: 'Mixdrop | 💾 1.17 GB | 🇩🇪',
-        behaviorHints: {
-          bingeGroup: 'webstreamr-mixdrop_de',
-          notWebReady: true,
-          proxyHeaders: {
-            request: {
-              'Referer': 'https://mixdrop.ag',
-              'User-Agent': 'Fake UserAgent',
-            },
-          },
-          videoSize: 1256277934,
-        },
-      },
-      {
-        url: expect.any(String),
-        name: 'WebStreamr',
-        title: 'Mixdrop | 💾 1.09 GB | 🇮🇹',
-        behaviorHints: {
-          bingeGroup: 'webstreamr-mixdrop_it',
-          notWebReady: true,
-          proxyHeaders: {
-            request: {
-              'Referer': 'https://mixdrop.ag',
-              'User-Agent': 'Fake UserAgent',
-            },
-          },
-          videoSize: 1170378588,
-        },
-      },
-      {
-        url: expect.any(String),
-        name: 'WebStreamr',
         title: 'DoodStream | 🇩🇪',
         behaviorHints: {
           bingeGroup: 'webstreamr-doodstream_de',

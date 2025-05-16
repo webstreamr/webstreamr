@@ -31,8 +31,4 @@ export class Fetcher {
       return text;
     }
   };
-
-  public readonly getUserAgentForIp = (): string => {
-    return 'Fake UserAgent';
-  };
 }
