@@ -77,7 +77,7 @@ export class StreamResolver {
           name,
           title,
           behaviourHints: {
-            group: `webstreamr-${urlResult.sourceId}`,
+            bingeGroup: `webstreamr-${urlResult.sourceId}`,
             ...(urlResult.requestHeaders !== undefined && {
               notWebReady: true,
               proxyHeaders: { request: urlResult.requestHeaders },

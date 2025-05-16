@@ -60,7 +60,7 @@ describe('resolve', () => {
         name: 'WebStreamr 1080p',
         title: 'Dropload | 💾 1.3 GB | 🇩🇪',
         behaviourHints: {
-          group: 'webstreamr-dropload_de',
+          bingeGroup: 'webstreamr-dropload_de',
         },
       },
       {
@@ -68,7 +68,7 @@ describe('resolve', () => {
         name: 'WebStreamr 720p',
         title: 'SuperVideo | 💾 1.1 GB | 🇮🇹',
         behaviourHints: {
-          group: 'webstreamr-supervideo_it',
+          bingeGroup: 'webstreamr-supervideo_it',
         },
       },
       {
@@ -76,7 +76,7 @@ describe('resolve', () => {
         name: 'WebStreamr 720p',
         title: 'Dropload | 💾 1.1 GB | 🇮🇹',
         behaviourHints: {
-          group: 'webstreamr-dropload_it',
+          bingeGroup: 'webstreamr-dropload_it',
         },
       },
       {
@@ -84,7 +84,7 @@ describe('resolve', () => {
         name: 'WebStreamr 720p',
         title: 'SuperVideo | 💾 1 GB | 🇩🇪',
         behaviourHints: {
-          group: 'webstreamr-supervideo_de',
+          bingeGroup: 'webstreamr-supervideo_de',
         },
       },
       {
@@ -92,7 +92,7 @@ describe('resolve', () => {
         name: 'WebStreamr',
         title: 'DoodStream | 🇩🇪',
         behaviourHints: {
-          group: 'webstreamr-doodstream_de',
+          bingeGroup: 'webstreamr-doodstream_de',
           notWebReady: true,
           proxyHeaders: {
             request: {
@@ -106,7 +106,7 @@ describe('resolve', () => {
         name: 'WebStreamr',
         title: 'DoodStream | 🇮🇹',
         behaviourHints: {
-          group: 'webstreamr-doodstream_it',
+          bingeGroup: 'webstreamr-doodstream_it',
           notWebReady: true,
           proxyHeaders: {
             request: {
