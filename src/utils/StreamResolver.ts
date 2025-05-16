@@ -41,7 +41,7 @@ export class StreamResolver {
           ytId: 'E4WlUXrJgy4',
         });
 
-        this.logger.error(`${handler.id} error: ` + err);
+        this.logger.error(`${handler.id} error: ${err}`);
       }
     });
     await Promise.all(handlerPromises);

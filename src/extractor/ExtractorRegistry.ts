@@ -10,12 +10,12 @@ import { Mixdrop } from './Mixdrop';
 
 export class ExtractorRegistry {
   private readonly logger: winston.Logger;
-  private readonly embedExtractors: Extractor[];
+  private readonly extractors: Extractor[];
   private readonly urlResultCache: TTLCache<string, UrlResult>;
 
   constructor(logger: winston.Logger, fetcher: Fetcher) {
     this.logger = logger;
-    this.embedExtractors = [
+    this.extractors = [
       new DoodStream(fetcher),
       new Dropload(fetcher),
       new Mixdrop(fetcher),
@@ -30,17 +30,21 @@ export class ExtractorRegistry {
       return urlResult;
     }
 
-    const embedExtractor = this.embedExtractors.find(embedExtractor => embedExtractor.supports(url));
-    if (undefined === embedExtractor) {
+    const extractor = this.extractors.find(embedExtractor => embedExtractor.supports(url));
+    if (undefined === extractor) {
       return undefined;
     }
 
-    this.logger.info(`Extract stream URL using ${embedExtractor.id} extractor from ${url}`);
+    this.logger.info(`Extract stream URL using ${extractor.id} extractor from ${url}`);
 
-    urlResult = await embedExtractor.extract(ctx, url, countryCode);
-    if (urlResult) {
-      this.urlResultCache.set(url.href, urlResult, { ttl: embedExtractor.ttl });
+    try {
+      urlResult = await extractor.extract(ctx, url, countryCode);
+    } catch (error) {
+      this.logger.warn(`${extractor.id} error: ` + error);
+      return undefined;
     }
+
+    this.urlResultCache.set(url.href, urlResult, { ttl: extractor.ttl });
 
     return urlResult;
   };
