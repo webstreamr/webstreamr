@@ -19,12 +19,12 @@ export class Mixdrop implements Extractor {
   readonly supports = (url: URL): boolean => null !== url.host.match(/mixdrop/);
 
   readonly extract = async (ctx: Context, url: URL, countryCode: string) => {
-    const normalizedFullUrl = url.toString().replace('/e/', '/f/');
+    const normalizedFullUrl = url.href.replace('/e/', '/f/');
     const fullHtml = await this.fetcher.text(ctx, new URL(normalizedFullUrl));
 
     const sizeMatch = fullHtml.match(/([\d.]+ ?[GM]B)/) as string[];
 
-    const normalizedEmbedUrl = url.toString().replace('/f/', '/e/');
+    const normalizedEmbedUrl = url.href.replace('/f/', '/e/');
     const embedHtml = await this.fetcher.text(ctx, new URL(normalizedEmbedUrl));
 
     return {

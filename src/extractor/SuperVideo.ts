@@ -19,7 +19,7 @@ export class SuperVideo implements Extractor {
   readonly supports = (url: URL): boolean => null !== url.host.match(/supervideo/);
 
   readonly extract = async (ctx: Context, url: URL, countryCode: string) => {
-    const normalizedUrl = url.toString().replace('/e/', '/').replace('/embed-', '/');
+    const normalizedUrl = url.href.replace('/e/', '/').replace('/embed-', '/');
     const html = await this.fetcher.text(ctx, new URL(normalizedUrl));
 
     const heightAndSizeMatch = html.match(/\d{3,}x(\d{3,}), ([\d.]+ ?[GM]B)/) as string[];

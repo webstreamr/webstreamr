@@ -78,7 +78,7 @@ export class StreamResolver {
         }
 
         return {
-          url: urlResult.url.toString(),
+          url: urlResult.url.href,
           name,
           title,
           behaviorHints: {
