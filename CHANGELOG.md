@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.16.1](https://github.com/webstreamr/webstreamr/compare/v0.16.0...v0.16.1) (2025-05-16)
+
+
+### Reverts
+
+* "feat(extractor): implement Mixdrop" ([bb395f0](https://github.com/webstreamr/webstreamr/commit/bb395f03759daaaeffced3d82aec1244c7598fdf))
+
 ## [0.16.0](https://github.com/webstreamr/webstreamr/compare/v0.15.2...v0.16.0) (2025-05-16)
 
 
