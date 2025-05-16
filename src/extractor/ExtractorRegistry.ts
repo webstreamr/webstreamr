@@ -6,6 +6,7 @@ import { Fetcher } from '../utils';
 import { DoodStream } from './DoodStream';
 import { Dropload } from './Dropload';
 import { SuperVideo } from './SuperVideo';
+import { Mixdrop } from './Mixdrop';
 
 export class ExtractorRegistry {
   private readonly logger: winston.Logger;
@@ -17,6 +18,7 @@ export class ExtractorRegistry {
     this.embedExtractors = [
       new DoodStream(fetcher),
       new Dropload(fetcher),
+      new Mixdrop(fetcher),
       new SuperVideo(fetcher),
     ];
     this.urlResultCache = new TTLCache({ max: 1024 });

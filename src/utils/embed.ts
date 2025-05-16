@@ -1,5 +1,7 @@
 import { unpack } from 'unpacker';
 
+export class CouldNotFindStreamLinkInEmbedError extends Error {}
+
 export const extractUrlFromPacked = (html: string, linkRegExps: RegExp[]): URL => {
   const evalMatch = html.match(/eval\(function\(p,a,c,k,e,d\).*\)\)/);
   if (!evalMatch) {
@@ -15,5 +17,5 @@ export const extractUrlFromPacked = (html: string, linkRegExps: RegExp[]): URL =
     }
   }
 
-  throw new Error(`Could not find a stream link in embed`);
+  throw new CouldNotFindStreamLinkInEmbedError(`Could not find a stream link in embed`);
 };
