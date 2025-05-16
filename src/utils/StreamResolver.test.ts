@@ -87,6 +87,34 @@ describe('resolve', () => {
           group: 'webstreamr-supervideo_de',
         },
       },
+      {
+        url: expect.any(String),
+        name: 'WebStreamr',
+        title: 'DoodStream | 🇩🇪',
+        behaviourHints: {
+          group: 'webstreamr-doodstream_de',
+          notWebReady: true,
+          proxyHeaders: {
+            request: {
+              Referer: 'http://dood.to/',
+            },
+          },
+        },
+      },
+      {
+        url: expect.any(String),
+        name: 'WebStreamr',
+        title: 'DoodStream | 🇮🇹',
+        behaviourHints: {
+          group: 'webstreamr-doodstream_it',
+          notWebReady: true,
+          proxyHeaders: {
+            request: {
+              Referer: 'http://dood.to/',
+            },
+          },
+        },
+      },
     ]);
   });
 });

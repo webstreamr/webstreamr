@@ -27,7 +27,7 @@ describe('MostraGuarda', () => {
   test('handle imdb the devil\'s bath', async () => {
     const streams = (await handler.handle(ctx, 'movie', 'tt29141112')).filter(stream => stream !== undefined);
 
-    expect(streams).toHaveLength(2);
+    expect(streams).toHaveLength(3);
     expect(streams[0]).toStrictEqual({
       url: expect.any(URL),
       label: 'SuperVideo',
@@ -46,5 +46,17 @@ describe('MostraGuarda', () => {
       countryCode: 'it',
     });
     expect(streams[1]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
+    expect(streams[2]).toStrictEqual({
+      url: expect.any(URL),
+      label: 'DoodStream',
+      sourceId: 'doodstream_it',
+      height: 0,
+      bytes: 0,
+      countryCode: 'it',
+      requestHeaders: {
+        Referer: 'http://dood.to/',
+      },
+    });
+    expect(streams[2]?.url.href).toMatch(/^https:\/\/.*?token.*?expiry/);
   });
 });

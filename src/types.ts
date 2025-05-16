@@ -12,5 +12,6 @@ export interface UrlResult {
   sourceId: string;
   height: number;
   bytes: number;
-  countryCode: string | undefined;
+  countryCode?: string;
+  requestHeaders?: Record<string, string>;
 }

@@ -78,6 +78,10 @@ export class StreamResolver {
           title,
           behaviourHints: {
             group: `webstreamr-${urlResult.sourceId}`,
+            ...(urlResult.requestHeaders !== undefined && {
+              notWebReady: true,
+              proxyHeaders: { request: urlResult.requestHeaders },
+            }),
           },
         };
       }),
