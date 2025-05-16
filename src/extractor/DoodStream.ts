@@ -24,11 +24,7 @@ export class DoodStream implements Extractor {
 
     const html = await this.fetcher.text(ctx, new URL(normalizedUrl));
 
-    const passMd5Match = html.match(/\/pass_md5\/[\w-]+\/([\w-]+)/);
-    if (!passMd5Match) {
-      // This will happen if either DoodStream does not like our IP or the video is not existing
-      return undefined;
-    }
+    const passMd5Match = html.match(/\/pass_md5\/[\w-]+\/([\w-]+)/) as string[];
 
     const token = passMd5Match[1] as string;
 

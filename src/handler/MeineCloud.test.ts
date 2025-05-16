@@ -27,7 +27,7 @@ describe('MeineCloud', () => {
   test('handle imdb the devil\'s bath', async () => {
     const streams = (await handler.handle(ctx, 'movie', 'tt29141112')).filter(stream => stream !== undefined);
 
-    expect(streams).toHaveLength(3);
+    expect(streams).toHaveLength(4);
     expect(streams[0]).toStrictEqual({
       url: expect.any(URL),
       label: 'SuperVideo',
@@ -48,6 +48,19 @@ describe('MeineCloud', () => {
     expect(streams[1]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
     expect(streams[2]).toStrictEqual({
       url: expect.any(URL),
+      label: 'Mixdrop',
+      sourceId: 'mixdrop_de',
+      height: 0,
+      bytes: 1256277934,
+      countryCode: 'de',
+      requestHeaders: {
+        'Referer': 'https://mixdrop.ag',
+        'User-Agent': 'Fake UserAgent',
+      },
+    });
+    expect(streams[2]?.url.href).toMatch(/^https:\/\/.*?s=.*?e=.*?t=/);
+    expect(streams[3]).toStrictEqual({
+      url: expect.any(URL),
       label: 'DoodStream',
       sourceId: 'doodstream_de',
       height: 0,
@@ -57,6 +70,6 @@ describe('MeineCloud', () => {
         Referer: 'http://dood.to/',
       },
     });
-    expect(streams[2]?.url.href).toMatch(/^https:\/\/.*?token.*?expiry/);
+    expect(streams[3]?.url.href).toMatch(/^https:\/\/.*?token.*?expiry/);
   });
 });
