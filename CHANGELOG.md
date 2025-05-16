@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.16.0](https://github.com/webstreamr/webstreamr/compare/v0.15.2...v0.16.0) (2025-05-16)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @eslint/js to v9.27.0 ([#51](https://github.com/webstreamr/webstreamr/issues/51)) ([8bc30b8](https://github.com/webstreamr/webstreamr/commit/8bc30b8234b2faa9fb0c755bfccddd4d2834844e))
+* **deps:** update dependency eslint to v9.27.0 ([#52](https://github.com/webstreamr/webstreamr/issues/52)) ([16b01a5](https://github.com/webstreamr/webstreamr/commit/16b01a57fd95ad2fbf35d8307d71c659b9c4fc63))
+* **deps:** update dependency ts-jest to v29.3.4 ([#50](https://github.com/webstreamr/webstreamr/issues/50)) ([6027332](https://github.com/webstreamr/webstreamr/commit/60273329ab25dc31e276b9ab80a281b827911d18))
+* rename behaviourHints to behaviorHints 🤦 ([e06b8a2](https://github.com/webstreamr/webstreamr/commit/e06b8a2d95ee7c2e1ce2e6634bad099fc9602b2e))
+* return stream.behaviorHints.videoSize when possible ([07ffe44](https://github.com/webstreamr/webstreamr/commit/07ffe444f3799f54b346fb20bd8735ed1810897e))
+
+
+### Features
+
+* **extractor:** implement Mixdrop ([4c53161](https://github.com/webstreamr/webstreamr/commit/4c53161e98ca6ea24bdc76ba22fdf16785044f2c))
+
+
+### Bug Fixes
+
+* **extractor:** do not throw for broken/outdated link ([63a79f8](https://github.com/webstreamr/webstreamr/commit/63a79f87588bdfc46f72e7c2b01f8a63da9d1c1f))
+
+
+### Code Refactoring
+
+* **extractor:** improve DoodStream comment about no match case ([24f1107](https://github.com/webstreamr/webstreamr/commit/24f1107df8a0a3a5d621b64037d1ca1ae66bdf8c))
+* use url.href instead of url.toString() ([b790cc7](https://github.com/webstreamr/webstreamr/commit/b790cc79543fecf31a24222d1537ae03c03b8d2c))
+
 ## [0.15.2](https://github.com/webstreamr/webstreamr/compare/v0.15.1...v0.15.2) (2025-05-16)
 
 
