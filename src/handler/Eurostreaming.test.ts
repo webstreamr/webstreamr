@@ -1,6 +1,6 @@
 import winston from 'winston';
 import { Eurostreaming } from './Eurostreaming';
-import { EmbedExtractorRegistry } from '../embed-extractor';
+import { ExtractorRegistry } from '../extractor';
 import { Fetcher } from '../utils';
 import { Context } from '../types';
 jest.mock('../utils/Fetcher');
@@ -8,7 +8,7 @@ jest.mock('../utils/Fetcher');
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 // @ts-expect-error No constructor args needed
 const fetcher = new Fetcher();
-const handler = new Eurostreaming(fetcher, new EmbedExtractorRegistry(logger, fetcher));
+const handler = new Eurostreaming(fetcher, new ExtractorRegistry(logger, fetcher));
 const ctx: Context = { ip: '127.0.0.1' };
 
 describe('Eurostreaming', () => {

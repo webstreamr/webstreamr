@@ -13,7 +13,7 @@ import {
   MostraGuarda,
   VerHdLink,
 } from './handler';
-import { EmbedExtractorRegistry } from './embed-extractor';
+import { ExtractorRegistry } from './extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
 import { Fetcher, StreamResolver } from './utils';
 
@@ -38,7 +38,7 @@ axiosRetry(axios, {
 
 const fetcher = new Fetcher(axios, logger);
 
-const embedExtractors = new EmbedExtractorRegistry(logger, fetcher);
+const embedExtractors = new ExtractorRegistry(logger, fetcher);
 
 const handlers: Handler[] = [
   // ES / MX

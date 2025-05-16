@@ -1,11 +1,11 @@
 import randomstring from 'randomstring';
-import { EmbedExtractor } from './types';
+import { Extractor } from './types';
 import { Fetcher } from '../utils';
 import { Context } from '../types';
 
 // DoodStream does not return the pass_md5 from some IPs like e.g. Oracle cloud
 // In such cases a VPN might be needed
-export class DoodStream implements EmbedExtractor {
+export class DoodStream implements Extractor {
   readonly id = 'doodstream';
 
   readonly label = 'DoodStream';

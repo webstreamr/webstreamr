@@ -1,5 +1,5 @@
 import winston from 'winston';
-import { EmbedExtractorRegistry } from '../embed-extractor';
+import { ExtractorRegistry } from '../extractor';
 import { StreamResolver } from './StreamResolver';
 import { MeineCloud, MostraGuarda } from '../handler';
 import { Fetcher } from './Fetcher';
@@ -12,7 +12,7 @@ const ctx: Context = { ip: '127.0.0.1' };
 
 // @ts-expect-error No constructor args needed
 const fetcher = new Fetcher();
-const embedExtractorRegistry = new EmbedExtractorRegistry(logger, fetcher);
+const embedExtractorRegistry = new ExtractorRegistry(logger, fetcher);
 const meineCloud = new MeineCloud(fetcher, embedExtractorRegistry);
 const mostraGuarda = new MostraGuarda(fetcher, embedExtractorRegistry);
 

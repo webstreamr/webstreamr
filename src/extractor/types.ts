@@ -1,6 +1,6 @@
 import { Context, UrlResult } from '../types';
 
-export interface EmbedExtractor {
+export interface Extractor {
   readonly id: string;
 
   readonly label: string;

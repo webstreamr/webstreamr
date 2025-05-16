@@ -1,9 +1,9 @@
-import { EmbedExtractor } from './types';
+import { Extractor } from './types';
 import { extractUrlFromPacked, Fetcher } from '../utils';
 import { Context } from '../types';
 import bytes from 'bytes';
 
-export class Dropload implements EmbedExtractor {
+export class Dropload implements Extractor {
   readonly id = 'dropload';
 
   readonly label = 'Dropload';

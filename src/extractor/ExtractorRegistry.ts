@@ -1,15 +1,15 @@
 import TTLCache from '@isaacs/ttlcache';
 import winston from 'winston';
-import { EmbedExtractor } from './types';
+import { Extractor } from './types';
 import { Context, UrlResult } from '../types';
 import { Fetcher } from '../utils';
 import { DoodStream } from './DoodStream';
 import { Dropload } from './Dropload';
 import { SuperVideo } from './SuperVideo';
 
-export class EmbedExtractorRegistry {
+export class ExtractorRegistry {
   private readonly logger: winston.Logger;
-  private readonly embedExtractors: EmbedExtractor[];
+  private readonly embedExtractors: Extractor[];
   private readonly urlResultCache: TTLCache<string, UrlResult>;
 
   constructor(logger: winston.Logger, fetcher: Fetcher) {

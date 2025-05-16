@@ -1,9 +1,9 @@
 import bytes from 'bytes';
-import { EmbedExtractor } from './types';
+import { Extractor } from './types';
 import { extractUrlFromPacked, Fetcher } from '../utils';
 import { Context } from '../types';
 
-export class SuperVideo implements EmbedExtractor {
+export class SuperVideo implements Extractor {
   readonly id = 'supervideo';
 
   readonly label = 'SuperVideo';

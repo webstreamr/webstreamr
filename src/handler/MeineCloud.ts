@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import { Handler } from './types';
 import { Fetcher, parseImdbId } from '../utils';
-import { EmbedExtractorRegistry } from '../embed-extractor';
+import { ExtractorRegistry } from '../extractor';
 import { Context } from '../types';
 
 export class MeineCloud implements Handler {
@@ -14,9 +14,9 @@ export class MeineCloud implements Handler {
   readonly languages = ['de'];
 
   private readonly fetcher: Fetcher;
-  private readonly embedExtractors: EmbedExtractorRegistry;
+  private readonly embedExtractors: ExtractorRegistry;
 
-  constructor(fetcher: Fetcher, embedExtractors: EmbedExtractorRegistry) {
+  constructor(fetcher: Fetcher, embedExtractors: ExtractorRegistry) {
     this.fetcher = fetcher;
     this.embedExtractors = embedExtractors;
   }
