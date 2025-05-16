@@ -87,6 +87,7 @@ export class StreamResolver {
               notWebReady: true,
               proxyHeaders: { request: urlResult.requestHeaders },
             }),
+            ...(urlResult.bytes && { videoSize: urlResult.bytes }),
           },
         };
       }),

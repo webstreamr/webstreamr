@@ -61,6 +61,7 @@ describe('resolve', () => {
         title: 'Dropload | 💾 1.3 GB | 🇩🇪',
         behaviorHints: {
           bingeGroup: 'webstreamr-dropload_de',
+          videoSize: 1395864371,
         },
       },
       {
@@ -69,6 +70,7 @@ describe('resolve', () => {
         title: 'Dropload | 💾 1.1 GB | 🇮🇹',
         behaviorHints: {
           bingeGroup: 'webstreamr-dropload_it',
+          videoSize: 1181116006,
         },
       },
       {
@@ -77,6 +79,7 @@ describe('resolve', () => {
         title: 'SuperVideo | 💾 1.1 GB | 🇮🇹',
         behaviorHints: {
           bingeGroup: 'webstreamr-supervideo_it',
+          videoSize: 1181116006,
         },
       },
       {
@@ -85,6 +88,7 @@ describe('resolve', () => {
         title: 'SuperVideo | 💾 1 GB | 🇩🇪',
         behaviorHints: {
           bingeGroup: 'webstreamr-supervideo_de',
+          videoSize: 1073741824,
         },
       },
       {
