@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.15.1](https://github.com/webstreamr/webstreamr/compare/v0.15.0...v0.15.1) (2025-05-16)
+
+
+### Bug Fixes
+
+* rename `behaviourHints.group` to `behaviourHints.bingeGroup` ([241e6b0](https://github.com/webstreamr/webstreamr/commit/241e6b0b7745bf3413e1681fb7346a3adc2597ca))
+
 ## [0.15.0](https://github.com/webstreamr/webstreamr/compare/v0.14.1...v0.15.0) (2025-05-16)
 
 
