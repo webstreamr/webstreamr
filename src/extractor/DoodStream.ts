@@ -3,8 +3,6 @@ import { Extractor } from './types';
 import { Fetcher } from '../utils';
 import { Context } from '../types';
 
-// DoodStream does not return the pass_md5 from some IPs like e.g. Oracle cloud
-// In such cases a VPN might be needed
 export class DoodStream implements Extractor {
   readonly id = 'doodstream';
 
@@ -28,6 +26,7 @@ export class DoodStream implements Extractor {
 
     const passMd5Match = html.match(/\/pass_md5\/[\w-]+\/([\w-]+)/);
     if (!passMd5Match) {
+      // This will happen if either DoodStream does not like our IP or the video is not existing
       return undefined;
     }
 
