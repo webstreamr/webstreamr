@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.15.0](https://github.com/webstreamr/webstreamr/compare/v0.14.1...v0.15.0) (2025-05-16)
+
+
+### Features
+
+* **extractor:** try to semi-blindly implement DoodStream support ([8740979](https://github.com/webstreamr/webstreamr/commit/8740979a8097cf7dcbd0bcb1cfdb22463ec4cedb))
+
+
+### Code Refactoring
+
+* **extractor:** remove embed part from extractor ([87ec328](https://github.com/webstreamr/webstreamr/commit/87ec328a66f5b0cdb5870e5149d687bb788c810a))
+* **fetcher:** use origin for the referrer ([938f6cb](https://github.com/webstreamr/webstreamr/commit/938f6cb2c3224b9079e40c11e8cc63252801b9de))
+
 ## [0.14.1](https://github.com/webstreamr/webstreamr/compare/v0.14.0...v0.14.1) (2025-05-15)
 
 
