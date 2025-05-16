@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.15.2](https://github.com/webstreamr/webstreamr/compare/v0.15.1...v0.15.2) (2025-05-16)
+
+
+### Miscellaneous Chores
+
+* compare by label if both height and bytes are the same ([e13ab0c](https://github.com/webstreamr/webstreamr/commit/e13ab0c70ffe7546c3c2a9764def7bf7b697f706))
+
 ## [0.15.1](https://github.com/webstreamr/webstreamr/compare/v0.15.0...v0.15.1) (2025-05-16)
 
 
