@@ -39,7 +39,7 @@ export class Fetcher {
       headers: {
         'User-Agent': this.createUserAgentForIp(ctx.ip),
         'Forwarded': `for=${ctx.ip}`,
-        'Referer': `${url.protocol}//${url.host}`,
+        'Referer': `${url.origin}`,
         'X-Forwarded-For': ctx.ip,
         'X-Forwarded-Proto': url.protocol.slice(0, -1),
         'X-Real-IP': ctx.ip,
