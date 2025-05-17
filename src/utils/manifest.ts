@@ -5,7 +5,7 @@ import { Config, ManifestWithConfig } from '../types';
 export const buildManifest = (handlers: Handler[], config: Config): ManifestWithConfig => {
   const manifest: ManifestWithConfig = {
     id: process.env['MANIFEST_ID'] || 'webstreamr',
-    version: '0.17.0', // x-release-please-version
+    version: '0.18.0', // x-release-please-version
     name: process.env['MANIFEST_NAME'] || 'WebStreamr',
     description: 'Provides HTTP URLs from streaming websites.',
     resources: [
