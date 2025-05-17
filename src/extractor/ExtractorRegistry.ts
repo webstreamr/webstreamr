@@ -28,7 +28,7 @@ export class ExtractorRegistry {
       return urlResult;
     }
 
-    const extractor = this.extractors.find(embedExtractor => embedExtractor.supports(url));
+    const extractor = this.extractors.find(extractor => extractor.supports(url));
     if (undefined === extractor) {
       return undefined;
     }

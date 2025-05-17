@@ -14,11 +14,11 @@ export class Frembed implements Handler {
   readonly languages = ['fr'];
 
   private readonly fetcher: Fetcher;
-  private readonly embedExtractors: ExtractorRegistry;
+  private readonly extractorRegistry: ExtractorRegistry;
 
-  constructor(fetcher: Fetcher, embedExtractors: ExtractorRegistry) {
+  constructor(fetcher: Fetcher, extractorRegistry: ExtractorRegistry) {
     this.fetcher = fetcher;
-    this.embedExtractors = embedExtractors;
+    this.extractorRegistry = extractorRegistry;
   }
 
   readonly handle = async (ctx: Context, _type: string, id: string) => {
@@ -46,7 +46,7 @@ export class Frembed implements Handler {
       }
     }
 
-    return Promise.all(urls.map(url => this.embedExtractors.handle(ctx, url, 'fr')));
+    return Promise.all(urls.map(url => this.extractorRegistry.handle(ctx, url, 'fr')));
   };
 
   private readonly apiCall = async (ctx: Context, url: URL): Promise<string | undefined> => {

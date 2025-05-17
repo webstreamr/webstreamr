@@ -6,9 +6,7 @@ import { Context } from '../types';
 
 export class Fetcher {
   private readonly axios: AxiosInstance;
-
   private readonly logger: winston.Logger;
-
   private readonly ipUserAgentCache: TTLCache<string, string>;
 
   constructor(axios: AxiosInstance, logger: winston.Logger) {

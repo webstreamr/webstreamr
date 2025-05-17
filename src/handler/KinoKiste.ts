@@ -14,11 +14,11 @@ export class KinoKiste implements Handler {
   readonly languages = ['de'];
 
   private readonly fetcher: Fetcher;
-  private readonly embedExtractors: ExtractorRegistry;
+  private readonly extractorRegistry: ExtractorRegistry;
 
-  constructor(fetcher: Fetcher, embedExtractors: ExtractorRegistry) {
+  constructor(fetcher: Fetcher, extractorRegistry: ExtractorRegistry) {
     this.fetcher = fetcher;
-    this.embedExtractors = embedExtractors;
+    this.extractorRegistry = extractorRegistry;
   }
 
   readonly handle = async (ctx: Context, _type: string, id: string) => {
@@ -43,8 +43,8 @@ export class KinoKiste implements Handler {
         .children('[data-link]')
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
-        .filter(embedUrl => !embedUrl.host.match(/kinokiste/))
-        .map(embedUrl => this.embedExtractors.handle(ctx, embedUrl, 'de')),
+        .filter(url => !url.host.match(/kinokiste/))
+        .map(url => this.extractorRegistry.handle(ctx, url, 'de')),
     );
   };
 

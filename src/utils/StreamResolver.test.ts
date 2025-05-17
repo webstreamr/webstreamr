@@ -12,9 +12,9 @@ const ctx: Context = { ip: '127.0.0.1' };
 
 // @ts-expect-error No constructor args needed
 const fetcher = new Fetcher();
-const embedExtractorRegistry = new ExtractorRegistry(logger, fetcher);
-const meineCloud = new MeineCloud(fetcher, embedExtractorRegistry);
-const mostraGuarda = new MostraGuarda(fetcher, embedExtractorRegistry);
+const extractorRegistry = new ExtractorRegistry(logger, fetcher);
+const meineCloud = new MeineCloud(fetcher, extractorRegistry);
+const mostraGuarda = new MostraGuarda(fetcher, extractorRegistry);
 
 describe('resolve', () => {
   test('returns info as stream if no handlers were configured', async () => {

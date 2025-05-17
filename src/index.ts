@@ -39,21 +39,21 @@ axiosRetry(axios, {
 
 const fetcher = new Fetcher(axios, logger);
 
-const embedExtractors = new ExtractorRegistry(logger, fetcher);
+const extractorRegistry = new ExtractorRegistry(logger, fetcher);
 
 const handlers: Handler[] = [
   // ES / MX
-  new CineHDPlus(fetcher, embedExtractors),
-  new VerHdLink(fetcher, embedExtractors),
+  new CineHDPlus(fetcher, extractorRegistry),
+  new VerHdLink(fetcher, extractorRegistry),
   // DE
-  new KinoKiste(fetcher, embedExtractors),
-  new MeineCloud(fetcher, embedExtractors),
+  new KinoKiste(fetcher, extractorRegistry),
+  new MeineCloud(fetcher, extractorRegistry),
   // FR
-  new Frembed(fetcher, embedExtractors),
-  new FrenchCloud(fetcher, embedExtractors),
+  new Frembed(fetcher, extractorRegistry),
+  new FrenchCloud(fetcher, extractorRegistry),
   // IT
-  new Eurostreaming(fetcher, embedExtractors),
-  new MostraGuarda(fetcher, embedExtractors),
+  new Eurostreaming(fetcher, extractorRegistry),
+  new MostraGuarda(fetcher, extractorRegistry),
 ];
 
 const addon = express();
