@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.17.0](https://github.com/webstreamr/webstreamr/compare/v0.16.1...v0.17.0) (2025-05-17)
+
+
+### Miscellaneous Chores
+
+* create ID per request for logging and error response ([f635d6c](https://github.com/webstreamr/webstreamr/commit/f635d6c2330ad4e0cf2ce743092536acbf6f97ee))
+
+
+### Documentation
+
+* add basic README ([827fd88](https://github.com/webstreamr/webstreamr/commit/827fd881108970f3308a13f664009cab40fdc3f8))
+* add some badges to the README ([aac954c](https://github.com/webstreamr/webstreamr/commit/aac954cafc219f4273ba80e4e64cf4290bf54b0f))
+
+
+### Features
+
+* **handler:** limited Frembed support ([8b82215](https://github.com/webstreamr/webstreamr/commit/8b82215c321d7a45575e6efed7adcf74a625d656))
+
+
+### Code Refactoring
+
+* cleanup url and extractorRegistry variable/prop names ([4a705ce](https://github.com/webstreamr/webstreamr/commit/4a705ce0883f78940d03512b9432eb0aec8120e3))
+* use template literal consistently ([f2fb482](https://github.com/webstreamr/webstreamr/commit/f2fb4821e3a4c9ee902c6f846197f8c0381f38e8))
+
 ## [0.16.1](https://github.com/webstreamr/webstreamr/compare/v0.16.0...v0.16.1) (2025-05-16)
 
 
