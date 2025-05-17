@@ -38,7 +38,7 @@ export class ExtractorRegistry {
     try {
       urlResult = await extractor.extract(ctx, url, countryCode);
     } catch (error) {
-      this.logger.warn(`${extractor.id} error: ` + error, ctx);
+      this.logger.warn(`${extractor.id} error: ${error}`, ctx);
       return undefined;
     }
 

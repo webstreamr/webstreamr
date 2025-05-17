@@ -11,7 +11,7 @@ export const extractUrlFromPacked = (html: string, linkRegExps: RegExp[]): URL =
   for (const linkRegexp of linkRegExps) {
     const linkMatch = unpacked.match(linkRegexp);
     if (linkMatch && linkMatch[1]) {
-      return new URL('https://' + linkMatch[1].replace(/^(https:)?\/\//, ''));
+      return new URL(`https://${linkMatch[1].replace(/^(https:)?\/\//, '')}`);
     }
   }
 

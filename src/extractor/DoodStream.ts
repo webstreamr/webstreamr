@@ -31,7 +31,7 @@ export class DoodStream implements Extractor {
     const baseUrl = await this.fetcher.text(ctx, new URL(`http://dood.to${passMd5Match[0]}`));
 
     return {
-      url: new URL(`${baseUrl + randomstring.generate(10)}?token=${token}&expiry=${Date.now()}`),
+      url: new URL(`${baseUrl}${randomstring.generate(10)}?token=${token}&expiry=${Date.now()}`),
       label: this.label,
       sourceId: `${this.id}_${countryCode.toLowerCase()}`,
       height: 0,
