@@ -32,6 +32,7 @@ describe('fetch', () => {
           'X-Forwarded-Proto': 'https',
           'X-Real-IP': '127.0.0.1',
         },
+        responseType: 'text',
       },
     );
   });
@@ -60,6 +61,7 @@ describe('fetch', () => {
           'X-Forwarded-Proto': 'https',
           'X-Real-IP': '127.0.0.1',
         },
+        responseType: 'text',
       },
     );
 
@@ -77,6 +79,7 @@ describe('fetch', () => {
           'X-Forwarded-Proto': 'https',
           'X-Real-IP': '127.0.0.1',
         },
+        responseType: 'text',
       },
     );
   });

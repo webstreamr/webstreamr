@@ -10,7 +10,7 @@ export class Fetcher {
     if (fs.existsSync(path)) {
       return fs.readFileSync(path).toString();
     } else {
-      const text = (await Axios.create().get(url.href, config)).data;
+      const text = (await Axios.create().get(url.href, this.getConfig(config))).data;
 
       fs.writeFileSync(path, text);
 
@@ -24,11 +24,18 @@ export class Fetcher {
     if (fs.existsSync(path)) {
       return fs.readFileSync(path).toString();
     } else {
-      const text = (await Axios.create().post(url.href, data, config)).data;
+      const text = (await Axios.create().post(url.href, data, this.getConfig(config))).data;
 
       fs.writeFileSync(path, text);
 
       return text;
     }
+  };
+
+  private readonly getConfig = (config?: AxiosRequestConfig): AxiosRequestConfig => {
+    return {
+      responseType: 'text',
+      ...config,
+    };
   };
 }

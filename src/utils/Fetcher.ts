@@ -35,6 +35,7 @@ export class Fetcher {
 
   private readonly getConfig = (ctx: Context, url: URL, config?: AxiosRequestConfig): AxiosRequestConfig => {
     return {
+      responseType: 'text',
       ...config,
       headers: {
         'User-Agent': this.createUserAgentForIp(ctx.ip),

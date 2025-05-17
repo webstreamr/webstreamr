@@ -6,6 +6,7 @@ import winston from 'winston';
 import {
   CineHDPlus,
   Eurostreaming,
+  Frembed,
   FrenchCloud,
   Handler,
   KinoKiste,
@@ -48,6 +49,7 @@ const handlers: Handler[] = [
   new KinoKiste(fetcher, embedExtractors),
   new MeineCloud(fetcher, embedExtractors),
   // FR
+  new Frembed(fetcher, embedExtractors),
   new FrenchCloud(fetcher, embedExtractors),
   // IT
   new Eurostreaming(fetcher, embedExtractors),
