@@ -1,6 +1,6 @@
 import winston from 'winston';
 import { buildManifest } from './manifest';
-import { KinoKiste } from '../handler';
+import { KinoKiste, MeineCloud, VerHdLink } from '../handler';
 import { Fetcher } from './Fetcher';
 import { ExtractorRegistry } from '../extractor';
 
@@ -16,17 +16,35 @@ describe('buildManifest', () => {
   });
 
   test('has unchecked handler without a config', () => {
-    const manifest = buildManifest([new KinoKiste(fetcher, new ExtractorRegistry(logger, fetcher))], {});
+    const extractorRegistry = new ExtractorRegistry(logger, fetcher);
+    const handlers = [
+      new VerHdLink(fetcher, extractorRegistry),
+      new KinoKiste(fetcher, extractorRegistry),
+      new MeineCloud(fetcher, extractorRegistry),
+    ];
 
-    expect(manifest.config).toHaveLength(1);
-    expect(manifest.config[0]?.default).toBeUndefined();
+    const manifest = buildManifest(handlers, {});
+
+    expect(manifest.config).toStrictEqual([
+      { key: 'de', type: 'checkbox', title: '🇩🇪 (KinoKiste, MeineCloud)' },
+      { key: 'es', type: 'checkbox', title: '🇪🇸 (VerHdLink)' },
+      { key: 'mx', type: 'checkbox', title: '🇲🇽 (VerHdLink)' },
+    ]);
   });
 
   test('has checked handler with appropriate config', () => {
-    const kinokiste = new KinoKiste(fetcher, new ExtractorRegistry(logger, fetcher));
-    const manifest = buildManifest([kinokiste], { [kinokiste.id]: 'on' });
+    const extractorRegistry = new ExtractorRegistry(logger, fetcher);
+    const handlers = [
+      new VerHdLink(fetcher, extractorRegistry),
+      new KinoKiste(fetcher, extractorRegistry),
+      new MeineCloud(fetcher, extractorRegistry),
+    ];
+    const manifest = buildManifest(handlers, { de: 'on' });
 
-    expect(manifest.config).toHaveLength(1);
-    expect(manifest.config[0]?.default).toBe('checked');
+    expect(manifest.config).toStrictEqual([
+      { key: 'de', type: 'checkbox', title: '🇩🇪 (KinoKiste, MeineCloud)', default: 'checked' },
+      { key: 'es', type: 'checkbox', title: '🇪🇸 (VerHdLink)' },
+      { key: 'mx', type: 'checkbox', title: '🇲🇽 (VerHdLink)' },
+    ]);
   });
 });

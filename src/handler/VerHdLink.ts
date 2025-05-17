@@ -34,9 +34,9 @@ export class VerHdLink implements Handler {
       $('._player-mirrors')
         .map((_i, el) => {
           let countryCode = undefined;
-          if ($(el).hasClass('latino')) {
+          if ($(el).hasClass('latino') && 'mx' in ctx.config) {
             countryCode = 'mx';
-          } else if ($(el).hasClass('castellano')) {
+          } else if ($(el).hasClass('castellano') && 'es' in ctx.config) {
             countryCode = 'es';
           } else {
             return [];

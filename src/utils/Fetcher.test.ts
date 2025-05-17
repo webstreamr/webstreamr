@@ -9,7 +9,7 @@ const axiosMock = new AxiosMockAdapter(axios);
 const fetcher = new Fetcher(axios, winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
 
 describe('fetch', () => {
-  const ctx: Context = { id: 'id', ip: '127.0.0.1' };
+  const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on' } };
 
   test('text passes successful response through setting headers', async () => {
     axiosMock.onGet().reply(200, 'some text');

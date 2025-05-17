@@ -25,14 +25,22 @@ export const buildManifest = (handlers: Handler[], config: Config): ManifestWith
     config: [],
   };
 
+  const languageHandlers: Record<string, Handler[]> = {};
   handlers.forEach((handler) => {
-    manifest.config.push({
-      key: handler.id,
-      type: 'checkbox',
-      title: `${handler.languages.map(language => flag(language)).join(' ')} | ${handler.label} (${handler.contentTypes.map(contentType => contentType.replace('movie', 'movies')).join(', ')})`,
-      ...(handler.id in config && { default: 'checked' }),
-    });
+    handler.languages.forEach(language => languageHandlers[language] = [...(languageHandlers[language] ?? []), handler]);
   });
+
+  const sortedLanguageHandlers = Object.entries(languageHandlers)
+    .sort(([languageA], [languageB]) => languageA.localeCompare(languageB));
+
+  for (const [language, handlers] of sortedLanguageHandlers) {
+    manifest.config.push({
+      key: language,
+      type: 'checkbox',
+      title: `${flag(language)} (${handlers.map(handler => handler.label).join(', ')})`,
+      ...(language in config && { default: 'checked' }),
+    });
+  }
 
   return manifest;
 };

@@ -8,7 +8,7 @@ jest.mock('../utils/Fetcher');
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 const streamResolver = new StreamResolver(logger);
-const ctx: Context = { id: 'id', ip: '127.0.0.1' };
+const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on', it: 'on' } };
 
 // @ts-expect-error No constructor args needed
 const fetcher = new Fetcher();

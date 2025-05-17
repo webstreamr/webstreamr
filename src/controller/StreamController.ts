@@ -29,13 +29,14 @@ export class StreamController {
     const ctx: Context = {
       id: res.getHeader('X-Request-ID') as string,
       ip: req.ip as string,
+      config,
     };
 
     this.logger.info(`Search stream for type "${type}" and id "${id}"`, ctx);
 
-    const selectedHandlers = this.handlers.filter(handler => handler.id in config);
+    const handlers = this.handlers.filter(handler => handler.languages.filter(language => language in ctx.config).length);
 
-    const streams = await this.streamResolver.resolve(ctx, selectedHandlers, type, id);
+    const streams = await this.streamResolver.resolve(ctx, handlers, type, id);
 
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({ streams }));
