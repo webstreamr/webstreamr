@@ -23,6 +23,11 @@ export const buildManifest = (handlers: Handler[], config: Config): ManifestWith
       configurationRequired: Object.keys(config).length === 0,
     },
     config: [],
+    // @ts-expect-error inofficial prop needed for add-on claiming on https://stremio-addons.net
+    stremioAddonsConfig: {
+      issuer: 'https://stremio-addons.net',
+      signature: 'eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..LGh2NOomg-FHxI8EM8VB0w.4G41HLQqiuiawXUkV7klGEa09X0HfH-ZHOUe7vGX42elE8U4VxpNfpxpxUfLvZBFxXO5g-unsphRtHxpldMPotKZWeUlBsIVEGG8WiO9ctfYg-SuPL9r9iRQOuupC4D7.pEcMKHkPsL2Ps4xuo0Tg2Q',
+    },
   };
 
   const languageHandlers: Record<string, Handler[]> = {};
