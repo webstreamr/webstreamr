@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.18.0](https://github.com/webstreamr/webstreamr/compare/v0.17.0...v0.18.0) (2025-05-17)
+
+
+### Miscellaneous Chores
+
+* **manifest:** add stremio-addons.net signature ([9a79763](https://github.com/webstreamr/webstreamr/commit/9a79763a14d484ce37309da7919e3eecef8f4a66))
+
+
+### Features
+
+* configure languages instead of handlers ([5b389ad](https://github.com/webstreamr/webstreamr/commit/5b389ada9e78d51d53b9a5cc5dcc24c27c826deb))
+
 ## [0.17.0](https://github.com/webstreamr/webstreamr/compare/v0.16.1...v0.17.0) (2025-05-17)
 
 
