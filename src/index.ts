@@ -1,4 +1,5 @@
 import express, { NextFunction, Request, Response } from 'express';
+import { v4 as uuidv4 } from 'uuid';
 import axios, { AxiosError } from 'axios';
 import axiosRetry, { isNetworkOrIdempotentRequestError } from 'axios-retry';
 import { setupCache } from 'axios-cache-interceptor';
@@ -24,8 +25,7 @@ const logger = winston.createLogger({
       format: winston.format.combine(
         winston.format.cli(),
         winston.format.timestamp(),
-        winston.format.printf(({ level, message, timestamp }) => `${timestamp} ${level}: ${message}`),
-      ),
+        winston.format.printf(({ level, message, timestamp, id }) => `${timestamp} ${level} ${id}: ${message}`)),
     }),
   ],
 });
@@ -60,6 +60,8 @@ const addon = express();
 addon.set('trust proxy', true);
 
 addon.use((_req: Request, res: Response, next: NextFunction) => {
+  res.setHeader('X-Request-ID', uuidv4());
+
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', '*');
 

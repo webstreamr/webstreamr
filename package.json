@@ -41,6 +41,7 @@
     "slugify": "^1.6.6",
     "unpacker": "^1.0.1",
     "user-agents": "^1.1.536",
+    "uuid": "^11.1.0",
     "winston": "^3.17.0"
   },
   "devDependencies": {

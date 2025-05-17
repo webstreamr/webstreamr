@@ -8,7 +8,7 @@ jest.mock('../utils/Fetcher');
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 const streamResolver = new StreamResolver(logger);
-const ctx: Context = { ip: '127.0.0.1' };
+const ctx: Context = { id: 'id', ip: '127.0.0.1' };
 
 // @ts-expect-error No constructor args needed
 const fetcher = new Fetcher();
@@ -34,7 +34,7 @@ describe('resolve', () => {
 
     expect(streams).toStrictEqual([{
       name: 'WebStreamr',
-      title: '❌ Error with handler "meinecloud". Please check the logs or create an issue if this persists.',
+      title: '❌ Error with handler "meinecloud". Please create an issue if this persists. Request-id: id',
       ytId: 'E4WlUXrJgy4',
     }]);
   });

@@ -1,6 +1,9 @@
 import { Manifest, ManifestConfig } from 'stremio-addon-sdk';
 
-export interface Context { ip: string }
+export interface Context {
+  id: string;
+  ip: string;
+}
 
 export type ManifestWithConfig = Manifest & { config: ManifestConfig[] };
 

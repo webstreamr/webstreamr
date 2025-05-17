@@ -10,7 +10,7 @@ const fetcher = new Fetcher();
 const extractorRegistry = new ExtractorRegistry(logger, fetcher);
 
 describe('ExtractorRegistry', () => {
-  const ctx: Context = { ip: '127.0.0.1' };
+  const ctx: Context = { id: 'id', ip: '127.0.0.1' };
 
   test('returns undefined when no extractor can be found', async () => {
     const urlResult = await extractorRegistry.handle(ctx, new URL('https://some-url.test'), 'en');

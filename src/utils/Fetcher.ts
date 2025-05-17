@@ -16,7 +16,7 @@ export class Fetcher {
   }
 
   readonly text = async (ctx: Context, url: URL, config?: AxiosRequestConfig): Promise<string> => {
-    this.logger.info(`Fetch ${url}`);
+    this.logger.info(`Fetch ${url}`, ctx);
 
     const response = await this.axios.get(url.href, this.getConfig(ctx, url, config));
 
@@ -24,7 +24,7 @@ export class Fetcher {
   };
 
   readonly textPost = async (ctx: Context, url: URL, data: unknown, config?: AxiosRequestConfig): Promise<string> => {
-    this.logger.info(`Fetch post ${url}`);
+    this.logger.info(`Fetch post ${url}`, ctx);
 
     const response = await this.axios.post(url.href, data, this.getConfig(ctx, url, config));
 

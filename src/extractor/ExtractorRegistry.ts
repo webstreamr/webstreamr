@@ -33,12 +33,12 @@ export class ExtractorRegistry {
       return undefined;
     }
 
-    this.logger.info(`Extract stream URL using ${extractor.id} extractor from ${url}`);
+    this.logger.info(`Extract stream URL using ${extractor.id} extractor from ${url}`, ctx);
 
     try {
       urlResult = await extractor.extract(ctx, url, countryCode);
     } catch (error) {
-      this.logger.warn(`${extractor.id} error: ` + error);
+      this.logger.warn(`${extractor.id} error: ` + error, ctx);
       return undefined;
     }
 

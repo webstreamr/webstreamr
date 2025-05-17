@@ -1,7 +1,7 @@
 import { Request, Response, Router } from 'express';
 import winston from 'winston';
 import { Handler } from '../handler';
-import { Config } from '../types';
+import { Config, Context } from '../types';
 import { StreamResolver } from '../utils';
 
 export class StreamController {
@@ -26,11 +26,16 @@ export class StreamController {
     const type: string = req.params['type'] || '';
     const id: string = req.params['id'] || '';
 
-    this.logger.info(`Search stream for type "${type}" and id "${id}"`);
+    const ctx: Context = {
+      id: res.getHeader('X-Request-ID') as string,
+      ip: req.ip as string,
+    };
+
+    this.logger.info(`Search stream for type "${type}" and id "${id}"`, ctx);
 
     const selectedHandlers = this.handlers.filter(handler => handler.id in config);
 
-    const streams = await this.streamResolver.resolve({ ip: (req.ip as string) }, selectedHandlers, type, id);
+    const streams = await this.streamResolver.resolve(ctx, selectedHandlers, type, id);
 
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({ streams }));

@@ -31,17 +31,17 @@ export class StreamResolver {
 
       try {
         const handlerUrlResults = await handler.handle(ctx, type, id);
-        this.logger.info(`${handler.id} returned ${handlerUrlResults.length} urls`);
+        this.logger.info(`${handler.id} returned ${handlerUrlResults.length} urls`, ctx);
 
         urlResults.push(...(handlerUrlResults.filter(handlerUrlResult => handlerUrlResult !== undefined)));
       } catch (err) {
         streams.push({
           name: 'WebStreamr',
-          title: `❌ Error with handler "${handler.id}". Please check the logs or create an issue if this persists.`,
+          title: `❌ Error with handler "${handler.id}". Please create an issue if this persists. Request-id: ${ctx.id}`,
           ytId: 'E4WlUXrJgy4',
         });
 
-        this.logger.error(`${handler.id} error: ${err}`);
+        this.logger.error(`${handler.id} error: ${err}`, ctx);
       }
     });
     await Promise.all(handlerPromises);
@@ -60,7 +60,7 @@ export class StreamResolver {
       return a.label.localeCompare(b.label);
     });
 
-    this.logger.info(`Return ${urlResults.length} streams`);
+    this.logger.info(`Return ${urlResults.length} streams`, ctx);
 
     streams.push(
       ...urlResults.map((urlResult) => {
