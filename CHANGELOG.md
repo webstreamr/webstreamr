@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.19.1](https://github.com/webstreamr/webstreamr/compare/v0.19.0...v0.19.1) (2025-05-18)
+
+
+### Reverts
+
+* "feat(extractor): implement UQLoad" ([57799a7](https://github.com/webstreamr/webstreamr/commit/57799a777af4d0da4ceda65d6b4f2591c4c207b5))
+
 ## [0.19.0](https://github.com/webstreamr/webstreamr/compare/v0.18.0...v0.19.0) (2025-05-18)
 
 
