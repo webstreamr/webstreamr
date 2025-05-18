@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Handler } from './types';
-import { parseImdbId, Fetcher } from '../utils';
+import { parseImdbId, Fetcher, getTmdbIdFromImdbId } from '../utils';
 import { ExtractorRegistry } from '../extractor';
 import { Context } from '../types';
 
@@ -26,9 +26,9 @@ export class Frembed implements Handler {
       return [];
     }
 
-    const imdbId = parseImdbId(id);
+    const tmdbId = await getTmdbIdFromImdbId(ctx, this.fetcher, parseImdbId(id));
 
-    const response = await this.apiCall(ctx, new URL(`https://frembed.club/api/series?id=${imdbId.id}&sa=${imdbId.series}&epi=${imdbId.episode}&idType=imdb`));
+    const response = await this.apiCall(ctx, new URL(`https://frembed.club/api/series?id=${tmdbId.id}&sa=${tmdbId.series}&epi=${tmdbId.episode}&idType=tmdb`));
     if (!response) {
       return [];
     }
@@ -39,7 +39,7 @@ export class Frembed implements Handler {
     for (const key in json) {
       if (key.startsWith('link')) {
         try {
-          urls.push(new URL(json[key]));
+          urls.push(new URL(json[key].trim()));
         } catch {
           // Skip invalid URL
         }

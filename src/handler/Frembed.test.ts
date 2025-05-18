@@ -19,7 +19,7 @@ describe('Frembed', () => {
   });
 
   test('handles non-existent series gracefully', async () => {
-    const streams = await handler.handle(ctx, 'series', 'tt12345678:1:1');
+    const streams = await handler.handle(ctx, 'series', 'tt4352342:1:1');
 
     expect(streams).toHaveLength(0);
   });
