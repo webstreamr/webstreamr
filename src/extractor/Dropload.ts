@@ -19,8 +19,8 @@ export class Dropload implements Extractor {
   readonly supports = (url: URL): boolean => null !== url.host.match(/dropload/);
 
   readonly extract = async (ctx: Context, url: URL, countryCode: string) => {
-    const normalizedUrl = url.href.replace('/e/', '').replace('/embed-', '/');
-    const html = await this.fetcher.text(ctx, new URL(normalizedUrl));
+    url.pathname = url.pathname.replace('/e/', '').replace('/embed-', '/');
+    const html = await this.fetcher.text(ctx, url);
 
     const heightMatch = html.match(/\d{3,}x(\d{3,}),/) as string[];
 
