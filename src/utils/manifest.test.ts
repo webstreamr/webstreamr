@@ -3,6 +3,7 @@ import { buildManifest } from './manifest';
 import { KinoKiste, MeineCloud, VerHdLink } from '../handler';
 import { Fetcher } from './Fetcher';
 import { ExtractorRegistry } from '../extractor';
+jest.mock('../utils/Fetcher');
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 // @ts-expect-error No constructor args needed
