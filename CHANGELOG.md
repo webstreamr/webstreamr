@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.19.0](https://github.com/webstreamr/webstreamr/compare/v0.18.0...v0.19.0) (2025-05-18)
+
+
+### Features
+
+* **extractor:** implement UQLoad ([fb61d39](https://github.com/webstreamr/webstreamr/commit/fb61d3922566b9fbcdeb295dc30c041c356586fc))
+* implement IMDb -&gt; TMDB ID conversion helper ([03cb05e](https://github.com/webstreamr/webstreamr/commit/03cb05e2a369fe5741a690e0c1fc374ddc5e5a01))
+
+
+### Code Refactoring
+
+* **extractor:** manipulate URL instead of creating new one ([b5c45d8](https://github.com/webstreamr/webstreamr/commit/b5c45d806e13639a986e152adc00002968d54e43))
+* **handler:** switch Frembed to TMDB search which is more reliable ([d8a19d4](https://github.com/webstreamr/webstreamr/commit/d8a19d491627575eda36acc18e30254d829a57b7))
+
 ## [0.18.0](https://github.com/webstreamr/webstreamr/compare/v0.17.0...v0.18.0) (2025-05-17)
 
 
