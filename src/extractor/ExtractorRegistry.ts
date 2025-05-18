@@ -6,6 +6,7 @@ import { Fetcher } from '../utils';
 import { DoodStream } from './DoodStream';
 import { Dropload } from './Dropload';
 import { SuperVideo } from './SuperVideo';
+import { UQLoad } from './UQLoad';
 
 export class ExtractorRegistry {
   private readonly logger: winston.Logger;
@@ -18,6 +19,7 @@ export class ExtractorRegistry {
       new DoodStream(fetcher),
       new Dropload(fetcher),
       new SuperVideo(fetcher),
+      new UQLoad(fetcher),
     ];
     this.urlResultCache = new TTLCache({ max: 1024 });
   }

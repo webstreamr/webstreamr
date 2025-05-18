@@ -41,4 +41,22 @@ describe('Frembed', () => {
     });
     expect(streams[0]?.url.href).toMatch(/^https:\/\/.*?token.*?expiry/);
   });
+
+  test('handle imdb black mirror s7e1', async () => {
+    const streams = (await handler.handle(ctx, 'series', 'tt2085059:7:1')).filter(stream => stream !== undefined);
+
+    expect(streams).toHaveLength(1);
+    expect(streams[0]).toStrictEqual({
+      url: expect.any(URL),
+      label: 'UQLoad',
+      sourceId: 'uqload_fr',
+      height: 0,
+      bytes: 0,
+      countryCode: 'fr',
+      requestHeaders: {
+        Referer: 'https://uqload.net',
+      },
+    });
+    expect(streams[0]?.url.href).toMatch(/^https:\/\/.*?uqload\.net\/.*?\.mp4/);
+  });
 });
