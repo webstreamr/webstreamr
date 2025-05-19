@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.19.2](https://github.com/webstreamr/webstreamr/compare/v0.19.1...v0.19.2) (2025-05-19)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @types/express to v5.0.2 ([#61](https://github.com/webstreamr/webstreamr/issues/61)) ([ba57833](https://github.com/webstreamr/webstreamr/commit/ba57833fb0d9c9af791acbce1a3a68f19bdf5ae1))
+* **deps:** update dependency @types/node to v22.15.19 ([#62](https://github.com/webstreamr/webstreamr/issues/62)) ([1cc2a18](https://github.com/webstreamr/webstreamr/commit/1cc2a182a5d57251e39cb17a9b6cf05258ceb478))
+* **fetcher:** remove proxy headers, add default timeout ([c2c5331](https://github.com/webstreamr/webstreamr/commit/c2c5331861e22a83bcc77da451c57d715313bceb))
+
 ## [0.19.1](https://github.com/webstreamr/webstreamr/compare/v0.19.0...v0.19.1) (2025-05-18)
 
 
