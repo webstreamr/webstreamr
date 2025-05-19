@@ -34,14 +34,11 @@ export class Fetcher {
   private readonly getConfig = (ctx: Context, url: URL, config?: AxiosRequestConfig): AxiosRequestConfig => {
     return {
       responseType: 'text',
+      timeout: 10000,
       ...config,
       headers: {
         'User-Agent': this.createUserAgentForIp(ctx.ip),
-        'Forwarded': `for=${ctx.ip}`,
         'Referer': `${url.origin}`,
-        'X-Forwarded-For': ctx.ip,
-        'X-Forwarded-Proto': url.protocol.slice(0, -1),
-        'X-Real-IP': ctx.ip,
         ...config?.headers,
       },
     };
