@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.19.3](https://github.com/webstreamr/webstreamr/compare/v0.19.2...v0.19.3) (2025-05-20)
+
+
+### Miscellaneous Chores
+
+* **fetcher:** increase timeout to 15s ([#64](https://github.com/webstreamr/webstreamr/issues/64)) ([8daabf1](https://github.com/webstreamr/webstreamr/commit/8daabf1f5af0d305f71880b7e16fcc5182001a82))
+
 ## [0.19.2](https://github.com/webstreamr/webstreamr/compare/v0.19.1...v0.19.2) (2025-05-19)
 
 
