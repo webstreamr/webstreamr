@@ -29,7 +29,7 @@ describe('fetch', () => {
           'Referer': 'https://some-url.test',
         },
         responseType: 'text',
-        timeout: 10000,
+        timeout: 15000,
       },
     );
   });
@@ -55,7 +55,7 @@ describe('fetch', () => {
           'Referer': 'https://some-url.test',
         },
         responseType: 'text',
-        timeout: 10000,
+        timeout: 15000,
       },
     );
 
@@ -70,7 +70,7 @@ describe('fetch', () => {
           'Referer': 'https://some-url.test',
         },
         responseType: 'text',
-        timeout: 10000,
+        timeout: 15000,
       },
     );
   });
