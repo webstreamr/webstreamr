@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.19.4](https://github.com/webstreamr/webstreamr/compare/v0.19.3...v0.19.4) (2025-05-21)
+
+
+### Bug Fixes
+
+* **handler:** return only results for configured country/language in CineHDPlus ([ac8dd43](https://github.com/webstreamr/webstreamr/commit/ac8dd436623f23f3f496354d99faf697b1c13033))
+
 ## [0.19.3](https://github.com/webstreamr/webstreamr/compare/v0.19.2...v0.19.3) (2025-05-20)
 
 
