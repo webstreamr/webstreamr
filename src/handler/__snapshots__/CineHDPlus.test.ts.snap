@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CineHDPlus handle imdb babylon 5 s2e3 (es) 1`] = `
+[
+  {
+    "bytes": 219571814,
+    "countryCode": "es",
+    "height": 344,
+    "label": "SuperVideo",
+    "sourceId": "supervideo_es",
+    "url": "https://hfs294.serversicuro.cc/hls/,dnzpealv5xg4a3gyvavh52jryms77x3wwakzvgy2ly3yfusnblczjnvvweua,.urlset/master.m3u8",
+  },
+  {
+    "bytes": 219571814,
+    "countryCode": "es",
+    "height": 344,
+    "label": "Dropload",
+    "sourceId": "dropload_es",
+    "url": "https://srv29.dropload.io/hls2/01/00295/957hny8mzrvh_h/master.m3u8?t=VpcZJYlXpp0FJb0Nh0yJR0nyI8-SKB2tGFwpcTx9v2w&s=1747213958&e=14400&f=1476559&i=0.0&sp=0&ii=130.61.236.204",
+  },
+]
+`;
+
+exports[`CineHDPlus handle imdb black mirror s2e3 (mx) 1`] = `
+[
+  {
+    "bytes": 146800640,
+    "countryCode": "mx",
+    "height": 360,
+    "label": "SuperVideo",
+    "sourceId": "supervideo_mx",
+    "url": "https://hfs299.serversicuro.cc/hls/,dnzpff262hg4a3gyvcex5ojxt23vrieljzut7xhjydwidlbp4g7nqswkpfwq,.urlset/master.m3u8",
+  },
+  {
+    "bytes": 146800640,
+    "countryCode": "mx",
+    "height": 360,
+    "label": "Dropload",
+    "sourceId": "dropload_mx",
+    "url": "https://srv27.dropload.io/hls2/01/00075/t058ulwwkwn6_h/master.m3u8?t=GkktV2WgIMrvrgNLyjn6Bxeo2fArEAz6y9nSi_6dVAs&s=1747213564&e=14400&f=376684&i=0.0&sp=0&ii=130.61.236.204",
+  },
+]
+`;

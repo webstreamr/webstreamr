@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MeineCloud handle imdb the devil's bath 1`] = `
+[
+  {
+    "bytes": 1073741824,
+    "countryCode": "de",
+    "height": 720,
+    "label": "SuperVideo",
+    "sourceId": "supervideo_de",
+    "url": "https://hfs290.serversicuro.cc/hls/,dnzpfi3d27g4a3gyvbmh5klwtl65qh654hyjtgupd6p56thhyqu6ra3olbfa,.urlset/master.m3u8",
+  },
+  {
+    "bytes": 1395864371,
+    "countryCode": "de",
+    "height": 1080,
+    "label": "Dropload",
+    "sourceId": "dropload_de",
+    "url": "https://srv27.dropload.io/hls2/01/00197/lyo2h1snpe5c_h/master.m3u8?t=qTZsRGIMnUjXsQ4o2LRLlsT4tGG1AdJrRBRDGttNLPM&s=1746903744&e=14400&f=987607&i=0.0&sp=0&ii=130.61.236.204",
+  },
+  {
+    "bytes": 0,
+    "countryCode": "de",
+    "height": 0,
+    "isExternal": true,
+    "label": "mixdrop.ag",
+    "sourceId": "external_de",
+    "url": "https://mixdrop.ag/e/3nzwveprim63or6",
+  },
+  {
+    "bytes": 0,
+    "countryCode": "de",
+    "height": 0,
+    "label": "DoodStream",
+    "requestHeaders": {
+      "Referer": "http://dood.to/",
+    },
+    "sourceId": "doodstream_de",
+    "url": "https://aa360cc.cloudatacdn.com/u5kjv4jxytd3sdgge5uogji5dg4huat2pxrm2qibdbm5rtpmbzgb5tornooa/k9wk0js17e~undefined?token=7uebebipnnhusa4xnyea1er4&expiry=639837296000",
+  },
+]
+`;

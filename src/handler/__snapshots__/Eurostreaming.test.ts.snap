@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Eurostreaming handle imdb black mirror s2e4 1`] = `
+[
+  {
+    "bytes": 875875532,
+    "countryCode": "it",
+    "height": 1080,
+    "label": "SuperVideo",
+    "sourceId": "supervideo_it",
+    "url": "https://hfs309.serversicuro.cc/hls/dnzpdeoe5xg4a3gyvaqx5ojpswtxjd5a22rklgah7,khdhascykjrixs7huqq,obtfascykj3vna7rk5a,.urlset/master.m3u8",
+  },
+  {
+    "bytes": 875875532,
+    "countryCode": "it",
+    "height": 1080,
+    "label": "Dropload",
+    "sourceId": "dropload_it",
+    "url": "https://srv24.dropload.io/hls2/01/00289/978xyyxi3ldq_h/master.m3u8?t=unq9qxjYC-zgcmoXiSQ6rkMu7qHrSpN_pWOc95IPYwk&s=1747217151&e=14400&f=1448116&i=0.0&sp=0&ii=130.61.236.204",
+  },
+]
+`;

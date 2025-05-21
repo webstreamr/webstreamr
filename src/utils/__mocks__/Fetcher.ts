@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import Axios, { AxiosRequestConfig } from 'axios';
+import Axios, { AxiosError, AxiosRequestConfig } from 'axios';
 import slugify from 'slugify';
 import { Context } from '../../types';
 
@@ -7,28 +7,50 @@ export class Fetcher {
   readonly text = async (_ctx: Context, url: URL, config?: AxiosRequestConfig): Promise<string> => {
     const path = `${__dirname}/../__fixtures__/Fetcher/${slugify(url.href)}`;
 
-    if (fs.existsSync(path)) {
-      return fs.readFileSync(path).toString();
-    } else {
-      const text = (await Axios.create().get(url.href, this.getConfig(config))).data;
-
-      fs.writeFileSync(path, text);
-
-      return text;
-    }
+    return this.fixtureWrapper(path, async () => (await Axios.create().get(url.href, this.getConfig(config))).data);
   };
 
   readonly textPost = async (_ctx: Context, url: URL, data: unknown, config?: AxiosRequestConfig): Promise<string> => {
     const path = `${__dirname}/../__fixtures__/Fetcher/post-${slugify(url.href)}-${slugify(JSON.stringify(data))}`;
 
-    if (fs.existsSync(path)) {
+    return this.fixtureWrapper(path, async () => (await Axios.create().post(url.href, data, this.getConfig(config))).data);
+  };
+
+  private readonly fixtureWrapper = async (path: string, callable: () => Promise<string>) => {
+    const errorPath = `${path}.error`;
+
+    if (fs.existsSync(errorPath)) {
+      const fixtureError = JSON.parse(fs.readFileSync(errorPath).toString());
+      throw new AxiosError(fixtureError.message, fixtureError.code, undefined, undefined, fixtureError.response);
+    } else if (fs.existsSync(path)) {
       return fs.readFileSync(path).toString();
     } else {
-      const text = (await Axios.create().post(url.href, data, this.getConfig(config))).data;
+      let response;
 
-      fs.writeFileSync(path, text);
+      try {
+        response = await callable();
+      } catch (error) {
+        if (error instanceof AxiosError) {
+          const fixtureError = JSON.stringify({
+            message: error.message,
+            code: error.code,
+            ...(error.response && {
+              response: {
+                status: error.response.status,
+                statusText: error.response.statusText,
+                data: error.response.data,
+              },
+            }),
+          });
+          fs.writeFileSync(errorPath, fixtureError);
+        }
 
-      return text;
+        throw error;
+      }
+
+      fs.writeFileSync(path, response);
+
+      return response;
     }
   };
 
