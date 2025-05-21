@@ -38,6 +38,9 @@ export class CineHDPlus implements Handler {
     const $ = cheerio.load(html);
 
     const countryCode = ($('.details__langs').html() as string).includes('Latino') ? 'mx' : 'es';
+    if (!(countryCode in ctx.config)) {
+      return [];
+    }
 
     return Promise.all(
       $(`[data-num="${imdbId.series}x${imdbId.episode}"]`)

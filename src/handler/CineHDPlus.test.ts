@@ -71,4 +71,12 @@ describe('CineHDPlus', () => {
     });
     expect(streams[1]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
   });
+
+  test('does not return mx results for es and vice-versa', async () => {
+    const streamsEs = (await handler.handle({ ...ctx, ...{ config: { es: 'on' } } }, 'series', 'tt2085059:2:3')).filter(stream => stream !== undefined);
+    expect(streamsEs).toHaveLength(0);
+
+    const streamsMx = (await handler.handle({ ...ctx, ...{ config: { mx: 'on' } } }, 'series', 'tt0105946:2:3')).filter(stream => stream !== undefined);
+    expect(streamsMx).toHaveLength(0);
+  });
 });
