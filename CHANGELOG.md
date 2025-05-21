@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.20.0](https://github.com/webstreamr/webstreamr/compare/v0.19.4...v0.20.0) (2025-05-21)
+
+
+### Features
+
+* **extractor:** add external URL support ([23445c1](https://github.com/webstreamr/webstreamr/commit/23445c143b3f670bdcd60308e83fbfcf07239f86))
+
+
+### Tests
+
+* use snapshots, also use fixtures for axios errors ([e90c89a](https://github.com/webstreamr/webstreamr/commit/e90c89af89347561a8c61ea004ac725674f30aa5))
+
 ## [0.19.4](https://github.com/webstreamr/webstreamr/compare/v0.19.3...v0.19.4) (2025-05-21)
 
 
