@@ -27,7 +27,7 @@ describe('VerHdLink', () => {
   test('handle titanic', async () => {
     const streams = (await handler.handle(ctx, 'movie', 'tt0120338')).filter(stream => stream !== undefined);
 
-    expect(streams).toHaveLength(4);
+    expect(streams).toHaveLength(6);
     expect(streams[0]).toStrictEqual({
       url: expect.any(URL),
       label: 'SuperVideo',
@@ -48,14 +48,24 @@ describe('VerHdLink', () => {
     expect(streams[1]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
     expect(streams[2]).toStrictEqual({
       url: expect.any(URL),
+      isExternal: true,
+      label: 'mixdrop.ag',
+      sourceId: 'external_mx',
+      height: 0,
+      bytes: 0,
+      countryCode: 'mx',
+    });
+    expect(streams[2]?.url.href).toMatch(/mixdrop\.ag/);
+    expect(streams[3]).toStrictEqual({
+      url: expect.any(URL),
       label: 'SuperVideo',
       sourceId: 'supervideo_es',
       height: 544,
       bytes: 1610612736,
       countryCode: 'es',
     });
-    expect(streams[2]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
-    expect(streams[3]).toStrictEqual({
+    expect(streams[3]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
+    expect(streams[4]).toStrictEqual({
       url: expect.any(URL),
       label: 'Dropload',
       sourceId: 'dropload_es',
@@ -63,6 +73,16 @@ describe('VerHdLink', () => {
       bytes: 1610612736,
       countryCode: 'es',
     });
-    expect(streams[3]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
+    expect(streams[4]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
+    expect(streams[5]).toStrictEqual({
+      url: expect.any(URL),
+      isExternal: true,
+      label: 'mixdrop.ag',
+      sourceId: 'external_es',
+      height: 0,
+      bytes: 0,
+      countryCode: 'es',
+    });
+    expect(streams[5]?.url.href).toMatch(/mixdrop\.ag/);
   });
 });

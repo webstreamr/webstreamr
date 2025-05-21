@@ -18,10 +18,6 @@ describe('ExtractorRegistry', () => {
     expect(urlResult).toBeUndefined();
   });
 
-  test('returns undefined when extractor fails', async () => {
-    expect(await extractorRegistry.handle(ctx, new URL('https://mixdrop.my/e/123456789'), 'en')).toBeUndefined();
-  });
-
   test('returns from memory cache if possible', async () => {
     const urlResult1 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), 'de');
     const urlResult2 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), 'de');

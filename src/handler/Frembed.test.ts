@@ -27,7 +27,7 @@ describe('Frembed', () => {
   test('handle imdb black mirror s4e2', async () => {
     const streams = (await handler.handle(ctx, 'series', 'tt2085059:4:2')).filter(stream => stream !== undefined);
 
-    expect(streams).toHaveLength(1);
+    expect(streams).toHaveLength(3);
     expect(streams[0]).toStrictEqual({
       url: expect.any(URL),
       label: 'DoodStream',
@@ -40,5 +40,25 @@ describe('Frembed', () => {
       },
     });
     expect(streams[0]?.url.href).toMatch(/^https:\/\/.*?token.*?expiry/);
+    expect(streams[1]).toStrictEqual({
+      url: expect.any(URL),
+      isExternal: true,
+      label: 'netu.frembed.art',
+      sourceId: 'external_fr',
+      height: 0,
+      bytes: 0,
+      countryCode: 'fr',
+    });
+    expect(streams[1]?.url.href).toMatch(/netu\.frembed\.art/);
+    expect(streams[2]).toStrictEqual({
+      url: expect.any(URL),
+      isExternal: true,
+      label: 'johnalwayssame.com',
+      sourceId: 'external_fr',
+      height: 0,
+      bytes: 0,
+      countryCode: 'fr',
+    });
+    expect(streams[2]?.url.href).toMatch(/johnalwayssame\.com/);
   });
 });

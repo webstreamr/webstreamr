@@ -119,6 +119,22 @@ describe('resolve', () => {
           },
         },
       },
+      {
+        externalUrl: 'https://mixdrop.ag/e/3nzwveprim63or6',
+        name: 'WebStreamr external',
+        title: 'mixdrop.ag | 🇩🇪',
+        behaviorHints: {
+          bingeGroup: 'webstreamr-external_de',
+        },
+      },
+      {
+        externalUrl: 'https://mixdrop.ag/e/vk196d6xfzwwo1',
+        name: 'WebStreamr external',
+        title: 'mixdrop.ag | 🇮🇹',
+        behaviorHints: {
+          bingeGroup: 'webstreamr-external_it',
+        },
+      },
     ]);
   });
 });

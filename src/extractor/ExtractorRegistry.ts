@@ -6,6 +6,7 @@ import { Fetcher } from '../utils';
 import { DoodStream } from './DoodStream';
 import { Dropload } from './Dropload';
 import { SuperVideo } from './SuperVideo';
+import { ExternalUrl } from './ExternalUrl';
 
 export class ExtractorRegistry {
   private readonly logger: winston.Logger;
@@ -18,6 +19,7 @@ export class ExtractorRegistry {
       new DoodStream(fetcher),
       new Dropload(fetcher),
       new SuperVideo(fetcher),
+      new ExternalUrl(fetcher), // fallback extractor which must come last
     ];
     this.urlResultCache = new TTLCache({ max: 1024 });
   }
@@ -28,11 +30,7 @@ export class ExtractorRegistry {
       return urlResult;
     }
 
-    const extractor = this.extractors.find(extractor => extractor.supports(url));
-    if (undefined === extractor) {
-      return undefined;
-    }
-
+    const extractor = this.extractors.find(extractor => extractor.supports(url)) as Extractor;
     this.logger.info(`Extract stream URL using ${extractor.id} extractor from ${url}`, ctx);
 
     try {

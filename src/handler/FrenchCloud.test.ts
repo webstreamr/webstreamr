@@ -27,7 +27,7 @@ describe('FrenchCloud', () => {
   test('handle imdb the devil\'s bath', async () => {
     const streams = (await handler.handle(ctx, 'movie', 'tt29141112')).filter(stream => stream !== undefined);
 
-    expect(streams).toHaveLength(3);
+    expect(streams).toHaveLength(4);
     expect(streams[0]).toStrictEqual({
       url: expect.any(URL),
       label: 'SuperVideo',
@@ -48,6 +48,16 @@ describe('FrenchCloud', () => {
     expect(streams[1]?.url.href).toMatch(/^https:\/\/.*?.m3u8/);
     expect(streams[2]).toStrictEqual({
       url: expect.any(URL),
+      isExternal: true,
+      label: 'mixdrop.ag',
+      sourceId: 'external_fr',
+      height: 0,
+      bytes: 0,
+      countryCode: 'fr',
+    });
+    expect(streams[2]?.url.href).toMatch(/mixdrop\.ag/);
+    expect(streams[3]).toStrictEqual({
+      url: expect.any(URL),
       label: 'DoodStream',
       sourceId: 'doodstream_fr',
       height: 0,
@@ -57,6 +67,6 @@ describe('FrenchCloud', () => {
         Referer: 'http://dood.to/',
       },
     });
-    expect(streams[2]?.url.href).toMatch(/^https:\/\/.*?token.*?expiry/);
+    expect(streams[3]?.url.href).toMatch(/^https:\/\/.*?token.*?expiry/);
   });
 });

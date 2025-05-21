@@ -12,6 +12,7 @@ export type Config = Record<string, string>;
 
 export interface UrlResult {
   url: URL;
+  isExternal?: boolean;
   label: string;
   sourceId: string;
   height: number;

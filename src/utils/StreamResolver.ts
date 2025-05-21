@@ -68,6 +68,9 @@ export class StreamResolver {
         if (urlResult.height) {
           name += ` ${urlResult.height}p`;
         }
+        if (urlResult.isExternal) {
+          name += ` external`;
+        }
 
         let title = urlResult.label;
         if (urlResult.bytes) {
@@ -78,7 +81,7 @@ export class StreamResolver {
         }
 
         return {
-          url: urlResult.url.href,
+          [urlResult.isExternal ? 'externalUrl' : 'url']: urlResult.url.href,
           name,
           title,
           behaviorHints: {
