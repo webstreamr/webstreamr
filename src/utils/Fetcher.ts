@@ -1,4 +1,4 @@
-import { AxiosInstance, AxiosRequestConfig } from 'axios';
+import { AxiosInstance, AxiosRequestConfig, AxiosResponseHeaders, RawAxiosResponseHeaders } from 'axios';
 import TTLCache from '@isaacs/ttlcache';
 import UserAgent from 'user-agents';
 import winston from 'winston';
@@ -29,6 +29,14 @@ export class Fetcher {
     const response = await this.axios.post(url.href, data, this.getConfig(ctx, url, config));
 
     return response.data;
+  };
+
+  readonly head = async (ctx: Context, url: URL, config?: AxiosRequestConfig): Promise<RawAxiosResponseHeaders | AxiosResponseHeaders> => {
+    this.logger.info(`Fetch head ${url}`, ctx);
+
+    const response = await this.axios.head(url.href, this.getConfig(ctx, url, config));
+
+    return response.headers;
   };
 
   private readonly getConfig = (ctx: Context, url: URL, config?: AxiosRequestConfig): AxiosRequestConfig => {

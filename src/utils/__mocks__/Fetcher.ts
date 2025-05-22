@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import Axios, { AxiosError, AxiosRequestConfig } from 'axios';
+import Axios, { AxiosError, AxiosRequestConfig, AxiosResponseHeaders, RawAxiosResponseHeaders } from 'axios';
 import slugify from 'slugify';
 import { Context } from '../../types';
 
@@ -16,7 +16,13 @@ export class Fetcher {
     return this.fixtureWrapper(path, async () => (await Axios.create().post(url.href, data, this.getConfig(config))).data);
   };
 
-  private readonly fixtureWrapper = async (path: string, callable: () => Promise<string>) => {
+  readonly head = async (_ctx: Context, url: URL, config?: AxiosRequestConfig): Promise<RawAxiosResponseHeaders | AxiosResponseHeaders> => {
+    const path = `${__dirname}/../__fixtures__/Fetcher/head-${slugify(url.href)}`;
+
+    return JSON.parse(await this.fixtureWrapper(path, async () => JSON.stringify((await Axios.create().head(url.href, this.getConfig(config))).headers)));
+  };
+
+  private readonly fixtureWrapper = async (path: string, callable: () => Promise<string>): Promise<string> => {
     const errorPath = `${path}.error`;
 
     if (fs.existsSync(errorPath)) {

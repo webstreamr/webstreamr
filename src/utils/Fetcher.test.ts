@@ -74,4 +74,27 @@ describe('fetch', () => {
       },
     );
   });
+
+  test('head passes successful response through setting headers', async () => {
+    axiosMock.onHead().reply(200, undefined, { 'X-Fake-Response': 'foo' });
+    const axiosSpy = jest.spyOn(axios, 'head');
+
+    const responseHeaders1 = await fetcher.head(ctx, new URL('https://some-url.test/'));
+    const responseHeaders2 = await fetcher.head(ctx, new URL('https://some-url.test/'), { headers: { 'User-Agent': 'jest' } });
+
+    expect(responseHeaders1).toMatchObject({ 'X-Fake-Response': 'foo' });
+    expect(responseHeaders2).toStrictEqual(responseHeaders1);
+
+    expect(axiosSpy).toHaveBeenCalledWith(
+      'https://some-url.test/',
+      {
+        headers: {
+          'User-Agent': expect.not.stringMatching(/jest/),
+          'Referer': 'https://some-url.test',
+        },
+        responseType: 'text',
+        timeout: 15000,
+      },
+    );
+  });
 });
