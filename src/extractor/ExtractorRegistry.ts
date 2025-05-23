@@ -7,6 +7,7 @@ import { DoodStream } from './DoodStream';
 import { Dropload } from './Dropload';
 import { SuperVideo } from './SuperVideo';
 import { ExternalUrl } from './ExternalUrl';
+import { NotFoundError } from '../error';
 
 export class ExtractorRegistry {
   private readonly logger: winston.Logger;
@@ -36,6 +37,10 @@ export class ExtractorRegistry {
     try {
       urlResult = await extractor.extract(ctx, url, countryCode);
     } catch (error) {
+      if (error instanceof NotFoundError) {
+        return undefined;
+      }
+
       this.logger.warn(`${extractor.id} error: ${error}`, ctx);
       return undefined;
     }

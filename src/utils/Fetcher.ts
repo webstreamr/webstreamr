@@ -1,8 +1,9 @@
-import { AxiosInstance, AxiosRequestConfig, AxiosResponseHeaders, RawAxiosResponseHeaders } from 'axios';
+import { AxiosInstance, AxiosRequestConfig, AxiosResponseHeaders, RawAxiosResponseHeaders, isAxiosError } from 'axios';
 import TTLCache from '@isaacs/ttlcache';
 import UserAgent from 'user-agents';
 import winston from 'winston';
 import { Context } from '../types';
+import { NotFoundError } from '../error';
 
 export class Fetcher {
   private readonly axios: AxiosInstance;
@@ -18,25 +19,19 @@ export class Fetcher {
   readonly text = async (ctx: Context, url: URL, config?: AxiosRequestConfig): Promise<string> => {
     this.logger.info(`Fetch ${url}`, ctx);
 
-    const response = await this.axios.get(url.href, this.getConfig(ctx, url, config));
-
-    return response.data;
+    return (await this.errorWrapper(() => this.axios.get(url.href, this.getConfig(ctx, url, config)))).data;
   };
 
   readonly textPost = async (ctx: Context, url: URL, data: unknown, config?: AxiosRequestConfig): Promise<string> => {
     this.logger.info(`Fetch post ${url}`, ctx);
 
-    const response = await this.axios.post(url.href, data, this.getConfig(ctx, url, config));
-
-    return response.data;
+    return (await this.errorWrapper(() => this.axios.post(url.href, data, this.getConfig(ctx, url, config)))).data;
   };
 
   readonly head = async (ctx: Context, url: URL, config?: AxiosRequestConfig): Promise<RawAxiosResponseHeaders | AxiosResponseHeaders> => {
     this.logger.info(`Fetch head ${url}`, ctx);
 
-    const response = await this.axios.head(url.href, this.getConfig(ctx, url, config));
-
-    return response.headers;
+    return (await this.errorWrapper(() => this.axios.head(url.href, this.getConfig(ctx, url, config)))).headers;
   };
 
   private readonly getConfig = (ctx: Context, url: URL, config?: AxiosRequestConfig): AxiosRequestConfig => {
@@ -63,5 +58,16 @@ export class Fetcher {
     this.ipUserAgentCache.set(ip, userAgent);
 
     return userAgent;
+  };
+
+  private readonly errorWrapper = async <T>(callable: () => T): Promise<T> => {
+    try {
+      return await callable();
+    } catch (error) {
+      if (isAxiosError(error) && error.response?.status === 404) {
+        throw new NotFoundError();
+      }
+      throw error;
+    }
   };
 }

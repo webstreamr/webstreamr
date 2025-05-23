@@ -1,8 +1,9 @@
 import winston from 'winston';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import AxiosMockAdapter from 'axios-mock-adapter';
 import { Fetcher } from './Fetcher';
 import { Context } from '../types';
+import { NotFoundError } from '../error';
 
 const axiosMock = new AxiosMockAdapter(axios);
 
@@ -96,5 +97,17 @@ describe('fetch', () => {
         timeout: 15000,
       },
     );
+  });
+
+  test('converts 404 to custom NotFoundError', async () => {
+    axiosMock.onGet().reply(404);
+
+    await expect(fetcher.text(ctx, new URL('https://some-url.test/'))).rejects.toBeInstanceOf(NotFoundError);
+  });
+
+  test('passes through other errors', async () => {
+    axiosMock.onGet().networkError();
+
+    await expect(fetcher.text(ctx, new URL('https://some-url.test/'))).rejects.toBeInstanceOf(AxiosError);
   });
 });

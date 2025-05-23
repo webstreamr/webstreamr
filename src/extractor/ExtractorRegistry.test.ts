@@ -24,4 +24,17 @@ describe('ExtractorRegistry', () => {
 
     expect(urlResult2).toBe(urlResult1);
   });
+
+  test('returns from memory cache if possible', async () => {
+    const urlResult1 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), 'de');
+    const urlResult2 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), 'de');
+
+    expect(urlResult2).toBe(urlResult1);
+  });
+
+  test('ignores not found errors', async () => {
+    const urlResult = await extractorRegistry.handle(ctx, new URL('https://dropload.io/asdfghijklmn.html'), 'de');
+
+    expect(urlResult).toBeUndefined();
+  });
 });

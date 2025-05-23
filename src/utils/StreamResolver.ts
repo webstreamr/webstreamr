@@ -4,6 +4,7 @@ import winston from 'winston';
 import bytes from 'bytes';
 import { Context, UrlResult } from '../types';
 import { Handler } from '../handler';
+import { NotFoundError } from '../error';
 
 export class StreamResolver {
   private readonly logger: winston.Logger;
@@ -35,6 +36,10 @@ export class StreamResolver {
 
         urlResults.push(...(handlerUrlResults.filter(handlerUrlResult => handlerUrlResult !== undefined)));
       } catch (err) {
+        if (err instanceof NotFoundError) {
+          return;
+        }
+
         streams.push({
           name: 'WebStreamr',
           title: `❌ Error with handler "${handler.id}". Please create an issue if this persists. Request-id: ${ctx.id}`,
