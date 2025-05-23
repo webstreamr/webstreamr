@@ -1,7 +1,7 @@
 import express, { NextFunction, Request, Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
-import axios, { AxiosError } from 'axios';
-import axiosRetry, { isNetworkOrIdempotentRequestError } from 'axios-retry';
+import axios from 'axios';
+import axiosRetry from 'axios-retry';
 import { setupCache } from 'axios-cache-interceptor';
 import winston from 'winston';
 import {
@@ -32,9 +32,7 @@ const logger = winston.createLogger({
 
 setupCache(axios);
 axiosRetry(axios, {
-  retries: 3,
-  retryDelay: axiosRetry.exponentialDelay,
-  retryCondition: (error: AxiosError) => isNetworkOrIdempotentRequestError(error) || (error.response?.status ?? 0) > 400,
+  retries: 1,
 });
 
 const fetcher = new Fetcher(axios, logger);
