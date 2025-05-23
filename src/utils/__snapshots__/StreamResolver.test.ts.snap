@@ -50,7 +50,7 @@ exports[`resolve returns sorted results 1`] = `
     },
     "name": "WebStreamr",
     "title": "DoodStream | 🇩🇪",
-    "url": "https://aa360cc.cloudatacdn.com/u5kjv4jxytd3sdgge5uogji5dg4huat2pxrm2qibdbm5rtpmbzgb5tornooa/k9wk0js17e~undefined?token=7uebebipnnhusa4xnyea1er4&expiry=639837296000",
+    "url": "https://aa360cc.cloudatacdn.com/u5kjv4jxytd3sdgge5uogji5dg4huat2pxrm2qibdbm5rtpmbzgb5tornooa/k9wk0js17e~mocked-random-string?token=7uebebipnnhusa4xnyea1er4&expiry=639837296000",
   },
   {
     "behaviorHints": {
@@ -64,7 +64,7 @@ exports[`resolve returns sorted results 1`] = `
     },
     "name": "WebStreamr",
     "title": "DoodStream | 🇮🇹",
-    "url": "https://kk892as.cloudatacdn.com/u5kj7j7s27d3sdgge5woezkbi4pu672wktq3aqujw47rbpl3xog2gtqnw2xa/awn9rgotuu~undefined?token=aw2v2d8uhbrj2ky54d573ujk&expiry=639837296000",
+    "url": "https://kk892as.cloudatacdn.com/u5kj7j7s27d3sdgge5woezkbi4pu672wktq3aqujw47rbpl3xog2gtqnw2xa/awn9rgotuu~mocked-random-string?token=aw2v2d8uhbrj2ky54d573ujk&expiry=639837296000",
   },
   {
     "behaviorHints": {

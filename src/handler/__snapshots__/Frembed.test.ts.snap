@@ -11,7 +11,7 @@ exports[`Frembed handle imdb black mirror s4e2 1`] = `
       "Referer": "http://dood.to/",
     },
     "sourceId": "doodstream_fr",
-    "url": "https://ee317r.cloudatacdn.com/u5kj63yvxddlsdgge7qremqqka27irwiupc4k7o5cikbh7fdq4j4mwzraf7q/1y4sn4ndoi~undefined?token=fh3rdlhjvao7chgxndsi3ra7&expiry=639837296000",
+    "url": "https://ee317r.cloudatacdn.com/u5kj63yvxddlsdgge7qremqqka27irwiupc4k7o5cikbh7fdq4j4mwzraf7q/1y4sn4ndoi~mocked-random-string?token=fh3rdlhjvao7chgxndsi3ra7&expiry=639837296000",
   },
   {
     "bytes": 0,

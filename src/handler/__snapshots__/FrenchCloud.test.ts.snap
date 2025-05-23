@@ -36,7 +36,7 @@ exports[`FrenchCloud handle imdb the devil's bath 1`] = `
       "Referer": "http://dood.to/",
     },
     "sourceId": "doodstream_fr",
-    "url": "https://ty1053vs.cloudatacdn.com/u5kjz2cvh7blsdgge4mmgoifjigorrf6o6mlfwqbndqkhkcvu43dcrk7wfga/6zwayqucuf~undefined?token=y0n5z6g48kft9apq8imziegv&expiry=639837296000",
+    "url": "https://ty1053vs.cloudatacdn.com/u5kjz2cvh7blsdgge4mmgoifjigorrf6o6mlfwqbndqkhkcvu43dcrk7wfga/6zwayqucuf~mocked-random-string?token=y0n5z6g48kft9apq8imziegv&expiry=639837296000",
   },
 ]
 `;

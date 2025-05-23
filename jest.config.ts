@@ -1,6 +1,7 @@
 import type { Config } from 'jest';
 
 const config: Config = {
+  clearMocks: true,
   collectCoverage: true,
   collectCoverageFrom: [
     '<rootDir>/src/**/*.ts',
@@ -21,7 +22,6 @@ const config: Config = {
       statements: 100,
     },
   },
-  resetMocks: true,
   resetModules: true,
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   testEnvironment: 'node',

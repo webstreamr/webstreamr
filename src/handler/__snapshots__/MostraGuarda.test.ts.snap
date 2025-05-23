@@ -36,7 +36,7 @@ exports[`MostraGuarda handle imdb the devil's bath 1`] = `
       "Referer": "http://dood.to/",
     },
     "sourceId": "doodstream_it",
-    "url": "https://kk892as.cloudatacdn.com/u5kj7j7s27d3sdgge5woezkbi4pu672wktq3aqujw47rbpl3xog2gtqnw2xa/awn9rgotuu~undefined?token=aw2v2d8uhbrj2ky54d573ujk&expiry=639837296000",
+    "url": "https://kk892as.cloudatacdn.com/u5kj7j7s27d3sdgge5woezkbi4pu672wktq3aqujw47rbpl3xog2gtqnw2xa/awn9rgotuu~mocked-random-string?token=aw2v2d8uhbrj2ky54d573ujk&expiry=639837296000",
   },
 ]
 `;
