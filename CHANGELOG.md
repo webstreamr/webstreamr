@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.20.1](https://github.com/webstreamr/webstreamr/compare/v0.20.0...v0.20.1) (2025-05-23)
+
+
+### Miscellaneous Chores
+
+* better handle not found streams/links ([8e791bb](https://github.com/webstreamr/webstreamr/commit/8e791bbe2463ad12f30ff8165a63c85fba2e2588))
+* **deps:** update node.js to v22.16.0 ([#72](https://github.com/webstreamr/webstreamr/issues/72)) ([305ce3d](https://github.com/webstreamr/webstreamr/commit/305ce3d873e4103096343a4936e81893f9eb6526))
+* **extractor:** use HEAD instead of GET to check external URLs ([0a99f1e](https://github.com/webstreamr/webstreamr/commit/0a99f1e5011d23e546ef372e61dd8acc7b789236))
+* **fetcher:** set Origin header and add back proxy headers ([b313c4e](https://github.com/webstreamr/webstreamr/commit/b313c4eb8d37e75f869216fa2899565a2b32098f))
+* log IP in stream request ([5c51abb](https://github.com/webstreamr/webstreamr/commit/5c51abbd46f850ce22ac03f7ac207b7ad62dadd6))
+* reduce axios retries to 1 again, avoid risky retries ([1447ada](https://github.com/webstreamr/webstreamr/commit/1447adad1b92a17fcc2bb699c88532fd7c290607))
+
+
+### Bug Fixes
+
+* **handler:** do not ignore main link in Eurostreaming ([f4a0b03](https://github.com/webstreamr/webstreamr/commit/f4a0b0324611399f26fb160b19ea2441cd8faaee))
+
+
+### Tests
+
+* do not reset but only clear mocks ([1e9ebd5](https://github.com/webstreamr/webstreamr/commit/1e9ebd5905eb7a67074593e9efdb92e3f0c092d1))
+
 ## [0.20.0](https://github.com/webstreamr/webstreamr/compare/v0.19.4...v0.20.0) (2025-05-21)
 
 
