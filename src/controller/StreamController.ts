@@ -32,7 +32,7 @@ export class StreamController {
       config,
     };
 
-    this.logger.info(`Search stream for type "${type}" and id "${id}"`, ctx);
+    this.logger.info(`Search stream for type "${type}" and id "${id}" for ip ${ctx.ip}`, ctx);
 
     const handlers = this.handlers.filter(handler => handler.languages.filter(language => language in ctx.config).length);
 
