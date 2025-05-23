@@ -26,8 +26,13 @@ describe('fetch', () => {
       'https://some-url.test/',
       {
         headers: {
+          'Forwarded': 'for=127.0.0.1',
+          'Origin': 'https://some-url.test',
           'User-Agent': expect.not.stringMatching(/jest/),
           'Referer': 'https://some-url.test',
+          'X-Forwarded-For': '127.0.0.1',
+          'X-Forwarded-Proto': 'https',
+          'X-Real-IP': '127.0.0.1',
         },
         responseType: 'text',
         timeout: 15000,
@@ -52,8 +57,13 @@ describe('fetch', () => {
       },
       {
         headers: {
+          'Forwarded': 'for=127.0.0.1',
+          'Origin': 'https://some-url.test',
           'User-Agent': expect.not.stringMatching(/jest/),
           'Referer': 'https://some-url.test',
+          'X-Forwarded-For': '127.0.0.1',
+          'X-Forwarded-Proto': 'https',
+          'X-Real-IP': '127.0.0.1',
         },
         responseType: 'text',
         timeout: 15000,
@@ -67,8 +77,13 @@ describe('fetch', () => {
       },
       {
         headers: {
+          'Forwarded': 'for=127.0.0.1',
+          'Origin': 'https://some-url.test',
           'User-Agent': 'jest',
           'Referer': 'https://some-url.test',
+          'X-Forwarded-For': '127.0.0.1',
+          'X-Forwarded-Proto': 'https',
+          'X-Real-IP': '127.0.0.1',
         },
         responseType: 'text',
         timeout: 15000,
@@ -90,8 +105,13 @@ describe('fetch', () => {
       'https://some-url.test/',
       {
         headers: {
+          'Forwarded': 'for=127.0.0.1',
+          'Origin': 'https://some-url.test',
           'User-Agent': expect.not.stringMatching(/jest/),
           'Referer': 'https://some-url.test',
+          'X-Forwarded-For': '127.0.0.1',
+          'X-Forwarded-Proto': 'https',
+          'X-Real-IP': '127.0.0.1',
         },
         responseType: 'text',
         timeout: 15000,

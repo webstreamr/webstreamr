@@ -40,8 +40,13 @@ export class Fetcher {
       timeout: 15000,
       ...config,
       headers: {
-        'User-Agent': this.createUserAgentForIp(ctx.ip),
+        'Forwarded': `for=${ctx.ip}`,
+        'Origin': `${url.origin}`,
         'Referer': `${url.origin}`,
+        'User-Agent': this.createUserAgentForIp(ctx.ip),
+        'X-Forwarded-For': ctx.ip,
+        'X-Forwarded-Proto': url.protocol.slice(0, -1),
+        'X-Real-IP': ctx.ip,
         ...config?.headers,
       },
     };
