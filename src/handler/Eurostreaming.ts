@@ -37,14 +37,17 @@ export class Eurostreaming implements Handler {
 
     const $ = cheerio.load(html);
 
-    return Promise.all(
-      $(`[data-num="${imdbId.series}x${imdbId.episode}"]`)
-        .siblings('.mirrors')
-        .children('[data-link!="#"]')
-        .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
-        .toArray()
-        .filter(url => !url.host.match(/eurostreaming/))
-        .map(url => this.extractorRegistry.handle(ctx, url, 'it')),
+    const mainDataLinkElements = $(`[data-num="${imdbId.series}x${imdbId.episode}"][data-link!="#"]`);
+    const mirrorDataLinkElements = $(`[data-num="${imdbId.series}x${imdbId.episode}"]`)
+      .siblings('.mirrors')
+      .children('[data-link!="#"]');
+
+    return Promise.all(mainDataLinkElements
+      .add(mirrorDataLinkElements)
+      .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
+      .toArray()
+      .filter(url => !url.host.match(/eurostreaming/))
+      .map(url => this.extractorRegistry.handle(ctx, url, 'it')),
     );
   };
 
