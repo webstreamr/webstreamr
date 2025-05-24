@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.20.2](https://github.com/webstreamr/webstreamr/compare/v0.20.1...v0.20.2) (2025-05-24)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @stylistic/eslint-plugin to v4.3.0 ([#75](https://github.com/webstreamr/webstreamr/issues/75)) ([61a17b1](https://github.com/webstreamr/webstreamr/commit/61a17b1d1c00c99ebd993645a8f87f4558b9dfba))
+* **deps:** update dependency @stylistic/eslint-plugin to v4.4.0 ([#77](https://github.com/webstreamr/webstreamr/issues/77)) ([9e9d4b2](https://github.com/webstreamr/webstreamr/commit/9e9d4b20811a2eab6e82a7607cd3f727d179ef2f))
+
 ## [0.20.1](https://github.com/webstreamr/webstreamr/compare/v0.20.0...v0.20.1) (2025-05-23)
 
 
