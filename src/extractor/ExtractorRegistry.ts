@@ -12,7 +12,7 @@ import { NotFoundError } from '../error';
 export class ExtractorRegistry {
   private readonly logger: winston.Logger;
   private readonly extractors: Extractor[];
-  private readonly urlResultCache: TTLCache<string, UrlResult>;
+  private readonly urlResultCache: TTLCache<string, UrlResult | undefined>;
 
   constructor(logger: winston.Logger, fetcher: Fetcher) {
     this.logger = logger;
@@ -27,7 +27,7 @@ export class ExtractorRegistry {
 
   readonly handle = async (ctx: Context, url: URL, countryCode: string): Promise<UrlResult | undefined> => {
     let urlResult = this.urlResultCache.get(url.href);
-    if (urlResult) {
+    if (this.urlResultCache.has(url.href)) {
       return urlResult;
     }
 
@@ -38,6 +38,8 @@ export class ExtractorRegistry {
       urlResult = await extractor.extract(ctx, url, countryCode);
     } catch (error) {
       if (error instanceof NotFoundError) {
+        this.urlResultCache.set(url.href, urlResult, { ttl: extractor.ttl });
+
         return undefined;
       }
 
