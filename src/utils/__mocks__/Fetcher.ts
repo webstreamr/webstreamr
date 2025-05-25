@@ -34,7 +34,12 @@ export class Fetcher {
       let response;
 
       try {
-        response = await callable();
+        if (process.env['TEST_UPDATE_FIXTURES']) {
+          response = await callable();
+        } else {
+          console.error(`No fixture found at "${path}".`);
+          process.exit(1);
+        }
       } catch (error) {
         if (error instanceof AxiosError) {
           const fixtureError = JSON.stringify({
