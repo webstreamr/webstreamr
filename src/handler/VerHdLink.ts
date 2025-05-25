@@ -2,7 +2,7 @@ import * as cheerio from 'cheerio';
 import { Handler } from './types';
 import { Fetcher, parseImdbId } from '../utils';
 import { ExtractorRegistry } from '../extractor';
-import { Context } from '../types';
+import { Context, CountryCode } from '../types';
 
 export class VerHdLink implements Handler {
   readonly id = 'verhdlink';
@@ -11,7 +11,7 @@ export class VerHdLink implements Handler {
 
   readonly contentTypes = ['movie'];
 
-  readonly languages = ['es', 'mx'];
+  readonly countryCodes: CountryCode[] = ['es', 'mx'];
 
   private readonly fetcher: Fetcher;
   private readonly extractorRegistry: ExtractorRegistry;
@@ -33,7 +33,7 @@ export class VerHdLink implements Handler {
     return Promise.all(
       $('._player-mirrors')
         .map((_i, el) => {
-          let countryCode = undefined;
+          let countryCode: CountryCode;
           if ($(el).hasClass('latino') && 'mx' in ctx.config) {
             countryCode = 'mx';
           } else if ($(el).hasClass('castellano') && 'es' in ctx.config) {

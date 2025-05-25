@@ -2,7 +2,7 @@ import * as cheerio from 'cheerio';
 import { Handler } from './types';
 import { Fetcher, ImdbId, parseImdbId } from '../utils';
 import { ExtractorRegistry } from '../extractor';
-import { Context } from '../types';
+import { Context, CountryCode } from '../types';
 
 export class CineHDPlus implements Handler {
   readonly id = 'cinehdplus';
@@ -11,7 +11,7 @@ export class CineHDPlus implements Handler {
 
   readonly contentTypes = ['series'];
 
-  readonly languages = ['es', 'mx'];
+  readonly countryCodes: CountryCode[] = ['es', 'mx'];
 
   private readonly fetcher: Fetcher;
   private readonly extractorRegistry: ExtractorRegistry;

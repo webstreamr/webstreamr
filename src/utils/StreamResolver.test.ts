@@ -62,7 +62,7 @@ describe('resolve', () => {
       id: 'mockhandler',
       label: 'MockHandler',
       contentTypes: ['movie'],
-      languages: ['de'],
+      countryCodes: ['de'],
       handle: jest.fn().mockRejectedValue(new NotFoundError()),
     };
 

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Handler } from './types';
 import { parseImdbId, Fetcher, getTmdbIdFromImdbId } from '../utils';
 import { ExtractorRegistry } from '../extractor';
-import { Context } from '../types';
+import { Context, CountryCode } from '../types';
 
 export class Frembed implements Handler {
   readonly id = 'frembed';
@@ -11,7 +11,7 @@ export class Frembed implements Handler {
 
   readonly contentTypes = ['series'];
 
-  readonly languages = ['fr'];
+  readonly countryCodes: CountryCode[] = ['fr'];
 
   private readonly fetcher: Fetcher;
   private readonly extractorRegistry: ExtractorRegistry;

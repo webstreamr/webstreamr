@@ -2,7 +2,7 @@ import * as cheerio from 'cheerio';
 import { Handler } from './types';
 import { Fetcher, parseImdbId } from '../utils';
 import { ExtractorRegistry } from '../extractor';
-import { Context } from '../types';
+import { Context, CountryCode } from '../types';
 
 export class MeineCloud implements Handler {
   readonly id = 'meinecloud';
@@ -11,7 +11,7 @@ export class MeineCloud implements Handler {
 
   readonly contentTypes = ['movie'];
 
-  readonly languages = ['de'];
+  readonly countryCodes: CountryCode[] = ['de'];
 
   private readonly fetcher: Fetcher;
   private readonly extractorRegistry: ExtractorRegistry;

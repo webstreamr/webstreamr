@@ -2,7 +2,7 @@ import * as cheerio from 'cheerio';
 import { Handler } from './types';
 import { ImdbId, parseImdbId, Fetcher } from '../utils';
 import { ExtractorRegistry } from '../extractor';
-import { Context } from '../types';
+import { Context, CountryCode } from '../types';
 
 export class KinoKiste implements Handler {
   readonly id = 'kinokiste';
@@ -11,7 +11,7 @@ export class KinoKiste implements Handler {
 
   readonly contentTypes = ['series'];
 
-  readonly languages = ['de'];
+  readonly countryCodes: CountryCode[] = ['de'];
 
   private readonly fetcher: Fetcher;
   private readonly extractorRegistry: ExtractorRegistry;

@@ -2,7 +2,7 @@ import * as cheerio from 'cheerio';
 import { Handler } from './types';
 import { Fetcher, parseImdbId } from '../utils';
 import { ExtractorRegistry } from '../extractor';
-import { Context } from '../types';
+import { Context, CountryCode } from '../types';
 
 export class MostraGuarda implements Handler {
   readonly id = 'mostraguarda';
@@ -11,7 +11,7 @@ export class MostraGuarda implements Handler {
 
   readonly contentTypes = ['movie'];
 
-  readonly languages = ['it'];
+  readonly countryCodes: CountryCode[] = ['it'];
 
   private readonly fetcher: Fetcher;
   private readonly extractorRegistry: ExtractorRegistry;

@@ -34,7 +34,7 @@ export class StreamController {
 
     this.logger.info(`Search stream for type "${type}" and id "${id}" for ip ${ctx.ip}`, ctx);
 
-    const handlers = this.handlers.filter(handler => handler.languages.filter(language => language in ctx.config).length);
+    const handlers = this.handlers.filter(handler => handler.countryCodes.filter(countryCode => countryCode in ctx.config).length);
 
     const streams = await this.streamResolver.resolve(ctx, handlers, type, id);
 

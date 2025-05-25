@@ -30,20 +30,20 @@ export const buildManifest = (handlers: Handler[], config: Config): ManifestWith
     },
   };
 
-  const languageHandlers: Record<string, Handler[]> = {};
+  const countryCodeHandlers: Record<string, Handler[]> = {};
   handlers.forEach((handler) => {
-    handler.languages.forEach(language => languageHandlers[language] = [...(languageHandlers[language] ?? []), handler]);
+    handler.countryCodes.forEach(countryCode => countryCodeHandlers[countryCode] = [...(countryCodeHandlers[countryCode] ?? []), handler]);
   });
 
-  const sortedLanguageHandlers = Object.entries(languageHandlers)
-    .sort(([languageA], [languageB]) => languageA.localeCompare(languageB));
+  const sortedLanguageHandlers = Object.entries(countryCodeHandlers)
+    .sort(([countryCodeA], [countryCodeB]) => countryCodeA.localeCompare(countryCodeB));
 
-  for (const [language, handlers] of sortedLanguageHandlers) {
+  for (const [countryCode, handlers] of sortedLanguageHandlers) {
     manifest.config.push({
-      key: language,
+      key: countryCode,
       type: 'checkbox',
-      title: `${flag(language)} (${handlers.map(handler => handler.label).join(', ')})`,
-      ...(language in config && { default: 'checked' }),
+      title: `${flag(countryCode)} (${handlers.map(handler => handler.label).join(', ')})`,
+      ...(countryCode in config && { default: 'checked' }),
     });
   }
 

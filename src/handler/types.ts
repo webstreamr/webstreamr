@@ -1,4 +1,4 @@
-import { Context, UrlResult } from '../types';
+import { Context, CountryCode, UrlResult } from '../types';
 
 export interface Handler {
   readonly id: string;
@@ -7,7 +7,7 @@ export interface Handler {
 
   readonly contentTypes: string[];
 
-  readonly languages: string[];
+  readonly countryCodes: CountryCode[];
 
   readonly handle: (ctx: Context, type: string, id: string) => Promise<(UrlResult | undefined)[]>;
 }
