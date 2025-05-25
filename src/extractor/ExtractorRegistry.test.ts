@@ -13,27 +13,27 @@ describe('ExtractorRegistry', () => {
   const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on' } };
 
   test('returns undefined when no extractor can be found', async () => {
-    const urlResult = await extractorRegistry.handle(ctx, new URL('https://some-url.test'), 'en');
+    const urlResult = await extractorRegistry.handle(ctx, new URL('https://some-url.test'), { countryCode: 'en' });
 
     expect(urlResult).toBeUndefined();
   });
 
   test('returns from memory cache if possible', async () => {
-    const urlResult1 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), 'de');
-    const urlResult2 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), 'de');
+    const urlResult1 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), { countryCode: 'de' });
+    const urlResult2 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), { countryCode: 'de' });
 
     expect(urlResult2).toBe(urlResult1);
   });
 
   test('returns from memory cache if possible', async () => {
-    const urlResult1 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), 'de');
-    const urlResult2 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), 'de');
+    const urlResult1 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), { countryCode: 'de' });
+    const urlResult2 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), { countryCode: 'de' });
 
     expect(urlResult2).toBe(urlResult1);
   });
 
   test('ignores not found errors', async () => {
-    const urlResult = await extractorRegistry.handle(ctx, new URL('https://dropload.io/asdfghijklmn.html'), 'de');
+    const urlResult = await extractorRegistry.handle(ctx, new URL('https://dropload.io/asdfghijklmn.html'), { countryCode: 'de' });
 
     expect(urlResult).toBeUndefined();
   });

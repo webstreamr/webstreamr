@@ -1,7 +1,7 @@
 import TTLCache from '@isaacs/ttlcache';
 import winston from 'winston';
 import { Extractor } from './types';
-import { Context, UrlResult } from '../types';
+import { Context, Meta, UrlResult } from '../types';
 import { Fetcher } from '../utils';
 import { DoodStream } from './DoodStream';
 import { Dropload } from './Dropload';
@@ -25,7 +25,7 @@ export class ExtractorRegistry {
     this.urlResultCache = new TTLCache({ max: 1024 });
   }
 
-  readonly handle = async (ctx: Context, url: URL, countryCode: string): Promise<UrlResult | undefined> => {
+  readonly handle = async (ctx: Context, url: URL, meta: Meta): Promise<UrlResult | undefined> => {
     let urlResult = this.urlResultCache.get(url.href);
     if (this.urlResultCache.has(url.href)) {
       return urlResult;
@@ -35,7 +35,7 @@ export class ExtractorRegistry {
     this.logger.info(`Extract stream URL using ${extractor.id} extractor from ${url}`, ctx);
 
     try {
-      urlResult = await extractor.extract(ctx, url, countryCode);
+      urlResult = await extractor.extract(ctx, url, meta);
     } catch (error) {
       if (error instanceof NotFoundError) {
         this.urlResultCache.set(url.href, urlResult, { ttl: extractor.ttl });

@@ -35,7 +35,7 @@ export class FrenchCloud implements Handler {
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
         .filter(url => !url.host.match(/frenchcloud/))
-        .map(url => this.extractorRegistry.handle(ctx, url, 'fr')),
+        .map(url => this.extractorRegistry.handle(ctx, url, { countryCode: 'fr' })),
     );
   };
 }

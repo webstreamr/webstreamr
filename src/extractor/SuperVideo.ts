@@ -1,7 +1,7 @@
 import bytes from 'bytes';
 import { Extractor } from './types';
 import { extractUrlFromPacked, Fetcher } from '../utils';
-import { Context } from '../types';
+import { Context, Meta } from '../types';
 
 export class SuperVideo implements Extractor {
   readonly id = 'supervideo';
@@ -18,7 +18,7 @@ export class SuperVideo implements Extractor {
 
   readonly supports = (url: URL): boolean => null !== url.host.match(/supervideo/);
 
-  readonly extract = async (ctx: Context, url: URL, countryCode: string) => {
+  readonly extract = async (ctx: Context, url: URL, meta: Meta) => {
     url.pathname = url.pathname.replace('/e/', '').replace('/embed-', '/');
     const html = await this.fetcher.text(ctx, url);
 
@@ -27,10 +27,12 @@ export class SuperVideo implements Extractor {
     return {
       url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
       label: this.label,
-      sourceId: `${this.id}_${countryCode.toLowerCase()}`,
-      height: parseInt(heightAndSizeMatch[1] as string) as number,
-      bytes: bytes.parse(heightAndSizeMatch[2] as string) as number,
-      countryCode,
+      sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
+      meta: {
+        ...meta,
+        bytes: bytes.parse(heightAndSizeMatch[2] as string) as number,
+        height: parseInt(heightAndSizeMatch[1] as string) as number,
+      },
     };
   };
 }

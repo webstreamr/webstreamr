@@ -3,35 +3,39 @@
 exports[`FrenchCloud handle imdb the devil's bath 1`] = `
 [
   {
-    "bytes": 966682214,
-    "countryCode": "fr",
-    "height": 720,
     "label": "SuperVideo",
+    "meta": {
+      "bytes": 966682214,
+      "countryCode": "fr",
+      "height": 720,
+    },
     "sourceId": "supervideo_fr",
     "url": "https://hfs292.serversicuro.cc/hls/,dnzpfwdj5dg4a3gyvbwx5lbvtu65tuwysrizwl7puv6u7dkpym3afmw5hnga,.urlset/master.m3u8",
   },
   {
-    "bytes": 966682214,
-    "countryCode": "fr",
-    "height": 720,
     "label": "Dropload",
+    "meta": {
+      "bytes": 966682214,
+      "countryCode": "fr",
+      "height": 720,
+    },
     "sourceId": "dropload_fr",
     "url": "https://srv28.dropload.io/hls2/01/00215/w4yit5wiia9y_h/master.m3u8?t=ujTsd4AYOdgaA6EhuMJDrC-xYzMVEbqrrd3qsoZ8iAY&s=1747054860&e=14400&f=1076096&i=0.0&sp=0&ii=130.61.236.204",
   },
   {
-    "bytes": 0,
-    "countryCode": "fr",
-    "height": 0,
     "isExternal": true,
     "label": "mixdrop.ag",
+    "meta": {
+      "countryCode": "fr",
+    },
     "sourceId": "external_fr",
     "url": "https://mixdrop.ag/e/l7v73zqrfdj19z",
   },
   {
-    "bytes": 0,
-    "countryCode": "fr",
-    "height": 0,
     "label": "DoodStream",
+    "meta": {
+      "countryCode": "fr",
+    },
     "requestHeaders": {
       "Referer": "http://dood.to/",
     },

@@ -1,4 +1,4 @@
-import { Context, UrlResult } from '../types';
+import { Context, Meta, UrlResult } from '../types';
 
 export interface Extractor {
   readonly id: string;
@@ -9,5 +9,5 @@ export interface Extractor {
 
   readonly supports: (url: URL) => boolean;
 
-  readonly extract: (ctx: Context, url: URL, countryCode: string) => Promise<UrlResult>;
+  readonly extract: (ctx: Context, url: URL, meta: Meta) => Promise<UrlResult>;
 }

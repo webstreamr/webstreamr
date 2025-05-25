@@ -1,6 +1,6 @@
 import { Extractor } from './types';
 import { Fetcher } from '../utils';
-import { Context } from '../types';
+import { Context, Meta } from '../types';
 
 export class ExternalUrl implements Extractor {
   readonly id = 'external';
@@ -17,7 +17,7 @@ export class ExternalUrl implements Extractor {
 
   readonly supports = (url: URL): boolean => null !== url.host.match(/.*/);
 
-  readonly extract = async (ctx: Context, url: URL, countryCode: string) => {
+  readonly extract = async (ctx: Context, url: URL, meta: Meta) => {
     // We only want to make sure that the URL is accessible
     await this.fetcher.head(ctx, url);
 
@@ -25,10 +25,8 @@ export class ExternalUrl implements Extractor {
       url: url,
       isExternal: true,
       label: `${url.host}`,
-      sourceId: `${this.id}_${countryCode.toLowerCase()}`,
-      height: 0,
-      bytes: 0,
-      countryCode,
+      sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
+      meta,
     };
   };
 }

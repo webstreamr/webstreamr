@@ -35,7 +35,7 @@ export class MostraGuarda implements Handler {
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
         .filter(url => !url.host.match(/mostraguarda/))
-        .map(url => this.extractorRegistry.handle(ctx, url, 'it')),
+        .map(url => this.extractorRegistry.handle(ctx, url, { countryCode: 'it' })),
     );
   };
 }

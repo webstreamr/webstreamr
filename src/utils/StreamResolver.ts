@@ -52,12 +52,12 @@ export class StreamResolver {
     await Promise.all(handlerPromises);
 
     urlResults.sort((a, b) => {
-      const heightComparison = b.height - a.height;
+      const heightComparison = (b.meta.height ?? 0) - (a.meta.height ?? 0);
       if (heightComparison !== 0) {
         return heightComparison;
       }
 
-      const bytesComparison = b.bytes - a.bytes;
+      const bytesComparison = (b.meta.bytes ?? 0) - (a.meta.bytes ?? 0);
       if (bytesComparison !== 0) {
         return bytesComparison;
       }
@@ -70,19 +70,19 @@ export class StreamResolver {
     streams.push(
       ...urlResults.map((urlResult) => {
         let name = 'WebStreamr';
-        if (urlResult.height) {
-          name += ` ${urlResult.height}p`;
+        if (urlResult.meta.height) {
+          name += ` ${urlResult.meta.height}p`;
         }
         if (urlResult.isExternal) {
           name += ` external`;
         }
 
         let title = urlResult.label;
-        if (urlResult.bytes) {
-          title += ` | 💾 ${bytes.format(urlResult.bytes, { unitSeparator: ' ' })}`;
+        if (urlResult.meta.bytes) {
+          title += ` | 💾 ${bytes.format(urlResult.meta.bytes, { unitSeparator: ' ' })}`;
         }
-        if (urlResult.countryCode) {
-          title += ` | ${flag(urlResult.countryCode)}`;
+        if (urlResult.meta.countryCode) {
+          title += ` | ${flag(urlResult.meta.countryCode)}`;
         }
 
         return {
@@ -95,7 +95,7 @@ export class StreamResolver {
               notWebReady: true,
               proxyHeaders: { request: urlResult.requestHeaders },
             }),
-            ...(urlResult.bytes && { videoSize: urlResult.bytes }),
+            ...(urlResult.meta.bytes && { videoSize: urlResult.meta.bytes }),
           },
         };
       }),

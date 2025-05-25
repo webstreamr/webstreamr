@@ -10,13 +10,17 @@ export type ManifestWithConfig = Manifest & { config: ManifestConfig[] };
 
 export type Config = Record<string, string>;
 
+export interface Meta {
+  bytes?: number;
+  countryCode: string;
+  height?: number;
+}
+
 export interface UrlResult {
   url: URL;
   isExternal?: boolean;
   label: string;
   sourceId: string;
-  height: number;
-  bytes: number;
-  countryCode?: string;
+  meta: Meta;
   requestHeaders?: Record<string, string>;
 }

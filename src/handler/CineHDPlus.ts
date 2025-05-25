@@ -49,7 +49,7 @@ export class CineHDPlus implements Handler {
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
         .filter(url => !url.host.match(/cinehdplus/))
-        .map(url => this.extractorRegistry.handle(ctx, url, countryCode)),
+        .map(url => this.extractorRegistry.handle(ctx, url, { countryCode })),
     );
   };
 

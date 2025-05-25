@@ -1,7 +1,7 @@
 import randomstring from 'randomstring';
 import { Extractor } from './types';
 import { Fetcher } from '../utils';
-import { Context } from '../types';
+import { Context, Meta } from '../types';
 import { NotFoundError } from '../error';
 
 export class DoodStream implements Extractor {
@@ -19,7 +19,7 @@ export class DoodStream implements Extractor {
 
   readonly supports = (url: URL): boolean => null !== url.host.match(/dood|do[0-9]go/);
 
-  readonly extract = async (ctx: Context, url: URL, countryCode: string) => {
+  readonly extract = async (ctx: Context, url: URL, meta: Meta) => {
     const videoId = url.pathname.split('/').slice(-1)[0] as string;
     const normalizedUrl = new URL(`http://dood.to/e/${videoId}`);
 
@@ -37,10 +37,8 @@ export class DoodStream implements Extractor {
     return {
       url: new URL(`${baseUrl}${randomstring.generate(10)}?token=${token}&expiry=${Date.now()}`),
       label: this.label,
-      sourceId: `${this.id}_${countryCode.toLowerCase()}`,
-      height: 0,
-      bytes: 0,
-      countryCode,
+      sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
+      meta,
       requestHeaders: {
         Referer: 'http://dood.to/',
       },

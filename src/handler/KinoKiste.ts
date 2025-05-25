@@ -44,7 +44,7 @@ export class KinoKiste implements Handler {
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
         .filter(url => !url.host.match(/kinokiste/))
-        .map(url => this.extractorRegistry.handle(ctx, url, 'de')),
+        .map(url => this.extractorRegistry.handle(ctx, url, { countryCode: 'de' })),
     );
   };
 

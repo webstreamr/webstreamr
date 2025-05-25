@@ -46,7 +46,7 @@ export class Frembed implements Handler {
       }
     }
 
-    return Promise.all(urls.map(url => this.extractorRegistry.handle(ctx, url, 'fr')));
+    return Promise.all(urls.map(url => this.extractorRegistry.handle(ctx, url, { countryCode: 'fr' })));
   };
 
   private readonly apiCall = async (ctx: Context, url: URL): Promise<string | undefined> => {
