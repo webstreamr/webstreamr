@@ -1,5 +1,30 @@
 # Changelog
 
+## [0.21.0](https://github.com/webstreamr/webstreamr/compare/v0.20.1...v0.21.0) (2025-05-25)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @stylistic/eslint-plugin to v4.3.0 ([#75](https://github.com/webstreamr/webstreamr/issues/75)) ([61a17b1](https://github.com/webstreamr/webstreamr/commit/61a17b1d1c00c99ebd993645a8f87f4558b9dfba))
+* **deps:** update dependency @stylistic/eslint-plugin to v4.4.0 ([#77](https://github.com/webstreamr/webstreamr/issues/77)) ([9e9d4b2](https://github.com/webstreamr/webstreamr/commit/9e9d4b20811a2eab6e82a7607cd3f727d179ef2f))
+
+
+### Features
+
+* add title to meta, restructure result name ([d4e402e](https://github.com/webstreamr/webstreamr/commit/d4e402e5c958572822bb6d2885c2206bc75ffc52))
+* **extractor:** cache not found results too ([6b5c9a4](https://github.com/webstreamr/webstreamr/commit/6b5c9a4ce70e49eac9668cbd60f4409da8285ac6))
+
+
+### Code Refactoring
+
+* introduce type for CountryCode ([f27fc6c](https://github.com/webstreamr/webstreamr/commit/f27fc6c38a4ba013f67824f40ca8aed1e07c5f1e))
+* move bytes, height and countryCode into meta object ([979dddd](https://github.com/webstreamr/webstreamr/commit/979dddd20c00381d6cb34530acc901f095b2f94e))
+
+
+### Tests
+
+* update fetch fixtures only when requested ([faa6eb6](https://github.com/webstreamr/webstreamr/commit/faa6eb6ed772cf9ed00cab24aa268137d98ace6c))
+
 ## [0.20.1](https://github.com/webstreamr/webstreamr/compare/v0.20.0...v0.20.1) (2025-05-23)
 
 
