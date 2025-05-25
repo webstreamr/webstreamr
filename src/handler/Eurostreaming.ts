@@ -42,12 +42,14 @@ export class Eurostreaming implements Handler {
       .siblings('.mirrors')
       .children('[data-link!="#"]');
 
+    const title = $('meta[property="og:title"]').attr('content') as string;
+
     return Promise.all(mainDataLinkElements
       .add(mirrorDataLinkElements)
       .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
       .toArray()
       .filter(url => !url.host.match(/eurostreaming/))
-      .map(url => this.extractorRegistry.handle(ctx, url, { countryCode: 'it' })),
+      .map(url => this.extractorRegistry.handle(ctx, url, { countryCode: 'it', title: `${title.trim()} ${imdbId.series}x${imdbId.episode}` })),
     );
   };
 

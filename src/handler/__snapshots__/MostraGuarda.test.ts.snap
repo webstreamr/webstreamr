@@ -8,6 +8,7 @@ exports[`MostraGuarda handle imdb the devil's bath 1`] = `
       "bytes": 1181116006,
       "countryCode": "it",
       "height": 720,
+      "title": "the devils bath 2024 sub ita",
     },
     "sourceId": "supervideo_it",
     "url": "https://hfs279.serversicuro.cc/hls/,dnzpejj427g4a3gyvbth53rxqewqgqqzp3wr6zwutysvud7zroar3cb75d3q,.urlset/master.m3u8",
@@ -18,6 +19,7 @@ exports[`MostraGuarda handle imdb the devil's bath 1`] = `
       "bytes": 1181116006,
       "countryCode": "it",
       "height": 720,
+      "title": "the-devils-bath-2024-sd-sub-ita",
     },
     "sourceId": "dropload_it",
     "url": "https://srv34.dropload.io/hls2/01/00200/xsr90y2ltdyx_h/master.m3u8?t=avFOZ-10hDxo6__iaoSUrq7o4yY3ldLw6XDlXxpXF8E&s=1747059001&e=14400&f=1004116&srv=srv24&i=0.0&sp=0&ii=130.61.236.204&p1=srv24&p2=srv24",
@@ -35,6 +37,7 @@ exports[`MostraGuarda handle imdb the devil's bath 1`] = `
     "label": "DoodStream",
     "meta": {
       "countryCode": "it",
+      "title": "the-devils-bath-2024-sd-sub-ita",
     },
     "requestHeaders": {
       "Referer": "http://dood.to/",

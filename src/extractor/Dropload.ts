@@ -1,4 +1,5 @@
 import bytes from 'bytes';
+import * as cheerio from 'cheerio';
 import { Extractor } from './types';
 import { extractUrlFromPacked, Fetcher } from '../utils';
 import { Context, Meta } from '../types';
@@ -31,14 +32,18 @@ export class Dropload implements Extractor {
 
     const sizeMatch = html.match(/([\d.]+ ?[GM]B)/) as string[];
 
+    const $ = cheerio.load(html);
+    const title = $('.videoplayer h1').text().trim();
+
     return {
       url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
       label: this.label,
       sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
       meta: {
-        ...meta,
         bytes: bytes.parse(sizeMatch[1] as string) as number,
         height: parseInt(heightMatch[1] as string) as number,
+        title,
+        ...meta,
       },
     };
   };

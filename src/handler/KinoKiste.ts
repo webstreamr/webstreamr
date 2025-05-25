@@ -37,6 +37,8 @@ export class KinoKiste implements Handler {
 
     const $ = cheerio.load(html);
 
+    const title = $('meta[property="og:title"]').attr('content') as string;
+
     return Promise.all(
       $(`[data-num="${imdbId.series}x${imdbId.episode}"]`)
         .siblings('.mirrors')
@@ -44,7 +46,7 @@ export class KinoKiste implements Handler {
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
         .filter(url => !url.host.match(/kinokiste/))
-        .map(url => this.extractorRegistry.handle(ctx, url, { countryCode: 'de' })),
+        .map(url => this.extractorRegistry.handle(ctx, url, { countryCode: 'de', title: `${title.trim()} ${imdbId.series}x${imdbId.episode}` })),
     );
   };
 

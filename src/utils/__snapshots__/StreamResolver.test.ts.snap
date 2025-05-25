@@ -7,8 +7,9 @@ exports[`resolve returns sorted results 1`] = `
       "bingeGroup": "webstreamr-dropload_de",
       "videoSize": 1395864371,
     },
-    "name": "WebStreamr 1080p",
-    "title": "Dropload | 💾 1.3 GB | 🇩🇪",
+    "name": "WebStreamr 🇩🇪 1080p",
+    "title": "des-teufels-bad-2024
+💾 1.3 GB ⚙️ Dropload",
     "url": "https://srv27.dropload.io/hls2/01/00197/lyo2h1snpe5c_h/master.m3u8?t=qTZsRGIMnUjXsQ4o2LRLlsT4tGG1AdJrRBRDGttNLPM&s=1746903744&e=14400&f=987607&i=0.0&sp=0&ii=130.61.236.204",
   },
   {
@@ -16,8 +17,9 @@ exports[`resolve returns sorted results 1`] = `
       "bingeGroup": "webstreamr-dropload_it",
       "videoSize": 1181116006,
     },
-    "name": "WebStreamr 720p",
-    "title": "Dropload | 💾 1.1 GB | 🇮🇹",
+    "name": "WebStreamr 🇮🇹 720p",
+    "title": "the-devils-bath-2024-sd-sub-ita
+💾 1.1 GB ⚙️ Dropload",
     "url": "https://srv34.dropload.io/hls2/01/00200/xsr90y2ltdyx_h/master.m3u8?t=avFOZ-10hDxo6__iaoSUrq7o4yY3ldLw6XDlXxpXF8E&s=1747059001&e=14400&f=1004116&srv=srv24&i=0.0&sp=0&ii=130.61.236.204&p1=srv24&p2=srv24",
   },
   {
@@ -25,8 +27,9 @@ exports[`resolve returns sorted results 1`] = `
       "bingeGroup": "webstreamr-supervideo_it",
       "videoSize": 1181116006,
     },
-    "name": "WebStreamr 720p",
-    "title": "SuperVideo | 💾 1.1 GB | 🇮🇹",
+    "name": "WebStreamr 🇮🇹 720p",
+    "title": "the devils bath 2024 sub ita
+💾 1.1 GB ⚙️ SuperVideo",
     "url": "https://hfs279.serversicuro.cc/hls/,dnzpejj427g4a3gyvbth53rxqewqgqqzp3wr6zwutysvud7zroar3cb75d3q,.urlset/master.m3u8",
   },
   {
@@ -34,8 +37,9 @@ exports[`resolve returns sorted results 1`] = `
       "bingeGroup": "webstreamr-supervideo_de",
       "videoSize": 1073741824,
     },
-    "name": "WebStreamr 720p",
-    "title": "SuperVideo | 💾 1 GB | 🇩🇪",
+    "name": "WebStreamr 🇩🇪 720p",
+    "title": "des teufels bad 2024
+💾 1 GB ⚙️ SuperVideo",
     "url": "https://hfs290.serversicuro.cc/hls/,dnzpfi3d27g4a3gyvbmh5klwtl65qh654hyjtgupd6p56thhyqu6ra3olbfa,.urlset/master.m3u8",
   },
   {
@@ -48,8 +52,9 @@ exports[`resolve returns sorted results 1`] = `
         },
       },
     },
-    "name": "WebStreamr",
-    "title": "DoodStream | 🇩🇪",
+    "name": "WebStreamr 🇩🇪",
+    "title": "des-teufels-bad-2024
+⚙️ DoodStream",
     "url": "https://aa360cc.cloudatacdn.com/u5kjv4jxytd3sdgge5uogji5dg4huat2pxrm2qibdbm5rtpmbzgb5tornooa/k9wk0js17e~mocked-random-string?token=7uebebipnnhusa4xnyea1er4&expiry=639837296000",
   },
   {
@@ -62,8 +67,9 @@ exports[`resolve returns sorted results 1`] = `
         },
       },
     },
-    "name": "WebStreamr",
-    "title": "DoodStream | 🇮🇹",
+    "name": "WebStreamr 🇮🇹",
+    "title": "the-devils-bath-2024-sd-sub-ita
+⚙️ DoodStream",
     "url": "https://kk892as.cloudatacdn.com/u5kj7j7s27d3sdgge5woezkbi4pu672wktq3aqujw47rbpl3xog2gtqnw2xa/awn9rgotuu~mocked-random-string?token=aw2v2d8uhbrj2ky54d573ujk&expiry=639837296000",
   },
   {
@@ -71,16 +77,18 @@ exports[`resolve returns sorted results 1`] = `
       "bingeGroup": "webstreamr-external_de",
     },
     "externalUrl": "https://mixdrop.ag/e/3nzwveprim63or6",
-    "name": "WebStreamr external",
-    "title": "mixdrop.ag | 🇩🇪",
+    "name": "WebStreamr 🇩🇪 external",
+    "title": "
+⚙️ mixdrop.ag",
   },
   {
     "behaviorHints": {
       "bingeGroup": "webstreamr-external_it",
     },
     "externalUrl": "https://mixdrop.ag/e/vk196d6xfzwwo1",
-    "name": "WebStreamr external",
-    "title": "mixdrop.ag | 🇮🇹",
+    "name": "WebStreamr 🇮🇹 external",
+    "title": "
+⚙️ mixdrop.ag",
   },
 ]
 `;

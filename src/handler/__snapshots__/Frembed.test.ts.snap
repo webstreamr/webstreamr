@@ -6,6 +6,7 @@ exports[`Frembed handle imdb black mirror s4e2 1`] = `
     "label": "DoodStream",
     "meta": {
       "countryCode": "fr",
+      "title": "Black Mirror 4x2",
     },
     "requestHeaders": {
       "Referer": "http://dood.to/",
@@ -18,6 +19,7 @@ exports[`Frembed handle imdb black mirror s4e2 1`] = `
     "label": "netu.frembed.art",
     "meta": {
       "countryCode": "fr",
+      "title": "Black Mirror 4x2",
     },
     "sourceId": "external_fr",
     "url": "https://netu.frembed.art/e/0DFgfkcXOsDP",
@@ -27,6 +29,7 @@ exports[`Frembed handle imdb black mirror s4e2 1`] = `
     "label": "johnalwayssame.com",
     "meta": {
       "countryCode": "fr",
+      "title": "Black Mirror 4x2",
     },
     "sourceId": "external_fr",
     "url": "https://johnalwayssame.com/e/cqy9oue7sv0g",

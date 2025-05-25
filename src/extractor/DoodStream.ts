@@ -1,4 +1,5 @@
 import randomstring from 'randomstring';
+import * as cheerio from 'cheerio';
 import { Extractor } from './types';
 import { Fetcher } from '../utils';
 import { Context, Meta } from '../types';
@@ -34,11 +35,17 @@ export class DoodStream implements Extractor {
 
     const baseUrl = await this.fetcher.text(ctx, new URL(`http://dood.to${passMd5Match[0]}`));
 
+    const $ = cheerio.load(html);
+    const title = $('title').text().trim().replace(/ - DoodStream$/, '').trim();
+
     return {
       url: new URL(`${baseUrl}${randomstring.generate(10)}?token=${token}&expiry=${Date.now()}`),
       label: this.label,
       sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
-      meta,
+      meta: {
+        title,
+        ...meta,
+      },
       requestHeaders: {
         Referer: 'http://dood.to/',
       },

@@ -16,6 +16,7 @@ export interface Meta {
   bytes?: number;
   countryCode: CountryCode;
   height?: number;
+  title?: string;
 }
 
 export interface UrlResult {

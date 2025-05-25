@@ -70,6 +70,9 @@ export class StreamResolver {
     streams.push(
       ...urlResults.map((urlResult) => {
         let name = 'WebStreamr';
+        if (urlResult.meta.countryCode) {
+          name += ` ${flag(urlResult.meta.countryCode)}`;
+        }
         if (urlResult.meta.height) {
           name += ` ${urlResult.meta.height}p`;
         }
@@ -77,13 +80,12 @@ export class StreamResolver {
           name += ` external`;
         }
 
-        let title = urlResult.label;
+        const titleSecondLineEntries: string[] = [];
         if (urlResult.meta.bytes) {
-          title += ` | 💾 ${bytes.format(urlResult.meta.bytes, { unitSeparator: ' ' })}`;
+          titleSecondLineEntries.push(`💾 ${bytes.format(urlResult.meta.bytes, { unitSeparator: ' ' })}`);
         }
-        if (urlResult.meta.countryCode) {
-          title += ` | ${flag(urlResult.meta.countryCode)}`;
-        }
+        titleSecondLineEntries.push(`⚙️ ${urlResult.label}`);
+        const title = [urlResult.meta.title ?? '', titleSecondLineEntries.join(' ')].join('\n');
 
         return {
           [urlResult.isExternal ? 'externalUrl' : 'url']: urlResult.url.href,
