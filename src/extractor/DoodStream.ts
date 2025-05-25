@@ -2,6 +2,7 @@ import randomstring from 'randomstring';
 import { Extractor } from './types';
 import { Fetcher } from '../utils';
 import { Context } from '../types';
+import { NotFoundError } from '../error';
 
 export class DoodStream implements Extractor {
   readonly id = 'doodstream';
@@ -24,7 +25,10 @@ export class DoodStream implements Extractor {
 
     const html = await this.fetcher.text(ctx, new URL(normalizedUrl));
 
-    const passMd5Match = html.match(/\/pass_md5\/[\w-]+\/([\w-]+)/) as string[];
+    const passMd5Match = html.match(/\/pass_md5\/[\w-]+\/([\w-]+)/);
+    if (!passMd5Match) {
+      throw new NotFoundError();
+    }
 
     const token = passMd5Match[1] as string;
 
