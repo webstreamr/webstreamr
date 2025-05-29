@@ -43,8 +43,11 @@ export class Fetcher {
       timeout: 15000,
       ...config,
       headers: {
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en',
         'Forwarded': `for=${ctx.ip}`,
         'Origin': `${origin}`,
+        'Priority': 'u=0',
         'Referer': `${referer}`,
         'User-Agent': this.createUserAgentForIp(ctx.ip),
         'X-Forwarded-For': ctx.ip,

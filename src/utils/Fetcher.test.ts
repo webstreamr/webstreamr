@@ -26,10 +26,13 @@ describe('fetch', () => {
       'https://some-url.test/',
       {
         headers: {
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'en',
           'Forwarded': 'for=127.0.0.1',
           'Origin': 'https://some-url.test',
-          'User-Agent': expect.not.stringMatching(/jest/),
+          'Priority': 'u=0',
           'Referer': 'https://some-url.test',
+          'User-Agent': expect.not.stringMatching(/jest/),
           'X-Forwarded-For': '127.0.0.1',
           'X-Forwarded-Proto': 'https',
           'X-Real-IP': '127.0.0.1',
