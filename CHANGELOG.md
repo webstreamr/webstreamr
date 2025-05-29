@@ -1,5 +1,37 @@
 # Changelog
 
+## [0.22.0](https://github.com/webstreamr/webstreamr/compare/v0.21.0...v0.22.0) (2025-05-29)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#79](https://github.com/webstreamr/webstreamr/issues/79)) ([17b6d79](https://github.com/webstreamr/webstreamr/commit/17b6d79157b2ed86148951c86f5f6dfd1b8c434c))
+* **deps:** update dependency @types/node to v22.15.21 ([#78](https://github.com/webstreamr/webstreamr/issues/78)) ([19d7a8b](https://github.com/webstreamr/webstreamr/commit/19d7a8b9ddecfa333ec6fa1b7196084f113896ed))
+* **deps:** update dependency typescript-eslint to v8.33.0 ([#82](https://github.com/webstreamr/webstreamr/issues/82)) ([62098f8](https://github.com/webstreamr/webstreamr/commit/62098f8e845b51dbed774e40babf382fbac2aa2c))
+* **fetcher:** reduce timeout to 5s ([5bfe2f8](https://github.com/webstreamr/webstreamr/commit/5bfe2f800b372d6ca5ca9d42f307c77bede3d4e5))
+* **fetcher:** set more headers to mimick browser requests ([07ddaab](https://github.com/webstreamr/webstreamr/commit/07ddaab7fb8a8818d6e0f60ee4d701430bd28178))
+* **fetcher:** use more realistic referer/origin header values ([02b73b4](https://github.com/webstreamr/webstreamr/commit/02b73b41d7ea08f299907510cfe88daa7ad25d9c))
+
+
+### Features
+
+* make external URL exclusion configurable ([799ca97](https://github.com/webstreamr/webstreamr/commit/799ca975ac9873bbeff6c6d73b58eb04176b8901))
+
+
+### Bug Fixes
+
+* detect and report Cloudflare challenge blocks ([0638ce0](https://github.com/webstreamr/webstreamr/commit/0638ce0a8c4791c781da49735d19ea864a5df13a))
+
+
+### Code Refactoring
+
+* **handler:** remove not needed 404 special handling ([862d3bb](https://github.com/webstreamr/webstreamr/commit/862d3bb5f23c32dcf4f4e3399a9a79e28a66ab12))
+
+
+### Tests
+
+* remove duplicated Fetcher test parts ([f2a7da2](https://github.com/webstreamr/webstreamr/commit/f2a7da21e0153213a62933d6a3b35768d548931e))
+
 ## [0.21.0](https://github.com/webstreamr/webstreamr/compare/v0.20.1...v0.21.0) (2025-05-25)
 
 
