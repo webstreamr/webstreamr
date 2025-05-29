@@ -40,7 +40,7 @@ export class Fetcher {
 
     return {
       responseType: 'text',
-      timeout: 15000,
+      timeout: 5000,
       ...config,
       headers: {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',

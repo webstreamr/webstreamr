@@ -38,7 +38,7 @@ describe('fetch', () => {
           'X-Real-IP': '127.0.0.1',
         },
         responseType: 'text',
-        timeout: 15000,
+        timeout: 5000,
       },
     );
   });
