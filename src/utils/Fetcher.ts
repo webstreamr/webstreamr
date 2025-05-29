@@ -3,7 +3,7 @@ import TTLCache from '@isaacs/ttlcache';
 import UserAgent from 'user-agents';
 import winston from 'winston';
 import { Context } from '../types';
-import { NotFoundError } from '../error';
+import { CloudflareChallengeError, NotFoundError } from '../error';
 
 export class Fetcher {
   private readonly axios: AxiosInstance;
@@ -69,9 +69,16 @@ export class Fetcher {
     try {
       return await callable();
     } catch (error) {
-      if (isAxiosError(error) && error.response?.status === 404) {
-        throw new NotFoundError();
+      if (isAxiosError(error)) {
+        if (error.response?.status === 404) {
+          throw new NotFoundError();
+        }
+
+        if (error.response?.headers['cf-mitigated'] === 'challenge') {
+          throw new CloudflareChallengeError();
+        }
       }
+
       throw error;
     }
   };

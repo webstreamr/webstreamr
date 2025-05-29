@@ -7,7 +7,7 @@ import { DoodStream } from './DoodStream';
 import { Dropload } from './Dropload';
 import { SuperVideo } from './SuperVideo';
 import { ExternalUrl } from './ExternalUrl';
-import { NotFoundError } from '../error';
+import { CloudflareChallengeError, NotFoundError } from '../error';
 
 export class ExtractorRegistry {
   private readonly logger: winston.Logger;
@@ -41,6 +41,20 @@ export class ExtractorRegistry {
         this.urlResultCache.set(url.href, urlResult, { ttl: extractor.ttl });
 
         return undefined;
+      }
+
+      /* istanbul ignore next */
+      if (error instanceof CloudflareChallengeError) {
+        this.logger.warn(`${extractor.id}: Request was blocked by Cloudflare challenge.`, ctx);
+
+        return {
+          url: url,
+          isExternal: true,
+          cloudflareChallenge: true,
+          label: url.host,
+          sourceId: '',
+          meta,
+        };
       }
 
       this.logger.warn(`${extractor.id} error: ${error}`, ctx);

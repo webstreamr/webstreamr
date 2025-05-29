@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`resolve adds Cloudflare blocked info 1`] = `
+[
+  {
+    "behaviorHints": {},
+    "externalUrl": "https://example.com/",
+    "name": "WebStreamr 🇩🇪 external",
+    "title": "⚙️ example.com
+Request was blocked by Cloudflare.",
+  },
+]
+`;
+
 exports[`resolve returns sorted results 1`] = `
 [
   {
@@ -78,8 +90,7 @@ exports[`resolve returns sorted results 1`] = `
     },
     "externalUrl": "https://mixdrop.ag/e/3nzwveprim63or6",
     "name": "WebStreamr 🇩🇪 external",
-    "title": "
-⚙️ mixdrop.ag",
+    "title": "⚙️ mixdrop.ag",
   },
   {
     "behaviorHints": {
@@ -87,8 +98,7 @@ exports[`resolve returns sorted results 1`] = `
     },
     "externalUrl": "https://mixdrop.ag/e/vk196d6xfzwwo1",
     "name": "WebStreamr 🇮🇹 external",
-    "title": "
-⚙️ mixdrop.ag",
+    "title": "⚙️ mixdrop.ag",
   },
 ]
 `;

@@ -85,14 +85,24 @@ export class StreamResolver {
           titleSecondLineEntries.push(`💾 ${bytes.format(urlResult.meta.bytes, { unitSeparator: ' ' })}`);
         }
         titleSecondLineEntries.push(`⚙️ ${urlResult.label}`);
-        const title = [urlResult.meta.title ?? '', titleSecondLineEntries.join(' ')].join('\n');
+
+        const titleLines = [];
+        if (urlResult.meta.title) {
+          titleLines.push(urlResult.meta.title);
+        }
+        titleLines.push(titleSecondLineEntries.join(' '));
+        if (urlResult.cloudflareChallenge) {
+          titleLines.push('Request was blocked by Cloudflare.');
+        }
+
+        const title = titleLines.join('\n');
 
         return {
           [urlResult.isExternal ? 'externalUrl' : 'url']: urlResult.url.href,
           name,
           title,
           behaviorHints: {
-            bingeGroup: `webstreamr-${urlResult.sourceId}`,
+            ...(urlResult.sourceId && { bingeGroup: `webstreamr-${urlResult.sourceId}` }),
             ...(urlResult.requestHeaders !== undefined && {
               notWebReady: true,
               proxyHeaders: { request: urlResult.requestHeaders },

@@ -3,7 +3,7 @@ import { ExtractorRegistry } from '../extractor';
 import { StreamResolver } from './StreamResolver';
 import { Handler, MeineCloud, MostraGuarda } from '../handler';
 import { Fetcher } from './Fetcher';
-import { Context } from '../types';
+import { Context, CountryCode, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 jest.mock('../utils/Fetcher');
 
@@ -54,6 +54,34 @@ describe('resolve', () => {
 
   test('returns sorted results', async () => {
     const streams = await streamResolver.resolve(ctx, [meineCloud, mostraGuarda], 'movie', 'tt29141112');
+    expect(streams).toMatchSnapshot();
+  });
+
+  test('adds Cloudflare blocked info', async () => {
+    class MockHandler implements Handler {
+      readonly id = 'mockhandler';
+
+      readonly label = 'MockHandler';
+
+      readonly contentTypes = ['movie'];
+
+      readonly countryCodes: CountryCode[] = ['de'];
+
+      readonly handle = async (): Promise<(UrlResult | undefined)[]> => {
+        return [{
+          url: new URL('https://example.com'),
+          isExternal: true,
+          cloudflareChallenge: true,
+          label: 'example.com',
+          sourceId: '',
+          meta: {
+            countryCode: 'de',
+          },
+        }];
+      };
+    }
+
+    const streams = await streamResolver.resolve(ctx, [new MockHandler()], 'movie', 'tt11655566');
     expect(streams).toMatchSnapshot();
   });
 

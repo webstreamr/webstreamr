@@ -22,8 +22,9 @@ export interface Meta {
 export interface UrlResult {
   url: URL;
   isExternal?: boolean;
+  cloudflareChallenge?: boolean;
   label: string;
-  sourceId: string;
+  sourceId?: string;
   meta: Meta;
   requestHeaders?: Record<string, string>;
 }

@@ -3,7 +3,7 @@ import axios, { AxiosError } from 'axios';
 import AxiosMockAdapter from 'axios-mock-adapter';
 import { Fetcher } from './Fetcher';
 import { Context } from '../types';
-import { NotFoundError } from '../error';
+import { CloudflareChallengeError, NotFoundError } from '../error';
 
 const axiosMock = new AxiosMockAdapter(axios);
 
@@ -123,6 +123,12 @@ describe('fetch', () => {
     axiosMock.onGet().reply(404);
 
     await expect(fetcher.text(ctx, new URL('https://some-url.test/'))).rejects.toBeInstanceOf(NotFoundError);
+  });
+
+  test('converts Cloudflare challenge block to custom CloudflareChallengeError', async () => {
+    axiosMock.onGet().reply(403, undefined, { 'cf-mitigated': 'challenge' });
+
+    await expect(fetcher.text(ctx, new URL('https://some-url.test/'))).rejects.toBeInstanceOf(CloudflareChallengeError);
   });
 
   test('passes through other errors', async () => {
