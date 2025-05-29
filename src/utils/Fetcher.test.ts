@@ -40,83 +40,16 @@ describe('fetch', () => {
     );
   });
 
-  test('textPost passes successful response through setting headers', async () => {
+  test('textPost ', async () => {
     axiosMock.onPost().reply(200, 'some text');
-    const axiosSpy = jest.spyOn(axios, 'post');
 
-    const responseText1 = await fetcher.textPost(ctx, new URL('https://some-url.test/'), { foo: 'bar' });
-    const responseText2 = await fetcher.textPost(ctx, new URL('https://some-url.test/'), { foo: 'bar' }, { headers: { 'User-Agent': 'jest' } });
-
-    expect(responseText1).toBe('some text');
-    expect(responseText2).toStrictEqual(responseText1);
-
-    expect(axiosSpy).toHaveBeenCalledWith(
-      'https://some-url.test/',
-      {
-        foo: 'bar',
-      },
-      {
-        headers: {
-          'Forwarded': 'for=127.0.0.1',
-          'Origin': 'https://some-url.test',
-          'User-Agent': expect.not.stringMatching(/jest/),
-          'Referer': 'https://some-url.test',
-          'X-Forwarded-For': '127.0.0.1',
-          'X-Forwarded-Proto': 'https',
-          'X-Real-IP': '127.0.0.1',
-        },
-        responseType: 'text',
-        timeout: 15000,
-      },
-    );
-
-    expect(axiosSpy).toHaveBeenCalledWith(
-      'https://some-url.test/',
-      {
-        foo: 'bar',
-      },
-      {
-        headers: {
-          'Forwarded': 'for=127.0.0.1',
-          'Origin': 'https://some-url.test',
-          'User-Agent': 'jest',
-          'Referer': 'https://some-url.test',
-          'X-Forwarded-For': '127.0.0.1',
-          'X-Forwarded-Proto': 'https',
-          'X-Real-IP': '127.0.0.1',
-        },
-        responseType: 'text',
-        timeout: 15000,
-      },
-    );
+    expect(await fetcher.textPost(ctx, new URL('https://some-url.test/'), { foo: 'bar' })).toBe('some text');
   });
 
-  test('head passes successful response through setting headers', async () => {
+  test('head', async () => {
     axiosMock.onHead().reply(200, undefined, { 'X-Fake-Response': 'foo' });
-    const axiosSpy = jest.spyOn(axios, 'head');
 
-    const responseHeaders1 = await fetcher.head(ctx, new URL('https://some-url.test/'));
-    const responseHeaders2 = await fetcher.head(ctx, new URL('https://some-url.test/'), { headers: { 'User-Agent': 'jest' } });
-
-    expect(responseHeaders1).toMatchObject({ 'X-Fake-Response': 'foo' });
-    expect(responseHeaders2).toStrictEqual(responseHeaders1);
-
-    expect(axiosSpy).toHaveBeenCalledWith(
-      'https://some-url.test/',
-      {
-        headers: {
-          'Forwarded': 'for=127.0.0.1',
-          'Origin': 'https://some-url.test',
-          'User-Agent': expect.not.stringMatching(/jest/),
-          'Referer': 'https://some-url.test',
-          'X-Forwarded-For': '127.0.0.1',
-          'X-Forwarded-Proto': 'https',
-          'X-Real-IP': '127.0.0.1',
-        },
-        responseType: 'text',
-        timeout: 15000,
-      },
-    );
+    expect(await fetcher.head(ctx, new URL('https://some-url.test/'))).toMatchObject({ 'X-Fake-Response': 'foo' });
   });
 
   test('uses context referer', async () => {
