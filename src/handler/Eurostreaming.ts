@@ -49,7 +49,7 @@ export class Eurostreaming implements Handler {
       .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
       .toArray()
       .filter(url => !url.host.match(/eurostreaming/))
-      .map(url => this.extractorRegistry.handle(ctx, url, { countryCode: 'it', title: `${title.trim()} ${imdbId.series}x${imdbId.episode}` })),
+      .map(url => this.extractorRegistry.handle({ ...ctx, referer: seriesPageUrl }, url, { countryCode: 'it', title: `${title.trim()} ${imdbId.series}x${imdbId.episode}` })),
     );
   };
 

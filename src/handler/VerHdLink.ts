@@ -26,7 +26,8 @@ export class VerHdLink implements Handler {
       return [];
     }
 
-    const html = await this.fetcher.text(ctx, new URL(`https://verhdlink.cam/movie/${parseImdbId(id).id}`));
+    const pageUrl = new URL(`https://verhdlink.cam/movie/${parseImdbId(id).id}`);
+    const html = await this.fetcher.text(ctx, pageUrl);
 
     const $ = cheerio.load(html);
 
@@ -46,7 +47,7 @@ export class VerHdLink implements Handler {
             .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
             .toArray()
             .filter(url => !url.host.match(/verhdlink/))
-            .map(url => this.extractorRegistry.handle(ctx, url, { countryCode }));
+            .map(url => this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, url, { countryCode }));
         }),
     );
   };

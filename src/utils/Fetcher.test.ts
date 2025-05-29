@@ -119,6 +119,23 @@ describe('fetch', () => {
     );
   });
 
+  test('uses context referer', async () => {
+    axiosMock.onGet().reply(200, 'some text');
+    const axiosSpy = jest.spyOn(axios, 'get');
+
+    await fetcher.text({ ...ctx, referer: new URL('https://example.com/foo/bar') }, new URL('https://some-url.test/'));
+
+    expect(axiosSpy).toHaveBeenCalledWith(
+      'https://some-url.test/',
+      expect.objectContaining({
+        headers: expect.objectContaining({
+          Origin: 'https://example.com',
+          Referer: 'https://example.com/foo/bar',
+        }),
+      }),
+    );
+  });
+
   test('converts 404 to custom NotFoundError', async () => {
     axiosMock.onGet().reply(404);
 

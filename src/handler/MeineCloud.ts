@@ -26,7 +26,8 @@ export class MeineCloud implements Handler {
       return [];
     }
 
-    const html = await this.fetcher.text(ctx, new URL(`https://meinecloud.click/movie/${parseImdbId(id).id}`));
+    const pageUrl = new URL(`https://meinecloud.click/movie/${parseImdbId(id).id}`);
+    const html = await this.fetcher.text(ctx, pageUrl);
 
     const $ = cheerio.load(html);
 
@@ -35,7 +36,7 @@ export class MeineCloud implements Handler {
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
         .filter(url => !url.host.match(/meinecloud/))
-        .map(url => this.extractorRegistry.handle(ctx, url, { countryCode: 'de' })),
+        .map(url => this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, url, { countryCode: 'de' })),
     );
   };
 }

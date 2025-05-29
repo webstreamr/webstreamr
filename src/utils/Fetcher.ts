@@ -35,14 +35,17 @@ export class Fetcher {
   };
 
   private readonly getConfig = (ctx: Context, url: URL, config?: AxiosRequestConfig): AxiosRequestConfig => {
+    const origin = ctx.referer?.origin ?? url.origin;
+    const referer = ctx.referer?.href ?? url.origin;
+
     return {
       responseType: 'text',
       timeout: 15000,
       ...config,
       headers: {
         'Forwarded': `for=${ctx.ip}`,
-        'Origin': `${url.origin}`,
-        'Referer': `${url.origin}`,
+        'Origin': `${origin}`,
+        'Referer': `${referer}`,
         'User-Agent': this.createUserAgentForIp(ctx.ip),
         'X-Forwarded-For': ctx.ip,
         'X-Forwarded-Proto': url.protocol.slice(0, -1),

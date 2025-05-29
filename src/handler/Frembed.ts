@@ -28,7 +28,8 @@ export class Frembed implements Handler {
 
     const tmdbId = await getTmdbIdFromImdbId(ctx, this.fetcher, parseImdbId(id));
 
-    const response = await this.apiCall(ctx, new URL(`https://frembed.club/api/series?id=${tmdbId.id}&sa=${tmdbId.series}&epi=${tmdbId.episode}&idType=tmdb`));
+    const apiUrl = new URL(`https://frembed.club/api/series?id=${tmdbId.id}&sa=${tmdbId.series}&epi=${tmdbId.episode}&idType=tmdb`);
+    const response = await this.apiCall(ctx, apiUrl);
     if (!response) {
       return [];
     }
@@ -46,7 +47,9 @@ export class Frembed implements Handler {
       }
     }
 
-    return Promise.all(urls.map(url => this.extractorRegistry.handle(ctx, url, { countryCode: 'fr', title: `${json['title']} ${tmdbId.series}x${tmdbId.episode}` })));
+    return Promise.all(
+      urls.map(url => this.extractorRegistry.handle({ ...ctx, referer: apiUrl }, url, { countryCode: 'fr', title: `${json['title']} ${tmdbId.series}x${tmdbId.episode}` })),
+    );
   };
 
   private readonly apiCall = async (ctx: Context, url: URL): Promise<string | undefined> => {
