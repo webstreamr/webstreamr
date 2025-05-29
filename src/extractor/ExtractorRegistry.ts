@@ -31,7 +31,11 @@ export class ExtractorRegistry {
       return urlResult;
     }
 
-    const extractor = this.extractors.find(extractor => extractor.supports(url)) as Extractor;
+    const extractor = this.extractors.find(extractor => extractor.supports(ctx, url));
+    if (!extractor) {
+      return undefined;
+    }
+
     this.logger.info(`Extract stream URL using ${extractor.id} extractor from ${url}`, ctx);
 
     try {
@@ -44,7 +48,7 @@ export class ExtractorRegistry {
       }
 
       /* istanbul ignore next */
-      if (error instanceof CloudflareChallengeError) {
+      if (error instanceof CloudflareChallengeError && !('excludeExternalUrls' in ctx.config)) {
         this.logger.warn(`${extractor.id}: Request was blocked by Cloudflare challenge.`, ctx);
 
         return {

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExtractorRegistry return external URLs by default 1`] = `
+{
+  "isExternal": true,
+  "label": "mixdrop.ag",
+  "meta": {
+    "countryCode": "de",
+  },
+  "sourceId": "external_de",
+  "url": "https://mixdrop.ag/e/3nzwveprim63or6",
+}
+`;

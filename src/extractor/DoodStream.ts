@@ -18,7 +18,7 @@ export class DoodStream implements Extractor {
     this.fetcher = fetcher;
   }
 
-  readonly supports = (url: URL): boolean => null !== url.host.match(/dood|do[0-9]go/);
+  readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/dood|do[0-9]go/);
 
   readonly extract = async (ctx: Context, url: URL, meta: Meta) => {
     const videoId = url.pathname.split('/').slice(-1)[0] as string;

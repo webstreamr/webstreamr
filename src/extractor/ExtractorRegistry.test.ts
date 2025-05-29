@@ -18,6 +18,18 @@ describe('ExtractorRegistry', () => {
     expect(urlResult).toBeUndefined();
   });
 
+  test('return external URLs by default', async () => {
+    const urlResult = await extractorRegistry.handle(ctx, new URL('https://mixdrop.ag/e/3nzwveprim63or6'), { countryCode: 'de' });
+
+    expect(urlResult).toMatchSnapshot();
+  });
+
+  test('does not return external URLs if disabled by config', async () => {
+    const urlResult = await extractorRegistry.handle({ ...ctx, config: { ...ctx.config, excludeExternalUrls: 'on' } }, new URL('https://mixdrop.ag/e/l7v73zqrfdj19z'), { countryCode: 'de' });
+
+    expect(urlResult).toBeUndefined();
+  });
+
   test('returns from memory cache if possible', async () => {
     const urlResult1 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), { countryCode: 'de' });
     const urlResult2 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), { countryCode: 'de' });

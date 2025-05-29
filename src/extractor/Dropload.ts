@@ -18,7 +18,7 @@ export class Dropload implements Extractor {
     this.fetcher = fetcher;
   }
 
-  readonly supports = (url: URL): boolean => null !== url.host.match(/dropload/);
+  readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/dropload/);
 
   readonly extract = async (ctx: Context, url: URL, meta: Meta) => {
     url.pathname = url.pathname.replace('/e/', '').replace('/embed-', '/');

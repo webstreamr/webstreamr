@@ -10,12 +10,6 @@ const logger = winston.createLogger({ transports: [new winston.transports.Consol
 const fetcher = new Fetcher();
 
 describe('buildManifest', () => {
-  test('has an empty config without handlers', () => {
-    const manifest = buildManifest([], {});
-
-    expect(manifest.config).toStrictEqual([]);
-  });
-
   test('has unchecked handler without a config', () => {
     const extractorRegistry = new ExtractorRegistry(logger, fetcher);
     const handlers = [
@@ -30,6 +24,7 @@ describe('buildManifest', () => {
       { key: 'de', type: 'checkbox', title: '🇩🇪 (KinoKiste, MeineCloud)' },
       { key: 'es', type: 'checkbox', title: '🇪🇸 (VerHdLink)' },
       { key: 'mx', type: 'checkbox', title: '🇲🇽 (VerHdLink)' },
+      { key: 'excludeExternalUrls', type: 'checkbox', title: 'Exclude external URLs from results' },
     ]);
   });
 
@@ -46,6 +41,7 @@ describe('buildManifest', () => {
       { key: 'de', type: 'checkbox', title: '🇩🇪 (KinoKiste, MeineCloud)', default: 'checked' },
       { key: 'es', type: 'checkbox', title: '🇪🇸 (VerHdLink)' },
       { key: 'mx', type: 'checkbox', title: '🇲🇽 (VerHdLink)' },
+      { key: 'excludeExternalUrls', type: 'checkbox', title: 'Exclude external URLs from results' },
     ]);
   });
 });

@@ -7,7 +7,7 @@ export interface Extractor {
 
   readonly ttl: number;
 
-  readonly supports: (url: URL) => boolean;
+  readonly supports: (ctx: Context, url: URL) => boolean;
 
   readonly extract: (ctx: Context, url: URL, meta: Meta) => Promise<UrlResult>;
 }

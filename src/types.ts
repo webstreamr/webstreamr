@@ -9,7 +9,7 @@ export interface Context {
 
 export type ManifestWithConfig = Manifest & { config: ManifestConfig[] };
 
-export type Config = Record<string, string>;
+export type Config = Partial<Record<CountryCode | 'excludeExternalUrls', string>>;
 
 export type CountryCode = 'de' | 'en' | 'es' | 'fr' | 'it' | 'mx';
 

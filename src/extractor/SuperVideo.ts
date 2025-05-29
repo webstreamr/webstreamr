@@ -17,7 +17,7 @@ export class SuperVideo implements Extractor {
     this.fetcher = fetcher;
   }
 
-  readonly supports = (url: URL): boolean => null !== url.host.match(/supervideo/);
+  readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/supervideo/);
 
   readonly extract = async (ctx: Context, url: URL, meta: Meta) => {
     url.pathname = url.pathname.replace('/e/', '').replace('/embed-', '/');

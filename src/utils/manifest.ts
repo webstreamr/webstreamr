@@ -47,5 +47,11 @@ export const buildManifest = (handlers: Handler[], config: Config): ManifestWith
     });
   }
 
+  manifest.config.push({
+    key: 'excludeExternalUrls',
+    type: 'checkbox',
+    title: 'Exclude external URLs from results',
+  });
+
   return manifest;
 };
