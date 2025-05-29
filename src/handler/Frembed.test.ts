@@ -17,11 +17,6 @@ describe('Frembed', () => {
     expect(streams).toHaveLength(0);
   });
 
-  test('handles non-existent series gracefully', async () => {
-    const streams = await handler.handle(ctx, 'series', 'tt4352342:1:1');
-    expect(streams).toHaveLength(0);
-  });
-
   test('handle imdb black mirror s4e2', async () => {
     const streams = (await handler.handle(ctx, 'series', 'tt2085059:4:2')).filter(stream => stream !== undefined);
     expect(streams).toMatchSnapshot();

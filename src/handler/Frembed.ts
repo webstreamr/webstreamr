@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { Handler } from './types';
 import { parseImdbId, Fetcher, getTmdbIdFromImdbId } from '../utils';
 import { ExtractorRegistry } from '../extractor';
@@ -29,12 +28,8 @@ export class Frembed implements Handler {
     const tmdbId = await getTmdbIdFromImdbId(ctx, this.fetcher, parseImdbId(id));
 
     const apiUrl = new URL(`https://frembed.club/api/series?id=${tmdbId.id}&sa=${tmdbId.series}&epi=${tmdbId.episode}&idType=tmdb`);
-    const response = await this.apiCall(ctx, apiUrl);
-    if (!response) {
-      return [];
-    }
 
-    const json = JSON.parse(response);
+    const json = JSON.parse(await this.fetcher.text(ctx, apiUrl));
 
     const urls: URL[] = [];
     for (const key in json) {
@@ -50,19 +45,5 @@ export class Frembed implements Handler {
     return Promise.all(
       urls.map(url => this.extractorRegistry.handle({ ...ctx, referer: apiUrl }, url, { countryCode: 'fr', title: `${json['title']} ${tmdbId.series}x${tmdbId.episode}` })),
     );
-  };
-
-  private readonly apiCall = async (ctx: Context, url: URL): Promise<string | undefined> => {
-    try {
-      return await this.fetcher.text(ctx, url);
-    } catch (error) {
-      /* istanbul ignore next */
-      if (axios.isAxiosError(error) && error.response?.status === 404) {
-        return undefined;
-      }
-
-      /* istanbul ignore next */
-      throw error;
-    }
   };
 }
