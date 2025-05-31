@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.22.1](https://github.com/webstreamr/webstreamr/compare/v0.22.0...v0.22.1) (2025-05-31)
+
+
+### Miscellaneous Chores
+
+* **deps:** update eslint monorepo to v9.28.0 ([#85](https://github.com/webstreamr/webstreamr/issues/85)) ([2f9a349](https://github.com/webstreamr/webstreamr/commit/2f9a349d31f995d4a8bae56c590d49a8d17b0d29))
+
+
+### Bug Fixes
+
+* switch back to fetch and do not generate user agents ([fbc1aa9](https://github.com/webstreamr/webstreamr/commit/fbc1aa994c091a39a97c48d417e32afbe63f78d9))
+
 ## [0.22.0](https://github.com/webstreamr/webstreamr/compare/v0.21.0...v0.22.0) (2025-05-29)
 
 
