@@ -1,20 +1,21 @@
 import winston from 'winston';
-import axios, { AxiosError } from 'axios';
-import AxiosMockAdapter from 'axios-mock-adapter';
+import fetchMock from 'fetch-mock';
 import { Fetcher } from './Fetcher';
 import { Context } from '../types';
 import { CloudflareChallengeError, NotFoundError } from '../error';
+fetchMock.mockGlobal();
 
-const axiosMock = new AxiosMockAdapter(axios);
-
-const fetcher = new Fetcher(axios, winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
+const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
 
 describe('fetch', () => {
   const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on' } };
 
+  afterEach(() => {
+    fetchMock.clearHistory();
+  });
+
   test('text passes successful response through setting headers', async () => {
-    axiosMock.onGet().reply(200, 'some text');
-    const axiosSpy = jest.spyOn(axios, 'get');
+    fetchMock.get('https://some-url.test/', 'some text');
 
     const responseText1 = await fetcher.text(ctx, new URL('https://some-url.test/'));
     const responseText2 = await fetcher.text(ctx, new URL('https://some-url.test/'), { headers: { 'User-Agent': 'jest' } });
@@ -22,71 +23,80 @@ describe('fetch', () => {
     expect(responseText1).toBe('some text');
     expect(responseText2).toStrictEqual(responseText1);
 
-    expect(axiosSpy).toHaveBeenCalledWith(
-      'https://some-url.test/',
-      {
-        headers: {
-          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-          'Accept-Language': 'en',
-          'Forwarded': 'for=127.0.0.1',
-          'Origin': 'https://some-url.test',
-          'Priority': 'u=0',
-          'Referer': 'https://some-url.test',
-          'User-Agent': expect.not.stringMatching(/jest/),
-          'X-Forwarded-For': '127.0.0.1',
-          'X-Forwarded-Proto': 'https',
-          'X-Real-IP': '127.0.0.1',
-        },
-        responseType: 'text',
-        timeout: 5000,
+    expect(fetchMock.callHistory.callLogs[0]?.args[1]).toMatchObject({
+      headers: {
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en',
+        'Forwarded': 'for=127.0.0.1',
+        'Origin': 'https://some-url.test',
+        'Priority': 'u=0',
+        'Referer': 'https://some-url.test',
+        'X-Forwarded-For': '127.0.0.1',
+        'X-Forwarded-Proto': 'https',
+        'X-Real-IP': '127.0.0.1',
       },
-    );
+    });
   });
 
   test('textPost ', async () => {
-    axiosMock.onPost().reply(200, 'some text');
+    fetchMock.post('https://some-post-url.test/', 'some text');
 
-    expect(await fetcher.textPost(ctx, new URL('https://some-url.test/'), { foo: 'bar' })).toBe('some text');
+    expect(await fetcher.textPost(ctx, new URL('https://some-post-url.test/'), { foo: 'bar' })).toBe('some text');
   });
 
   test('head', async () => {
-    axiosMock.onHead().reply(200, undefined, { 'X-Fake-Response': 'foo' });
+    fetchMock.head('https://some-head-url.test/', { status: 200, headers: { 'X-Fake-Response': 'foo' } });
 
-    expect(await fetcher.head(ctx, new URL('https://some-url.test/'))).toMatchObject({ 'X-Fake-Response': 'foo' });
+    expect(await fetcher.head(ctx, new URL('https://some-head-url.test/'))).toMatchObject({ 'x-fake-response': 'foo' });
   });
 
   test('uses context referer', async () => {
-    axiosMock.onGet().reply(200, 'some text');
-    const axiosSpy = jest.spyOn(axios, 'get');
+    fetchMock.get('https://some-referer-url.test/', 'some text');
 
-    await fetcher.text({ ...ctx, referer: new URL('https://example.com/foo/bar') }, new URL('https://some-url.test/'));
+    await fetcher.text({ ...ctx, referer: new URL('https://example.com/foo/bar') }, new URL('https://some-referer-url.test/'));
 
-    expect(axiosSpy).toHaveBeenCalledWith(
-      'https://some-url.test/',
-      expect.objectContaining({
-        headers: expect.objectContaining({
-          Origin: 'https://example.com',
-          Referer: 'https://example.com/foo/bar',
-        }),
-      }),
-    );
+    expect(fetchMock.callHistory.callLogs[0]?.args[1]).toMatchObject({
+      headers: {
+        Origin: 'https://example.com',
+        Referer: 'https://example.com/foo/bar',
+      },
+    });
   });
 
   test('converts 404 to custom NotFoundError', async () => {
-    axiosMock.onGet().reply(404);
+    fetchMock.get('https://some-404-url.test/', 404);
 
-    await expect(fetcher.text(ctx, new URL('https://some-url.test/'))).rejects.toBeInstanceOf(NotFoundError);
+    await expect(fetcher.text(ctx, new URL('https://some-404-url.test/'))).rejects.toBeInstanceOf(NotFoundError);
   });
 
   test('converts Cloudflare challenge block to custom CloudflareChallengeError', async () => {
-    axiosMock.onGet().reply(403, undefined, { 'cf-mitigated': 'challenge' });
+    fetchMock.get('https://some-cloudflare-url.test/', { status: 403, headers: { 'cf-mitigated': 'challenge' } });
 
-    await expect(fetcher.text(ctx, new URL('https://some-url.test/'))).rejects.toBeInstanceOf(CloudflareChallengeError);
+    await expect(fetcher.text(ctx, new URL('https://some-cloudflare-url.test/'))).rejects.toBeInstanceOf(CloudflareChallengeError);
   });
 
   test('passes through other errors', async () => {
-    axiosMock.onGet().networkError();
+    fetchMock.get('https://some-error-url.test/', 500);
 
-    await expect(fetcher.text(ctx, new URL('https://some-url.test/'))).rejects.toBeInstanceOf(AxiosError);
+    await expect(fetcher.text(ctx, new URL('https://some-error-url.test/'))).rejects.toBeInstanceOf(Error);
+  });
+
+  test('passes through exceptions', async () => {
+    fetchMock.get('https://some-exception-url.test/', { throws: new TypeError('Failed to fetch') });
+
+    await expect(fetcher.text(ctx, new URL('https://some-exception-url.test/'))).rejects.toBeInstanceOf(TypeError);
+  });
+
+  test('times out after 10 seconds', async () => {
+    jest.useFakeTimers();
+    fetchMock.get('https://some-timeout-url.test/', 200, { delay: 15000 });
+
+    const promise = fetcher.text(ctx, new URL('https://some-timeout-url.test/'));
+
+    jest.advanceTimersByTime(13000);
+
+    await expect(promise).rejects.toBeInstanceOf(DOMException);
+
+    jest.useRealTimers();
   });
 });

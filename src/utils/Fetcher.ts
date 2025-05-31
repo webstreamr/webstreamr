@@ -1,47 +1,39 @@
-import { AxiosInstance, AxiosRequestConfig, AxiosResponseHeaders, RawAxiosResponseHeaders, isAxiosError } from 'axios';
+import CachePolicy from 'http-cache-semantics';
 import TTLCache from '@isaacs/ttlcache';
-import UserAgent from 'user-agents';
 import winston from 'winston';
 import { Context } from '../types';
 import { CloudflareChallengeError, NotFoundError } from '../error';
+import { clearTimeout } from 'node:timers';
+
+interface HttpCacheItem { policy: CachePolicy; status: number; statusText: string; body: string }
 
 export class Fetcher {
-  private readonly axios: AxiosInstance;
   private readonly logger: winston.Logger;
-  private readonly ipUserAgentCache: TTLCache<string, string>;
+  private readonly httpCache: TTLCache<string, HttpCacheItem>;
 
-  constructor(axios: AxiosInstance, logger: winston.Logger) {
-    this.axios = axios;
+  constructor(logger: winston.Logger) {
     this.logger = logger;
-    this.ipUserAgentCache = new TTLCache({ max: 1024, ttl: 86400000 }); // 24h
+    this.httpCache = new TTLCache();
   }
 
-  readonly text = async (ctx: Context, url: URL, config?: AxiosRequestConfig): Promise<string> => {
-    this.logger.info(`Fetch ${url}`, ctx);
-
-    return (await this.errorWrapper(() => this.axios.get(url.href, this.getConfig(ctx, url, config)))).data;
+  readonly text = async (ctx: Context, url: URL, init?: RequestInit): Promise<string> => {
+    return (await this.cachedFetch(ctx, url, init)).body;
   };
 
-  readonly textPost = async (ctx: Context, url: URL, data: unknown, config?: AxiosRequestConfig): Promise<string> => {
-    this.logger.info(`Fetch post ${url}`, ctx);
-
-    return (await this.errorWrapper(() => this.axios.post(url.href, data, this.getConfig(ctx, url, config)))).data;
+  readonly textPost = async (ctx: Context, url: URL, data: unknown, init?: RequestInit): Promise<string> => {
+    return (await this.cachedFetch(ctx, url, { ...init, method: 'POST', body: JSON.stringify(data) })).body;
   };
 
-  readonly head = async (ctx: Context, url: URL, config?: AxiosRequestConfig): Promise<RawAxiosResponseHeaders | AxiosResponseHeaders> => {
-    this.logger.info(`Fetch head ${url}`, ctx);
-
-    return (await this.errorWrapper(() => this.axios.head(url.href, this.getConfig(ctx, url, config)))).headers;
+  readonly head = async (ctx: Context, url: URL, init?: RequestInit): Promise<CachePolicy.Headers> => {
+    return (await this.cachedFetch(ctx, url, { ...init, method: 'HEAD' })).policy.responseHeaders();
   };
 
-  private readonly getConfig = (ctx: Context, url: URL, config?: AxiosRequestConfig): AxiosRequestConfig => {
+  private readonly getInit = (ctx: Context, url: URL, init?: RequestInit): RequestInit => {
     const origin = ctx.referer?.origin ?? url.origin;
     const referer = ctx.referer?.href ?? url.origin;
 
     return {
-      responseType: 'text',
-      timeout: 5000,
-      ...config,
+      ...init,
       headers: {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'Accept-Language': 'en',
@@ -49,43 +41,80 @@ export class Fetcher {
         'Origin': `${origin}`,
         'Priority': 'u=0',
         'Referer': `${referer}`,
-        'User-Agent': this.createUserAgentForIp(ctx.ip),
         'X-Forwarded-For': ctx.ip,
         'X-Forwarded-Proto': url.protocol.slice(0, -1),
         'X-Real-IP': ctx.ip,
-        ...config?.headers,
+        ...init?.headers,
       },
     };
   };
 
-  private readonly createUserAgentForIp = (ip: string): string => {
-    let userAgent = this.ipUserAgentCache.get(ip);
-    if (userAgent) {
-      return userAgent;
+  private readonly handleHttpCacheItem = (httpCacheItem: HttpCacheItem): HttpCacheItem => {
+    if (httpCacheItem.status && httpCacheItem.status >= 200 && httpCacheItem.status <= 299) {
+      return httpCacheItem;
     }
 
-    userAgent = (new UserAgent()).toString();
+    if (httpCacheItem.status === 404) {
+      throw new NotFoundError();
+    }
 
-    this.ipUserAgentCache.set(ip, userAgent);
+    if (httpCacheItem.policy.responseHeaders()['cf-mitigated'] === 'challenge') {
+      throw new CloudflareChallengeError();
+    }
 
-    return userAgent;
+    throw new Error(`Fetcher error: ${httpCacheItem.status}: ${httpCacheItem.statusText}`);
   };
 
-  private readonly errorWrapper = async <T>(callable: () => T): Promise<T> => {
-    try {
-      return await callable();
-    } catch (error) {
-      if (isAxiosError(error)) {
-        if (error.response?.status === 404) {
-          throw new NotFoundError();
-        }
+  private readonly headersToObject = (headers: Headers): Record<string, string> => {
+    const obj: Record<string, string> = {};
 
-        if (error.response?.headers['cf-mitigated'] === 'challenge') {
-          throw new CloudflareChallengeError();
-        }
-      }
+    headers.forEach((value, name) => {
+      obj[name] = value;
+    });
 
-      throw error;
+    return obj;
+  };
+
+  private readonly cachedFetch = async (ctx: Context, url: URL, init?: RequestInit): Promise<HttpCacheItem> => {
+    const newInit = this.getInit(ctx, url, init);
+
+    const request: CachePolicy.Request = { url: url.href, method: newInit.method ?? 'GET', headers: {} };
+
+    let httpCacheItem: HttpCacheItem | undefined = this.httpCache.get(url.href);
+    if (httpCacheItem) {
+      this.logger.info(`Cached fetch ${request.method} ${url}`, ctx);
+      return this.handleHttpCacheItem(httpCacheItem);
     }
+
+    this.logger.info(`Fetch ${request.method} ${url}`, ctx);
+
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 10000);
+
+    let response;
+    try {
+      response = await fetch(url, { ...newInit, signal: controller.signal });
+    } finally {
+      clearTimeout(timer);
+    }
+
+    const body = await response.text();
+
+    const policy = new CachePolicy(request, { status: response.status, headers: this.headersToObject(response.headers) }, { shared: false });
+
+    httpCacheItem = { policy, status: response.status, statusText: response.statusText, body };
+
+    let ttl;
+    if (response.ok) {
+      ttl = Math.max(policy.timeToLive(), 900000); // 15m at least
+    } else {
+      ttl = policy.timeToLive();
+    }
+
+    if (ttl > 0) {
+      this.httpCache.set(url.href, httpCacheItem, { ttl });
+    }
+
+    return this.handleHttpCacheItem(httpCacheItem);
   };
 }

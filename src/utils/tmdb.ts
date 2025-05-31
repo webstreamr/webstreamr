@@ -6,7 +6,7 @@ export interface TmdbId { id: number; series: number | undefined; episode: numbe
 
 export const getTmdbIdFromImdbId = async (ctx: Context, fetcher: Fetcher, imdbId: ImdbId): Promise<TmdbId> => {
   const url = new URL(`https://api.themoviedb.org/3/find/${imdbId.id}?external_source=imdb_id`);
-  const config = { headers: { Authorization: 'Bearer ' + process.env['TMDB_ACCESS_TOKEN'] } };
+  const config = { 'headers': { Authorization: 'Bearer ' + process.env['TMDB_ACCESS_TOKEN'] }, 'Content-Type': 'application/json' };
   const response = JSON.parse(await fetcher.text(ctx, url, config));
 
   const id = (imdbId.series ? response.tv_results[0] : response.movie_results[0])?.id;

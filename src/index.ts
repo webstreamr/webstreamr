@@ -1,8 +1,5 @@
 import express, { NextFunction, Request, Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
-import axios from 'axios';
-import axiosRetry from 'axios-retry';
-import { setupCache } from 'axios-cache-interceptor';
 import winston from 'winston';
 import {
   CineHDPlus,
@@ -30,12 +27,7 @@ const logger = winston.createLogger({
   ],
 });
 
-setupCache(axios);
-axiosRetry(axios, {
-  retries: 1,
-});
-
-const fetcher = new Fetcher(axios, logger);
+const fetcher = new Fetcher(logger);
 
 const extractorRegistry = new ExtractorRegistry(logger, fetcher);
 

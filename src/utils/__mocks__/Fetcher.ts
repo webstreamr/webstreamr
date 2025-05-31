@@ -1,74 +1,63 @@
 import fs from 'node:fs';
-import Axios, { AxiosError, AxiosRequestConfig, AxiosResponseHeaders, RawAxiosResponseHeaders } from 'axios';
 import slugify from 'slugify';
 import { Context } from '../../types';
 
 export class Fetcher {
-  readonly text = async (_ctx: Context, url: URL, config?: AxiosRequestConfig): Promise<string> => {
+  readonly text = async (_ctx: Context, url: URL, init?: RequestInit): Promise<string> => {
     const path = `${__dirname}/../__fixtures__/Fetcher/${slugify(url.href)}`;
 
-    return this.fixtureWrapper(path, async () => (await Axios.create().get(url.href, this.getConfig(config))).data);
+    return this.fetchy(path, url, init);
   };
 
-  readonly textPost = async (_ctx: Context, url: URL, data: unknown, config?: AxiosRequestConfig): Promise<string> => {
+  readonly textPost = async (_ctx: Context, url: URL, data: unknown, init?: RequestInit): Promise<string> => {
     const path = `${__dirname}/../__fixtures__/Fetcher/post-${slugify(url.href)}-${slugify(JSON.stringify(data))}`;
 
-    return this.fixtureWrapper(path, async () => (await Axios.create().post(url.href, data, this.getConfig(config))).data);
+    return this.fetchy(path, url, { ...init, method: 'POST', body: JSON.stringify(data) });
   };
 
-  readonly head = async (_ctx: Context, url: URL, config?: AxiosRequestConfig): Promise<RawAxiosResponseHeaders | AxiosResponseHeaders> => {
+  readonly head = async (_ctx: Context, url: URL, init?: RequestInit): Promise<unknown> => {
     const path = `${__dirname}/../__fixtures__/Fetcher/head-${slugify(url.href)}`;
 
-    return JSON.parse(await this.fixtureWrapper(path, async () => JSON.stringify((await Axios.create().head(url.href, this.getConfig(config))).headers)));
+    return JSON.parse(await this.fetchy(path, url, { ...init, method: 'HEAD' }));
   };
 
-  private readonly fixtureWrapper = async (path: string, callable: () => Promise<string>): Promise<string> => {
+  private readonly fetchy = async (path: string, url: URL, init?: RequestInit): Promise<string> => {
     const errorPath = `${path}.error`;
 
     if (fs.existsSync(errorPath)) {
-      const fixtureError = JSON.parse(fs.readFileSync(errorPath).toString());
-      throw new AxiosError(fixtureError.message, fixtureError.code, undefined, undefined, fixtureError.response);
+      throw new Error(fs.readFileSync(errorPath).toString());
     } else if (fs.existsSync(path)) {
       return fs.readFileSync(path).toString();
     } else {
       let response;
-
       try {
         if (process.env['TEST_UPDATE_FIXTURES']) {
-          response = await callable();
+          response = await fetch(url, init);
         } else {
           console.error(`No fixture found at "${path}".`);
           process.exit(1);
         }
       } catch (error) {
-        if (error instanceof AxiosError) {
-          const fixtureError = JSON.stringify({
-            message: error.message,
-            code: error.code,
-            ...(error.response && {
-              response: {
-                status: error.response.status,
-                statusText: error.response.statusText,
-                data: error.response.data,
-              },
-            }),
-          });
-          fs.writeFileSync(errorPath, fixtureError);
-        }
-
+        fs.writeFileSync(errorPath, `${error}`);
         throw error;
       }
 
-      fs.writeFileSync(path, response);
+      if (!response.ok) {
+        const message = `Fetcher error: ${response.status}: ${response.statusText}`;
+        fs.writeFileSync(errorPath, message);
+        throw new Error(message);
+      }
 
-      return response;
+      let result;
+      if (init?.method === 'HEAD') {
+        result = JSON.stringify(response.headers);
+      } else {
+        result = await response.text();
+      }
+
+      fs.writeFileSync(path, result);
+
+      return result;
     }
-  };
-
-  private readonly getConfig = (config?: AxiosRequestConfig): AxiosRequestConfig => {
-    return {
-      responseType: 'text',
-      ...config,
-    };
   };
 }
