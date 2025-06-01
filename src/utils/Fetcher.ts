@@ -52,11 +52,13 @@ export class Fetcher {
       throw new NotFoundError();
     }
 
+    const responseHeaders = httpCacheItem.policy.responseHeaders();
+
     if (httpCacheItem.policy.responseHeaders()['cf-mitigated'] === 'challenge') {
       throw new CloudflareChallengeError();
     }
 
-    throw new Error(`Fetcher error: ${httpCacheItem.status}: ${httpCacheItem.statusText}`);
+    throw new Error(`Fetcher error: ${httpCacheItem.status}: ${httpCacheItem.statusText}, response headers: ${JSON.stringify(responseHeaders)}`);
   };
 
   private readonly headersToObject = (headers: Headers): Record<string, string> => {

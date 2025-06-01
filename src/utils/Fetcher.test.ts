@@ -73,10 +73,11 @@ describe('fetch', () => {
     await expect(fetcher.text(ctx, new URL('https://some-cloudflare-url.test/'))).rejects.toBeInstanceOf(CloudflareChallengeError);
   });
 
-  test('passes through other errors', async () => {
-    fetchMock.get('https://some-error-url.test/', 500);
+  test('passes through other errors with detailed infos', async () => {
+    fetchMock.get('https://some-error-url.test/', { status: 500, headers: { 'x-foo': 'bar' } });
 
-    await expect(fetcher.text(ctx, new URL('https://some-error-url.test/'))).rejects.toBeInstanceOf(Error);
+    await expect(fetcher.text(ctx, new URL('https://some-error-url.test/'))).rejects
+      .toThrow('Fetcher error: 500: Internal Server Error, response headers: {"content-length":"0","x-foo":"bar","age":"0","date":"Wed, 11 Apr 1990 12:34:56 GMT"}');
   });
 
   test('passes through exceptions', async () => {
