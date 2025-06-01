@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.22.3](https://github.com/webstreamr/webstreamr/compare/v0.22.2...v0.22.3) (2025-06-01)
+
+
+### Miscellaneous Chores
+
+* **fetcher:** hardcode user-agent for now to avoid using "node" ([424ed78](https://github.com/webstreamr/webstreamr/commit/424ed78b934ebcff8e80ff72d6988847bd6742f1))
+
 ## [0.22.2](https://github.com/webstreamr/webstreamr/compare/v0.22.1...v0.22.2) (2025-06-01)
 
 
