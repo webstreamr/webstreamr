@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.22.2](https://github.com/webstreamr/webstreamr/compare/v0.22.1...v0.22.2) (2025-06-01)
+
+
+### Miscellaneous Chores
+
+* **fetcher:** add response header info to non-expected errors ([717019e](https://github.com/webstreamr/webstreamr/commit/717019e04e5d171779b3585ccb1cd8ce8203c32a))
+* **fetcher:** remove Origin header ([ca98122](https://github.com/webstreamr/webstreamr/commit/ca981220c91cfc732185f925d0ca544ccbc255af))
+
 ## [0.22.1](https://github.com/webstreamr/webstreamr/compare/v0.22.0...v0.22.1) (2025-05-31)
 
 
