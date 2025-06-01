@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.22.4](https://github.com/webstreamr/webstreamr/compare/v0.22.3...v0.22.4) (2025-06-01)
+
+
+### Miscellaneous Chores
+
+* generalize forbidden/blocked handling ([2eb09fc](https://github.com/webstreamr/webstreamr/commit/2eb09fc65a1f0141abd1f9760c39cb454de00496))
+
+
+### Bug Fixes
+
+* **fetcher:** use "node" as user agent explicitly ([c3a2f9f](https://github.com/webstreamr/webstreamr/commit/c3a2f9fdc6c543baf7db058ce7653877deff65ef))
+
 ## [0.22.3](https://github.com/webstreamr/webstreamr/compare/v0.22.2...v0.22.3) (2025-06-01)
 
 
