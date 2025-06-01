@@ -27,7 +27,7 @@ export class Frembed implements Handler {
 
     const tmdbId = await getTmdbIdFromImdbId(ctx, this.fetcher, parseImdbId(id));
 
-    const apiUrl = new URL(`https://frembed.club/api/series?id=${tmdbId.id}&sa=${tmdbId.series}&epi=${tmdbId.episode}&idType=tmdb`);
+    const apiUrl = new URL(`https://frembed.site/api/series?id=${tmdbId.id}&sa=${tmdbId.series}&epi=${tmdbId.episode}&idType=tmdb`);
 
     const json = JSON.parse(await this.fetcher.text(ctx, apiUrl));
 
