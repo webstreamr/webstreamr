@@ -28,7 +28,6 @@ describe('fetch', () => {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'Accept-Language': 'en',
         'Forwarded': 'for=127.0.0.1',
-        'Origin': 'https://some-url.test',
         'Priority': 'u=0',
         'Referer': 'https://some-url.test',
         'X-Forwarded-For': '127.0.0.1',
@@ -57,7 +56,6 @@ describe('fetch', () => {
 
     expect(fetchMock.callHistory.callLogs[0]?.args[1]).toMatchObject({
       headers: {
-        Origin: 'https://example.com',
         Referer: 'https://example.com/foo/bar',
       },
     });

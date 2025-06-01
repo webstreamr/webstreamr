@@ -28,26 +28,20 @@ export class Fetcher {
     return (await this.cachedFetch(ctx, url, { ...init, method: 'HEAD' })).policy.responseHeaders();
   };
 
-  private readonly getInit = (ctx: Context, url: URL, init?: RequestInit): RequestInit => {
-    const origin = ctx.referer?.origin ?? url.origin;
-    const referer = ctx.referer?.href ?? url.origin;
-
-    return {
-      ...init,
-      headers: {
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'en',
-        'Forwarded': `for=${ctx.ip}`,
-        'Origin': `${origin}`,
-        'Priority': 'u=0',
-        'Referer': `${referer}`,
-        'X-Forwarded-For': ctx.ip,
-        'X-Forwarded-Proto': url.protocol.slice(0, -1),
-        'X-Real-IP': ctx.ip,
-        ...init?.headers,
-      },
-    };
-  };
+  private readonly getInit = (ctx: Context, url: URL, init?: RequestInit): RequestInit => ({
+    ...init,
+    headers: {
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      'Accept-Language': 'en',
+      'Forwarded': `for=${ctx.ip}`,
+      'Priority': 'u=0',
+      'Referer': `${ctx.referer?.href ?? url.origin}`,
+      'X-Forwarded-For': ctx.ip,
+      'X-Forwarded-Proto': url.protocol.slice(0, -1),
+      'X-Real-IP': ctx.ip,
+      ...init?.headers,
+    },
+  });
 
   private readonly handleHttpCacheItem = (httpCacheItem: HttpCacheItem): HttpCacheItem => {
     if (httpCacheItem.status && httpCacheItem.status >= 200 && httpCacheItem.status <= 299) {
