@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from 'uuid';
 import winston from 'winston';
 import {
   CineHDPlus,
-  Eurostreaming,
   Frembed,
   FrenchCloud,
   Handler,
@@ -42,7 +41,7 @@ const handlers: Handler[] = [
   new Frembed(fetcher, extractorRegistry),
   new FrenchCloud(fetcher, extractorRegistry),
   // IT
-  new Eurostreaming(fetcher, extractorRegistry),
+  // new Eurostreaming(fetcher, extractorRegistry), // https://github.com/webstreamr/webstreamr/issues/83
   new MostraGuarda(fetcher, extractorRegistry),
 ];
 
