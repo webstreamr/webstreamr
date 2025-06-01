@@ -7,7 +7,7 @@ exports[`resolve adds Cloudflare blocked info 1`] = `
     "externalUrl": "https://example.com/",
     "name": "WebStreamr 🇩🇪 external",
     "title": "⚙️ example.com
-Request was blocked by Cloudflare.",
+Request was blocked.",
   },
 ]
 `;

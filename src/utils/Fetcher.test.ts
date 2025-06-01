@@ -2,7 +2,7 @@ import winston from 'winston';
 import fetchMock from 'fetch-mock';
 import { Fetcher } from './Fetcher';
 import { Context } from '../types';
-import { CloudflareChallengeError, NotFoundError } from '../error';
+import { BlockedError, NotFoundError } from '../error';
 fetchMock.mockGlobal();
 
 const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
@@ -68,10 +68,28 @@ describe('fetch', () => {
     await expect(fetcher.text(ctx, new URL('https://some-404-url.test/'))).rejects.toBeInstanceOf(NotFoundError);
   });
 
-  test('converts Cloudflare challenge block to custom CloudflareChallengeError', async () => {
+  test('converts Cloudflare challenge block to custom BlockedError', async () => {
     fetchMock.get('https://some-cloudflare-url.test/', { status: 403, headers: { 'cf-mitigated': 'challenge' } });
 
-    await expect(fetcher.text(ctx, new URL('https://some-cloudflare-url.test/'))).rejects.toBeInstanceOf(CloudflareChallengeError);
+    try {
+      await fetcher.text(ctx, new URL('https://some-cloudflare-url.test/'));
+      fail();
+    } catch (error) {
+      expect(error).toBeInstanceOf(BlockedError);
+      expect(error).toMatchObject({ reason: 'cloudflare_challenge' });
+    }
+  });
+
+  test('converts generic forbidden to custom BlockedError', async () => {
+    fetchMock.get('https://some-forbidden-url.test/', { status: 403 });
+
+    try {
+      await fetcher.text(ctx, new URL('https://some-forbidden-url.test/'));
+      fail();
+    } catch (error) {
+      expect(error).toBeInstanceOf(BlockedError);
+      expect(error).toMatchObject({ reason: 'unknown' });
+    }
   });
 
   test('passes through other errors with detailed infos', async () => {

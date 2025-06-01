@@ -1,2 +1,2 @@
-export * from './CloudflareChallengeError';
+export * from './BlockedError';
 export * from './NotFoundError';

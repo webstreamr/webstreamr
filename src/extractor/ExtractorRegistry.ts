@@ -7,7 +7,7 @@ import { DoodStream } from './DoodStream';
 import { Dropload } from './Dropload';
 import { SuperVideo } from './SuperVideo';
 import { ExternalUrl } from './ExternalUrl';
-import { CloudflareChallengeError, NotFoundError } from '../error';
+import { BlockedError, NotFoundError } from '../error';
 
 export class ExtractorRegistry {
   private readonly logger: winston.Logger;
@@ -48,13 +48,13 @@ export class ExtractorRegistry {
       }
 
       /* istanbul ignore next */
-      if (error instanceof CloudflareChallengeError && !('excludeExternalUrls' in ctx.config)) {
-        this.logger.warn(`${extractor.id}: Request was blocked by Cloudflare challenge.`, ctx);
+      if (error instanceof BlockedError && !('excludeExternalUrls' in ctx.config)) {
+        this.logger.warn(`${extractor.id}: Request was blocked. Reason: ${error.reason}`, ctx);
 
         return {
           url: url,
           isExternal: true,
-          cloudflareChallenge: true,
+          blocked: error.reason,
           label: url.host,
           sourceId: '',
           meta,

@@ -2,7 +2,7 @@ import CachePolicy from 'http-cache-semantics';
 import TTLCache from '@isaacs/ttlcache';
 import winston from 'winston';
 import { Context } from '../types';
-import { CloudflareChallengeError, NotFoundError } from '../error';
+import { BlockedError, NotFoundError } from '../error';
 import { clearTimeout } from 'node:timers';
 
 interface HttpCacheItem { policy: CachePolicy; status: number; statusText: string; body: string }
@@ -56,7 +56,11 @@ export class Fetcher {
     const responseHeaders = httpCacheItem.policy.responseHeaders();
 
     if (httpCacheItem.policy.responseHeaders()['cf-mitigated'] === 'challenge') {
-      throw new CloudflareChallengeError();
+      throw new BlockedError('cloudflare_challenge');
+    }
+
+    if (httpCacheItem.status === 403) {
+      throw new BlockedError('unknown');
     }
 
     throw new Error(`Fetcher error: ${httpCacheItem.status}: ${httpCacheItem.statusText}, response headers: ${JSON.stringify(responseHeaders)}`);

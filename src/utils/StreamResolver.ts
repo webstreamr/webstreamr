@@ -91,8 +91,8 @@ export class StreamResolver {
           titleLines.push(urlResult.meta.title);
         }
         titleLines.push(titleSecondLineEntries.join(' '));
-        if (urlResult.cloudflareChallenge) {
-          titleLines.push('Request was blocked by Cloudflare.');
+        if (urlResult.blocked) {
+          titleLines.push('Request was blocked.');
         }
 
         const title = titleLines.join('\n');

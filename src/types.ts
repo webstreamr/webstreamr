@@ -13,6 +13,8 @@ export type Config = Partial<Record<CountryCode | 'excludeExternalUrls', string>
 
 export type CountryCode = 'de' | 'en' | 'es' | 'fr' | 'it' | 'mx';
 
+export type BlockedReason = 'cloudflare_challenge' | 'unknown';
+
 export interface Meta {
   bytes?: number;
   countryCode: CountryCode;
@@ -23,7 +25,7 @@ export interface Meta {
 export interface UrlResult {
   url: URL;
   isExternal?: boolean;
-  cloudflareChallenge?: boolean;
+  blocked?: BlockedReason;
   label: string;
   sourceId?: string;
   meta: Meta;
