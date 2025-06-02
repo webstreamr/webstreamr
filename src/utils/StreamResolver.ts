@@ -5,6 +5,7 @@ import bytes from 'bytes';
 import { Context, UrlResult } from '../types';
 import { Handler } from '../handler';
 import { NotFoundError } from '../error';
+import { languageFromCountryCode } from './languageFromCountryCode';
 
 export class StreamResolver {
   private readonly logger: winston.Logger;
@@ -68,51 +69,57 @@ export class StreamResolver {
     this.logger.info(`Return ${urlResults.length} streams`, ctx);
 
     streams.push(
-      ...urlResults.map((urlResult) => {
-        let name = 'WebStreamr';
-        if (urlResult.meta.countryCode) {
-          name += ` ${flag(urlResult.meta.countryCode)}`;
-        }
-        if (urlResult.meta.height) {
-          name += ` ${urlResult.meta.height}p`;
-        }
-        if (urlResult.isExternal) {
-          name += ` external`;
-        }
-
-        const titleSecondLineEntries: string[] = [];
-        if (urlResult.meta.bytes) {
-          titleSecondLineEntries.push(`💾 ${bytes.format(urlResult.meta.bytes, { unitSeparator: ' ' })}`);
-        }
-        titleSecondLineEntries.push(`⚙️ ${urlResult.label}`);
-
-        const titleLines = [];
-        if (urlResult.meta.title) {
-          titleLines.push(urlResult.meta.title);
-        }
-        titleLines.push(titleSecondLineEntries.join(' '));
-        if (urlResult.blocked) {
-          titleLines.push('Request was blocked.');
-        }
-
-        const title = titleLines.join('\n');
-
-        return {
-          [urlResult.isExternal ? 'externalUrl' : 'url']: urlResult.url.href,
-          name,
-          title,
-          behaviorHints: {
-            ...(urlResult.sourceId && { bingeGroup: `webstreamr-${urlResult.sourceId}` }),
-            ...(urlResult.requestHeaders !== undefined && {
-              notWebReady: true,
-              proxyHeaders: { request: urlResult.requestHeaders },
-            }),
-            ...(urlResult.meta.bytes && { videoSize: urlResult.meta.bytes }),
-          },
-        };
-      }),
+      ...urlResults.map(urlResult => ({
+        [urlResult.isExternal ? 'externalUrl' : 'url']: urlResult.url.href,
+        name: this.buildName(urlResult),
+        title: this.buildTitle(urlResult),
+        behaviorHints: {
+          ...(urlResult.sourceId && { bingeGroup: `webstreamr-${urlResult.sourceId}` }),
+          ...(urlResult.requestHeaders !== undefined && {
+            notWebReady: true,
+            proxyHeaders: { request: urlResult.requestHeaders },
+          }),
+          ...(urlResult.meta.bytes && { videoSize: urlResult.meta.bytes }),
+        },
+      })),
     );
 
     return streams;
+  };
+
+  private readonly buildName = (urlResult: UrlResult): string => {
+    let name = process.env['MANIFEST_NAME'] || 'WebStreamr';
+
+    name += urlResult.meta.height ? ` ${urlResult.meta.height}P` : ' N/A';
+
+    if (urlResult.isExternal) {
+      name += ` ⚠️ external`;
+    }
+
+    return name;
+  };
+
+  private readonly buildTitle = (urlResult: UrlResult): string => {
+    const titleLines = [];
+
+    if (urlResult.meta.title) {
+      titleLines.push(`📂 ${urlResult.meta.title}`);
+    }
+
+    if (urlResult.meta.bytes) {
+      titleLines.push(`💾 ${bytes.format(urlResult.meta.bytes, { unitSeparator: ' ' })}`);
+    }
+
+    if (urlResult.meta.countryCode) {
+      titleLines.push(`🌐 ${languageFromCountryCode(urlResult.meta.countryCode)} ${flag(urlResult.meta.countryCode)}`);
+    }
+
+    titleLines.push(`🔗 ${urlResult.label}`);
+
+    if (urlResult.blocked) {
+      titleLines.push('⚠️ Request was blocked.');
+    }
+
+    return titleLines.join('\n');
   };
 }
