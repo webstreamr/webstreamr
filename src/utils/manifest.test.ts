@@ -21,9 +21,9 @@ describe('buildManifest', () => {
     const manifest = buildManifest(handlers, {});
 
     expect(manifest.config).toStrictEqual([
-      { key: 'de', type: 'checkbox', title: '🇩🇪 (KinoKiste, MeineCloud)' },
-      { key: 'es', type: 'checkbox', title: '🇪🇸 (VerHdLink)' },
-      { key: 'mx', type: 'checkbox', title: '🇲🇽 (VerHdLink)' },
+      { key: 'de', type: 'checkbox', title: 'German 🇩🇪 (KinoKiste, MeineCloud)' },
+      { key: 'es', type: 'checkbox', title: 'Castilian Spanish 🇪🇸 (VerHdLink)' },
+      { key: 'mx', type: 'checkbox', title: 'Latin American Spanish 🇲🇽 (VerHdLink)' },
       { key: 'excludeExternalUrls', type: 'checkbox', title: 'Exclude external URLs from results' },
     ]);
   });
@@ -38,9 +38,9 @@ describe('buildManifest', () => {
     const manifest = buildManifest(handlers, { de: 'on' });
 
     expect(manifest.config).toStrictEqual([
-      { key: 'de', type: 'checkbox', title: '🇩🇪 (KinoKiste, MeineCloud)', default: 'checked' },
-      { key: 'es', type: 'checkbox', title: '🇪🇸 (VerHdLink)' },
-      { key: 'mx', type: 'checkbox', title: '🇲🇽 (VerHdLink)' },
+      { key: 'de', type: 'checkbox', title: 'German 🇩🇪 (KinoKiste, MeineCloud)', default: 'checked' },
+      { key: 'es', type: 'checkbox', title: 'Castilian Spanish 🇪🇸 (VerHdLink)' },
+      { key: 'mx', type: 'checkbox', title: 'Latin American Spanish 🇲🇽 (VerHdLink)' },
       { key: 'excludeExternalUrls', type: 'checkbox', title: 'Exclude external URLs from results' },
     ]);
   });

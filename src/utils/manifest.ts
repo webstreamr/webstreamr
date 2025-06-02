@@ -1,6 +1,9 @@
 import { flag } from 'country-emoji';
 import { Handler } from '../handler';
-import { Config, ManifestWithConfig } from '../types';
+import { Config, CountryCode, ManifestWithConfig } from '../types';
+import { languageFromCountryCode } from './languageFromCountryCode';
+
+const typedEntries = <T extends object>(obj: T): [keyof T, T[keyof T]][] => (Object.entries(obj) as [keyof T, T[keyof T]][]);
 
 export const buildManifest = (handlers: Handler[], config: Config): ManifestWithConfig => {
   const manifest: ManifestWithConfig = {
@@ -30,19 +33,19 @@ export const buildManifest = (handlers: Handler[], config: Config): ManifestWith
     },
   };
 
-  const countryCodeHandlers: Record<string, Handler[]> = {};
+  const countryCodeHandlers: Partial<Record<CountryCode, Handler[]>> = {};
   handlers.forEach((handler) => {
     handler.countryCodes.forEach(countryCode => countryCodeHandlers[countryCode] = [...(countryCodeHandlers[countryCode] ?? []), handler]);
   });
 
-  const sortedLanguageHandlers = Object.entries(countryCodeHandlers)
+  const sortedLanguageHandlers = typedEntries(countryCodeHandlers)
     .sort(([countryCodeA], [countryCodeB]) => countryCodeA.localeCompare(countryCodeB));
 
   for (const [countryCode, handlers] of sortedLanguageHandlers) {
     manifest.config.push({
       key: countryCode,
       type: 'checkbox',
-      title: `${flag(countryCode)} (${handlers.map(handler => handler.label).join(', ')})`,
+      title: `${languageFromCountryCode(countryCode)} ${flag(countryCode)} (${(handlers as Handler[]).map(handler => handler.label).join(', ')})`,
       ...(countryCode in config && { default: 'checked' }),
     });
   }
