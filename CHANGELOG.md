@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.22.5](https://github.com/webstreamr/webstreamr/compare/v0.22.4...v0.22.5) (2025-06-02)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#93](https://github.com/webstreamr/webstreamr/issues/93)) ([dbf1dd1](https://github.com/webstreamr/webstreamr/commit/dbf1dd1fb9bcb7efa21cb294a23b739a1763d57e))
+* **deps:** update dependency @types/node to v22.15.29 ([#92](https://github.com/webstreamr/webstreamr/issues/92)) ([d04c928](https://github.com/webstreamr/webstreamr/commit/d04c9280dfbc685a0f2d38c087d9c5df787ad03d))
+
+
+### Bug Fixes
+
+* **handler:** use new frembed domain ([e86b5c3](https://github.com/webstreamr/webstreamr/commit/e86b5c3454125f76d1a5e90fe904e3d01e26b6c3))
+
+
+### Tests
+
+* fix mocked Fetcher real calls by using same headers ([12d91ba](https://github.com/webstreamr/webstreamr/commit/12d91ba0b44e5822210aca0b5087f2d272420072))
+
 ## [0.22.4](https://github.com/webstreamr/webstreamr/compare/v0.22.3...v0.22.4) (2025-06-01)
 
 
