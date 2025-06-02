@@ -28,7 +28,7 @@ export class Fetcher {
     return (await this.cachedFetch(ctx, url, { ...init, method: 'HEAD' })).policy.responseHeaders();
   };
 
-  private readonly getInit = (ctx: Context, url: URL, init?: RequestInit): RequestInit => ({
+  public readonly getInit = (ctx: Context, url: URL, init?: RequestInit): RequestInit => ({
     ...init,
     headers: {
       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',

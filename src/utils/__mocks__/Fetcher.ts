@@ -1,27 +1,35 @@
 import fs from 'node:fs';
 import slugify from 'slugify';
+import winston from 'winston';
 import { Context } from '../../types';
+const { Fetcher } = jest.requireActual('../Fetcher');
 
-export class Fetcher {
-  readonly text = async (_ctx: Context, url: URL, init?: RequestInit): Promise<string> => {
+class MockedFetcher {
+  private readonly fetcher: typeof Fetcher;
+
+  constructor() {
+    this.fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console()] }));
+  }
+
+  readonly text = async (ctx: Context, url: URL, init?: RequestInit): Promise<string> => {
     const path = `${__dirname}/../__fixtures__/Fetcher/${slugify(url.href)}`;
 
-    return this.fetchy(path, url, init);
+    return this.fetch(path, ctx, url, init);
   };
 
-  readonly textPost = async (_ctx: Context, url: URL, data: unknown, init?: RequestInit): Promise<string> => {
+  readonly textPost = async (ctx: Context, url: URL, data: unknown, init?: RequestInit): Promise<string> => {
     const path = `${__dirname}/../__fixtures__/Fetcher/post-${slugify(url.href)}-${slugify(JSON.stringify(data))}`;
 
-    return this.fetchy(path, url, { ...init, method: 'POST', body: JSON.stringify(data) });
+    return this.fetch(path, ctx, url, { ...init, method: 'POST', body: JSON.stringify(data) });
   };
 
-  readonly head = async (_ctx: Context, url: URL, init?: RequestInit): Promise<unknown> => {
+  readonly head = async (ctx: Context, url: URL, init?: RequestInit): Promise<unknown> => {
     const path = `${__dirname}/../__fixtures__/Fetcher/head-${slugify(url.href)}`;
 
-    return JSON.parse(await this.fetchy(path, url, { ...init, method: 'HEAD' }));
+    return JSON.parse(await this.fetch(path, ctx, url, { ...init, method: 'HEAD' }));
   };
 
-  private readonly fetchy = async (path: string, url: URL, init?: RequestInit): Promise<string> => {
+  private readonly fetch = async (path: string, ctx: Context, url: URL, init?: RequestInit): Promise<string> => {
     const errorPath = `${path}.error`;
 
     if (fs.existsSync(errorPath)) {
@@ -32,7 +40,7 @@ export class Fetcher {
       let response;
       try {
         if (process.env['TEST_UPDATE_FIXTURES']) {
-          response = await fetch(url, init);
+          response = await fetch(url, this.fetcher.getInit(ctx, url, init));
         } else {
           console.error(`No fixture found at "${path}".`);
           process.exit(1);
@@ -61,3 +69,5 @@ export class Fetcher {
     }
   };
 }
+
+export { MockedFetcher as Fetcher };
