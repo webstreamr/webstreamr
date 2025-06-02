@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.22.6](https://github.com/webstreamr/webstreamr/compare/v0.22.5...v0.22.6) (2025-06-02)
+
+
+### Miscellaneous Chores
+
+* improve results format and refactor name/title generation ([e4dd16e](https://github.com/webstreamr/webstreamr/commit/e4dd16e9d1e500dbcb7cc0b33cf7e26c480f9674))
+
 ## [0.22.5](https://github.com/webstreamr/webstreamr/compare/v0.22.4...v0.22.5) (2025-06-02)
 
 
