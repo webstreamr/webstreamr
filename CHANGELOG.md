@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.22.8](https://github.com/webstreamr/webstreamr/compare/v0.22.7...v0.22.8) (2025-06-03)
+
+
+### Miscellaneous Chores
+
+* add more error infos to results ([ef2c45e](https://github.com/webstreamr/webstreamr/commit/ef2c45e2cba6b714f1a54ae53bfb6d28f58d9a3f))
+* implement queued fetching ([f0817a3](https://github.com/webstreamr/webstreamr/commit/f0817a3dd6fd5a09eff96316d8ee04b88d0be592))
+
 ## [0.22.7](https://github.com/webstreamr/webstreamr/compare/v0.22.6...v0.22.7) (2025-06-03)
 
 
