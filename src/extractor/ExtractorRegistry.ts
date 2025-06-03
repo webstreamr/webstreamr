@@ -61,7 +61,9 @@ export class ExtractorRegistry {
         };
       }
 
-      this.logger.warn(`${extractor.id} error: ${error}`, ctx);
+      const cause = (error as Error & { cause?: unknown }).cause;
+
+      this.logger.warn(`${extractor.id} error: ${error}, cause: ${cause}`, ctx);
       return undefined;
     }
 

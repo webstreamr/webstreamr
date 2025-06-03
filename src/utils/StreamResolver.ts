@@ -36,8 +36,8 @@ export class StreamResolver {
         this.logger.info(`${handler.id} returned ${handlerUrlResults.length} urls`, ctx);
 
         urlResults.push(...(handlerUrlResults.filter(handlerUrlResult => handlerUrlResult !== undefined)));
-      } catch (err) {
-        if (err instanceof NotFoundError) {
+      } catch (error) {
+        if (error instanceof NotFoundError) {
           return;
         }
 
@@ -47,7 +47,9 @@ export class StreamResolver {
           ytId: 'E4WlUXrJgy4',
         });
 
-        this.logger.error(`${handler.id} error: ${err}`, ctx);
+        const cause = (error as Error & { cause?: unknown }).cause;
+
+        this.logger.error(`${handler.id} error: ${error}, cause: ${cause}`, ctx);
       }
     });
     await Promise.all(handlerPromises);
