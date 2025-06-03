@@ -2,10 +2,10 @@ import winston from 'winston';
 import fetchMock from 'fetch-mock';
 import { Fetcher } from './Fetcher';
 import { Context } from '../types';
-import { BlockedError, NotFoundError } from '../error';
+import { BlockedError, NotFoundError, QueueIsFullError } from '../error';
 fetchMock.mockGlobal();
 
-const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
+const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }), 3, 10);
 
 describe('fetch', () => {
   const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on' } };
@@ -106,15 +106,21 @@ describe('fetch', () => {
   });
 
   test('times out after 10 seconds', async () => {
-    jest.useFakeTimers();
-    fetchMock.get('https://some-timeout-url.test/', 200, { delay: 15000 });
+    fetchMock.get('https://some-timeout-url.test/', 200, { delay: 20 });
 
-    const promise = fetcher.text(ctx, new URL('https://some-timeout-url.test/'));
+    await expect(fetcher.text(ctx, new URL('https://some-timeout-url.test/'))).rejects.toBeInstanceOf(DOMException);
+  });
 
-    jest.advanceTimersByTime(13000);
+  test('full queue throws an error', async () => {
+    fetchMock.get('https://some-full-queue-url.test/', 'some text');
 
-    await expect(promise).rejects.toBeInstanceOf(DOMException);
+    const allPromises = Promise.all([
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
+    ]);
 
-    jest.useRealTimers();
+    await expect(allPromises).rejects.toBeInstanceOf(QueueIsFullError);
   });
 });

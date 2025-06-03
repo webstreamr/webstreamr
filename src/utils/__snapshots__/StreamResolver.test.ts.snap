@@ -26,6 +26,14 @@ exports[`resolve adds error info 1`] = `
 🔗 hoster.com
 🐢 Request timed out.",
   },
+  {
+    "behaviorHints": {},
+    "externalUrl": "https://example3.com/",
+    "name": "WebStreamr N/A ⚠️ external",
+    "title": "🌐 German 🇩🇪
+🔗 hoster.com
+⏳ Request queue is full. Please try again later or consider self-hosting.",
+  },
 ]
 `;
 
@@ -53,6 +61,14 @@ exports[`resolve adds error info 2`] = `
     "title": "🌐 German 🇩🇪
 🔗 hoster.com
 🐢 Request timed out.",
+    "ytId": "E4WlUXrJgy4",
+  },
+  {
+    "behaviorHints": {},
+    "name": "WebStreamr N/A",
+    "title": "🌐 German 🇩🇪
+🔗 hoster.com
+⏳ Request queue is full. Please try again later or consider self-hosting.",
     "ytId": "E4WlUXrJgy4",
   },
 ]

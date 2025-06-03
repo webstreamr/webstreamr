@@ -4,7 +4,7 @@ import winston from 'winston';
 import bytes from 'bytes';
 import { Context, TIMEOUT, UrlResult } from '../types';
 import { Handler } from '../handler';
-import { BlockedError, NotFoundError } from '../error';
+import { BlockedError, NotFoundError, QueueIsFullError } from '../error';
 import { languageFromCountryCode } from './languageFromCountryCode';
 
 export class StreamResolver {
@@ -123,6 +123,12 @@ export class StreamResolver {
       this.logger.warn(`${source}: Request timed out.`, ctx);
 
       return '🐢 Request timed out.';
+    }
+
+    if (error instanceof QueueIsFullError) {
+      this.logger.warn(`${source}: Request queue is full.`, ctx);
+
+      return '⏳ Request queue is full. Please try again later or consider self-hosting.';
     }
 
     const cause = (error as Error & { cause?: unknown }).cause;
