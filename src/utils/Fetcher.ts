@@ -2,14 +2,25 @@ import CachePolicy from 'http-cache-semantics';
 import TTLCache from '@isaacs/ttlcache';
 import winston from 'winston';
 import { Context, TIMEOUT } from '../types';
-import { BlockedError, NotFoundError } from '../error';
+import { BlockedError, NotFoundError, QueueIsFullError } from '../error';
 import { clearTimeout } from 'node:timers';
 
-interface HttpCacheItem { policy: CachePolicy; status: number; statusText: string; body: string }
+interface HttpCacheItem {
+  policy: CachePolicy;
+  status: number;
+  statusText: string;
+  body: string;
+}
+
+interface HostQueue {
+  promise: Promise<void>;
+  count: number;
+}
 
 export class Fetcher {
   private readonly logger: winston.Logger;
   private readonly httpCache: TTLCache<string, HttpCacheItem>;
+  private readonly hostQueues = new Map<string, HostQueue>();
 
   constructor(logger: winston.Logger) {
     this.logger = logger;
@@ -87,18 +98,7 @@ export class Fetcher {
       return this.handleHttpCacheItem(httpCacheItem);
     }
 
-    this.logger.info(`Fetch ${request.method} ${url}`, ctx);
-
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(TIMEOUT), 10000);
-
-    let response;
-    try {
-      response = await fetch(url, { ...newInit, signal: controller.signal });
-    } finally {
-      clearTimeout(timer);
-    }
-
+    const response = await this.queuedFetch(ctx, url, newInit);
     const body = await response.text();
 
     const policy = new CachePolicy(request, { status: response.status, headers: this.headersToObject(response.headers) }, { shared: false });
@@ -117,5 +117,43 @@ export class Fetcher {
     }
 
     return this.handleHttpCacheItem(httpCacheItem);
+  };
+
+  private readonly queuedFetch = async (ctx: Context, url: URL, init?: RequestInit): Promise<Response> => {
+    let queue = this.hostQueues.get(url.host);
+    if (!queue) {
+      queue = { promise: Promise.resolve(), count: 0 };
+      this.hostQueues.set(url.host, queue);
+    }
+
+    queue.count++;
+
+    if (queue.count > 10) {
+      throw new QueueIsFullError();
+    }
+
+    let resolveCurrent: () => void;
+    const currentPromise = new Promise<void>(
+      (resolve) => { resolveCurrent = resolve; },
+    );
+
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(TIMEOUT), 10000);
+
+    const fetchPromise = queue.promise.then(async () => {
+      try {
+        this.logger.info(`Fetch ${init?.method ?? 'GET'} ${url}`, ctx);
+
+        return await fetch(url, { ...init, signal: controller.signal });
+      } finally {
+        clearTimeout(timer);
+        resolveCurrent();
+        queue.count--;
+      }
+    });
+
+    queue.promise = currentPromise.catch(/* istanbul ignore next */ () => undefined);
+
+    return fetchPromise;
   };
 }

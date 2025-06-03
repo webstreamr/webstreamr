@@ -2,7 +2,7 @@ import winston from 'winston';
 import fetchMock from 'fetch-mock';
 import { Fetcher } from './Fetcher';
 import { Context } from '../types';
-import { BlockedError, NotFoundError } from '../error';
+import { BlockedError, NotFoundError, QueueIsFullError } from '../error';
 fetchMock.mockGlobal();
 
 const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
@@ -116,5 +116,25 @@ describe('fetch', () => {
     await expect(promise).rejects.toBeInstanceOf(DOMException);
 
     jest.useRealTimers();
+  });
+
+  test('full queue throws an error', async () => {
+    fetchMock.get('https://some-full-queue-url.test/', 'some text');
+
+    const allPromises = Promise.all([
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
+    ]);
+
+    await expect(allPromises).rejects.toBeInstanceOf(QueueIsFullError);
   });
 });
