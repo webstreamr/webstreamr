@@ -3,8 +3,8 @@ import { ExtractorRegistry } from '../extractor';
 import { StreamResolver } from './StreamResolver';
 import { Handler, MeineCloud, MostraGuarda } from '../handler';
 import { Fetcher } from './Fetcher';
-import { Context, CountryCode, UrlResult } from '../types';
-import { NotFoundError } from '../error';
+import { Context, CountryCode, TIMEOUT, UrlResult } from '../types';
+import { BlockedError, NotFoundError } from '../error';
 jest.mock('../utils/Fetcher');
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
@@ -35,7 +35,7 @@ describe('resolve', () => {
 
     expect(streams).toStrictEqual([{
       name: 'WebStreamr',
-      title: '❌ Error with handler "meinecloud". Please create an issue if this persists. Request-id: id',
+      title: '🔗 MeineCloud\n❌ Request failed. Request-id: id.',
       ytId: 'E4WlUXrJgy4',
     }]);
 
@@ -57,7 +57,7 @@ describe('resolve', () => {
     expect(streams).toMatchSnapshot();
   });
 
-  test('adds Cloudflare blocked info', async () => {
+  test('adds error info', async () => {
     class MockHandler implements Handler {
       readonly id = 'mockhandler';
 
@@ -68,21 +68,46 @@ describe('resolve', () => {
       readonly countryCodes: CountryCode[] = ['de'];
 
       readonly handle = async (): Promise<(UrlResult | undefined)[]> => {
-        return [{
-          url: new URL('https://example.com'),
-          isExternal: true,
-          blocked: 'cloudflare_challenge',
-          label: 'example.com',
-          sourceId: '',
-          meta: {
-            countryCode: 'de',
+        return [
+          {
+            url: new URL('https://example.com'),
+            isExternal: true,
+            error: new BlockedError('cloudflare_challenge'),
+            label: 'hoster.com',
+            sourceId: '',
+            meta: {
+              countryCode: 'de',
+            },
           },
-        }];
+          {
+            url: new URL('https://example2.com'),
+            isExternal: true,
+            error: new TypeError(),
+            label: 'hoster.com',
+            sourceId: '',
+            meta: {
+              countryCode: 'de',
+            },
+          },
+          {
+            url: new URL('https://example2.com'),
+            isExternal: true,
+            error: TIMEOUT,
+            label: 'hoster.com',
+            sourceId: '',
+            meta: {
+              countryCode: 'de',
+            },
+          },
+        ];
       };
     }
 
     const streams = await streamResolver.resolve(ctx, [new MockHandler()], 'movie', 'tt11655566');
     expect(streams).toMatchSnapshot();
+
+    const streamsWithoutExternalUrls = await streamResolver.resolve({ ...ctx, config: { ...ctx.config, excludeExternalUrls: 'on' } }, [new MockHandler()], 'movie', 'tt11655566');
+    expect(streamsWithoutExternalUrls).toMatchSnapshot();
   });
 
   test('ignores not found errors', async () => {

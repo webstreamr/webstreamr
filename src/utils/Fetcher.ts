@@ -1,7 +1,7 @@
 import CachePolicy from 'http-cache-semantics';
 import TTLCache from '@isaacs/ttlcache';
 import winston from 'winston';
-import { Context } from '../types';
+import { Context, TIMEOUT } from '../types';
 import { BlockedError, NotFoundError } from '../error';
 import { clearTimeout } from 'node:timers';
 
@@ -90,7 +90,7 @@ export class Fetcher {
     this.logger.info(`Fetch ${request.method} ${url}`, ctx);
 
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 10000);
+    const timer = setTimeout(() => controller.abort(TIMEOUT), 10000);
 
     let response;
     try {

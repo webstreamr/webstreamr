@@ -1,14 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`resolve adds Cloudflare blocked info 1`] = `
+exports[`resolve adds error info 1`] = `
 [
   {
     "behaviorHints": {},
     "externalUrl": "https://example.com/",
     "name": "WebStreamr N/A ⚠️ external",
     "title": "🌐 German 🇩🇪
-🔗 example.com
+🔗 hoster.com
 ⚠️ Request was blocked.",
+  },
+  {
+    "behaviorHints": {},
+    "externalUrl": "https://example2.com/",
+    "name": "WebStreamr N/A ⚠️ external",
+    "title": "🌐 German 🇩🇪
+🔗 hoster.com
+❌ Request failed. Request-id: id.",
+  },
+  {
+    "behaviorHints": {},
+    "externalUrl": "https://example2.com/",
+    "name": "WebStreamr N/A ⚠️ external",
+    "title": "🌐 German 🇩🇪
+🔗 hoster.com
+🐢 Request timed out.",
+  },
+]
+`;
+
+exports[`resolve adds error info 2`] = `
+[
+  {
+    "behaviorHints": {},
+    "name": "WebStreamr N/A",
+    "title": "🌐 German 🇩🇪
+🔗 hoster.com
+⚠️ Request was blocked.",
+    "ytId": "E4WlUXrJgy4",
+  },
+  {
+    "behaviorHints": {},
+    "name": "WebStreamr N/A",
+    "title": "🌐 German 🇩🇪
+🔗 hoster.com
+❌ Request failed. Request-id: id.",
+    "ytId": "E4WlUXrJgy4",
+  },
+  {
+    "behaviorHints": {},
+    "name": "WebStreamr N/A",
+    "title": "🌐 German 🇩🇪
+🔗 hoster.com
+🐢 Request timed out.",
+    "ytId": "E4WlUXrJgy4",
   },
 ]
 `;

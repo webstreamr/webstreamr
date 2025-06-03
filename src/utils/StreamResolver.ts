@@ -2,7 +2,7 @@ import { Stream } from 'stremio-addon-sdk';
 import { flag } from 'country-emoji';
 import winston from 'winston';
 import bytes from 'bytes';
-import { Context, UrlResult } from '../types';
+import { Context, TIMEOUT, UrlResult } from '../types';
 import { Handler } from '../handler';
 import { BlockedError, NotFoundError } from '../error';
 import { languageFromCountryCode } from './languageFromCountryCode';
@@ -41,28 +41,11 @@ export class StreamResolver {
           return;
         }
 
-        /* istanbul ignore next */
-        if (error instanceof BlockedError) {
-          this.logger.warn(`${handler.id}: Request was blocked. Reason: ${error.reason}`, ctx);
-
-          streams.push({
-            name: process.env['MANIFEST_NAME'] || 'WebStreamr',
-            title: `⚠️ Request was blocked for handler "${handler.id}".`,
-            ytId: 'E4WlUXrJgy4',
-          });
-
-          return;
-        }
-
         streams.push({
           name: process.env['MANIFEST_NAME'] || 'WebStreamr',
-          title: `❌ Error with handler "${handler.id}". Please create an issue if this persists. Request-id: ${ctx.id}`,
+          title: [`🔗 ${handler.label}`, this.logErrorAndReturnNiceString(ctx, handler.id, error)].join('\n'),
           ytId: 'E4WlUXrJgy4',
         });
-
-        const cause = (error as Error & { cause?: unknown }).cause;
-
-        this.logger.error(`${handler.id} error: ${error}, cause: ${cause}`, ctx);
       }
     });
     await Promise.all(handlerPromises);
@@ -84,37 +67,71 @@ export class StreamResolver {
     this.logger.info(`Return ${urlResults.length} streams`, ctx);
 
     streams.push(
-      ...urlResults.map(urlResult => ({
-        [urlResult.isExternal ? 'externalUrl' : 'url']: urlResult.url.href,
-        name: this.buildName(urlResult),
-        title: this.buildTitle(urlResult),
-        behaviorHints: {
-          ...(urlResult.sourceId && { bingeGroup: `webstreamr-${urlResult.sourceId}` }),
-          ...(urlResult.requestHeaders !== undefined && {
-            notWebReady: true,
-            proxyHeaders: { request: urlResult.requestHeaders },
-          }),
-          ...(urlResult.meta.bytes && { videoSize: urlResult.meta.bytes }),
-        },
-      })),
+      ...urlResults.filter(urlResult => !urlResult.isExternal || this.showExternalUrls(ctx) || urlResult.error)
+        .map(urlResult => ({
+          ...this.buildUrl(ctx, urlResult),
+          name: this.buildName(ctx, urlResult),
+          title: this.buildTitle(ctx, urlResult),
+          behaviorHints: {
+            ...(urlResult.sourceId && { bingeGroup: `webstreamr-${urlResult.sourceId}` }),
+            ...(urlResult.requestHeaders !== undefined && {
+              notWebReady: true,
+              proxyHeaders: { request: urlResult.requestHeaders },
+            }),
+            ...(urlResult.meta.bytes && { videoSize: urlResult.meta.bytes }),
+          },
+        })),
     );
 
     return streams;
   };
 
-  private readonly buildName = (urlResult: UrlResult): string => {
+  private readonly showExternalUrls = (ctx: Context): boolean => !('excludeExternalUrls' in ctx.config);
+
+  private readonly buildUrl = (ctx: Context, urlResult: UrlResult): { externalUrl: string } | { url: string } | { ytId: string } => {
+    if (!urlResult.isExternal) {
+      return { url: urlResult.url.href };
+    }
+
+    if (this.showExternalUrls(ctx)) {
+      return { externalUrl: urlResult.url.href };
+    }
+
+    return { ytId: 'E4WlUXrJgy4' };
+  };
+
+  private readonly buildName = (ctx: Context, urlResult: UrlResult): string => {
     let name = process.env['MANIFEST_NAME'] || 'WebStreamr';
 
     name += urlResult.meta.height ? ` ${urlResult.meta.height}P` : ' N/A';
 
-    if (urlResult.isExternal) {
+    if (urlResult.isExternal && this.showExternalUrls(ctx)) {
       name += ` ⚠️ external`;
     }
 
     return name;
   };
 
-  private readonly buildTitle = (urlResult: UrlResult): string => {
+  private readonly logErrorAndReturnNiceString = (ctx: Context, source: string, error: unknown): string => {
+    if (error instanceof BlockedError) {
+      this.logger.warn(`${source}: Request was blocked. Reason: ${error.reason}`, ctx);
+
+      return '⚠️ Request was blocked.';
+    }
+
+    if (error === TIMEOUT) {
+      this.logger.warn(`${source}: Request timed out.`, ctx);
+
+      return '🐢 Request timed out.';
+    }
+
+    const cause = (error as Error & { cause?: unknown }).cause;
+    this.logger.error(`${source} error: ${error}, cause: ${cause}`, ctx);
+
+    return `❌ Request failed. Request-id: ${ctx.id}.`;
+  };
+
+  private readonly buildTitle = (ctx: Context, urlResult: UrlResult): string => {
     const titleLines = [];
 
     if (urlResult.meta.title) {
@@ -131,8 +148,8 @@ export class StreamResolver {
 
     titleLines.push(`🔗 ${urlResult.label}`);
 
-    if (urlResult.blocked) {
-      titleLines.push('⚠️ Request was blocked.');
+    if (urlResult.error) {
+      titleLines.push(this.logErrorAndReturnNiceString(ctx, urlResult.sourceId, urlResult.error));
     }
 
     return titleLines.join('\n');

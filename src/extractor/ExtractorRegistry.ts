@@ -7,7 +7,7 @@ import { DoodStream } from './DoodStream';
 import { Dropload } from './Dropload';
 import { SuperVideo } from './SuperVideo';
 import { ExternalUrl } from './ExternalUrl';
-import { BlockedError, NotFoundError } from '../error';
+import { NotFoundError } from '../error';
 
 export class ExtractorRegistry {
   private readonly logger: winston.Logger;
@@ -47,24 +47,14 @@ export class ExtractorRegistry {
         return undefined;
       }
 
-      /* istanbul ignore next */
-      if (error instanceof BlockedError && !('excludeExternalUrls' in ctx.config)) {
-        this.logger.warn(`${extractor.id}: Request was blocked. Reason: ${error.reason}`, ctx);
-
-        return {
-          url: url,
-          isExternal: true,
-          blocked: error.reason,
-          label: url.host,
-          sourceId: '',
-          meta,
-        };
-      }
-
-      const cause = (error as Error & { cause?: unknown }).cause;
-
-      this.logger.warn(`${extractor.id} error: ${error}, cause: ${cause}`, ctx);
-      return undefined;
+      return {
+        url,
+        isExternal: true,
+        error,
+        label: url.host,
+        sourceId: `${extractor.id}`,
+        meta,
+      };
     }
 
     this.urlResultCache.set(url.href, urlResult, { ttl: extractor.ttl });

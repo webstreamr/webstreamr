@@ -12,10 +12,10 @@ const extractorRegistry = new ExtractorRegistry(logger, fetcher);
 describe('ExtractorRegistry', () => {
   const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on' } };
 
-  test('returns undefined when no extractor can be found', async () => {
+  test('returns error result from extractor', async () => {
     const urlResult = await extractorRegistry.handle(ctx, new URL('https://some-url.test'), { countryCode: 'en' });
 
-    expect(urlResult).toBeUndefined();
+    expect(urlResult).toMatchSnapshot();
   });
 
   test('return external URLs by default', async () => {

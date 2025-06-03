@@ -1,5 +1,7 @@
 import { Manifest, ManifestConfig } from 'stremio-addon-sdk';
 
+export const TIMEOUT = 'timeout';
+
 export interface Context {
   id: string;
   ip: string;
@@ -25,9 +27,9 @@ export interface Meta {
 export interface UrlResult {
   url: URL;
   isExternal?: boolean;
-  blocked?: BlockedReason;
+  error?: unknown;
   label: string;
-  sourceId?: string;
+  sourceId: string;
   meta: Meta;
   requestHeaders?: Record<string, string>;
 }

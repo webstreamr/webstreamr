@@ -34,6 +34,16 @@ exports[`VerHdLink handle titanic 1`] = `
     "url": "https://mixdrop.ag/e/vn0wx308fq984q",
   },
   {
+    "error": [Error: Fetcher error: 404: Not Found],
+    "isExternal": true,
+    "label": "streamtape.com",
+    "meta": {
+      "countryCode": "mx",
+    },
+    "sourceId": "external",
+    "url": "https://streamtape.com/e/Bjp2vjrdBxsK82",
+  },
+  {
     "label": "SuperVideo",
     "meta": {
       "bytes": 1610612736,

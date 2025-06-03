@@ -11,3 +11,16 @@ exports[`ExtractorRegistry return external URLs by default 1`] = `
   "url": "https://mixdrop.ag/e/3nzwveprim63or6",
 }
 `;
+
+exports[`ExtractorRegistry returns error result from extractor 1`] = `
+{
+  "error": [Error: TypeError: fetch failed],
+  "isExternal": true,
+  "label": "some-url.test",
+  "meta": {
+    "countryCode": "en",
+  },
+  "sourceId": "external",
+  "url": "https://some-url.test/",
+}
+`;
