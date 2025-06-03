@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.22.7](https://github.com/webstreamr/webstreamr/compare/v0.22.6...v0.22.7) (2025-06-03)
+
+
+### Miscellaneous Chores
+
+* add language name to config in manifest as well ([ae6fdfe](https://github.com/webstreamr/webstreamr/commit/ae6fdfe726c6ff4a9458b3dbdc1b8a05f9bbc74f))
+* catch handler blocked errors and report the and report themm ([9d17f53](https://github.com/webstreamr/webstreamr/commit/9d17f5340a4074993fdef0080693e4140a28b36f))
+* **deps:** update dependency typescript-eslint to v8.33.1 ([#97](https://github.com/webstreamr/webstreamr/issues/97)) ([f0ffd9b](https://github.com/webstreamr/webstreamr/commit/f0ffd9b0249703095524783af9006cd3716a86a2))
+* try to log error causes ([f6967da](https://github.com/webstreamr/webstreamr/commit/f6967da5cc86897ff49d068bb6ad5ddd9d12f498))
+* use tsconfig base for node 22 ([b94f989](https://github.com/webstreamr/webstreamr/commit/b94f9898b044535bcc5f5377b3bdba61ee3e933e))
+
+
+### Bug Fixes
+
+* **handler:** use new frembed domain (again) ([0b9cf21](https://github.com/webstreamr/webstreamr/commit/0b9cf21faebad17ca6395160f7621bd8b29b5c0b))
+
 ## [0.22.6](https://github.com/webstreamr/webstreamr/compare/v0.22.5...v0.22.6) (2025-06-02)
 
 

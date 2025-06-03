@@ -8,7 +8,7 @@ const typedEntries = <T extends object>(obj: T): [keyof T, T[keyof T]][] => (Obj
 export const buildManifest = (handlers: Handler[], config: Config): ManifestWithConfig => {
   const manifest: ManifestWithConfig = {
     id: process.env['MANIFEST_ID'] || 'webstreamr',
-    version: '0.22.6', // x-release-please-version
+    version: '0.22.7', // x-release-please-version
     name: process.env['MANIFEST_NAME'] || 'WebStreamr',
     description: 'Provides HTTP URLs from streaming websites.',
     resources: [
