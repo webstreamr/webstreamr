@@ -26,7 +26,9 @@ const config: Config = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   testEnvironment: 'node',
   transform: {
-    '^.+.tsx?$': ['ts-jest', {}],
+    '^.+.tsx?$': ['ts-jest', {
+      tsconfig: 'tsconfig.dev.json',
+    }],
   },
   modulePathIgnorePatterns: [
     '<rootDir>/dist',
