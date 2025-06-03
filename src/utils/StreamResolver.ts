@@ -4,7 +4,7 @@ import winston from 'winston';
 import bytes from 'bytes';
 import { Context, UrlResult } from '../types';
 import { Handler } from '../handler';
-import { NotFoundError } from '../error';
+import { BlockedError, NotFoundError } from '../error';
 import { languageFromCountryCode } from './languageFromCountryCode';
 
 export class StreamResolver {
@@ -41,8 +41,21 @@ export class StreamResolver {
           return;
         }
 
+        /* istanbul ignore next */
+        if (error instanceof BlockedError) {
+          this.logger.warn(`${handler.id}: Request was blocked. Reason: ${error.reason}`, ctx);
+
+          streams.push({
+            name: process.env['MANIFEST_NAME'] || 'WebStreamr',
+            title: `⚠️ Request was blocked for handler "${handler.id}".`,
+            ytId: 'E4WlUXrJgy4',
+          });
+
+          return;
+        }
+
         streams.push({
-          name: 'WebStreamr',
+          name: process.env['MANIFEST_NAME'] || 'WebStreamr',
           title: `❌ Error with handler "${handler.id}". Please create an issue if this persists. Request-id: ${ctx.id}`,
           ytId: 'E4WlUXrJgy4',
         });
