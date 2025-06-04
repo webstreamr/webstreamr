@@ -13,6 +13,14 @@ exports[`resolve adds error info 1`] = `
     },
     {
       "behaviorHints": {},
+      "externalUrl": "https://example.com/",
+      "name": "WebStreamr N/A ⚠️ external",
+      "title": "🌐 German 🇩🇪
+🔗 hoster.com
+⚠️ Request was blocked.",
+    },
+    {
+      "behaviorHints": {},
       "externalUrl": "https://example2.com/",
       "name": "WebStreamr N/A ⚠️ external",
       "title": "🌐 German 🇩🇪
@@ -42,6 +50,14 @@ exports[`resolve adds error info 1`] = `
 exports[`resolve adds error info 2`] = `
 {
   "streams": [
+    {
+      "behaviorHints": {},
+      "name": "WebStreamr N/A",
+      "title": "🌐 German 🇩🇪
+🔗 hoster.com
+⚠️ Request was blocked.",
+      "ytId": "E4WlUXrJgy4",
+    },
     {
       "behaviorHints": {},
       "name": "WebStreamr N/A",

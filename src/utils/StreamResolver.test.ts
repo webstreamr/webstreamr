@@ -74,6 +74,16 @@ describe('resolve', () => {
             },
           },
           {
+            url: new URL('https://example.com'),
+            isExternal: true,
+            error: new BlockedError('unknown', {}),
+            label: 'hoster.com',
+            sourceId: '',
+            meta: {
+              countryCode: 'de',
+            },
+          },
+          {
             url: new URL('https://example2.com'),
             isExternal: true,
             error: new TypeError(),
