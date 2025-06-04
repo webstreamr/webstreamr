@@ -22,7 +22,6 @@ exports[`ExtractorRegistry returns error result from extractor 1`] = `
     "countryCode": "en",
   },
   "sourceId": "external",
-  "ttl": 3600000,
   "url": "https://some-url.test/",
 }
 `;

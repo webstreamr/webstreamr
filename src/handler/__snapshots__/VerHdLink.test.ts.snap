@@ -44,7 +44,6 @@ exports[`VerHdLink handle titanic 1`] = `
       "countryCode": "mx",
     },
     "sourceId": "external",
-    "ttl": 3600000,
     "url": "https://streamtape.com/e/Bjp2vjrdBxsK82",
   },
   {

@@ -44,7 +44,6 @@ exports[`FrenchCloud handle imdb the devil's bath 1`] = `
       "countryCode": "fr",
     },
     "sourceId": "external",
-    "ttl": 3600000,
     "url": "https://streamtape.com/e/gjA1OQ4klyHxgJ",
   },
   {

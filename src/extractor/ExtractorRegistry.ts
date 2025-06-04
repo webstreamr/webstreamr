@@ -53,7 +53,6 @@ export class ExtractorRegistry {
         error,
         label: url.host,
         sourceId: `${extractor.id}`,
-        ttl: extractor.ttl,
         meta,
       };
     }

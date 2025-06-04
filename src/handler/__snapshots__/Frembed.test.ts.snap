@@ -11,7 +11,6 @@ exports[`Frembed handle imdb black mirror s4e2 1`] = `
       "title": "Black Mirror 4x2",
     },
     "sourceId": "external",
-    "ttl": 3600000,
     "url": "https://ahvsh.com/e/83izf7qzwpae,https://netu.frembed.fun/e/0DFgfkcXOsDP,https://likessb.com/e/7yjgl1x56n08.html,https://ds2play.com/e/fzfvfq3ngig0",
   },
   {
@@ -58,7 +57,6 @@ exports[`Frembed handle imdb black mirror s4e2 1`] = `
       "title": "Black Mirror 4x2",
     },
     "sourceId": "external",
-    "ttl": 3600000,
     "url": "https://ds2play.com/e/fzfvfq3ngig0",
   },
 ]
