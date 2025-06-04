@@ -4,6 +4,7 @@ import winston from 'winston';
 import { Context, TIMEOUT } from '../types';
 import { BlockedError, NotFoundError, QueueIsFullError } from '../error';
 import { clearTimeout } from 'node:timers';
+import { envGet } from './env';
 
 interface HttpCacheItem {
   policy: CachePolicy;
@@ -61,7 +62,7 @@ export class Fetcher {
     },
   });
 
-  private readonly handleHttpCacheItem = (httpCacheItem: HttpCacheItem): HttpCacheItem => {
+  private readonly handleHttpCacheItem = async (ctx: Context, httpCacheItem: HttpCacheItem, url: URL): Promise<HttpCacheItem> => {
     if (httpCacheItem.status && httpCacheItem.status >= 200 && httpCacheItem.status <= 299) {
       return httpCacheItem;
     }
@@ -73,7 +74,28 @@ export class Fetcher {
     const responseHeaders = httpCacheItem.policy.responseHeaders();
 
     if (httpCacheItem.policy.responseHeaders()['cf-mitigated'] === 'challenge') {
-      throw new BlockedError('cloudflare_challenge', httpCacheItem.policy.responseHeaders());
+      const flareSolverrEndpoint = envGet('FLARESOLVERR_ENDPOINT');
+      if (!flareSolverrEndpoint) {
+        throw new BlockedError('cloudflare_challenge', httpCacheItem.policy.responseHeaders());
+      }
+
+      this.logger.info(`Query FlareSolverr for ${url.href}`, ctx);
+
+      const body = { cmd: 'request.get', url: url.href, session: 'default' };
+      const challengeResult = await (await fetch(new URL(flareSolverrEndpoint), { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' } })).json();
+      if (challengeResult.status !== 'ok') {
+        throw new BlockedError('flaresolverr_failed', {});
+      }
+
+      httpCacheItem.body = challengeResult.solution.response;
+
+      const ttl = this.determineTtl(httpCacheItem);
+      /* istanbul ignore next */
+      if (ttl > 0) {
+        this.httpCache.set(url.href, httpCacheItem, { ttl });
+      }
+
+      return httpCacheItem;
     }
 
     if (httpCacheItem.status === 403) {
@@ -81,6 +103,14 @@ export class Fetcher {
     }
 
     throw new Error(`Fetcher error: ${httpCacheItem.status}: ${httpCacheItem.statusText}, response headers: ${JSON.stringify(responseHeaders)}`);
+  };
+
+  private readonly determineTtl = (httpCacheItem: HttpCacheItem): number => {
+    if (httpCacheItem.status === 200) {
+      return Math.max(httpCacheItem.policy.timeToLive(), 900000); // 15m at least
+    }
+
+    return httpCacheItem.policy.timeToLive();
   };
 
   private readonly headersToObject = (headers: Headers): Record<string, string> => {
@@ -101,7 +131,7 @@ export class Fetcher {
     let httpCacheItem: HttpCacheItem | undefined = this.httpCache.get(url.href);
     if (httpCacheItem) {
       this.logger.info(`Cached fetch ${request.method} ${url}`, ctx);
-      return this.handleHttpCacheItem(httpCacheItem);
+      return this.handleHttpCacheItem(ctx, httpCacheItem, url);
     }
 
     const response = await this.queuedFetch(ctx, url, newInit);
@@ -111,18 +141,12 @@ export class Fetcher {
 
     httpCacheItem = { policy, status: response.status, statusText: response.statusText, body };
 
-    let ttl;
-    if (response.ok) {
-      ttl = Math.max(policy.timeToLive(), 900000); // 15m at least
-    } else {
-      ttl = policy.timeToLive();
-    }
-
+    const ttl = this.determineTtl(httpCacheItem);
     if (ttl > 0) {
       this.httpCache.set(url.href, httpCacheItem, { ttl });
     }
 
-    return this.handleHttpCacheItem(httpCacheItem);
+    return this.handleHttpCacheItem(ctx, httpCacheItem, url);
   };
 
   private readonly fetchWithTimeout = async (ctx: Context, url: URL, init?: RequestInit): Promise<Response> => {

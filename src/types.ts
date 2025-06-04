@@ -15,7 +15,7 @@ export type Config = Partial<Record<CountryCode | 'excludeExternalUrls', string>
 
 export type CountryCode = 'de' | 'en' | 'es' | 'fr' | 'it' | 'mx';
 
-export type BlockedReason = 'cloudflare_challenge' | 'unknown';
+export type BlockedReason = 'cloudflare_challenge' | 'flaresolverr_failed' | 'unknown';
 
 export interface Meta {
   bytes?: number;

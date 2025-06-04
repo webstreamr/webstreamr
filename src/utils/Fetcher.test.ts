@@ -80,6 +80,33 @@ describe('fetch', () => {
     }
   });
 
+  test('uses FlareSolverr to solve Cloudflare challenge if configured and succeeds', async () => {
+    process.env['FLARESOLVERR_ENDPOINT'] = 'http://localhost:8191/v1/x';
+    fetchMock.get('https://some-cloudflare-flaresolverr-success-url.test/', { status: 403, headers: { 'cf-mitigated': 'challenge' } });
+    fetchMock.post('http://localhost:8191/v1/x', { body: { status: 'ok', solution: { response: 'some response' } } });
+
+    const response = await fetcher.text(ctx, new URL('https://some-cloudflare-flaresolverr-success-url.test/'));
+
+    expect(response).toBe('some response');
+    delete process.env['FLARESOLVERR_ENDPOINT'];
+  });
+
+  test('uses FlareSolverr to solve Cloudflare challenge if configured and fails with custom BlockedError', async () => {
+    process.env['FLARESOLVERR_ENDPOINT'] = 'http://localhost:8191/v1/y';
+    fetchMock.get('https://some-cloudflare-flaresolverr-fail-url.test/', { status: 403, headers: { 'cf-mitigated': 'challenge' } });
+    fetchMock.post('http://localhost:8191/v1/y', { body: { status: 'nok' } });
+
+    try {
+      await fetcher.text(ctx, new URL('https://some-cloudflare-flaresolverr-fail-url.test/'));
+      fail();
+    } catch (error) {
+      expect(error).toBeInstanceOf(BlockedError);
+      expect(error).toMatchObject({ reason: 'flaresolverr_failed' });
+    }
+
+    delete process.env['FLARESOLVERR_ENDPOINT'];
+  });
+
   test('converts generic forbidden to custom BlockedError', async () => {
     fetchMock.get('https://some-forbidden-url.test/', { status: 403 });
 
