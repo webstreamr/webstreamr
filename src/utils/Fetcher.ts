@@ -1,6 +1,7 @@
 import CachePolicy from 'http-cache-semantics';
 import TTLCache from '@isaacs/ttlcache';
 import winston from 'winston';
+import { Cookie, CookieJar } from 'tough-cookie';
 import { Context, TIMEOUT } from '../types';
 import { BlockedError, NotFoundError, QueueIsFullError } from '../error';
 import { clearTimeout } from 'node:timers';
@@ -18,6 +19,17 @@ interface HostQueue {
   count: number;
 }
 
+interface FlareResolverCookie {
+  domain: string;
+  expiry: number;
+  httpOnly: boolean;
+  name: string;
+  path: string;
+  sameSite: string;
+  secure: boolean;
+  value: string;
+}
+
 export class Fetcher {
   private readonly logger: winston.Logger;
   private readonly queueLimit: number;
@@ -25,6 +37,8 @@ export class Fetcher {
 
   private readonly httpCache: TTLCache<string, HttpCacheItem>;
   private readonly hostQueues = new Map<string, HostQueue>();
+  private readonly hostUserAgentMap = new Map<string, string>();
+  private readonly cookieJar = new CookieJar();
 
   constructor(logger: winston.Logger, queueLimit?: number, timeout?: number) {
     this.logger = logger;
@@ -46,21 +60,26 @@ export class Fetcher {
     return (await this.cachedFetch(ctx, url, { ...init, method: 'HEAD' })).policy.responseHeaders();
   };
 
-  public readonly getInit = (ctx: Context, url: URL, init?: RequestInit): RequestInit => ({
-    ...init,
-    headers: {
-      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-      'Accept-Language': 'en',
-      'Forwarded': `for=${ctx.ip}`,
-      'Priority': 'u=0',
-      'Referer': `${ctx.referer?.href ?? url.origin}`,
-      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.3',
-      'X-Forwarded-For': ctx.ip,
-      'X-Forwarded-Proto': url.protocol.slice(0, -1),
-      'X-Real-IP': ctx.ip,
-      ...init?.headers,
-    },
-  });
+  public readonly getInit = (ctx: Context, url: URL, init?: RequestInit): RequestInit => {
+    const cookieString = this.cookieJar.getCookieStringSync(url.href);
+
+    return {
+      ...init,
+      headers: {
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en',
+        ...(cookieString && { Cookie: cookieString }),
+        'Forwarded': `for=${ctx.ip}`,
+        'Priority': 'u=0',
+        'Referer': `${ctx.referer?.href ?? url.origin}`,
+        'User-Agent': this.hostUserAgentMap.get(url.host) ?? 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36',
+        'X-Forwarded-For': ctx.ip,
+        'X-Forwarded-Proto': url.protocol.slice(0, -1),
+        'X-Real-IP': ctx.ip,
+        ...init?.headers,
+      },
+    };
+  };
 
   private readonly handleHttpCacheItem = async (ctx: Context, httpCacheItem: HttpCacheItem, url: URL): Promise<HttpCacheItem> => {
     if (httpCacheItem.status && httpCacheItem.status >= 200 && httpCacheItem.status <= 299) {
@@ -90,6 +109,24 @@ export class Fetcher {
         this.logger.warn(`FlareSolverr issue: ${JSON.stringify(challengeResult)}`, ctx);
         throw new BlockedError('flaresolverr_failed', {});
       }
+
+      challengeResult.solution.cookies.forEach((cookie: FlareResolverCookie) => {
+        if (!['cf_clearance'].includes(cookie.name)) {
+          return;
+        }
+
+        this.cookieJar.setCookie(
+          new Cookie({
+            key: cookie.name,
+            value: cookie.value,
+            expires: new Date(cookie.expiry * 1000),
+            domain: cookie.domain.replace(/^.+/, ''),
+          }),
+          url.href,
+        );
+      });
+
+      this.hostUserAgentMap.set(url.host, challengeResult.solution.userAgent);
 
       httpCacheItem.body = challengeResult.solution.response;
 

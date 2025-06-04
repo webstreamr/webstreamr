@@ -30,7 +30,7 @@ describe('fetch', () => {
         'Forwarded': 'for=127.0.0.1',
         'Priority': 'u=0',
         'Referer': 'https://some-url.test',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.3',
+        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36',
         'X-Forwarded-For': '127.0.0.1',
         'X-Forwarded-Proto': 'https',
         'X-Real-IP': '127.0.0.1',
@@ -83,11 +83,35 @@ describe('fetch', () => {
   test('uses FlareSolverr to solve Cloudflare challenge if configured and succeeds', async () => {
     process.env['FLARESOLVERR_ENDPOINT'] = 'http://localhost:8191/v1/x';
     fetchMock.get('https://some-cloudflare-flaresolverr-success-url.test/', { status: 403, headers: { 'cf-mitigated': 'challenge' } });
-    fetchMock.post('http://localhost:8191/v1/x', { body: { status: 'ok', solution: { response: 'some response' } } });
+    fetchMock.post(
+      'http://localhost:8191/v1/x',
+      {
+        body: {
+          status: 'ok',
+          solution: {
+            response: 'some response',
+            cookies: [
+              { name: 'cf_clearance', value: 'some_value', expires: Date.now() / 1000, domain: 'some-cloudflare-flaresolverr-success-url.test' },
+              { name: 'irrelevant', value: 'some_other_value', expires: Date.now() / 1000, domain: 'some-other.domain' },
+            ],
+            userAgent: 'user agent that works',
+          },
+        },
+      },
+    );
 
     const response = await fetcher.text(ctx, new URL('https://some-cloudflare-flaresolverr-success-url.test/'));
-
     expect(response).toBe('some response');
+
+    // The next request has to use the cookie and user agent we got
+    await fetcher.text(ctx, new URL('https://some-cloudflare-flaresolverr-success-url.test/'));
+    expect(fetchMock.callHistory.callLogs[2]?.args[1]).toMatchObject({
+      headers: {
+        'Cookie': 'cf_clearance=some_value',
+        'User-Agent': 'user agent that works',
+      },
+    });
+
     delete process.env['FLARESOLVERR_ENDPOINT'];
   });
 
