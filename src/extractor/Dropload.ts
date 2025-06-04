@@ -21,8 +21,8 @@ export class Dropload implements Extractor {
   readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/dropload/);
 
   readonly extract = async (ctx: Context, url: URL, meta: Meta) => {
-    url.pathname = url.pathname.replace('/e/', '').replace('/embed-', '/');
-    const html = await this.fetcher.text(ctx, url);
+    const normalizedUrl = new URL(url.href.replace('/e/', '/').replace('/embed-', '/'));
+    const html = await this.fetcher.text(ctx, normalizedUrl);
 
     if (html.includes('File Not Found')) {
       throw new NotFoundError();
