@@ -91,8 +91,8 @@ describe('fetch', () => {
           solution: {
             response: 'some response',
             cookies: [
-              { name: 'cf_clearance', value: 'some_value', expires: Date.now() / 1000, domain: 'some-cloudflare-flaresolverr-success-url.test' },
-              { name: 'irrelevant', value: 'some_other_value', expires: Date.now() / 1000, domain: 'some-other.domain' },
+              { name: 'cf_clearance', value: 'some_value', expires: Date.now() / 1000 + 12345, domain: 'some-cloudflare-flaresolverr-success-url.test' },
+              { name: 'irrelevant', value: 'some_other_value', expires: Date.now() / 1000 + 12345, domain: 'some-other.domain' },
             ],
             userAgent: 'user agent that works',
           },

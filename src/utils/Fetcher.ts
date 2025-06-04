@@ -21,7 +21,7 @@ interface HostQueue {
 
 interface FlareResolverCookie {
   domain: string;
-  expiry: number;
+  expires: number;
   httpOnly: boolean;
   name: string;
   path: string;
@@ -119,7 +119,7 @@ export class Fetcher {
           new Cookie({
             key: cookie.name,
             value: cookie.value,
-            expires: new Date(cookie.expiry * 1000),
+            expires: new Date(cookie.expires * 1000),
             domain: cookie.domain.replace(/^.+/, ''),
           }),
           url.href,
