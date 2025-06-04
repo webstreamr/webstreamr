@@ -30,7 +30,7 @@ describe('fetch', () => {
         'Forwarded': 'for=127.0.0.1',
         'Priority': 'u=0',
         'Referer': 'https://some-url.test',
-        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36',
+        'User-Agent': 'node',
         'X-Forwarded-For': '127.0.0.1',
         'X-Forwarded-Proto': 'https',
         'X-Real-IP': '127.0.0.1',
