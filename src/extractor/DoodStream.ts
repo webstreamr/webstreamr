@@ -42,6 +42,7 @@ export class DoodStream implements Extractor {
       url: new URL(`${baseUrl}${randomstring.generate(10)}?token=${token}&expiry=${Date.now()}`),
       label: this.label,
       sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
+      ttl: this.ttl,
       meta: {
         title,
         ...meta,

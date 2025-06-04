@@ -1,6 +1,6 @@
 import winston from 'winston';
 import { ExtractorRegistry } from './ExtractorRegistry';
-import { Context } from '../types';
+import { Context, UrlResult } from '../types';
 import { Fetcher } from '../utils';
 jest.mock('../utils/Fetcher');
 
@@ -31,22 +31,21 @@ describe('ExtractorRegistry', () => {
   });
 
   test('returns from memory cache if possible', async () => {
-    const urlResult1 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), { countryCode: 'de' });
-    const urlResult2 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), { countryCode: 'de' });
+    const { ttl: ttl1, ...urlResultRest1 } = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), { countryCode: 'de' }) as UrlResult;
+    const { ttl: ttl2, ...urlResultRest2 } = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), { countryCode: 'de' }) as UrlResult;
 
-    expect(urlResult2).toBe(urlResult1);
+    expect(urlResultRest1).not.toBeUndefined();
+    expect(urlResultRest2).toStrictEqual(urlResultRest1);
+
+    expect(ttl1).not.toBe(undefined);
+    expect(ttl2).not.toBe(undefined);
   });
 
-  test('returns from memory cache if possible', async () => {
-    const urlResult1 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), { countryCode: 'de' });
-    const urlResult2 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), { countryCode: 'de' });
+  test('ignores not found errors but caches them', async () => {
+    const urlResult1 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/asdfghijklmn.html'), { countryCode: 'de' });
+    const urlResult2 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/asdfghijklmn.html'), { countryCode: 'de' });
 
-    expect(urlResult2).toBe(urlResult1);
-  });
-
-  test('ignores not found errors', async () => {
-    const urlResult = await extractorRegistry.handle(ctx, new URL('https://dropload.io/asdfghijklmn.html'), { countryCode: 'de' });
-
-    expect(urlResult).toBeUndefined();
+    expect(urlResult1).toBeUndefined();
+    expect(urlResult2).toBeUndefined();
   });
 });

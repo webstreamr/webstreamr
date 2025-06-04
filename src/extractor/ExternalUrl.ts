@@ -26,6 +26,7 @@ export class ExternalUrl implements Extractor {
       isExternal: true,
       label: `${url.host}`,
       sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
+      ttl: this.ttl,
       meta,
     };
   };

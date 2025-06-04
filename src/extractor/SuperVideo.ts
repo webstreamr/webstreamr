@@ -32,6 +32,7 @@ export class SuperVideo implements Extractor {
       url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
       label: this.label,
       sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
+      ttl: this.ttl,
       meta: {
         bytes: bytes.parse(heightAndSizeMatch[2] as string) as number,
         height: parseInt(heightAndSizeMatch[1] as string) as number,

@@ -11,6 +11,7 @@ exports[`Frembed handle imdb black mirror s4e2 1`] = `
       "title": "Black Mirror 4x2",
     },
     "sourceId": "external",
+    "ttl": 3600000,
     "url": "https://ahvsh.com/e/83izf7qzwpae,https://netu.frembed.fun/e/0DFgfkcXOsDP,https://likessb.com/e/7yjgl1x56n08.html,https://ds2play.com/e/fzfvfq3ngig0",
   },
   {
@@ -23,6 +24,7 @@ exports[`Frembed handle imdb black mirror s4e2 1`] = `
       "Referer": "http://dood.to/",
     },
     "sourceId": "doodstream_fr",
+    "ttl": 900000,
     "url": "https://ee317r.cloudatacdn.com/u5kj63yvxddlsdgge7qremqqka27irwiupc4k7o5cikbh7fdq4j4mwzraf7q/1y4sn4ndoi~mocked-random-string?token=fh3rdlhjvao7chgxndsi3ra7&expiry=639837296000",
   },
   {
@@ -33,6 +35,7 @@ exports[`Frembed handle imdb black mirror s4e2 1`] = `
       "title": "Black Mirror 4x2",
     },
     "sourceId": "external_fr",
+    "ttl": 3600000,
     "url": "https://netu.fanstream.us/e/0DFgfkcXOsDP",
   },
   {
@@ -43,6 +46,7 @@ exports[`Frembed handle imdb black mirror s4e2 1`] = `
       "title": "Black Mirror 4x2",
     },
     "sourceId": "external_fr",
+    "ttl": 3600000,
     "url": "https://johnalwayssame.com/e/cqy9oue7sv0g",
   },
   {
@@ -54,6 +58,7 @@ exports[`Frembed handle imdb black mirror s4e2 1`] = `
       "title": "Black Mirror 4x2",
     },
     "sourceId": "external",
+    "ttl": 3600000,
     "url": "https://ds2play.com/e/fzfvfq3ngig0",
   },
 ]

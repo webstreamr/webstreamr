@@ -28,7 +28,7 @@ export class ExtractorRegistry {
   readonly handle = async (ctx: Context, url: URL, meta: Meta): Promise<UrlResult | undefined> => {
     let urlResult = this.urlResultCache.get(url.href);
     if (this.urlResultCache.has(url.href)) {
-      return urlResult;
+      return urlResult ? { ...urlResult, ttl: this.urlResultCache.getRemainingTTL(url.href) } : undefined;
     }
 
     const extractor = this.extractors.find(extractor => extractor.supports(ctx, url));
@@ -53,6 +53,7 @@ export class ExtractorRegistry {
         error,
         label: url.host,
         sourceId: `${extractor.id}`,
+        ttl: extractor.ttl,
         meta,
       };
     }

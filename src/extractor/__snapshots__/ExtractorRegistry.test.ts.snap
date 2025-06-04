@@ -8,6 +8,7 @@ exports[`ExtractorRegistry return external URLs by default 1`] = `
     "countryCode": "de",
   },
   "sourceId": "external_de",
+  "ttl": 3600000,
   "url": "https://mixdrop.ag/e/3nzwveprim63or6",
 }
 `;
@@ -21,6 +22,7 @@ exports[`ExtractorRegistry returns error result from extractor 1`] = `
     "countryCode": "en",
   },
   "sourceId": "external",
+  "ttl": 3600000,
   "url": "https://some-url.test/",
 }
 `;
