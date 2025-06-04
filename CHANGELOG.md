@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.23.1](https://github.com/webstreamr/webstreamr/compare/v0.23.0...v0.23.1) (2025-06-04)
+
+
+### Bug Fixes
+
+* **fetcher:** improve Flaresolverr fetching ([2c9faeb](https://github.com/webstreamr/webstreamr/commit/2c9faebcdce43b49ba63f1d0f47c9da256da0ed9))
+
 ## [0.23.0](https://github.com/webstreamr/webstreamr/compare/v0.22.10...v0.23.0) (2025-06-04)
 
 
