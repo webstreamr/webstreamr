@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.23.1](https://github.com/webstreamr/webstreamr/compare/v0.23.0...v0.23.1) (2025-06-04)
+
+
+### Miscellaneous Chores
+
+* **fetcher:** increase queue limit to 30 ([e6aa95f](https://github.com/webstreamr/webstreamr/commit/e6aa95f8755757abcd4c6a5170ac113437d981d1))
+* **fetcher:** use FlareSolverr also for other 403 Cloudflare responses ([7387aef](https://github.com/webstreamr/webstreamr/commit/7387aef7640578ee7bd94fe8a48f5e1ad0a6742a))
+
+
+### Bug Fixes
+
+* **fetcher:** improve Flaresolverr fetching ([2c9faeb](https://github.com/webstreamr/webstreamr/commit/2c9faebcdce43b49ba63f1d0f47c9da256da0ed9))
+
 ## [0.23.0](https://github.com/webstreamr/webstreamr/compare/v0.22.10...v0.23.0) (2025-06-04)
 
 
