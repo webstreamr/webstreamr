@@ -82,8 +82,9 @@ export class Fetcher {
       this.logger.info(`Query FlareSolverr for ${url.href}`, ctx);
 
       const body = { cmd: 'request.get', url: url.href, session: 'default' };
-      const challengeResult = await (await fetch(new URL(flareSolverrEndpoint), { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' } })).json();
+      const challengeResult = await (await this.queuedFetch(ctx, new URL(flareSolverrEndpoint), { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' } })).json();
       if (challengeResult.status !== 'ok') {
+        this.logger.warn(`FlareSolverr issue: ${JSON.stringify(challengeResult)}`, ctx);
         throw new BlockedError('flaresolverr_failed', {});
       }
 
