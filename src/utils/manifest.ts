@@ -9,7 +9,7 @@ const typedEntries = <T extends object>(obj: T): [keyof T, T[keyof T]][] => (Obj
 export const buildManifest = (handlers: Handler[], config: Config): ManifestWithConfig => {
   const manifest: ManifestWithConfig = {
     id: envGetAppId(),
-    version: '0.22.10', // x-release-please-version
+    version: '0.23.0', // x-release-please-version
     name: envGetAppName(),
     description: 'Provides HTTP URLs from streaming websites.',
     resources: [
