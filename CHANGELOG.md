@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.22.9](https://github.com/webstreamr/webstreamr/compare/v0.22.8...v0.22.9) (2025-06-04)
+
+
+### Miscellaneous Chores
+
+* cache successful results as long as we safely can ([f2fcfe9](https://github.com/webstreamr/webstreamr/commit/f2fcfe983840fd927ca60e41141b3cea8b548a5c))
+* **deps:** update dependency @stylistic/eslint-plugin to v4.4.1 ([#101](https://github.com/webstreamr/webstreamr/issues/101)) ([3894614](https://github.com/webstreamr/webstreamr/commit/389461415d74f4c58d16ea81215565fd8e31022b))
+* log response headers for blocks ([d78dca3](https://github.com/webstreamr/webstreamr/commit/d78dca3345510b3e30b5d743b78386be803da9ce))
+
 ## [0.22.8](https://github.com/webstreamr/webstreamr/compare/v0.22.7...v0.22.8) (2025-06-03)
 
 
