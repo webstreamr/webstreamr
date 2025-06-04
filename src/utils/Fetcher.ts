@@ -28,7 +28,7 @@ export class Fetcher {
 
   constructor(logger: winston.Logger, queueLimit?: number, timeout?: number) {
     this.logger = logger;
-    this.queueLimit = queueLimit ?? 30;
+    this.queueLimit = queueLimit ?? 10;
     this.timeout = timeout ?? 10000;
 
     this.httpCache = new TTLCache();
