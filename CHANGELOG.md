@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.23.0](https://github.com/webstreamr/webstreamr/compare/v0.22.10...v0.23.0) (2025-06-04)
+
+
+### Miscellaneous Chores
+
+* do not log headers for known blocking reasons ([7ec7219](https://github.com/webstreamr/webstreamr/commit/7ec7219ed40cf6a338611b688ca5500674511e8d))
+
+
+### Features
+
+* **fetcher:** add FlareSolverr support ([af65ed0](https://github.com/webstreamr/webstreamr/commit/af65ed0094a876565bde4ae3952af0e7ca3d29f1))
+
+
+### Bug Fixes
+
+* **extractor:** do not mutate URLs to avoid cache misses ([1b8f75f](https://github.com/webstreamr/webstreamr/commit/1b8f75f00ef195649fa9ffa360b42bb1794f03c8))
+* never cache result errors ([fef59dd](https://github.com/webstreamr/webstreamr/commit/fef59dd03b7b0474418b71f42c96382bda9f277c))
+
 ## [0.22.10](https://github.com/webstreamr/webstreamr/compare/v0.22.9...v0.22.10) (2025-06-04)
 
 
