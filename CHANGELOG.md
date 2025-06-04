@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.22.10](https://github.com/webstreamr/webstreamr/compare/v0.22.9...v0.22.10) (2025-06-04)
+
+
+### Miscellaneous Chores
+
+* **fetcher:** hard-code user-agent again for debugging purposes ([422f7d0](https://github.com/webstreamr/webstreamr/commit/422f7d014cd2c38f61ea61f1069338a0b1320e38))
+
+
+### Code Refactoring
+
+* extract env access into helpers ([77fc20c](https://github.com/webstreamr/webstreamr/commit/77fc20cfff2a8d6995cb4a836dde281ec960bb77))
+
 ## [0.22.9](https://github.com/webstreamr/webstreamr/compare/v0.22.8...v0.22.9) (2025-06-04)
 
 
