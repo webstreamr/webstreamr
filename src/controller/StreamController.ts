@@ -2,7 +2,7 @@ import { Request, Response, Router } from 'express';
 import winston from 'winston';
 import { Handler } from '../handler';
 import { Config, Context } from '../types';
-import { StreamResolver } from '../utils';
+import { envIsProd, StreamResolver } from '../utils';
 
 export class StreamController {
   public readonly router: Router;
@@ -38,7 +38,7 @@ export class StreamController {
 
     const { streams, ttl } = await this.streamResolver.resolve(ctx, handlers, type, id);
 
-    if (ttl && process.env['NODE_ENV'] === 'production') {
+    if (ttl && envIsProd()) {
       res.setHeader('Cache-Control', `max-age=${ttl / 1000}, public`);
     }
 

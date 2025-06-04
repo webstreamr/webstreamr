@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import slugify from 'slugify';
 import winston from 'winston';
 import { Context } from '../../types';
+import { envGet } from '../env';
 const { Fetcher } = jest.requireActual('../Fetcher');
 
 class MockedFetcher {
@@ -39,7 +40,7 @@ class MockedFetcher {
     } else {
       let response;
       try {
-        if (process.env['TEST_UPDATE_FIXTURES']) {
+        if (envGet('TEST_UPDATE_FIXTURES')) {
           response = await fetch(url, this.fetcher.getInit(ctx, url, init));
         } else {
           console.error(`No fixture found at "${path}".`);

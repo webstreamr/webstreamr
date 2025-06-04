@@ -13,7 +13,7 @@ import {
 } from './handler';
 import { ExtractorRegistry } from './extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
-import { Fetcher, StreamResolver } from './utils';
+import { envGet, envIsProd, Fetcher, StreamResolver } from './utils';
 
 const logger = winston.createLogger({
   transports: [
@@ -54,7 +54,7 @@ addon.use((_req: Request, res: Response, next: NextFunction) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', '*');
 
-  if (process.env['NODE_ENV'] === 'production') {
+  if (envIsProd()) {
     res.setHeader('Cache-Control', 'max-age=10, public');
   }
 
@@ -69,7 +69,7 @@ addon.get('/', (_req: Request, res: Response) => {
   res.redirect('/configure');
 });
 
-const port = parseInt(process.env['PORT'] || '51546');
+const port = parseInt(envGet('PORT') || '51546');
 addon.listen(port, () => {
   logger.info(`Add-on Repository URL: http://127.0.0.1:${port}/manifest.json`);
 });

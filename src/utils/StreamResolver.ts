@@ -6,6 +6,7 @@ import { Context, TIMEOUT, UrlResult } from '../types';
 import { Handler } from '../handler';
 import { BlockedError, NotFoundError, QueueIsFullError } from '../error';
 import { languageFromCountryCode } from './languageFromCountryCode';
+import { envGetAppName } from './env';
 
 interface ResolveResponse {
   streams: Stream[];
@@ -54,7 +55,7 @@ export class StreamResolver {
         handlerErrorOccurred = true;
 
         streams.push({
-          name: process.env['MANIFEST_NAME'] || 'WebStreamr',
+          name: envGetAppName(),
           title: [`🔗 ${handler.label}`, this.logErrorAndReturnNiceString(ctx, handler.id, error)].join('\n'),
           ytId: 'E4WlUXrJgy4',
         });
@@ -130,7 +131,7 @@ export class StreamResolver {
   };
 
   private readonly buildName = (ctx: Context, urlResult: UrlResult): string => {
-    let name = process.env['MANIFEST_NAME'] || 'WebStreamr';
+    let name = envGetAppName();
 
     name += urlResult.meta.height ? ` ${urlResult.meta.height}P` : ' N/A';
 

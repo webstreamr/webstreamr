@@ -1,15 +1,16 @@
 import { flag } from 'country-emoji';
 import { Handler } from '../handler';
 import { Config, CountryCode, ManifestWithConfig } from '../types';
+import { envGetAppId, envGetAppName } from './env';
 import { languageFromCountryCode } from './languageFromCountryCode';
 
 const typedEntries = <T extends object>(obj: T): [keyof T, T[keyof T]][] => (Object.entries(obj) as [keyof T, T[keyof T]][]);
 
 export const buildManifest = (handlers: Handler[], config: Config): ManifestWithConfig => {
   const manifest: ManifestWithConfig = {
-    id: process.env['MANIFEST_ID'] || 'webstreamr',
+    id: envGetAppId(),
     version: '0.22.9', // x-release-please-version
-    name: process.env['MANIFEST_NAME'] || 'WebStreamr',
+    name: envGetAppName(),
     description: 'Provides HTTP URLs from streaming websites.',
     resources: [
       'stream',

@@ -1,5 +1,6 @@
 // Adapted version of https://github.com/Stremio/stremio-addon-sdk/blob/v1.6.2/src/landingTemplate.js
 import { ManifestWithConfig } from './types';
+import { envGet } from './utils';
 
 const STYLESHEET = `
 * {
@@ -274,7 +275,7 @@ export function landingTemplate(manifest: ManifestWithConfig) {
 
       <div class="separator"></div>
 
-      ${process.env['CONFIGURATION_DESCRIPTION'] || ''}
+      ${envGet('CONFIGURATION_DESCRIPTION') || ''}
 
       <div class="separator"></div>
 
