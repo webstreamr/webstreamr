@@ -72,7 +72,7 @@ describe('resolve', () => {
           {
             url: new URL('https://example.com'),
             isExternal: true,
-            error: new BlockedError('cloudflare_challenge'),
+            error: new BlockedError('cloudflare_challenge', {}),
             label: 'hoster.com',
             sourceId: '',
             meta: {

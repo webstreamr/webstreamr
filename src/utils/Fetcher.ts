@@ -73,11 +73,11 @@ export class Fetcher {
     const responseHeaders = httpCacheItem.policy.responseHeaders();
 
     if (httpCacheItem.policy.responseHeaders()['cf-mitigated'] === 'challenge') {
-      throw new BlockedError('cloudflare_challenge');
+      throw new BlockedError('cloudflare_challenge', httpCacheItem.policy.responseHeaders());
     }
 
     if (httpCacheItem.status === 403) {
-      throw new BlockedError('unknown');
+      throw new BlockedError('unknown', httpCacheItem.policy.responseHeaders());
     }
 
     throw new Error(`Fetcher error: ${httpCacheItem.status}: ${httpCacheItem.statusText}, response headers: ${JSON.stringify(responseHeaders)}`);

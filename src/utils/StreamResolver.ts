@@ -114,7 +114,7 @@ export class StreamResolver {
 
   private readonly logErrorAndReturnNiceString = (ctx: Context, source: string, error: unknown): string => {
     if (error instanceof BlockedError) {
-      this.logger.warn(`${source}: Request was blocked. Reason: ${error.reason}`, ctx);
+      this.logger.warn(`${source}: Request was blocked. Reason: ${error.reason}, headers: ${JSON.stringify(error.headers)}`, ctx);
 
       return '⚠️ Request was blocked.';
     }
