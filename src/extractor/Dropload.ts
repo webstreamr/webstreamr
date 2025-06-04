@@ -39,6 +39,7 @@ export class Dropload implements Extractor {
       url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
       label: this.label,
       sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
+      ttl: this.ttl,
       meta: {
         bytes: bytes.parse(sizeMatch[1] as string) as number,
         height: parseInt(heightMatch[1] as string) as number,

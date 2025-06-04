@@ -7,6 +7,11 @@ import { Handler } from '../handler';
 import { BlockedError, NotFoundError, QueueIsFullError } from '../error';
 import { languageFromCountryCode } from './languageFromCountryCode';
 
+interface ResolveResponse {
+  streams: Stream[];
+  ttl?: number;
+}
+
 export class StreamResolver {
   private readonly logger: winston.Logger;
 
@@ -14,17 +19,22 @@ export class StreamResolver {
     this.logger = logger;
   }
 
-  readonly resolve = async (ctx: Context, handlers: Handler[], type: string, id: string): Promise<Stream[]> => {
+  readonly resolve = async (ctx: Context, handlers: Handler[], type: string, id: string): Promise<ResolveResponse> => {
     if (handlers.length === 0) {
-      return [{
-        name: 'WebStreamr',
-        title: '⚠️ No handlers found. Please re-configure the plugin.',
-        ytId: 'E4WlUXrJgy4',
-      }];
+      return {
+        streams: [
+          {
+            name: 'WebStreamr',
+            title: '⚠️ No handlers found. Please re-configure the plugin.',
+            ytId: 'E4WlUXrJgy4',
+          },
+        ],
+      };
     }
 
     const streams: Stream[] = [];
 
+    let handlerErrorOccurred = false;
     const urlResults: UrlResult[] = [];
     const handlerPromises = handlers.map(async (handler) => {
       if (!handler.contentTypes.includes(type)) {
@@ -40,6 +50,8 @@ export class StreamResolver {
         if (error instanceof NotFoundError) {
           return;
         }
+
+        handlerErrorOccurred = true;
 
         streams.push({
           name: process.env['MANIFEST_NAME'] || 'WebStreamr',
@@ -83,7 +95,24 @@ export class StreamResolver {
         })),
     );
 
-    return streams;
+    const ttl = !handlerErrorOccurred ? this.determineTtl(urlResults) : undefined;
+
+    return {
+      streams,
+      ...(ttl && { ttl }),
+    };
+  };
+
+  private readonly determineTtl = (urlResults: UrlResult[]): number | undefined => {
+    if (!urlResults.length) {
+      return 900000; // 15m
+    }
+
+    if (urlResults.some(urlResult => urlResult.ttl === undefined)) {
+      return undefined;
+    }
+
+    return Math.min(...urlResults.map(urlResult => urlResult.ttl as number));
   };
 
   private readonly showExternalUrls = (ctx: Context): boolean => !('excludeExternalUrls' in ctx.config);

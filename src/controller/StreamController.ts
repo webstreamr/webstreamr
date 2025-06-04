@@ -36,7 +36,11 @@ export class StreamController {
 
     const handlers = this.handlers.filter(handler => handler.countryCodes.filter(countryCode => countryCode in ctx.config).length);
 
-    const streams = await this.streamResolver.resolve(ctx, handlers, type, id);
+    const { streams, ttl } = await this.streamResolver.resolve(ctx, handlers, type, id);
+
+    if (ttl && process.env['NODE_ENV'] === 'production') {
+      res.setHeader('Cache-Control', `max-age=${ttl / 1000}, public`);
+    }
 
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({ streams }));

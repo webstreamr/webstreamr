@@ -11,6 +11,7 @@ exports[`VerHdLink handle titanic 1`] = `
       "title": "titanic 1997 [latino]",
     },
     "sourceId": "supervideo_mx",
+    "ttl": 900000,
     "url": "https://hfs292.serversicuro.cc/hls/,dnzpejlw37g4a3gyvdzh5p3xttjqd3ccheao6qexhjbv4ecdpod7hxlh4a7a,.urlset/master.m3u8",
   },
   {
@@ -22,6 +23,7 @@ exports[`VerHdLink handle titanic 1`] = `
       "title": "titanic-1997-[latino]",
     },
     "sourceId": "dropload_mx",
+    "ttl": 900000,
     "url": "https://srv22.dropload.io/hls2/01/00046/jjjx9j5joiz8_h/master.m3u8?t=_sOFVDjKUqBAK_gJtH7YVQnCm6nj7kr4df3PNsKeKAA&s=1747060128&e=14400&f=230703&i=0.0&sp=0&ii=130.61.236.204",
   },
   {
@@ -31,6 +33,7 @@ exports[`VerHdLink handle titanic 1`] = `
       "countryCode": "mx",
     },
     "sourceId": "external_mx",
+    "ttl": 3600000,
     "url": "https://mixdrop.ag/e/vn0wx308fq984q",
   },
   {
@@ -41,6 +44,7 @@ exports[`VerHdLink handle titanic 1`] = `
       "countryCode": "mx",
     },
     "sourceId": "external",
+    "ttl": 3600000,
     "url": "https://streamtape.com/e/Bjp2vjrdBxsK82",
   },
   {
@@ -52,6 +56,7 @@ exports[`VerHdLink handle titanic 1`] = `
       "title": "titanic 1997 2[castellano]",
     },
     "sourceId": "supervideo_es",
+    "ttl": 900000,
     "url": "https://hfs295.serversicuro.cc/hls/,dnzpfv3w37g4a3gyvdzh5kjeyi4vtoyw4x4it5gxl4zzwiv4t3fxkvagrhea,.urlset/master.m3u8",
   },
   {
@@ -63,6 +68,7 @@ exports[`VerHdLink handle titanic 1`] = `
       "title": "titanic-1997-2[castellano]",
     },
     "sourceId": "dropload_es",
+    "ttl": 900000,
     "url": "https://srv23.dropload.io/hls2/01/00046/ick4ti66vt6s_h/master.m3u8?t=OUbNiE0qRNUy69JP4AIj1bGcV5kaljyNrAUlCYWGVOs&s=1747060128&e=14400&f=230700&i=0.0&sp=0&ii=130.61.236.204",
   },
   {
@@ -72,6 +78,7 @@ exports[`VerHdLink handle titanic 1`] = `
       "countryCode": "es",
     },
     "sourceId": "external_es",
+    "ttl": 3600000,
     "url": "https://mixdrop.ag/e/xokzmv61hrwe8o",
   },
 ]

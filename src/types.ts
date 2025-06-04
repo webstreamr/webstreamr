@@ -30,6 +30,7 @@ export interface UrlResult {
   error?: unknown;
   label: string;
   sourceId: string;
+  ttl?: number;
   meta: Meta;
   requestHeaders?: Record<string, string>;
 }

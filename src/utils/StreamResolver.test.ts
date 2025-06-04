@@ -21,11 +21,7 @@ describe('resolve', () => {
   test('returns info as stream if no handlers were configured', async () => {
     const streams = await streamResolver.resolve(ctx, [], 'movie', 'tt123456789');
 
-    expect(streams).toStrictEqual([{
-      name: 'WebStreamr',
-      title: '⚠️ No handlers found. Please re-configure the plugin.',
-      ytId: 'E4WlUXrJgy4',
-    }]);
+    expect(streams).toMatchSnapshot();
   });
 
   test('returns handler errors as stream', async () => {
@@ -33,23 +29,21 @@ describe('resolve', () => {
 
     const streams = await streamResolver.resolve(ctx, [meineCloud], 'movie', 'tt123456789');
 
-    expect(streams).toStrictEqual([{
-      name: 'WebStreamr',
-      title: '🔗 MeineCloud\n❌ Request failed. Request-id: id.',
-      ytId: 'E4WlUXrJgy4',
-    }]);
+    expect(streams).toMatchSnapshot();
 
     fetcherSpy.mockRestore();
   });
 
   test('returns empty array if no handler found anything', async () => {
     const streams = await streamResolver.resolve(ctx, [meineCloud, mostraGuarda], 'movie', 'tt12345678');
-    expect(streams).toStrictEqual([]);
+
+    expect(streams).toMatchSnapshot();
   });
 
   test('returns empty array if no handler supported the type', async () => {
     const streams = await streamResolver.resolve(ctx, [meineCloud, mostraGuarda], 'series', 'tt12345678:1:1');
-    expect(streams).toStrictEqual([]);
+
+    expect(streams).toMatchSnapshot();
   });
 
   test('returns sorted results', async () => {
@@ -130,6 +124,7 @@ describe('resolve', () => {
     };
 
     const streams = await streamResolver.resolve(ctx, [mockHandler], 'movie', 'tt12345678');
-    expect(streams).toStrictEqual([]);
+
+    expect(streams).toMatchSnapshot();
   });
 });
