@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.23.2](https://github.com/webstreamr/webstreamr/compare/v0.23.1...v0.23.2) (2025-06-04)
+
+
+### Miscellaneous Chores
+
+* **fetcher:** persist and use FlareSolverr cookie and user agent ([aa4c672](https://github.com/webstreamr/webstreamr/commit/aa4c6725944d7fffc071acfcb27d57f1141e869c))
+* **fetcher:** use queue limit of 10 again :) ([0d3a5b8](https://github.com/webstreamr/webstreamr/commit/0d3a5b89195d95ba5abaccf970daede17457e74e))
+* **fetcher:** use well-working node user agent by default again ([efb0f96](https://github.com/webstreamr/webstreamr/commit/efb0f96be2da675ff60c944bdcdfd351cdd81631))
+
 ## [0.23.1](https://github.com/webstreamr/webstreamr/compare/v0.23.0...v0.23.1) (2025-06-04)
 
 
