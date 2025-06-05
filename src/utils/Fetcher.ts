@@ -4,7 +4,7 @@ import winston from 'winston';
 import { Mutex } from 'async-mutex';
 import { Cookie, CookieJar } from 'tough-cookie';
 import { Context, TIMEOUT } from '../types';
-import { BlockedError, NotFoundError, QueueIsFullError } from '../error';
+import { BlockedError, HttpError, NotFoundError, QueueIsFullError } from '../error';
 import { clearTimeout } from 'node:timers';
 import { envGet } from './env';
 
@@ -157,7 +157,7 @@ export class Fetcher {
       throw new BlockedError('unknown', httpCacheItem.policy.responseHeaders());
     }
 
-    throw new Error(`Fetcher error: ${httpCacheItem.status}: ${httpCacheItem.statusText}, response headers: ${JSON.stringify(responseHeaders)}`);
+    throw new HttpError(httpCacheItem.status, responseHeaders);
   };
 
   private readonly determineTtl = (httpCacheItem: HttpCacheItem): number => {

@@ -2,7 +2,7 @@ import winston from 'winston';
 import fetchMock from 'fetch-mock';
 import { Fetcher } from './Fetcher';
 import { Context } from '../types';
-import { BlockedError, NotFoundError, QueueIsFullError } from '../error';
+import { BlockedError, HttpError, NotFoundError, QueueIsFullError } from '../error';
 fetchMock.mockGlobal();
 
 const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
@@ -143,11 +143,16 @@ describe('fetch', () => {
     }
   });
 
-  test('passes through other errors with detailed infos', async () => {
+  test('passes through other error as HttpError', async () => {
     fetchMock.get('https://some-error-url.test/', { status: 500, headers: { 'x-foo': 'bar' } });
 
-    await expect(fetcher.text(ctx, new URL('https://some-error-url.test/'))).rejects
-      .toThrow('Fetcher error: 500: Internal Server Error, response headers: {"content-length":"0","x-foo":"bar","age":"0","date":"Wed, 11 Apr 1990 12:34:56 GMT"}');
+    try {
+      await fetcher.text(ctx, new URL('https://some-error-url.test/'));
+      fail();
+    } catch (error) {
+      expect(error).toBeInstanceOf(HttpError);
+      expect(error).toMatchObject({ status: 500, headers: { 'x-foo': 'bar' } });
+    }
   });
 
   test('passes through exceptions', async () => {

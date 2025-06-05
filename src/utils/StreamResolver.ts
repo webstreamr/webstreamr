@@ -4,7 +4,7 @@ import winston from 'winston';
 import bytes from 'bytes';
 import { Context, TIMEOUT, UrlResult } from '../types';
 import { Handler } from '../handler';
-import { BlockedError, NotFoundError, QueueIsFullError } from '../error';
+import { BlockedError, HttpError, NotFoundError, QueueIsFullError } from '../error';
 import { languageFromCountryCode } from './languageFromCountryCode';
 import { envGetAppName } from './env';
 
@@ -163,6 +163,11 @@ export class StreamResolver {
       this.logger.warn(`${source}: Request queue is full.`, ctx);
 
       return '⏳ Request queue is full. Please try again later or consider self-hosting.';
+    }
+
+    if (error instanceof HttpError) {
+      this.logger.error(`${source}: HTTP status ${error.status}, headers: ${JSON.stringify(error.headers)}.`, ctx);
+      return `❌ Request failed with status ${error.status}. Request-id: ${ctx.id}.`;
     }
 
     const cause = (error as Error & { cause?: unknown }).cause;

@@ -4,7 +4,7 @@ import { StreamResolver } from './StreamResolver';
 import { Handler, MeineCloud, MostraGuarda } from '../handler';
 import { Fetcher } from './Fetcher';
 import { Context, CountryCode, TIMEOUT, UrlResult } from '../types';
-import { BlockedError, NotFoundError, QueueIsFullError } from '../error';
+import { BlockedError, HttpError, NotFoundError, QueueIsFullError } from '../error';
 jest.mock('../utils/Fetcher');
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
@@ -107,6 +107,16 @@ describe('resolve', () => {
             url: new URL('https://example3.com'),
             isExternal: true,
             error: new QueueIsFullError(),
+            label: 'hoster.com',
+            sourceId: '',
+            meta: {
+              countryCode: 'de',
+            },
+          },
+          {
+            url: new URL('https://example4.com'),
+            isExternal: true,
+            error: new HttpError(500, { 'x-foo': 'bar' }),
             label: 'hoster.com',
             sourceId: '',
             meta: {
