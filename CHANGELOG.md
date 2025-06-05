@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.23.4](https://github.com/webstreamr/webstreamr/compare/v0.23.3...v0.23.4) (2025-06-05)
+
+
+### Miscellaneous Chores
+
+* **fetcher:** simplify queuing and allow parallel requests ([be34643](https://github.com/webstreamr/webstreamr/commit/be3464369b330819e0953fe4fe85fbf13b82f6f2))
+
 ## [0.23.3](https://github.com/webstreamr/webstreamr/compare/v0.23.2...v0.23.3) (2025-06-05)
 
 
