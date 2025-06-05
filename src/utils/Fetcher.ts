@@ -213,7 +213,7 @@ export class Fetcher {
 
     let response;
     try {
-      response = await fetch(url, { ...init, signal: controller.signal });
+      response = await fetch(url, { ...init, keepalive: true, signal: controller.signal });
     } finally {
       clearTimeout(timer);
     }
