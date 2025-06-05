@@ -44,37 +44,38 @@ interface FlareSolverrResult {
   version: string;
 }
 
+type CustomRequestInit = RequestInit & {
+  queueLimit?: number;
+  timeout?: number;
+};
+
 export class Fetcher {
   private readonly logger: winston.Logger;
-  private readonly queueLimit: number;
-  private readonly timeout: number;
 
   private readonly httpCache: TTLCache<string, HttpCacheItem>;
   private readonly hostQueues = new Map<string, HostQueue>();
   private readonly hostUserAgentMap = new Map<string, string>();
   private readonly cookieJar = new CookieJar();
 
-  constructor(logger: winston.Logger, queueLimit?: number, timeout?: number) {
+  constructor(logger: winston.Logger) {
     this.logger = logger;
-    this.queueLimit = queueLimit ?? 10;
-    this.timeout = timeout ?? 10000;
 
     this.httpCache = new TTLCache();
   }
 
-  readonly text = async (ctx: Context, url: URL, init?: RequestInit): Promise<string> => {
+  readonly text = async (ctx: Context, url: URL, init?: CustomRequestInit): Promise<string> => {
     return (await this.cachedFetch(ctx, url, init)).body;
   };
 
-  readonly textPost = async (ctx: Context, url: URL, data: unknown, init?: RequestInit): Promise<string> => {
+  readonly textPost = async (ctx: Context, url: URL, data: unknown, init?: CustomRequestInit): Promise<string> => {
     return (await this.cachedFetch(ctx, url, { ...init, method: 'POST', body: JSON.stringify(data) })).body;
   };
 
-  readonly head = async (ctx: Context, url: URL, init?: RequestInit): Promise<CachePolicy.Headers> => {
+  readonly head = async (ctx: Context, url: URL, init?: CustomRequestInit): Promise<CachePolicy.Headers> => {
     return (await this.cachedFetch(ctx, url, { ...init, method: 'HEAD' })).policy.responseHeaders();
   };
 
-  public readonly getInit = (ctx: Context, url: URL, init?: RequestInit): RequestInit => {
+  public readonly getInit = (ctx: Context, url: URL, init?: CustomRequestInit): CustomRequestInit => {
     const cookieString = this.cookieJar.getCookieStringSync(url.href);
 
     return {
@@ -178,7 +179,7 @@ export class Fetcher {
     return obj;
   };
 
-  private readonly cachedFetch = async (ctx: Context, url: URL, init?: RequestInit): Promise<HttpCacheItem> => {
+  private readonly cachedFetch = async (ctx: Context, url: URL, init?: CustomRequestInit): Promise<HttpCacheItem> => {
     const newInit = this.getInit(ctx, url, init);
 
     const request: CachePolicy.Request = { url: url.href, method: newInit.method ?? 'GET', headers: {} };
@@ -204,11 +205,11 @@ export class Fetcher {
     return this.handleHttpCacheItem(ctx, httpCacheItem, url);
   };
 
-  private readonly fetchWithTimeout = async (ctx: Context, url: URL, init?: RequestInit): Promise<Response> => {
+  private readonly fetchWithTimeout = async (ctx: Context, url: URL, init?: CustomRequestInit): Promise<Response> => {
     this.logger.info(`Fetch ${init?.method ?? 'GET'} ${url}`, ctx);
 
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(TIMEOUT), this.timeout);
+    const timer = setTimeout(() => controller.abort(TIMEOUT), init?.timeout ?? 10000);
 
     let response;
     try {
@@ -220,7 +221,7 @@ export class Fetcher {
     return response;
   };
 
-  private readonly queuedFetch = async (ctx: Context, url: URL, init?: RequestInit): Promise<Response> => {
+  private readonly queuedFetch = async (ctx: Context, url: URL, init?: CustomRequestInit): Promise<Response> => {
     let queue = this.hostQueues.get(url.host);
     if (!queue) {
       queue = { promise: Promise.resolve(), count: 0 };
@@ -229,7 +230,7 @@ export class Fetcher {
 
     queue.count++;
 
-    if (queue.count > this.queueLimit) {
+    if (queue.count > (init?.queueLimit ?? 10)) {
       throw new QueueIsFullError();
     }
 

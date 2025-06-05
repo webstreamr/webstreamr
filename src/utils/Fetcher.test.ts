@@ -5,7 +5,7 @@ import { Context } from '../types';
 import { BlockedError, NotFoundError, QueueIsFullError } from '../error';
 fetchMock.mockGlobal();
 
-const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }), 3, 10);
+const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
 
 describe('fetch', () => {
   const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on' } };
@@ -156,20 +156,20 @@ describe('fetch', () => {
     await expect(fetcher.text(ctx, new URL('https://some-exception-url.test/'))).rejects.toBeInstanceOf(TypeError);
   });
 
-  test('times out after 10 seconds', async () => {
+  test('times out', async () => {
     fetchMock.get('https://some-timeout-url.test/', 200, { delay: 20 });
 
-    await expect(fetcher.text(ctx, new URL('https://some-timeout-url.test/'))).rejects.toBeInstanceOf(DOMException);
+    await expect(fetcher.text(ctx, new URL('https://some-timeout-url.test/'), { timeout: 10 })).rejects.toBeInstanceOf(DOMException);
   });
 
   test('full queue throws an error', async () => {
     fetchMock.get('https://some-full-queue-url.test/', 'some text');
 
     const allPromises = Promise.all([
-      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
-      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
-      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
-      fetcher.text(ctx, new URL('https://some-full-queue-url.test/')),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/'), { queueLimit: 3 }),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/'), { queueLimit: 3 }),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/'), { queueLimit: 3 }),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/'), { queueLimit: 3 }),
     ]);
 
     await expect(allPromises).rejects.toBeInstanceOf(QueueIsFullError);
