@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.23.5](https://github.com/webstreamr/webstreamr/compare/v0.23.4...v0.23.5) (2025-06-05)
+
+
+### Miscellaneous Chores
+
+* introduce HttpError and show status in result ([d8f0c46](https://github.com/webstreamr/webstreamr/commit/d8f0c4602c14dc719b2e67efcf7011b11bb34957))
+
+
+### Bug Fixes
+
+* always sort external URLs down ([8e57400](https://github.com/webstreamr/webstreamr/commit/8e57400c588e784008280178f815b89f67b5aa09))
+* **handler:** skip invalid CSV URLs ([04ee59e](https://github.com/webstreamr/webstreamr/commit/04ee59e9d3c3cdd3f84d2d05f517e5fbfea8f463))
+
 ## [0.23.4](https://github.com/webstreamr/webstreamr/compare/v0.23.3...v0.23.4) (2025-06-05)
 
 
