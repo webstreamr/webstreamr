@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.23.3](https://github.com/webstreamr/webstreamr/compare/v0.23.2...v0.23.3) (2025-06-05)
+
+
+### Miscellaneous Chores
+
+* **fetcher:** enable keepalive ([65d2d0a](https://github.com/webstreamr/webstreamr/commit/65d2d0ac83ccc534a57ded839ccd33de76b484d3))
+
+
+### Bug Fixes
+
+* **fetcher:** use expires FlareSolverr cookie prop ([#111](https://github.com/webstreamr/webstreamr/issues/111)) ([523bbc0](https://github.com/webstreamr/webstreamr/commit/523bbc0f41c05fc681ac6a952ba39df448746d4e))
+
+
+### Code Refactoring
+
+* **fetcher:** add full FlareSolverrResult type ([092ee4b](https://github.com/webstreamr/webstreamr/commit/092ee4bfc2b7ee92c3adeefcacb99c3b2fdfc9ee))
+* **fetcher:** introduce CustomRequestInit ([63a53a1](https://github.com/webstreamr/webstreamr/commit/63a53a18cccb4ae149eae2db94f1ad2ca2a5933d))
+
 ## [0.23.2](https://github.com/webstreamr/webstreamr/compare/v0.23.1...v0.23.2) (2025-06-04)
 
 
