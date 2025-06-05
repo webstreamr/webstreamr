@@ -1,6 +1,7 @@
 import CachePolicy from 'http-cache-semantics';
 import TTLCache from '@isaacs/ttlcache';
 import winston from 'winston';
+import { Mutex } from 'async-mutex';
 import { Cookie, CookieJar } from 'tough-cookie';
 import { Context, TIMEOUT } from '../types';
 import { BlockedError, NotFoundError, QueueIsFullError } from '../error';
@@ -12,11 +13,6 @@ interface HttpCacheItem {
   status: number;
   statusText: string;
   body: string;
-}
-
-interface HostQueue {
-  promise: Promise<void>;
-  count: number;
 }
 
 interface FlareSolverrResult {
@@ -46,6 +42,7 @@ interface FlareSolverrResult {
 
 type CustomRequestInit = RequestInit & {
   queueLimit?: number;
+  queueErrorLimit?: number;
   timeout?: number;
 };
 
@@ -53,9 +50,11 @@ export class Fetcher {
   private readonly logger: winston.Logger;
 
   private readonly httpCache: TTLCache<string, HttpCacheItem>;
-  private readonly hostQueues = new Map<string, HostQueue>();
   private readonly hostUserAgentMap = new Map<string, string>();
   private readonly cookieJar = new CookieJar();
+
+  private readonly hostQueueCount = new Map<string, number>();
+  private readonly countMutex = new Mutex();
 
   constructor(logger: winston.Logger) {
     this.logger = logger;
@@ -119,7 +118,7 @@ export class Fetcher {
       this.logger.info(`Query FlareSolverr for ${url.href}`, ctx);
 
       const body = { cmd: 'request.get', url: url.href, session: 'default' };
-      const challengeResult = await (await this.queuedFetch(ctx, new URL(flareSolverrEndpoint), { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' } })).json() as FlareSolverrResult;
+      const challengeResult = await (await this.queuedFetch(ctx, new URL(flareSolverrEndpoint), { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' }, queueLimit: 1 })).json() as FlareSolverrResult;
       if (challengeResult.status !== 'ok') {
         this.logger.warn(`FlareSolverr issue: ${JSON.stringify(challengeResult)}`, ctx);
         throw new BlockedError('flaresolverr_failed', {});
@@ -221,35 +220,46 @@ export class Fetcher {
     return response;
   };
 
-  private readonly queuedFetch = async (ctx: Context, url: URL, init?: CustomRequestInit): Promise<Response> => {
-    let queue = this.hostQueues.get(url.host);
-    if (!queue) {
-      queue = { promise: Promise.resolve(), count: 0 };
-      this.hostQueues.set(url.host, queue);
-    }
+  private readonly getHostQueueCount = (host: string): number => this.hostQueueCount.get(host) ?? 0;
 
-    queue.count++;
-
-    if (queue.count > (init?.queueLimit ?? 10)) {
-      throw new QueueIsFullError();
-    }
-
-    let resolveCurrent: () => void;
-    const currentPromise = new Promise<void>(
-      (resolve) => { resolveCurrent = resolve; },
-    );
-
-    const fetchPromise = queue.promise.then(async () => {
-      try {
-        return await this.fetchWithTimeout(ctx, url, init);
-      } finally {
-        resolveCurrent();
-        queue.count--;
+  private readonly lockFetchSlot = async (host: string, queueErrorLimit: number) => {
+    await this.countMutex.runExclusive(() => {
+      if (this.getHostQueueCount(host) > queueErrorLimit) {
+        throw new QueueIsFullError();
       }
+
+      this.hostQueueCount.set(host, this.getHostQueueCount(host) + 1);
     });
+  };
 
-    queue.promise = currentPromise.catch(/* istanbul ignore next */ () => undefined);
+  private readonly unlockFetchSlot = async (host: string) => {
+    await this.countMutex.runExclusive(() => {
+      this.hostQueueCount.set(host, Math.max(0, this.getHostQueueCount(host) - 1));
+    });
+  };
 
-    return fetchPromise;
+  private readonly waitForHostQueueCount = async (host: string, queueLimit: number, queueErrorLimit: number): Promise<void> => {
+    while (this.getHostQueueCount(host) > queueLimit) {
+      if (this.getHostQueueCount(host) > queueErrorLimit) {
+        // Very unlikely to happen..
+        throw new QueueIsFullError();
+      }
+
+      await new Promise(resolve => setTimeout(resolve, 100));
+    }
+  };
+
+  private readonly queuedFetch = async (ctx: Context, url: URL, init?: CustomRequestInit): Promise<Response> => {
+    const queueLimit = init?.queueLimit ?? 5;
+    const queueErrorLimit = init?.queueErrorLimit ?? 10;
+
+    await this.lockFetchSlot(url.host, queueErrorLimit);
+    await this.waitForHostQueueCount(url.host, queueLimit, queueErrorLimit);
+
+    try {
+      return await this.fetchWithTimeout(ctx, url, init);
+    } finally {
+      await this.unlockFetchSlot(url.host);
+    }
   };
 }
