@@ -74,6 +74,10 @@ export class StreamResolver {
         return bytesComparison;
       }
 
+      if (a.isExternal || b.isExternal) {
+        return a.isExternal ? 1 : -1;
+      }
+
       return a.label.localeCompare(b.label);
     });
 
