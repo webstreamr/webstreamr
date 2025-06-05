@@ -19,15 +19,29 @@ interface HostQueue {
   count: number;
 }
 
-interface FlareResolverCookie {
-  domain: string;
-  expires: number;
-  httpOnly: boolean;
-  name: string;
-  path: string;
-  sameSite: string;
-  secure: boolean;
-  value: string;
+interface FlareSolverrResult {
+  status: string;
+  message: string;
+  solution: {
+    url: string;
+    status: number;
+    cookies: {
+      domain: string;
+      expires: number;
+      httpOnly: boolean;
+      name: string;
+      path: string;
+      sameSite: string;
+      secure: boolean;
+      value: string;
+    }[];
+    userAgent: string;
+    headers: Record<string, string>;
+    response: string;
+  };
+  startTimeStamp: number;
+  endTimeStamp: number;
+  version: string;
 }
 
 export class Fetcher {
@@ -104,13 +118,13 @@ export class Fetcher {
       this.logger.info(`Query FlareSolverr for ${url.href}`, ctx);
 
       const body = { cmd: 'request.get', url: url.href, session: 'default' };
-      const challengeResult = await (await this.queuedFetch(ctx, new URL(flareSolverrEndpoint), { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' } })).json();
+      const challengeResult = await (await this.queuedFetch(ctx, new URL(flareSolverrEndpoint), { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' } })).json() as FlareSolverrResult;
       if (challengeResult.status !== 'ok') {
         this.logger.warn(`FlareSolverr issue: ${JSON.stringify(challengeResult)}`, ctx);
         throw new BlockedError('flaresolverr_failed', {});
       }
 
-      challengeResult.solution.cookies.forEach((cookie: FlareResolverCookie) => {
+      challengeResult.solution.cookies.forEach((cookie) => {
         if (!['cf_clearance'].includes(cookie.name)) {
           return;
         }
