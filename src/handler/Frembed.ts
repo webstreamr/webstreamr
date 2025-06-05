@@ -33,7 +33,7 @@ export class Frembed implements Handler {
 
     const urls: URL[] = [];
     for (const key in json) {
-      if (key.startsWith('link')) {
+      if (key.startsWith('link') && json[key] && !json[key].includes(',https')) {
         try {
           urls.push(new URL(json[key].trim()));
         } catch {
