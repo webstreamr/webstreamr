@@ -3,7 +3,7 @@ export interface ImdbId { id: string; series: number | undefined; episode: numbe
 export const parseImdbId = (id: string): ImdbId => {
   const idParts = id.split(':');
 
-  if (!idParts[0] || !idParts[0].startsWith('tt')) {
+  if (!idParts[0] || !/^tt\d+$/.test(idParts[0])) {
     throw new Error(`IMDb ID "${id}" is invalid`);
   }
 
