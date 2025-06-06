@@ -103,4 +103,7 @@ const cacheWarmup = async () => {
   logger.info(`warmed up cache with ${movieIds.length} movies`, ctx);
   setTimeout(cacheWarmup, 3600000); // 1 hour
 };
-setTimeout(cacheWarmup, 10000);
+
+if (envIsProd()) {
+  setTimeout(cacheWarmup, 10000);
+}
