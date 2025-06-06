@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.24.1](https://github.com/webstreamr/webstreamr/compare/v0.24.0...v0.24.1) (2025-06-06)
+
+
+### Miscellaneous Chores
+
+* only warm up cache in prod ([99434aa](https://github.com/webstreamr/webstreamr/commit/99434aa49a5dd4eb39c15529dc0fe118f20f3399))
+* warm up cache only with trending movies and tv shows ([ab39636](https://github.com/webstreamr/webstreamr/commit/ab396361968c5f58564160d34b36f0bf1671417e))
+
 ## [0.24.0](https://github.com/webstreamr/webstreamr/compare/v0.23.5...v0.24.0) (2025-06-06)
 
 
