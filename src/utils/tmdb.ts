@@ -32,10 +32,10 @@ export const parseTmdbId = (id: string): TmdbId => {
   };
 };
 
-const fetch = async (ctx: Context, fetcher: Fetcher, url: URL): Promise<unknown> => {
+export const tmdbFetch = async (ctx: Context, fetcher: Fetcher, path: string): Promise<unknown> => {
   const config = { 'headers': { Authorization: 'Bearer ' + envGet('TMDB_ACCESS_TOKEN') }, 'Content-Type': 'application/json' };
 
-  return JSON.parse(await fetcher.text(ctx, url, config));
+  return JSON.parse(await fetcher.text(ctx, new URL(`https://api.themoviedb.org/3${path}`), config));
 };
 
 const imdbTmdbMap = new Map<string, number>();
@@ -44,7 +44,7 @@ export const getTmdbIdFromImdbId = async (ctx: Context, fetcher: Fetcher, imdbId
     return { id: imdbTmdbMap.get(imdbId.id) as number, series: imdbId.series, episode: imdbId.episode };
   }
 
-  const response = await fetch(ctx, fetcher, new URL(`https://api.themoviedb.org/3/find/${imdbId.id}?external_source=imdb_id`)) as FindResponsePartial;
+  const response = await tmdbFetch(ctx, fetcher, `/find/${imdbId.id}?external_source=imdb_id`) as FindResponsePartial;
 
   const id = (imdbId.series ? response.tv_results[0] : response.movie_results[0])?.id;
 
@@ -64,7 +64,7 @@ export const getImdbIdFromTmdbId = async (ctx: Context, fetcher: Fetcher, tmdbId
 
   const type = tmdbId.series ? 'tv' : 'movie';
 
-  const response = await fetch(ctx, fetcher, new URL(`https://api.themoviedb.org/3/${type}/${tmdbId.id}/external_ids`)) as ExternalIdsResponsePartial;
+  const response = await tmdbFetch(ctx, fetcher, `/${type}/${tmdbId.id}/external_ids`) as ExternalIdsResponsePartial;
 
   tmdbImdbMap.set(tmdbId.id, response.imdb_id);
   return { id: response.imdb_id, series: tmdbId.series, episode: tmdbId.episode };

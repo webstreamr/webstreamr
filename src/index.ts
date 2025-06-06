@@ -13,7 +13,7 @@ import {
 } from './handler';
 import { ExtractorRegistry } from './extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
-import { envGet, envIsProd, Fetcher, StreamResolver } from './utils';
+import { envGet, envIsProd, Fetcher, getImdbIdFromTmdbId, StreamResolver, tmdbFetch } from './utils';
 
 const logger = winston.createLogger({
   transports: [
@@ -63,7 +63,9 @@ addon.use((_req: Request, res: Response, next: NextFunction) => {
 
 addon.use('/', (new ConfigureController(handlers)).router);
 addon.use('/', (new ManifestController(handlers)).router);
-addon.use('/', (new StreamController(logger, handlers, new StreamResolver(logger))).router);
+
+const streamResolver = new StreamResolver(logger);
+addon.use('/', (new StreamController(logger, handlers, streamResolver)).router);
 
 addon.get('/', (_req: Request, res: Response) => {
   res.redirect('/configure');
@@ -73,3 +75,32 @@ const port = parseInt(envGet('PORT') || '51546');
 addon.listen(port, () => {
   logger.info(`Add-on Repository URL: http://127.0.0.1:${port}/manifest.json`);
 });
+
+const cacheWarmup = async () => {
+  const ctx = { id: 'warmup', ip: '127.0.0.1', config: { de: 'on', en: 'on', es: 'on', fr: 'on', it: 'on', mx: 'on' } };
+  logger.info(`starting cache warmup`, ctx);
+
+  interface MovieResponsePartial { results: { id: number }[] }
+  const movies = [
+    ...(await tmdbFetch(ctx, fetcher, '/movie/now_playing') as MovieResponsePartial)['results'],
+    ...(await tmdbFetch(ctx, fetcher, '/movie/popular') as MovieResponsePartial)['results'],
+    ...(await tmdbFetch(ctx, fetcher, '/movie/top_rated') as MovieResponsePartial)['results'],
+    ...(await tmdbFetch(ctx, fetcher, '/trending/movie/day') as MovieResponsePartial)['results'],
+  ];
+
+  const movieIds: number[] = [];
+  movies.forEach((movie) => {
+    if (!movieIds.includes(movie.id)) {
+      movieIds.push(movie.id);
+    }
+  });
+
+  for (const id of movieIds) {
+    const imdbId = await getImdbIdFromTmdbId(ctx, fetcher, { id, series: undefined, episode: undefined });
+    await streamResolver.resolve(ctx, handlers, 'movie', imdbId.id);
+  }
+
+  logger.info(`warmed up cache with ${movieIds.length} movies`, ctx);
+  setTimeout(cacheWarmup, 3600000); // 1 hour
+};
+setTimeout(cacheWarmup, 10000);
