@@ -49,7 +49,7 @@ exports[`resolve adds error info 1`] = `
       "name": "WebStreamr N/A ⚠️ external",
       "title": "🌐 German 🇩🇪
 🔗 hoster.com
-❌ Request failed with status 500. Request-id: id.",
+❌ Request failed with status 500 (Internal Server Error). Request-id: id.",
     },
   ],
 }
@@ -103,7 +103,7 @@ exports[`resolve adds error info 2`] = `
       "name": "WebStreamr N/A",
       "title": "🌐 German 🇩🇪
 🔗 hoster.com
-❌ Request failed with status 500. Request-id: id.",
+❌ Request failed with status 500 (Internal Server Error). Request-id: id.",
       "ytId": "E4WlUXrJgy4",
     },
   ],

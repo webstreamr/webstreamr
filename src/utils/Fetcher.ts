@@ -157,7 +157,7 @@ export class Fetcher {
       throw new BlockedError('unknown', httpCacheItem.policy.responseHeaders());
     }
 
-    throw new HttpError(httpCacheItem.status, responseHeaders);
+    throw new HttpError(httpCacheItem.status, httpCacheItem.statusText, responseHeaders);
   };
 
   private readonly determineTtl = (httpCacheItem: HttpCacheItem): number => {

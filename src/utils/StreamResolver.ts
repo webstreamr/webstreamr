@@ -170,8 +170,8 @@ export class StreamResolver {
     }
 
     if (error instanceof HttpError) {
-      this.logger.error(`${source}: HTTP status ${error.status}, headers: ${JSON.stringify(error.headers)}.`, ctx);
-      return `❌ Request failed with status ${error.status}. Request-id: ${ctx.id}.`;
+      this.logger.error(`${source}: HTTP status ${error.status} (${error.statusText}), headers: ${JSON.stringify(error.headers)}.`, ctx);
+      return `❌ Request failed with status ${error.status} (${error.statusText}). Request-id: ${ctx.id}.`;
     }
 
     const cause = (error as Error & { cause?: unknown }).cause;

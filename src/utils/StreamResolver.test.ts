@@ -116,7 +116,7 @@ describe('resolve', () => {
           {
             url: new URL('https://example4.com'),
             isExternal: true,
-            error: new HttpError(500, { 'x-foo': 'bar' }),
+            error: new HttpError(500, 'Internal Server Error', { 'x-foo': 'bar' }),
             label: 'hoster.com',
             sourceId: '',
             meta: {
