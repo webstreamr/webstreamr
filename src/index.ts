@@ -80,27 +80,38 @@ const cacheWarmup = async () => {
   const ctx = { id: 'warmup', ip: '127.0.0.1', config: { de: 'on', en: 'on', es: 'on', fr: 'on', it: 'on', mx: 'on' } };
   logger.info(`starting cache warmup`, ctx);
 
-  interface MovieResponsePartial { results: { id: number }[] }
-  const movies = [
-    ...(await tmdbFetch(ctx, fetcher, '/movie/now_playing') as MovieResponsePartial)['results'],
-    ...(await tmdbFetch(ctx, fetcher, '/movie/popular') as MovieResponsePartial)['results'],
-    ...(await tmdbFetch(ctx, fetcher, '/movie/top_rated') as MovieResponsePartial)['results'],
-    ...(await tmdbFetch(ctx, fetcher, '/trending/movie/day') as MovieResponsePartial)['results'],
-  ];
+  interface ResponsePartial { results: { id: number }[] }
 
+  const movies = [
+    ...(await tmdbFetch(ctx, fetcher, '/trending/movie/day') as ResponsePartial)['results'],
+  ];
   const movieIds: number[] = [];
   movies.forEach((movie) => {
     if (!movieIds.includes(movie.id)) {
       movieIds.push(movie.id);
     }
   });
-
   for (const id of movieIds) {
     const imdbId = await getImdbIdFromTmdbId(ctx, fetcher, { id, series: undefined, episode: undefined });
     await streamResolver.resolve(ctx, handlers, 'movie', imdbId.id);
   }
-
   logger.info(`warmed up cache with ${movieIds.length} movies`, ctx);
+
+  const tvShows = [
+    ...(await tmdbFetch(ctx, fetcher, '/trending/tv/day') as ResponsePartial)['results'],
+  ];
+  const tvShowIds: number[] = [];
+  tvShows.forEach((tvShow) => {
+    if (!tvShowIds.includes(tvShow.id)) {
+      tvShowIds.push(tvShow.id);
+    }
+  });
+  for (const id of tvShowIds) {
+    const imdbId = await getImdbIdFromTmdbId(ctx, fetcher, { id, series: 1, episode: 1 });
+    await streamResolver.resolve(ctx, handlers, 'series', `${imdbId.id}:1:1`);
+  }
+  logger.info(`warmed up cache with ${tvShowIds.length} tv shows`, ctx);
+
   setTimeout(cacheWarmup, 3600000); // 1 hour
 };
 
