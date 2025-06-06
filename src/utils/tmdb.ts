@@ -18,6 +18,20 @@ interface ExternalIdsResponsePartial {
   imdb_id: string;
 }
 
+export const parseTmdbId = (id: string): TmdbId => {
+  const idParts = id.split(':');
+
+  if (!idParts[0] || !/^\d+$/.test(idParts[0])) {
+    throw new Error(`TMDB ID "${id}" is invalid`);
+  }
+
+  return {
+    id: parseInt(idParts[0]),
+    series: idParts[1] ? parseInt(idParts[1]) : undefined,
+    episode: idParts[2] ? parseInt(idParts[2]) : undefined,
+  };
+};
+
 const fetch = async (ctx: Context, fetcher: Fetcher, url: URL): Promise<unknown> => {
   const config = { 'headers': { Authorization: 'Bearer ' + envGet('TMDB_ACCESS_TOKEN') }, 'Content-Type': 'application/json' };
 
