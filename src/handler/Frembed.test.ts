@@ -12,13 +12,24 @@ const handler = new Frembed(fetcher, new ExtractorRegistry(logger, fetcher));
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { fr: 'on' } };
 
 describe('Frembed', () => {
-  test('does not handle non imdb series', async () => {
+  test('does not handle non imdb and tmdb series', async () => {
     const streams = await handler.handle(ctx, 'series', 'kitsu:123');
     expect(streams).toHaveLength(0);
   });
 
-  test('handle imdb black mirror s4e2', async () => {
+  test('handle imdb black mirror s4e2 via imdb', async () => {
     const streams = (await handler.handle(ctx, 'series', 'tt2085059:4:2')).filter(stream => stream !== undefined);
     expect(streams).toMatchSnapshot();
+  });
+
+  test('handle imdb black mirror s4e2 via tmdb', async () => {
+    const streams = (await handler.handle(ctx, 'series', '42009:4:2')).filter(stream => stream !== undefined);
+
+    const streamsWithoutTtl = streams.map((stream) => {
+      delete stream.ttl;
+      return stream;
+    }); // to avoid flakyness because this is served from cache with lower ttl :)
+
+    expect(streamsWithoutTtl).toMatchSnapshot();
   });
 });

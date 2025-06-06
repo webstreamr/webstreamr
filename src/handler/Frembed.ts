@@ -1,5 +1,5 @@
 import { Handler } from './types';
-import { parseImdbId, Fetcher, getTmdbIdFromImdbId } from '../utils';
+import { parseImdbId, Fetcher, getTmdbIdFromImdbId, TmdbId, parseTmdbId } from '../utils';
 import { ExtractorRegistry } from '../extractor';
 import { Context, CountryCode } from '../types';
 
@@ -21,11 +21,14 @@ export class Frembed implements Handler {
   }
 
   readonly handle = async (ctx: Context, _type: string, id: string) => {
-    if (!id.startsWith('tt')) {
+    let tmdbId: TmdbId;
+    if (id.startsWith('tt')) {
+      tmdbId = await getTmdbIdFromImdbId(ctx, this.fetcher, parseImdbId(id));
+    } else if (/^\d+:/.test(id)) {
+      tmdbId = parseTmdbId(id);
+    } else {
       return [];
     }
-
-    const tmdbId = await getTmdbIdFromImdbId(ctx, this.fetcher, parseImdbId(id));
 
     const apiUrl = new URL(`https://frembed.space/api/series?id=${tmdbId.id}&sa=${tmdbId.series}&epi=${tmdbId.episode}&idType=tmdb`);
 
