@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.24.0](https://github.com/webstreamr/webstreamr/compare/v0.23.5...v0.24.0) (2025-06-06)
+
+
+### Miscellaneous Chores
+
+* add statusText to HttpError and show in result as well ([8766988](https://github.com/webstreamr/webstreamr/commit/876698825f7230b22096a51565ec051c43337b86))
+* **handler:** support TMDB ID in Frembed ([01218c7](https://github.com/webstreamr/webstreamr/commit/01218c77a6f4319a6b231a865f307e99c34fde1e))
+* **imdb:** stricter parsing checks ([860a6ae](https://github.com/webstreamr/webstreamr/commit/860a6ae18c536075accf1ce8604cf94494b1a5c7))
+* **tmdb:** add getImdbIdFromTmdbId and cache both ID transformations ([a0e83f2](https://github.com/webstreamr/webstreamr/commit/a0e83f287d42c0637b730387743bc46ac05904b2))
+* **tmdb:** add parseTmdbId ([355663f](https://github.com/webstreamr/webstreamr/commit/355663f03609e8fedd857ab3dad975d16d01b0f7))
+
+
+### Features
+
+* implement hourly movie cache warmup ([9ba4e73](https://github.com/webstreamr/webstreamr/commit/9ba4e7374c6f161bafb7387ce39d3ec5a1115667))
+
 ## [0.23.5](https://github.com/webstreamr/webstreamr/compare/v0.23.4...v0.23.5) (2025-06-05)
 
 
