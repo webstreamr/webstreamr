@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Frembed handle imdb black mirror s4e2 via imdb 1`] = `
+exports[`Frembed handle imdb black mirror s4e2 1`] = `
 [
   {
     "label": "DoodStream",
@@ -51,7 +51,7 @@ exports[`Frembed handle imdb black mirror s4e2 via imdb 1`] = `
 ]
 `;
 
-exports[`Frembed handle imdb black mirror s4e2 via tmdb 1`] = `
+exports[`Frembed handle tmdb black mirror s4e2 1`] = `
 [
   {
     "label": "DoodStream",

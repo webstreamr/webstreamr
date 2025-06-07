@@ -17,12 +17,12 @@ describe('Frembed', () => {
     expect(streams).toHaveLength(0);
   });
 
-  test('handle imdb black mirror s4e2 via imdb', async () => {
+  test('handle imdb black mirror s4e2', async () => {
     const streams = (await handler.handle(ctx, 'series', 'tt2085059:4:2')).filter(stream => stream !== undefined);
     expect(streams).toMatchSnapshot();
   });
 
-  test('handle imdb black mirror s4e2 via tmdb', async () => {
+  test('handle tmdb black mirror s4e2', async () => {
     const streams = (await handler.handle(ctx, 'series', '42009:4:2')).filter(stream => stream !== undefined);
 
     const streamsWithoutTtl = streams.map((stream) => {
