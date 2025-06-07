@@ -1,8 +1,7 @@
-import { flag } from 'country-emoji';
 import { Handler } from '../handler';
 import { Config, CountryCode, ManifestWithConfig } from '../types';
 import { envGetAppId, envGetAppName } from './env';
-import { languageFromCountryCode } from './languageFromCountryCode';
+import { flagFromCountryCode, languageFromCountryCode } from './language';
 
 const typedEntries = <T extends object>(obj: T): [keyof T, T[keyof T]][] => (Object.entries(obj) as [keyof T, T[keyof T]][]);
 
@@ -46,7 +45,7 @@ export const buildManifest = (handlers: Handler[], config: Config): ManifestWith
     manifest.config.push({
       key: countryCode,
       type: 'checkbox',
-      title: `${languageFromCountryCode(countryCode)} ${flag(countryCode)} (${(handlers as Handler[]).map(handler => handler.label).join(', ')})`,
+      title: `${languageFromCountryCode(countryCode)} ${flagFromCountryCode(countryCode)} (${(handlers as Handler[]).map(handler => handler.label).join(', ')})`,
       ...(countryCode in config && { default: 'checked' }),
     });
   }

@@ -1,11 +1,10 @@
 import { Stream } from 'stremio-addon-sdk';
-import { flag } from 'country-emoji';
 import winston from 'winston';
 import bytes from 'bytes';
 import { Context, TIMEOUT, UrlResult } from '../types';
 import { Handler } from '../handler';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError } from '../error';
-import { languageFromCountryCode } from './languageFromCountryCode';
+import { flagFromCountryCode, languageFromCountryCode } from './language';
 import { envGetAppName } from './env';
 
 interface ResolveResponse {
@@ -192,7 +191,7 @@ export class StreamResolver {
     }
 
     if (urlResult.meta.countryCode) {
-      titleLines.push(`🌐 ${languageFromCountryCode(urlResult.meta.countryCode)} ${flag(urlResult.meta.countryCode)}`);
+      titleLines.push(`🌐 ${languageFromCountryCode(urlResult.meta.countryCode)} ${flagFromCountryCode(urlResult.meta.countryCode)}`);
     }
 
     titleLines.push(`🔗 ${urlResult.label}`);
