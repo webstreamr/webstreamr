@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.25.0](https://github.com/webstreamr/webstreamr/compare/v0.24.1...v0.25.0) (2025-06-07)
+
+
+### Features
+
+* **handler:** implement EN Soaper source ([717c2af](https://github.com/webstreamr/webstreamr/commit/717c2afdc4b6802d45ab149cb03a2415d9258e5d))
+
+
+### Code Refactoring
+
+* add custom helper for flags instead of package ([a56aea5](https://github.com/webstreamr/webstreamr/commit/a56aea56a8e80a7924ce2de9503d73dd695029be))
+
+
+### Tests
+
+* rename confusing tests ([5bda4c8](https://github.com/webstreamr/webstreamr/commit/5bda4c88f04d7d8bef70c44697971bf7511737fa))
+
 ## [0.24.1](https://github.com/webstreamr/webstreamr/compare/v0.24.0...v0.24.1) (2025-06-06)
 
 
