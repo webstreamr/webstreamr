@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Soaper handle imdb black mirror s4e2 1`] = `
+[
+  {
+    "label": "Soaper",
+    "meta": {
+      "countryCode": "en",
+      "title": "Black Mirror 4x2",
+    },
+    "sourceId": "soaper_en",
+    "ttl": 900000,
+    "url": "https://soaper.live/home/index/TVM3U8?key=zoeyOo54b7s8NAPnOW0div4OdvmbYxIzpE2RnmAoSXqMAm7eZKs79V4lxEnZsvQ6qYNrOEiqKO4dAwdBiYx3KmwyVRc9oPzLWoOYcLQVArr2j0.m3u8",
+  },
+]
+`;
+
+exports[`Soaper handle imdb full metal jacket 1`] = `
+[
+  {
+    "label": "Soaper",
+    "meta": {
+      "countryCode": "en",
+      "title": "Full Metal Jacket",
+    },
+    "sourceId": "soaper_en",
+    "ttl": 900000,
+    "url": "https://soaper.live/home/index/M3U8?key=VnlzaOr0NYimoY5BLezvsJ8zVLzvdAUVW6XKL711TqadxBBy7AheAYoXRl28s78dmP5WOQUVdxX9RWdOHNRanKJaQ7F5mwRpaWN5fPdMm8M.m3u8",
+  },
+]
+`;
+
+exports[`Soaper handle tmdb black mirror s4e2 1`] = `
+[
+  {
+    "label": "Soaper",
+    "meta": {
+      "countryCode": "en",
+      "title": "Black Mirror 4x2",
+    },
+    "sourceId": "soaper_en",
+    "url": "https://soaper.live/home/index/TVM3U8?key=zoeyOo54b7s8NAPnOW0div4OdvmbYxIzpE2RnmAoSXqMAm7eZKs79V4lxEnZsvQ6qYNrOEiqKO4dAwdBiYx3KmwyVRc9oPzLWoOYcLQVArr2j0.m3u8",
+  },
+]
+`;

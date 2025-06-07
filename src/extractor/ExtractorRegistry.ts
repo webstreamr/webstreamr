@@ -6,6 +6,7 @@ import { Fetcher } from '../utils';
 import { DoodStream } from './DoodStream';
 import { Dropload } from './Dropload';
 import { SuperVideo } from './SuperVideo';
+import { Soaper } from './Soaper';
 import { ExternalUrl } from './ExternalUrl';
 import { NotFoundError } from '../error';
 
@@ -20,6 +21,7 @@ export class ExtractorRegistry {
       new DoodStream(fetcher),
       new Dropload(fetcher),
       new SuperVideo(fetcher),
+      new Soaper(fetcher),
       new ExternalUrl(fetcher), // fallback extractor which must come last
     ];
     this.urlResultCache = new TTLCache({ max: 1024 });

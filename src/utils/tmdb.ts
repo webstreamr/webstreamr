@@ -18,6 +18,16 @@ interface ExternalIdsResponsePartial {
   imdb_id: string;
 }
 
+interface MovieDetailsResponsePartial {
+  release_date: string;
+  title: string;
+}
+
+interface TvDetailsResponsePartial {
+  first_air_date: string;
+  name: string;
+}
+
 export const parseTmdbId = (id: string): TmdbId => {
   const idParts = id.split(':');
 
@@ -68,4 +78,12 @@ export const getImdbIdFromTmdbId = async (ctx: Context, fetcher: Fetcher, tmdbId
 
   tmdbImdbMap.set(tmdbId.id, response.imdb_id);
   return { id: response.imdb_id, series: tmdbId.series, episode: tmdbId.episode };
+};
+
+export const getTmdbMovieDetails = async (ctx: Context, fetcher: Fetcher, tmdbId: TmdbId): Promise<MovieDetailsResponsePartial> => {
+  return await tmdbFetch(ctx, fetcher, `/movie/${tmdbId.id}`) as MovieDetailsResponsePartial;
+};
+
+export const getTmdbTvDetails = async (ctx: Context, fetcher: Fetcher, tmdbId: TmdbId): Promise<TvDetailsResponsePartial> => {
+  return await tmdbFetch(ctx, fetcher, `/tv/${tmdbId.id}`) as TvDetailsResponsePartial;
 };

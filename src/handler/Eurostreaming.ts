@@ -57,14 +57,14 @@ export class Eurostreaming implements Handler {
     const html = await this.fetcher.textPost(
       ctx,
       new URL('https://eurostreaming.my/index.php'),
-      {
+      JSON.stringify({
         do: 'search',
         subaction: 'search',
         search_start: 0,
         full_search: 0,
         result_from: 1,
         story: imdbId.id,
-      },
+      }),
       {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',

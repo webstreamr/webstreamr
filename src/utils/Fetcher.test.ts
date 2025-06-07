@@ -41,7 +41,7 @@ describe('fetch', () => {
   test('textPost ', async () => {
     fetchMock.post('https://some-post-url.test/', 'some text');
 
-    expect(await fetcher.textPost(ctx, new URL('https://some-post-url.test/'), { foo: 'bar' })).toBe('some text');
+    expect(await fetcher.textPost(ctx, new URL('https://some-post-url.test/'), JSON.stringify({ foo: 'bar' }))).toBe('some text');
   });
 
   test('head', async () => {

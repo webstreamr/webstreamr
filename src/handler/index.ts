@@ -5,5 +5,6 @@ export * from './FrenchCloud';
 export * from './KinoKiste';
 export * from './MeineCloud';
 export * from './MostraGuarda';
+export * from './Soaper';
 export * from './VerHdLink';
 export * from './types';

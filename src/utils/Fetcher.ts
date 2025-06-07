@@ -66,8 +66,8 @@ export class Fetcher {
     return (await this.cachedFetch(ctx, url, init)).body;
   };
 
-  readonly textPost = async (ctx: Context, url: URL, data: unknown, init?: CustomRequestInit): Promise<string> => {
-    return (await this.cachedFetch(ctx, url, { ...init, method: 'POST', body: JSON.stringify(data) })).body;
+  readonly textPost = async (ctx: Context, url: URL, body: string, init?: CustomRequestInit): Promise<string> => {
+    return (await this.cachedFetch(ctx, url, { ...init, method: 'POST', body })).body;
   };
 
   readonly head = async (ctx: Context, url: URL, init?: CustomRequestInit): Promise<CachePolicy.Headers> => {

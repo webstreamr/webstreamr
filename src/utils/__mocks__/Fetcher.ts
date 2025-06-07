@@ -18,10 +18,10 @@ class MockedFetcher {
     return this.fetch(path, ctx, url, init);
   };
 
-  readonly textPost = async (ctx: Context, url: URL, data: unknown, init?: RequestInit): Promise<string> => {
-    const path = `${__dirname}/../__fixtures__/Fetcher/post-${slugify(url.href)}-${slugify(JSON.stringify(data))}`;
+  readonly textPost = async (ctx: Context, url: URL, body: string, init?: RequestInit): Promise<string> => {
+    const path = `${__dirname}/../__fixtures__/Fetcher/post-${slugify(url.href)}-${slugify(body)}`;
 
-    return this.fetch(path, ctx, url, { ...init, method: 'POST', body: JSON.stringify(data) });
+    return this.fetch(path, ctx, url, { ...init, method: 'POST', body });
   };
 
   readonly head = async (ctx: Context, url: URL, init?: RequestInit): Promise<unknown> => {

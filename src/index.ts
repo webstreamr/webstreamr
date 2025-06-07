@@ -9,6 +9,7 @@ import {
   KinoKiste,
   MeineCloud,
   MostraGuarda,
+  Soaper,
   VerHdLink,
 } from './handler';
 import { ExtractorRegistry } from './extractor';
@@ -31,6 +32,8 @@ const fetcher = new Fetcher(logger);
 const extractorRegistry = new ExtractorRegistry(logger, fetcher);
 
 const handlers: Handler[] = [
+  // EN
+  new Soaper(fetcher, extractorRegistry),
   // ES / MX
   new CineHDPlus(fetcher, extractorRegistry),
   new VerHdLink(fetcher, extractorRegistry),
