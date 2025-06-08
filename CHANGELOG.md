@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.25.2](https://github.com/webstreamr/webstreamr/compare/v0.25.1...v0.25.2) (2025-06-08)
+
+
+### Miscellaneous Chores
+
+* **extractor:** add  bytes detection to DoodStream ([d1ff7cd](https://github.com/webstreamr/webstreamr/commit/d1ff7cd732892f023107f7e703c1503021280152))
+* **handler:** add height detection to Soaper ([7d0544a](https://github.com/webstreamr/webstreamr/commit/7d0544a5906e84fea3bb333875eb67df799fba74))
+
+
+### Code Refactoring
+
+* `UrlResult[]` instead of `UrlResult | undefined` ([0446d52](https://github.com/webstreamr/webstreamr/commit/0446d52e7879b8c2e35954f1179447097021a291))
+
+
+### Tests
+
+* **handler:** avoid side-effects by using a fresh handler for each test ([364bf16](https://github.com/webstreamr/webstreamr/commit/364bf166ae22a2666f5cb4331b4f6f8725bf9563))
+
 ## [0.25.1](https://github.com/webstreamr/webstreamr/compare/v0.25.0...v0.25.1) (2025-06-08)
 
 
