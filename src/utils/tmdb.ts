@@ -1,5 +1,4 @@
-import { ImdbId } from './ImdbId';
-import { TmdbId } from './TmdbId';
+import { ImdbId, TmdbId } from './id';
 import { Context } from '../types';
 import { Fetcher } from './Fetcher';
 import { envGet } from './env';

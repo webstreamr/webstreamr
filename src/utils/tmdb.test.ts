@@ -1,8 +1,7 @@
 import { getImdbIdFromTmdbId, getTmdbIdFromImdbId } from './tmdb';
 import { Fetcher } from './Fetcher';
 import { Context } from '../types';
-import { ImdbId } from './ImdbId';
-import { TmdbId } from './TmdbId';
+import { ImdbId, TmdbId } from './id';
 jest.mock('../utils/Fetcher');
 
 // @ts-expect-error No constructor args needed
