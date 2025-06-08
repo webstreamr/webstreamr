@@ -21,13 +21,15 @@ export class ExternalUrl implements Extractor {
     // We only want to make sure that the URL is accessible
     await this.fetcher.head(ctx, url);
 
-    return {
-      url: url,
-      isExternal: true,
-      label: `${url.host}`,
-      sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
-      ttl: this.ttl,
-      meta,
-    };
+    return [
+      {
+        url: url,
+        isExternal: true,
+        label: `${url.host}`,
+        sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
+        ttl: this.ttl,
+        meta,
+      },
+    ];
   };
 }

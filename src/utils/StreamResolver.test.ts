@@ -63,68 +63,70 @@ describe('resolve', () => {
 
       readonly countryCodes: CountryCode[] = ['de'];
 
-      readonly handle = async (): Promise<(UrlResult | undefined)[]> => {
+      readonly handle = async (): Promise<(UrlResult[])[]> => {
         return [
-          {
-            url: new URL('https://example.com'),
-            isExternal: true,
-            error: new BlockedError('cloudflare_challenge', {}),
-            label: 'hoster.com',
-            sourceId: '',
-            meta: {
-              countryCode: 'de',
+          [
+            {
+              url: new URL('https://example.com'),
+              isExternal: true,
+              error: new BlockedError('cloudflare_challenge', {}),
+              label: 'hoster.com',
+              sourceId: '',
+              meta: {
+                countryCode: 'de',
+              },
             },
-          },
-          {
-            url: new URL('https://example.com'),
-            isExternal: true,
-            error: new BlockedError('unknown', {}),
-            label: 'hoster.com',
-            sourceId: '',
-            meta: {
-              countryCode: 'de',
+            {
+              url: new URL('https://example.com'),
+              isExternal: true,
+              error: new BlockedError('unknown', {}),
+              label: 'hoster.com',
+              sourceId: '',
+              meta: {
+                countryCode: 'de',
+              },
             },
-          },
-          {
-            url: new URL('https://example2.com'),
-            isExternal: true,
-            error: new TypeError(),
-            label: 'hoster.com',
-            sourceId: '',
-            meta: {
-              countryCode: 'de',
+            {
+              url: new URL('https://example2.com'),
+              isExternal: true,
+              error: new TypeError(),
+              label: 'hoster.com',
+              sourceId: '',
+              meta: {
+                countryCode: 'de',
+              },
             },
-          },
-          {
-            url: new URL('https://example2.com'),
-            isExternal: true,
-            error: TIMEOUT,
-            label: 'hoster.com',
-            sourceId: '',
-            meta: {
-              countryCode: 'de',
+            {
+              url: new URL('https://example2.com'),
+              isExternal: true,
+              error: TIMEOUT,
+              label: 'hoster.com',
+              sourceId: '',
+              meta: {
+                countryCode: 'de',
+              },
             },
-          },
-          {
-            url: new URL('https://example3.com'),
-            isExternal: true,
-            error: new QueueIsFullError(),
-            label: 'hoster.com',
-            sourceId: '',
-            meta: {
-              countryCode: 'de',
+            {
+              url: new URL('https://example3.com'),
+              isExternal: true,
+              error: new QueueIsFullError(),
+              label: 'hoster.com',
+              sourceId: '',
+              meta: {
+                countryCode: 'de',
+              },
             },
-          },
-          {
-            url: new URL('https://example4.com'),
-            isExternal: true,
-            error: new HttpError(500, 'Internal Server Error', { 'x-foo': 'bar' }),
-            label: 'hoster.com',
-            sourceId: '',
-            meta: {
-              countryCode: 'de',
+            {
+              url: new URL('https://example4.com'),
+              isExternal: true,
+              error: new HttpError(500, 'Internal Server Error', { 'x-foo': 'bar' }),
+              label: 'hoster.com',
+              sourceId: '',
+              meta: {
+                countryCode: 'de',
+              },
             },
-          },
+          ],
         ];
       };
     }

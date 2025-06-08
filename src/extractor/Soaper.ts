@@ -48,15 +48,17 @@ export class Soaper implements Extractor {
     const m3u8Data = await this.fetcher.text(ctx, m3u8Url);
     const height = m3u8Data.match(/\d+x(\d+)|(\d+)p/) as string[];
 
-    return {
-      url: new URL(jsonResponse['val'], url.origin),
-      label: this.label,
-      sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
-      ttl: this.ttl,
-      meta: {
-        ...(height && { height: parseInt(height[1] ?? height[2] as string) }),
-        ...meta,
+    return [
+      {
+        url: new URL(jsonResponse['val'], url.origin),
+        label: this.label,
+        sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
+        ttl: this.ttl,
+        meta: {
+          ...(height && { height: parseInt(height[1] ?? height[2] as string) }),
+          ...meta,
+        },
       },
-    };
+    ];
   };
 }

@@ -35,17 +35,19 @@ export class Dropload implements Extractor {
     const $ = cheerio.load(html);
     const title = $('.videoplayer h1').text().trim();
 
-    return {
-      url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
-      label: this.label,
-      sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
-      ttl: this.ttl,
-      meta: {
-        bytes: bytes.parse(sizeMatch[1] as string) as number,
-        height: parseInt(heightMatch[1] as string) as number,
-        title,
-        ...meta,
+    return [
+      {
+        url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
+        label: this.label,
+        sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
+        ttl: this.ttl,
+        meta: {
+          bytes: bytes.parse(sizeMatch[1] as string) as number,
+          height: parseInt(heightMatch[1] as string) as number,
+          title,
+          ...meta,
+        },
       },
-    };
+    ];
   };
 }

@@ -11,5 +11,5 @@ export interface Handler {
 
   readonly countryCodes: CountryCode[];
 
-  readonly handle: (ctx: Context, type: ContentType, id: Id) => Promise<(UrlResult | undefined)[]>;
+  readonly handle: (ctx: Context, type: ContentType, id: Id) => Promise<(UrlResult[])[]>;
 }

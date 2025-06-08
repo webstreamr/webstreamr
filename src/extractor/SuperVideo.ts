@@ -28,17 +28,19 @@ export class SuperVideo implements Extractor {
     const $ = cheerio.load(html);
     const title = $('title').text().trim().replace(/^Watch /, '').trim();
 
-    return {
-      url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
-      label: this.label,
-      sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
-      ttl: this.ttl,
-      meta: {
-        bytes: bytes.parse(heightAndSizeMatch[2] as string) as number,
-        height: parseInt(heightAndSizeMatch[1] as string) as number,
-        title,
-        ...meta,
+    return [
+      {
+        url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
+        label: this.label,
+        sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
+        ttl: this.ttl,
+        meta: {
+          bytes: bytes.parse(heightAndSizeMatch[2] as string) as number,
+          height: parseInt(heightAndSizeMatch[1] as string) as number,
+          title,
+          ...meta,
+        },
       },
-    };
+    ];
   };
 }

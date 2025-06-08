@@ -1,6 +1,6 @@
 import winston from 'winston';
 import { ExtractorRegistry } from './ExtractorRegistry';
-import { Context, UrlResult } from '../types';
+import { Context } from '../types';
 import { Fetcher } from '../utils';
 jest.mock('../utils/Fetcher');
 
@@ -27,25 +27,22 @@ describe('ExtractorRegistry', () => {
   test('does not return external URLs if disabled by config', async () => {
     const urlResult = await extractorRegistry.handle({ ...ctx, config: { ...ctx.config, excludeExternalUrls: 'on' } }, new URL('https://mixdrop.ag/e/l7v73zqrfdj19z'), { countryCode: 'de' });
 
-    expect(urlResult).toBeUndefined();
+    expect(urlResult).toStrictEqual([]);
   });
 
   test('returns from memory cache if possible', async () => {
-    const { ttl: ttl1, ...urlResultRest1 } = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), { countryCode: 'de' }) as UrlResult;
-    const { ttl: ttl2, ...urlResultRest2 } = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), { countryCode: 'de' }) as UrlResult;
+    const urlResults1 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), { countryCode: 'de' });
+    const urlResults2 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/lyo2h1snpe5c.html'), { countryCode: 'de' });
 
-    expect(urlResultRest1).not.toBeUndefined();
-    expect(urlResultRest2).toStrictEqual(urlResultRest1);
-
-    expect(ttl1).not.toBe(undefined);
-    expect(ttl2).not.toBe(undefined);
+    expect(urlResults1).not.toStrictEqual([]);
+    expect(urlResults2).not.toStrictEqual([]);
   });
 
   test('ignores not found errors but caches them', async () => {
-    const urlResult1 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/asdfghijklmn.html'), { countryCode: 'de' });
-    const urlResult2 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/asdfghijklmn.html'), { countryCode: 'de' });
+    const urlResults1 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/asdfghijklmn.html'), { countryCode: 'de' });
+    const urlResults2 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/asdfghijklmn.html'), { countryCode: 'de' });
 
-    expect(urlResult1).toBeUndefined();
-    expect(urlResult2).toBeUndefined();
+    expect(urlResults1).toStrictEqual([]);
+    expect(urlResults2).toStrictEqual([]);
   });
 });

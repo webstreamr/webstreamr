@@ -2,62 +2,72 @@
 
 exports[`FrenchCloud handle imdb the devil's bath 1`] = `
 [
-  {
-    "label": "SuperVideo",
-    "meta": {
-      "bytes": 966682214,
-      "countryCode": "fr",
-      "height": 720,
-      "title": "the devils bath enfant pour diable 2024 cam",
+  [
+    {
+      "label": "SuperVideo",
+      "meta": {
+        "bytes": 966682214,
+        "countryCode": "fr",
+        "height": 720,
+        "title": "the devils bath enfant pour diable 2024 cam",
+      },
+      "sourceId": "supervideo_fr",
+      "ttl": 900000,
+      "url": "https://hfs292.serversicuro.cc/hls/,dnzpfwdj5dg4a3gyvbwx5lbvtu65tuwysrizwl7puv6u7dkpym3afmw5hnga,.urlset/master.m3u8",
     },
-    "sourceId": "supervideo_fr",
-    "ttl": 900000,
-    "url": "https://hfs292.serversicuro.cc/hls/,dnzpfwdj5dg4a3gyvbwx5lbvtu65tuwysrizwl7puv6u7dkpym3afmw5hnga,.urlset/master.m3u8",
-  },
-  {
-    "label": "Dropload",
-    "meta": {
-      "bytes": 966682214,
-      "countryCode": "fr",
-      "height": 720,
-      "title": "the-devils-bath-un-enfant-pour-le-diable-2024-cam",
+  ],
+  [
+    {
+      "label": "Dropload",
+      "meta": {
+        "bytes": 966682214,
+        "countryCode": "fr",
+        "height": 720,
+        "title": "the-devils-bath-un-enfant-pour-le-diable-2024-cam",
+      },
+      "sourceId": "dropload_fr",
+      "ttl": 900000,
+      "url": "https://srv28.dropload.io/hls2/01/00215/w4yit5wiia9y_h/master.m3u8?t=ujTsd4AYOdgaA6EhuMJDrC-xYzMVEbqrrd3qsoZ8iAY&s=1747054860&e=14400&f=1076096&i=0.0&sp=0&ii=130.61.236.204",
     },
-    "sourceId": "dropload_fr",
-    "ttl": 900000,
-    "url": "https://srv28.dropload.io/hls2/01/00215/w4yit5wiia9y_h/master.m3u8?t=ujTsd4AYOdgaA6EhuMJDrC-xYzMVEbqrrd3qsoZ8iAY&s=1747054860&e=14400&f=1076096&i=0.0&sp=0&ii=130.61.236.204",
-  },
-  {
-    "isExternal": true,
-    "label": "mixdrop.ag",
-    "meta": {
-      "countryCode": "fr",
+  ],
+  [
+    {
+      "isExternal": true,
+      "label": "mixdrop.ag",
+      "meta": {
+        "countryCode": "fr",
+      },
+      "sourceId": "external_fr",
+      "ttl": 3600000,
+      "url": "https://mixdrop.ag/e/l7v73zqrfdj19z",
     },
-    "sourceId": "external_fr",
-    "ttl": 3600000,
-    "url": "https://mixdrop.ag/e/l7v73zqrfdj19z",
-  },
-  {
-    "error": [Error: Fetcher error: 404: Not Found],
-    "isExternal": true,
-    "label": "streamtape.com",
-    "meta": {
-      "countryCode": "fr",
+  ],
+  [
+    {
+      "error": [Error: Fetcher error: 404: Not Found],
+      "isExternal": true,
+      "label": "streamtape.com",
+      "meta": {
+        "countryCode": "fr",
+      },
+      "sourceId": "external",
+      "url": "https://streamtape.com/e/gjA1OQ4klyHxgJ",
     },
-    "sourceId": "external",
-    "url": "https://streamtape.com/e/gjA1OQ4klyHxgJ",
-  },
-  {
-    "label": "DoodStream",
-    "meta": {
-      "countryCode": "fr",
-      "title": "the-devils-bath-un-enfant-pour-le-diable-2024-cam",
+  ],
+  [
+    {
+      "label": "DoodStream",
+      "meta": {
+        "countryCode": "fr",
+        "title": "the-devils-bath-un-enfant-pour-le-diable-2024-cam",
+      },
+      "requestHeaders": {
+        "Referer": "http://dood.to/",
+      },
+      "sourceId": "doodstream_fr",
+      "ttl": 900000,
+      "url": "https://ty1053vs.cloudatacdn.com/u5kjz2cvh7blsdgge4mmgoifjigorrf6o6mlfwqbndqkhkcvu43dcrk7wfga/6zwayqucuf~mocked-random-string?token=y0n5z6g48kft9apq8imziegv&expiry=639837296000",
     },
-    "requestHeaders": {
-      "Referer": "http://dood.to/",
-    },
-    "sourceId": "doodstream_fr",
-    "ttl": 900000,
-    "url": "https://ty1053vs.cloudatacdn.com/u5kjz2cvh7blsdgge4mmgoifjigorrf6o6mlfwqbndqkhkcvu43dcrk7wfga/6zwayqucuf~mocked-random-string?token=y0n5z6g48kft9apq8imziegv&expiry=639837296000",
-  },
+  ],
 ]
 `;

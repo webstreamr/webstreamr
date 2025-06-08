@@ -1,27 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ExtractorRegistry return external URLs by default 1`] = `
-{
-  "isExternal": true,
-  "label": "mixdrop.ag",
-  "meta": {
-    "countryCode": "de",
+[
+  {
+    "isExternal": true,
+    "label": "mixdrop.ag",
+    "meta": {
+      "countryCode": "de",
+    },
+    "sourceId": "external_de",
+    "ttl": 3600000,
+    "url": "https://mixdrop.ag/e/3nzwveprim63or6",
   },
-  "sourceId": "external_de",
-  "ttl": 3600000,
-  "url": "https://mixdrop.ag/e/3nzwveprim63or6",
-}
+]
 `;
 
 exports[`ExtractorRegistry returns error result from extractor 1`] = `
-{
-  "error": [Error: TypeError: fetch failed],
-  "isExternal": true,
-  "label": "some-url.test",
-  "meta": {
-    "countryCode": "en",
+[
+  {
+    "error": [Error: TypeError: fetch failed],
+    "isExternal": true,
+    "label": "some-url.test",
+    "meta": {
+      "countryCode": "en",
+    },
+    "sourceId": "external",
+    "url": "https://some-url.test/",
   },
-  "sourceId": "external",
-  "url": "https://some-url.test/",
-}
+]
 `;

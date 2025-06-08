@@ -46,7 +46,7 @@ export class StreamResolver {
         const handlerUrlResults = await handler.handle(ctx, type, id);
         this.logger.info(`${handler.id} returned ${handlerUrlResults.length} urls`, ctx);
 
-        urlResults.push(...(handlerUrlResults.filter(handlerUrlResult => handlerUrlResult !== undefined)));
+        urlResults.push(...handlerUrlResults.flat());
       } catch (error) {
         if (error instanceof NotFoundError) {
           return;

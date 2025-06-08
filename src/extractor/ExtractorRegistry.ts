@@ -13,7 +13,7 @@ import { NotFoundError } from '../error';
 export class ExtractorRegistry {
   private readonly logger: winston.Logger;
   private readonly extractors: Extractor[];
-  private readonly urlResultCache: TTLCache<string, UrlResult | undefined>;
+  private readonly urlResultCache: TTLCache<string, UrlResult[]>;
 
   constructor(logger: winston.Logger, fetcher: Fetcher) {
     this.logger = logger;
@@ -27,40 +27,42 @@ export class ExtractorRegistry {
     this.urlResultCache = new TTLCache({ max: 1024 });
   }
 
-  readonly handle = async (ctx: Context, url: URL, meta: Meta): Promise<UrlResult | undefined> => {
-    let urlResult = this.urlResultCache.get(url.href);
+  readonly handle = async (ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> => {
+    let urlResults = this.urlResultCache.get(url.href) ?? [];
     if (this.urlResultCache.has(url.href)) {
-      return urlResult ? { ...urlResult, ttl: this.urlResultCache.getRemainingTTL(url.href) } : undefined;
+      return urlResults.map(urlResult => ({ ...urlResult, ttl: this.urlResultCache.getRemainingTTL(url.href) }));
     }
 
     const extractor = this.extractors.find(extractor => extractor.supports(ctx, url));
     if (!extractor) {
-      return undefined;
+      return [];
     }
 
     this.logger.info(`Extract stream URL using ${extractor.id} extractor from ${url}`, ctx);
 
     try {
-      urlResult = await extractor.extract(ctx, url, meta);
+      urlResults = await extractor.extract(ctx, url, meta);
     } catch (error) {
       if (error instanceof NotFoundError) {
-        this.urlResultCache.set(url.href, urlResult, { ttl: extractor.ttl });
+        this.urlResultCache.set(url.href, urlResults, { ttl: extractor.ttl });
 
-        return undefined;
+        return [];
       }
 
-      return {
-        url,
-        isExternal: true,
-        error,
-        label: url.host,
-        sourceId: `${extractor.id}`,
-        meta,
-      };
+      return [
+        {
+          url,
+          isExternal: true,
+          error,
+          label: url.host,
+          sourceId: `${extractor.id}`,
+          meta,
+        },
+      ];
     }
 
-    this.urlResultCache.set(url.href, urlResult, { ttl: extractor.ttl });
+    this.urlResultCache.set(url.href, urlResults, { ttl: extractor.ttl });
 
-    return urlResult;
+    return urlResults;
   };
 }

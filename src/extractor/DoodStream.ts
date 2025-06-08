@@ -38,18 +38,20 @@ export class DoodStream implements Extractor {
     const $ = cheerio.load(html);
     const title = $('title').text().trim().replace(/ - DoodStream$/, '').trim();
 
-    return {
-      url: new URL(`${baseUrl}${randomstring.generate(10)}?token=${token}&expiry=${Date.now()}`),
-      label: this.label,
-      sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
-      ttl: this.ttl,
-      meta: {
-        title,
-        ...meta,
+    return [
+      {
+        url: new URL(`${baseUrl}${randomstring.generate(10)}?token=${token}&expiry=${Date.now()}`),
+        label: this.label,
+        sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
+        ttl: this.ttl,
+        meta: {
+          title,
+          ...meta,
+        },
+        requestHeaders: {
+          Referer: 'http://dood.to/',
+        },
       },
-      requestHeaders: {
-        Referer: 'http://dood.to/',
-      },
-    };
+    ];
   };
 }
