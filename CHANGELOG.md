@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.25.1](https://github.com/webstreamr/webstreamr/compare/v0.25.0...v0.25.1) (2025-06-08)
+
+
+### Miscellaneous Chores
+
+* **handler:** add year to soaper result movie title ([968b7d4](https://github.com/webstreamr/webstreamr/commit/968b7d4bc0a4359e0f81513abc6f7a67a91df571))
+* introduce config helper, enable English by default ([48209ac](https://github.com/webstreamr/webstreamr/commit/48209ac87640d09ef86ffe78e44492ae78014a65))
+
+
+### Code Refactoring
+
+* introduce ImdbId and TmdbId ([374896c](https://github.com/webstreamr/webstreamr/commit/374896caca7b9e42e72be97cd6435953100a80b4))
+* move ids into dedicated folder ([8724e04](https://github.com/webstreamr/webstreamr/commit/8724e0486056ba091996819135e952a87874e7ce))
+* simplify id usage and imdb &lt;-&gt; tmdb transformations ([fbae392](https://github.com/webstreamr/webstreamr/commit/fbae3924e591aa4550b5d3f88583818219b55d5f))
+* strictly type `ContentType` ([62f18ec](https://github.com/webstreamr/webstreamr/commit/62f18ece85eaa3c8721e27500674e1f028e6a69d))
+
 ## [0.25.0](https://github.com/webstreamr/webstreamr/compare/v0.24.1...v0.25.0) (2025-06-07)
 
 
