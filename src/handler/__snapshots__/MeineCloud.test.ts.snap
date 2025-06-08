@@ -46,6 +46,7 @@ exports[`MeineCloud handle imdb the devil's bath 1`] = `
     {
       "label": "DoodStream",
       "meta": {
+        "bytes": 791702409,
         "countryCode": "de",
         "title": "des-teufels-bad-2024",
       },

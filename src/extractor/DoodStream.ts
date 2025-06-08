@@ -38,14 +38,19 @@ export class DoodStream implements Extractor {
     const $ = cheerio.load(html);
     const title = $('title').text().trim().replace(/ - DoodStream$/, '').trim();
 
+    const mp4Url = new URL(`${baseUrl}${randomstring.generate(10)}?token=${token}&expiry=${Date.now()}`);
+
+    const mp4Head = await this.fetcher.head(ctx, mp4Url, { headers: { Referer: 'http://dood.to' } });
+
     return [
       {
-        url: new URL(`${baseUrl}${randomstring.generate(10)}?token=${token}&expiry=${Date.now()}`),
+        url: mp4Url,
         label: this.label,
         sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
         ttl: this.ttl,
         meta: {
           title,
+          ...(mp4Head['content-length'] && { bytes: parseInt(mp4Head['content-length'] as string) }),
           ...meta,
         },
         requestHeaders: {
