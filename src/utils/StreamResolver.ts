@@ -1,4 +1,4 @@
-import { Stream } from 'stremio-addon-sdk';
+import { ContentType, Stream } from 'stremio-addon-sdk';
 import winston from 'winston';
 import bytes from 'bytes';
 import { Context, TIMEOUT, UrlResult } from '../types';
@@ -19,7 +19,7 @@ export class StreamResolver {
     this.logger = logger;
   }
 
-  readonly resolve = async (ctx: Context, handlers: Handler[], type: string, id: string): Promise<ResolveResponse> => {
+  readonly resolve = async (ctx: Context, handlers: Handler[], type: ContentType, id: string): Promise<ResolveResponse> => {
     if (handlers.length === 0) {
       return {
         streams: [

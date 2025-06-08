@@ -1,3 +1,4 @@
+import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
 import { Handler } from './types';
 import { Fetcher, ImdbId, parseImdbId } from '../utils';
@@ -9,7 +10,7 @@ export class CineHDPlus implements Handler {
 
   readonly label = 'CineHDPlus';
 
-  readonly contentTypes = ['series'];
+  readonly contentTypes: ContentType[] = ['series'];
 
   readonly countryCodes: CountryCode[] = ['es', 'mx'];
 

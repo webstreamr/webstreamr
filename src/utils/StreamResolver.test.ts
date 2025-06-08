@@ -1,3 +1,4 @@
+import { ContentType } from 'stremio-addon-sdk';
 import winston from 'winston';
 import { ExtractorRegistry } from '../extractor';
 import { StreamResolver } from './StreamResolver';
@@ -57,7 +58,7 @@ describe('resolve', () => {
 
       readonly label = 'MockHandler';
 
-      readonly contentTypes = ['movie'];
+      readonly contentTypes: ContentType[] = ['movie'];
 
       readonly countryCodes: CountryCode[] = ['de'];
 

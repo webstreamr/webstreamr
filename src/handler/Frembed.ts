@@ -1,3 +1,4 @@
+import { ContentType } from 'stremio-addon-sdk';
 import { Handler } from './types';
 import { parseImdbId, Fetcher, getTmdbIdFromImdbId, TmdbId, parseTmdbId } from '../utils';
 import { ExtractorRegistry } from '../extractor';
@@ -8,7 +9,7 @@ export class Frembed implements Handler {
 
   readonly label = 'Frembed';
 
-  readonly contentTypes = ['series'];
+  readonly contentTypes: ContentType[] = ['series'];
 
   readonly countryCodes: CountryCode[] = ['fr'];
 

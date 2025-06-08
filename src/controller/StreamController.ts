@@ -3,6 +3,7 @@ import winston from 'winston';
 import { Handler } from '../handler';
 import { Config, Context } from '../types';
 import { envIsProd, StreamResolver } from '../utils';
+import { ContentType } from 'stremio-addon-sdk';
 
 export class StreamController {
   public readonly router: Router;
@@ -23,7 +24,7 @@ export class StreamController {
 
   private readonly getStream = async (req: Request, res: Response) => {
     const config: Config = JSON.parse(req.params['config'] || '{}');
-    const type: string = req.params['type'] || '';
+    const type: ContentType = (req.params['type'] || '') as ContentType;
     const id: string = req.params['id'] || '';
 
     const ctx: Context = {

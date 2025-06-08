@@ -1,3 +1,4 @@
+import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
 import { Handler } from './types';
 import { ImdbId, parseImdbId, Fetcher } from '../utils';
@@ -9,7 +10,7 @@ export class Eurostreaming implements Handler {
 
   readonly label = 'Eurostreaming';
 
-  readonly contentTypes = ['series'];
+  readonly contentTypes: ContentType[] = ['series'];
 
   readonly countryCodes: CountryCode[] = ['it'];
 

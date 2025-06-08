@@ -1,3 +1,4 @@
+import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
 import { Handler } from './types';
 import {
@@ -17,7 +18,7 @@ export class Soaper implements Handler {
 
   readonly label = 'Soaper';
 
-  readonly contentTypes = ['movie', 'series'];
+  readonly contentTypes: ContentType[] = ['movie', 'series'];
 
   readonly countryCodes: CountryCode[] = ['en'];
 

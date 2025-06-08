@@ -1,3 +1,4 @@
+import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
 import { Handler } from './types';
 import { Fetcher, parseImdbId } from '../utils';
@@ -9,7 +10,7 @@ export class MostraGuarda implements Handler {
 
   readonly label = 'MostraGuarda';
 
-  readonly contentTypes = ['movie'];
+  readonly contentTypes: ContentType[] = ['movie'];
 
   readonly countryCodes: CountryCode[] = ['it'];
 
