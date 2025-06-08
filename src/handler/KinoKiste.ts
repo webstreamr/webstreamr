@@ -1,7 +1,7 @@
 import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
 import { Handler } from './types';
-import { ImdbId, parseImdbId, Fetcher } from '../utils';
+import { ImdbId, Fetcher } from '../utils';
 import { ExtractorRegistry } from '../extractor';
 import { Context, CountryCode } from '../types';
 
@@ -27,7 +27,7 @@ export class KinoKiste implements Handler {
       return [];
     }
 
-    const imdbId = parseImdbId(id);
+    const imdbId = ImdbId.fromString(id);
 
     const seriesPageUrl = await this.fetchSeriesPageUrl(ctx, imdbId);
     if (!seriesPageUrl) {

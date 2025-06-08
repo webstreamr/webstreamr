@@ -1,7 +1,7 @@
 import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
 import { Handler } from './types';
-import { Fetcher, parseImdbId } from '../utils';
+import { Fetcher, ImdbId } from '../utils';
 import { ExtractorRegistry } from '../extractor';
 import { Context, CountryCode } from '../types';
 
@@ -27,7 +27,7 @@ export class MostraGuarda implements Handler {
       return [];
     }
 
-    const pageUrl = new URL(`https://mostraguarda.stream/movie/${parseImdbId(id).id}`);
+    const pageUrl = new URL(`https://mostraguarda.stream/movie/${ImdbId.fromString(id).id}`);
     const html = await this.fetcher.text(ctx, pageUrl);
 
     const $ = cheerio.load(html);

@@ -1,8 +1,8 @@
-import { parseImdbId } from './imdb';
+import { ImdbId } from './ImdbId';
 
-describe('imdb id parsing', () => {
+describe('can be created from string', () => {
   test('splits id properly', () => {
-    const { id, series, episode } = parseImdbId('tt2085059:2:4');
+    const { id, series, episode } = ImdbId.fromString('tt2085059:2:4');
 
     expect(id).toBe('tt2085059');
     expect(series).toBe(2);
@@ -10,7 +10,7 @@ describe('imdb id parsing', () => {
   });
 
   test('handles weird 0 prefixes in series and episode', () => {
-    const { id, series, episode } = parseImdbId('tt2085059:02:04');
+    const { id, series, episode } = ImdbId.fromString('tt2085059:02:04');
 
     expect(id).toBe('tt2085059');
     expect(series).toBe(2);
@@ -18,7 +18,7 @@ describe('imdb id parsing', () => {
   });
 
   test('supports movie with missing series and episode', () => {
-    const { id, series, episode } = parseImdbId('tt2085059');
+    const { id, series, episode } = ImdbId.fromString('tt2085059');
 
     expect(id).toBe('tt2085059');
     expect(series).toBeUndefined();
@@ -27,13 +27,13 @@ describe('imdb id parsing', () => {
 
   test('throws for empty ids', () => {
     expect(() => {
-      parseImdbId('');
+      ImdbId.fromString('');
     }).toThrow('IMDb ID "" is invalid');
   });
 
   test('throws for invalid ids', () => {
     expect(() => {
-      parseImdbId('foo');
+      ImdbId.fromString('foo');
     }).toThrow('IMDb ID "foo" is invalid');
   });
 });

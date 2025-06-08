@@ -6,8 +6,7 @@ import {
   getTmdbIdFromImdbId,
   getTmdbMovieDetails,
   getTmdbTvDetails,
-  parseImdbId,
-  parseTmdbId,
+  ImdbId,
   TmdbId,
 } from '../utils';
 import { ExtractorRegistry } from '../extractor';
@@ -35,9 +34,9 @@ export class Soaper implements Handler {
   readonly handle = async (ctx: Context, _type: string, id: string) => {
     let tmdbId: TmdbId;
     if (id.startsWith('tt')) {
-      tmdbId = await getTmdbIdFromImdbId(ctx, this.fetcher, parseImdbId(id));
+      tmdbId = await getTmdbIdFromImdbId(ctx, this.fetcher, ImdbId.fromString(id));
     } else if (/^\d+:/.test(id)) {
-      tmdbId = parseTmdbId(id);
+      tmdbId = TmdbId.fromString(id);
     } else {
       return [];
     }
