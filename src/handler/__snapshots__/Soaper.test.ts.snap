@@ -6,6 +6,7 @@ exports[`Soaper handle imdb black mirror s4e2 1`] = `
     "label": "Soaper",
     "meta": {
       "countryCode": "en",
+      "height": 720,
       "title": "Black Mirror 4x2",
     },
     "sourceId": "soaper_en",
@@ -21,6 +22,7 @@ exports[`Soaper handle imdb full metal jacket 1`] = `
     "label": "Soaper",
     "meta": {
       "countryCode": "en",
+      "height": 1080,
       "title": "Full Metal Jacket (1987)",
     },
     "sourceId": "soaper_en",
@@ -36,6 +38,7 @@ exports[`Soaper handle tmdb black mirror s4e2 1`] = `
     "label": "Soaper",
     "meta": {
       "countryCode": "en",
+      "height": 720,
       "title": "Black Mirror 4x2",
     },
     "sourceId": "soaper_en",

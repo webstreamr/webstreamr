@@ -2,6 +2,11 @@ import { Extractor } from './types';
 import { Fetcher } from '../utils';
 import { Context, Meta } from '../types';
 
+interface SoaperInfoResponsePartial {
+  val: string;
+  val_bak: string;
+}
+
 export class Soaper implements Extractor {
   readonly id = 'soaper';
 
@@ -37,14 +42,21 @@ export class Soaper implements Extractor {
         },
       },
     );
-    const jsonResponse = JSON.parse(response);
+    const jsonResponse = JSON.parse(response) as SoaperInfoResponsePartial;
+
+    const m3u8Url = new URL(jsonResponse['val'], url.origin);
+    const m3u8Data = await this.fetcher.text(ctx, m3u8Url);
+    const height = m3u8Data.match(/\d+x(\d+)|(\d+)p/) as string[];
 
     return {
       url: new URL(jsonResponse['val'], url.origin),
       label: this.label,
       sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
       ttl: this.ttl,
-      meta,
+      meta: {
+        ...(height && { height: parseInt(height[1] ?? height[2] as string) }),
+        ...meta,
+      },
     };
   };
 }
