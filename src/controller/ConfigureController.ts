@@ -1,6 +1,6 @@
 import { Request, Response, Router } from 'express';
 import { landingTemplate } from '../landingTemplate';
-import { buildManifest } from '../utils';
+import { buildManifest, getDefaultConfig } from '../utils';
 import { Handler } from '../handler';
 import { Config } from '../types';
 
@@ -19,7 +19,7 @@ export class ConfigureController {
   }
 
   private readonly getConfigure = (req: Request, res: Response) => {
-    const config: Config = JSON.parse(req.params['config'] || '{}');
+    const config: Config = JSON.parse(req.params['config'] || JSON.stringify(getDefaultConfig()));
 
     const manifest = buildManifest(this.handlers, config);
 

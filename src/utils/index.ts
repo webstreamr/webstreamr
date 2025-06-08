@@ -1,5 +1,6 @@
 export * from './Fetcher';
 export * from './StreamResolver';
+export * from './config';
 export * from './embed';
 export * from './env';
 export * from './id';

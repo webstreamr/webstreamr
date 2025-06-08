@@ -2,7 +2,7 @@ import { Request, Response, Router } from 'express';
 import winston from 'winston';
 import { Handler } from '../handler';
 import { Config, Context } from '../types';
-import { envIsProd, ImdbId, StreamResolver } from '../utils';
+import { envIsProd, getDefaultConfig, ImdbId, StreamResolver } from '../utils';
 import { ContentType } from 'stremio-addon-sdk';
 
 export class StreamController {
@@ -23,7 +23,7 @@ export class StreamController {
   }
 
   private readonly getStream = async (req: Request, res: Response) => {
-    const config: Config = JSON.parse(req.params['config'] || '{}');
+    const config: Config = req.params['config'] ? JSON.parse(req.params['config']) : getDefaultConfig();
     const type: ContentType = (req.params['type'] || '') as ContentType;
     const id: string = req.params['id'] || '';
 

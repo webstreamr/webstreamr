@@ -1,5 +1,5 @@
 import { Request, Response, Router } from 'express';
-import { buildManifest } from '../utils';
+import { buildManifest, getDefaultConfig } from '../utils';
 import { Handler } from '../handler';
 import { Config } from '../types';
 
@@ -18,7 +18,7 @@ export class ManifestController {
   }
 
   private readonly getManifest = (req: Request, res: Response) => {
-    const config: Config = JSON.parse(req.params['config'] || '{}');
+    const config: Config = JSON.parse(req.params['config'] || JSON.stringify(getDefaultConfig()));
 
     const manifest = buildManifest(this.handlers, config);
 
