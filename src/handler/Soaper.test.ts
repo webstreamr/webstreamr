@@ -8,10 +8,15 @@ jest.mock('../utils/Fetcher');
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 // @ts-expect-error No constructor args needed
 const fetcher = new Fetcher();
-const handler = new Soaper(fetcher, new ExtractorRegistry(logger, fetcher));
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { en: 'on' } };
 
 describe('Soaper', () => {
+  let handler: Soaper;
+
+  beforeEach(() => {
+    handler = new Soaper(fetcher, new ExtractorRegistry(logger, fetcher));
+  });
+
   test('handles non-existent movies gracefully', async () => {
     const streams = await handler.handle(ctx, 'movie', new ImdbId('tt12345678', undefined, undefined));
     expect(streams).toHaveLength(0);
@@ -34,13 +39,7 @@ describe('Soaper', () => {
 
   test('handle tmdb black mirror s4e2', async () => {
     const streams = (await handler.handle(ctx, 'series', new TmdbId(42009, 4, 2))).filter(stream => stream !== undefined);
-
-    const streamsWithoutTtl = streams.map((stream) => {
-      delete stream.ttl;
-      return stream;
-    }); // to avoid flakyness because this is served from cache with lower ttl :)
-
-    expect(streamsWithoutTtl).toMatchSnapshot();
+    expect(streams).toMatchSnapshot();
   });
 
   test('handle imdb full metal jacket', async () => {

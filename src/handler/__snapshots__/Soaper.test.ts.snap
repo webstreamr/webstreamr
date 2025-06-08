@@ -42,6 +42,7 @@ exports[`Soaper handle tmdb black mirror s4e2 1`] = `
       "title": "Black Mirror 4x2",
     },
     "sourceId": "soaper_en",
+    "ttl": 900000,
     "url": "https://soaper.live/home/index/TVM3U8?key=zoeyOo54b7s8NAPnOW0div4OdvmbYxIzpE2RnmAoSXqMAm7eZKs79V4lxEnZsvQ6qYNrOEiqKO4dAwdBiYx3KmwyVRc9oPzLWoOYcLQVArr2j0.m3u8",
   },
 ]
