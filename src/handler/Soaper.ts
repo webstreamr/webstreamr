@@ -49,7 +49,7 @@ export class Soaper implements Handler {
       return [await this.extractorRegistry.handle({ ...ctx, referer: episodeUrl }, episodeUrl, { countryCode: 'en', title: `${keyword} ${tmdbId.series}x${tmdbId.episode}` })];
     }
 
-    return [await this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, pageUrl, { countryCode: 'en', title: keyword })];
+    return [await this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, pageUrl, { countryCode: 'en', title: `${keyword} (${year})` })];
   };
 
   private readonly fetchPageUrl = async (ctx: Context, keyword: string, year: number, hrefPrefix: string): Promise<URL | undefined> => {

@@ -21,7 +21,7 @@ exports[`Soaper handle imdb full metal jacket 1`] = `
     "label": "Soaper",
     "meta": {
       "countryCode": "en",
-      "title": "Full Metal Jacket",
+      "title": "Full Metal Jacket (1987)",
     },
     "sourceId": "soaper_en",
     "ttl": 900000,
