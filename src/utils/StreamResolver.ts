@@ -6,6 +6,7 @@ import { Handler } from '../handler';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError } from '../error';
 import { flagFromCountryCode, languageFromCountryCode } from './language';
 import { envGetAppName } from './env';
+import { Id } from './id';
 
 interface ResolveResponse {
   streams: Stream[];
@@ -19,7 +20,7 @@ export class StreamResolver {
     this.logger = logger;
   }
 
-  readonly resolve = async (ctx: Context, handlers: Handler[], type: ContentType, id: string): Promise<ResolveResponse> => {
+  readonly resolve = async (ctx: Context, handlers: Handler[], type: ContentType, id: Id): Promise<ResolveResponse> => {
     if (handlers.length === 0) {
       return {
         streams: [

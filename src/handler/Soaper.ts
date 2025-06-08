@@ -1,14 +1,7 @@
 import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
 import { Handler } from './types';
-import {
-  Fetcher,
-  getTmdbIdFromImdbId,
-  getTmdbMovieDetails,
-  getTmdbTvDetails,
-  ImdbId,
-  TmdbId,
-} from '../utils';
+import { Fetcher, getTmdbId, getTmdbMovieDetails, getTmdbTvDetails, Id, TmdbId } from '../utils';
 import { ExtractorRegistry } from '../extractor';
 import { Context, CountryCode } from '../types';
 
@@ -31,15 +24,8 @@ export class Soaper implements Handler {
     this.extractorRegistry = extractorRegistry;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: string) => {
-    let tmdbId: TmdbId;
-    if (id.startsWith('tt')) {
-      tmdbId = await getTmdbIdFromImdbId(ctx, this.fetcher, ImdbId.fromString(id));
-    } else if (/^\d+:/.test(id)) {
-      tmdbId = TmdbId.fromString(id);
-    } else {
-      return [];
-    }
+  readonly handle = async (ctx: Context, _type: string, id: Id) => {
+    const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
     const [keyword, year, hrefPrefix] = await this.getKeywordYearAndHrefPrefix(ctx, tmdbId);
 

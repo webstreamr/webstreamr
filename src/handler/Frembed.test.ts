@@ -1,7 +1,7 @@
 import winston from 'winston';
 import { Frembed } from './Frembed';
 import { ExtractorRegistry } from '../extractor';
-import { Fetcher } from '../utils';
+import { Fetcher, ImdbId, TmdbId } from '../utils';
 import { Context } from '../types';
 jest.mock('../utils/Fetcher');
 
@@ -12,18 +12,13 @@ const handler = new Frembed(fetcher, new ExtractorRegistry(logger, fetcher));
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { fr: 'on' } };
 
 describe('Frembed', () => {
-  test('does not handle non imdb and tmdb series', async () => {
-    const streams = await handler.handle(ctx, 'series', 'kitsu:123');
-    expect(streams).toHaveLength(0);
-  });
-
   test('handle imdb black mirror s4e2', async () => {
-    const streams = (await handler.handle(ctx, 'series', 'tt2085059:4:2')).filter(stream => stream !== undefined);
+    const streams = (await handler.handle(ctx, 'series', new ImdbId('tt2085059', 4, 2))).filter(stream => stream !== undefined);
     expect(streams).toMatchSnapshot();
   });
 
   test('handle tmdb black mirror s4e2', async () => {
-    const streams = (await handler.handle(ctx, 'series', '42009:4:2')).filter(stream => stream !== undefined);
+    const streams = (await handler.handle(ctx, 'series', new TmdbId(42009, 4, 2))).filter(stream => stream !== undefined);
 
     const streamsWithoutTtl = streams.map((stream) => {
       delete stream.ttl;

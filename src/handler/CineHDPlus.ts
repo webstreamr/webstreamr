@@ -1,7 +1,7 @@
 import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
 import { Handler } from './types';
-import { Fetcher, ImdbId } from '../utils';
+import { Fetcher, getImdbId, Id, ImdbId } from '../utils';
 import { ExtractorRegistry } from '../extractor';
 import { Context, CountryCode } from '../types';
 
@@ -22,12 +22,8 @@ export class CineHDPlus implements Handler {
     this.extractorRegistry = extractorRegistry;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: string) => {
-    if (!id.startsWith('tt')) {
-      return [];
-    }
-
-    const imdbId = ImdbId.fromString(id);
+  readonly handle = async (ctx: Context, _type: string, id: Id) => {
+    const imdbId = await getImdbId(ctx, this.fetcher, id);
 
     const seriesPageUrl = await this.fetchSeriesPageUrl(ctx, imdbId);
     if (!seriesPageUrl) {

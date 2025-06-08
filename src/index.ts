@@ -14,7 +14,7 @@ import {
 } from './handler';
 import { ExtractorRegistry } from './extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
-import { envGet, envIsProd, Fetcher, getImdbIdFromTmdbId, StreamResolver, tmdbFetch } from './utils';
+import { envGet, envIsProd, Fetcher, StreamResolver, tmdbFetch, TmdbId } from './utils';
 
 const logger = winston.createLogger({
   transports: [
@@ -95,8 +95,7 @@ const cacheWarmup = async () => {
     }
   });
   for (const id of movieIds) {
-    const imdbId = await getImdbIdFromTmdbId(ctx, fetcher, { id, series: undefined, episode: undefined });
-    await streamResolver.resolve(ctx, handlers, 'movie', imdbId.id);
+    await streamResolver.resolve(ctx, handlers, 'movie', new TmdbId(id, undefined, undefined));
   }
   logger.info(`warmed up cache with ${movieIds.length} movies`, ctx);
 
@@ -110,8 +109,7 @@ const cacheWarmup = async () => {
     }
   });
   for (const id of tvShowIds) {
-    const imdbId = await getImdbIdFromTmdbId(ctx, fetcher, { id, series: 1, episode: 1 });
-    await streamResolver.resolve(ctx, handlers, 'series', `${imdbId.id}:1:1`);
+    await streamResolver.resolve(ctx, handlers, 'series', new TmdbId(id, 1, 1));
   }
   logger.info(`warmed up cache with ${tvShowIds.length} tv shows`, ctx);
 

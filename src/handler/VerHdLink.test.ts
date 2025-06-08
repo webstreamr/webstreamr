@@ -1,6 +1,6 @@
 import winston from 'winston';
 import { VerHdLink } from './VerHdLink';
-import { Fetcher } from '../utils';
+import { Fetcher, ImdbId } from '../utils';
 import { ExtractorRegistry } from '../extractor';
 import { Context } from '../types';
 jest.mock('../utils/Fetcher');
@@ -12,18 +12,13 @@ const handler = new VerHdLink(fetcher, new ExtractorRegistry(logger, fetcher));
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { es: 'on', mx: 'on' } };
 
 describe('VerHdLink', () => {
-  test('does not handle non imdb movies', async () => {
-    const streams = await handler.handle(ctx, 'movie', 'kitsu:123');
-    expect(streams).toHaveLength(0);
-  });
-
   test('handles non-existent movies gracefully', async () => {
-    const streams = await handler.handle(ctx, 'movie', 'tt12345678');
+    const streams = await handler.handle(ctx, 'movie', new ImdbId('tt12345678', undefined, undefined));
     expect(streams).toHaveLength(0);
   });
 
   test('handle titanic', async () => {
-    const streams = (await handler.handle(ctx, 'movie', 'tt0120338')).filter(stream => stream !== undefined);
+    const streams = (await handler.handle(ctx, 'movie', new ImdbId('tt0120338', undefined, undefined))).filter(stream => stream !== undefined);
     expect(streams).toMatchSnapshot();
   });
 });

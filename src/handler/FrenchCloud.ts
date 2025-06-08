@@ -1,7 +1,7 @@
 import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
 import { Handler } from './types';
-import { Fetcher, ImdbId } from '../utils';
+import { Fetcher, getImdbId, Id } from '../utils';
 import { ExtractorRegistry } from '../extractor';
 import { Context, CountryCode } from '../types';
 
@@ -22,12 +22,10 @@ export class FrenchCloud implements Handler {
     this.extractorRegistry = extractorRegistry;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: string) => {
-    if (!id.startsWith('tt')) {
-      return [];
-    }
+  readonly handle = async (ctx: Context, _type: string, id: Id) => {
+    const imdbId = await getImdbId(ctx, this.fetcher, id);
 
-    const pageUrl = new URL(`https://frenchcloud.cam/movie/${ImdbId.fromString(id).id}`);
+    const pageUrl = new URL(`https://frenchcloud.cam/movie/${imdbId.id}`);
     const html = await this.fetcher.text(ctx, pageUrl);
 
     const $ = cheerio.load(html);

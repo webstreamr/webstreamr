@@ -1,6 +1,6 @@
 import { ContentType } from 'stremio-addon-sdk';
 import { Handler } from './types';
-import { Fetcher, getTmdbIdFromImdbId, ImdbId, TmdbId } from '../utils';
+import { Fetcher, getTmdbId, Id } from '../utils';
 import { ExtractorRegistry } from '../extractor';
 import { Context, CountryCode } from '../types';
 
@@ -21,15 +21,8 @@ export class Frembed implements Handler {
     this.extractorRegistry = extractorRegistry;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: string) => {
-    let tmdbId: TmdbId;
-    if (id.startsWith('tt')) {
-      tmdbId = await getTmdbIdFromImdbId(ctx, this.fetcher, ImdbId.fromString(id));
-    } else if (/^\d+:/.test(id)) {
-      tmdbId = TmdbId.fromString(id);
-    } else {
-      return [];
-    }
+  readonly handle = async (ctx: Context, _type: string, id: Id) => {
+    const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
     const apiUrl = new URL(`https://frembed.space/api/series?id=${tmdbId.id}&sa=${tmdbId.series}&epi=${tmdbId.episode}&idType=tmdb`);
 

@@ -2,7 +2,7 @@ import { Request, Response, Router } from 'express';
 import winston from 'winston';
 import { Handler } from '../handler';
 import { Config, Context } from '../types';
-import { envIsProd, StreamResolver } from '../utils';
+import { envIsProd, ImdbId, StreamResolver } from '../utils';
 import { ContentType } from 'stremio-addon-sdk';
 
 export class StreamController {
@@ -37,7 +37,7 @@ export class StreamController {
 
     const handlers = this.handlers.filter(handler => handler.countryCodes.filter(countryCode => countryCode in ctx.config).length);
 
-    const { streams, ttl } = await this.streamResolver.resolve(ctx, handlers, type, id);
+    const { streams, ttl } = await this.streamResolver.resolve(ctx, handlers, type, ImdbId.fromString(id));
 
     if (ttl && envIsProd()) {
       res.setHeader('Cache-Control', `max-age=${ttl / 1000}, public`);
