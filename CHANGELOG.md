@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.25.3](https://github.com/webstreamr/webstreamr/compare/v0.25.2...v0.25.3) (2025-06-09)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @types/express to v5.0.3 ([#124](https://github.com/webstreamr/webstreamr/issues/124)) ([ffeb135](https://github.com/webstreamr/webstreamr/commit/ffeb135bcc077b1e3f752a5f70711a6a35ead624))
+* **deps:** update dependency @types/node to v22.15.30 ([#125](https://github.com/webstreamr/webstreamr/issues/125)) ([315588b](https://github.com/webstreamr/webstreamr/commit/315588bc78df0186c7701d20e31f04e1a2f13743))
+* **extractor:** don't use FlareSolverr for external URLs ([1ca4ea4](https://github.com/webstreamr/webstreamr/commit/1ca4ea4abe03065dcd93382533d9cf5cb13dacdf))
+* **fetcher:** only call FlareSolverr for known challenge blocks ([114c383](https://github.com/webstreamr/webstreamr/commit/114c383c54d374fd62232c3f851a7f2dfa9f21b6))
+
+
+### Bug Fixes
+
+* **deps:** update dependency cheerio to v1.1.0 ([#122](https://github.com/webstreamr/webstreamr/issues/122)) ([6c5dcec](https://github.com/webstreamr/webstreamr/commit/6c5dcec71eb4560dcca7ebbc7119be5b173d0e13))
+* **handler:** fix KinoKiste which is now StreamKiste ([cbec7c1](https://github.com/webstreamr/webstreamr/commit/cbec7c1a015625a5bb7af92484484b68a572ddbf))
+
+
+### Tests
+
+* use snapshots for manifest config tests ([6dff634](https://github.com/webstreamr/webstreamr/commit/6dff63429948b596a9a5bafd0c50861bc8bd4930))
+
 ## [0.25.2](https://github.com/webstreamr/webstreamr/compare/v0.25.1...v0.25.2) (2025-06-08)
 
 
