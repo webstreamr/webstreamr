@@ -23,27 +23,27 @@ describe('KinoGer', () => {
   });
 
   test('handle non-existent episode gracefully', async () => {
-    const streams = (await handler.handle(ctx, 'series', new ImdbId('tt2085059', 99, 99))).filter(stream => stream !== undefined);
+    const streams = await handler.handle(ctx, 'series', new ImdbId('tt2085059', 99, 99));
     expect(streams).toHaveLength(0);
   });
 
   test('handle imdb dead city s2e6', async () => {
-    const streams = (await handler.handle(ctx, 'series', new ImdbId('tt18546730', 2, 6))).filter(stream => stream !== undefined);
+    const streams = await handler.handle(ctx, 'series', new ImdbId('tt18546730', 2, 6));
     expect(streams).toMatchSnapshot();
   });
 
   test('handle missing episode imdb black mirror s3e4', async () => {
-    const streams = (await handler.handle(ctx, 'series', new ImdbId('tt2085059', 3, 4))).filter(stream => stream !== undefined);
+    const streams = await handler.handle(ctx, 'series', new ImdbId('tt2085059', 3, 4));
     expect(streams).toMatchSnapshot();
   });
 
   test('handle no fsst via brokeback mountain', async () => {
-    const streams = (await handler.handle(ctx, 'series', new ImdbId('tt0388795', undefined, undefined))).filter(stream => stream !== undefined);
+    const streams = await handler.handle(ctx, 'series', new ImdbId('tt0388795', undefined, undefined));
     expect(streams).toMatchSnapshot();
   });
 
   test('handle imdb blood and sinners', async () => {
-    const streams = (await handler.handle(ctx, 'series', new ImdbId('tt31193180', undefined, undefined))).filter(stream => stream !== undefined);
+    const streams = await handler.handle(ctx, 'series', new ImdbId('tt31193180', undefined, undefined));
     expect(streams).toMatchSnapshot();
   });
 });

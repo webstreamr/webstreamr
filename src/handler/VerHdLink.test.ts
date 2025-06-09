@@ -23,7 +23,7 @@ describe('VerHdLink', () => {
   });
 
   test('handle titanic', async () => {
-    const streams = (await handler.handle(ctx, 'movie', new ImdbId('tt0120338', undefined, undefined))).filter(stream => stream !== undefined);
+    const streams = await handler.handle(ctx, 'movie', new ImdbId('tt0120338', undefined, undefined));
     expect(streams).toMatchSnapshot();
   });
 });
