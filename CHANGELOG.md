@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.26.0](https://github.com/webstreamr/webstreamr/compare/v0.25.3...v0.26.0) (2025-06-09)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency typescript-eslint to v8.34.0 ([#127](https://github.com/webstreamr/webstreamr/issues/127)) ([b5a4de9](https://github.com/webstreamr/webstreamr/commit/b5a4de9c9e0ffee39ef5d99c07449c160f77bd82))
+
+
+### Features
+
+* **handler:** add support for KinoGer Fsst ([8382c00](https://github.com/webstreamr/webstreamr/commit/8382c009f4113d67a0192cdd7d43284a7266e0fd))
+
+
+### Bug Fixes
+
+* avoid potential queuing dead lock ([16e1aab](https://github.com/webstreamr/webstreamr/commit/16e1aab1c2ec896593b19364e7a611c6376f9c5e))
+
+
+### Code Refactoring
+
+* season instead of series ;) ([7ad61df](https://github.com/webstreamr/webstreamr/commit/7ad61df839091b9520bffdb4abff18b95e0715af))
+
+
+### Tests
+
+* remove usesless filter calls ([bc9c41f](https://github.com/webstreamr/webstreamr/commit/bc9c41f0054d04dbfd04af35116adc141bb8595e))
+
 ## [0.25.3](https://github.com/webstreamr/webstreamr/compare/v0.25.2...v0.25.3) (2025-06-09)
 
 
