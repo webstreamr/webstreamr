@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`buildManifest has checked handler with appropriate config 1`] = `
+[
+  {
+    "default": "checked",
+    "key": "de",
+    "title": "German 🇩🇪 (KinoKiste, MeineCloud)",
+    "type": "checkbox",
+  },
+  {
+    "key": "es",
+    "title": "Castilian Spanish 🇪🇸 (VerHdLink)",
+    "type": "checkbox",
+  },
+  {
+    "key": "mx",
+    "title": "Latin American Spanish 🇲🇽 (VerHdLink)",
+    "type": "checkbox",
+  },
+  {
+    "key": "excludeExternalUrls",
+    "title": "Exclude external URLs from results",
+    "type": "checkbox",
+  },
+]
+`;
+
+exports[`buildManifest has unchecked handler without a config 1`] = `
+[
+  {
+    "key": "de",
+    "title": "German 🇩🇪 (KinoKiste, MeineCloud)",
+    "type": "checkbox",
+  },
+  {
+    "key": "es",
+    "title": "Castilian Spanish 🇪🇸 (VerHdLink)",
+    "type": "checkbox",
+  },
+  {
+    "key": "mx",
+    "title": "Latin American Spanish 🇲🇽 (VerHdLink)",
+    "type": "checkbox",
+  },
+  {
+    "key": "excludeExternalUrls",
+    "title": "Exclude external URLs from results",
+    "type": "checkbox",
+  },
+]
+`;
