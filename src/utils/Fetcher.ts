@@ -253,9 +253,10 @@ export class Fetcher {
     const queueErrorLimit = init?.queueErrorLimit ?? 10;
 
     await this.lockFetchSlot(url.host, queueErrorLimit);
-    await this.waitForHostQueueCount(url.host, queueLimit, queueErrorLimit);
 
     try {
+      await this.waitForHostQueueCount(url.host, queueLimit, queueErrorLimit);
+
       return await this.fetchWithTimeout(ctx, url, init);
     } finally {
       await this.unlockFetchSlot(url.host);
