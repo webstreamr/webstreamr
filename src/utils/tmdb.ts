@@ -35,33 +35,33 @@ export const tmdbFetch = async (ctx: Context, fetcher: Fetcher, path: string): P
 const imdbTmdbMap = new Map<string, number>();
 export const getTmdbIdFromImdbId = async (ctx: Context, fetcher: Fetcher, imdbId: ImdbId): Promise<TmdbId> => {
   if (imdbTmdbMap.has(imdbId.id)) {
-    return new TmdbId(imdbTmdbMap.get(imdbId.id) as number, imdbId.series, imdbId.episode);
+    return new TmdbId(imdbTmdbMap.get(imdbId.id) as number, imdbId.season, imdbId.episode);
   }
 
   const response = await tmdbFetch(ctx, fetcher, `/find/${imdbId.id}?external_source=imdb_id`) as FindResponsePartial;
 
-  const id = (imdbId.series ? response.tv_results[0] : response.movie_results[0])?.id;
+  const id = (imdbId.season ? response.tv_results[0] : response.movie_results[0])?.id;
 
   if (!id) {
     throw new Error(`Could not get TMDB ID of IMDb ID "${imdbId.id}"`);
   }
 
   imdbTmdbMap.set(imdbId.id, id);
-  return new TmdbId(id, imdbId.series, imdbId.episode);
+  return new TmdbId(id, imdbId.season, imdbId.episode);
 };
 
 const tmdbImdbMap = new Map<number, string>();
 export const getImdbIdFromTmdbId = async (ctx: Context, fetcher: Fetcher, tmdbId: TmdbId): Promise<ImdbId> => {
   if (tmdbImdbMap.has(tmdbId.id)) {
-    return new ImdbId(tmdbImdbMap.get(tmdbId.id) as string, tmdbId.series, tmdbId.episode);
+    return new ImdbId(tmdbImdbMap.get(tmdbId.id) as string, tmdbId.season, tmdbId.episode);
   }
 
-  const type = tmdbId.series ? 'tv' : 'movie';
+  const type = tmdbId.season ? 'tv' : 'movie';
 
   const response = await tmdbFetch(ctx, fetcher, `/${type}/${tmdbId.id}/external_ids`) as ExternalIdsResponsePartial;
 
   tmdbImdbMap.set(tmdbId.id, response.imdb_id);
-  return new ImdbId(response.imdb_id, tmdbId.series, tmdbId.episode);
+  return new ImdbId(response.imdb_id, tmdbId.season, tmdbId.episode);
 };
 
 export const getTmdbMovieDetails = async (ctx: Context, fetcher: Fetcher, tmdbId: TmdbId): Promise<MovieDetailsResponsePartial> => {

@@ -2,26 +2,26 @@ import { ImdbId } from './ImdbId';
 
 describe('can be created from string', () => {
   test('splits id properly', () => {
-    const { id, series, episode } = ImdbId.fromString('tt2085059:2:4');
+    const { id, season, episode } = ImdbId.fromString('tt2085059:2:4');
 
     expect(id).toBe('tt2085059');
-    expect(series).toBe(2);
+    expect(season).toBe(2);
     expect(episode).toBe(4);
   });
 
   test('handles weird 0 prefixes in series and episode', () => {
-    const { id, series, episode } = ImdbId.fromString('tt2085059:02:04');
+    const { id, season, episode } = ImdbId.fromString('tt2085059:02:04');
 
     expect(id).toBe('tt2085059');
-    expect(series).toBe(2);
+    expect(season).toBe(2);
     expect(episode).toBe(4);
   });
 
   test('supports movie with missing series and episode', () => {
-    const { id, series, episode } = ImdbId.fromString('tt2085059');
+    const { id, season, episode } = ImdbId.fromString('tt2085059');
 
     expect(id).toBe('tt2085059');
-    expect(series).toBeUndefined();
+    expect(season).toBeUndefined();
     expect(episode).toBeUndefined();
   });
 

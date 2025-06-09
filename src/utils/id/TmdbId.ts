@@ -1,11 +1,11 @@
 export class TmdbId {
   public readonly id: number;
-  public readonly series: number | undefined;
+  public readonly season: number | undefined;
   public readonly episode: number | undefined;
 
-  constructor(id: number, series: number | undefined, episode: number | undefined) {
+  constructor(id: number, season: number | undefined, episode: number | undefined) {
     this.id = id;
-    this.series = series;
+    this.season = season;
     this.episode = episode;
   }
 
