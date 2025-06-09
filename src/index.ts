@@ -10,7 +10,7 @@ import {
   MeineCloud,
   MostraGuarda,
   Soaper,
-  VerHdLink,
+  VerHdLink, KinoGer,
 } from './handler';
 import { ExtractorRegistry } from './extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
@@ -38,8 +38,9 @@ const handlers: Handler[] = [
   new CineHDPlus(fetcher, extractorRegistry),
   new VerHdLink(fetcher, extractorRegistry),
   // DE
-  new StreamKiste(fetcher, extractorRegistry),
+  new KinoGer(fetcher, extractorRegistry),
   new MeineCloud(fetcher, extractorRegistry),
+  new StreamKiste(fetcher, extractorRegistry),
   // FR
   new Frembed(fetcher, extractorRegistry),
   new FrenchCloud(fetcher, extractorRegistry),
