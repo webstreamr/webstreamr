@@ -166,7 +166,7 @@ exports[`resolve returns sorted results 1`] = `
       },
       "name": "WebStreamr 1080P",
       "title": "📂 des-teufels-bad-2024
-💾 1.3 GB
+💾 1 GB
 🌐 German 🇩🇪
 🔗 Dropload",
       "url": "https://srv27.dropload.io/hls2/01/00197/lyo2h1snpe5c_h/master.m3u8?t=qTZsRGIMnUjXsQ4o2LRLlsT4tGG1AdJrRBRDGttNLPM&s=1746903744&e=14400&f=987607&i=0.0&sp=0&ii=130.61.236.204",
@@ -178,7 +178,7 @@ exports[`resolve returns sorted results 1`] = `
       },
       "name": "WebStreamr 720P",
       "title": "📂 the-devils-bath-2024-sd-sub-ita
-💾 1.1 GB
+💾 1 GB
 🌐 Italian 🇮🇹
 🔗 Dropload",
       "url": "https://srv34.dropload.io/hls2/01/00200/xsr90y2ltdyx_h/master.m3u8?t=avFOZ-10hDxo6__iaoSUrq7o4yY3ldLw6XDlXxpXF8E&s=1747059001&e=14400&f=1004116&srv=srv24&i=0.0&sp=0&ii=130.61.236.204&p1=srv24&p2=srv24",
@@ -190,7 +190,7 @@ exports[`resolve returns sorted results 1`] = `
       },
       "name": "WebStreamr 720P",
       "title": "📂 the devils bath 2024 sub ita
-💾 1.1 GB
+💾 1 GB
 🌐 Italian 🇮🇹
 🔗 SuperVideo",
       "url": "https://hfs279.serversicuro.cc/hls/,dnzpejj427g4a3gyvbth53rxqewqgqqzp3wr6zwutysvud7zroar3cb75d3q,.urlset/master.m3u8",
@@ -220,7 +220,7 @@ exports[`resolve returns sorted results 1`] = `
       },
       "name": "WebStreamr N/A",
       "title": "📂 des-teufels-bad-2024
-💾 755.03 MB
+💾 755 MB
 🌐 German 🇩🇪
 🔗 DoodStream",
       "url": "https://aa360cc.cloudatacdn.com/u5kjv4jxytd3sdgge5uogji5dg4huat2pxrm2qibdbm5rtpmbzgb5tornooa/k9wk0js17e~mocked-random-string?token=7uebebipnnhusa4xnyea1er4&expiry=639837296000",

@@ -188,7 +188,7 @@ export class StreamResolver {
     }
 
     if (urlResult.meta.bytes) {
-      titleLines.push(`💾 ${bytes.format(urlResult.meta.bytes, { unitSeparator: ' ' })}`);
+      titleLines.push(`💾 ${bytes.format(urlResult.meta.bytes, { decimalPlaces: 0, unitSeparator: ' ' })}`);
     }
 
     if (urlResult.meta.countryCode) {
