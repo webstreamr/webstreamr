@@ -1,6 +1,6 @@
 import winston from 'winston';
 import { buildManifest } from './manifest';
-import { KinoKiste, MeineCloud, VerHdLink } from '../handler';
+import { StreamKiste, MeineCloud, VerHdLink } from '../handler';
 import { Fetcher } from './Fetcher';
 import { ExtractorRegistry } from '../extractor';
 jest.mock('../utils/Fetcher');
@@ -14,7 +14,7 @@ describe('buildManifest', () => {
     const extractorRegistry = new ExtractorRegistry(logger, fetcher);
     const handlers = [
       new VerHdLink(fetcher, extractorRegistry),
-      new KinoKiste(fetcher, extractorRegistry),
+      new StreamKiste(fetcher, extractorRegistry),
       new MeineCloud(fetcher, extractorRegistry),
     ];
 
@@ -27,7 +27,7 @@ describe('buildManifest', () => {
     const extractorRegistry = new ExtractorRegistry(logger, fetcher);
     const handlers = [
       new VerHdLink(fetcher, extractorRegistry),
-      new KinoKiste(fetcher, extractorRegistry),
+      new StreamKiste(fetcher, extractorRegistry),
       new MeineCloud(fetcher, extractorRegistry),
     ];
     const manifest = buildManifest(handlers, { de: 'on' });

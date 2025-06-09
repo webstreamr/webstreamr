@@ -1,5 +1,5 @@
 import winston from 'winston';
-import { KinoKiste } from './KinoKiste';
+import { StreamKiste } from './StreamKiste';
 import { ExtractorRegistry } from '../extractor';
 import { Fetcher, ImdbId } from '../utils';
 import { Context } from '../types';
@@ -10,11 +10,11 @@ const logger = winston.createLogger({ transports: [new winston.transports.Consol
 const fetcher = new Fetcher();
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on' } };
 
-describe('KinoKiste', () => {
-  let handler: KinoKiste;
+describe('StreamKiste', () => {
+  let handler: StreamKiste;
 
   beforeEach(() => {
-    handler = new KinoKiste(fetcher, new ExtractorRegistry(logger, fetcher));
+    handler = new StreamKiste(fetcher, new ExtractorRegistry(logger, fetcher));
   });
 
   test('handles non-existent series gracefully', async () => {

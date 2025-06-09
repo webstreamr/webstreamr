@@ -5,7 +5,7 @@ exports[`buildManifest has checked handler with appropriate config 1`] = `
   {
     "default": "checked",
     "key": "de",
-    "title": "German 🇩🇪 (KinoKiste, MeineCloud)",
+    "title": "German 🇩🇪 (StreamKiste, MeineCloud)",
     "type": "checkbox",
   },
   {
@@ -30,7 +30,7 @@ exports[`buildManifest has unchecked handler without a config 1`] = `
 [
   {
     "key": "de",
-    "title": "German 🇩🇪 (KinoKiste, MeineCloud)",
+    "title": "German 🇩🇪 (StreamKiste, MeineCloud)",
     "type": "checkbox",
   },
   {

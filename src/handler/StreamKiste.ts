@@ -5,10 +5,10 @@ import { ImdbId, Fetcher, getImdbId, Id } from '../utils';
 import { ExtractorRegistry } from '../extractor';
 import { Context, CountryCode } from '../types';
 
-export class KinoKiste implements Handler {
-  readonly id = 'kinokiste';
+export class StreamKiste implements Handler {
+  readonly id = 'streamkiste';
 
-  readonly label = 'KinoKiste';
+  readonly label = 'StreamKiste';
 
   readonly contentTypes: ContentType[] = ['series'];
 
@@ -42,17 +42,17 @@ export class KinoKiste implements Handler {
         .children('[data-link]')
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
-        .filter(url => !url.host.match(/kinokiste/))
+        .filter(url => !url.host.match(/streamkiste/))
         .map(url => this.extractorRegistry.handle({ ...ctx, referer: seriesPageUrl }, url, { countryCode: 'de', title: `${title.trim()} ${imdbId.series}x${imdbId.episode}` })),
     );
   };
 
   private fetchSeriesPageUrl = async (ctx: Context, imdbId: ImdbId): Promise<URL | undefined> => {
-    const html = await this.fetcher.text(ctx, new URL(`https://kinokiste.live/serien/?do=search&subaction=search&story=${imdbId.id}`));
+    const html = await this.fetcher.text(ctx, new URL(`https://streamkiste.taxi/?story=${imdbId.id}&do=search&subaction=search`));
 
     const $ = cheerio.load(html);
 
-    const url = $('.item-video a[href]:first')
+    const url = $('.res_item a[href]:first')
       .map((_i, el) => $(el).attr('href'))
       .get(0);
 

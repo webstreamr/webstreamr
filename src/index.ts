@@ -6,7 +6,7 @@ import {
   Frembed,
   FrenchCloud,
   Handler,
-  KinoKiste,
+  StreamKiste,
   MeineCloud,
   MostraGuarda,
   Soaper,
@@ -38,7 +38,7 @@ const handlers: Handler[] = [
   new CineHDPlus(fetcher, extractorRegistry),
   new VerHdLink(fetcher, extractorRegistry),
   // DE
-  new KinoKiste(fetcher, extractorRegistry),
+  new StreamKiste(fetcher, extractorRegistry),
   new MeineCloud(fetcher, extractorRegistry),
   // FR
   new Frembed(fetcher, extractorRegistry),
