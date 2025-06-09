@@ -41,6 +41,7 @@ interface FlareSolverrResult {
 }
 
 type CustomRequestInit = RequestInit & {
+  noFlareSolverr?: boolean;
   queueLimit?: number;
   queueErrorLimit?: number;
   timeout?: number;
@@ -95,7 +96,7 @@ export class Fetcher {
     };
   };
 
-  private readonly handleHttpCacheItem = async (ctx: Context, httpCacheItem: HttpCacheItem, url: URL): Promise<HttpCacheItem> => {
+  private readonly handleHttpCacheItem = async (ctx: Context, httpCacheItem: HttpCacheItem, url: URL, init?: CustomRequestInit): Promise<HttpCacheItem> => {
     if (httpCacheItem.status && httpCacheItem.status >= 200 && httpCacheItem.status <= 299) {
       return httpCacheItem;
     }
@@ -107,8 +108,9 @@ export class Fetcher {
     const responseHeaders = httpCacheItem.policy.responseHeaders();
 
     if (httpCacheItem.policy.responseHeaders()['cf-mitigated'] === 'challenge') {
+      const useFlareSolverr = init?.noFlareSolverr ?? true;
       const flareSolverrEndpoint = envGet('FLARESOLVERR_ENDPOINT');
-      if (!flareSolverrEndpoint) {
+      if (!useFlareSolverr || !flareSolverrEndpoint) {
         throw new BlockedError('cloudflare_challenge', httpCacheItem.policy.responseHeaders());
       }
 
@@ -183,7 +185,7 @@ export class Fetcher {
     let httpCacheItem: HttpCacheItem | undefined = this.httpCache.get(url.href);
     if (httpCacheItem) {
       this.logger.info(`Cached fetch ${request.method} ${url}`, ctx);
-      return this.handleHttpCacheItem(ctx, httpCacheItem, url);
+      return this.handleHttpCacheItem(ctx, httpCacheItem, url, init);
     }
 
     const response = await this.queuedFetch(ctx, url, newInit);
@@ -198,7 +200,7 @@ export class Fetcher {
       this.httpCache.set(url.href, httpCacheItem, { ttl });
     }
 
-    return this.handleHttpCacheItem(ctx, httpCacheItem, url);
+    return this.handleHttpCacheItem(ctx, httpCacheItem, url, init);
   };
 
   private readonly fetchWithTimeout = async (ctx: Context, url: URL, init?: CustomRequestInit): Promise<Response> => {

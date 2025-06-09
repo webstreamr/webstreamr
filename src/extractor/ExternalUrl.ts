@@ -19,7 +19,7 @@ export class ExternalUrl implements Extractor {
 
   readonly extract = async (ctx: Context, url: URL, meta: Meta) => {
     // We only want to make sure that the URL is accessible
-    await this.fetcher.head(ctx, url);
+    await this.fetcher.head(ctx, url, { noFlareSolverr: true });
 
     return [
       {
