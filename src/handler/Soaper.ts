@@ -34,19 +34,19 @@ export class Soaper implements Handler {
       return [];
     }
 
-    if (tmdbId.series) {
+    if (tmdbId.season) {
       const html = await this.fetcher.text(ctx, pageUrl);
 
       const $ = cheerio.load(html);
 
-      const episodePageHref = $(`.alert:has(h4:contains("Season${tmdbId.series}")) a:contains("${tmdbId.episode}.")`).attr('href');
+      const episodePageHref = $(`.alert:has(h4:contains("Season${tmdbId.season}")) a:contains("${tmdbId.episode}.")`).attr('href');
       if (!episodePageHref) {
         return [];
       }
 
       const episodeUrl = new URL(episodePageHref, this.baseUrl);
 
-      return [await this.extractorRegistry.handle({ ...ctx, referer: episodeUrl }, episodeUrl, { countryCode: 'en', title: `${keyword} ${tmdbId.series}x${tmdbId.episode}` })];
+      return [await this.extractorRegistry.handle({ ...ctx, referer: episodeUrl }, episodeUrl, { countryCode: 'en', title: `${keyword} ${tmdbId.season}x${tmdbId.episode}` })];
     }
 
     return [await this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, pageUrl, { countryCode: 'en', title: `${keyword} (${year})` })];
@@ -64,7 +64,7 @@ export class Soaper implements Handler {
   };
 
   private readonly getKeywordYearAndHrefPrefix = async (ctx: Context, tmdbId: TmdbId): Promise<[string, number, string]> => {
-    if (tmdbId.series) {
+    if (tmdbId.season) {
       const tmdbDetails = await getTmdbTvDetails(ctx, this.fetcher, tmdbId);
 
       return [tmdbDetails.name, (new Date(tmdbDetails.first_air_date)).getFullYear(), '/tv_'];

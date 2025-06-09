@@ -24,7 +24,7 @@ export class Frembed implements Handler {
   readonly handle = async (ctx: Context, _type: string, id: Id) => {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
-    const apiUrl = new URL(`https://frembed.space/api/series?id=${tmdbId.id}&sa=${tmdbId.series}&epi=${tmdbId.episode}&idType=tmdb`);
+    const apiUrl = new URL(`https://frembed.space/api/series?id=${tmdbId.id}&sa=${tmdbId.season}&epi=${tmdbId.episode}&idType=tmdb`);
 
     const json = JSON.parse(await this.fetcher.text(ctx, apiUrl));
 
@@ -40,7 +40,7 @@ export class Frembed implements Handler {
     }
 
     return Promise.all(
-      urls.map(url => this.extractorRegistry.handle({ ...ctx, referer: apiUrl }, url, { countryCode: 'fr', title: `${json['title']} ${tmdbId.series}x${tmdbId.episode}` })),
+      urls.map(url => this.extractorRegistry.handle({ ...ctx, referer: apiUrl }, url, { countryCode: 'fr', title: `${json['title']} ${tmdbId.season}x${tmdbId.episode}` })),
     );
   };
 }

@@ -34,8 +34,8 @@ export class Eurostreaming implements Handler {
 
     const $ = cheerio.load(html);
 
-    const mainDataLinkElements = $(`[data-num="${imdbId.series}x${imdbId.episode}"][data-link!="#"]`);
-    const mirrorDataLinkElements = $(`[data-num="${imdbId.series}x${imdbId.episode}"]`)
+    const mainDataLinkElements = $(`[data-num="${imdbId.season}x${imdbId.episode}"][data-link!="#"]`);
+    const mirrorDataLinkElements = $(`[data-num="${imdbId.season}x${imdbId.episode}"]`)
       .siblings('.mirrors')
       .children('[data-link!="#"]');
 
@@ -46,7 +46,7 @@ export class Eurostreaming implements Handler {
       .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
       .toArray()
       .filter(url => !url.host.match(/eurostreaming/))
-      .map(url => this.extractorRegistry.handle({ ...ctx, referer: seriesPageUrl }, url, { countryCode: 'it', title: `${title.trim()} ${imdbId.series}x${imdbId.episode}` })),
+      .map(url => this.extractorRegistry.handle({ ...ctx, referer: seriesPageUrl }, url, { countryCode: 'it', title: `${title.trim()} ${imdbId.season}x${imdbId.episode}` })),
     );
   };
 
