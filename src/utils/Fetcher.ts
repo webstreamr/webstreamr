@@ -106,10 +106,7 @@ export class Fetcher {
 
     const responseHeaders = httpCacheItem.policy.responseHeaders();
 
-    if (
-      httpCacheItem.policy.responseHeaders()['cf-mitigated'] === 'challenge'
-      || (httpCacheItem.status === 403 && httpCacheItem.policy.responseHeaders()['server'] === 'cloudflare')
-    ) {
+    if (httpCacheItem.policy.responseHeaders()['cf-mitigated'] === 'challenge') {
       const flareSolverrEndpoint = envGet('FLARESOLVERR_ENDPOINT');
       if (!flareSolverrEndpoint) {
         throw new BlockedError('cloudflare_challenge', httpCacheItem.policy.responseHeaders());
