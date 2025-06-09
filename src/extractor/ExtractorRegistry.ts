@@ -5,6 +5,7 @@ import { Context, Meta, UrlResult } from '../types';
 import { Fetcher } from '../utils';
 import { DoodStream } from './DoodStream';
 import { Dropload } from './Dropload';
+import { Fsst } from './Fsst';
 import { SuperVideo } from './SuperVideo';
 import { Soaper } from './Soaper';
 import { ExternalUrl } from './ExternalUrl';
@@ -20,6 +21,7 @@ export class ExtractorRegistry {
     this.extractors = [
       new DoodStream(fetcher),
       new Dropload(fetcher),
+      new Fsst(fetcher),
       new SuperVideo(fetcher),
       new Soaper(fetcher),
       new ExternalUrl(fetcher), // fallback extractor which must come last

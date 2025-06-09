@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`KinoGer handle imdb blood and sinners 1`] = `
+[
+  [
+    {
+      "label": "Fsst",
+      "meta": {
+        "countryCode": "de",
+        "height": 360,
+        "title": "Blood & Sinners (2025)",
+      },
+      "sourceId": "fsst_de_0",
+      "url": "https://www.secvideo1.online/get_file/16/a135ab46b1243e41c0282c16d7cdcbcd3e54de0f28/900000/900576/900576_360p.mp4/",
+    },
+    {
+      "label": "Fsst",
+      "meta": {
+        "countryCode": "de",
+        "height": 720,
+        "title": "Blood & Sinners (2025)",
+      },
+      "sourceId": "fsst_de_1",
+      "url": "https://www.secvideo1.online/get_file/16/801a42b7ac11f7e08101fe8c3cb5370470f5f91590/900000/900576/900576_720p.mp4/",
+    },
+    {
+      "label": "Fsst",
+      "meta": {
+        "countryCode": "de",
+        "height": 1080,
+        "title": "Blood & Sinners (2025)",
+      },
+      "sourceId": "fsst_de_2",
+      "url": "https://www.secvideo1.online/get_file/16/fae180e05d8d7af50fff44c7a24232b522db464935/900000/900576/900576.mp4/",
+    },
+  ],
+]
+`;
+
+exports[`KinoGer handle imdb dead city s2e6 1`] = `
+[
+  [
+    {
+      "label": "Fsst",
+      "meta": {
+        "countryCode": "de",
+        "height": 360,
+        "title": "The Walking Dead: Dead City 2x6",
+      },
+      "sourceId": "fsst_de_0",
+      "url": "https://www.secvideo1.online/get_file/9/99510c9abde68b5e82b08cd239172405b06f84c9e5/901000/901994/901994_360p.mp4/",
+    },
+    {
+      "label": "Fsst",
+      "meta": {
+        "countryCode": "de",
+        "height": 720,
+        "title": "The Walking Dead: Dead City 2x6",
+      },
+      "sourceId": "fsst_de_1",
+      "url": "https://www.secvideo1.online/get_file/9/868ae0229e543e7a9a6f7cf4b3df88f460a1bfc444/901000/901994/901994_720p.mp4/",
+    },
+    {
+      "label": "Fsst",
+      "meta": {
+        "countryCode": "de",
+        "height": 1080,
+        "title": "The Walking Dead: Dead City 2x6",
+      },
+      "sourceId": "fsst_de_2",
+      "url": "https://www.secvideo1.online/get_file/9/44ff1bf6024db32840054f00029afb114120b91353/901000/901994/901994.mp4/",
+    },
+  ],
+]
+`;
+
+exports[`KinoGer handle missing episode imdb black mirror s3e4 1`] = `[]`;
+
+exports[`KinoGer handle no fsst via brokeback mountain 1`] = `[]`;
