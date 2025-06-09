@@ -23,7 +23,7 @@ describe('StreamKiste', () => {
   });
 
   test('handle imdb black mirror s2e4', async () => {
-    const streams = (await handler.handle(ctx, 'series', new ImdbId('tt2085059', 2, 4))).filter(stream => stream !== undefined);
+    const streams = await handler.handle(ctx, 'series', new ImdbId('tt2085059', 2, 4));
     expect(streams).toMatchSnapshot();
   });
 });

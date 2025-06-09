@@ -18,12 +18,12 @@ describe('Frembed', () => {
   });
 
   test('handle imdb black mirror s4e2', async () => {
-    const streams = (await handler.handle(ctx, 'series', new ImdbId('tt2085059', 4, 2))).filter(stream => stream !== undefined);
+    const streams = await handler.handle(ctx, 'series', new ImdbId('tt2085059', 4, 2));
     expect(streams).toMatchSnapshot();
   });
 
   test('handle tmdb black mirror s4e2', async () => {
-    const streams = (await handler.handle(ctx, 'series', new TmdbId(42009, 4, 2))).filter(stream => stream !== undefined);
+    const streams = await handler.handle(ctx, 'series', new TmdbId(42009, 4, 2));
     expect(streams).toMatchSnapshot();
   });
 });

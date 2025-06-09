@@ -23,20 +23,20 @@ describe('CineHDPlus', () => {
   });
 
   test('handle imdb black mirror s2e3 (mx)', async () => {
-    const streams = (await handler.handle(ctx, 'series', new ImdbId('tt2085059', 2, 3))).filter(stream => stream !== undefined);
+    const streams = await handler.handle(ctx, 'series', new ImdbId('tt2085059', 2, 3));
     expect(streams).toMatchSnapshot();
   });
 
   test('handle imdb babylon 5 s2e3 (es)', async () => {
-    const streams = (await handler.handle(ctx, 'series', new ImdbId('tt0105946', 2, 3))).filter(stream => stream !== undefined);
+    const streams = await handler.handle(ctx, 'series', new ImdbId('tt0105946', 2, 3));
     expect(streams).toMatchSnapshot();
   });
 
   test('does not return mx results for es and vice-versa', async () => {
-    const streamsEs = (await handler.handle({ ...ctx, ...{ config: { es: 'on' } } }, 'series', new ImdbId('tt2085059', 2, 3))).filter(stream => stream !== undefined);
+    const streamsEs = await handler.handle({ ...ctx, ...{ config: { es: 'on' } } }, 'series', new ImdbId('tt2085059', 2, 3));
     expect(streamsEs).toHaveLength(0);
 
-    const streamsMx = (await handler.handle({ ...ctx, ...{ config: { mx: 'on' } } }, 'series', new ImdbId('tt0105946', 2, 3))).filter(stream => stream !== undefined);
+    const streamsMx = await handler.handle({ ...ctx, ...{ config: { mx: 'on' } } }, 'series', new ImdbId('tt0105946', 2, 3));
     expect(streamsMx).toHaveLength(0);
   });
 });
