@@ -25,6 +25,9 @@ const config: Config = {
   resetModules: true,
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   testEnvironment: 'node',
+  testEnvironmentOptions: {
+    globalsCleanup: 'on',
+  },
   transform: {
     '^.+.tsx?$': ['ts-jest', {
       tsconfig: 'tsconfig.dev.json',
