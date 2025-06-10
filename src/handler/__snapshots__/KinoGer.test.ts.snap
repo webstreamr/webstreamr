@@ -34,6 +34,32 @@ exports[`KinoGer handle imdb blood and sinners 1`] = `
       "url": "https://www.secvideo1.online/get_file/16/fae180e05d8d7af50fff44c7a24232b522db464935/900000/900576/900576.mp4/",
     },
   ],
+  [
+    {
+      "error": [Error: Fetcher error: 404: Not Found],
+      "isExternal": true,
+      "label": "kinoger.pw",
+      "meta": {
+        "countryCode": "de",
+        "title": "Blood & Sinners (2025)",
+      },
+      "sourceId": "external",
+      "url": "https://kinoger.pw/e/6zeREaMlrqREZPa",
+    },
+  ],
+  [
+    {
+      "isExternal": true,
+      "label": "kinoger.re",
+      "meta": {
+        "countryCode": "de",
+        "title": "Blood & Sinners (2025)",
+      },
+      "sourceId": "external_de",
+      "ttl": 3600000,
+      "url": "https://kinoger.re/#ge5fhb",
+    },
+  ],
 ]
 `;
 
@@ -49,6 +75,19 @@ exports[`KinoGer handle imdb dead city s2e5 1`] = `
       "sourceId": "supervideo_de",
       "ttl": 900000,
       "url": "https://hfs308.serversicuro.cc/hls/,dnzpe7rf5xg4a3gyva3h5orlyw23xosfzwunl5xbmjpz3lspgri6ztlr5dia,.urlset/master.m3u8",
+    },
+  ],
+  [
+    {
+      "isExternal": true,
+      "label": "kinoger.re",
+      "meta": {
+        "countryCode": "de",
+        "title": "The Walking Dead: Dead City 2x5",
+      },
+      "sourceId": "external_de",
+      "ttl": 3600000,
+      "url": "https://kinoger.re/#x6tsx9",
     },
   ],
 ]
@@ -88,9 +127,40 @@ exports[`KinoGer handle imdb dead city s2e6 1`] = `
       "url": "https://www.secvideo1.online/get_file/9/44ff1bf6024db32840054f00029afb114120b91353/901000/901994/901994.mp4/",
     },
   ],
+  [
+    {
+      "isExternal": true,
+      "label": "kinoger.re",
+      "meta": {
+        "countryCode": "de",
+        "title": "The Walking Dead: Dead City 2x6",
+      },
+      "sourceId": "external_de",
+      "ttl": 3600000,
+      "url": "https://kinoger.re/#ep1tcf",
+    },
+  ],
 ]
 `;
 
 exports[`KinoGer handle missing episode imdb black mirror s3e4 1`] = `[]`;
 
-exports[`KinoGer handle no fsst via brokeback mountain 1`] = `[]`;
+exports[`KinoGer handle no fsst via brokeback mountain 1`] = `
+[
+  [
+    {
+      "label": "DoodStream",
+      "meta": {
+        "countryCode": "de",
+        "title": "Brokeback Mountain (2005)",
+      },
+      "requestHeaders": {
+        "Referer": "http://dood.to/",
+      },
+      "sourceId": "doodstream_de",
+      "ttl": 900000,
+      "url": "https://ijs155l.cloudatacdn.com/u5kj2rz5qtdlsdgge4hrgj2flz5cjodea6auatveaphxodkbf5n5mtrbp7aq/ntfyct66ci~mocked-random-string?token=fbsg3301phkef2s4swo8bssg&expiry=639837296000",
+    },
+  ],
+]
+`;

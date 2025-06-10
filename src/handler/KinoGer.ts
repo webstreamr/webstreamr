@@ -34,26 +34,18 @@ export class KinoGer implements Handler {
       return [];
     }
 
-    const html = await this.fetcher.text(ctx, pageUrl);
-
-    const fsstJs = html.match(/fsst\.show\(.*/);
-    if (!fsstJs) {
-      return [];
-    }
-
+    const title = tmdbId.season ? `${keyword} ${tmdbId.season}x${tmdbId.episode}` : `${keyword} (${year})`;
     const seasonIndex = (tmdbId.season ?? 1) - 1;
     const episodeIndex = (tmdbId.episode ?? 1) - 1;
 
-    const episodeUrl = this.findEpisodeUrlInShowJs(fsstJs[0], seasonIndex, episodeIndex);
-    if (!episodeUrl) {
-      return [];
-    }
+    const html = await this.fetcher.text(ctx, pageUrl);
 
-    const title = tmdbId.season ? `${keyword} ${tmdbId.season}x${tmdbId.episode}` : `${keyword} (${year})`;
-
-    return [
-      await this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, episodeUrl, { countryCode: 'de', title }),
-    ];
+    return Promise.all(
+      Array.from(html.matchAll(/\.show\(.*/g))
+        .map(showJsMatch => this.findEpisodeUrlInShowJs(showJsMatch[0], seasonIndex, episodeIndex))
+        .filter(url => url !== undefined && !['kinoger.be', 'kinoger.ru'].includes(url.host))
+        .map(async url => await this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, url as URL, { countryCode: 'de', title })),
+    );
   };
 
   private readonly findEpisodeUrlInShowJs = (showJs: string, seasonIndex: number, episodeIndex: number): URL | undefined => {
