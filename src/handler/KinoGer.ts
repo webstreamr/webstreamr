@@ -58,7 +58,7 @@ export class KinoGer implements Handler {
       episodeUrl = new URL(url.replaceAll('[', '').replaceAll('\'', '').trim());
     });
 
-    if (!episodeUrl || !episodeUrl.host.includes('fsst')) {
+    if (!episodeUrl) {
       return [];
     }
 

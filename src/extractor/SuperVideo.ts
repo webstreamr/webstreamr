@@ -24,7 +24,11 @@ export class SuperVideo implements Extractor {
   readonly extract = async (ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> => {
     const html = await this.fetcher.text(ctx, url);
 
-    const heightAndSizeMatch = html.match(/\d{3,}x(\d{3,}), ([\d.]+ ?[GM]B)/) as string[];
+    if (html.includes('This video can be watched as embed only')) {
+      return await this.extract(ctx, new URL(`/e${url.pathname}`, url.origin), meta);
+    }
+
+    const heightAndSizeMatch = html.match(/\d{3,}x(\d{3,}), ([\d.]+ ?[GM]B)/);
 
     const $ = cheerio.load(html);
     const title = $('title').text().trim().replace(/^Watch /, '').trim();
@@ -36,8 +40,10 @@ export class SuperVideo implements Extractor {
         sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
         ttl: this.ttl,
         meta: {
-          bytes: bytes.parse(heightAndSizeMatch[2] as string) as number,
-          height: parseInt(heightAndSizeMatch[1] as string) as number,
+          ...(heightAndSizeMatch && {
+            bytes: bytes.parse(heightAndSizeMatch[2] as string) as number,
+            height: parseInt(heightAndSizeMatch[1] as string) as number,
+          }),
           title,
           ...meta,
         },

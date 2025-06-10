@@ -27,6 +27,11 @@ describe('KinoGer', () => {
     expect(streams).toHaveLength(0);
   });
 
+  test('handle imdb dead city s2e5', async () => {
+    const streams = await handler.handle(ctx, 'series', new ImdbId('tt18546730', 2, 5));
+    expect(streams).toMatchSnapshot();
+  });
+
   test('handle imdb dead city s2e6', async () => {
     const streams = await handler.handle(ctx, 'series', new ImdbId('tt18546730', 2, 6));
     expect(streams).toMatchSnapshot();
