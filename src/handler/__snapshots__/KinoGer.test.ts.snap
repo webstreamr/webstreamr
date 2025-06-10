@@ -49,15 +49,17 @@ exports[`KinoGer handle imdb blood and sinners 1`] = `
   ],
   [
     {
-      "isExternal": true,
-      "label": "kinoger.re",
+      "label": "KinoGer",
       "meta": {
         "countryCode": "de",
-        "title": "Blood & Sinners (2025)",
+        "title": "Blood.and.Sinners.2025.mkv",
       },
-      "sourceId": "external_de",
-      "ttl": 3600000,
-      "url": "https://kinoger.re/#ge5fhb",
+      "requestHeaders": {
+        "Referer": "https://kinoger.com/stream/18809-blood-sinners-stream.html",
+      },
+      "sourceId": "kinoger_de",
+      "ttl": 900000,
+      "url": "https://scvo.mazedukhkortfj.sbs/v4/bgm/ge5fhb/cf-master.txt?v=1748766126",
     },
   ],
 ]
@@ -79,15 +81,18 @@ exports[`KinoGer handle imdb dead city s2e5 1`] = `
   ],
   [
     {
-      "isExternal": true,
-      "label": "kinoger.re",
+      "label": "KinoGer",
       "meta": {
         "countryCode": "de",
-        "title": "The Walking Dead: Dead City 2x5",
+        "height": 1080,
+        "title": "the.walking.dead.dead.city.s02e05.german.dl.1080p.web.x264-wvf.mkv",
       },
-      "sourceId": "external_de",
-      "ttl": 3600000,
-      "url": "https://kinoger.re/#x6tsx9",
+      "requestHeaders": {
+        "Referer": "https://kinoger.com/stream/12971-the-walking-dead-dead-city-stream.html",
+      },
+      "sourceId": "kinoger_de",
+      "ttl": 900000,
+      "url": "https://sskt.amberwels.sbs/v4/vz1/x6tsx9/cf-master.txt?v=1748957184",
     },
   ],
 ]
@@ -129,15 +134,18 @@ exports[`KinoGer handle imdb dead city s2e6 1`] = `
   ],
   [
     {
-      "isExternal": true,
-      "label": "kinoger.re",
+      "label": "KinoGer",
       "meta": {
         "countryCode": "de",
-        "title": "The Walking Dead: Dead City 2x6",
+        "height": 1080,
+        "title": "the.walking.dead.dead.city.s02e06.german.dl.1080p.web.x264-wvf.mkv",
       },
-      "sourceId": "external_de",
-      "ttl": 3600000,
-      "url": "https://kinoger.re/#ep1tcf",
+      "requestHeaders": {
+        "Referer": "https://kinoger.com/stream/12971-the-walking-dead-dead-city-stream.html",
+      },
+      "sourceId": "kinoger_de",
+      "ttl": 900000,
+      "url": "https://slob.feistjmyrodne.sbs/v4/vz1/ep1tcf/cf-master.txt?v=1749488554",
     },
   ],
 ]

@@ -7,6 +7,7 @@ import { DoodStream } from './DoodStream';
 import { Dropload } from './Dropload';
 import { Fsst } from './Fsst';
 import { SuperVideo } from './SuperVideo';
+import { KinoGer } from './KinoGer';
 import { Soaper } from './Soaper';
 import { ExternalUrl } from './ExternalUrl';
 import { NotFoundError } from '../error';
@@ -23,6 +24,7 @@ export class ExtractorRegistry {
       new Dropload(fetcher),
       new Fsst(fetcher),
       new SuperVideo(fetcher),
+      new KinoGer(fetcher),
       new Soaper(fetcher),
       new ExternalUrl(fetcher), // fallback extractor which must come last
     ];
