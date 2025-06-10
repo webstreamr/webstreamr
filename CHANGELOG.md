@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.27.0](https://github.com/webstreamr/webstreamr/compare/v0.26.1...v0.27.0) (2025-06-10)
+
+
+### Miscellaneous Chores
+
+* **extractor:** add DoodStream height guessing based on title ([b940df5](https://github.com/webstreamr/webstreamr/commit/b940df5bc095ed9c5537271321abfcd360909531))
+
+
+### Features
+
+* **extractor:** implement KinoGer extractor ([262abde](https://github.com/webstreamr/webstreamr/commit/262abde2fcb5a13734d6338be70a9bbf9e988c92))
+
+
+### Bug Fixes
+
+* **extractor:** prefer using extractor title ([041c04e](https://github.com/webstreamr/webstreamr/commit/041c04e327baca327a1de84ecfc38e2f602e8c07))
+
 ## [0.26.1](https://github.com/webstreamr/webstreamr/compare/v0.26.0...v0.26.1) (2025-06-10)
 
 
