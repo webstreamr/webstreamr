@@ -18,6 +18,8 @@ export class Fsst implements Extractor {
 
   readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/fsst/);
 
+  readonly normalize = (url: URL): URL => url;
+
   readonly extract = async (ctx: Context, url: URL, meta: Meta) => {
     const html = await this.fetcher.text(ctx, url);
 

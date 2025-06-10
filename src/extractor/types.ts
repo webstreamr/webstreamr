@@ -9,5 +9,7 @@ export interface Extractor {
 
   readonly supports: (ctx: Context, url: URL) => boolean;
 
+  readonly normalize: (url: URL) => URL;
+
   readonly extract: (ctx: Context, url: URL, meta: Meta) => Promise<UrlResult[]>;
 }

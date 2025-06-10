@@ -17,6 +17,8 @@ export class ExternalUrl implements Extractor {
 
   readonly supports = (ctx: Context, url: URL): boolean => !('excludeExternalUrls' in ctx.config) && null !== url.host.match(/.*/);
 
+  readonly normalize = (url: URL): URL => url;
+
   readonly extract = async (ctx: Context, url: URL, meta: Meta) => {
     // We only want to make sure that the URL is accessible
     await this.fetcher.head(ctx, url, { noFlareSolverr: true });

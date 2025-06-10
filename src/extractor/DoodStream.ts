@@ -20,11 +20,14 @@ export class DoodStream implements Extractor {
 
   readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/dood|do[0-9]go/);
 
-  readonly extract = async (ctx: Context, url: URL, meta: Meta) => {
+  readonly normalize = (url: URL): URL => {
     const videoId = url.pathname.split('/').slice(-1)[0] as string;
-    const normalizedUrl = new URL(`http://dood.to/e/${videoId}`);
 
-    const html = await this.fetcher.text(ctx, new URL(normalizedUrl));
+    return new URL(`http://dood.to/e/${videoId}`);
+  };
+
+  readonly extract = async (ctx: Context, url: URL, meta: Meta) => {
+    const html = await this.fetcher.text(ctx, new URL(url));
 
     const passMd5Match = html.match(/\/pass_md5\/[\w-]+\/([\w-]+)/);
     if (!passMd5Match) {

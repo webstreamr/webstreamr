@@ -22,6 +22,8 @@ export class Soaper implements Extractor {
 
   readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/soaper/) && null !== url.pathname.match(/^\/(episode|movie)_/);
 
+  readonly normalize = (url: URL): URL => url;
+
   readonly extract = async (ctx: Context, url: URL, meta: Meta) => {
     const movieOrEpisodeId = (url.pathname.match(/\/\w+_(\w+)/) as string[])[1] as string;
 

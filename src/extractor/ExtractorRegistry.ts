@@ -30,23 +30,25 @@ export class ExtractorRegistry {
   }
 
   readonly handle = async (ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> => {
-    let urlResults = this.urlResultCache.get(url.href) ?? [];
-    if (this.urlResultCache.has(url.href)) {
-      return urlResults.map(urlResult => ({ ...urlResult, ttl: this.urlResultCache.getRemainingTTL(url.href) }));
-    }
-
     const extractor = this.extractors.find(extractor => extractor.supports(ctx, url));
     if (!extractor) {
       return [];
     }
 
+    const normalizedUrl = extractor.normalize(url);
+
+    let urlResults = this.urlResultCache.get(normalizedUrl.href) ?? [];
+    if (this.urlResultCache.has(normalizedUrl.href)) {
+      return urlResults.map(urlResult => ({ ...urlResult, ttl: this.urlResultCache.getRemainingTTL(normalizedUrl.href) }));
+    }
+
     this.logger.info(`Extract stream URL using ${extractor.id} extractor from ${url}`, ctx);
 
     try {
-      urlResults = await extractor.extract(ctx, url, meta);
+      urlResults = await extractor.extract(ctx, normalizedUrl, meta);
     } catch (error) {
       if (error instanceof NotFoundError) {
-        this.urlResultCache.set(url.href, urlResults, { ttl: extractor.ttl });
+        this.urlResultCache.set(normalizedUrl.href, urlResults, { ttl: extractor.ttl });
 
         return [];
       }
@@ -63,7 +65,7 @@ export class ExtractorRegistry {
       ];
     }
 
-    this.urlResultCache.set(url.href, urlResults, { ttl: extractor.ttl });
+    this.urlResultCache.set(normalizedUrl.href, urlResults, { ttl: extractor.ttl });
 
     return urlResults;
   };
