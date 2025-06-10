@@ -2,7 +2,6 @@ import crypto from 'crypto';
 import { Extractor } from './types';
 import { Fetcher, guessFromTitle } from '../utils';
 import { Context, Meta, UrlResult } from '../types';
-import { Decipher } from 'node:crypto';
 
 /** @see https://github.com/Gujal00/ResolveURL/blob/master/script.module.resolveurl/lib/resolveurl/plugins/kinoger.py */
 export class KinoGer implements Extractor {
@@ -14,14 +13,8 @@ export class KinoGer implements Extractor {
 
   private readonly fetcher: Fetcher;
 
-  private readonly decipher: Decipher;
-
   constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
-
-    const key = Buffer.from('6b69656d7469656e6d75613931316361', 'hex');
-    const iv = Buffer.from('313233343536373839306f6975797472', 'hex');
-    this.decipher = crypto.createDecipheriv('aes-128-cbc', key, iv);
   }
 
   readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/kinoger\.re|shiid4u\.upn\.one|moflix\.upns\.xyz|player\.upn\.one|wasuytm\.store|ultrastream\.online/);
@@ -32,7 +25,10 @@ export class KinoGer implements Extractor {
     const hexData = await this.fetcher.text(ctx, url, { headers: { 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36' } });
 
     const encrypted = Buffer.from(hexData, 'hex');
-    const decrypted = Buffer.concat([this.decipher.update(encrypted), this.decipher.final()]).toString();
+    const key = Buffer.from('6b69656d7469656e6d75613931316361', 'hex');
+    const iv = Buffer.from('313233343536373839306f6975797472', 'hex');
+    const decipher = crypto.createDecipheriv('aes-128-cbc', key, iv);
+    const decrypted = Buffer.concat([decipher.update(encrypted), decipher.final()]).toString();
 
     const { cf, title } = JSON.parse(decrypted) as { cf: string; title: string };
 
