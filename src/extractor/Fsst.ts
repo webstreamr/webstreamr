@@ -36,9 +36,9 @@ export class Fsst implements Extractor {
         label: this.label,
         sourceId: `${this.id}_${meta.countryCode.toLowerCase()}_${index}`,
         meta: {
+          ...meta,
           height: parseInt(heightAndUrlMatch[1] as string),
           title,
-          ...meta,
         },
       };
     });

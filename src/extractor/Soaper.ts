@@ -57,8 +57,8 @@ export class Soaper implements Extractor {
         sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
         ttl: this.ttl,
         meta: {
-          ...(height && { height: parseInt(height[1] ?? height[2] as string) }),
           ...meta,
+          ...(height && { height: parseInt(height[1] ?? height[2] as string) }),
         },
       },
     ];

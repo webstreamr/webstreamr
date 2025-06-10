@@ -40,12 +40,12 @@ export class SuperVideo implements Extractor {
         sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
         ttl: this.ttl,
         meta: {
+          ...meta,
           ...(heightAndSizeMatch && {
             bytes: bytes.parse(heightAndSizeMatch[2] as string) as number,
             height: parseInt(heightAndSizeMatch[1] as string) as number,
           }),
-          title,
-          ...meta,
+          ...(title && { title }),
         },
       },
     ];

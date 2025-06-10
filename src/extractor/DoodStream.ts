@@ -52,9 +52,9 @@ export class DoodStream implements Extractor {
         sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
         ttl: this.ttl,
         meta: {
+          ...meta,
           title,
           ...(mp4Head['content-length'] && { bytes: parseInt(mp4Head['content-length'] as string) }),
-          ...meta,
         },
         requestHeaders: {
           Referer: 'http://dood.to/',

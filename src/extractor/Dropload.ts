@@ -43,10 +43,10 @@ export class Dropload implements Extractor {
         sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
         ttl: this.ttl,
         meta: {
+          ...meta,
           bytes: bytes.parse(sizeMatch[1] as string) as number,
           height: parseInt(heightMatch[1] as string) as number,
           title,
-          ...meta,
         },
       },
     ];
