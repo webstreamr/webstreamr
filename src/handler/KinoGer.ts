@@ -36,7 +36,7 @@ export class KinoGer implements Handler {
 
     const html = await this.fetcher.text(ctx, pageUrl);
 
-    const fsstJs = html.match(/fsst\.show.*/);
+    const fsstJs = html.match(/fsst\.show\(.*/);
     if (!fsstJs) {
       return [];
     }
@@ -44,8 +44,22 @@ export class KinoGer implements Handler {
     const seasonIndex = (tmdbId.season ?? 1) - 1;
     const episodeIndex = (tmdbId.episode ?? 1) - 1;
 
+    const episodeUrl = this.findEpisodeUrlInShowJs(fsstJs[0], seasonIndex, episodeIndex);
+    if (!episodeUrl) {
+      return [];
+    }
+
+    const title = tmdbId.season ? `${keyword} ${tmdbId.season}x${tmdbId.episode}` : `${keyword} (${year})`;
+
+    return [
+      await this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, episodeUrl, { countryCode: 'de', title }),
+    ];
+  };
+
+  private readonly findEpisodeUrlInShowJs = (showJs: string, seasonIndex: number, episodeIndex: number): URL | undefined => {
     let episodeUrl: URL | undefined;
-    fsstJs[0].matchAll(/\[(.*?)]/g).forEach((urlsMatch, season) => {
+
+    showJs.matchAll(/\[(.*?)]/g).forEach((urlsMatch, season) => {
       if (season !== seasonIndex || !urlsMatch[1]) {
         return;
       }
@@ -58,15 +72,7 @@ export class KinoGer implements Handler {
       episodeUrl = new URL(url.replaceAll('[', '').replaceAll('\'', '').trim());
     });
 
-    if (!episodeUrl) {
-      return [];
-    }
-
-    const title = tmdbId.season ? `${keyword} ${tmdbId.season}x${tmdbId.episode}` : `${keyword} (${year})`;
-
-    return [
-      await this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, episodeUrl, { countryCode: 'de', title }),
-    ];
+    return episodeUrl;
   };
 
   private readonly fetchPageUrl = async (ctx: Context, keyword: string, year: number): Promise<URL | undefined> => {
