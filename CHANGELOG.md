@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.26.1](https://github.com/webstreamr/webstreamr/compare/v0.26.0...v0.26.1) (2025-06-10)
+
+
+### Miscellaneous Chores
+
+* **extractor:** support dooodster links via DoodStream ([141c737](https://github.com/webstreamr/webstreamr/commit/141c737cf3ae1b4dfafbd4621570d5369df5816d))
+* **extractor:** support embed-only SuperVideo URLs ([dd1b3a1](https://github.com/webstreamr/webstreamr/commit/dd1b3a1f1d7d6573ec3423fcea71732f637ca46f))
+* **handler:** generalize KinoGer to support more (external) URLs ([42950bc](https://github.com/webstreamr/webstreamr/commit/42950bc2a38bb880a4c272ba87deb2c68655450a))
+
+
+### Code Refactoring
+
+* **extractor:** add return type to all extract methods ([4da121d](https://github.com/webstreamr/webstreamr/commit/4da121d094343c499982877b1544445ac2e15be6))
+* **extractor:** introduce URL normalization ([2d615ce](https://github.com/webstreamr/webstreamr/commit/2d615ce5821985d98ba4e2ec04c5664b3f8ce7c3))
+* **handler:** improve KinoGer readability ([73ea091](https://github.com/webstreamr/webstreamr/commit/73ea091b83d65790b736b2c40a4fa5813f20ea11))
+* remove always true conditional ([7b933bf](https://github.com/webstreamr/webstreamr/commit/7b933bfbac3862f5a4b0152587bf421a2623ed92))
+
 ## [0.26.0](https://github.com/webstreamr/webstreamr/compare/v0.25.3...v0.26.0) (2025-06-09)
 
 
