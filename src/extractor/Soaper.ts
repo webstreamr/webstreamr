@@ -1,6 +1,6 @@
 import { Extractor } from './types';
 import { Fetcher } from '../utils';
-import { Context, Meta } from '../types';
+import { Context, Meta, UrlResult } from '../types';
 
 interface SoaperInfoResponsePartial {
   val: string;
@@ -24,7 +24,7 @@ export class Soaper implements Extractor {
 
   readonly normalize = (url: URL): URL => url;
 
-  readonly extract = async (ctx: Context, url: URL, meta: Meta) => {
+  readonly extract = async (ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> => {
     const movieOrEpisodeId = (url.pathname.match(/\/\w+_(\w+)/) as string[])[1] as string;
 
     const form = new URLSearchParams();

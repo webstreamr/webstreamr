@@ -1,6 +1,6 @@
 import { Extractor } from './types';
 import { Fetcher } from '../utils';
-import { Context, Meta } from '../types';
+import { Context, Meta, UrlResult } from '../types';
 
 export class ExternalUrl implements Extractor {
   readonly id = 'external';
@@ -19,7 +19,7 @@ export class ExternalUrl implements Extractor {
 
   readonly normalize = (url: URL): URL => url;
 
-  readonly extract = async (ctx: Context, url: URL, meta: Meta) => {
+  readonly extract = async (ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> => {
     // We only want to make sure that the URL is accessible
     await this.fetcher.head(ctx, url, { noFlareSolverr: true });
 

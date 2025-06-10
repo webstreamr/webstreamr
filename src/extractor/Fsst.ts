@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import { Extractor } from './types';
 import { Fetcher } from '../utils';
-import { Context, Meta } from '../types';
+import { Context, Meta, UrlResult } from '../types';
 
 export class Fsst implements Extractor {
   readonly id = 'fsst';
@@ -20,7 +20,7 @@ export class Fsst implements Extractor {
 
   readonly normalize = (url: URL): URL => url;
 
-  readonly extract = async (ctx: Context, url: URL, meta: Meta) => {
+  readonly extract = async (ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> => {
     const html = await this.fetcher.text(ctx, url);
 
     const $ = cheerio.load(html);
