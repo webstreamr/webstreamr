@@ -191,10 +191,7 @@ export class StreamResolver {
       titleLines.push(`💾 ${bytes.format(urlResult.meta.bytes, { unitSeparator: ' ' })}`);
     }
 
-    if (urlResult.meta.countryCode) {
-      titleLines.push(`🌐 ${languageFromCountryCode(urlResult.meta.countryCode)} ${flagFromCountryCode(urlResult.meta.countryCode)}`);
-    }
-
+    titleLines.push(`🌐 ${languageFromCountryCode(urlResult.meta.countryCode)} ${flagFromCountryCode(urlResult.meta.countryCode)}`);
     titleLines.push(`🔗 ${urlResult.label}`);
 
     if (urlResult.error) {
