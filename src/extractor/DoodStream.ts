@@ -1,7 +1,7 @@
 import randomstring from 'randomstring';
 import * as cheerio from 'cheerio';
 import { Extractor } from './types';
-import { Fetcher } from '../utils';
+import { Fetcher, guessFromTitle } from '../utils';
 import { Context, Meta, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
@@ -40,6 +40,7 @@ export class DoodStream implements Extractor {
 
     const $ = cheerio.load(html);
     const title = $('title').text().trim().replace(/ - DoodStream$/, '').trim();
+    const height = guessFromTitle(title);
 
     const mp4Url = new URL(`${baseUrl}${randomstring.generate(10)}?token=${token}&expiry=${Date.now()}`);
 
@@ -55,6 +56,7 @@ export class DoodStream implements Extractor {
           ...meta,
           title,
           ...(mp4Head['content-length'] && { bytes: parseInt(mp4Head['content-length'] as string) }),
+          ...(height && { height }),
         },
         requestHeaders: {
           Referer: 'http://dood.to/',

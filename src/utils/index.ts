@@ -3,6 +3,7 @@ export * from './StreamResolver';
 export * from './config';
 export * from './embed';
 export * from './env';
+export * from './height';
 export * from './id';
 export * from './language';
 export * from './manifest';
