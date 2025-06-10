@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.27.1](https://github.com/webstreamr/webstreamr/compare/v0.27.0...v0.27.1) (2025-06-10)
+
+
+### Miscellaneous Chores
+
+* log error stack ([695bf53](https://github.com/webstreamr/webstreamr/commit/695bf53262e3033d1e24554036e5e108f37b2da2))
+
+
+### Bug Fixes
+
+* **handler:** do not share decipher instance in KinoGer ([fcec03a](https://github.com/webstreamr/webstreamr/commit/fcec03a6a459f2ea5f077968ce9b81885193785b))
+
 ## [0.27.0](https://github.com/webstreamr/webstreamr/compare/v0.26.1...v0.27.0) (2025-06-10)
 
 
