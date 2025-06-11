@@ -1,5 +1,5 @@
 import { Extractor } from './types';
-import { Fetcher } from '../utils';
+import { Fetcher, guessFromPlaylist } from '../utils';
 import { Context, Meta, UrlResult } from '../types';
 
 interface SoaperInfoResponsePartial {
@@ -47,18 +47,17 @@ export class Soaper implements Extractor {
     const jsonResponse = JSON.parse(response) as SoaperInfoResponsePartial;
 
     const m3u8Url = new URL(jsonResponse['val'], url.origin);
-    const m3u8Data = await this.fetcher.text(ctx, m3u8Url);
-    const height = m3u8Data.match(/\d+x(\d+)|(\d+)p/) as string[];
+    const height = await guessFromPlaylist(ctx, this.fetcher, m3u8Url);
 
     return [
       {
-        url: new URL(jsonResponse['val'], url.origin),
+        url: m3u8Url,
         label: this.label,
         sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
         ttl: this.ttl,
         meta: {
           ...meta,
-          ...(height && { height: parseInt(height[1] ?? height[2] as string) }),
+          ...(height && { height }),
         },
       },
     ];
