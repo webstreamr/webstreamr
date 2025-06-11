@@ -31,7 +31,7 @@ export class SuperVideo implements Extractor {
     const heightAndSizeMatch = html.match(/\d{3,}x(\d{3,}), ([\d.]+ ?[GM]B)/);
 
     const $ = cheerio.load(html);
-    const title = $('title').text().trim().replace(/^Watch /, '').trim();
+    const title = $('.download__title').text().trim();
 
     return [
       {
