@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.28.0](https://github.com/webstreamr/webstreamr/compare/v0.27.2...v0.28.0) (2025-06-11)
+
+
+### Miscellaneous Chores
+
+* **extractor:** improve SuperVideo title ([2ea8c16](https://github.com/webstreamr/webstreamr/commit/2ea8c16d9e2b01ed8eb1b1d2ef7036daff47aae6))
+
+
+### Features
+
+* **handler:** add VidSrc with CloudStream Pro support ([dd6d485](https://github.com/webstreamr/webstreamr/commit/dd6d4853400fe75a81e9118e0306449ad0477654))
+
+
+### Bug Fixes
+
+* **fetcher:** correct noFlareSolverr logic ([d0efc07](https://github.com/webstreamr/webstreamr/commit/d0efc0783f433dc50d56aea102a9bb9bc77c6128))
+
+
+### Code Refactoring
+
+* extract playlist height guessing ([4dc3c63](https://github.com/webstreamr/webstreamr/commit/4dc3c636a6397229a500e8370f74f5c2b19a1a3e))
+
 ## [0.27.2](https://github.com/webstreamr/webstreamr/compare/v0.27.1...v0.27.2) (2025-06-11)
 
 
