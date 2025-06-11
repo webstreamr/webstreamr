@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.27.2](https://github.com/webstreamr/webstreamr/compare/v0.27.1...v0.27.2) (2025-06-11)
+
+
+### Miscellaneous Chores
+
+* **extractor:** decrease timeout and ignore errors for external URLs ([19395f1](https://github.com/webstreamr/webstreamr/commit/19395f1921c8b1cfa1612d06722b3cd1d2bef3bc))
+* **extractor:** support dooood URLs ([63079bf](https://github.com/webstreamr/webstreamr/commit/63079bf80a698597a8c808d705ea02407780ae3d))
+
+
+### Bug Fixes
+
+* **handler:** avoid creating invalid URLs in KinoGer ([9797957](https://github.com/webstreamr/webstreamr/commit/9797957778c4ce262d157ba2f3e62bb41d57148a))
+
 ## [0.27.1](https://github.com/webstreamr/webstreamr/compare/v0.27.0...v0.27.1) (2025-06-10)
 
 
