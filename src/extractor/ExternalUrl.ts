@@ -20,8 +20,12 @@ export class ExternalUrl implements Extractor {
   readonly normalize = (url: URL): URL => url;
 
   readonly extract = async (ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> => {
-    // We only want to make sure that the URL is accessible
-    await this.fetcher.head(ctx, url, { noFlareSolverr: true });
+    try {
+      // Make sure the URL is accessible, but avoid causing noise and delays doing this
+      await this.fetcher.head(ctx, url, { noFlareSolverr: true, timeout: 1000 });
+    } catch {
+      return [];
+    }
 
     return [
       {

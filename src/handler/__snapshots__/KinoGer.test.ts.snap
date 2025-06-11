@@ -34,19 +34,7 @@ exports[`KinoGer handle imdb blood and sinners 1`] = `
       "url": "https://www.secvideo1.online/get_file/16/fae180e05d8d7af50fff44c7a24232b522db464935/900000/900576/900576.mp4/",
     },
   ],
-  [
-    {
-      "error": [Error: Fetcher error: 404: Not Found],
-      "isExternal": true,
-      "label": "kinoger.pw",
-      "meta": {
-        "countryCode": "de",
-        "title": "Blood & Sinners (2025)",
-      },
-      "sourceId": "external",
-      "url": "https://kinoger.pw/e/6zeREaMlrqREZPa",
-    },
-  ],
+  [],
   [
     {
       "label": "KinoGer",

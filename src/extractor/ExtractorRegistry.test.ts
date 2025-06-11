@@ -45,4 +45,10 @@ describe('ExtractorRegistry', () => {
     expect(urlResults1).toStrictEqual([]);
     expect(urlResults2).toStrictEqual([]);
   });
+
+  test('returns external url for error', async () => {
+    const urlResults = await extractorRegistry.handle(ctx, new URL('https://dropload.io/mocked-blocked.html'), { countryCode: 'de' });
+
+    expect(urlResults).toMatchSnapshot();
+  });
 });

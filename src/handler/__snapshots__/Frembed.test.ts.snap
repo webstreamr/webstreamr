@@ -44,19 +44,7 @@ exports[`Frembed handle imdb black mirror s4e2 1`] = `
       "url": "https://johnalwayssame.com/e/cqy9oue7sv0g",
     },
   ],
-  [
-    {
-      "error": [Error: TypeError: fetch failed],
-      "isExternal": true,
-      "label": "ds2play.com",
-      "meta": {
-        "countryCode": "fr",
-        "title": "Black Mirror 4x2",
-      },
-      "sourceId": "external",
-      "url": "https://ds2play.com/e/fzfvfq3ngig0",
-    },
-  ],
+  [],
 ]
 `;
 
@@ -104,18 +92,6 @@ exports[`Frembed handle tmdb black mirror s4e2 1`] = `
       "url": "https://johnalwayssame.com/e/cqy9oue7sv0g",
     },
   ],
-  [
-    {
-      "error": [Error: TypeError: fetch failed],
-      "isExternal": true,
-      "label": "ds2play.com",
-      "meta": {
-        "countryCode": "fr",
-        "title": "Black Mirror 4x2",
-      },
-      "sourceId": "external",
-      "url": "https://ds2play.com/e/fzfvfq3ngig0",
-    },
-  ],
+  [],
 ]
 `;

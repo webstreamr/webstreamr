@@ -15,17 +15,20 @@ exports[`ExtractorRegistry return external URLs by default 1`] = `
 ]
 `;
 
-exports[`ExtractorRegistry returns error result from extractor 1`] = `
+exports[`ExtractorRegistry returns error result from extractor 1`] = `[]`;
+
+exports[`ExtractorRegistry returns external url for error 1`] = `
 [
   {
-    "error": [Error: TypeError: fetch failed],
+    "error": [Error: Fetcher error: 403: Forbidden
+],
     "isExternal": true,
-    "label": "some-url.test",
+    "label": "dropload.io",
     "meta": {
-      "countryCode": "en",
+      "countryCode": "de",
     },
-    "sourceId": "external",
-    "url": "https://some-url.test/",
+    "sourceId": "dropload",
+    "url": "https://dropload.io/mocked-blocked.html",
   },
 ]
 `;

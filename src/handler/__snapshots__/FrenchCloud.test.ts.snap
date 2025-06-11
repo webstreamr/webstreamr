@@ -42,18 +42,7 @@ exports[`FrenchCloud handle imdb the devil's bath 1`] = `
       "url": "https://mixdrop.ag/e/l7v73zqrfdj19z",
     },
   ],
-  [
-    {
-      "error": [Error: Fetcher error: 404: Not Found],
-      "isExternal": true,
-      "label": "streamtape.com",
-      "meta": {
-        "countryCode": "fr",
-      },
-      "sourceId": "external",
-      "url": "https://streamtape.com/e/gjA1OQ4klyHxgJ",
-    },
-  ],
+  [],
   [
     {
       "label": "DoodStream",
