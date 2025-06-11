@@ -15,6 +15,7 @@ import {
 import { ExtractorRegistry } from './extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
 import { envGet, envIsProd, Fetcher, StreamResolver, tmdbFetch, TmdbId } from './utils';
+import { VidSrc } from './handler/VidSrc';
 
 const logger = winston.createLogger({
   transports: [
@@ -34,6 +35,7 @@ const extractorRegistry = new ExtractorRegistry(logger, fetcher);
 const handlers: Handler[] = [
   // EN
   new Soaper(fetcher, extractorRegistry),
+  new VidSrc(fetcher, extractorRegistry),
   // ES / MX
   new CineHDPlus(fetcher, extractorRegistry),
   new VerHdLink(fetcher, extractorRegistry),

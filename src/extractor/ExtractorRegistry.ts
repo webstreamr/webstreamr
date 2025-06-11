@@ -9,6 +9,7 @@ import { Fsst } from './Fsst';
 import { SuperVideo } from './SuperVideo';
 import { KinoGer } from './KinoGer';
 import { Soaper } from './Soaper';
+import { VidSrc } from './VidSrc';
 import { ExternalUrl } from './ExternalUrl';
 import { NotFoundError } from '../error';
 
@@ -26,6 +27,7 @@ export class ExtractorRegistry {
       new SuperVideo(fetcher),
       new KinoGer(fetcher),
       new Soaper(fetcher),
+      new VidSrc(fetcher),
       new ExternalUrl(fetcher), // fallback extractor which must come last
     ];
     this.urlResultCache = new TTLCache({ max: 1024 });

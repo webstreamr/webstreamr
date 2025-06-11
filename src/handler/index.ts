@@ -8,4 +8,5 @@ export * from './MostraGuarda';
 export * from './Soaper';
 export * from './StreamKiste';
 export * from './VerHdLink';
+export * from './VidSrc';
 export * from './types';

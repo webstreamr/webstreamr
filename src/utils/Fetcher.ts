@@ -40,8 +40,9 @@ interface FlareSolverrResult {
   version: string;
 }
 
-type CustomRequestInit = RequestInit & {
+export type CustomRequestInit = RequestInit & {
   noFlareSolverr?: boolean;
+  noReferer?: boolean;
   queueLimit?: number;
   queueErrorLimit?: number;
   timeout?: number;
@@ -78,6 +79,8 @@ export class Fetcher {
   public readonly getInit = (ctx: Context, url: URL, init?: CustomRequestInit): CustomRequestInit => {
     const cookieString = this.cookieJar.getCookieStringSync(url.href);
 
+    const noReferer = init?.noReferer ?? false;
+
     return {
       ...init,
       headers: {
@@ -86,7 +89,7 @@ export class Fetcher {
         ...(cookieString && { Cookie: cookieString }),
         'Forwarded': `for=${ctx.ip}`,
         'Priority': 'u=0',
-        'Referer': `${ctx.referer?.href ?? url.origin}`,
+        ...(!noReferer && { Referer: `${ctx.referer?.href ?? url.origin}` }),
         'User-Agent': this.hostUserAgentMap.get(url.host) ?? 'node',
         'X-Forwarded-For': ctx.ip,
         'X-Forwarded-Proto': url.protocol.slice(0, -1),

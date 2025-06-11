@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import slugify from 'slugify';
 import winston from 'winston';
+import crypto from 'crypto';
 import { Context } from '../../types';
 import { envGet } from '../env';
 const { Fetcher } = jest.requireActual('../Fetcher');
@@ -13,21 +14,29 @@ class MockedFetcher {
   }
 
   readonly text = async (ctx: Context, url: URL, init?: RequestInit): Promise<string> => {
-    const path = `${__dirname}/../__fixtures__/Fetcher/${slugify(url.href)}`;
+    const path = `${__dirname}/../__fixtures__/Fetcher/${this.slugifyUrl(url)}`;
 
     return this.fetch(path, ctx, url, init);
   };
 
   readonly textPost = async (ctx: Context, url: URL, body: string, init?: RequestInit): Promise<string> => {
-    const path = `${__dirname}/../__fixtures__/Fetcher/post-${slugify(url.href)}-${slugify(body)}`;
+    const path = `${__dirname}/../__fixtures__/Fetcher/post-${this.slugifyUrl(url)}-${slugify(body)}`;
 
     return this.fetch(path, ctx, url, { ...init, method: 'POST', body });
   };
 
   readonly head = async (ctx: Context, url: URL, init?: RequestInit): Promise<unknown> => {
-    const path = `${__dirname}/../__fixtures__/Fetcher/head-${slugify(url.href)}`;
+    const path = `${__dirname}/../__fixtures__/Fetcher/head-${this.slugifyUrl(url)}`;
 
     return JSON.parse(await this.fetch(path, ctx, url, { ...init, method: 'HEAD' }));
+  };
+
+  private readonly slugifyUrl = (url: URL): string => {
+    if (url.href.length > 255) {
+      return slugify(`${url.origin}-${crypto.createHash('md5').update(url.href).digest('hex')}`);
+    }
+
+    return slugify(url.href);
   };
 
   private readonly fetch = async (path: string, ctx: Context, url: URL, init?: RequestInit): Promise<string> => {
