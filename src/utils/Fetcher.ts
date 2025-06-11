@@ -108,9 +108,9 @@ export class Fetcher {
     const responseHeaders = httpCacheItem.policy.responseHeaders();
 
     if (httpCacheItem.policy.responseHeaders()['cf-mitigated'] === 'challenge') {
-      const useFlareSolverr = init?.noFlareSolverr ?? true;
+      const noFlareSolverr = init?.noFlareSolverr ?? false;
       const flareSolverrEndpoint = envGet('FLARESOLVERR_ENDPOINT');
-      if (!useFlareSolverr || !flareSolverrEndpoint) {
+      if (noFlareSolverr || !flareSolverrEndpoint) {
         throw new BlockedError('cloudflare_challenge', httpCacheItem.policy.responseHeaders());
       }
 
