@@ -56,12 +56,12 @@ export class KinoGer implements Handler {
         return;
       }
 
-      const url = urlsMatch[1].split(',')[episodeIndex];
-      if (!url) {
+      const urlMatch = (urlsMatch[1].split(',')[episodeIndex] ?? '').match(/https?:\/\/[^\s'"<>]+/);
+      if (!urlMatch) {
         return;
       }
 
-      episodeUrl = new URL(url.replaceAll('[', '').replaceAll('\'', '').trim());
+      episodeUrl = new URL(urlMatch[0]);
     });
 
     return episodeUrl;
