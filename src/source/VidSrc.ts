@@ -1,9 +1,9 @@
 import { ContentType } from 'stremio-addon-sdk';
-import { Handler, HandleResult } from './types';
+import { Source, SourceResult } from './types';
 import { Fetcher, getImdbId, Id } from '../utils';
 import { Context, CountryCode } from '../types';
 
-export class VidSrc implements Handler {
+export class VidSrc implements Source {
   readonly id = 'vidsrc';
 
   readonly label = 'VidSrc';
@@ -20,7 +20,7 @@ export class VidSrc implements Handler {
     this.fetcher = fetcher;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<HandleResult[]> => {
+  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
     const imdbId = await getImdbId(ctx, this.fetcher, id);
 
     const url = imdbId.season

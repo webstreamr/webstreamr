@@ -1,9 +1,9 @@
 import { ContentType } from 'stremio-addon-sdk';
-import { Handler, HandleResult } from './types';
+import { Source, SourceResult } from './types';
 import { Fetcher, getTmdbId, Id } from '../utils';
 import { Context, CountryCode } from '../types';
 
-export class Frembed implements Handler {
+export class Frembed implements Source {
   readonly id = 'frembed';
 
   readonly label = 'Frembed';
@@ -18,7 +18,7 @@ export class Frembed implements Handler {
     this.fetcher = fetcher;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<HandleResult[]> => {
+  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
     const apiUrl = new URL(`https://frembed.space/api/series?id=${tmdbId.id}&sa=${tmdbId.season}&epi=${tmdbId.episode}&idType=tmdb`);

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`buildManifest has checked handler with appropriate config 1`] = `
+exports[`buildManifest has checked source with appropriate config 1`] = `
 [
   {
     "default": "checked",
@@ -26,7 +26,7 @@ exports[`buildManifest has checked handler with appropriate config 1`] = `
 ]
 `;
 
-exports[`buildManifest has unchecked handler without a config 1`] = `
+exports[`buildManifest has unchecked source without a config 1`] = `
 [
   {
     "key": "de",

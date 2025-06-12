@@ -1,10 +1,10 @@
 import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
-import { Handler, HandleResult } from './types';
+import { Source, SourceResult } from './types';
 import { Fetcher, getImdbId, Id, ImdbId } from '../utils';
 import { Context, CountryCode } from '../types';
 
-export class Eurostreaming implements Handler {
+export class Eurostreaming implements Source {
   readonly id = 'eurostreaming';
 
   readonly label = 'Eurostreaming';
@@ -19,7 +19,7 @@ export class Eurostreaming implements Handler {
     this.fetcher = fetcher;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<HandleResult[]> => {
+  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
     const imdbId = await getImdbId(ctx, this.fetcher, id);
 
     const seriesPageUrl = await this.fetchSeriesPageUrl(ctx, imdbId);

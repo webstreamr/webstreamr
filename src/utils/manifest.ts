@@ -1,11 +1,11 @@
-import { Handler } from '../handler';
+import { Source } from '../source';
 import { Config, CountryCode, ManifestWithConfig } from '../types';
 import { envGetAppId, envGetAppName } from './env';
 import { flagFromCountryCode, languageFromCountryCode } from './language';
 
 const typedEntries = <T extends object>(obj: T): [keyof T, T[keyof T]][] => (Object.entries(obj) as [keyof T, T[keyof T]][]);
 
-export const buildManifest = (handlers: Handler[], config: Config): ManifestWithConfig => {
+export const buildManifest = (sources: Source[], config: Config): ManifestWithConfig => {
   const manifest: ManifestWithConfig = {
     id: envGetAppId(),
     version: '0.28.0', // x-release-please-version
@@ -33,19 +33,19 @@ export const buildManifest = (handlers: Handler[], config: Config): ManifestWith
     },
   };
 
-  const countryCodeHandlers: Partial<Record<CountryCode, Handler[]>> = {};
-  handlers.forEach((handler) => {
-    handler.countryCodes.forEach(countryCode => countryCodeHandlers[countryCode] = [...(countryCodeHandlers[countryCode] ?? []), handler]);
+  const countryCodeSources: Partial<Record<CountryCode, Source[]>> = {};
+  sources.forEach((handler) => {
+    handler.countryCodes.forEach(countryCode => countryCodeSources[countryCode] = [...(countryCodeSources[countryCode] ?? []), handler]);
   });
 
-  const sortedLanguageHandlers = typedEntries(countryCodeHandlers)
+  const sortedLanguageSources = typedEntries(countryCodeSources)
     .sort(([countryCodeA], [countryCodeB]) => countryCodeA.localeCompare(countryCodeB));
 
-  for (const [countryCode, handlers] of sortedLanguageHandlers) {
+  for (const [countryCode, sources] of sortedLanguageSources) {
     manifest.config.push({
       key: countryCode,
       type: 'checkbox',
-      title: `${languageFromCountryCode(countryCode)} ${flagFromCountryCode(countryCode)} (${(handlers as Handler[]).map(handler => handler.label).join(', ')})`,
+      title: `${languageFromCountryCode(countryCode)} ${flagFromCountryCode(countryCode)} (${(sources as Source[]).map(handler => handler.label).join(', ')})`,
       ...(countryCode in config && { default: 'checked' }),
     });
   }

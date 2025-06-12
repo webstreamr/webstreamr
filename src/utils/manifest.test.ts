@@ -1,5 +1,5 @@
 import { buildManifest } from './manifest';
-import { StreamKiste, MeineCloud, VerHdLink } from '../handler';
+import { StreamKiste, MeineCloud, VerHdLink } from '../source';
 import { Fetcher } from './Fetcher';
 jest.mock('../utils/Fetcher');
 
@@ -7,25 +7,25 @@ jest.mock('../utils/Fetcher');
 const fetcher = new Fetcher();
 
 describe('buildManifest', () => {
-  test('has unchecked handler without a config', () => {
-    const handlers = [
+  test('has unchecked source without a config', () => {
+    const sources = [
       new VerHdLink(fetcher),
       new StreamKiste(fetcher),
       new MeineCloud(fetcher),
     ];
 
-    const manifest = buildManifest(handlers, {});
+    const manifest = buildManifest(sources, {});
 
     expect(manifest.config).toMatchSnapshot();
   });
 
-  test('has checked handler with appropriate config', () => {
-    const handlers = [
+  test('has checked source with appropriate config', () => {
+    const sources = [
       new VerHdLink(fetcher),
       new StreamKiste(fetcher),
       new MeineCloud(fetcher),
     ];
-    const manifest = buildManifest(handlers, { de: 'on' });
+    const manifest = buildManifest(sources, { de: 'on' });
 
     expect(manifest.config).toMatchSnapshot();
   });

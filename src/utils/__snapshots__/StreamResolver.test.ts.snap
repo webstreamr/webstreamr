@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`resolve adds error info 1`] = `
 {
@@ -117,39 +117,26 @@ exports[`resolve ignores not found errors 1`] = `
 }
 `;
 
-exports[`resolve returns empty array if no handler found anything 1`] = `
+exports[`resolve returns empty array if no source found anything 1`] = `
 {
   "streams": [],
   "ttl": 900000,
 }
 `;
 
-exports[`resolve returns empty array if no handler supported the type 1`] = `
+exports[`resolve returns empty array if no source supported the type 1`] = `
 {
   "streams": [],
   "ttl": 900000,
 }
 `;
 
-exports[`resolve returns handler errors as stream 1`] = `
+exports[`resolve returns info as stream if no sources were configured 1`] = `
 {
   "streams": [
     {
       "name": "WebStreamr",
-      "title": "🔗 MeineCloud
-❌ Request failed. Request-id: id.",
-      "ytId": "E4WlUXrJgy4",
-    },
-  ],
-}
-`;
-
-exports[`resolve returns info as stream if no handlers were configured 1`] = `
-{
-  "streams": [
-    {
-      "name": "WebStreamr",
-      "title": "⚠️ No handlers found. Please re-configure the plugin.",
+      "title": "⚠️ No sources found. Please re-configure the plugin.",
       "ytId": "E4WlUXrJgy4",
     },
   ],
@@ -261,5 +248,18 @@ exports[`resolve returns sorted results 1`] = `
     },
   ],
   "ttl": 900000,
+}
+`;
+
+exports[`resolve returns source errors as stream 1`] = `
+{
+  "streams": [
+    {
+      "name": "WebStreamr",
+      "title": "🔗 MeineCloud
+❌ Request failed. Request-id: id.",
+      "ytId": "E4WlUXrJgy4",
+    },
+  ],
 }
 `;

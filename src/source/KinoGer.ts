@@ -1,10 +1,10 @@
 import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
-import { Handler, HandleResult } from './types';
+import { Source, SourceResult } from './types';
 import { Fetcher, getTmdbId, getTmdbMovieDetails, getTmdbTvDetails, Id, TmdbId } from '../utils';
 import { Context, CountryCode } from '../types';
 
-export class KinoGer implements Handler {
+export class KinoGer implements Source {
   readonly id = 'kinoger';
 
   readonly label = 'KinoGer';
@@ -21,7 +21,7 @@ export class KinoGer implements Handler {
     this.fetcher = fetcher;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<HandleResult[]> => {
+  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
     const [keyword, year] = await this.getKeywordAndYear(ctx, tmdbId);

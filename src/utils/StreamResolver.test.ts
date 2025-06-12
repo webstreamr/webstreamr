@@ -2,7 +2,7 @@ import { ContentType } from 'stremio-addon-sdk';
 import winston from 'winston';
 import { createExtractors, Extractor, ExtractorRegistry } from '../extractor';
 import { StreamResolver } from './StreamResolver';
-import { Handler, HandleResult, MeineCloud, MostraGuarda } from '../handler';
+import { Source, SourceResult, MeineCloud, MostraGuarda } from '../source';
 import { Fetcher } from './Fetcher';
 import { BlockedReason, Context, CountryCode, TIMEOUT, UrlResult } from '../types';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError } from '../error';
@@ -19,7 +19,7 @@ const meineCloud = new MeineCloud(fetcher);
 const mostraGuarda = new MostraGuarda(fetcher);
 
 describe('resolve', () => {
-  test('returns info as stream if no handlers were configured', async () => {
+  test('returns info as stream if no sources were configured', async () => {
     const streamResolver = new StreamResolver(logger, new ExtractorRegistry(logger, createExtractors(fetcher)));
 
     const streams = await streamResolver.resolve(ctx, [], 'movie', new ImdbId('tt123456789', undefined, undefined));
@@ -27,7 +27,7 @@ describe('resolve', () => {
     expect(streams).toMatchSnapshot();
   });
 
-  test('returns handler errors as stream', async () => {
+  test('returns source errors as stream', async () => {
     const fetcherSpy = jest.spyOn(fetcher, 'text').mockRejectedValue('ups, an error occurred.');
     const streamResolver = new StreamResolver(logger, new ExtractorRegistry(logger, createExtractors(fetcher)));
 
@@ -38,7 +38,7 @@ describe('resolve', () => {
     fetcherSpy.mockRestore();
   });
 
-  test('returns empty array if no handler found anything', async () => {
+  test('returns empty array if no source found anything', async () => {
     const streamResolver = new StreamResolver(logger, new ExtractorRegistry(logger, createExtractors(fetcher)));
 
     const streams = await streamResolver.resolve(ctx, [meineCloud, mostraGuarda], 'movie', new ImdbId('tt12345678', undefined, undefined));
@@ -46,7 +46,7 @@ describe('resolve', () => {
     expect(streams).toMatchSnapshot();
   });
 
-  test('returns empty array if no handler supported the type', async () => {
+  test('returns empty array if no source supported the type', async () => {
     const streamResolver = new StreamResolver(logger, new ExtractorRegistry(logger, createExtractors(fetcher)));
 
     const streams = await streamResolver.resolve(ctx, [meineCloud, mostraGuarda], 'series', new ImdbId('tt12345678', 1, 1));
@@ -63,7 +63,7 @@ describe('resolve', () => {
   });
 
   test('adds error info', async () => {
-    class MockHandler implements Handler {
+    class MockHandler implements Source {
       readonly id = 'mockhandler';
 
       readonly label = 'MockHandler';
@@ -72,7 +72,7 @@ describe('resolve', () => {
 
       readonly countryCodes: CountryCode[] = [CountryCode.de];
 
-      readonly handle = async (): Promise<HandleResult[]> => {
+      readonly handle = async (): Promise<SourceResult[]> => {
         return [{ countryCode: CountryCode.de, url: new URL('https://example.com') }];
       };
     }
@@ -163,7 +163,7 @@ describe('resolve', () => {
   });
 
   test('ignores not found errors', async () => {
-    const mockHandler: Handler = {
+    const mockHandler: Source = {
       id: 'mockhandler',
       label: 'MockHandler',
       contentTypes: ['movie'],

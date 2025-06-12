@@ -1,10 +1,10 @@
 import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
-import { Handler, HandleResult } from './types';
+import { Source, SourceResult } from './types';
 import { Fetcher, getImdbId, Id } from '../utils';
 import { Context, CountryCode } from '../types';
 
-export class VerHdLink implements Handler {
+export class VerHdLink implements Source {
   readonly id = 'verhdlink';
 
   readonly label = 'VerHdLink';
@@ -19,7 +19,7 @@ export class VerHdLink implements Handler {
     this.fetcher = fetcher;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<HandleResult[]> => {
+  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
     const imdbId = await getImdbId(ctx, this.fetcher, id);
 
     const pageUrl = new URL(`https://verhdlink.cam/movie/${imdbId.id}`);

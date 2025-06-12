@@ -1,6 +1,6 @@
 import { Request, Response, Router } from 'express';
 import winston from 'winston';
-import { Handler } from '../handler';
+import { Source } from '../source';
 import { Config, Context } from '../types';
 import { envIsProd, getDefaultConfig, ImdbId, StreamResolver } from '../utils';
 import { ContentType } from 'stremio-addon-sdk';
@@ -9,14 +9,14 @@ export class StreamController {
   public readonly router: Router;
 
   private readonly logger: winston.Logger;
-  private readonly handlers: Handler[];
+  private readonly sources: Source[];
   private readonly streamResolver: StreamResolver;
 
-  constructor(logger: winston.Logger, handlers: Handler[], streams: StreamResolver) {
+  constructor(logger: winston.Logger, sources: Source[], streams: StreamResolver) {
     this.router = Router();
 
     this.logger = logger;
-    this.handlers = handlers;
+    this.sources = sources;
     this.streamResolver = streams;
 
     this.router.get('/:config/stream/:type/:id.json', this.getStream.bind(this));
@@ -35,9 +35,9 @@ export class StreamController {
 
     this.logger.info(`Search stream for type "${type}" and id "${id}" for ip ${ctx.ip}`, ctx);
 
-    const handlers = this.handlers.filter(handler => handler.countryCodes.filter(countryCode => countryCode in ctx.config).length);
+    const sources = this.sources.filter(handler => handler.countryCodes.filter(countryCode => countryCode in ctx.config).length);
 
-    const { streams, ttl } = await this.streamResolver.resolve(ctx, handlers, type, ImdbId.fromString(id));
+    const { streams, ttl } = await this.streamResolver.resolve(ctx, sources, type, ImdbId.fromString(id));
 
     if (ttl && envIsProd()) {
       res.setHeader('Cache-Control', `max-age=${ttl / 1000}, public`);

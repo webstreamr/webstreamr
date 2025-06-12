@@ -1,10 +1,10 @@
 import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
-import { Handler, HandleResult } from './types';
+import { Source, SourceResult } from './types';
 import { ImdbId, Fetcher, getImdbId, Id } from '../utils';
 import { Context, CountryCode } from '../types';
 
-export class StreamKiste implements Handler {
+export class StreamKiste implements Source {
   readonly id = 'streamkiste';
 
   readonly label = 'StreamKiste';
@@ -19,7 +19,7 @@ export class StreamKiste implements Handler {
     this.fetcher = fetcher;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<HandleResult[]> => {
+  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
     const imdbId = await getImdbId(ctx, this.fetcher, id);
 
     const seriesPageUrl = await this.fetchSeriesPageUrl(ctx, imdbId);

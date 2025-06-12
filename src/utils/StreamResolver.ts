@@ -2,7 +2,7 @@ import { ContentType, Stream } from 'stremio-addon-sdk';
 import winston from 'winston';
 import bytes from 'bytes';
 import { Context, TIMEOUT, UrlResult } from '../types';
-import { Handler } from '../handler';
+import { Source } from '../source';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError } from '../error';
 import { flagFromCountryCode, languageFromCountryCode } from './language';
 import { envGetAppName } from './env';
@@ -23,13 +23,13 @@ export class StreamResolver {
     this.extractorRegistry = extractorRegistry;
   }
 
-  readonly resolve = async (ctx: Context, handlers: Handler[], type: ContentType, id: Id): Promise<ResolveResponse> => {
-    if (handlers.length === 0) {
+  readonly resolve = async (ctx: Context, sources: Source[], type: ContentType, id: Id): Promise<ResolveResponse> => {
+    if (sources.length === 0) {
       return {
         streams: [
           {
             name: 'WebStreamr',
-            title: '⚠️ No handlers found. Please re-configure the plugin.',
+            title: '⚠️ No sources found. Please re-configure the plugin.',
             ytId: 'E4WlUXrJgy4',
           },
         ],
@@ -40,7 +40,7 @@ export class StreamResolver {
 
     let handlerErrorOccurred = false;
     const urlResults: UrlResult[] = [];
-    const handlerPromises = handlers.map(async (handler) => {
+    const handlerPromises = sources.map(async (handler) => {
       if (!handler.contentTypes.includes(type)) {
         return;
       }

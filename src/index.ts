@@ -1,7 +1,7 @@
 import express, { NextFunction, Request, Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import winston from 'winston';
-import { CineHDPlus, Frembed, FrenchCloud, Handler, KinoGer, MeineCloud, MostraGuarda, Soaper, StreamKiste, VerHdLink, VidSrc } from './handler';
+import { CineHDPlus, Frembed, FrenchCloud, Source, KinoGer, MeineCloud, MostraGuarda, Soaper, StreamKiste, VerHdLink, VidSrc } from './source';
 import { createExtractors, ExtractorRegistry } from './extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
 import { envGet, envIsProd, Fetcher, StreamResolver, tmdbFetch, TmdbId } from './utils';
@@ -19,7 +19,7 @@ const logger = winston.createLogger({
 
 const fetcher = new Fetcher(logger);
 
-const handlers: Handler[] = [
+const sources: Source[] = [
   // EN
   new Soaper(fetcher),
   new VidSrc(fetcher),
@@ -54,12 +54,12 @@ addon.use((_req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
-addon.use('/', (new ConfigureController(handlers)).router);
-addon.use('/', (new ManifestController(handlers)).router);
+addon.use('/', (new ConfigureController(sources)).router);
+addon.use('/', (new ManifestController(sources)).router);
 
 const extractorRegistry = new ExtractorRegistry(logger, createExtractors(fetcher));
 const streamResolver = new StreamResolver(logger, extractorRegistry);
-addon.use('/', (new StreamController(logger, handlers, streamResolver)).router);
+addon.use('/', (new StreamController(logger, sources, streamResolver)).router);
 
 addon.get('/', (_req: Request, res: Response) => {
   res.redirect('/configure');
@@ -86,7 +86,7 @@ const cacheWarmup = async () => {
     }
   });
   for (const id of movieIds) {
-    await streamResolver.resolve(ctx, handlers, 'movie', new TmdbId(id, undefined, undefined));
+    await streamResolver.resolve(ctx, sources, 'movie', new TmdbId(id, undefined, undefined));
   }
   logger.info(`warmed up cache with ${movieIds.length} movies`, ctx);
 
@@ -100,7 +100,7 @@ const cacheWarmup = async () => {
     }
   });
   for (const id of tvShowIds) {
-    await streamResolver.resolve(ctx, handlers, 'series', new TmdbId(id, 1, 1));
+    await streamResolver.resolve(ctx, sources, 'series', new TmdbId(id, 1, 1));
   }
   logger.info(`warmed up cache with ${tvShowIds.length} tv shows`, ctx);
 
