@@ -22,7 +22,11 @@ export enum CountryCode {
   mx = 'mx',
 }
 
-export type BlockedReason = 'cloudflare_challenge' | 'flaresolverr_failed' | 'unknown';
+export enum BlockedReason {
+  cloudflare_challenge = 'cloudflare_challenge',
+  flaresolverr_failed = 'flaresolverr_failed',
+  unknown = 'unknown',
+}
 
 export interface Meta {
   bytes?: number;

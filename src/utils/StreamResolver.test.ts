@@ -4,9 +4,10 @@ import { ExtractorRegistry } from '../extractor';
 import { StreamResolver } from './StreamResolver';
 import { Handler, MeineCloud, MostraGuarda } from '../handler';
 import { Fetcher } from './Fetcher';
-import { Context, CountryCode, TIMEOUT, UrlResult } from '../types';
+import { BlockedReason, Context, CountryCode, TIMEOUT, UrlResult } from '../types';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError } from '../error';
 import { ImdbId } from './id';
+
 jest.mock('../utils/Fetcher');
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
@@ -69,7 +70,7 @@ describe('resolve', () => {
             {
               url: new URL('https://example.com'),
               isExternal: true,
-              error: new BlockedError('cloudflare_challenge', {}),
+              error: new BlockedError(BlockedReason.cloudflare_challenge, {}),
               label: 'hoster.com',
               sourceId: '',
               meta: {
@@ -79,7 +80,7 @@ describe('resolve', () => {
             {
               url: new URL('https://example.com'),
               isExternal: true,
-              error: new BlockedError('unknown', {}),
+              error: new BlockedError(BlockedReason.unknown, {}),
               label: 'hoster.com',
               sourceId: '',
               meta: {

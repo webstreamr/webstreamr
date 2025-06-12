@@ -3,7 +3,7 @@ import TTLCache from '@isaacs/ttlcache';
 import winston from 'winston';
 import { Mutex } from 'async-mutex';
 import { Cookie, CookieJar } from 'tough-cookie';
-import { Context, TIMEOUT } from '../types';
+import { BlockedReason, Context, TIMEOUT } from '../types';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError } from '../error';
 import { clearTimeout } from 'node:timers';
 import { envGet } from './env';
@@ -114,7 +114,7 @@ export class Fetcher {
       const noFlareSolverr = init?.noFlareSolverr ?? false;
       const flareSolverrEndpoint = envGet('FLARESOLVERR_ENDPOINT');
       if (noFlareSolverr || !flareSolverrEndpoint) {
-        throw new BlockedError('cloudflare_challenge', httpCacheItem.policy.responseHeaders());
+        throw new BlockedError(BlockedReason.cloudflare_challenge, httpCacheItem.policy.responseHeaders());
       }
 
       this.logger.info(`Query FlareSolverr for ${url.href}`, ctx);
@@ -123,7 +123,7 @@ export class Fetcher {
       const challengeResult = await (await this.queuedFetch(ctx, new URL(flareSolverrEndpoint), { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' }, queueLimit: 1 })).json() as FlareSolverrResult;
       if (challengeResult.status !== 'ok') {
         this.logger.warn(`FlareSolverr issue: ${JSON.stringify(challengeResult)}`, ctx);
-        throw new BlockedError('flaresolverr_failed', {});
+        throw new BlockedError(BlockedReason.flaresolverr_failed, {});
       }
 
       challengeResult.solution.cookies.forEach((cookie) => {
@@ -156,7 +156,7 @@ export class Fetcher {
     }
 
     if (httpCacheItem.status === 403) {
-      throw new BlockedError('unknown', httpCacheItem.policy.responseHeaders());
+      throw new BlockedError(BlockedReason.unknown, httpCacheItem.policy.responseHeaders());
     }
 
     throw new HttpError(httpCacheItem.status, httpCacheItem.statusText, responseHeaders);
