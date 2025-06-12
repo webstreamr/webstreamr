@@ -3,6 +3,7 @@ import slugify from 'slugify';
 import { Extractor } from './types';
 import { Fetcher, guessFromPlaylist } from '../utils';
 import { Context, CountryCode, UrlResult } from '../types';
+import { NotFoundError } from '../error';
 
 export class VidSrc implements Extractor {
   readonly id = 'vidsrc';
@@ -39,7 +40,10 @@ export class VidSrc implements Extractor {
           const srcMatch = iframeHtml.match(`src:\\s?'(.*)'`) as string[];
 
           const playerHtml = await this.fetcher.text(ctx, new URL(srcMatch[1] as string, iframeUrl.origin));
-          const fileMatch = playerHtml.match(`file:\\s?'(.*)'`) as string[];
+          const fileMatch = playerHtml.match(`file:\\s?'(.*)'`);
+          if (!fileMatch) {
+            throw new NotFoundError();
+          }
 
           const m3u8Url = new URL(fileMatch[1] as string);
           const height = await guessFromPlaylist(ctx, this.fetcher, m3u8Url, { noReferer: true });

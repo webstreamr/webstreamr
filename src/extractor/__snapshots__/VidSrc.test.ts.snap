@@ -31,3 +31,5 @@ exports[`VidSrc Full Metal Jacket 1`] = `
   },
 ]
 `;
+
+exports[`VidSrc not found 1`] = `[]`;
