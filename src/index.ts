@@ -1,21 +1,10 @@
 import express, { NextFunction, Request, Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import winston from 'winston';
-import {
-  CineHDPlus,
-  Frembed,
-  FrenchCloud,
-  Handler,
-  StreamKiste,
-  MeineCloud,
-  MostraGuarda,
-  Soaper,
-  VerHdLink, KinoGer,
-} from './handler';
+import { CineHDPlus, Frembed, FrenchCloud, Handler, KinoGer, MeineCloud, MostraGuarda, Soaper, StreamKiste, VerHdLink, VidSrc } from './handler';
 import { ExtractorRegistry } from './extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
 import { envGet, envIsProd, Fetcher, StreamResolver, tmdbFetch, TmdbId } from './utils';
-import { VidSrc } from './handler/VidSrc';
 
 const logger = winston.createLogger({
   transports: [
