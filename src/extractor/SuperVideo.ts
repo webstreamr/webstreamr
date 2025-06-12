@@ -3,6 +3,7 @@ import * as cheerio from 'cheerio';
 import { Extractor } from './types';
 import { extractUrlFromPacked, Fetcher } from '../utils';
 import { Context, Meta, UrlResult } from '../types';
+import { NotFoundError } from '../error';
 
 export class SuperVideo implements Extractor {
   readonly id = 'supervideo';
@@ -26,6 +27,11 @@ export class SuperVideo implements Extractor {
 
     if (html.includes('This video can be watched as embed only')) {
       return await this.extract(ctx, new URL(`/e${url.pathname}`, url.origin), meta);
+    }
+
+    /* istanbul ignore next TODO: Add test after refactoring. E.g. https://supervideo.cc/ndf5shmy9lpt */
+    if (/'The file was deleted|The file expired/.test(html)) {
+      throw new NotFoundError();
     }
 
     const heightAndSizeMatch = html.match(/\d{3,}x(\d{3,}), ([\d.]+ ?[GM]B)/);
