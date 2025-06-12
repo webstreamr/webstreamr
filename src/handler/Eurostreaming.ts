@@ -1,8 +1,7 @@
 import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
-import { Handler } from './types';
+import { Handler, HandleResult } from './types';
 import { Fetcher, getImdbId, Id, ImdbId } from '../utils';
-import { ExtractorRegistry } from '../extractor';
 import { Context, CountryCode } from '../types';
 
 export class Eurostreaming implements Handler {
@@ -15,14 +14,12 @@ export class Eurostreaming implements Handler {
   readonly countryCodes: CountryCode[] = [CountryCode.it];
 
   private readonly fetcher: Fetcher;
-  private readonly extractorRegistry: ExtractorRegistry;
 
-  constructor(fetcher: Fetcher, extractorRegistry: ExtractorRegistry) {
+  constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
-    this.extractorRegistry = extractorRegistry;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: Id) => {
+  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<HandleResult[]> => {
     const imdbId = await getImdbId(ctx, this.fetcher, id);
 
     const seriesPageUrl = await this.fetchSeriesPageUrl(ctx, imdbId);
@@ -46,7 +43,7 @@ export class Eurostreaming implements Handler {
       .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
       .toArray()
       .filter(url => !url.host.match(/eurostreaming/))
-      .map(url => this.extractorRegistry.handle({ ...ctx, referer: seriesPageUrl }, url, { countryCode: CountryCode.it, title: `${title.trim()} ${imdbId.season}x${imdbId.episode}` })),
+      .map(url => ({ countryCode: CountryCode.it, referer: seriesPageUrl, title: `${title.trim()} ${imdbId.season}x${imdbId.episode}`, url })),
     );
   };
 

@@ -7,6 +7,7 @@ import { BlockedError, HttpError, NotFoundError, QueueIsFullError } from '../err
 import { flagFromCountryCode, languageFromCountryCode } from './language';
 import { envGetAppName } from './env';
 import { Id } from './id';
+import { ExtractorRegistry } from '../extractor';
 
 interface ResolveResponse {
   streams: Stream[];
@@ -15,9 +16,11 @@ interface ResolveResponse {
 
 export class StreamResolver {
   private readonly logger: winston.Logger;
+  private readonly extractorRegistry: ExtractorRegistry;
 
-  constructor(logger: winston.Logger) {
+  constructor(logger: winston.Logger, extractorRegistry: ExtractorRegistry) {
     this.logger = logger;
+    this.extractorRegistry = extractorRegistry;
   }
 
   readonly resolve = async (ctx: Context, handlers: Handler[], type: ContentType, id: Id): Promise<ResolveResponse> => {
@@ -43,8 +46,16 @@ export class StreamResolver {
       }
 
       try {
-        const handlerUrlResults = await handler.handle(ctx, type, id);
-        this.logger.info(`${handler.id} returned ${handlerUrlResults.length} urls`, ctx);
+        const handleResults = await handler.handle(ctx, type, id);
+        this.logger.info(`${handler.id} returned ${handleResults.length} urls`, ctx);
+
+        const handlerUrlResults = await Promise.all(
+          handleResults.map(async ({ countryCode, referer, title, url }) => {
+            const newCtx = { ...ctx, ...(referer && { referer }) };
+
+            return await this.extractorRegistry.handle(newCtx, url, countryCode, title);
+          }),
+        );
 
         urlResults.push(...handlerUrlResults.flat());
       } catch (error) {

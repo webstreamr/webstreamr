@@ -2,7 +2,7 @@ import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { Extractor } from './types';
 import { extractUrlFromPacked, Fetcher } from '../utils';
-import { Context, Meta, UrlResult } from '../types';
+import { Context, CountryCode, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
 export class SuperVideo implements Extractor {
@@ -22,14 +22,13 @@ export class SuperVideo implements Extractor {
 
   readonly normalize = (url: URL): URL => new URL(url.href.replace('/e/', '/').replace('/embed-', '/'));
 
-  readonly extract = async (ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> => {
+  readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
     const html = await this.fetcher.text(ctx, url);
 
     if (html.includes('This video can be watched as embed only')) {
-      return await this.extract(ctx, new URL(`/e${url.pathname}`, url.origin), meta);
+      return await this.extract(ctx, new URL(`/e${url.pathname}`, url.origin), countryCode);
     }
 
-    /* istanbul ignore next TODO: Add test after refactoring. E.g. https://supervideo.cc/ndf5shmy9lpt */
     if (/'The file was deleted|The file expired/.test(html)) {
       throw new NotFoundError();
     }
@@ -43,15 +42,15 @@ export class SuperVideo implements Extractor {
       {
         url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
         label: this.label,
-        sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
+        sourceId: `${this.id}_${countryCode}`,
         ttl: this.ttl,
         meta: {
-          ...meta,
+          countryCode,
+          title,
           ...(heightAndSizeMatch && {
             bytes: bytes.parse(heightAndSizeMatch[2] as string) as number,
             height: parseInt(heightAndSizeMatch[1] as string) as number,
           }),
-          ...(title && { title }),
         },
       },
     ];

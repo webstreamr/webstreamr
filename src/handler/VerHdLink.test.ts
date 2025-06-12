@@ -1,11 +1,8 @@
-import winston from 'winston';
 import { VerHdLink } from './VerHdLink';
 import { Fetcher, ImdbId } from '../utils';
-import { ExtractorRegistry } from '../extractor';
 import { Context } from '../types';
 jest.mock('../utils/Fetcher');
 
-const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 // @ts-expect-error No constructor args needed
 const fetcher = new Fetcher();
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { es: 'on', mx: 'on' } };
@@ -14,7 +11,7 @@ describe('VerHdLink', () => {
   let handler: VerHdLink;
 
   beforeEach(() => {
-    handler = new VerHdLink(fetcher, new ExtractorRegistry(logger, fetcher));
+    handler = new VerHdLink(fetcher);
   });
 
   test('handles non-existent movies gracefully', async () => {

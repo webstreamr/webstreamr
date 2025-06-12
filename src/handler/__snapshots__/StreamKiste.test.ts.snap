@@ -1,34 +1,18 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`StreamKiste handle imdb black mirror s2e4 1`] = `
 [
-  [
-    {
-      "label": "SuperVideo",
-      "meta": {
-        "bytes": 733793484,
-        "countryCode": "de",
-        "height": 720,
-        "title": "Black Mirror 2x4",
-      },
-      "sourceId": "supervideo_de",
-      "ttl": 900000,
-      "url": "https://hfs279.serversicuro.cc/hls/,dnzpervt3xg4a3gyvdix52ttsqpj5jgxs7keazdmhvru2uyin5g7f67a5u4a,.urlset/master.m3u8",
-    },
-  ],
-  [
-    {
-      "label": "Dropload",
-      "meta": {
-        "bytes": 733793484,
-        "countryCode": "de",
-        "height": 720,
-        "title": "Black Mirror 2x4",
-      },
-      "sourceId": "dropload_de",
-      "ttl": 900000,
-      "url": "https://srv34.dropload.io/hls2/01/00007/jvjwrkpijr0f_h/master.m3u8?t=9B5k5sYgDD2kS_549tQ4WYh1o74hO1QR9zzyXrVRqv4&s=1746903685&e=14400&f=35986&srv=srv27&i=0.0&sp=0&ii=130.61.236.204&p1=srv27&p2=srv27",
-    },
-  ],
+  {
+    "countryCode": "de",
+    "referer": "https://streamkiste.taxi/movie/29992-black-mirror-stream-kostenlos.html",
+    "title": "Black Mirror 2x4",
+    "url": "https://supervideo.cc/embed-22go50mon0ke.html",
+  },
+  {
+    "countryCode": "de",
+    "referer": "https://streamkiste.taxi/movie/29992-black-mirror-stream-kostenlos.html",
+    "title": "Black Mirror 2x4",
+    "url": "https://dropload.io/embed-jvjwrkpijr0f.html",
+  },
 ]
 `;

@@ -1,141 +1,59 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`KinoGer handle imdb blood and sinners 1`] = `
 [
-  [
-    {
-      "label": "Fsst",
-      "meta": {
-        "countryCode": "de",
-        "height": 360,
-        "title": "Blood.and.Sinners.2025.mkv",
-      },
-      "sourceId": "fsst_de_0",
-      "url": "https://www.secvideo1.online/get_file/16/a135ab46b1243e41c0282c16d7cdcbcd3e54de0f28/900000/900576/900576_360p.mp4/",
-    },
-    {
-      "label": "Fsst",
-      "meta": {
-        "countryCode": "de",
-        "height": 720,
-        "title": "Blood.and.Sinners.2025.mkv",
-      },
-      "sourceId": "fsst_de_1",
-      "url": "https://www.secvideo1.online/get_file/16/801a42b7ac11f7e08101fe8c3cb5370470f5f91590/900000/900576/900576_720p.mp4/",
-    },
-    {
-      "label": "Fsst",
-      "meta": {
-        "countryCode": "de",
-        "height": 1080,
-        "title": "Blood.and.Sinners.2025.mkv",
-      },
-      "sourceId": "fsst_de_2",
-      "url": "https://www.secvideo1.online/get_file/16/fae180e05d8d7af50fff44c7a24232b522db464935/900000/900576/900576.mp4/",
-    },
-  ],
-  [],
-  [
-    {
-      "label": "KinoGer",
-      "meta": {
-        "countryCode": "de",
-        "title": "Blood.and.Sinners.2025.mkv",
-      },
-      "requestHeaders": {
-        "Referer": "https://kinoger.com/stream/18809-blood-sinners-stream.html",
-      },
-      "sourceId": "kinoger_de",
-      "ttl": 900000,
-      "url": "https://scvo.mazedukhkortfj.sbs/v4/bgm/ge5fhb/cf-master.txt?v=1748766126",
-    },
-  ],
+  {
+    "countryCode": "de",
+    "referer": "https://kinoger.com/stream/18809-blood-sinners-stream.html",
+    "title": "Blood & Sinners (2025)",
+    "url": "https://fsst.online/embed/900576/",
+  },
+  {
+    "countryCode": "de",
+    "referer": "https://kinoger.com/stream/18809-blood-sinners-stream.html",
+    "title": "Blood & Sinners (2025)",
+    "url": "https://kinoger.pw/e/6zeREaMlrqREZPa",
+  },
+  {
+    "countryCode": "de",
+    "referer": "https://kinoger.com/stream/18809-blood-sinners-stream.html",
+    "title": "Blood & Sinners (2025)",
+    "url": "https://kinoger.re/#ge5fhb",
+  },
 ]
 `;
 
 exports[`KinoGer handle imdb dead city s2e5 1`] = `
 [
-  [
-    {
-      "label": "SuperVideo",
-      "meta": {
-        "countryCode": "de",
-        "title": "The Walking Dead: Dead City 2x5",
-      },
-      "sourceId": "supervideo_de",
-      "ttl": 900000,
-      "url": "https://hfs308.serversicuro.cc/hls/,dnzpe7rf5xg4a3gyva3h5orlyw23xosfzwunl5xbmjpz3lspgri6ztlr5dia,.urlset/master.m3u8",
-    },
-  ],
-  [
-    {
-      "label": "KinoGer",
-      "meta": {
-        "countryCode": "de",
-        "height": 1080,
-        "title": "the.walking.dead.dead.city.s02e05.german.dl.1080p.web.x264-wvf.mkv",
-      },
-      "requestHeaders": {
-        "Referer": "https://kinoger.com/stream/12971-the-walking-dead-dead-city-stream.html",
-      },
-      "sourceId": "kinoger_de",
-      "ttl": 900000,
-      "url": "https://sskt.amberwels.sbs/v4/vz1/x6tsx9/cf-master.txt?v=1748957184",
-    },
-  ],
+  {
+    "countryCode": "de",
+    "referer": "https://kinoger.com/stream/12971-the-walking-dead-dead-city-stream.html",
+    "title": "The Walking Dead: Dead City 2x5",
+    "url": "https://supervideo.cc/e/bj6szat1pval",
+  },
+  {
+    "countryCode": "de",
+    "referer": "https://kinoger.com/stream/12971-the-walking-dead-dead-city-stream.html",
+    "title": "The Walking Dead: Dead City 2x5",
+    "url": "https://kinoger.re/#x6tsx9",
+  },
 ]
 `;
 
 exports[`KinoGer handle imdb dead city s2e6 1`] = `
 [
-  [
-    {
-      "label": "Fsst",
-      "meta": {
-        "countryCode": "de",
-        "height": 360,
-        "title": "the.walking.dead.dead.city.s02e06.german.dl.1080p.web.x264-wvf.mkv",
-      },
-      "sourceId": "fsst_de_0",
-      "url": "https://www.secvideo1.online/get_file/9/99510c9abde68b5e82b08cd239172405b06f84c9e5/901000/901994/901994_360p.mp4/",
-    },
-    {
-      "label": "Fsst",
-      "meta": {
-        "countryCode": "de",
-        "height": 720,
-        "title": "the.walking.dead.dead.city.s02e06.german.dl.1080p.web.x264-wvf.mkv",
-      },
-      "sourceId": "fsst_de_1",
-      "url": "https://www.secvideo1.online/get_file/9/868ae0229e543e7a9a6f7cf4b3df88f460a1bfc444/901000/901994/901994_720p.mp4/",
-    },
-    {
-      "label": "Fsst",
-      "meta": {
-        "countryCode": "de",
-        "height": 1080,
-        "title": "the.walking.dead.dead.city.s02e06.german.dl.1080p.web.x264-wvf.mkv",
-      },
-      "sourceId": "fsst_de_2",
-      "url": "https://www.secvideo1.online/get_file/9/44ff1bf6024db32840054f00029afb114120b91353/901000/901994/901994.mp4/",
-    },
-  ],
-  [
-    {
-      "label": "KinoGer",
-      "meta": {
-        "countryCode": "de",
-        "height": 1080,
-        "title": "the.walking.dead.dead.city.s02e06.german.dl.1080p.web.x264-wvf.mkv",
-      },
-      "requestHeaders": {
-        "Referer": "https://kinoger.com/stream/12971-the-walking-dead-dead-city-stream.html",
-      },
-      "sourceId": "kinoger_de",
-      "ttl": 900000,
-      "url": "https://slob.feistjmyrodne.sbs/v4/vz1/ep1tcf/cf-master.txt?v=1749488554",
-    },
-  ],
+  {
+    "countryCode": "de",
+    "referer": "https://kinoger.com/stream/12971-the-walking-dead-dead-city-stream.html",
+    "title": "The Walking Dead: Dead City 2x6",
+    "url": "https://fsst.online/embed/901994/",
+  },
+  {
+    "countryCode": "de",
+    "referer": "https://kinoger.com/stream/12971-the-walking-dead-dead-city-stream.html",
+    "title": "The Walking Dead: Dead City 2x6",
+    "url": "https://kinoger.re/#ep1tcf",
+  },
 ]
 `;
 
@@ -143,20 +61,11 @@ exports[`KinoGer handle missing episode imdb black mirror s3e4 1`] = `[]`;
 
 exports[`KinoGer handle no fsst via brokeback mountain 1`] = `
 [
-  [
-    {
-      "label": "DoodStream",
-      "meta": {
-        "countryCode": "de",
-        "title": "Brokeback Mountain 2005",
-      },
-      "requestHeaders": {
-        "Referer": "http://dood.to/",
-      },
-      "sourceId": "doodstream_de",
-      "ttl": 900000,
-      "url": "https://ijs155l.cloudatacdn.com/u5kj2rz5qtdlsdgge4hrgj2flz5cjodea6auatveaphxodkbf5n5mtrbp7aq/ntfyct66ci~mocked-random-string?token=fbsg3301phkef2s4swo8bssg&expiry=639837296000",
-    },
-  ],
+  {
+    "countryCode": "de",
+    "referer": "https://kinoger.com/stream/14781-brokeback-mountain-stream.html",
+    "title": "Brokeback Mountain (2005)",
+    "url": "https://dooodster.com/e/1cfcevn6dg8shrfvht22odxw2lty18hr",
+  },
 ]
 `;

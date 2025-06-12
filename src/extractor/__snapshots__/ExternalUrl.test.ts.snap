@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ExternalUrl 404 - not found 1`] = `[]`;
+
+exports[`ExternalUrl johnalwayssame.com with title 1`] = `
+[
+  {
+    "isExternal": true,
+    "label": "johnalwayssame.com",
+    "meta": {
+      "countryCode": "fr",
+      "title": "Black Mirror 4x2",
+    },
+    "sourceId": "external_fr",
+    "ttl": 3600000,
+    "url": "https://johnalwayssame.com/e/cqy9oue7sv0g",
+  },
+]
+`;
+
+exports[`ExternalUrl netu.fanstream.us 1`] = `
+[
+  {
+    "isExternal": true,
+    "label": "netu.fanstream.us",
+    "meta": {
+      "countryCode": "fr",
+    },
+    "sourceId": "external_fr",
+    "ttl": 3600000,
+    "url": "https://netu.fanstream.us/e/0DFgfkcXOsDP",
+  },
+]
+`;

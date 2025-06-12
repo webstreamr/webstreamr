@@ -1,67 +1,35 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`CineHDPlus handle imdb babylon 5 s2e3 (es) 1`] = `
 [
-  [
-    {
-      "label": "SuperVideo",
-      "meta": {
-        "bytes": 219571814,
-        "countryCode": "es",
-        "height": 344,
-        "title": "Babylon 5 2x3",
-      },
-      "sourceId": "supervideo_es",
-      "ttl": 900000,
-      "url": "https://hfs294.serversicuro.cc/hls/,dnzpealv5xg4a3gyvavh52jryms77x3wwakzvgy2ly3yfusnblczjnvvweua,.urlset/master.m3u8",
-    },
-  ],
-  [
-    {
-      "label": "Dropload",
-      "meta": {
-        "bytes": 219571814,
-        "countryCode": "es",
-        "height": 344,
-        "title": "Babylon 5 2x3",
-      },
-      "sourceId": "dropload_es",
-      "ttl": 900000,
-      "url": "https://srv29.dropload.io/hls2/01/00295/957hny8mzrvh_h/master.m3u8?t=VpcZJYlXpp0FJb0Nh0yJR0nyI8-SKB2tGFwpcTx9v2w&s=1747213958&e=14400&f=1476559&i=0.0&sp=0&ii=130.61.236.204",
-    },
-  ],
+  {
+    "countryCode": "es",
+    "referer": "https://cinehdplus.cam/peliculas/19678-babylon-5-ver-online-hd.html",
+    "title": "Babylon 5 2x3",
+    "url": "https://supervideo.tv/embed-1p0m1fi9mok8.html",
+  },
+  {
+    "countryCode": "es",
+    "referer": "https://cinehdplus.cam/peliculas/19678-babylon-5-ver-online-hd.html",
+    "title": "Babylon 5 2x3",
+    "url": "https://dropload.io/embed-957hny8mzrvh.html",
+  },
 ]
 `;
 
 exports[`CineHDPlus handle imdb black mirror s2e3 (mx) 1`] = `
 [
-  [
-    {
-      "label": "SuperVideo",
-      "meta": {
-        "bytes": 146800640,
-        "countryCode": "mx",
-        "height": 360,
-        "title": "Black Mirror 2x3",
-      },
-      "sourceId": "supervideo_mx",
-      "ttl": 900000,
-      "url": "https://hfs299.serversicuro.cc/hls/,dnzpff262hg4a3gyvcex5ojxt23vrieljzut7xhjydwidlbp4g7nqswkpfwq,.urlset/master.m3u8",
-    },
-  ],
-  [
-    {
-      "label": "Dropload",
-      "meta": {
-        "bytes": 146800640,
-        "countryCode": "mx",
-        "height": 360,
-        "title": "Black Mirror 2x3",
-      },
-      "sourceId": "dropload_mx",
-      "ttl": 900000,
-      "url": "https://srv27.dropload.io/hls2/01/00075/t058ulwwkwn6_h/master.m3u8?t=GkktV2WgIMrvrgNLyjn6Bxeo2fArEAz6y9nSi_6dVAs&s=1747213564&e=14400&f=376684&i=0.0&sp=0&ii=130.61.236.204",
-    },
-  ],
+  {
+    "countryCode": "mx",
+    "referer": "https://cinehdplus.cam/peliculas/9582-black-mirror-ver-online-hd.html",
+    "title": "Black Mirror 2x3",
+    "url": "https://supervideo.tv/embed-avmgppo37sx1.html",
+  },
+  {
+    "countryCode": "mx",
+    "referer": "https://cinehdplus.cam/peliculas/9582-black-mirror-ver-online-hd.html",
+    "title": "Black Mirror 2x3",
+    "url": "https://dropload.io/embed-t058ulwwkwn6.html",
+  },
 ]
 `;

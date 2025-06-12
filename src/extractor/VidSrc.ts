@@ -2,7 +2,7 @@ import * as cheerio from 'cheerio';
 import slugify from 'slugify';
 import { Extractor } from './types';
 import { Fetcher, guessFromPlaylist } from '../utils';
-import { Context, Meta, UrlResult } from '../types';
+import { Context, CountryCode, UrlResult } from '../types';
 
 export class VidSrc implements Extractor {
   readonly id = 'vidsrc';
@@ -21,7 +21,7 @@ export class VidSrc implements Extractor {
 
   readonly normalize = (url: URL): URL => url;
 
-  readonly extract = async (ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> => {
+  readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
     const html = await this.fetcher.text(ctx, url);
 
     const $ = cheerio.load(html);
@@ -47,10 +47,10 @@ export class VidSrc implements Extractor {
           return {
             url: m3u8Url,
             label: `${this.label} (${serverName})`,
-            sourceId: `${this.id}_${slugify(serverName)}_${meta.countryCode.toLowerCase()}`,
+            sourceId: `${this.id}_${slugify(serverName)}_${countryCode}`,
             ttl: this.ttl,
             meta: {
-              ...meta,
+              countryCode,
               title,
               ...(height && { height }),
             },

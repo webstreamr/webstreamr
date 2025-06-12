@@ -1,7 +1,6 @@
 import { ContentType } from 'stremio-addon-sdk';
-import { Handler } from './types';
+import { Handler, HandleResult } from './types';
 import { Fetcher, getImdbId, Id } from '../utils';
-import { ExtractorRegistry } from '../extractor';
 import { Context, CountryCode } from '../types';
 
 export class VidSrc implements Handler {
@@ -16,22 +15,18 @@ export class VidSrc implements Handler {
   private readonly baseUrl = 'https://vidsrc.xyz';
 
   private readonly fetcher: Fetcher;
-  private readonly extractorRegistry: ExtractorRegistry;
 
-  constructor(fetcher: Fetcher, extractorRegistry: ExtractorRegistry) {
+  constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
-    this.extractorRegistry = extractorRegistry;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: Id) => {
+  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<HandleResult[]> => {
     const imdbId = await getImdbId(ctx, this.fetcher, id);
 
-    const embedUrl = imdbId.season
+    const url = imdbId.season
       ? new URL(`/embed/tv/${imdbId.id}/${imdbId.season}/${imdbId.episode}`, this.baseUrl)
       : new URL(`/embed/movie/${imdbId.id}`, this.baseUrl);
 
-    return [
-      await this.extractorRegistry.handle(ctx, embedUrl, { countryCode: CountryCode.en }),
-    ];
+    return [{ countryCode: CountryCode.en, url }];
   };
 }

@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`SuperVideo deleted or expired file 1`] = `[]`;
+
+exports[`SuperVideo embed only 1`] = `
+[
+  {
+    "label": "SuperVideo",
+    "meta": {
+      "countryCode": "it",
+      "title": "",
+    },
+    "sourceId": "supervideo_it",
+    "ttl": 900000,
+    "url": "https://hfs308.serversicuro.cc/hls/,dnzpe7rf5xg4a3gyva3h5orlyw23xosfzwunl5xbmjpz3lspgri6ztlr5dia,.urlset/master.m3u8",
+  },
+]
+`;
+
+exports[`SuperVideo supervideo.cc /e/ 1`] = `
+[
+  {
+    "label": "SuperVideo",
+    "meta": {
+      "bytes": 1073741824,
+      "countryCode": "de",
+      "height": 720,
+      "title": "des-teufels-bad-2024",
+    },
+    "sourceId": "supervideo_de",
+    "ttl": 900000,
+    "url": "https://hfs290.serversicuro.cc/hls/,dnzpfi3d27g4a3gyvbmh5klwtl65qh654hyjtgupd6p56thhyqu6ra3olbfa,.urlset/master.m3u8",
+  },
+]
+`;
+
+exports[`SuperVideo supervideo.tv /embed-/ 1`] = `
+[
+  {
+    "label": "SuperVideo",
+    "meta": {
+      "bytes": 219571814,
+      "countryCode": "it",
+      "height": 344,
+      "title": "Babylon 5 2x3",
+    },
+    "sourceId": "supervideo_it",
+    "ttl": 900000,
+    "url": "https://hfs294.serversicuro.cc/hls/,dnzpealv5xg4a3gyvavh52jryms77x3wwakzvgy2ly3yfusnblczjnvvweua,.urlset/master.m3u8",
+  },
+]
+`;

@@ -1,8 +1,7 @@
 import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
-import { Handler } from './types';
+import { Handler, HandleResult } from './types';
 import { Fetcher, getTmdbId, getTmdbMovieDetails, getTmdbTvDetails, Id, TmdbId } from '../utils';
-import { ExtractorRegistry } from '../extractor';
 import { Context, CountryCode } from '../types';
 
 export class KinoGer implements Handler {
@@ -17,14 +16,12 @@ export class KinoGer implements Handler {
   private readonly baseUrl = 'https://kinoger.com';
 
   private readonly fetcher: Fetcher;
-  private readonly extractorRegistry: ExtractorRegistry;
 
-  constructor(fetcher: Fetcher, extractorRegistry: ExtractorRegistry) {
+  constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
-    this.extractorRegistry = extractorRegistry;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: Id) => {
+  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<HandleResult[]> => {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
     const [keyword, year] = await this.getKeywordAndYear(ctx, tmdbId);
@@ -40,12 +37,10 @@ export class KinoGer implements Handler {
 
     const html = await this.fetcher.text(ctx, pageUrl);
 
-    return Promise.all(
-      Array.from(html.matchAll(/\.show\(.*/g))
-        .map(showJsMatch => this.findEpisodeUrlInShowJs(showJsMatch[0], seasonIndex, episodeIndex))
-        .filter(url => url !== undefined && !['kinoger.be', 'kinoger.ru'].includes(url.host))
-        .map(async url => await this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, url as URL, { countryCode: CountryCode.de, title })),
-    );
+    return Array.from(html.matchAll(/\.show\(.*/g))
+      .map(showJsMatch => this.findEpisodeUrlInShowJs(showJsMatch[0], seasonIndex, episodeIndex))
+      .filter((url): url is URL => url !== undefined && !['kinoger.be', 'kinoger.ru'].includes(url.host))
+      .map(url => ({ countryCode: CountryCode.de, referer: pageUrl, title, url }));
   };
 
   private readonly findEpisodeUrlInShowJs = (showJs: string, seasonIndex: number, episodeIndex: number): URL | undefined => {

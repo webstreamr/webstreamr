@@ -1,8 +1,7 @@
 import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
-import { Handler } from './types';
+import { Handler, HandleResult } from './types';
 import { Fetcher, getImdbId, Id } from '../utils';
-import { ExtractorRegistry } from '../extractor';
 import { Context, CountryCode } from '../types';
 
 export class VerHdLink implements Handler {
@@ -15,14 +14,12 @@ export class VerHdLink implements Handler {
   readonly countryCodes: CountryCode[] = [CountryCode.es, CountryCode.mx];
 
   private readonly fetcher: Fetcher;
-  private readonly extractorRegistry: ExtractorRegistry;
 
-  constructor(fetcher: Fetcher, extractorRegistry: ExtractorRegistry) {
+  constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
-    this.extractorRegistry = extractorRegistry;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: Id) => {
+  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<HandleResult[]> => {
     const imdbId = await getImdbId(ctx, this.fetcher, id);
 
     const pageUrl = new URL(`https://verhdlink.cam/movie/${imdbId.id}`);
@@ -30,24 +27,22 @@ export class VerHdLink implements Handler {
 
     const $ = cheerio.load(html);
 
-    return Promise.all(
-      $('._player-mirrors')
-        .map((_i, el) => {
-          let countryCode: CountryCode;
-          if ($(el).hasClass('latino') && 'mx' in ctx.config) {
-            countryCode = CountryCode.mx;
-          } else if ($(el).hasClass('castellano') && 'es' in ctx.config) {
-            countryCode = CountryCode.es;
-          } else {
-            return [];
-          }
+    return $('._player-mirrors')
+      .map((_i, el) => {
+        let countryCode: CountryCode;
+        if ($(el).hasClass('latino') && 'mx' in ctx.config) {
+          countryCode = CountryCode.mx;
+        } else if ($(el).hasClass('castellano') && 'es' in ctx.config) {
+          countryCode = CountryCode.es;
+        } else {
+          return [];
+        }
 
-          return $('[data-link!=""]', el)
-            .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
-            .toArray()
-            .filter(url => !url.host.match(/verhdlink/))
-            .map(url => this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, url, { countryCode }));
-        }),
-    );
+        return $('[data-link!=""]', el)
+          .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
+          .toArray()
+          .filter(url => !url.host.match(/verhdlink/))
+          .map(url => ({ countryCode, referer: pageUrl, url }));
+      }).toArray();
   };
 }

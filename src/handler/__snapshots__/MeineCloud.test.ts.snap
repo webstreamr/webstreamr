@@ -1,62 +1,26 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`MeineCloud handle imdb the devil's bath 1`] = `
 [
-  [
-    {
-      "label": "SuperVideo",
-      "meta": {
-        "bytes": 1073741824,
-        "countryCode": "de",
-        "height": 720,
-        "title": "des-teufels-bad-2024",
-      },
-      "sourceId": "supervideo_de",
-      "ttl": 900000,
-      "url": "https://hfs290.serversicuro.cc/hls/,dnzpfi3d27g4a3gyvbmh5klwtl65qh654hyjtgupd6p56thhyqu6ra3olbfa,.urlset/master.m3u8",
-    },
-  ],
-  [
-    {
-      "label": "Dropload",
-      "meta": {
-        "bytes": 1395864371,
-        "countryCode": "de",
-        "height": 1080,
-        "title": "des-teufels-bad-2024",
-      },
-      "sourceId": "dropload_de",
-      "ttl": 900000,
-      "url": "https://srv27.dropload.io/hls2/01/00197/lyo2h1snpe5c_h/master.m3u8?t=qTZsRGIMnUjXsQ4o2LRLlsT4tGG1AdJrRBRDGttNLPM&s=1746903744&e=14400&f=987607&i=0.0&sp=0&ii=130.61.236.204",
-    },
-  ],
-  [
-    {
-      "isExternal": true,
-      "label": "mixdrop.ag",
-      "meta": {
-        "countryCode": "de",
-      },
-      "sourceId": "external_de",
-      "ttl": 3600000,
-      "url": "https://mixdrop.ag/e/3nzwveprim63or6",
-    },
-  ],
-  [
-    {
-      "label": "DoodStream",
-      "meta": {
-        "bytes": 791702409,
-        "countryCode": "de",
-        "title": "des-teufels-bad-2024",
-      },
-      "requestHeaders": {
-        "Referer": "http://dood.to/",
-      },
-      "sourceId": "doodstream_de",
-      "ttl": 900000,
-      "url": "https://aa360cc.cloudatacdn.com/u5kjv4jxytd3sdgge5uogji5dg4huat2pxrm2qibdbm5rtpmbzgb5tornooa/k9wk0js17e~mocked-random-string?token=7uebebipnnhusa4xnyea1er4&expiry=639837296000",
-    },
-  ],
+  {
+    "countryCode": "de",
+    "referer": "https://meinecloud.click/movie/tt29141112",
+    "url": "https://supervideo.cc/e/q7i0sw1oytw3",
+  },
+  {
+    "countryCode": "de",
+    "referer": "https://meinecloud.click/movie/tt29141112",
+    "url": "https://dropload.io/embed-lyo2h1snpe5c.html",
+  },
+  {
+    "countryCode": "de",
+    "referer": "https://meinecloud.click/movie/tt29141112",
+    "url": "https://mixdrop.ag/e/3nzwveprim63or6",
+  },
+  {
+    "countryCode": "de",
+    "referer": "https://meinecloud.click/movie/tt29141112",
+    "url": "https://dood.to/e/sk1m9eumzyjj",
+  },
 ]
 `;

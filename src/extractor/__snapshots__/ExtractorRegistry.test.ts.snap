@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`ExtractorRegistry return external URLs by default 1`] = `
 [
@@ -26,6 +26,23 @@ exports[`ExtractorRegistry returns external url for error 1`] = `
     "label": "dropload.io",
     "meta": {
       "countryCode": "de",
+    },
+    "sourceId": "dropload",
+    "url": "https://dropload.io/mocked-blocked.html",
+  },
+]
+`;
+
+exports[`ExtractorRegistry returns external url for error 2`] = `
+[
+  {
+    "error": [Error: Fetcher error: 403: Forbidden
+],
+    "isExternal": true,
+    "label": "dropload.io",
+    "meta": {
+      "countryCode": "de",
+      "title": "a title!",
     },
     "sourceId": "dropload",
     "url": "https://dropload.io/mocked-blocked.html",

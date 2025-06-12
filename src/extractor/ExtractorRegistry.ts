@@ -1,16 +1,7 @@
 import TTLCache from '@isaacs/ttlcache';
 import winston from 'winston';
 import { Extractor } from './types';
-import { Context, Meta, UrlResult } from '../types';
-import { Fetcher } from '../utils';
-import { DoodStream } from './DoodStream';
-import { Dropload } from './Dropload';
-import { Fsst } from './Fsst';
-import { SuperVideo } from './SuperVideo';
-import { KinoGer } from './KinoGer';
-import { Soaper } from './Soaper';
-import { VidSrc } from './VidSrc';
-import { ExternalUrl } from './ExternalUrl';
+import { Context, CountryCode, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
 export class ExtractorRegistry {
@@ -18,22 +9,13 @@ export class ExtractorRegistry {
   private readonly extractors: Extractor[];
   private readonly urlResultCache: TTLCache<string, UrlResult[]>;
 
-  constructor(logger: winston.Logger, fetcher: Fetcher) {
+  constructor(logger: winston.Logger, extractors: Extractor[]) {
     this.logger = logger;
-    this.extractors = [
-      new DoodStream(fetcher),
-      new Dropload(fetcher),
-      new Fsst(fetcher),
-      new SuperVideo(fetcher),
-      new KinoGer(fetcher),
-      new Soaper(fetcher),
-      new VidSrc(fetcher),
-      new ExternalUrl(fetcher), // fallback extractor which must come last
-    ];
+    this.extractors = extractors;
     this.urlResultCache = new TTLCache({ max: 1024 });
   }
 
-  readonly handle = async (ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> => {
+  readonly handle = async (ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined): Promise<UrlResult[]> => {
     const extractor = this.extractors.find(extractor => extractor.supports(ctx, url));
     if (!extractor) {
       return [];
@@ -49,7 +31,7 @@ export class ExtractorRegistry {
     this.logger.info(`Extract stream URL using ${extractor.id} extractor from ${url}`, ctx);
 
     try {
-      urlResults = await extractor.extract(ctx, normalizedUrl, meta);
+      urlResults = await extractor.extract(ctx, normalizedUrl, countryCode, title);
     } catch (error) {
       if (error instanceof NotFoundError) {
         this.urlResultCache.set(normalizedUrl.href, urlResults, { ttl: extractor.ttl });
@@ -64,7 +46,10 @@ export class ExtractorRegistry {
           error,
           label: url.host,
           sourceId: `${extractor.id}`,
-          meta,
+          meta: {
+            countryCode,
+            ...(title && { title }),
+          },
         },
       ];
     }

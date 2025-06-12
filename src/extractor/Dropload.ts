@@ -2,7 +2,7 @@ import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { Extractor } from './types';
 import { extractUrlFromPacked, Fetcher } from '../utils';
-import { Context, Meta, UrlResult } from '../types';
+import { Context, CountryCode, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
 export class Dropload implements Extractor {
@@ -22,7 +22,7 @@ export class Dropload implements Extractor {
 
   readonly normalize = (url: URL): URL => new URL(url.href.replace('/e/', '/').replace('/embed-', '/'));
 
-  readonly extract = async (ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> => {
+  readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
     const html = await this.fetcher.text(ctx, url);
 
     if (html.includes('File Not Found')) {
@@ -40,11 +40,11 @@ export class Dropload implements Extractor {
       {
         url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
         label: this.label,
-        sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
+        sourceId: `${this.id}_${countryCode}`,
         ttl: this.ttl,
         meta: {
-          ...meta,
           bytes: bytes.parse(sizeMatch[1] as string) as number,
+          countryCode,
           height: parseInt(heightMatch[1] as string) as number,
           title,
         },

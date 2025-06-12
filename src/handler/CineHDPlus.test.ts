@@ -1,11 +1,8 @@
-import winston from 'winston';
 import { CineHDPlus } from './CineHDPlus';
-import { ExtractorRegistry } from '../extractor';
 import { Fetcher, ImdbId } from '../utils';
 import { Context } from '../types';
 jest.mock('../utils/Fetcher');
 
-const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 // @ts-expect-error No constructor args needed
 const fetcher = new Fetcher();
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { es: 'on', mx: 'on' } };
@@ -14,7 +11,7 @@ describe('CineHDPlus', () => {
   let handler: CineHDPlus;
 
   beforeEach(() => {
-    handler = new CineHDPlus(fetcher, new ExtractorRegistry(logger, fetcher));
+    handler = new CineHDPlus(fetcher);
   });
 
   test('handles non-existent series gracefully', async () => {

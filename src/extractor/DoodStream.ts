@@ -2,7 +2,7 @@ import randomstring from 'randomstring';
 import * as cheerio from 'cheerio';
 import { Extractor } from './types';
 import { Fetcher, guessFromTitle } from '../utils';
-import { Context, Meta, UrlResult } from '../types';
+import { Context, CountryCode, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
 export class DoodStream implements Extractor {
@@ -26,7 +26,7 @@ export class DoodStream implements Extractor {
     return new URL(`http://dood.to/e/${videoId}`);
   };
 
-  readonly extract = async (ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> => {
+  readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
     const html = await this.fetcher.text(ctx, new URL(url));
 
     const passMd5Match = html.match(/\/pass_md5\/[\w-]+\/([\w-]+)/);
@@ -50,10 +50,10 @@ export class DoodStream implements Extractor {
       {
         url: mp4Url,
         label: this.label,
-        sourceId: `${this.id}_${meta.countryCode.toLowerCase()}`,
+        sourceId: `${this.id}_${countryCode}`,
         ttl: this.ttl,
         meta: {
-          ...meta,
+          countryCode,
           title,
           ...(mp4Head['content-length'] && { bytes: parseInt(mp4Head['content-length'] as string) }),
           ...(height && { height }),

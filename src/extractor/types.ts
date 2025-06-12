@@ -1,4 +1,4 @@
-import { Context, Meta, UrlResult } from '../types';
+import { Context, CountryCode, UrlResult } from '../types';
 
 export interface Extractor {
   readonly id: string;
@@ -11,5 +11,5 @@ export interface Extractor {
 
   readonly normalize: (url: URL) => URL;
 
-  readonly extract: (ctx: Context, url: URL, meta: Meta) => Promise<UrlResult[]>;
+  readonly extract: (ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined) => Promise<UrlResult[]>;
 }

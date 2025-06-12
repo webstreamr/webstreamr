@@ -2,7 +2,7 @@ import express, { NextFunction, Request, Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import winston from 'winston';
 import { CineHDPlus, Frembed, FrenchCloud, Handler, KinoGer, MeineCloud, MostraGuarda, Soaper, StreamKiste, VerHdLink, VidSrc } from './handler';
-import { ExtractorRegistry } from './extractor';
+import { createExtractors, ExtractorRegistry } from './extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
 import { envGet, envIsProd, Fetcher, StreamResolver, tmdbFetch, TmdbId } from './utils';
 
@@ -19,25 +19,23 @@ const logger = winston.createLogger({
 
 const fetcher = new Fetcher(logger);
 
-const extractorRegistry = new ExtractorRegistry(logger, fetcher);
-
 const handlers: Handler[] = [
   // EN
-  new Soaper(fetcher, extractorRegistry),
-  new VidSrc(fetcher, extractorRegistry),
+  new Soaper(fetcher),
+  new VidSrc(fetcher),
   // ES / MX
-  new CineHDPlus(fetcher, extractorRegistry),
-  new VerHdLink(fetcher, extractorRegistry),
+  new CineHDPlus(fetcher),
+  new VerHdLink(fetcher),
   // DE
-  new KinoGer(fetcher, extractorRegistry),
-  new MeineCloud(fetcher, extractorRegistry),
-  new StreamKiste(fetcher, extractorRegistry),
+  new KinoGer(fetcher),
+  new MeineCloud(fetcher),
+  new StreamKiste(fetcher),
   // FR
-  new Frembed(fetcher, extractorRegistry),
-  new FrenchCloud(fetcher, extractorRegistry),
+  new Frembed(fetcher),
+  new FrenchCloud(fetcher),
   // IT
-  // new Eurostreaming(fetcher, extractorRegistry), // https://github.com/webstreamr/webstreamr/issues/83
-  new MostraGuarda(fetcher, extractorRegistry),
+  // new Eurostreaming(fetcher), // https://github.com/webstreamr/webstreamr/issues/83
+  new MostraGuarda(fetcher),
 ];
 
 const addon = express();
@@ -59,7 +57,8 @@ addon.use((_req: Request, res: Response, next: NextFunction) => {
 addon.use('/', (new ConfigureController(handlers)).router);
 addon.use('/', (new ManifestController(handlers)).router);
 
-const streamResolver = new StreamResolver(logger);
+const extractorRegistry = new ExtractorRegistry(logger, createExtractors(fetcher));
+const streamResolver = new StreamResolver(logger, extractorRegistry);
 addon.use('/', (new StreamController(logger, handlers, streamResolver)).router);
 
 addon.get('/', (_req: Request, res: Response) => {

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`KinoGer Blood & Sinners 1`] = `
+[
+  {
+    "label": "KinoGer",
+    "meta": {
+      "countryCode": "de",
+      "title": "Blood.and.Sinners.2025.mkv",
+    },
+    "requestHeaders": {
+      "Referer": undefined,
+    },
+    "sourceId": "kinoger_de",
+    "ttl": 900000,
+    "url": "https://scvo.mazedukhkortfj.sbs/v4/bgm/ge5fhb/cf-master.txt?v=1748766126",
+  },
+]
+`;
+
+exports[`KinoGer Dead City 1`] = `
+[
+  {
+    "label": "KinoGer",
+    "meta": {
+      "countryCode": "de",
+      "height": 1080,
+      "title": "the.walking.dead.dead.city.s02e05.german.dl.1080p.web.x264-wvf.mkv",
+    },
+    "requestHeaders": {
+      "Referer": undefined,
+    },
+    "sourceId": "kinoger_de",
+    "ttl": 900000,
+    "url": "https://sskt.amberwels.sbs/v4/vz1/x6tsx9/cf-master.txt?v=1748957184",
+  },
+]
+`;

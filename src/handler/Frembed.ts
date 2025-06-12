@@ -1,7 +1,6 @@
 import { ContentType } from 'stremio-addon-sdk';
-import { Handler } from './types';
+import { Handler, HandleResult } from './types';
 import { Fetcher, getTmdbId, Id } from '../utils';
-import { ExtractorRegistry } from '../extractor';
 import { Context, CountryCode } from '../types';
 
 export class Frembed implements Handler {
@@ -14,14 +13,12 @@ export class Frembed implements Handler {
   readonly countryCodes: CountryCode[] = [CountryCode.fr];
 
   private readonly fetcher: Fetcher;
-  private readonly extractorRegistry: ExtractorRegistry;
 
-  constructor(fetcher: Fetcher, extractorRegistry: ExtractorRegistry) {
+  constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
-    this.extractorRegistry = extractorRegistry;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: Id) => {
+  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<HandleResult[]> => {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
     const apiUrl = new URL(`https://frembed.space/api/series?id=${tmdbId.id}&sa=${tmdbId.season}&epi=${tmdbId.episode}&idType=tmdb`);
@@ -39,8 +36,6 @@ export class Frembed implements Handler {
       }
     }
 
-    return Promise.all(
-      urls.map(url => this.extractorRegistry.handle({ ...ctx, referer: apiUrl }, url, { countryCode: CountryCode.fr, title: `${json['title']} ${tmdbId.season}x${tmdbId.episode}` })),
-    );
+    return urls.map(url => ({ countryCode: CountryCode.fr, referer: apiUrl, title: `${json['title']} ${tmdbId.season}x${tmdbId.episode}`, url }));
   };
 }

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Dropload dropload.io 1`] = `
+[
+  {
+    "label": "Dropload",
+    "meta": {
+      "bytes": 1395864371,
+      "countryCode": "de",
+      "height": 1080,
+      "title": "des-teufels-bad-2024",
+    },
+    "sourceId": "dropload_de",
+    "ttl": 900000,
+    "url": "https://srv27.dropload.io/hls2/01/00197/lyo2h1snpe5c_h/master.m3u8?t=qTZsRGIMnUjXsQ4o2LRLlsT4tGG1AdJrRBRDGttNLPM&s=1746903744&e=14400&f=987607&i=0.0&sp=0&ii=130.61.236.204",
+  },
+]
+`;
+
+exports[`Dropload file not found 1`] = `[]`;

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Soaper Black Mirror 1`] = `
+[
+  {
+    "label": "Soaper",
+    "meta": {
+      "countryCode": "en",
+      "height": 720,
+      "title": "Black Mirror 4x2",
+    },
+    "sourceId": "soaper_en",
+    "ttl": 900000,
+    "url": "https://soaper.live/home/index/TVM3U8?key=zoeyOo54b7s8NAPnOW0div4OdvmbYxIzpE2RnmAoSXqMAm7eZKs79V4lxEnZsvQ6qYNrOEiqKO4dAwdBiYx3KmwyVRc9oPzLWoOYcLQVArr2j0.m3u8",
+  },
+]
+`;
+
+exports[`Soaper Full Metal Jacket 1`] = `
+[
+  {
+    "label": "Soaper",
+    "meta": {
+      "countryCode": "en",
+      "height": 1080,
+      "title": "Full Metal Jacket (1987)",
+    },
+    "sourceId": "soaper_en",
+    "ttl": 900000,
+    "url": "https://soaper.live/home/index/M3U8?key=VnlzaOr0NYimoY5BLezvsJ8zVLzvdAUVW6XKL711TqadxBBy7AheAYoXRl28s78dmP5WOQUVdxX9RWdOHNRanKJaQ7F5mwRpaWN5fPdMm8M.m3u8",
+  },
+]
+`;

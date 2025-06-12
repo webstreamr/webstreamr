@@ -1,8 +1,7 @@
 import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
-import { Handler } from './types';
+import { Handler, HandleResult } from './types';
 import { Fetcher, getTmdbId, getTmdbMovieDetails, getTmdbTvDetails, Id, TmdbId } from '../utils';
-import { ExtractorRegistry } from '../extractor';
 import { Context, CountryCode } from '../types';
 
 export class Soaper implements Handler {
@@ -17,14 +16,12 @@ export class Soaper implements Handler {
   private readonly baseUrl = 'https://soaper.live';
 
   private readonly fetcher: Fetcher;
-  private readonly extractorRegistry: ExtractorRegistry;
 
-  constructor(fetcher: Fetcher, extractorRegistry: ExtractorRegistry) {
+  constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
-    this.extractorRegistry = extractorRegistry;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: Id) => {
+  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<HandleResult[]> => {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
     const [keyword, year, hrefPrefix] = await this.getKeywordYearAndHrefPrefix(ctx, tmdbId);
@@ -45,11 +42,14 @@ export class Soaper implements Handler {
       }
 
       const episodeUrl = new URL(episodePageHref, this.baseUrl);
+      const title = `${keyword} ${tmdbId.season}x${tmdbId.episode}`;
 
-      return [await this.extractorRegistry.handle({ ...ctx, referer: episodeUrl }, episodeUrl, { countryCode: CountryCode.en, title: `${keyword} ${tmdbId.season}x${tmdbId.episode}` })];
+      return [{ countryCode: CountryCode.en, referer: episodeUrl, title, url: episodeUrl }];
     }
 
-    return [await this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, pageUrl, { countryCode: CountryCode.en, title: `${keyword} (${year})` })];
+    const title = `${keyword} (${year})`;
+
+    return [{ countryCode: CountryCode.en, referer: pageUrl, title, url: pageUrl }];
   };
 
   private readonly fetchPageUrl = async (ctx: Context, keyword: string, year: number, hrefPrefix: string): Promise<URL | undefined> => {

@@ -1,48 +1,24 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Eurostreaming handle imdb black mirror s2e4 1`] = `
 [
-  [
-    {
-      "label": "SuperVideo",
-      "meta": {
-        "bytes": 875875532,
-        "countryCode": "it",
-        "height": 1080,
-        "title": "Black Mirror S2 E4 1080p",
-      },
-      "sourceId": "supervideo_it",
-      "ttl": 900000,
-      "url": "https://hfs309.serversicuro.cc/hls/dnzpdeoe5xg4a3gyvaqx5ojpswtxjd5a22rklgah7,khdhascykjrixs7huqq,obtfascykj3vna7rk5a,.urlset/master.m3u8",
-    },
-  ],
-  [
-    {
-      "label": "SuperVideo",
-      "meta": {
-        "bytes": 875875532,
-        "countryCode": "it",
-        "height": 1080,
-        "title": "Black Mirror S2 E4 1080p",
-      },
-      "sourceId": "supervideo_it",
-      "ttl": 900000,
-      "url": "https://hfs309.serversicuro.cc/hls/dnzpdeoe5xg4a3gyvaqx5ojpswtxjd5a22rklgah7,khdhascykjrixs7huqq,obtfascykj3vna7rk5a,.urlset/master.m3u8",
-    },
-  ],
-  [
-    {
-      "label": "Dropload",
-      "meta": {
-        "bytes": 875875532,
-        "countryCode": "it",
-        "height": 1080,
-        "title": "Black Mirror S2 E4 1080p",
-      },
-      "sourceId": "dropload_it",
-      "ttl": 900000,
-      "url": "https://srv24.dropload.io/hls2/01/00289/978xyyxi3ldq_h/master.m3u8?t=unq9qxjYC-zgcmoXiSQ6rkMu7qHrSpN_pWOc95IPYwk&s=1747217151&e=14400&f=1448116&i=0.0&sp=0&ii=130.61.236.204",
-    },
-  ],
+  {
+    "countryCode": "it",
+    "referer": "https://eurostreaming.my/stream/284-black-mirror-streaming-streaming.html",
+    "title": "Black Mirror 2x4",
+    "url": "https://supervideo.cc/embed-anf0clp2vb6y.html",
+  },
+  {
+    "countryCode": "it",
+    "referer": "https://eurostreaming.my/stream/284-black-mirror-streaming-streaming.html",
+    "title": "Black Mirror 2x4",
+    "url": "https://supervideo.cc/embed-anf0clp2vb6y.html",
+  },
+  {
+    "countryCode": "it",
+    "referer": "https://eurostreaming.my/stream/284-black-mirror-streaming-streaming.html",
+    "title": "Black Mirror 2x4",
+    "url": "https://dropload.io/embed-978xyyxi3ldq.html",
+  },
 ]
 `;
