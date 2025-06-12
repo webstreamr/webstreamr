@@ -12,7 +12,7 @@ export class Soaper implements Handler {
 
   readonly contentTypes: ContentType[] = ['movie', 'series'];
 
-  readonly countryCodes: CountryCode[] = ['en'];
+  readonly countryCodes: CountryCode[] = [CountryCode.en];
 
   private readonly baseUrl = 'https://soaper.live';
 
@@ -46,10 +46,10 @@ export class Soaper implements Handler {
 
       const episodeUrl = new URL(episodePageHref, this.baseUrl);
 
-      return [await this.extractorRegistry.handle({ ...ctx, referer: episodeUrl }, episodeUrl, { countryCode: 'en', title: `${keyword} ${tmdbId.season}x${tmdbId.episode}` })];
+      return [await this.extractorRegistry.handle({ ...ctx, referer: episodeUrl }, episodeUrl, { countryCode: CountryCode.en, title: `${keyword} ${tmdbId.season}x${tmdbId.episode}` })];
     }
 
-    return [await this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, pageUrl, { countryCode: 'en', title: `${keyword} (${year})` })];
+    return [await this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, pageUrl, { countryCode: CountryCode.en, title: `${keyword} (${year})` })];
   };
 
   private readonly fetchPageUrl = async (ctx: Context, keyword: string, year: number, hrefPrefix: string): Promise<URL | undefined> => {

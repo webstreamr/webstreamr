@@ -12,7 +12,7 @@ export class MostraGuarda implements Handler {
 
   readonly contentTypes: ContentType[] = ['movie'];
 
-  readonly countryCodes: CountryCode[] = ['it'];
+  readonly countryCodes: CountryCode[] = [CountryCode.it];
 
   private readonly fetcher: Fetcher;
   private readonly extractorRegistry: ExtractorRegistry;
@@ -35,7 +35,7 @@ export class MostraGuarda implements Handler {
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
         .filter(url => !url.host.match(/mostraguarda/))
-        .map(url => this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, url, { countryCode: 'it' })),
+        .map(url => this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, url, { countryCode: CountryCode.it })),
     );
   };
 }

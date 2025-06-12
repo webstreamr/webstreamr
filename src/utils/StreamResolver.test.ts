@@ -61,7 +61,7 @@ describe('resolve', () => {
 
       readonly contentTypes: ContentType[] = ['movie'];
 
-      readonly countryCodes: CountryCode[] = ['de'];
+      readonly countryCodes: CountryCode[] = [CountryCode.de];
 
       readonly handle = async (): Promise<(UrlResult[])[]> => {
         return [
@@ -73,7 +73,7 @@ describe('resolve', () => {
               label: 'hoster.com',
               sourceId: '',
               meta: {
-                countryCode: 'de',
+                countryCode: CountryCode.de,
               },
             },
             {
@@ -83,7 +83,7 @@ describe('resolve', () => {
               label: 'hoster.com',
               sourceId: '',
               meta: {
-                countryCode: 'de',
+                countryCode: CountryCode.de,
               },
             },
             {
@@ -93,7 +93,7 @@ describe('resolve', () => {
               label: 'hoster.com',
               sourceId: '',
               meta: {
-                countryCode: 'de',
+                countryCode: CountryCode.de,
               },
             },
             {
@@ -103,7 +103,7 @@ describe('resolve', () => {
               label: 'hoster.com',
               sourceId: '',
               meta: {
-                countryCode: 'de',
+                countryCode: CountryCode.de,
               },
             },
             {
@@ -113,7 +113,7 @@ describe('resolve', () => {
               label: 'hoster.com',
               sourceId: '',
               meta: {
-                countryCode: 'de',
+                countryCode: CountryCode.de,
               },
             },
             {
@@ -123,7 +123,7 @@ describe('resolve', () => {
               label: 'hoster.com',
               sourceId: '',
               meta: {
-                countryCode: 'de',
+                countryCode: CountryCode.de,
               },
             },
           ],
@@ -143,7 +143,7 @@ describe('resolve', () => {
       id: 'mockhandler',
       label: 'MockHandler',
       contentTypes: ['movie'],
-      countryCodes: ['de'],
+      countryCodes: [CountryCode.de],
       handle: jest.fn().mockRejectedValue(new NotFoundError()),
     };
 

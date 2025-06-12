@@ -12,7 +12,7 @@ export class FrenchCloud implements Handler {
 
   readonly contentTypes: ContentType[] = ['movie'];
 
-  readonly countryCodes: CountryCode[] = ['fr'];
+  readonly countryCodes: CountryCode[] = [CountryCode.fr];
 
   private readonly fetcher: Fetcher;
   private readonly extractorRegistry: ExtractorRegistry;
@@ -35,7 +35,7 @@ export class FrenchCloud implements Handler {
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
         .filter(url => !url.host.match(/frenchcloud/))
-        .map(url => this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, url, { countryCode: 'fr' })),
+        .map(url => this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, url, { countryCode: CountryCode.fr })),
     );
   };
 }

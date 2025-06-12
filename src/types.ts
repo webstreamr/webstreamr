@@ -13,7 +13,14 @@ export type ManifestWithConfig = Manifest & { config: ManifestConfig[] };
 
 export type Config = Partial<Record<CountryCode | 'excludeExternalUrls', string>>;
 
-export type CountryCode = 'de' | 'en' | 'es' | 'fr' | 'it' | 'mx';
+export enum CountryCode {
+  de = 'de',
+  en = 'en',
+  es = 'es',
+  fr = 'fr',
+  it = 'it',
+  mx = 'mx',
+}
 
 export type BlockedReason = 'cloudflare_challenge' | 'flaresolverr_failed' | 'unknown';
 

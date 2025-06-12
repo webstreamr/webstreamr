@@ -11,7 +11,7 @@ export class VidSrc implements Handler {
 
   readonly contentTypes: ContentType[] = ['movie', 'series'];
 
-  readonly countryCodes: CountryCode[] = ['en'];
+  readonly countryCodes: CountryCode[] = [CountryCode.en];
 
   private readonly baseUrl = 'https://vidsrc.xyz';
 
@@ -31,7 +31,7 @@ export class VidSrc implements Handler {
       : new URL(`/embed/movie/${imdbId.id}`, this.baseUrl);
 
     return [
-      await this.extractorRegistry.handle(ctx, embedUrl, { countryCode: 'en' }),
+      await this.extractorRegistry.handle(ctx, embedUrl, { countryCode: CountryCode.en }),
     ];
   };
 }

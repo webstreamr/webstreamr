@@ -12,7 +12,7 @@ export class MeineCloud implements Handler {
 
   readonly contentTypes: ContentType[] = ['movie'];
 
-  readonly countryCodes: CountryCode[] = ['de'];
+  readonly countryCodes: CountryCode[] = [CountryCode.de];
 
   private readonly fetcher: Fetcher;
   private readonly extractorRegistry: ExtractorRegistry;
@@ -35,7 +35,7 @@ export class MeineCloud implements Handler {
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
         .filter(url => !url.host.match(/meinecloud/))
-        .map(url => this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, url, { countryCode: 'de' })),
+        .map(url => this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, url, { countryCode: CountryCode.de })),
     );
   };
 }

@@ -12,7 +12,7 @@ export class KinoGer implements Handler {
 
   readonly contentTypes: ContentType[] = ['movie', 'series'];
 
-  readonly countryCodes: CountryCode[] = ['de'];
+  readonly countryCodes: CountryCode[] = [CountryCode.de];
 
   private readonly baseUrl = 'https://kinoger.com';
 
@@ -44,7 +44,7 @@ export class KinoGer implements Handler {
       Array.from(html.matchAll(/\.show\(.*/g))
         .map(showJsMatch => this.findEpisodeUrlInShowJs(showJsMatch[0], seasonIndex, episodeIndex))
         .filter(url => url !== undefined && !['kinoger.be', 'kinoger.ru'].includes(url.host))
-        .map(async url => await this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, url as URL, { countryCode: 'de', title })),
+        .map(async url => await this.extractorRegistry.handle({ ...ctx, referer: pageUrl }, url as URL, { countryCode: CountryCode.de, title })),
     );
   };
 

@@ -12,7 +12,7 @@ export class VerHdLink implements Handler {
 
   readonly contentTypes: ContentType[] = ['movie'];
 
-  readonly countryCodes: CountryCode[] = ['es', 'mx'];
+  readonly countryCodes: CountryCode[] = [CountryCode.es, CountryCode.mx];
 
   private readonly fetcher: Fetcher;
   private readonly extractorRegistry: ExtractorRegistry;
@@ -35,9 +35,9 @@ export class VerHdLink implements Handler {
         .map((_i, el) => {
           let countryCode: CountryCode;
           if ($(el).hasClass('latino') && 'mx' in ctx.config) {
-            countryCode = 'mx';
+            countryCode = CountryCode.mx;
           } else if ($(el).hasClass('castellano') && 'es' in ctx.config) {
-            countryCode = 'es';
+            countryCode = CountryCode.es;
           } else {
             return [];
           }

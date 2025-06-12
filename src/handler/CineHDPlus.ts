@@ -12,7 +12,7 @@ export class CineHDPlus implements Handler {
 
   readonly contentTypes: ContentType[] = ['series'];
 
-  readonly countryCodes: CountryCode[] = ['es', 'mx'];
+  readonly countryCodes: CountryCode[] = [CountryCode.es, CountryCode.mx];
 
   private readonly fetcher: Fetcher;
   private readonly extractorRegistry: ExtractorRegistry;
@@ -34,7 +34,7 @@ export class CineHDPlus implements Handler {
 
     const $ = cheerio.load(html);
 
-    const countryCode = ($('.details__langs').html() as string).includes('Latino') ? 'mx' : 'es';
+    const countryCode = ($('.details__langs').html() as string).includes('Latino') ? CountryCode.mx : CountryCode.es;
     if (!(countryCode in ctx.config)) {
       return [];
     }

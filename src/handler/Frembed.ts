@@ -11,7 +11,7 @@ export class Frembed implements Handler {
 
   readonly contentTypes: ContentType[] = ['series'];
 
-  readonly countryCodes: CountryCode[] = ['fr'];
+  readonly countryCodes: CountryCode[] = [CountryCode.fr];
 
   private readonly fetcher: Fetcher;
   private readonly extractorRegistry: ExtractorRegistry;
@@ -40,7 +40,7 @@ export class Frembed implements Handler {
     }
 
     return Promise.all(
-      urls.map(url => this.extractorRegistry.handle({ ...ctx, referer: apiUrl }, url, { countryCode: 'fr', title: `${json['title']} ${tmdbId.season}x${tmdbId.episode}` })),
+      urls.map(url => this.extractorRegistry.handle({ ...ctx, referer: apiUrl }, url, { countryCode: CountryCode.fr, title: `${json['title']} ${tmdbId.season}x${tmdbId.episode}` })),
     );
   };
 }

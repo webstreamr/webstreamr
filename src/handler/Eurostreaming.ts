@@ -1,7 +1,7 @@
 import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
 import { Handler } from './types';
-import { ImdbId, Fetcher, Id, getImdbId } from '../utils';
+import { Fetcher, getImdbId, Id, ImdbId } from '../utils';
 import { ExtractorRegistry } from '../extractor';
 import { Context, CountryCode } from '../types';
 
@@ -12,7 +12,7 @@ export class Eurostreaming implements Handler {
 
   readonly contentTypes: ContentType[] = ['series'];
 
-  readonly countryCodes: CountryCode[] = ['it'];
+  readonly countryCodes: CountryCode[] = [CountryCode.it];
 
   private readonly fetcher: Fetcher;
   private readonly extractorRegistry: ExtractorRegistry;
@@ -46,7 +46,7 @@ export class Eurostreaming implements Handler {
       .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
       .toArray()
       .filter(url => !url.host.match(/eurostreaming/))
-      .map(url => this.extractorRegistry.handle({ ...ctx, referer: seriesPageUrl }, url, { countryCode: 'it', title: `${title.trim()} ${imdbId.season}x${imdbId.episode}` })),
+      .map(url => this.extractorRegistry.handle({ ...ctx, referer: seriesPageUrl }, url, { countryCode: CountryCode.it, title: `${title.trim()} ${imdbId.season}x${imdbId.episode}` })),
     );
   };
 

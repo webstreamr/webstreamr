@@ -12,7 +12,7 @@ export class StreamKiste implements Handler {
 
   readonly contentTypes: ContentType[] = ['series'];
 
-  readonly countryCodes: CountryCode[] = ['de'];
+  readonly countryCodes: CountryCode[] = [CountryCode.de];
 
   private readonly fetcher: Fetcher;
   private readonly extractorRegistry: ExtractorRegistry;
@@ -43,7 +43,7 @@ export class StreamKiste implements Handler {
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
         .filter(url => !url.host.match(/streamkiste/))
-        .map(url => this.extractorRegistry.handle({ ...ctx, referer: seriesPageUrl }, url, { countryCode: 'de', title: `${title.trim()} ${imdbId.season}x${imdbId.episode}` })),
+        .map(url => this.extractorRegistry.handle({ ...ctx, referer: seriesPageUrl }, url, { countryCode: CountryCode.de, title: `${title.trim()} ${imdbId.season}x${imdbId.episode}` })),
     );
   };
 
