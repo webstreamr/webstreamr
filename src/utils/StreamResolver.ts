@@ -18,12 +18,12 @@ export class StreamResolver {
   private readonly logger: winston.Logger;
   private readonly extractorRegistry: ExtractorRegistry;
 
-  constructor(logger: winston.Logger, extractorRegistry: ExtractorRegistry) {
+  public constructor(logger: winston.Logger, extractorRegistry: ExtractorRegistry) {
     this.logger = logger;
     this.extractorRegistry = extractorRegistry;
   }
 
-  readonly resolve = async (ctx: Context, sources: Source[], type: ContentType, id: Id): Promise<ResolveResponse> => {
+  public readonly resolve = async (ctx: Context, sources: Source[], type: ContentType, id: Id): Promise<ResolveResponse> => {
     if (sources.length === 0) {
       return {
         streams: [

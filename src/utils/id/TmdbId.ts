@@ -3,7 +3,7 @@ export class TmdbId {
   public readonly season: number | undefined;
   public readonly episode: number | undefined;
 
-  constructor(id: number, season: number | undefined, episode: number | undefined) {
+  public constructor(id: number, season: number | undefined, episode: number | undefined) {
     this.id = id;
     this.season = season;
     this.episode = episode;

@@ -5,21 +5,21 @@ import { Fetcher, getImdbId, Id } from '../utils';
 import { Context, CountryCode } from '../types';
 
 export class FrenchCloud implements Source {
-  readonly id = 'frenchcloud';
+  public readonly id = 'frenchcloud';
 
-  readonly label = 'FrenchCloud';
+  public readonly label = 'FrenchCloud';
 
-  readonly contentTypes: ContentType[] = ['movie'];
+  public readonly contentTypes: ContentType[] = ['movie'];
 
-  readonly countryCodes: CountryCode[] = [CountryCode.fr];
+  public readonly countryCodes: CountryCode[] = [CountryCode.fr];
 
   private readonly fetcher: Fetcher;
 
-  constructor(fetcher: Fetcher) {
+  public constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
+  public readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
     const imdbId = await getImdbId(ctx, this.fetcher, id);
 
     const pageUrl = new URL(`https://frenchcloud.cam/movie/${imdbId.id}`);

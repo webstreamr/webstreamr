@@ -12,7 +12,7 @@ export class StreamController {
   private readonly sources: Source[];
   private readonly streamResolver: StreamResolver;
 
-  constructor(logger: winston.Logger, sources: Source[], streams: StreamResolver) {
+  public constructor(logger: winston.Logger, sources: Source[], streams: StreamResolver) {
     this.router = Router();
 
     this.logger = logger;

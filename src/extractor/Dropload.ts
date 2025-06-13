@@ -6,23 +6,23 @@ import { Context, CountryCode, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
 export class Dropload implements Extractor {
-  readonly id = 'dropload';
+  public readonly id = 'dropload';
 
-  readonly label = 'Dropload';
+  public readonly label = 'Dropload';
 
-  readonly ttl = 900000; // 15m
+  public readonly ttl = 900000; // 15m
 
   private readonly fetcher: Fetcher;
 
-  constructor(fetcher: Fetcher) {
+  public constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
   }
 
-  readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/dropload/);
+  public readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/dropload/);
 
-  readonly normalize = (url: URL): URL => new URL(url.href.replace('/e/', '/').replace('/embed-', '/'));
+  public readonly normalize = (url: URL): URL => new URL(url.href.replace('/e/', '/').replace('/embed-', '/'));
 
-  readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
+  public readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
     const html = await this.fetcher.text(ctx, url);
 
     if (html.includes('File Not Found')) {

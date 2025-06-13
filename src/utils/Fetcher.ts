@@ -58,21 +58,21 @@ export class Fetcher {
   private readonly hostQueueCount = new Map<string, number>();
   private readonly countMutex = new Mutex();
 
-  constructor(logger: winston.Logger) {
+  public constructor(logger: winston.Logger) {
     this.logger = logger;
 
     this.httpCache = new TTLCache();
   }
 
-  readonly text = async (ctx: Context, url: URL, init?: CustomRequestInit): Promise<string> => {
+  public readonly text = async (ctx: Context, url: URL, init?: CustomRequestInit): Promise<string> => {
     return (await this.cachedFetch(ctx, url, init)).body;
   };
 
-  readonly textPost = async (ctx: Context, url: URL, body: string, init?: CustomRequestInit): Promise<string> => {
+  public readonly textPost = async (ctx: Context, url: URL, body: string, init?: CustomRequestInit): Promise<string> => {
     return (await this.cachedFetch(ctx, url, { ...init, method: 'POST', body })).body;
   };
 
-  readonly head = async (ctx: Context, url: URL, init?: CustomRequestInit): Promise<CachePolicy.Headers> => {
+  public readonly head = async (ctx: Context, url: URL, init?: CustomRequestInit): Promise<CachePolicy.Headers> => {
     return (await this.cachedFetch(ctx, url, { ...init, method: 'HEAD' })).policy.responseHeaders();
   };
 

@@ -5,21 +5,21 @@ import { Fetcher, getImdbId, Id } from '../utils';
 import { Context, CountryCode } from '../types';
 
 export class MeineCloud implements Source {
-  readonly id = 'meinecloud';
+  public readonly id = 'meinecloud';
 
-  readonly label = 'MeineCloud';
+  public readonly label = 'MeineCloud';
 
-  readonly contentTypes: ContentType[] = ['movie'];
+  public readonly contentTypes: ContentType[] = ['movie'];
 
-  readonly countryCodes: CountryCode[] = [CountryCode.de];
+  public readonly countryCodes: CountryCode[] = [CountryCode.de];
 
   private readonly fetcher: Fetcher;
 
-  constructor(fetcher: Fetcher) {
+  public constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
+  public readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
     const imdbId = await getImdbId(ctx, this.fetcher, id);
 
     const pageUrl = new URL(`https://meinecloud.click/movie/${imdbId.id}`);

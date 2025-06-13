@@ -6,23 +6,23 @@ import { Context, CountryCode, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
 export class SuperVideo implements Extractor {
-  readonly id = 'supervideo';
+  public readonly id = 'supervideo';
 
-  readonly label = 'SuperVideo';
+  public readonly label = 'SuperVideo';
 
-  readonly ttl = 900000; // 15m
+  public readonly ttl = 900000; // 15m
 
   private readonly fetcher: Fetcher;
 
-  constructor(fetcher: Fetcher) {
+  public constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
   }
 
-  readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/supervideo/);
+  public readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/supervideo/);
 
-  readonly normalize = (url: URL): URL => new URL(url.href.replace('/e/', '/').replace('/embed-', '/'));
+  public readonly normalize = (url: URL): URL => new URL(url.href.replace('/e/', '/').replace('/embed-', '/'));
 
-  readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
+  public readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
     const html = await this.fetcher.text(ctx, url);
 
     if (html.includes('This video can be watched as embed only')) {

@@ -4,23 +4,23 @@ import { Fetcher, getImdbId, Id } from '../utils';
 import { Context, CountryCode } from '../types';
 
 export class VidSrc implements Source {
-  readonly id = 'vidsrc';
+  public readonly id = 'vidsrc';
 
-  readonly label = 'VidSrc';
+  public readonly label = 'VidSrc';
 
-  readonly contentTypes: ContentType[] = ['movie', 'series'];
+  public readonly contentTypes: ContentType[] = ['movie', 'series'];
 
-  readonly countryCodes: CountryCode[] = [CountryCode.en];
+  public readonly countryCodes: CountryCode[] = [CountryCode.en];
 
   private readonly baseUrl = 'https://vidsrc.xyz';
 
   private readonly fetcher: Fetcher;
 
-  constructor(fetcher: Fetcher) {
+  public constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
+  public readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
     const imdbId = await getImdbId(ctx, this.fetcher, id);
 
     const url = imdbId.season

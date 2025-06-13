@@ -4,23 +4,23 @@ import { Fetcher } from '../utils';
 import { Context, CountryCode, UrlResult } from '../types';
 
 export class Fsst implements Extractor {
-  readonly id = 'fsst';
+  public readonly id = 'fsst';
 
-  readonly label = 'Fsst';
+  public readonly label = 'Fsst';
 
-  readonly ttl = 900000; // 15m
+  public readonly ttl = 900000; // 15m
 
   private readonly fetcher: Fetcher;
 
-  constructor(fetcher: Fetcher) {
+  public constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
   }
 
-  readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/fsst/);
+  public readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/fsst/);
 
-  readonly normalize = (url: URL): URL => url;
+  public readonly normalize = (url: URL): URL => url;
 
-  readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
+  public readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
     const html = await this.fetcher.text(ctx, url);
 
     const $ = cheerio.load(html);

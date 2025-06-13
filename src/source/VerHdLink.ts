@@ -5,21 +5,21 @@ import { Fetcher, getImdbId, Id } from '../utils';
 import { Context, CountryCode } from '../types';
 
 export class VerHdLink implements Source {
-  readonly id = 'verhdlink';
+  public readonly id = 'verhdlink';
 
-  readonly label = 'VerHdLink';
+  public readonly label = 'VerHdLink';
 
-  readonly contentTypes: ContentType[] = ['movie'];
+  public readonly contentTypes: ContentType[] = ['movie'];
 
-  readonly countryCodes: CountryCode[] = [CountryCode.es, CountryCode.mx];
+  public readonly countryCodes: CountryCode[] = [CountryCode.es, CountryCode.mx];
 
   private readonly fetcher: Fetcher;
 
-  constructor(fetcher: Fetcher) {
+  public constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
+  public readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
     const imdbId = await getImdbId(ctx, this.fetcher, id);
 
     const pageUrl = new URL(`https://verhdlink.cam/movie/${imdbId.id}`);

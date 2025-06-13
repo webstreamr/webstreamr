@@ -8,7 +8,7 @@ export class ManifestController {
 
   private readonly sources: Source[];
 
-  constructor(sources: Source[]) {
+  public constructor(sources: Source[]) {
     this.router = Router();
 
     this.sources = sources;

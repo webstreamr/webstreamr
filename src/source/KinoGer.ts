@@ -5,23 +5,23 @@ import { Fetcher, getTmdbId, getTmdbMovieDetails, getTmdbTvDetails, Id, TmdbId }
 import { Context, CountryCode } from '../types';
 
 export class KinoGer implements Source {
-  readonly id = 'kinoger';
+  public readonly id = 'kinoger';
 
-  readonly label = 'KinoGer';
+  public readonly label = 'KinoGer';
 
-  readonly contentTypes: ContentType[] = ['movie', 'series'];
+  public readonly contentTypes: ContentType[] = ['movie', 'series'];
 
-  readonly countryCodes: CountryCode[] = [CountryCode.de];
+  public readonly countryCodes: CountryCode[] = [CountryCode.de];
 
   private readonly baseUrl = 'https://kinoger.com';
 
   private readonly fetcher: Fetcher;
 
-  constructor(fetcher: Fetcher) {
+  public constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
+  public readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
     const [keyword, year] = await this.getKeywordAndYear(ctx, tmdbId);

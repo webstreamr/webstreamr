@@ -9,23 +9,23 @@ const { Fetcher } = jest.requireActual('../Fetcher');
 class MockedFetcher {
   private readonly fetcher: typeof Fetcher;
 
-  constructor() {
+  public constructor() {
     this.fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console()] }));
   }
 
-  readonly text = async (ctx: Context, url: URL, init?: RequestInit): Promise<string> => {
+  public readonly text = async (ctx: Context, url: URL, init?: RequestInit): Promise<string> => {
     const path = `${__dirname}/../__fixtures__/Fetcher/${this.slugifyUrl(url)}`;
 
     return this.fetch(path, ctx, url, init);
   };
 
-  readonly textPost = async (ctx: Context, url: URL, body: string, init?: RequestInit): Promise<string> => {
+  public readonly textPost = async (ctx: Context, url: URL, body: string, init?: RequestInit): Promise<string> => {
     const path = `${__dirname}/../__fixtures__/Fetcher/post-${this.slugifyUrl(url)}-${slugify(body)}`;
 
     return this.fetch(path, ctx, url, { ...init, method: 'POST', body });
   };
 
-  readonly head = async (ctx: Context, url: URL, init?: RequestInit): Promise<unknown> => {
+  public readonly head = async (ctx: Context, url: URL, init?: RequestInit): Promise<unknown> => {
     const path = `${__dirname}/../__fixtures__/Fetcher/head-${this.slugifyUrl(url)}`;
 
     return JSON.parse(await this.fetch(path, ctx, url, { ...init, method: 'HEAD' }));

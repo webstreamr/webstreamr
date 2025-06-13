@@ -13,4 +13,9 @@ export default tseslint.config(
   {
     ignores: ['./dist'],
   },
+  {
+    rules: {
+      '@typescript-eslint/explicit-member-accessibility': 'error',
+    },
+  },
 );

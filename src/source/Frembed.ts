@@ -4,21 +4,21 @@ import { Fetcher, getTmdbId, Id } from '../utils';
 import { Context, CountryCode } from '../types';
 
 export class Frembed implements Source {
-  readonly id = 'frembed';
+  public readonly id = 'frembed';
 
-  readonly label = 'Frembed';
+  public readonly label = 'Frembed';
 
-  readonly contentTypes: ContentType[] = ['series'];
+  public readonly contentTypes: ContentType[] = ['series'];
 
-  readonly countryCodes: CountryCode[] = [CountryCode.fr];
+  public readonly countryCodes: CountryCode[] = [CountryCode.fr];
 
   private readonly fetcher: Fetcher;
 
-  constructor(fetcher: Fetcher) {
+  public constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
   }
 
-  readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
+  public readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
     const apiUrl = new URL(`https://frembed.space/api/series?id=${tmdbId.id}&sa=${tmdbId.season}&epi=${tmdbId.episode}&idType=tmdb`);

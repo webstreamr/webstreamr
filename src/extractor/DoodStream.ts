@@ -6,27 +6,27 @@ import { Context, CountryCode, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
 export class DoodStream implements Extractor {
-  readonly id = 'doodstream';
+  public readonly id = 'doodstream';
 
-  readonly label = 'DoodStream';
+  public readonly label = 'DoodStream';
 
-  readonly ttl = 900000; // 15m
+  public readonly ttl = 900000; // 15m
 
   private readonly fetcher: Fetcher;
 
-  constructor(fetcher: Fetcher) {
+  public constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
   }
 
-  readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/dood|do[0-9]go|dooodster|dooood/);
+  public readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/dood|do[0-9]go|dooodster|dooood/);
 
-  readonly normalize = (url: URL): URL => {
+  public readonly normalize = (url: URL): URL => {
     const videoId = url.pathname.split('/').slice(-1)[0] as string;
 
     return new URL(`http://dood.to/e/${videoId}`);
   };
 
-  readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
+  public readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
     const html = await this.fetcher.text(ctx, new URL(url));
 
     const passMd5Match = html.match(/\/pass_md5\/[\w-]+\/([\w-]+)/);

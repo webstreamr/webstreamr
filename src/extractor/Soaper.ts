@@ -8,23 +8,23 @@ interface SoaperInfoResponsePartial {
 }
 
 export class Soaper implements Extractor {
-  readonly id = 'soaper';
+  public readonly id = 'soaper';
 
-  readonly label = 'Soaper';
+  public readonly label = 'Soaper';
 
-  readonly ttl = 900000; // 15m
+  public readonly ttl = 900000; // 15m
 
   private readonly fetcher: Fetcher;
 
-  constructor(fetcher: Fetcher) {
+  public constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
   }
 
-  readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/soaper/) && null !== url.pathname.match(/^\/(episode|movie)_/);
+  public readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/soaper/) && null !== url.pathname.match(/^\/(episode|movie)_/);
 
-  readonly normalize = (url: URL): URL => url;
+  public readonly normalize = (url: URL): URL => url;
 
-  readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode, title: string | undefined): Promise<UrlResult[]> => {
+  public readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode, title: string | undefined): Promise<UrlResult[]> => {
     const movieOrEpisodeId = (url.pathname.match(/\/\w+_(\w+)/) as string[])[1] as string;
 
     const form = new URLSearchParams();

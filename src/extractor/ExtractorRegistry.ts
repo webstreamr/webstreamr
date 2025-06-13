@@ -9,13 +9,13 @@ export class ExtractorRegistry {
   private readonly extractors: Extractor[];
   private readonly urlResultCache: TTLCache<string, UrlResult[]>;
 
-  constructor(logger: winston.Logger, extractors: Extractor[]) {
+  public constructor(logger: winston.Logger, extractors: Extractor[]) {
     this.logger = logger;
     this.extractors = extractors;
     this.urlResultCache = new TTLCache({ max: 1024 });
   }
 
-  readonly handle = async (ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined): Promise<UrlResult[]> => {
+  public readonly handle = async (ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined): Promise<UrlResult[]> => {
     const extractor = this.extractors.find(extractor => extractor.supports(ctx, url));
     if (!extractor) {
       return [];

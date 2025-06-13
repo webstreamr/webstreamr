@@ -64,31 +64,31 @@ describe('resolve', () => {
 
   test('adds error info', async () => {
     class MockHandler implements Source {
-      readonly id = 'mockhandler';
+      public readonly id = 'mockhandler';
 
-      readonly label = 'MockHandler';
+      public readonly label = 'MockHandler';
 
-      readonly contentTypes: ContentType[] = ['movie'];
+      public readonly contentTypes: ContentType[] = ['movie'];
 
-      readonly countryCodes: CountryCode[] = [CountryCode.de];
+      public readonly countryCodes: CountryCode[] = [CountryCode.de];
 
-      readonly handle = async (): Promise<SourceResult[]> => {
+      public readonly handle = async (): Promise<SourceResult[]> => {
         return [{ countryCode: CountryCode.de, url: new URL('https://example.com') }];
       };
     }
 
     class MockExtractor implements Extractor {
-      readonly id = 'mockextractor';
+      public readonly id = 'mockextractor';
 
-      readonly label = 'MockExtractor';
+      public readonly label = 'MockExtractor';
 
-      readonly ttl = 1;
+      public readonly ttl = 1;
 
-      readonly supports = (): boolean => true;
+      public readonly supports = (): boolean => true;
 
-      readonly normalize = (url: URL): URL => url;
+      public readonly normalize = (url: URL): URL => url;
 
-      readonly extract = async (): Promise<UrlResult[]> =>
+      public readonly extract = async (): Promise<UrlResult[]> =>
         [
           {
             url: new URL('https://example.com'),

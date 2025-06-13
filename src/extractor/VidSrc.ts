@@ -6,23 +6,23 @@ import { Context, CountryCode, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
 export class VidSrc implements Extractor {
-  readonly id = 'vidsrc';
+  public readonly id = 'vidsrc';
 
-  readonly label = 'VidSrc';
+  public readonly label = 'VidSrc';
 
-  readonly ttl = 900000; // 15m
+  public readonly ttl = 900000; // 15m
 
   private readonly fetcher: Fetcher;
 
-  constructor(fetcher: Fetcher) {
+  public constructor(fetcher: Fetcher) {
     this.fetcher = fetcher;
   }
 
-  readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/vidsrc/);
+  public readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/vidsrc/);
 
-  readonly normalize = (url: URL): URL => url;
+  public readonly normalize = (url: URL): URL => url;
 
-  readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
+  public readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
     const html = await this.fetcher.text(ctx, url);
 
     const $ = cheerio.load(html);

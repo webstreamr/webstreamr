@@ -3,7 +3,7 @@ export class ImdbId {
   public readonly season: number | undefined;
   public readonly episode: number | undefined;
 
-  constructor(id: string, season: number | undefined, episode: number | undefined) {
+  public constructor(id: string, season: number | undefined, episode: number | undefined) {
     this.id = id;
     this.season = season;
     this.episode = episode;
