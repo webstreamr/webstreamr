@@ -120,7 +120,7 @@ export class Fetcher {
       this.logger.info(`Query FlareSolverr for ${url.href}`, ctx);
 
       const body = { cmd: 'request.get', url: url.href, session: 'default' };
-      const challengeResult = await (await this.queuedFetch(ctx, new URL(flareSolverrEndpoint), { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' }, queueLimit: 1 })).json() as FlareSolverrResult;
+      const challengeResult = await (await this.queuedFetch(ctx, new URL(flareSolverrEndpoint), { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' }, queueLimit: 1, timeout: 10000 })).json() as FlareSolverrResult;
       if (challengeResult.status !== 'ok') {
         this.logger.warn(`FlareSolverr issue: ${JSON.stringify(challengeResult)}`, ctx);
         throw new BlockedError(BlockedReason.flaresolverr_failed, {});
@@ -210,7 +210,7 @@ export class Fetcher {
     this.logger.info(`Fetch ${init?.method ?? 'GET'} ${url}`, ctx);
 
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(TIMEOUT), init?.timeout ?? 10000);
+    const timer = setTimeout(() => controller.abort(TIMEOUT), init?.timeout ?? 5000);
 
     let response;
     try {
