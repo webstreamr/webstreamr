@@ -33,7 +33,7 @@ exports[`ExtractorRegistry returns external url for error 1`] = `
 ]
 `;
 
-exports[`ExtractorRegistry returns external url for error 2`] = `
+exports[`ExtractorRegistry returns external url for error with title 1`] = `
 [
   {
     "error": [Error: Fetcher error: 403: Forbidden
@@ -45,7 +45,7 @@ exports[`ExtractorRegistry returns external url for error 2`] = `
       "title": "a title!",
     },
     "sourceId": "dropload",
-    "url": "https://dropload.io/mocked-blocked.html",
+    "url": "https://dropload.io/mocked-blocked-2.html",
   },
 ]
 `;

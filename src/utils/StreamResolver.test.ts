@@ -77,18 +77,16 @@ describe('resolve', () => {
       };
     }
 
-    class MockExtractor implements Extractor {
+    class MockExtractor extends Extractor {
       public readonly id = 'mockextractor';
 
       public readonly label = 'MockExtractor';
 
-      public readonly ttl = 1;
+      public override readonly ttl = 1;
 
       public readonly supports = (): boolean => true;
 
-      public readonly normalize = (url: URL): URL => url;
-
-      public readonly extract = async (): Promise<UrlResult[]> =>
+      protected readonly extractInternal = async (): Promise<UrlResult[]> =>
         [
           {
             url: new URL('https://example.com'),

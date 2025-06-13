@@ -1,16 +1,16 @@
-import { Extractor } from './types';
 import { DoodStream } from './DoodStream';
 import { Dropload } from './Dropload';
+import { ExternalUrl } from './ExternalUrl';
+import { Extractor } from './Extractor';
 import { Fsst } from './Fsst';
-import { SuperVideo } from './SuperVideo';
 import { KinoGer } from './KinoGer';
 import { Soaper } from './Soaper';
+import { SuperVideo } from './SuperVideo';
 import { VidSrc } from './VidSrc';
-import { ExternalUrl } from './ExternalUrl';
 import { Fetcher } from '../utils';
 
+export * from './Extractor';
 export * from './ExtractorRegistry';
-export * from './types';
 
 export const createExtractors = (fetcher: Fetcher): Extractor[] => [
   new DoodStream(fetcher),

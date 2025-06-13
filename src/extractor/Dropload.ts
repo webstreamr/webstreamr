@@ -1,28 +1,28 @@
 import bytes from 'bytes';
 import * as cheerio from 'cheerio';
-import { Extractor } from './types';
+import { Extractor } from './Extractor';
 import { extractUrlFromPacked, Fetcher } from '../utils';
 import { Context, CountryCode, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
-export class Dropload implements Extractor {
+export class Dropload extends Extractor {
   public readonly id = 'dropload';
 
   public readonly label = 'Dropload';
 
-  public readonly ttl = 900000; // 15m
-
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
+    super();
+
     this.fetcher = fetcher;
   }
 
   public readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/dropload/);
 
-  public readonly normalize = (url: URL): URL => new URL(url.href.replace('/e/', '/').replace('/embed-', '/'));
+  public override readonly normalize = (url: URL): URL => new URL(url.href.replace('/e/', '/').replace('/embed-', '/'));
 
-  public readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
+  protected readonly extractInternal = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
     const html = await this.fetcher.text(ctx, url);
 
     if (html.includes('File Not Found')) {

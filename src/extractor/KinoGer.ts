@@ -1,27 +1,27 @@
 import crypto from 'crypto';
-import { Extractor } from './types';
+import { Extractor } from './Extractor';
 import { Fetcher, guessFromTitle } from '../utils';
 import { Context, CountryCode, UrlResult } from '../types';
 
 /** @see https://github.com/Gujal00/ResolveURL/blob/master/script.module.resolveurl/lib/resolveurl/plugins/kinoger.py */
-export class KinoGer implements Extractor {
+export class KinoGer extends Extractor {
   public readonly id = 'kinoger';
 
   public readonly label = 'KinoGer';
 
-  public readonly ttl = 900000; // 15m
-
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
+    super();
+
     this.fetcher = fetcher;
   }
 
   public readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/kinoger\.re|shiid4u\.upn\.one|moflix\.upns\.xyz|player\.upn\.one|wasuytm\.store|ultrastream\.online/);
 
-  public readonly normalize = (url: URL): URL => new URL(`${url.origin}/api/v1/video?id=${url.hash.slice(1)}`);
+  public override readonly normalize = (url: URL): URL => new URL(`${url.origin}/api/v1/video?id=${url.hash.slice(1)}`);
 
-  public readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
+  protected readonly extractInternal = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
     const hexData = await this.fetcher.text(ctx, url, { headers: { 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36' } });
 
     const encrypted = Buffer.from(hexData, 'hex');

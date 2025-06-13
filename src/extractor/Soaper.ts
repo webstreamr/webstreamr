@@ -1,4 +1,4 @@
-import { Extractor } from './types';
+import { Extractor } from './Extractor';
 import { Fetcher, guessFromPlaylist } from '../utils';
 import { Context, CountryCode, UrlResult } from '../types';
 
@@ -7,24 +7,22 @@ interface SoaperInfoResponsePartial {
   val_bak: string;
 }
 
-export class Soaper implements Extractor {
+export class Soaper extends Extractor {
   public readonly id = 'soaper';
 
   public readonly label = 'Soaper';
 
-  public readonly ttl = 900000; // 15m
-
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
+    super();
+
     this.fetcher = fetcher;
   }
 
   public readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/soaper/) && null !== url.pathname.match(/^\/(episode|movie)_/);
 
-  public readonly normalize = (url: URL): URL => url;
-
-  public readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode, title: string | undefined): Promise<UrlResult[]> => {
+  protected readonly extractInternal = async (ctx: Context, url: URL, countryCode: CountryCode, title: string | undefined): Promise<UrlResult[]> => {
     const movieOrEpisodeId = (url.pathname.match(/\/\w+_(\w+)/) as string[])[1] as string;
 
     const form = new URLSearchParams();

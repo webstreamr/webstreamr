@@ -1,32 +1,32 @@
 import bytes from 'bytes';
 import * as cheerio from 'cheerio';
-import { Extractor } from './types';
+import { Extractor } from './Extractor';
 import { extractUrlFromPacked, Fetcher } from '../utils';
 import { Context, CountryCode, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
-export class SuperVideo implements Extractor {
+export class SuperVideo extends Extractor {
   public readonly id = 'supervideo';
 
   public readonly label = 'SuperVideo';
 
-  public readonly ttl = 900000; // 15m
-
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
+    super();
+
     this.fetcher = fetcher;
   }
 
   public readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/supervideo/);
 
-  public readonly normalize = (url: URL): URL => new URL(url.href.replace('/e/', '/').replace('/embed-', '/'));
+  public override readonly normalize = (url: URL): URL => new URL(url.href.replace('/e/', '/').replace('/embed-', '/'));
 
-  public readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
+  protected readonly extractInternal = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
     const html = await this.fetcher.text(ctx, url);
 
     if (html.includes('This video can be watched as embed only')) {
-      return await this.extract(ctx, new URL(`/e${url.pathname}`, url.origin), countryCode);
+      return await this.extractInternal(ctx, new URL(`/e${url.pathname}`, url.origin), countryCode);
     }
 
     if (/'The file was deleted|The file expired/.test(html)) {

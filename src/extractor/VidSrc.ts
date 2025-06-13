@@ -1,28 +1,26 @@
 import * as cheerio from 'cheerio';
 import slugify from 'slugify';
-import { Extractor } from './types';
+import { Extractor } from './Extractor';
 import { Fetcher, guessFromPlaylist } from '../utils';
 import { Context, CountryCode, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
-export class VidSrc implements Extractor {
+export class VidSrc extends Extractor {
   public readonly id = 'vidsrc';
 
   public readonly label = 'VidSrc';
 
-  public readonly ttl = 900000; // 15m
-
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
+    super();
+
     this.fetcher = fetcher;
   }
 
   public readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/vidsrc/);
 
-  public readonly normalize = (url: URL): URL => url;
-
-  public readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
+  protected readonly extractInternal = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
     const html = await this.fetcher.text(ctx, url);
 
     const $ = cheerio.load(html);

@@ -1,8 +1,7 @@
 import TTLCache from '@isaacs/ttlcache';
 import winston from 'winston';
-import { Extractor } from './types';
+import { Extractor } from './Extractor';
 import { Context, CountryCode, UrlResult } from '../types';
-import { NotFoundError } from '../error';
 
 export class ExtractorRegistry {
   private readonly logger: winston.Logger;
@@ -30,30 +29,7 @@ export class ExtractorRegistry {
 
     this.logger.info(`Extract stream URL using ${extractor.id} extractor from ${url}`, ctx);
 
-    try {
-      urlResults = await extractor.extract(ctx, normalizedUrl, countryCode, title);
-    } catch (error) {
-      if (error instanceof NotFoundError) {
-        this.urlResultCache.set(normalizedUrl.href, urlResults, { ttl: extractor.ttl });
-
-        return [];
-      }
-
-      return [
-        {
-          url,
-          isExternal: true,
-          error,
-          label: url.host,
-          sourceId: `${extractor.id}`,
-          meta: {
-            countryCode,
-            ...(title && { title }),
-          },
-        },
-      ];
-    }
-
+    urlResults = await extractor.extract(ctx, normalizedUrl, countryCode, title);
     this.urlResultCache.set(normalizedUrl.href, urlResults, { ttl: extractor.ttl });
 
     return urlResults;

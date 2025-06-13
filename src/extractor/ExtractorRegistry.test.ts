@@ -48,10 +48,12 @@ describe('ExtractorRegistry', () => {
   });
 
   test('returns external url for error', async () => {
-    const urlResults1 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/mocked-blocked.html'), CountryCode.de);
-    expect(urlResults1).toMatchSnapshot();
+    const urlResults = await extractorRegistry.handle(ctx, new URL('https://dropload.io/mocked-blocked.html'), CountryCode.de);
+    expect(urlResults).toMatchSnapshot();
+  });
 
-    const urlResults2 = await extractorRegistry.handle(ctx, new URL('https://dropload.io/mocked-blocked.html'), CountryCode.de, 'a title!');
-    expect(urlResults2).toMatchSnapshot();
+  test('returns external url for error with title', async () => {
+    const urlResults = await extractorRegistry.handle(ctx, new URL('https://dropload.io/mocked-blocked-2.html'), CountryCode.de, 'a title!');
+    expect(urlResults).toMatchSnapshot();
   });
 });

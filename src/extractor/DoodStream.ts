@@ -1,32 +1,32 @@
 import randomstring from 'randomstring';
 import * as cheerio from 'cheerio';
-import { Extractor } from './types';
+import { Extractor } from './Extractor';
 import { Fetcher, guessFromTitle } from '../utils';
 import { Context, CountryCode, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
-export class DoodStream implements Extractor {
+export class DoodStream extends Extractor {
   public readonly id = 'doodstream';
 
   public readonly label = 'DoodStream';
 
-  public readonly ttl = 900000; // 15m
-
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
+    super();
+
     this.fetcher = fetcher;
   }
 
   public readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/dood|do[0-9]go|dooodster|dooood/);
 
-  public readonly normalize = (url: URL): URL => {
+  public override readonly normalize = (url: URL): URL => {
     const videoId = url.pathname.split('/').slice(-1)[0] as string;
 
     return new URL(`http://dood.to/e/${videoId}`);
   };
 
-  public readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
+  protected readonly extractInternal = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
     const html = await this.fetcher.text(ctx, new URL(url));
 
     const passMd5Match = html.match(/\/pass_md5\/[\w-]+\/([\w-]+)/);
