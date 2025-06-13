@@ -1,6 +1,7 @@
 import type { Config } from 'jest';
 
 const config: Config = {
+  automock: false,
   clearMocks: true,
   collectCoverage: true,
   collectCoverageFrom: [

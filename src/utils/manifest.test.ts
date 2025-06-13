@@ -1,12 +1,8 @@
-import winston from 'winston';
 import { buildManifest } from './manifest';
 import { StreamKiste, MeineCloud, VerHdLink } from '../source';
-import { Fetcher } from './Fetcher';
+import { FetcherMock } from './FetcherMock';
 
-jest.mock('../utils/Fetcher');
-
-const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
-const fetcher = new Fetcher(logger);
+const fetcher = new FetcherMock();
 
 describe('buildManifest', () => {
   test('has unchecked source without a config', () => {

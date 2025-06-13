@@ -1,13 +1,9 @@
 import { getImdbIdFromTmdbId, getTmdbIdFromImdbId } from './tmdb';
-import { Fetcher } from './Fetcher';
 import { Context } from '../types';
 import { ImdbId, TmdbId } from './id';
-import winston from 'winston';
+import { FetcherMock } from './FetcherMock';
 
-jest.mock('../utils/Fetcher');
-
-const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
-const fetcher = new Fetcher(logger);
+const fetcher = new FetcherMock();
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on' } };
 
 describe('getTmdbIdFromImdbId', () => {

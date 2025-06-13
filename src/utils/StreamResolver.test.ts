@@ -3,15 +3,13 @@ import winston from 'winston';
 import { createExtractors, Extractor, ExtractorRegistry } from '../extractor';
 import { StreamResolver } from './StreamResolver';
 import { Source, SourceResult, MeineCloud, MostraGuarda } from '../source';
-import { Fetcher } from './Fetcher';
 import { BlockedReason, Context, CountryCode, TIMEOUT, UrlResult } from '../types';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError } from '../error';
 import { ImdbId } from './id';
-
-jest.mock('../utils/Fetcher');
+import { FetcherMock } from './FetcherMock';
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
-const fetcher = new Fetcher(logger);
+const fetcher = new FetcherMock();
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on', it: 'on' } };
 
 const meineCloud = new MeineCloud(fetcher);

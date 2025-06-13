@@ -1,19 +1,14 @@
-import winston from 'winston';
 import { FrenchCloud } from './FrenchCloud';
-import { Fetcher, ImdbId } from '../utils';
+import { FetcherMock, ImdbId } from '../utils';
 import { Context } from '../types';
 
-jest.mock('../utils/Fetcher');
-
-const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
-const fetcher = new Fetcher(logger);
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { fr: 'on' } };
 
 describe('FrenchCloud', () => {
   let handler: FrenchCloud;
 
   beforeEach(() => {
-    handler = new FrenchCloud(fetcher);
+    handler = new FrenchCloud(new FetcherMock());
   });
 
   test('handles non-existent movies gracefully', async () => {

@@ -1,19 +1,14 @@
-import winston from 'winston';
 import { VidSrc } from './VidSrc';
-import { Fetcher, ImdbId } from '../utils';
+import { FetcherMock, ImdbId } from '../utils';
 import { Context } from '../types';
 
-jest.mock('../utils/Fetcher');
-
-const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
-const fetcher = new Fetcher(logger);
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { en: 'on' } };
 
 describe('VidSrc', () => {
   let handler: VidSrc;
 
   beforeEach(() => {
-    handler = new VidSrc(fetcher);
+    handler = new VidSrc(new FetcherMock());
   });
 
   test('handle imdb black mirror s4e2', async () => {

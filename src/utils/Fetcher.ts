@@ -76,7 +76,7 @@ export class Fetcher {
     return (await this.cachedFetch(ctx, url, { ...init, method: 'HEAD' })).policy.responseHeaders();
   };
 
-  public getInit(ctx: Context, url: URL, init?: CustomRequestInit): CustomRequestInit {
+  private getInit(ctx: Context, url: URL, init?: CustomRequestInit): CustomRequestInit {
     const cookieString = this.cookieJar.getCookieStringSync(url.href);
 
     const noReferer = init?.noReferer ?? false;
@@ -206,7 +206,7 @@ export class Fetcher {
     return this.handleHttpCacheItem(ctx, httpCacheItem, url, init);
   };
 
-  private async fetchWithTimeout(ctx: Context, url: URL, init?: CustomRequestInit): Promise<Response> {
+  protected async fetchWithTimeout(ctx: Context, url: URL, init?: CustomRequestInit): Promise<Response> {
     this.logger.info(`Fetch ${init?.method ?? 'GET'} ${url}`, ctx);
 
     const controller = new AbortController();

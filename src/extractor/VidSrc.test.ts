@@ -1,14 +1,11 @@
 import winston from 'winston';
-import { Fetcher } from '../utils';
+import { FetcherMock } from '../utils';
 import { Context, CountryCode } from '../types';
 import { ExtractorRegistry } from './ExtractorRegistry';
 import { VidSrc } from './VidSrc';
 
-jest.mock('../utils/Fetcher');
-
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
-const fetcher = new Fetcher(logger);
-const extractorRegistry = new ExtractorRegistry(logger, [new VidSrc(fetcher)]);
+const extractorRegistry = new ExtractorRegistry(logger, [new VidSrc(new FetcherMock())]);
 
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: {} };
 

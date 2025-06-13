@@ -1,32 +1,32 @@
+/* istanbul ignore file */
 import fs from 'node:fs';
 import slugify from 'slugify';
 import winston from 'winston';
 import crypto from 'crypto';
-import { Context } from '../../types';
-import { envGet } from '../env';
-const { Fetcher } = jest.requireActual('../Fetcher');
+import CachePolicy from 'http-cache-semantics';
+import { Context } from '../types';
+import { envGet } from './env';
+import { Fetcher } from './Fetcher';
 
-class MockedFetcher {
-  private readonly fetcher: typeof Fetcher;
-
-  public constructor(logger: winston.Logger) {
-    this.fetcher = new Fetcher(logger);
+export class FetcherMock extends Fetcher {
+  public constructor() {
+    super(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
   }
 
-  public readonly text = async (ctx: Context, url: URL, init?: RequestInit): Promise<string> => {
-    const path = `${__dirname}/../__fixtures__/Fetcher/${this.slugifyUrl(url)}`;
+  public override async text(ctx: Context, url: URL, init?: RequestInit): Promise<string> {
+    const path = `${__dirname}/__fixtures__/Fetcher/${this.slugifyUrl(url)}`;
 
     return this.fetch(path, ctx, url, init);
   };
 
-  public readonly textPost = async (ctx: Context, url: URL, body: string, init?: RequestInit): Promise<string> => {
-    const path = `${__dirname}/../__fixtures__/Fetcher/post-${this.slugifyUrl(url)}-${slugify(body)}`;
+  public override async textPost(ctx: Context, url: URL, body: string, init?: RequestInit): Promise<string> {
+    const path = `${__dirname}/__fixtures__/Fetcher/post-${this.slugifyUrl(url)}-${slugify(body)}`;
 
     return this.fetch(path, ctx, url, { ...init, method: 'POST', body });
   };
 
-  public readonly head = async (ctx: Context, url: URL, init?: RequestInit): Promise<unknown> => {
-    const path = `${__dirname}/../__fixtures__/Fetcher/head-${this.slugifyUrl(url)}`;
+  public override async head(ctx: Context, url: URL, init?: RequestInit): Promise<CachePolicy.Headers> {
+    const path = `${__dirname}/__fixtures__/Fetcher/head-${this.slugifyUrl(url)}`;
 
     return JSON.parse(await this.fetch(path, ctx, url, { ...init, method: 'HEAD' }));
   };
@@ -50,7 +50,7 @@ class MockedFetcher {
       let response;
       try {
         if (envGet('TEST_UPDATE_FIXTURES')) {
-          response = await fetch(url, this.fetcher.getInit(ctx, url, init));
+          response = await super.fetchWithTimeout(ctx, url, init);
         } else {
           console.error(`No fixture found at "${path}".`);
           process.exit(1);
@@ -79,5 +79,3 @@ class MockedFetcher {
     }
   };
 }
-
-export { MockedFetcher as Fetcher };
