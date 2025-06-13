@@ -1,5 +1,37 @@
 # Changelog
 
+## [0.28.1](https://github.com/webstreamr/webstreamr/compare/v0.28.0...v0.28.1) (2025-06-13)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency ts-jest to v29.4.0 ([#135](https://github.com/webstreamr/webstreamr/issues/135)) ([af8cadc](https://github.com/webstreamr/webstreamr/commit/af8cadc1433687fe16149233fd817f0773bffcfe))
+* **deps:** update jest monorepo to v30 ([c9d8a03](https://github.com/webstreamr/webstreamr/commit/c9d8a031563f529c8cd9e7651f7120bd2152dcb2))
+* **fetcher:** decrease regular request timeout to 5s ([5aeab3f](https://github.com/webstreamr/webstreamr/commit/5aeab3fe23f86fcd654762d318e0d3ce3a71dbab))
+* rename handler to source ([b4b8581](https://github.com/webstreamr/webstreamr/commit/b4b85813839cacf4feca0396225db16344851a7c))
+
+
+### Bug Fixes
+
+* **extractor:** detect SuperVideo video deletion/expiration ([d1da91e](https://github.com/webstreamr/webstreamr/commit/d1da91e03036e06581e258a0366e7f9a15803bb8))
+* **extractor:** handle missing VidSrc files ([013fb40](https://github.com/webstreamr/webstreamr/commit/013fb4084fe5d48d2b76b9a3bcebd57cefd39dee))
+
+
+### Code Refactoring
+
+* clean up handler import ([9432ba5](https://github.com/webstreamr/webstreamr/commit/9432ba59446347bf82876dd2b73c07c008c6520e))
+* define member accessiblity explicitly ([bdae1ff](https://github.com/webstreamr/webstreamr/commit/bdae1ff34612fee072759b5dd4034a4b28f00ffe))
+* **extractor:** introduce parent class for simplifications ([9b59432](https://github.com/webstreamr/webstreamr/commit/9b5943208e726a15b9467772a4c71be5b2c14957))
+* introduce helper `showExternalUrls()` ([15099de](https://github.com/webstreamr/webstreamr/commit/15099de798c4b4b85a76a51661742d56fd2bfd18))
+* make BlockedReason an enum ([b5067aa](https://github.com/webstreamr/webstreamr/commit/b5067aa0a910393e6aa50b1f4e4514c09a986ba7))
+* make CountryCode an enum ([250d6a1](https://github.com/webstreamr/webstreamr/commit/250d6a13233867041e2ab67d9aa6d983bde52589))
+* separate handlers and extractors ([d2d7e84](https://github.com/webstreamr/webstreamr/commit/d2d7e84d9b14b5c0d9807851ac961b3b62099a8b))
+
+
+### Tests
+
+* enable new globalsCleanup ([2447780](https://github.com/webstreamr/webstreamr/commit/244778058c8bae17cac6a5ed88bfc31f6b90e2ae))
+
 ## [0.28.0](https://github.com/webstreamr/webstreamr/compare/v0.27.2...v0.28.0) (2025-06-11)
 
 
