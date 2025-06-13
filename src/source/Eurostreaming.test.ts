@@ -1,10 +1,12 @@
+import winston from 'winston';
 import { Eurostreaming } from './Eurostreaming';
 import { Fetcher, ImdbId } from '../utils';
 import { Context } from '../types';
+
 jest.mock('../utils/Fetcher');
 
-// @ts-expect-error No constructor args needed
-const fetcher = new Fetcher();
+const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
+const fetcher = new Fetcher(logger);
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { it: 'on' } };
 
 describe('Eurostreaming', () => {

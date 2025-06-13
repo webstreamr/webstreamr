@@ -9,8 +9,8 @@ const { Fetcher } = jest.requireActual('../Fetcher');
 class MockedFetcher {
   private readonly fetcher: typeof Fetcher;
 
-  public constructor() {
-    this.fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console()] }));
+  public constructor(logger: winston.Logger) {
+    this.fetcher = new Fetcher(logger);
   }
 
   public readonly text = async (ctx: Context, url: URL, init?: RequestInit): Promise<string> => {

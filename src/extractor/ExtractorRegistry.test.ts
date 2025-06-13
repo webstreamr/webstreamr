@@ -3,11 +3,11 @@ import { ExtractorRegistry } from './ExtractorRegistry';
 import { Context, CountryCode } from '../types';
 import { Fetcher } from '../utils';
 import { createExtractors } from './index';
+
 jest.mock('../utils/Fetcher');
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
-// @ts-expect-error No constructor args needed
-const fetcher = new Fetcher();
+const fetcher = new Fetcher(logger);
 const extractorRegistry = new ExtractorRegistry(logger, createExtractors(fetcher));
 
 describe('ExtractorRegistry', () => {

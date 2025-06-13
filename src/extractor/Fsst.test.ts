@@ -7,8 +7,7 @@ import { Fsst } from './Fsst';
 jest.mock('../utils/Fetcher');
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
-// @ts-expect-error No constructor args needed
-const fetcher = new Fetcher();
+const fetcher = new Fetcher(logger);
 const extractorRegistry = new ExtractorRegistry(logger, [new Fsst(fetcher)]);
 
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: {} };

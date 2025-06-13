@@ -1,10 +1,12 @@
+import winston from 'winston';
 import { buildManifest } from './manifest';
 import { StreamKiste, MeineCloud, VerHdLink } from '../source';
 import { Fetcher } from './Fetcher';
+
 jest.mock('../utils/Fetcher');
 
-// @ts-expect-error No constructor args needed
-const fetcher = new Fetcher();
+const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
+const fetcher = new Fetcher(logger);
 
 describe('buildManifest', () => {
   test('has unchecked source without a config', () => {

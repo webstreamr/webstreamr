@@ -2,10 +2,12 @@ import { getImdbIdFromTmdbId, getTmdbIdFromImdbId } from './tmdb';
 import { Fetcher } from './Fetcher';
 import { Context } from '../types';
 import { ImdbId, TmdbId } from './id';
+import winston from 'winston';
+
 jest.mock('../utils/Fetcher');
 
-// @ts-expect-error No constructor args needed
-const fetcher = new Fetcher();
+const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
+const fetcher = new Fetcher(logger);
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on' } };
 
 describe('getTmdbIdFromImdbId', () => {
