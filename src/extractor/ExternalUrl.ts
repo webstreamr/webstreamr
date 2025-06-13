@@ -1,5 +1,5 @@
 import { Extractor } from './Extractor';
-import { Fetcher } from '../utils';
+import { Fetcher, showExternalUrls } from '../utils';
 import { Context, CountryCode, UrlResult } from '../types';
 
 export class ExternalUrl extends Extractor {
@@ -17,7 +17,7 @@ export class ExternalUrl extends Extractor {
     this.fetcher = fetcher;
   }
 
-  public readonly supports = (ctx: Context, url: URL): boolean => !('excludeExternalUrls' in ctx.config) && null !== url.host.match(/.*/);
+  public readonly supports = (ctx: Context, url: URL): boolean => showExternalUrls(ctx.config) && null !== url.host.match(/.*/);
 
   protected readonly extractInternal = async (ctx: Context, url: URL, countryCode: CountryCode, title: string | undefined): Promise<UrlResult[]> => {
     try {

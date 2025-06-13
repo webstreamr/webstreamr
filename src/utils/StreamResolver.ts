@@ -8,6 +8,7 @@ import { flagFromCountryCode, languageFromCountryCode } from './language';
 import { envGetAppName } from './env';
 import { Id } from './id';
 import { ExtractorRegistry } from '../extractor';
+import { showExternalUrls } from './config';
 
 interface ResolveResponse {
   streams: Stream[];
@@ -95,7 +96,7 @@ export class StreamResolver {
     this.logger.info(`Return ${urlResults.length} streams`, ctx);
 
     streams.push(
-      ...urlResults.filter(urlResult => !urlResult.isExternal || this.showExternalUrls(ctx) || urlResult.error)
+      ...urlResults.filter(urlResult => !urlResult.isExternal || showExternalUrls(ctx.config) || urlResult.error)
         .map(urlResult => ({
           ...this.buildUrl(ctx, urlResult),
           name: this.buildName(ctx, urlResult),
@@ -131,14 +132,12 @@ export class StreamResolver {
     return Math.min(...urlResults.map(urlResult => urlResult.ttl as number));
   };
 
-  private readonly showExternalUrls = (ctx: Context): boolean => !('excludeExternalUrls' in ctx.config);
-
   private readonly buildUrl = (ctx: Context, urlResult: UrlResult): { externalUrl: string } | { url: string } | { ytId: string } => {
     if (!urlResult.isExternal) {
       return { url: urlResult.url.href };
     }
 
-    if (this.showExternalUrls(ctx)) {
+    if (showExternalUrls(ctx.config)) {
       return { externalUrl: urlResult.url.href };
     }
 
@@ -150,7 +149,7 @@ export class StreamResolver {
 
     name += urlResult.meta.height ? ` ${urlResult.meta.height}P` : ' N/A';
 
-    if (urlResult.isExternal && this.showExternalUrls(ctx)) {
+    if (urlResult.isExternal && showExternalUrls(ctx.config)) {
       name += ` ⚠️ external`;
     }
 
