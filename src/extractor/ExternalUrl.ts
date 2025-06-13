@@ -17,9 +17,11 @@ export class ExternalUrl extends Extractor {
     this.fetcher = fetcher;
   }
 
-  public readonly supports = (ctx: Context, url: URL): boolean => showExternalUrls(ctx.config) && null !== url.host.match(/.*/);
+  public supports(ctx: Context, url: URL): boolean {
+    return showExternalUrls(ctx.config) && null !== url.host.match(/.*/);
+  }
 
-  protected readonly extractInternal = async (ctx: Context, url: URL, countryCode: CountryCode, title: string | undefined): Promise<UrlResult[]> => {
+  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode, title: string | undefined): Promise<UrlResult[]> {
     try {
       // Make sure the URL is accessible, but avoid causing noise and delays doing this
       await this.fetcher.head(ctx, url, { noFlareSolverr: true, timeout: 1000 });

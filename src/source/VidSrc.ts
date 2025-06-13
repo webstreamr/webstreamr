@@ -20,7 +20,7 @@ export class VidSrc implements Source {
     this.fetcher = fetcher;
   }
 
-  public readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
+  public async handle(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const imdbId = await getImdbId(ctx, this.fetcher, id);
 
     const url = imdbId.season

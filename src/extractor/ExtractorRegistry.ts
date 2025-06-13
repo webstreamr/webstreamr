@@ -14,7 +14,7 @@ export class ExtractorRegistry {
     this.urlResultCache = new TTLCache({ max: 1024 });
   }
 
-  public readonly handle = async (ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined): Promise<UrlResult[]> => {
+  public async handle(ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined): Promise<UrlResult[]> {
     const extractor = this.extractors.find(extractor => extractor.supports(ctx, url));
     if (!extractor) {
       return [];

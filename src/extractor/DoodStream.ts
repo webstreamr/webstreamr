@@ -18,15 +18,17 @@ export class DoodStream extends Extractor {
     this.fetcher = fetcher;
   }
 
-  public readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/dood|do[0-9]go|dooodster|dooood/);
+  public supports(_ctx: Context, url: URL): boolean {
+    return null !== url.host.match(/dood|do[0-9]go|dooodster|dooood/);
+  };
 
-  public override readonly normalize = (url: URL): URL => {
+  public override normalize(url: URL): URL {
     const videoId = url.pathname.split('/').slice(-1)[0] as string;
 
     return new URL(`http://dood.to/e/${videoId}`);
   };
 
-  protected readonly extractInternal = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
+  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
     const html = await this.fetcher.text(ctx, new URL(url));
 
     const passMd5Match = html.match(/\/pass_md5\/[\w-]+\/([\w-]+)/);

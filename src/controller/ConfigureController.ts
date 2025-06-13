@@ -18,7 +18,7 @@ export class ConfigureController {
     this.router.get('/:config/configure', this.getConfigure.bind(this));
   }
 
-  private readonly getConfigure = (req: Request, res: Response) => {
+  private getConfigure(req: Request, res: Response) {
     const config: Config = JSON.parse(req.params['config'] || JSON.stringify(getDefaultConfig()));
 
     const manifest = buildManifest(this.sources, config);

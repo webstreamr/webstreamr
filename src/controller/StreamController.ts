@@ -22,7 +22,7 @@ export class StreamController {
     this.router.get('/:config/stream/:type/:id.json', this.getStream.bind(this));
   }
 
-  private readonly getStream = async (req: Request, res: Response) => {
+  private async getStream(req: Request, res: Response) {
     const config: Config = req.params['config'] ? JSON.parse(req.params['config']) : getDefaultConfig();
     const type: ContentType = (req.params['type'] || '') as ContentType;
     const id: string = req.params['id'] || '';

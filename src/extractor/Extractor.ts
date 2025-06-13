@@ -8,13 +8,15 @@ export abstract class Extractor {
 
   public readonly ttl: number = 900000; // 15m
 
-  public abstract readonly supports: (ctx: Context, url: URL) => boolean;
+  public abstract supports(ctx: Context, url: URL): boolean;
 
-  public readonly normalize = (url: URL): URL => url;
+  public normalize(url: URL): URL {
+    return url;
+  };
 
-  protected abstract readonly extractInternal: (ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined) => Promise<UrlResult[]>;
+  protected abstract extractInternal(ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined): Promise<UrlResult[]>;
 
-  public readonly extract = async (ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined): Promise<UrlResult[]> => {
+  public async extract(ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined): Promise<UrlResult[]> {
     try {
       return await this.extractInternal(ctx, url, countryCode, title);
     } catch (error) {

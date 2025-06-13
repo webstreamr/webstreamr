@@ -18,11 +18,13 @@ export class Dropload extends Extractor {
     this.fetcher = fetcher;
   }
 
-  public readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/dropload/);
+  public supports(_ctx: Context, url: URL): boolean {
+    return null !== url.host.match(/dropload/);
+  }
 
   public override readonly normalize = (url: URL): URL => new URL(url.href.replace('/e/', '/').replace('/embed-', '/'));
 
-  protected readonly extractInternal = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
+  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
     const html = await this.fetcher.text(ctx, url);
 
     if (html.includes('File Not Found')) {

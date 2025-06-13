@@ -20,9 +20,11 @@ export class Soaper extends Extractor {
     this.fetcher = fetcher;
   }
 
-  public readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/soaper/) && null !== url.pathname.match(/^\/(episode|movie)_/);
+  public supports(_ctx: Context, url: URL): boolean {
+    return null !== url.host.match(/soaper/) && null !== url.pathname.match(/^\/(episode|movie)_/);
+  }
 
-  protected readonly extractInternal = async (ctx: Context, url: URL, countryCode: CountryCode, title: string | undefined): Promise<UrlResult[]> => {
+  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode, title: string | undefined): Promise<UrlResult[]> {
     const movieOrEpisodeId = (url.pathname.match(/\/\w+_(\w+)/) as string[])[1] as string;
 
     const form = new URLSearchParams();

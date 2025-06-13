@@ -18,11 +18,15 @@ export class SuperVideo extends Extractor {
     this.fetcher = fetcher;
   }
 
-  public readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/supervideo/);
+  public supports(_ctx: Context, url: URL): boolean {
+    return null !== url.host.match(/supervideo/);
+  }
 
-  public override readonly normalize = (url: URL): URL => new URL(url.href.replace('/e/', '/').replace('/embed-', '/'));
+  public override normalize(url: URL): URL {
+    return new URL(url.href.replace('/e/', '/').replace('/embed-', '/'));
+  }
 
-  protected readonly extractInternal = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
+  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
     const html = await this.fetcher.text(ctx, url);
 
     if (html.includes('This video can be watched as embed only')) {

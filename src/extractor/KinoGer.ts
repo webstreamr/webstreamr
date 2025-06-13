@@ -17,11 +17,15 @@ export class KinoGer extends Extractor {
     this.fetcher = fetcher;
   }
 
-  public readonly supports = (_ctx: Context, url: URL): boolean => null !== url.host.match(/kinoger\.re|shiid4u\.upn\.one|moflix\.upns\.xyz|player\.upn\.one|wasuytm\.store|ultrastream\.online/);
+  public supports(_ctx: Context, url: URL): boolean {
+    return null !== url.host.match(/kinoger\.re|shiid4u\.upn\.one|moflix\.upns\.xyz|player\.upn\.one|wasuytm\.store|ultrastream\.online/);
+  }
 
-  public override readonly normalize = (url: URL): URL => new URL(`${url.origin}/api/v1/video?id=${url.hash.slice(1)}`);
+  public override normalize(url: URL): URL {
+    return new URL(`${url.origin}/api/v1/video?id=${url.hash.slice(1)}`);
+  }
 
-  protected readonly extractInternal = async (ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> => {
+  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
     const hexData = await this.fetcher.text(ctx, url, { headers: { 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36' } });
 
     const encrypted = Buffer.from(hexData, 'hex');

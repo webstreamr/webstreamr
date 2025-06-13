@@ -64,19 +64,19 @@ export class Fetcher {
     this.httpCache = new TTLCache();
   }
 
-  public readonly text = async (ctx: Context, url: URL, init?: CustomRequestInit): Promise<string> => {
+  public async text(ctx: Context, url: URL, init?: CustomRequestInit): Promise<string> {
     return (await this.cachedFetch(ctx, url, init)).body;
   };
 
-  public readonly textPost = async (ctx: Context, url: URL, body: string, init?: CustomRequestInit): Promise<string> => {
+  public async textPost(ctx: Context, url: URL, body: string, init?: CustomRequestInit): Promise<string> {
     return (await this.cachedFetch(ctx, url, { ...init, method: 'POST', body })).body;
   };
 
-  public readonly head = async (ctx: Context, url: URL, init?: CustomRequestInit): Promise<CachePolicy.Headers> => {
+  public async head(ctx: Context, url: URL, init?: CustomRequestInit): Promise<CachePolicy.Headers> {
     return (await this.cachedFetch(ctx, url, { ...init, method: 'HEAD' })).policy.responseHeaders();
   };
 
-  public readonly getInit = (ctx: Context, url: URL, init?: CustomRequestInit): CustomRequestInit => {
+  public getInit(ctx: Context, url: URL, init?: CustomRequestInit): CustomRequestInit {
     const cookieString = this.cookieJar.getCookieStringSync(url.href);
 
     const noReferer = init?.noReferer ?? false;
@@ -99,7 +99,7 @@ export class Fetcher {
     };
   };
 
-  private readonly handleHttpCacheItem = async (ctx: Context, httpCacheItem: HttpCacheItem, url: URL, init?: CustomRequestInit): Promise<HttpCacheItem> => {
+  private async handleHttpCacheItem(ctx: Context, httpCacheItem: HttpCacheItem, url: URL, init?: CustomRequestInit): Promise<HttpCacheItem> {
     if (httpCacheItem.status && httpCacheItem.status >= 200 && httpCacheItem.status <= 299) {
       return httpCacheItem;
     }
@@ -162,7 +162,7 @@ export class Fetcher {
     throw new HttpError(httpCacheItem.status, httpCacheItem.statusText, responseHeaders);
   };
 
-  private readonly determineTtl = (httpCacheItem: HttpCacheItem): number => {
+  private determineTtl(httpCacheItem: HttpCacheItem): number {
     if (httpCacheItem.status === 200) {
       return Math.max(httpCacheItem.policy.timeToLive(), 900000); // 15m at least
     }
@@ -170,7 +170,7 @@ export class Fetcher {
     return httpCacheItem.policy.timeToLive();
   };
 
-  private readonly headersToObject = (headers: Headers): Record<string, string> => {
+  private headersToObject(headers: Headers): Record<string, string> {
     const obj: Record<string, string> = {};
 
     headers.forEach((value, name) => {
@@ -180,7 +180,7 @@ export class Fetcher {
     return obj;
   };
 
-  private readonly cachedFetch = async (ctx: Context, url: URL, init?: CustomRequestInit): Promise<HttpCacheItem> => {
+  private async cachedFetch(ctx: Context, url: URL, init?: CustomRequestInit): Promise<HttpCacheItem> {
     const newInit = this.getInit(ctx, url, init);
 
     const request: CachePolicy.Request = { url: url.href, method: newInit.method ?? 'GET', headers: {} };
@@ -206,7 +206,7 @@ export class Fetcher {
     return this.handleHttpCacheItem(ctx, httpCacheItem, url, init);
   };
 
-  private readonly fetchWithTimeout = async (ctx: Context, url: URL, init?: CustomRequestInit): Promise<Response> => {
+  private async fetchWithTimeout(ctx: Context, url: URL, init?: CustomRequestInit): Promise<Response> {
     this.logger.info(`Fetch ${init?.method ?? 'GET'} ${url}`, ctx);
 
     const controller = new AbortController();
@@ -222,9 +222,11 @@ export class Fetcher {
     return response;
   };
 
-  private readonly getHostQueueCount = (host: string): number => this.hostQueueCount.get(host) ?? 0;
+  private getHostQueueCount(host: string): number {
+    return this.hostQueueCount.get(host) ?? 0;
+  }
 
-  private readonly lockFetchSlot = async (host: string, queueErrorLimit: number) => {
+  private async lockFetchSlot(host: string, queueErrorLimit: number) {
     await this.countMutex.runExclusive(() => {
       if (this.getHostQueueCount(host) > queueErrorLimit) {
         throw new QueueIsFullError();
@@ -234,13 +236,13 @@ export class Fetcher {
     });
   };
 
-  private readonly unlockFetchSlot = async (host: string) => {
+  private async unlockFetchSlot(host: string) {
     await this.countMutex.runExclusive(() => {
       this.hostQueueCount.set(host, Math.max(0, this.getHostQueueCount(host) - 1));
     });
   };
 
-  private readonly waitForHostQueueCount = async (host: string, queueLimit: number, queueErrorLimit: number): Promise<void> => {
+  private async waitForHostQueueCount(host: string, queueLimit: number, queueErrorLimit: number): Promise<void> {
     while (this.getHostQueueCount(host) > queueLimit) {
       if (this.getHostQueueCount(host) > queueErrorLimit) {
         // Very unlikely to happen..
@@ -251,7 +253,7 @@ export class Fetcher {
     }
   };
 
-  private readonly queuedFetch = async (ctx: Context, url: URL, init?: CustomRequestInit): Promise<Response> => {
+  private async queuedFetch(ctx: Context, url: URL, init?: CustomRequestInit): Promise<Response> {
     const queueLimit = init?.queueLimit ?? 5;
     const queueErrorLimit = init?.queueErrorLimit ?? 10;
 

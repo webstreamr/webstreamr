@@ -21,7 +21,7 @@ export class KinoGer implements Source {
     this.fetcher = fetcher;
   }
 
-  public readonly handle = async (ctx: Context, _type: string, id: Id): Promise<SourceResult[]> => {
+  public async handle(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
     const [keyword, year] = await this.getKeywordAndYear(ctx, tmdbId);

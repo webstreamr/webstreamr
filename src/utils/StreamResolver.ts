@@ -24,7 +24,7 @@ export class StreamResolver {
     this.extractorRegistry = extractorRegistry;
   }
 
-  public readonly resolve = async (ctx: Context, sources: Source[], type: ContentType, id: Id): Promise<ResolveResponse> => {
+  public async resolve(ctx: Context, sources: Source[], type: ContentType, id: Id): Promise<ResolveResponse> {
     if (sources.length === 0) {
       return {
         streams: [
@@ -120,7 +120,7 @@ export class StreamResolver {
     };
   };
 
-  private readonly determineTtl = (urlResults: UrlResult[]): number | undefined => {
+  private determineTtl(urlResults: UrlResult[]): number | undefined {
     if (!urlResults.length) {
       return 900000; // 15m
     }
@@ -132,7 +132,7 @@ export class StreamResolver {
     return Math.min(...urlResults.map(urlResult => urlResult.ttl as number));
   };
 
-  private readonly buildUrl = (ctx: Context, urlResult: UrlResult): { externalUrl: string } | { url: string } | { ytId: string } => {
+  private buildUrl(ctx: Context, urlResult: UrlResult): { externalUrl: string } | { url: string } | { ytId: string } {
     if (!urlResult.isExternal) {
       return { url: urlResult.url.href };
     }
@@ -144,7 +144,7 @@ export class StreamResolver {
     return { ytId: 'E4WlUXrJgy4' };
   };
 
-  private readonly buildName = (ctx: Context, urlResult: UrlResult): string => {
+  private buildName(ctx: Context, urlResult: UrlResult): string {
     let name = envGetAppName();
 
     name += urlResult.meta.height ? ` ${urlResult.meta.height}P` : ' N/A';
@@ -156,7 +156,7 @@ export class StreamResolver {
     return name;
   };
 
-  private readonly logErrorAndReturnNiceString = (ctx: Context, source: string, error: unknown): string => {
+  private logErrorAndReturnNiceString(ctx: Context, source: string, error: unknown): string {
     if (error instanceof BlockedError) {
       if (error.reason === 'cloudflare_challenge') {
         this.logger.warn(`${source}: Request was blocked via Cloudflare challenge.`, ctx);
@@ -190,7 +190,7 @@ export class StreamResolver {
     return `❌ Request failed. Request-id: ${ctx.id}.`;
   };
 
-  private readonly buildTitle = (ctx: Context, urlResult: UrlResult): string => {
+  private buildTitle(ctx: Context, urlResult: UrlResult): string {
     const titleLines = [];
 
     if (urlResult.meta.title) {
