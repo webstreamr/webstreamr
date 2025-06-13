@@ -8,7 +8,7 @@ describe('VerHdLink', () => {
   let handler: VerHdLink;
 
   beforeEach(() => {
-    handler = new VerHdLink(new FetcherMock());
+    handler = new VerHdLink(new FetcherMock(`${__dirname}/__fixtures__/VerHdLink`));
   });
 
   test('handles non-existent movies gracefully', async () => {

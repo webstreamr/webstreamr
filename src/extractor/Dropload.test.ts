@@ -5,7 +5,7 @@ import { ExtractorRegistry } from './ExtractorRegistry';
 import { Dropload } from './Dropload';
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
-const extractorRegistry = new ExtractorRegistry(logger, [new Dropload(new FetcherMock())]);
+const extractorRegistry = new ExtractorRegistry(logger, [new Dropload(new FetcherMock(`${__dirname}/__fixtures__/Dropload`))]);
 
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: {} };
 

@@ -3,7 +3,7 @@ import { Context } from '../types';
 import { ImdbId, TmdbId } from './id';
 import { FetcherMock } from './FetcherMock';
 
-const fetcher = new FetcherMock();
+const fetcher = new FetcherMock(`${__dirname}/__fixtures__/tmdb`);
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on' } };
 
 describe('getTmdbIdFromImdbId', () => {

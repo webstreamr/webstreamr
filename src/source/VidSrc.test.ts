@@ -8,7 +8,7 @@ describe('VidSrc', () => {
   let handler: VidSrc;
 
   beforeEach(() => {
-    handler = new VidSrc(new FetcherMock());
+    handler = new VidSrc(new FetcherMock('/dev/null'));
   });
 
   test('handle imdb black mirror s4e2', async () => {

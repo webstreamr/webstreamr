@@ -8,7 +8,7 @@ describe('KinoGer', () => {
   let handler: KinoGer;
 
   beforeEach(() => {
-    handler = new KinoGer(new FetcherMock());
+    handler = new KinoGer(new FetcherMock(`${__dirname}/__fixtures__/KinoGer`));
   });
 
   test('handles non-existent movies gracefully', async () => {

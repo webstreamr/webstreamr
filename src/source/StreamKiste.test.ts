@@ -8,7 +8,7 @@ describe('StreamKiste', () => {
   let handler: StreamKiste;
 
   beforeEach(() => {
-    handler = new StreamKiste(new FetcherMock());
+    handler = new StreamKiste(new FetcherMock(`${__dirname}/__fixtures__/StreamKiste`));
   });
 
   test('handles non-existent series gracefully', async () => {

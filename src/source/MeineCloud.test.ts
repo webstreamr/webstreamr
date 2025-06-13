@@ -8,7 +8,7 @@ describe('MeineCloud', () => {
   let handler: MeineCloud;
 
   beforeEach(() => {
-    handler = new MeineCloud(new FetcherMock());
+    handler = new MeineCloud(new FetcherMock(`${__dirname}/__fixtures__/MeineCloud`));
   });
 
   test('handles non-existent movies gracefully', async () => {

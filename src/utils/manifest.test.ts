@@ -2,7 +2,7 @@ import { buildManifest } from './manifest';
 import { StreamKiste, MeineCloud, VerHdLink } from '../source';
 import { FetcherMock } from './FetcherMock';
 
-const fetcher = new FetcherMock();
+const fetcher = new FetcherMock('/dev/null');
 
 describe('buildManifest', () => {
   test('has unchecked source without a config', () => {

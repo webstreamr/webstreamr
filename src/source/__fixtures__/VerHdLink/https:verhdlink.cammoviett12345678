@@ -1,0 +1,96 @@
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="utf-8">
+            <title>Movie </title>
+            <meta name="description" content="Movie ">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+            <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+            <link rel="stylesheet" href="/static/css/main.css?v=1.2.7" />
+            <link rel="stylesheet" href="/static/css/dl.css?v=4" />
+
+        </head>
+
+        <body>
+        
+        <link rel="stylesheet" href="/static/css/_player.css?v=38" />
+        <!--<link rel="stylesheet" href="/static/css/_player.css?v=1749845288" />-->
+
+        <div class="_player">
+                        
+                        <ul class="_player-mirrors-type">
+<!--                <li class="active" data-type="castellano">
+                    Castellano
+                </li>-->
+                            </ul>
+
+            
+            <div class="_player-container top_class">
+                <a href="#" class="_player-play">
+                    <span><span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35.3" height="38" viewBox="0 0 35.3 38">
+                          <path d="M33.5 22l-28 15.6c-2.4 1.3-5.5-.3-5.5-3V3.4C0 .7 3-.9 5.4.5l28 15.6c1.7.9 2.3 3 1.3 4.6-.2.5-.7 1-1.2 1.3z" fill="#fff" /></svg>
+                    </span></span>
+                </a>
+                <div class="_player-bar top_class">
+                    <div class="_player-time">
+                        <span>0:00</span>
+                        <span class="_player-time-bar"></span>
+                        <span>120:43</span>
+                    </div>
+                    <div class="_player-btns">
+                        <a href="#" onclick="return false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14">
+                              <path d="M12.3 8.1L2 13.9c-.9.5-2-.1-2-1.1V1.3C0 .3 1.1-.3 2 .2L12.3 6c.7.3.9 1 .5 1.6-.1.2-.2.4-.5.5z" fill="#00c6ff" /></svg>
+                        </a>
+                        <a href="#" onclick="return false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17.9" height="16" viewBox="0 0 17.9 16">
+                              <path
+                                d="M12.5 4l-1.3 1.3c.6.7 1 1.7 1 2.7s-.4 2-1.1 2.7l1.3 1.3c1-1 1.7-2.4 1.7-4s-.6-3-1.6-4zm2.6-2.7l-1.3 1.3C15.2 4 16 5.9 16 8s-.8 4-2.2 5.3l1.3 1.3c1.7-1.7 2.8-4.1 2.8-6.7s-1.1-4.8-2.8-6.6zM2.4 5.2H0v5.6h2.4L7.5 16h1.9V0H7.5L2.4 5.2zm5.1 8.1L3.1 8.9H1.9V7.1h1.3l4.4-4.4v10.6z"
+                                fill="#fff" /></svg>
+                        </a>
+                        <a href="#" onclick="return false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="34.3" height="14" viewBox="0 0 34.3 14">
+                              <path
+                                d="M7 0C3.1 0 0 3.1 0 7s3.1 7 7 7c2.6 0 4.8-1.4 6-3.5l-1.4-.8c-.9 1.6-2.6 2.7-4.6 2.7-3 0-5.4-2.4-5.4-5.4C1.6 4 4 1.6 7 1.6c1.5 0 2.8.6 3.8 1.6L9 5h4.6V.3L11.9 2C10.6.8 8.9 0 7 0zm14.2 5.1h-1.3V7h-1.8v1.3h1.8v2h1.3v-2H23V7h-1.8V5.1zm2.9-.2V6l1.7-.5V11h1.4V3.9H27l-2.9 1zm9.5-.3c-.4-.5-1-.8-1.8-.8s-1.4.3-1.8.8c-.4.5-.6 1.3-.6 2.3v1.3c0 1 .2 1.7.6 2.2.4.5 1 .8 1.8.8s1.4-.3 1.8-.8c.4-.5.6-1.3.6-2.3V6.8c.1-1-.1-1.7-.6-2.2zm-.7 3.7c0 .6-.1 1-.2 1.2-.2.3-.4.4-.7.4-.3 0-.6-.1-.8-.4-.2-.3-.2-.7-.2-1.3V6.5c0-.5.1-.9.3-1.2.2-.3.4-.4.7-.4.3 0 .6.1.8.4.2.3.2.7.2 1.3v1.7z"
+                                fill="#fff" /></svg>
+                        </a>
+                        <div class="space"></div>
+                        <a href="#" onclick="return false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20.5" height="16" viewBox="0 0 20.5 16">
+                              <path
+                                d="M2.2 12.2c.5 0 1-.4 1-1V4.8c0-.4-.2-.7-.6-.9-.4-.1-.8-.1-1 .2L.3 5.4c-.4.4-.4 1 0 1.4.3.2.6.3 1 .2v4.2c0 .5.4 1 .9 1zm3.7-8.4c-1 0-1.8.8-1.8 1.8v4.8c0 1 .8 1.8 1.8 1.8h1.3c1 0 1.8-.8 1.8-1.8V5.6c0-1-.8-1.8-1.8-1.8H5.9zM7 10.2H6V5.8h1v4.4zm4.7-6.4c-1 0-1.8.8-1.8 1.8v4.8c0 1 .8 1.8 1.8 1.8H13c1 0 1.8-.8 1.8-1.8V5.6c0-1-.8-1.8-1.8-1.8h-1.3zm1.1 6.4h-1V9h1v1.2zm0-3.2h-1V5.8h1V7zm5.9-3.2h-1.3c-1 0-1.8.8-1.8 1.8v4.8c0 1 .8 1.8 1.8 1.8h1.3c1 0 1.8-.8 1.8-1.8V5.6c0-1-.8-1.8-1.8-1.8zm-.2 6.4h-1V5.8h1v4.4zM1 1.9h18.5c.5 0 1-.4 1-1 0-.5-.4-1-1-1H1C.4 0 0 .4 0 1c0 .5.4.9 1 .9zm18.5 12.2H1c-.5 0-1 .4-1 1s.4 1 1 1h18.5c.5 0 1-.4 1-1s-.5-1-1-1z"
+                                fill="#00c6ff" /></svg>
+                        </a>
+                        <a href="/peliculas-4k.php" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20.5" height="16" viewBox="0 0 20.5 16">
+                              <path
+                                d="M1 1.9h18.6c.5 0 1-.4 1-1 0-.5-.4-1-1-1H1C.4 0 0 .4 0 1c0 .5.4.9 1 .9zm18.5 12.2H1c-.5 0-1 .4-1 1s.4 1 1 1h18.6c.5 0 1-.4 1-1s-.5-1-1.1-1zM16 5.5c.4-.4.4-1 0-1.4-.4-.4-1-.4-1.4 0L12.8 6V4.8c0-.5-.4-1-1-1s-1 .4-1 1v6.4c0 .5.4 1 1 1s1-.4 1-1V10l1.9 1.9c.2.2.4.3.7.3.2 0 .5-.1.7-.3.4-.4.4-1 0-1.4l-2.1-2c-.1-.1-.2-.3-.2-.5s.1-.3.2-.5l2-2zm-7.4 6.7c.5 0 1-.4 1-1V4.8c0-.5-.4-1-1-1-.5 0-1 .4-1 1V7h-1V4.8c0-.5-.4-1-1-1-.5 0-1 .4-1 1V8c0 .5.4 1 1 1h1.9v2.2c.2.6.6 1 1.1 1z"
+                                fill="#fff" /></svg>
+                        </a>
+                        <a href="#" onclick="return false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                              <path
+                                d="M5 0H1C.4 0 0 .4 0 1v4c0 .6.4 1 1 1s1-.4 1-1V2h3c.6 0 1-.4 1-1s-.4-1-1-1zm10 0h-4c-.6 0-1 .4-1 1s.4 1 1 1h3v3c0 .6.4 1 1 1s1-.4 1-1V1c0-.6-.4-1-1-1zM5 14H2v-3c0-.6-.4-1-1-1s-1 .4-1 1v4c0 .6.4 1 1 1h4c.6 0 1-.4 1-1 0-.5-.4-1-1-1zm10-4c-.6 0-1 .4-1 1v3h-3c-.6 0-1 .4-1 1s.4 1 1 1h4c.6 0 1-.4 1-1v-4c0-.6-.4-1-1-1z"
+                                fill="#fff" /></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <img src="" class="_player-cover top_class" alt="">
+            <iframe id="_player" class="top_class" style="" allowfullscreen="" src="" scrolling="no" style="background-color:#fff"></iframe>
+            <div class="spinner-container" style="display:none">
+                <div class="spinner-border"></div>
+            </div>
+        </div>
+
+                    <script src="/static/js/jquery.min.js"></script>
+            <script src="/static/js/bootstrap.bundle.min.js"></script>
+            <script src="/static/js/main.js?v=10.7"></script>
+            <!--<script src="/static/js/main.js?v=1749845288"></script>-->
+        </body>
+
+        </html>
+        

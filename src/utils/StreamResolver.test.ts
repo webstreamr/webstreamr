@@ -9,7 +9,7 @@ import { ImdbId } from './id';
 import { FetcherMock } from './FetcherMock';
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
-const fetcher = new FetcherMock();
+const fetcher = new FetcherMock(`${__dirname}/__fixtures__/StreamResolver`);
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on', it: 'on' } };
 
 const meineCloud = new MeineCloud(fetcher);

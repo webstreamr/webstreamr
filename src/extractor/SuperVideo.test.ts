@@ -5,7 +5,7 @@ import { ExtractorRegistry } from './ExtractorRegistry';
 import { SuperVideo } from './SuperVideo';
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
-const extractorRegistry = new ExtractorRegistry(logger, [new SuperVideo(new FetcherMock())]);
+const extractorRegistry = new ExtractorRegistry(logger, [new SuperVideo(new FetcherMock(`${__dirname}/__fixtures__/SuperVideo`))]);
 
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: {} };
 

@@ -8,7 +8,7 @@ describe('Soaper', () => {
   let handler: Soaper;
 
   beforeEach(() => {
-    handler = new Soaper(new FetcherMock());
+    handler = new Soaper(new FetcherMock(`${__dirname}/__fixtures__/Soaper`));
   });
 
   test('handles non-existent movies gracefully', async () => {

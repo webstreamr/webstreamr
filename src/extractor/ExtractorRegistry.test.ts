@@ -5,7 +5,7 @@ import { FetcherMock } from '../utils';
 import { createExtractors } from './index';
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
-const extractorRegistry = new ExtractorRegistry(logger, createExtractors(new FetcherMock()));
+const extractorRegistry = new ExtractorRegistry(logger, createExtractors(new FetcherMock(`${__dirname}/__fixtures__/ExtractorRegistry`)));
 
 describe('ExtractorRegistry', () => {
   const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on' } };

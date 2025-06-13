@@ -5,7 +5,7 @@ import { ExtractorRegistry } from './ExtractorRegistry';
 import { Soaper } from './Soaper';
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
-const extractorRegistry = new ExtractorRegistry(logger, [new Soaper(new FetcherMock())]);
+const extractorRegistry = new ExtractorRegistry(logger, [new Soaper(new FetcherMock(`${__dirname}/__fixtures__/Soaper`))]);
 
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: {} };
 

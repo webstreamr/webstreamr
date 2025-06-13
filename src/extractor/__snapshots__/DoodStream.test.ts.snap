@@ -14,7 +14,7 @@ exports[`DoodStream can guess height from title 1`] = `
     },
     "sourceId": "doodstream_fr",
     "ttl": 900000,
-    "url": "https://ee317r.cloudatacdn.com/u5kj63yvxddlsdgge7qremqqka27irwiupc4k7o5cikbh7fdq4j4mwzraf7q/1y4sn4ndoi~mocked-random-string?token=fh3rdlhjvao7chgxndsi3ra7&expiry=639837296000",
+    "url": "https://ee317r.cloudatacdn.com/u5kj63yvxddlsdgge7qremqqka27irwiupc4k7o5cikbhjliz6xwv2xr53uq/lco4d3heif~mocked-random-string?token=fh3rdlhjvao7chgxndsi3ra7&expiry=639837296000",
   },
 ]
 `;
@@ -33,7 +33,7 @@ exports[`DoodStream dood.to 1`] = `
     },
     "sourceId": "doodstream_de",
     "ttl": 900000,
-    "url": "https://aa360cc.cloudatacdn.com/u5kjv4jxytd3sdgge5uogji5dg4huat2pxrm2qibdbm5rtpmbzgb5tornooa/k9wk0js17e~mocked-random-string?token=7uebebipnnhusa4xnyea1er4&expiry=639837296000",
+    "url": "https://aa360cc.cloudatacdn.com/u5kjv4jxytd3sdgge5uogji5dg4huat2pxrm2qibdbm5rlyusvl46iz3u3ta/1f4isxg0tw~mocked-random-string?token=7uebebipnnhusa4xnyea1er4&expiry=639837296000",
   },
 ]
 `;
@@ -51,7 +51,7 @@ exports[`DoodStream doodster 1`] = `
     },
     "sourceId": "doodstream_de",
     "ttl": 900000,
-    "url": "https://ijs155l.cloudatacdn.com/u5kj2rz5qtdlsdgge4hrgj2flz5cjodea6auatveaphxodkbf5n5mtrbp7aq/ntfyct66ci~mocked-random-string?token=fbsg3301phkef2s4swo8bssg&expiry=639837296000",
+    "url": "https://ijs155l.cloudatacdn.com/u5kj2rz5qtdlsdgge4hrgj2flz5cjodea6auatveaphxogr2vvukxfzmwzva/egprvdjvpr~mocked-random-string?token=fbsg3301phkef2s4swo8bssg&expiry=639837296000",
   },
 ]
 `;

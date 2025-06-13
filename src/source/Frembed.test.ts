@@ -8,7 +8,7 @@ describe('Frembed', () => {
   let handler: Frembed;
 
   beforeEach(() => {
-    handler = new Frembed(new FetcherMock());
+    handler = new Frembed(new FetcherMock(`${__dirname}/__fixtures__/Frembed`));
   });
 
   test('handle imdb black mirror s4e2', async () => {

@@ -12,7 +12,7 @@ exports[`Dropload dropload.io 1`] = `
     },
     "sourceId": "dropload_de",
     "ttl": 900000,
-    "url": "https://srv27.dropload.io/hls2/01/00197/lyo2h1snpe5c_h/master.m3u8?t=qTZsRGIMnUjXsQ4o2LRLlsT4tGG1AdJrRBRDGttNLPM&s=1746903744&e=14400&f=987607&i=0.0&sp=0&ii=130.61.236.204",
+    "url": "https://srv34.dropload.io/hls2/01/00197/lyo2h1snpe5c_h/master.m3u8?t=ESjD9Le53ttKN2JPyxrhLUqTebDZvx3vcQUlNgP6Vko&s=1749845553&e=14400&f=987607&srv=srv27&i=0.0&sp=0&ii=50.99.15.93&p1=srv27&p2=srv27",
   },
 ]
 `;

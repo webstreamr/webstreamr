@@ -8,7 +8,7 @@ describe('MostraGuarda', () => {
   let handler: MostraGuarda;
 
   beforeEach(() => {
-    handler = new MostraGuarda(new FetcherMock());
+    handler = new MostraGuarda(new FetcherMock(`${__dirname}/__fixtures__/MostraGuarda`));
   });
 
   test('handles non-existent movies gracefully', async () => {

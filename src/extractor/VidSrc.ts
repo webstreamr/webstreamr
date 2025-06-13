@@ -36,10 +36,10 @@ export class VidSrc extends Extractor {
         .toArray()
         .filter(({ serverName }) => serverName === 'CloudStream Pro')
         .map(async ({ serverName, dataHash }) => {
-          const iframeHtml = await this.fetcher.text(ctx, new URL(`/rcp/${dataHash}`, iframeUrl.origin));
+          const iframeHtml = await this.fetcher.text(ctx, new URL(`/rcp/${dataHash}`, iframeUrl.origin), { headers: { Referer: iframeUrl.origin } });
           const srcMatch = iframeHtml.match(`src:\\s?'(.*)'`) as string[];
 
-          const playerHtml = await this.fetcher.text(ctx, new URL(srcMatch[1] as string, iframeUrl.origin));
+          const playerHtml = await this.fetcher.text(ctx, new URL(srcMatch[1] as string, iframeUrl.origin), { headers: { Referer: iframeUrl.origin } });
           const fileMatch = playerHtml.match(`file:\\s?'(.*)'`);
           if (!fileMatch) {
             throw new NotFoundError();

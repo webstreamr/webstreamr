@@ -5,7 +5,7 @@ import { ExtractorRegistry } from './ExtractorRegistry';
 import { DoodStream } from './DoodStream';
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
-const extractorRegistry = new ExtractorRegistry(logger, [new DoodStream(new FetcherMock())]);
+const extractorRegistry = new ExtractorRegistry(logger, [new DoodStream(new FetcherMock(`${__dirname}/__fixtures__/DoodStream`))]);
 
 const ctx: Context = { id: 'id', ip: '127.0.0.1', config: {} };
 

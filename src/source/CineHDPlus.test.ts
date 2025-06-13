@@ -8,7 +8,7 @@ describe('CineHDPlus', () => {
   let handler: CineHDPlus;
 
   beforeEach(() => {
-    handler = new CineHDPlus(new FetcherMock());
+    handler = new CineHDPlus(new FetcherMock(`${__dirname}/__fixtures__/CineHDPlus`));
   });
 
   test('handles non-existent series gracefully', async () => {

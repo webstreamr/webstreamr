@@ -9,24 +9,28 @@ import { envGet } from './env';
 import { Fetcher } from './Fetcher';
 
 export class FetcherMock extends Fetcher {
-  public constructor() {
+  private readonly fixturePath: string;
+
+  public constructor(fixturePath: string) {
     super(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
+
+    this.fixturePath = fixturePath;
   }
 
   public override async text(ctx: Context, url: URL, init?: RequestInit): Promise<string> {
-    const path = `${__dirname}/__fixtures__/Fetcher/${this.slugifyUrl(url)}`;
+    const path = `${this.fixturePath}/${this.slugifyUrl(url)}`;
 
     return this.fetch(path, ctx, url, init);
   };
 
   public override async textPost(ctx: Context, url: URL, body: string, init?: RequestInit): Promise<string> {
-    const path = `${__dirname}/__fixtures__/Fetcher/post-${this.slugifyUrl(url)}-${slugify(body)}`;
+    const path = `${this.fixturePath}/post-${this.slugifyUrl(url)}-${slugify(body)}`;
 
     return this.fetch(path, ctx, url, { ...init, method: 'POST', body });
   };
 
   public override async head(ctx: Context, url: URL, init?: RequestInit): Promise<CachePolicy.Headers> {
-    const path = `${__dirname}/__fixtures__/Fetcher/head-${this.slugifyUrl(url)}`;
+    const path = `${this.fixturePath}/head-${this.slugifyUrl(url)}`;
 
     return JSON.parse(await this.fetch(path, ctx, url, { ...init, method: 'HEAD' }));
   };

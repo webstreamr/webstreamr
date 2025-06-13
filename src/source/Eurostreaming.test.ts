@@ -8,7 +8,7 @@ describe('Eurostreaming', () => {
   let handler: Eurostreaming;
 
   beforeEach(() => {
-    handler = new Eurostreaming(new FetcherMock());
+    handler = new Eurostreaming(new FetcherMock(`${__dirname}/__fixtures__/Eurostreaming`));
   });
 
   test('handles non-existent series gracefully', async () => {
