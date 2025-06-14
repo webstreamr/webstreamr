@@ -3,7 +3,7 @@ import winston from 'winston';
 import bytes from 'bytes';
 import { Context, TIMEOUT, UrlResult } from '../types';
 import { Source } from '../source';
-import { BlockedError, HttpError, NotFoundError, QueueIsFullError } from '../error';
+import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TooManyRequestsError } from '../error';
 import { flagFromCountryCode, languageFromCountryCode } from './language';
 import { envGetAppName } from './env';
 import { Id } from './id';
@@ -161,6 +161,12 @@ export class StreamResolver {
       }
 
       return '⚠️ Request was blocked.';
+    }
+
+    if (error instanceof TooManyRequestsError) {
+      this.logger.warn(`${source}: Rate limited for ${error.retryAfter} seconds.`, ctx);
+
+      return '🚦 Request was rate-limited. Please try again later or consider self-hosting.';
     }
 
     if (error === TIMEOUT) {

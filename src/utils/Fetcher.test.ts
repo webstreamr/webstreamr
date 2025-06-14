@@ -2,7 +2,7 @@ import winston from 'winston';
 import fetchMock from 'fetch-mock';
 import { Fetcher } from './Fetcher';
 import { Context } from '../types';
-import { BlockedError, HttpError, NotFoundError, QueueIsFullError } from '../error';
+import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TooManyRequestsError } from '../error';
 fetchMock.mockGlobal();
 
 const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
@@ -127,6 +127,37 @@ describe('fetch', () => {
     } catch (error) {
       expect(error).toBeInstanceOf(BlockedError);
       expect(error).toMatchObject({ reason: 'unknown' });
+    }
+  });
+
+  test('converts 429 to custom TooManyRequestsError', async () => {
+    fetchMock.get('https://some-rate-limited-url.test/', { status: 429 });
+
+    try {
+      await fetcher.text(ctx, new URL('https://some-rate-limited-url.test/'));
+      fail();
+    } catch (error) {
+      expect(error).toBeInstanceOf(TooManyRequestsError);
+      expect(error).toMatchObject({ retryAfter: NaN });
+    }
+  });
+
+  test('converts 429 to custom TooManyRequestsError and blocks consecutive requests', async () => {
+    fetchMock.get('https://some-rate-limited-retry-after-url.test/', { status: 429, headers: { 'retry-after': '10' } });
+
+    try {
+      await fetcher.text(ctx, new URL('https://some-rate-limited-retry-after-url.test/'));
+      fail();
+    } catch (error) {
+      expect(error).toBeInstanceOf(TooManyRequestsError);
+      expect(error).toMatchObject({ retryAfter: 10 });
+    }
+
+    try {
+      await fetcher.text(ctx, new URL('https://some-rate-limited-retry-after-url.test/'));
+      fail();
+    } catch (error) {
+      expect(error).toBeInstanceOf(TooManyRequestsError);
     }
   });
 

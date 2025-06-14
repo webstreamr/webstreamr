@@ -4,7 +4,7 @@ import winston from 'winston';
 import { Mutex } from 'async-mutex';
 import { Cookie, CookieJar } from 'tough-cookie';
 import { BlockedReason, Context, TIMEOUT } from '../types';
-import { BlockedError, HttpError, NotFoundError, QueueIsFullError } from '../error';
+import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TooManyRequestsError } from '../error';
 import { clearTimeout } from 'node:timers';
 import { envGet } from './env';
 
@@ -51,6 +51,7 @@ export class Fetcher {
   private readonly logger: winston.Logger;
 
   private readonly httpCache: TTLCache<string, HttpCacheItem>;
+  private readonly rateLimitedCache: TTLCache<string, undefined>;
   private readonly hostUserAgentMap = new Map<string, string>();
   private readonly cookieJar = new CookieJar();
 
@@ -61,6 +62,7 @@ export class Fetcher {
     this.logger = logger;
 
     this.httpCache = new TTLCache();
+    this.rateLimitedCache = new TTLCache();
   }
 
   public async text(ctx: Context, url: URL, init?: CustomRequestInit): Promise<string> {
@@ -155,6 +157,15 @@ export class Fetcher {
       throw new BlockedError(BlockedReason.unknown, httpCacheItem.policy.responseHeaders());
     }
 
+    if (httpCacheItem.status === 429) {
+      const retryAfter = parseInt(`${httpCacheItem.policy.responseHeaders()['retry-after']}`);
+      if (!isNaN(retryAfter)) {
+        this.rateLimitedCache.set(url.host, undefined, { ttl: retryAfter * 1000 });
+      }
+
+      throw new TooManyRequestsError(retryAfter);
+    }
+
     throw new HttpError(httpCacheItem.status, httpCacheItem.statusText, responseHeaders);
   };
 
@@ -204,6 +215,10 @@ export class Fetcher {
 
   protected async fetchWithTimeout(ctx: Context, url: URL, init?: CustomRequestInit): Promise<Response> {
     this.logger.info(`Fetch ${init?.method ?? 'GET'} ${url}`, ctx);
+
+    if (this.rateLimitedCache.has(url.host)) {
+      throw new TooManyRequestsError(this.rateLimitedCache.getRemainingTTL(url.host) / 1000);
+    }
 
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(TIMEOUT), init?.timeout ?? 5000);
