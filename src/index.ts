@@ -1,7 +1,7 @@
 import express, { NextFunction, Request, Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import winston from 'winston';
-import { CineHDPlus, Frembed, FrenchCloud, Source, KinoGer, MeineCloud, MostraGuarda, Soaper, StreamKiste, VerHdLink, VidSrc } from './source';
+import { CineHDPlus, Eurostreaming, Frembed, FrenchCloud, Source, KinoGer, MeineCloud, MostraGuarda, Soaper, StreamKiste, VerHdLink, VidSrc } from './source';
 import { createExtractors, ExtractorRegistry } from './extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
 import { envGet, envIsProd, Fetcher, StreamResolver, tmdbFetch, TmdbId } from './utils';
@@ -34,7 +34,7 @@ const sources: Source[] = [
   new Frembed(fetcher),
   new FrenchCloud(fetcher),
   // IT
-  // new Eurostreaming(fetcher), // https://github.com/webstreamr/webstreamr/issues/83
+  new Eurostreaming(fetcher),
   new MostraGuarda(fetcher),
 ];
 

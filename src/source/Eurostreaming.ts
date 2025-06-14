@@ -1,7 +1,7 @@
 import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
 import { Source, SourceResult } from './types';
-import { Fetcher, getImdbId, Id, ImdbId } from '../utils';
+import { Fetcher, getTmdbId, getTmdbTvDetails, Id } from '../utils';
 import { Context, CountryCode } from '../types';
 
 export class Eurostreaming implements Source {
@@ -20,9 +20,10 @@ export class Eurostreaming implements Source {
   }
 
   public async handle(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
-    const imdbId = await getImdbId(ctx, this.fetcher, id);
+    const tmdbId = await getTmdbId(ctx, this.fetcher, id);
+    const tmdbTvDetails = await getTmdbTvDetails(ctx, this.fetcher, tmdbId, 'it');
 
-    const seriesPageUrl = await this.fetchSeriesPageUrl(ctx, imdbId);
+    const seriesPageUrl = await this.fetchSeriesPageUrl(ctx, tmdbTvDetails.name);
     if (!seriesPageUrl) {
       return [];
     }
@@ -31,44 +32,42 @@ export class Eurostreaming implements Source {
 
     const $ = cheerio.load(html);
 
-    const mainDataLinkElements = $(`[data-num="${imdbId.season}x${imdbId.episode}"][data-link!="#"]`);
-    const mirrorDataLinkElements = $(`[data-num="${imdbId.season}x${imdbId.episode}"]`)
-      .siblings('.mirrors')
-      .children('[data-link!="#"]');
+    const title = `${tmdbTvDetails.name} ${tmdbId.season}x${tmdbId.episode}`;
 
-    const title = $('meta[property="og:title"]').attr('content') as string;
-
-    return Promise.all(mainDataLinkElements
-      .add(mirrorDataLinkElements)
-      .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
-      .toArray()
-      .filter(url => !url.host.match(/eurostreaming/))
-      .map(url => ({ countryCode: CountryCode.it, referer: seriesPageUrl, title: `${title.trim()} ${imdbId.season}x${imdbId.episode}`, url })),
+    return Promise.all(
+      $(`[data-num="${tmdbId.season}x${tmdbId.episode}"]`)
+        .siblings('.mirrors')
+        .children('[data-link!="#"]')
+        .map((_i, el) => new URL($(el).attr('data-link') as string))
+        .toArray()
+        .filter(url => !url.host.match(/eurostreaming/))
+        .map(url => ({ countryCode: CountryCode.it, title, url })),
     );
   };
 
-  private fetchSeriesPageUrl = async (ctx: Context, imdbId: ImdbId): Promise<URL | undefined> => {
+  private fetchSeriesPageUrl = async (ctx: Context, keyword: string): Promise<URL | undefined> => {
+    const postUrl = new URL('https://eurostreaming.my/');
+
+    const form = new URLSearchParams();
+    form.append('do', 'search');
+    form.append('subaction', 'search');
+    form.append('story', keyword);
+
     const html = await this.fetcher.textPost(
       ctx,
-      new URL('https://eurostreaming.my/index.php'),
-      JSON.stringify({
-        do: 'search',
-        subaction: 'search',
-        search_start: 0,
-        full_search: 0,
-        result_from: 1,
-        story: imdbId.id,
-      }),
+      postUrl,
+      form.toString(),
       {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
+          'Referer': postUrl.origin,
         },
       },
     );
 
     const $ = cheerio.load(html);
 
-    const url = $('.post-content a[href]:first')
+    const url = $(`.post-thumb a[href][title="${keyword}"]:first`)
       .map((_i, el) => $(el).attr('href'))
       .get(0);
 

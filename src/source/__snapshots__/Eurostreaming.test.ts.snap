@@ -4,21 +4,43 @@ exports[`Eurostreaming handle imdb black mirror s2e4 1`] = `
 [
   {
     "countryCode": "it",
-    "referer": "https://eurostreaming.my/stream/284-black-mirror-streaming-streaming.html",
     "title": "Black Mirror 2x4",
-    "url": "https://supervideo.cc/embed-anf0clp2vb6y.html",
+    "url": "https://supervideo.cc/e/anf0clp2vb6y",
   },
   {
     "countryCode": "it",
-    "referer": "https://eurostreaming.my/stream/284-black-mirror-streaming-streaming.html",
-    "title": "Black Mirror 2x4",
-    "url": "https://supervideo.cc/embed-anf0clp2vb6y.html",
-  },
-  {
-    "countryCode": "it",
-    "referer": "https://eurostreaming.my/stream/284-black-mirror-streaming-streaming.html",
     "title": "Black Mirror 2x4",
     "url": "https://dropload.io/embed-978xyyxi3ldq.html",
+  },
+]
+`;
+
+exports[`Eurostreaming handle lost s1e1 1`] = `
+[
+  {
+    "countryCode": "it",
+    "title": "Lost 1x1",
+    "url": "https://supervideo.cc/e/lgslt2lst4jv",
+  },
+  {
+    "countryCode": "it",
+    "title": "Lost 1x1",
+    "url": "https://dropload.io/embed-vabynwo8glxz.html",
+  },
+]
+`;
+
+exports[`Eurostreaming last of us s1e1 1`] = `
+[
+  {
+    "countryCode": "it",
+    "title": "The Last of Us 1x1",
+    "url": "https://supervideo.cc/e/ic1mmvrh5xv6",
+  },
+  {
+    "countryCode": "it",
+    "title": "The Last of Us 1x1",
+    "url": "https://dropload.io/embed-uyzfrh62n31l.html",
   },
 ]
 `;
