@@ -18,8 +18,9 @@ export class DoodStream extends Extractor {
     this.fetcher = fetcher;
   }
 
+  /** @see https://github.com/Gujal00/ResolveURL/blob/master/script.module.resolveurl/lib/resolveurl/plugins/doodstream.py */
   public supports(_ctx: Context, url: URL): boolean {
-    return null !== url.host.match(/dood|do[0-9]go|dooodster|dooood/);
+    return null !== url.host.match(/dood|do[0-9]go|doood|dooood|ds2play|ds2video|d0o0d|do0od|d0000d|d000d|vidply|all3do|doply|vide0/);
   };
 
   public override normalize(url: URL): URL {
