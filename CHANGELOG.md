@@ -1,5 +1,33 @@
 # Changelog
 
+## [0.28.2](https://github.com/webstreamr/webstreamr/compare/v0.28.1...v0.28.2) (2025-06-14)
+
+
+### Miscellaneous Chores
+
+* **deps:** update eslint monorepo to v9.29.0 ([#138](https://github.com/webstreamr/webstreamr/issues/138)) ([0e6558e](https://github.com/webstreamr/webstreamr/commit/0e6558e0b11919720b5dc9fcfa7bc1c73d50c37d))
+* do not pass referer through context ([f11c591](https://github.com/webstreamr/webstreamr/commit/f11c591dc544f41720d5c9002bd5216449c60e3b))
+* **extractor:** add various exotic DoodStream domains ([81d788e](https://github.com/webstreamr/webstreamr/commit/81d788ef843614e95b764c2ac6a3eb758294e792))
+* handle not found TMDB IDs better ([5f34be1](https://github.com/webstreamr/webstreamr/commit/5f34be12a9d08eb1096a0a1fbe63f3c1494fc589))
+* implement rate-limit detection ([605e88f](https://github.com/webstreamr/webstreamr/commit/605e88fef4821d65d61e888e9432d290ffa89174))
+
+
+### Bug Fixes
+
+* **source:** adapt and enable Eurostreaming (IT) again ([6a773f7](https://github.com/webstreamr/webstreamr/commit/6a773f77400ec712527549cf5a7a3f656a2f288c))
+
+
+### Code Refactoring
+
+* use context scoped fixtures ([2853bff](https://github.com/webstreamr/webstreamr/commit/2853bff284224bf7b1a1d79fb6454db712dcd4fb))
+* use proper prototype class methods ([4bc2569](https://github.com/webstreamr/webstreamr/commit/4bc25692a890d89507e7b608ace51ff44783696b))
+
+
+### Tests
+
+* hand-rolled, explicit Fetcher mock ([3a4ff73](https://github.com/webstreamr/webstreamr/commit/3a4ff739538a4748a892f1bb28020744fce90dfe))
+* instantiate mocked Fetcher with logger consistently ([4caf62a](https://github.com/webstreamr/webstreamr/commit/4caf62a367184216c4b0a33cc0c6fd542362a30f))
+
 ## [0.28.1](https://github.com/webstreamr/webstreamr/compare/v0.28.0...v0.28.1) (2025-06-13)
 
 
