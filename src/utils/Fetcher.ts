@@ -144,10 +144,10 @@ export class Fetcher {
 
       httpCacheItem.body = challengeResult.solution.response;
 
-      const ttl = this.determineTtl(httpCacheItem);
+      const ttl = this.determineCacheTtl(httpCacheItem);
       /* istanbul ignore next */
       if (ttl > 0) {
-        this.httpCache.set(url.href, httpCacheItem, { ttl });
+        this.httpCache.set(this.determineCacheKey(url, init), httpCacheItem, { ttl });
       }
 
       return httpCacheItem;
@@ -169,7 +169,11 @@ export class Fetcher {
     throw new HttpError(httpCacheItem.status, httpCacheItem.statusText, responseHeaders);
   };
 
-  private determineTtl(httpCacheItem: HttpCacheItem): number {
+  private determineCacheKey(url: URL, init?: CustomRequestInit): string {
+    return `${url.href}_${init?.body?.toString()}`;
+  }
+
+  private determineCacheTtl(httpCacheItem: HttpCacheItem): number {
     if (httpCacheItem.status === 200) {
       return Math.max(httpCacheItem.policy.timeToLive(), 900000); // 15m at least
     }
@@ -192,7 +196,8 @@ export class Fetcher {
 
     const request: CachePolicy.Request = { url: url.href, method: newInit.method ?? 'GET', headers: {} };
 
-    let httpCacheItem: HttpCacheItem | undefined = this.httpCache.get(url.href);
+    const cacheKey = this.determineCacheKey(url, init);
+    let httpCacheItem: HttpCacheItem | undefined = this.httpCache.get(cacheKey);
     if (httpCacheItem) {
       this.logger.info(`Cached fetch ${request.method} ${url}`, ctx);
       return this.handleHttpCacheItem(ctx, httpCacheItem, url, init);
@@ -205,9 +210,9 @@ export class Fetcher {
 
     httpCacheItem = { policy, status: response.status, statusText: response.statusText, body };
 
-    const ttl = this.determineTtl(httpCacheItem);
+    const ttl = this.determineCacheTtl(httpCacheItem);
     if (ttl > 0) {
-      this.httpCache.set(url.href, httpCacheItem, { ttl });
+      this.httpCache.set(cacheKey, httpCacheItem, { ttl });
     }
 
     return this.handleHttpCacheItem(ctx, httpCacheItem, url, init);
