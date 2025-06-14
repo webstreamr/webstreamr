@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.28.3](https://github.com/webstreamr/webstreamr/compare/v0.28.2...v0.28.3) (2025-06-14)
+
+
+### Bug Fixes
+
+* **fetcher:** consider request body for cache key ([6541782](https://github.com/webstreamr/webstreamr/commit/6541782541f5cf5ed13effff3a7366e4e36c9db9))
+
 ## [0.28.2](https://github.com/webstreamr/webstreamr/compare/v0.28.1...v0.28.2) (2025-06-14)
 
 
