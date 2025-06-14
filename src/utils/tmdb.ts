@@ -2,6 +2,7 @@ import { ImdbId, TmdbId } from './id';
 import { Context } from '../types';
 import { Fetcher } from './Fetcher';
 import { envGet } from './env';
+import { NotFoundError } from '../error';
 
 interface FindResponsePartial {
   movie_results: {
@@ -51,7 +52,7 @@ export const getTmdbIdFromImdbId = async (ctx: Context, fetcher: Fetcher, imdbId
   const id = (imdbId.season ? response.tv_results[0] : response.movie_results[0])?.id;
 
   if (!id) {
-    throw new Error(`Could not get TMDB ID of IMDb ID "${imdbId.id}"`);
+    throw new NotFoundError(`Could not get TMDB ID of IMDb ID "${imdbId.id}"`);
   }
 
   imdbTmdbMap.set(imdbId.id, id);
