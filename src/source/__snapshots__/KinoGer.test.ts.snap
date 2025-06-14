@@ -4,19 +4,16 @@ exports[`KinoGer handle imdb blood and sinners 1`] = `
 [
   {
     "countryCode": "de",
-    "referer": "https://kinoger.com/stream/18809-blood-sinners-stream.html",
     "title": "Blood & Sinners (2025)",
     "url": "https://fsst.online/embed/900576/",
   },
   {
     "countryCode": "de",
-    "referer": "https://kinoger.com/stream/18809-blood-sinners-stream.html",
     "title": "Blood & Sinners (2025)",
     "url": "https://kinoger.pw/e/6zeREaMlrqREZPa",
   },
   {
     "countryCode": "de",
-    "referer": "https://kinoger.com/stream/18809-blood-sinners-stream.html",
     "title": "Blood & Sinners (2025)",
     "url": "https://kinoger.re/#ge5fhb",
   },
@@ -27,13 +24,11 @@ exports[`KinoGer handle imdb dead city s2e5 1`] = `
 [
   {
     "countryCode": "de",
-    "referer": "https://kinoger.com/stream/12971-the-walking-dead-dead-city-stream.html",
     "title": "The Walking Dead: Dead City 2x5",
     "url": "https://supervideo.cc/e/bj6szat1pval",
   },
   {
     "countryCode": "de",
-    "referer": "https://kinoger.com/stream/12971-the-walking-dead-dead-city-stream.html",
     "title": "The Walking Dead: Dead City 2x5",
     "url": "https://kinoger.re/#x6tsx9",
   },
@@ -44,13 +39,11 @@ exports[`KinoGer handle imdb dead city s2e6 1`] = `
 [
   {
     "countryCode": "de",
-    "referer": "https://kinoger.com/stream/12971-the-walking-dead-dead-city-stream.html",
     "title": "The Walking Dead: Dead City 2x6",
     "url": "https://fsst.online/embed/901994/",
   },
   {
     "countryCode": "de",
-    "referer": "https://kinoger.com/stream/12971-the-walking-dead-dead-city-stream.html",
     "title": "The Walking Dead: Dead City 2x6",
     "url": "https://kinoger.re/#ep1tcf",
   },
@@ -63,7 +56,6 @@ exports[`KinoGer handle no fsst via brokeback mountain 1`] = `
 [
   {
     "countryCode": "de",
-    "referer": "https://kinoger.com/stream/14781-brokeback-mountain-stream.html",
     "title": "Brokeback Mountain (2005)",
     "url": "https://dooodster.com/e/1cfcevn6dg8shrfvht22odxw2lty18hr",
   },

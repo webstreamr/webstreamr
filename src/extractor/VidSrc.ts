@@ -46,7 +46,7 @@ export class VidSrc extends Extractor {
           }
 
           const m3u8Url = new URL(fileMatch[1] as string);
-          const height = await guessFromPlaylist(ctx, this.fetcher, m3u8Url, { noReferer: true });
+          const height = await guessFromPlaylist(ctx, this.fetcher, m3u8Url);
 
           return {
             url: m3u8Url,

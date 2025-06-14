@@ -9,7 +9,7 @@ exports[`KinoGer Blood & Sinners 1`] = `
       "title": "Blood.and.Sinners.2025.mkv",
     },
     "requestHeaders": {
-      "Referer": undefined,
+      "Referer": "https://kinoger.re",
     },
     "sourceId": "kinoger_de",
     "ttl": 900000,
@@ -28,7 +28,7 @@ exports[`KinoGer Dead City 1`] = `
       "title": "the.walking.dead.dead.city.s02e05.german.dl.1080p.web.x264-wvf.mkv",
     },
     "requestHeaders": {
-      "Referer": undefined,
+      "Referer": "https://kinoger.re",
     },
     "sourceId": "kinoger_de",
     "ttl": 900000,

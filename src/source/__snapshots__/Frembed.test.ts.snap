@@ -4,25 +4,21 @@ exports[`Frembed handle imdb black mirror s4e2 1`] = `
 [
   {
     "countryCode": "fr",
-    "referer": "https://frembed.space/api/series?id=42009&sa=4&epi=2&idType=tmdb",
     "title": "Black Mirror 4x2",
     "url": "https://do7go.com/e/dfx8me4un4ul",
   },
   {
     "countryCode": "fr",
-    "referer": "https://frembed.space/api/series?id=42009&sa=4&epi=2&idType=tmdb",
     "title": "Black Mirror 4x2",
     "url": "https://netu.fanstream.us/e/0DFgfkcXOsDP",
   },
   {
     "countryCode": "fr",
-    "referer": "https://frembed.space/api/series?id=42009&sa=4&epi=2&idType=tmdb",
     "title": "Black Mirror 4x2",
     "url": "https://johnalwayssame.com/e/cqy9oue7sv0g",
   },
   {
     "countryCode": "fr",
-    "referer": "https://frembed.space/api/series?id=42009&sa=4&epi=2&idType=tmdb",
     "title": "Black Mirror 4x2",
     "url": "https://ds2play.com/e/fzfvfq3ngig0",
   },
@@ -33,25 +29,21 @@ exports[`Frembed handle tmdb black mirror s4e2 1`] = `
 [
   {
     "countryCode": "fr",
-    "referer": "https://frembed.space/api/series?id=42009&sa=4&epi=2&idType=tmdb",
     "title": "Black Mirror 4x2",
     "url": "https://do7go.com/e/dfx8me4un4ul",
   },
   {
     "countryCode": "fr",
-    "referer": "https://frembed.space/api/series?id=42009&sa=4&epi=2&idType=tmdb",
     "title": "Black Mirror 4x2",
     "url": "https://netu.fanstream.us/e/0DFgfkcXOsDP",
   },
   {
     "countryCode": "fr",
-    "referer": "https://frembed.space/api/series?id=42009&sa=4&epi=2&idType=tmdb",
     "title": "Black Mirror 4x2",
     "url": "https://johnalwayssame.com/e/cqy9oue7sv0g",
   },
   {
     "countryCode": "fr",
-    "referer": "https://frembed.space/api/series?id=42009&sa=4&epi=2&idType=tmdb",
     "title": "Black Mirror 4x2",
     "url": "https://ds2play.com/e/fzfvfq3ngig0",
   },

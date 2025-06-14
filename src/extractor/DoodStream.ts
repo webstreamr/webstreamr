@@ -46,7 +46,7 @@ export class DoodStream extends Extractor {
 
     const mp4Url = new URL(`${baseUrl}${randomstring.generate(10)}?token=${token}&expiry=${Date.now()}`);
 
-    const mp4Head = await this.fetcher.head(ctx, mp4Url, { headers: { Referer: 'http://dood.to' } });
+    const mp4Head = await this.fetcher.head(ctx, mp4Url, { headers: { Referer: url.origin } });
 
     return [
       {
@@ -61,7 +61,7 @@ export class DoodStream extends Extractor {
           ...(height && { height }),
         },
         requestHeaders: {
-          Referer: 'http://dood.to/',
+          Referer: url.origin,
         },
       },
     ];

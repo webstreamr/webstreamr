@@ -4,7 +4,6 @@ exports[`Soaper handle imdb black mirror s4e2 1`] = `
 [
   {
     "countryCode": "en",
-    "referer": "https://soaper.live/episode_5KDq78eGp1.html",
     "title": "Black Mirror 4x2",
     "url": "https://soaper.live/episode_5KDq78eGp1.html",
   },
@@ -15,7 +14,6 @@ exports[`Soaper handle imdb full metal jacket 1`] = `
 [
   {
     "countryCode": "en",
-    "referer": "https://soaper.live/movie_d8kdeypDY9.html",
     "title": "Full Metal Jacket (1987)",
     "url": "https://soaper.live/movie_d8kdeypDY9.html",
   },
@@ -26,7 +24,6 @@ exports[`Soaper handle tmdb black mirror s4e2 1`] = `
 [
   {
     "countryCode": "en",
-    "referer": "https://soaper.live/episode_5KDq78eGp1.html",
     "title": "Black Mirror 4x2",
     "url": "https://soaper.live/episode_5KDq78eGp1.html",
   },

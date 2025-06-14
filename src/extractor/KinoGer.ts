@@ -50,7 +50,7 @@ export class KinoGer extends Extractor {
           ...(height && { height }),
         },
         requestHeaders: {
-          Referer: ctx.referer?.href as string,
+          Referer: url.origin,
         },
       },
     ];

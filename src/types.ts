@@ -6,7 +6,6 @@ export interface Context {
   id: string;
   ip: string;
   config: Config;
-  referer?: URL;
 }
 
 export type ManifestWithConfig = Manifest & { config: ManifestConfig[] };

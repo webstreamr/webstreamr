@@ -51,11 +51,7 @@ export class StreamResolver {
         this.logger.info(`${handler.id} returned ${handleResults.length} urls`, ctx);
 
         const handlerUrlResults = await Promise.all(
-          handleResults.map(async ({ countryCode, referer, title, url }) => {
-            const newCtx = { ...ctx, ...(referer && { referer }) };
-
-            return await this.extractorRegistry.handle(newCtx, url, countryCode, title);
-          }),
+          handleResults.map(({ countryCode, title, url }) => this.extractorRegistry.handle(ctx, url, countryCode, title)),
         );
 
         urlResults.push(...handlerUrlResults.flat());

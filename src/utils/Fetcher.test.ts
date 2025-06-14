@@ -29,7 +29,6 @@ describe('fetch', () => {
         'Accept-Language': 'en',
         'Forwarded': 'for=127.0.0.1',
         'Priority': 'u=0',
-        'Referer': 'https://some-url.test',
         'User-Agent': 'node',
         'X-Forwarded-For': '127.0.0.1',
         'X-Forwarded-Proto': 'https',
@@ -48,18 +47,6 @@ describe('fetch', () => {
     fetchMock.head('https://some-head-url.test/', { status: 200, headers: { 'X-Fake-Response': 'foo' } });
 
     expect(await fetcher.head(ctx, new URL('https://some-head-url.test/'))).toMatchObject({ 'x-fake-response': 'foo' });
-  });
-
-  test('uses context referer', async () => {
-    fetchMock.get('https://some-referer-url.test/', 'some text');
-
-    await fetcher.text({ ...ctx, referer: new URL('https://example.com/foo/bar') }, new URL('https://some-referer-url.test/'));
-
-    expect(fetchMock.callHistory.callLogs[0]?.args[1]).toMatchObject({
-      headers: {
-        Referer: 'https://example.com/foo/bar',
-      },
-    });
   });
 
   test('converts 404 to custom NotFoundError', async () => {

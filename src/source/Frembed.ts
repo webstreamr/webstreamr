@@ -36,6 +36,6 @@ export class Frembed implements Source {
       }
     }
 
-    return urls.map(url => ({ countryCode: CountryCode.fr, referer: apiUrl, title: `${json['title']} ${tmdbId.season}x${tmdbId.episode}`, url }));
+    return urls.map(url => ({ countryCode: CountryCode.fr, title: `${json['title']} ${tmdbId.season}x${tmdbId.episode}`, url }));
   };
 }

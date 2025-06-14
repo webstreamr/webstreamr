@@ -200,7 +200,7 @@ exports[`resolve returns sorted results 1`] = `
         "notWebReady": true,
         "proxyHeaders": {
           "request": {
-            "Referer": "http://dood.to/",
+            "Referer": "http://dood.to",
           },
         },
         "videoSize": 791702409,
@@ -218,7 +218,7 @@ exports[`resolve returns sorted results 1`] = `
         "notWebReady": true,
         "proxyHeaders": {
           "request": {
-            "Referer": "http://dood.to/",
+            "Referer": "http://dood.to",
           },
         },
       },

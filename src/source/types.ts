@@ -4,7 +4,6 @@ import { Id } from '../utils';
 
 export interface SourceResult {
   countryCode: CountryCode;
-  referer?: URL;
   title?: string;
   url: URL;
 }
