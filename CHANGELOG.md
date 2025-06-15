@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.28.4](https://github.com/webstreamr/webstreamr/compare/v0.28.3...v0.28.4) (2025-06-15)
+
+
+### Miscellaneous Chores
+
+* **fetcher:** increase general timeouts ([6cf31f6](https://github.com/webstreamr/webstreamr/commit/6cf31f60de8e5f6bcff4d2b6254f5fc160f05ef6))
+* increase tmdb queuing limits ([e9ccee5](https://github.com/webstreamr/webstreamr/commit/e9ccee56211ad9dd854482cc4c2fba0bc5901996))
+
+
+### Bug Fixes
+
+* **extractor:** handle missing height infos in playlist properly ([3a28de4](https://github.com/webstreamr/webstreamr/commit/3a28de46bd8abb97023e9307b4e36e33738b4c8c))
+* **extractor:** only cache URL results if there was no error ([dd121a0](https://github.com/webstreamr/webstreamr/commit/dd121a068a97b940945c976b855b3f1dd76a369d))
+
 ## [0.28.3](https://github.com/webstreamr/webstreamr/compare/v0.28.2...v0.28.3) (2025-06-14)
 
 
