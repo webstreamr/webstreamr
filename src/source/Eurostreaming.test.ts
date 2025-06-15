@@ -30,4 +30,9 @@ describe('Eurostreaming', () => {
     const streams = await handler.handle(ctx, 'series', new TmdbId(100088, 1, 1));
     expect(streams).toMatchSnapshot();
   });
+
+  test('game of thrones s1e1', async () => {
+    const streams = await handler.handle(ctx, 'series', new TmdbId(1399, 1, 1));
+    expect(streams).toMatchSnapshot();
+  });
 });

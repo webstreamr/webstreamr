@@ -67,7 +67,9 @@ export class Eurostreaming implements Source {
 
     const $ = cheerio.load(html);
 
-    const url = $(`.post-thumb a[href][title="${keyword}"]:first`)
+    const keywordWords = keyword.trim().split(/\s+/).filter(word => word.length > 0);
+
+    const url = (keywordWords.length > 1 ? $(`.post-thumb a[href][title*="${keyword}"]:first`) : $(`.post-thumb a[href][title="${keyword}"]:first`))
       .map((_i, el) => $(el).attr('href'))
       .get(0);
 

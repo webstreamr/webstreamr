@@ -1,5 +1,20 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`Eurostreaming game of thrones s1e1 1`] = `
+[
+  {
+    "countryCode": "it",
+    "title": "Il Trono di Spade 1x1",
+    "url": "https://supervideo.cc/e/05jfivnr5hiw",
+  },
+  {
+    "countryCode": "it",
+    "title": "Il Trono di Spade 1x1",
+    "url": "https://dropload.io/embed-dub8oh3k3yk5.html",
+  },
+]
+`;
+
 exports[`Eurostreaming handle imdb black mirror s2e4 1`] = `
 [
   {
