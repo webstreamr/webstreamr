@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>PLAYER</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="never" />
+    <meta name="referrer" content="no-referrer" />
+    <style>
+        html,
+        body,
+        #container {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        #container {
+            position: absolute;
+            text-align: center;
+        }
+
+        .ribbon-1 {
+            position: fixed;
+            background: #edb709;
+            box-shadow: 0 0 0 999px #edb709;
+            clip-path: inset(0 -100%);
+            font-size: 20px;
+        }
+
+        .left {
+            inset: 0 auto auto 0;
+            transform-origin: 100% 0;
+            transform: translate(-29.3%) rotate(-45deg);
+        }
+
+        .right {
+            inset: 0 0 auto auto;
+            transform-origin: 0 0;
+            transform: translate(29.3%) rotate(45deg);
+        }
+    </style>
+    <style>
+        #videoContainer {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        #videoPlayer {
+            display: block;
+            z-index: 1001;
+            width: 100%;
+            height: 100%;
+        }
+
+        #skipCountdown {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #fff;
+            display: none;
+            z-index: 1003;
+            cursor: pointer;
+        }
+
+        #goToAdLink {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #fff;
+            display: none;
+            z-index: 1002;
+            cursor: pointer;
+        }
+
+        #modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        #modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            height: 80%;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="modal">
+        <div id="modal-content">
+            <div id="videoContainer">
+                <video id="videoPlayer" disableRemotePlayback playsinline>
+                    Your browser does not support the video tag.
+                </video>
+                <a href="#" target="_blank" id="goToAdLink">Ir a la publicidad</a>
+                <button id="skipCountdown"></button>
+            </div>
+        </div>
+    </div>
+    <div id="container">
+        <div style="position: relative; top: 50%; margin-top: -7px;" id="message">
+            <img src="play.png" alt="Reproducir" style="cursor: pointer; margin-top: -64px;" id="start" />
+        </div>
+        <div id="player"></div>
+    </div>
+    <div id="ribbon" class="ribbon-1 right">doodstream</div>
+    <script type="354360e64c5a39fe37376455-text/javascript">
+        class VASTVideoPlayer {
+            constructor(vastUrl) {
+
+                if (Array.isArray(vastUrl)) {
+                    this.vastUrl = vastUrl[Math.floor(Math.random() * vastUrl.length)];
+                } else {
+                    this.vastUrl = vastUrl;
+                }
+
+
+                this.ready = false;
+                this.error = false;
+                this.completed = false;
+                //
+                this.onCompletedCallback = null;
+                //
+                this.modal = document.getElementById("modal");
+                this.videoPlayer = document.getElementById("videoPlayer");
+                this.skipButton = document.getElementById("skipCountdown");
+                this.goToAdLink = document.getElementById("goToAdLink");
+                this.skipOffset = 0;
+                this.clickThrough = null;
+
+                //
+                this.loadVASTVideo();
+            }
+
+            loadVASTVideo() {
+                try {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', this.vastUrl, true);
+                    xhr.onload = () => {
+                        try {
+                            if (xhr.status === 200) {
+                                var responseXML = xhr.responseXML;
+                                if (!responseXML) {
+                                    throw new Error("Invalid XML format in VAST file.");
+                                }
+                                var mediaFiles = responseXML.getElementsByTagName("MediaFile");
+                                if (mediaFiles.length === 0) {
+                                    throw new Error("No compatible video file found in the VAST.");
+                                }
+                                var videoUrl = "";
+                                for (var i = 0; i < mediaFiles.length; i++) {
+                                    var mediaFile = mediaFiles[i];
+                                    if (mediaFile.getAttribute("type") === "video/mp4") {
+                                        videoUrl = mediaFile.textContent || mediaFile.innerText;
+                                        break;
+                                    }
+                                }
+                                if (videoUrl === "") {
+                                    throw new Error("No compatible video file found in the VAST.");
+                                }
+                                this.videoPlayer.src = videoUrl;
+
+                                var clickThroughElement = responseXML.querySelector("ClickThrough");
+                                if (clickThroughElement) {
+                                    this.setClickThrough(clickThroughElement.textContent);
+                                }
+
+                                var linearElement = responseXML.querySelector("Linear");
+                                if (linearElement) {
+                                    this.skipOffset = linearElement.getAttribute("skipoffset");
+                                }
+                            } else {
+                                throw new Error("Error loading VAST file. Status code: " + xhr.status);
+                            }
+                        } catch (e) {
+                            console.error("Error: " + e);
+                            this.error = true;
+                            return;
+                        }
+                        this.ready = true;
+                    };
+                    xhr.onerror = () => {
+                        console.error("Error loading VAST file.");
+                        this.error = true;
+                    };
+                    xhr.send();
+                } catch (e) {
+                    console.error("Error: " + e);
+                    this.error = true;
+                }
+            }
+
+            // set clickThrough
+            setClickThrough(clickThrough) {
+                this.clickThrough = clickThrough;
+            }
+
+            startClickThrough() {
+                if (this.clickThrough) {
+                    try {
+                        this.goToAdLink.style.display = "block";
+                        this.goToAdLink.target = "_blank";
+                        this.goToAdLink.href = this.clickThrough;
+                        this.videoPlayer.onclick = () => {
+                            window.open(this.clickThrough, "_blank");
+                        };
+                    } catch (e) {
+                        console.error("Error: " + e);
+                    }
+                }
+            }
+
+            runAds() {
+                if (this.error || !this.ready || this.completed) {
+                    this.adsCompleted();
+                    return;
+                }
+                try {
+                    this.startPlay();
+                } catch (e) {
+                    console.error("Error: " + e);
+                    this.adsCompleted();
+                }
+            }
+
+            startPlay() {
+                // start click through
+                this.startClickThrough();
+
+                // start play
+                this.modal.style.display = "block";
+                this.videoPlayer.onended = () => {
+                    this.adsCompleted();
+                };
+                this.videoPlayer.play();
+
+                if (this.skipOffset && this.skipOffset !== "" && this.skipOffset !== 0) {
+                    var skipTime = this.parseTimeToSeconds(this.skipOffset);
+                    if (!isNaN(skipTime)) {
+                        this.skipButton.style.display = "block";
+                        this.startSkipCountdown(skipTime);
+                    }
+                }
+            }
+
+            stopPlay() {
+                this.modal.style.display = "none";
+                this.videoPlayer.currentTime = 0;
+                this.skipButton.style.display = "none";
+                this.videoPlayer.pause();
+            }
+
+            startSkipCountdown(skipTime) {
+                var timeLeft = skipTime;
+                this.skipButton.innerHTML = "Saltar en " + timeLeft + "s";
+                var countdown = setInterval(() => {
+                    timeLeft--;
+                    this.skipButton.innerHTML = "Saltar en " + timeLeft + "s";
+                    if (timeLeft <= 0) {
+                        clearInterval(countdown);
+                        this.skipButton.innerHTML = "Saltar";
+                        this.skipButton.addEventListener("click", () => {
+                            this.adsCompleted();
+                        });
+                    }
+                }, 1000);
+            }
+
+            parseTimeToSeconds(timeString) {
+                var timeParts = timeString.split(":");
+                var hours = parseInt(timeParts[0]) || 0;
+                var minutes = parseInt(timeParts[1]) || 0;
+                var seconds = parseInt(timeParts[2]) || 0;
+                return hours * 3600 + minutes * 60 + seconds;
+            }
+
+            adsCompleted() {
+                this.completed = true;
+                try {
+                    this.stopPlay();
+                } catch (e) {
+                    console.error("Error: " + e);
+                }
+                if (this.onCompletedCallback) {
+                    this.onCompletedCallback();
+                }
+            }
+        }
+
+        var vastPlayer = new VASTVideoPlayer([
+            "/assets/1win/vast_1win_1_generic.xml",
+            "/assets/1win/vast_1win_2_generic.xml"
+        ]);
+
+        function getCountryAsync() {
+
+            // Create a promise to handle the asynchronous operation
+            return new Promise(function(resolve, reject) {
+
+                try {
+                    var country = localStorage.getItem('country');
+                    if (country) {
+                        resolve(country);
+                        return;
+                    }
+                } catch (e) {}
+
+                // Create a new XMLHttpRequest
+                var xhr = new XMLHttpRequest();
+
+                // Configure the request
+                xhr.open('GET', 'https://api.country.is/', true);
+                xhr.setRequestHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+                xhr.setRequestHeader('Pragma', 'no-cache');
+                xhr.setRequestHeader('Expires', '0');
+
+                // Handle the response
+                xhr.onload = function() {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        // If the request is successful
+                        var response = JSON.parse(xhr.responseText);
+                        // Get the value of country from the JSON
+                        var country = response.country;
+
+                        try {
+                            if (country) {
+                                localStorage.setItem('country', country);
+                            }
+                        } catch (e) {}
+
+                        resolve(country);
+                        return;
+                    } else {
+                        // If the request fails
+                        reject('Error occurred while making the request. Status code: ' + xhr.status);
+                        return;
+                    }
+                };
+
+                // Handle network errors
+                xhr.onerror = function() {
+                    reject('Network error occurred while making the request.');
+                    return;
+                };
+
+                // Set a timeout of half a second (500 milliseconds)
+                xhr.timeout = 2000;
+
+                // Handle timeout
+                xhr.ontimeout = function() {
+                    reject('Timeout occurred. The request took too long to respond.');
+                    return;
+                };
+
+                // Send the request
+                xhr.send();
+            });
+        }
+
+        class CookieHandler {
+            static createCookie(name, value, hours) {
+                try {
+                    const date = new Date();
+                    date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+                    const expires = "expires=" + date.toUTCString();
+                    const existingCookie = CookieHandler.getCookie(name);
+                    if (existingCookie !== "") {
+                        CookieHandler.deleteCookie(name); // Delete existing cookie if it exists
+                    }
+                    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+                } catch (error) {
+                    console.error("Error creating cookie:", error);
+                }
+            }
+
+            static getCookie(name) {
+                try {
+                    const cookieName = name + "=";
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        let cookie = cookies[i];
+                        while (cookie.charAt(0) === ' ') {
+                            cookie = cookie.substring(1);
+                        }
+                        if (cookie.indexOf(cookieName) === 0) {
+                            return cookie.substring(cookieName.length, cookie.length);
+                        }
+                    }
+                } catch (error) {
+                    console.error("Error getting cookie:", error);
+                }
+                return "";
+            }
+
+            static deleteCookie(name) {
+                try {
+                    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
+                } catch (error) {
+                    console.error("Error deleting cookie:", error);
+                }
+            }
+
+            static checkVisitAdsCompleted() {
+                try {
+                    let userValueCookie = CookieHandler.getCookie("adsCompleted");
+                    if (userValueCookie !== "") {
+                        userValueCookie = parseInt(userValueCookie); // Convert cookie value to integer
+                        if (userValueCookie > 3) {
+                            return true; // The user has completed more than 3 ads
+                        } else {
+                            return false; // The user has not completed enough ads yet
+                        }
+                        return false;
+                    } else {
+                        return false; // The user has not completed enough ads yet
+                    }
+                } catch (error) {
+                    console.error("Error checking visit:", error);
+                    // Assume the user has completed enough ads
+                    return true;
+                }
+            }
+        }
+    </script>
+    <script type="354360e64c5a39fe37376455-text/javascript">
+        var message = document.getElementById('message');
+        var url = 'https://doodstream.com/e/wvk23p39ikyd';
+        var userCountry = "DEFAULT";
+
+        getCountryAsync()
+            .then(function(country) {
+                userCountry = country;
+            });
+
+        const loadRedirect = () => {
+            let countdown = 10; // Duración de la cuenta regresiva en segundos
+            message.innerHTML = `Creando sistemas y consultando datos... Redireccionando en ${countdown} segundos.`;
+        
+            const intervalId = setInterval(() => {
+                    countdown--;
+                    if (countdown >= 0) {
+                        message.innerHTML = `Creando sistemas y consultando datos... Redireccionando en ${countdown} segundos.`;
+                    }
+            
+                    if (countdown === 2) {
+                        window.location.href = url;
+                    }
+            }, 1000);
+        };
+
+        vastPlayer.onCompletedCallback = () => {
+            let userValueCookie = CookieHandler.getCookie("adsCompleted");
+            let newValue = +userValueCookie + 1;
+            CookieHandler.createCookie("adsCompleted", newValue.toString(), 12);
+            loadRedirect();
+        };
+
+        start.onclick = e => {
+
+            if (CookieHandler.checkVisitAdsCompleted()) {
+                loadRedirect();
+                return;
+            }
+
+            if (userCountry === "AR" || userCountry === "MX") {
+                vastPlayer.runAds();
+            } else {
+                // Force run for all
+                //vastPlayer.runAds();
+                loadRedirect();
+            }
+        }
+    </script>
+    <script type="354360e64c5a39fe37376455-text/javascript" src="https://doo.lat/public/overroll_gasparin.js?v=7"></script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="354360e64c5a39fe37376455-|49" defer></script></body>
+
+</html>

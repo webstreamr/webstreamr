@@ -1,4 +1,5 @@
 export * from './CineHDPlus';
+export * from './Cuevana';
 export * from './Eurostreaming';
 export * from './Frembed';
 export * from './FrenchCloud';

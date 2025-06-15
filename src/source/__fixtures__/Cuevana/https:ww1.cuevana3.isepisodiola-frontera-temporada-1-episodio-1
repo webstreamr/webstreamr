@@ -1,0 +1,1093 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>La frontera 1x1 - Cuevana 3</title>
+  <meta name="robots" content="index,follow"/>
+  <link rel="shortcut icon" href="/static/img/cropped-favicon-1-32x32.png">
+  <meta name="google-site-verification" content=""/>
+  <meta name="description" content="Se centra en la colaboración de los comandos de ETA entre España y Francia, un periodo marcado por tensiones políticas y operativas en la lucha contra el terrorismo.">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" type="text/css" href="/static/css/app.css?v=1.91"/>
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css?v=1.8"/>
+  <link rel="stylesheet" type="text/css" href="/static/css/footer.css?v=1.8"/>
+  <script type="text/javascript" src="/static/cdn/jquery.js"></script>
+</head>
+<body data-rsssl=1 class="slider">
+<script>
+    var base_url = '//' + document.domain + '/';
+    var base_url_cdn_api = '//' + document.domain + '/';
+</script>
+<div id="aa-wp">
+  <header class="Header">
+  <script>
+      function onSearch() {
+          const q = document.getElementById('keysss').value
+          if (q.length > 1) {
+              location.href = `/search/${q}`
+          }
+          return false
+      }
+  </script>
+  <div class="cont">
+    <div class="top dfx alg-cr jst-sb">
+      <figure class="logo">
+        <a href="/"><img src="/static/img/cuevana3.png" alt="logo"></a>
+      </figure>
+      <span class="MenuBtn aa-tgl" data-tgl="aa-wp"><i></i><i></i><i></i></span>
+      <span class="MenuBtnClose aa-tgl" data-tgl="aa-wp"></span>
+      <div class="Rght BgA dfxc alg-cr fg1">
+        <div class="Search">
+          <form method="get" id="searchform" onsubmit="return onSearch()">
+            <span class="Form-Icon">
+                <div class="ep-autosuggest-container">
+                    <input id="keysss" name="keyword" type="search" placeholder="Buscador..." autocomplete="off">
+                    <div class="ep-autosuggest" style="display: none;"></div>
+                    <div class="loader"></div>
+                </div>
+                <button id="searchsubmit" type="submit"><i class="fa-search"></i></button>
+            </span>
+          </form>
+        </div>
+
+
+        <nav class="Menu fg1">
+          <ul>
+            <li
+                class="AAIco-home menu-item menu-item-type-custom menu-item-object-custom menu-item-home ">
+              <a href="/" aria-current="page">Inicio</a></li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+              <a href="/peliculas">Películas</a>
+              <ul class="sub-menu">
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                  <a href="/peliculas">Últimas publicadas</a>
+                </li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                  <a href="/peliculas/estrenos">Estrenos</a>
+                </li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                  <a href="/peliculas/tendencias/semana">Tendencias semana</a>
+                </li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                  <a href="/peliculas/tendencias/dia">Tendencias día</a>
+                </li>
+              </ul>
+            </li>
+            <li id="menu-item-1953"
+                class="AAIco-movie_creation menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1953">
+              <a href="#">Géneros</a>
+              <ul class="sub-menu">
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/accion">Acción</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/animacion">Animación</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/aventura">Aventura</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/biografico">Biografico</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/ciencia-ficcion">Ciencia Ficción</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/comedia">Comedia</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/crimen">Crimen</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/documental">Documental</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/drama">Drama</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/familiar">Familiar</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/fantasia">Fantasía</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/misterio">Misterio</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/musica">Música</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/romance">Romance</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/terror">Terror</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/thriller">Thriller</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+              <a href="/series">Series</a>
+              <ul class="sub-menu">
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                  <a href="/series">Series</a>
+                </li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                  <a href="/series/estrenos">Estrenos</a>
+                </li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                  <a href="/series/tendencias/dia">Tendencias dia</a>
+                </li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                  <a href="/series/tendencias/semana">Tendencias semana</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <div class="bd">
+
+    
+
+    
+    <div class="backdrop">
+        <article class="TPost movtv-info cont">
+            <div class="Image">
+                <figure>
+                    <img src="/static/img/loading.gif" data-src="https://image.tmdb.org/t/p/original/6SKzMXhp5q4yzk3f02QuNTQfv3M.jpg" alt="La frontera" class="lazy">
+                </figure>
+
+            </div>
+            <header>
+                <h1 class="Title">La frontera                    <span style="color: #edb709">1x1</span>
+                </h1>
+                <h2 class="SubTitle">
+                    La frontera - Temporada 1 - Episodio 1                </h2>
+            </header>
+            <footer>
+                <p class="Info">
+                    <span class="Vote AAIco-star">0</span>
+                    <span class="Time AAIco-access_time"></span>
+                    <span class="Date AAIco-date_range">2025</span>
+                </p>
+            </footer>
+            <div class="Description">Se centra en la colaboración de los comandos de ETA entre España y Francia, un periodo marcado por tensiones políticas y operativas en la lucha contra el terrorismo.</div>
+            <div class="MvTbCn on anmt" id="MvTb-Info">
+                <ul class="InfoList">
+                    <li class="AAIco-adjust"><strong>Genero:</strong>
+                        <a style="margin: 0 5px" href="/genero/Drama">Drama</a><a style="margin: 0 5px" href="/genero/Acción">Acción</a><a style="margin: 0 5px" href="/genero/Aventura">Aventura</a>                    </li>
+                    <li class="AAIco-adjust"><strong>Reparto:</strong>
+                        <a href="" style="margin: 0 5px">Javier Rey</a><a href="" style="margin: 0 5px">Iria del Río</a><a href="" style="margin: 0 5px">Vincent Perez</a>                    </li>
+                </ul>
+            </div>
+        </article>
+        <div class="Image">
+            <img alt="" layout="fill" sizes="(min-width: 931px) 50vw, 100vw" src="https://image.tmdb.org/t/p/original/gSphqI0BhosjOz9DhWbqAEkowQh.jpg" width="780" height="440" decoding="async" data-nimg="future" style="color: transparent;">
+        </div>
+    </div>
+    <div class="video cont" id="video-cont">
+        <ul class="_1EGcQ_0 TPlayerNv tab_language_movie">
+            <li class="open_submenu spanish-select  language-select" data-id="spanish" id="spanish-select">
+                        <div class="_3CT5n_0 L6v6v_0">
+                            <div class="H_ndV_0 fa fa-chevron-down"></div>
+                            <img src="/static/img/spanish.png">
+                            <div class="_1R6bW_0"><span>Español<span> CALIDAD HD </span></span></div>
+                        </div>
+                        <div>
+                            <ul class="anime_muti_link optm3 hide" id="ul-spanish">
+                                <li data-video="https://streamwish.to/e/tpzbrzz7p41k" data-type="1" class="clili">
+                                        <span class="cdtr"><span>1 - streamwish - HD</span></span>
+                                    </li><li data-video="https://filemoon.sx/e/nhbmj6o6zl0l" data-type="1" class="clili">
+                                        <span class="cdtr"><span>2 - filemoon - HD</span></span>
+                                    </li><li data-video="https://vidhidepro.com/v/x5w6b0wys1fs" data-type="1" class="clili">
+                                        <span class="cdtr"><span>3 - vidhide - HD</span></span>
+                                    </li><li data-video="https://voe.sx/e/nfal9zqu9yvy" data-type="1" class="clili">
+                                        <span class="cdtr"><span>4 - voesx - HD</span></span>
+                                    </li><li data-video="https://doodstream.com/e/dyvg7ofnnqgi" data-type="1" class="clili">
+                                        <span class="cdtr"><span>5 - doodstream - HD</span></span>
+                                    </li><li data-video="https://waaw.to/f/goypdL0qGqks" data-type="1" class="clili">
+                                        <span class="cdtr"><span>6 - netu - HD</span></span>
+                                    </li>                            </ul>
+                        </div>
+                    </li>        </ul>
+
+        <div class="TPlayerCn BgA">
+            <div class="EcBgA">
+                <div class="TPlayer embed_div">
+                    <div class="video Current">
+                        <div class="load-video">
+                            <iframe id="play-iframe" src="https://streamwish.to/e/tpzbrzz7p41k" scrolling="no" allowfullscreen="" width="560" height="315" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                    <span class="fa-lightbulb lgtbx-lnk"></span>
+                </div>
+            </div>
+        </div>
+        <span class="lgtbx"></span>
+    </div>
+    <div class="TpRwCont cont">
+        <main>
+            <section>
+                <div class="select-season">
+                    <span>Seleccionar temporada</span>
+                    <select name="" id="select-season-2">
+                        <option value="0" selected="selected">Temporada 1</option>
+                                                    </select>
+                </div>
+                <ul id="season-1"
+                        class="all-episodes MovieList Rows AX A06 B04 C03 E20 episodes ">
+                        <li class="TPostMv" style="cursor: pointer">
+                                <article
+                                        class="TPost C  post type-post status-publish format-standard has-post-thumbnail hentry">
+                                    <a href="/episodio/la-frontera-temporada-1-episodio-1">
+                                        <div class="Image"><span class="Year">1x1</span>
+                                            <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                                <img class="lazy" src="/static/img/loading.gif"
+                                                     data-src="https://image.tmdb.org/t/p/original/AkrrnHWs12H1my5HlI9dEVJS9a9.jpg"
+                                                     alt="Image ">
+                                            </figure>
+                                        </div>
+                                        <h2 class="Title">La frontera 1x1</h2>
+                                        <p>2025-06-13</p>
+                                    </a>
+                                </article>
+                            </li><li class="TPostMv" style="cursor: pointer">
+                                <article
+                                        class="TPost C  post type-post status-publish format-standard has-post-thumbnail hentry">
+                                    <a href="/episodio/la-frontera-temporada-1-episodio-2">
+                                        <div class="Image"><span class="Year">1x2</span>
+                                            <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                                <img class="lazy" src="/static/img/loading.gif"
+                                                     data-src="https://image.tmdb.org/t/p/original/AkrrnHWs12H1my5HlI9dEVJS9a9.jpg"
+                                                     alt="Image ">
+                                            </figure>
+                                        </div>
+                                        <h2 class="Title">La frontera 1x2</h2>
+                                        <p>2025-06-13</p>
+                                    </a>
+                                </article>
+                            </li><li class="TPostMv" style="cursor: pointer">
+                                <article
+                                        class="TPost C  post type-post status-publish format-standard has-post-thumbnail hentry">
+                                    <a href="/episodio/la-frontera-temporada-1-episodio-3">
+                                        <div class="Image"><span class="Year">1x3</span>
+                                            <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                                <img class="lazy" src="/static/img/loading.gif"
+                                                     data-src="https://image.tmdb.org/t/p/original/AkrrnHWs12H1my5HlI9dEVJS9a9.jpg"
+                                                     alt="Image ">
+                                            </figure>
+                                        </div>
+                                        <h2 class="Title">La frontera 1x3</h2>
+                                        <p>2025-06-13</p>
+                                    </a>
+                                </article>
+                            </li><li class="TPostMv" style="cursor: pointer">
+                                <article
+                                        class="TPost C  post type-post status-publish format-standard has-post-thumbnail hentry">
+                                    <a href="/episodio/la-frontera-temporada-1-episodio-4">
+                                        <div class="Image"><span class="Year">1x4</span>
+                                            <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                                <img class="lazy" src="/static/img/loading.gif"
+                                                     data-src="https://image.tmdb.org/t/p/original/AkrrnHWs12H1my5HlI9dEVJS9a9.jpg"
+                                                     alt="Image ">
+                                            </figure>
+                                        </div>
+                                        <h2 class="Title">La frontera 1x4</h2>
+                                        <p>2025-06-13</p>
+                                    </a>
+                                </article>
+                            </li><li class="TPostMv" style="cursor: pointer">
+                                <article
+                                        class="TPost C  post type-post status-publish format-standard has-post-thumbnail hentry">
+                                    <a href="/episodio/la-frontera-temporada-1-episodio-5">
+                                        <div class="Image"><span class="Year">1x5</span>
+                                            <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                                <img class="lazy" src="/static/img/loading.gif"
+                                                     data-src="https://image.tmdb.org/t/p/original/AkrrnHWs12H1my5HlI9dEVJS9a9.jpg"
+                                                     alt="Image ">
+                                            </figure>
+                                        </div>
+                                        <h2 class="Title">La frontera 1x5</h2>
+                                        <p>2025-06-13</p>
+                                    </a>
+                                </article>
+                            </li>                    </ul>            </section>
+        </main>
+    </div>
+
+    <div class="TpRwCont cont">
+        <main>
+            <section>
+                <div class="Top">
+                    <h2 class="Title">RELACIONADOS</h2>
+                </div>
+                <ul class="MovieList Rows AX A06 B04 C03 E20">
+                    <li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/the-walking-dead">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/hUblG1KZCTRpHc3wqqoU0DW98Q3.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">The Walking Dead</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">The Walking Dead</div>
+                                    <div class="Description non-href">
+                                        <p>El oficial Rick Grimes se despierta del coma para descubrir que el mundo está en ruinas y debe guia...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Acción,Aventura,Drama,Ciencia ficción,Fantasía</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> Lauren Cohan,Norman Reedus,Jeffrey Dean Morgan,Melissa McBride,Christian Serratos,Seth Gilliam,Ross ...</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/hUblG1KZCTRpHc3wqqoU0DW98Q3.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/solo-leveling">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/fxxr3oGCbc0cTsnpxRDnIdKJB4q.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">Solo Leveling</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">Solo Leveling</div>
+                                    <div class="Description non-href">
+                                        <p>Lo que no te mata te hace más fuerte, pero en el caso de Sung Jinwoo, lo que lo mató lo hizo más ...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Acción,Aventura,Ciencia ficción,Fantasía,Animación</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> 坂泰斗,中村源太,三川華月,上田麗奈,平川大輔,東地宏樹,銀河万丈,古川慎,Ch...</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/fxxr3oGCbc0cTsnpxRDnIdKJB4q.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/bob-esponja">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/7nCFpzcQ6pQttxCdvcKfjHkY9bE.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">Bob Esponja</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">Bob Esponja</div>
+                                    <div class="Description non-href">
+                                        <p>Serie animada que se desarrolla en el fondo del océano Pacífico, en la ciudad submarina de Fondo d...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Animación,Comedia,Familia</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> Tom Kenny,Bill Fagerbakke,Rodger Bumpass,Clancy Brown,Carolyn Lawrence,Mary Jo Catlett,Mr. Lawrence,...</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/7nCFpzcQ6pQttxCdvcKfjHkY9bE.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/los-diarios-de-la-boticaria">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/sUep3kEPjvXp3VKAfNikpzBZmzw.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">Los diarios de la boticaria</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">Los diarios de la boticaria</div>
+                                    <div class="Description non-href">
+                                        <p>Maomao llevaba una vida tranquila ayudando a su padre, un boticario. Todo cambia el día que la vend...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Animación,Drama,Misterio</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> 悠木碧,大塚剛央,小西克幸</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/sUep3kEPjvXp3VKAfNikpzBZmzw.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/demon-slayer-kimetsu-no-yaiba">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/hSZNM0pQ61XUUfyQ8ZDmmnrX5LE.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">Demon Slayer: Kimetsu no Yaiba</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">Demon Slayer: Kimetsu no Yaiba</div>
+                                    <div class="Description non-href">
+                                        <p>En la era Taisho de Japón, Tanjiro, un joven vendedor de carbón, descubre que su familia ha sido a...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Animación,Acción,Aventura,Ciencia ficción,Fantasía</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> 花江夏樹,鬼頭明里,下野紘,松岡禎丞,岡本信彦,櫻井孝宏</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/hSZNM0pQ61XUUfyQ8ZDmmnrX5LE.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/the-rookie">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/xGJ98jmU88PNhxSxcsX8WWmJJCa.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">The Rookie</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">The Rookie</div>
+                                    <div class="Description non-href">
+                                        <p>Comenzar de nuevo no es fácil, especialmente para el chico de una pequeña ciudad John Nolan que, d...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Crimen,Drama,Comedia</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> Nathan Fillion,Melissa O'Neil,Alyssa Diaz,Eric Winter,Mekia Cox,Richard T. Jones,Shawn Ashmore,Jenna...</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/xGJ98jmU88PNhxSxcsX8WWmJJCa.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/resident-alien">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/5van3ktOTqWr5lcixh5aR8NlqqW.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">Resident Alien</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">Resident Alien</div>
+                                    <div class="Description non-href">
+                                        <p>Harry, un extraterrestre que se estrelló, adopta la identidad de un médico de un pequeño pueblo d...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Ciencia ficción,Fantasía</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> Alan Tudyk,Sara Tomko,Corey Reynolds,Alice Wetterlund,Levi Fiehler,Elizabeth Bowen,Meredith Garretso...</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/5van3ktOTqWr5lcixh5aR8NlqqW.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/stick-el-swing-perfecto">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/xNgq0yLHus5xE0NRg0psHJKMwgi.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">Stick: El swing perfecto</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">Stick: El swing perfecto</div>
+                                    <div class="Description non-href">
+                                        <p>Pryce Cahill estaba destinado al éxito cuando un colapso desvió su carrera. Ahora esforzándose po...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Comedia,Drama</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> Owen Wilson,Peter Dager,Marc Maron,Mariana Treviño,Lilli Kay,Judy Greer,Timothy Olyphant,Owen Wilso...</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/xNgq0yLHus5xE0NRg0psHJKMwgi.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/doctor-who">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/4edFyasCrkH4MKs6H4mHqlrxA6b.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">Doctor Who</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">Doctor Who</div>
+                                    <div class="Description non-href">
+                                        <p>Continuación de la mítica y longeva serie británica que empezó en 1963 y duró hasta 1989. El Do...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Acción,Aventura,Drama,Ciencia ficción,Fantasía</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> Jodie Whittaker,Mandip Gill,John Bishop</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/4edFyasCrkH4MKs6H4mHqlrxA6b.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/los-sobrevivientes">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/eWchbjtWFjKTrIDsmVCDueQkU6v.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">Los sobrevivientes</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">Los sobrevivientes</div>
+                                    <div class="Description non-href">
+                                        <p>Hace quince años, la muerte de tres jóvenes destrozó a un tranquilo pueblo costero. Ahora, la mis...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Drama,Misterio</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> Yerin Ha,Miriama Smith,Charlie Vickers,Robyn Malcolm</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/eWchbjtWFjKTrIDsmVCDueQkU6v.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/breaking-bad">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">Breaking Bad</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">Breaking Bad</div>
+                                    <div class="Description non-href">
+                                        <p>Un profesor de Química de secundaria con cáncer terminal se asocia a un exestudiante para asegurar...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Drama,Crimen</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> Bryan Cranston,Aaron Paul,Anna Gunn,RJ Mitte,Dean Norris,Betsy Brandt,Bob Odenkirk,Jonathan Banks,Br...</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/ginny-y-georgia">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/vOwunzW4dx3n0J5mH40n9jTRSwY.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">Ginny y Georgia</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">Ginny y Georgia</div>
+                                    <div class="Description non-href">
+                                        <p>La angustiosa y torpe Ginny Miller, de quince años, a menudo se siente más madura que su madre de ...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Comedia,Drama</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> Antonia Gentry,Brianne Howey,Diesel La Torraca,Jennifer Robertson,Felix Mallard,Sara Waisglass,Scott...</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/vOwunzW4dx3n0J5mH40n9jTRSwY.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/attack-on-titan">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/yFPQ4JhhirnCVe2UIKGMYX7TOGZ.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">Attack on Titan</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">Attack on Titan</div>
+                                    <div class="Description non-href">
+                                        <p>Muchos años atrás, la humanidad estuvo al borde de la extinción con la aparición de unas criatur...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Animación,Ciencia ficción,Fantasía,Acción,Aventura</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> 梶裕貴,石川由依,井上麻里奈,谷山紀章,下野紘,細谷佳正,子安武人,佐倉綾音...</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/yFPQ4JhhirnCVe2UIKGMYX7TOGZ.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/chespirito-sin-querer-queriendo">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/bVBj1GlvwiN7PMuf4t6JmcRZHd9.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">Chespirito: Sin querer queriendo</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">Chespirito: Sin querer queriendo</div>
+                                    <div class="Description non-href">
+                                        <p>Desde su infancia hasta su consagración en las décadas de los 50 a los 80, sigue la vida y carrera...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Drama,Comedia</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> Pablo Cruz Guerrero,Bárbara López,Juan Lecanda,Andrea Noli,Paola Montes De Oca,Arturo Barba,Eugeni...</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/bVBj1GlvwiN7PMuf4t6JmcRZHd9.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/juego-de-tronos">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/z9gCSwIObDOD2BEtmUwfasar3xs.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">Juego de Tronos</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">Juego de Tronos</div>
+                                    <div class="Description non-href">
+                                        <p>En un mundo fantástico y en un contexto medieval varias familias, relativas a la nobleza, se disput...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Ciencia ficción,Fantasía,Drama,Acción,Aventura</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> Peter Dinklage,Kit Harington,Nikolaj Coster-Waldau,Lena Headey,Emilia Clarke,Liam Cunningham,Maisie ...</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/z9gCSwIObDOD2BEtmUwfasar3xs.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/dept-q">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/jnDs84n7B7dfUzDepe0VHXXwlas.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">Dept. Q</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">Dept. Q</div>
+                                    <div class="Description non-href">
+                                        <p>Un grosero pero brillante detective se convierte en jefe de un nuevo departamento de policía, donde...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Crimen,Drama,Misterio</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> Matthew Goode,Chloe Pirrie,Jamie Sives,Alexej Manvelov,Leah Byrne,Kelly Macdonald</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/jnDs84n7B7dfUzDepe0VHXXwlas.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/one-piece">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/oag7edI9flSMawmNySEiSEJAbrf.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">One Piece</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">One Piece</div>
+                                    <div class="Description non-href">
+                                        <p>Riqueza, fama, poder... un hombre había obtenido todo en este mundo, era el Rey de los Piratas Gold...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Acción,Aventura,Comedia,Animación</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> 田中真弓,中井和哉,岡村明美,山口勝平,平田広明,大谷育江,山口由里子,矢尾...</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/oag7edI9flSMawmNySEiSEJAbrf.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/rick-y-morty">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/5Yiep9EwcQgLolg013ETBVqHxuD.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">Rick y Morty</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">Rick y Morty</div>
+                                    <div class="Description non-href">
+                                        <p>Rick Sánchez es un genio científico alcohólico que se ha mudado con la familia de su hija Beth. �...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Animación,Comedia,Ciencia ficción,Fantasía,Acción,Aventura</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> Chris Parnell,Spencer Grammer,Sarah Chalke,Ian Cardoni,Harry Belden,Beth Stelling,Nick Rutherford,Ju...</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/5Yiep9EwcQgLolg013ETBVqHxuD.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/star-wars-andor">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/e3cWQzBxHK803AbZGjp1feQFgyS.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">Andor</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">Andor</div>
+                                    <div class="Description non-href">
+                                        <p>En una época llena de peligros, engaños e intrigas, Cassian Andor descubrirá la diferencia que pu...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Ciencia ficción,Fantasía,Acción,Aventura,Drama</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> Diego Luna,Diego Luna</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/e3cWQzBxHK803AbZGjp1feQFgyS.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li><li class="TPostMv">
+                            <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                                <a href="/ver-serie/matabot">
+                                    <div class="Image"><span class="Year"></span>
+                                        <figure class="Objf TpMvPlay AAIco-play_arrow">
+                                            <img width="160" height="242" src="/static/img/loading.gif"
+                                                 data-src="https://image.tmdb.org/t/p/original/ntZB7o2CONuXtjPctRVRsiIZvxj.jpg"
+                                                 class="lazy attachment-thumbnail size-thumbnail wp-post-image"
+                                                 alt="img">
+                                        </figure>
+                                    </div>
+                                    <h2 class="Title">Matabot</h2>
+                                </a>
+                                <div class="TPMvCn anmt">
+                                    <div class="Title">Matabot</div>
+                                    <div class="Description non-href">
+                                        <p>En un futuro altamente tecnológico, un robot rebelde de seguridad obtiene libre albedrío en secret...</p>
+                                        <p class="Genre AAIco-movie_creation"><span>Género :</span> Comedia,Drama,Ciencia ficción,Fantasía</p>
+                                        <p class="Actors AAIco-person"><span>Reparto :</span> Alexander Skarsgård,Noma Dumezweni,David Dastmalchian,Sabrina Wu,Akshay Khanna,Tamara Podemski,Tatt...</p>
+                                    </div>
+                                    <img width="160" height="242"
+                                         data-src="https://image.tmdb.org/t/p/original/ntZB7o2CONuXtjPctRVRsiIZvxj.jpg"
+                                         class="lazy attachment-thumbnail size-thumbnail wp-post-image bg"
+                                         alt="img">
+                                </div>
+                            </div>
+                        </li>                </ul>
+            </section>
+        </main>
+        <aside class="widget-area">
+  <section class="peli_movies widget_languages Wdgt">
+    <h3 class="widget-title">Series Destacadas</h3>
+    <ul class="aa-nv dfx tac" data-tbs="aa-movies">
+      <li class="fg1"><a href="#aa-tb-1" class="on">Día</a></li>
+      <li class="fg1"><a href="#aa-tb-2" class="">Semana</a></li>
+    </ul>
+    <div class="aa-cn" id="aa-movies">
+      <div id="aa-tb-1" class="aa-tb on">
+        <ul class="MovieList">
+          <li>
+            <div class="TPost A">
+              <a href="/ver-serie/fubar">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/fSa1OPyE95Zgu1lufOBIpqv8U2K.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">FUBAR</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">6.7</span>
+                <span class="Time AAIco-access_time"></span>
+                <span class="Date AAIco-date_range">2023</span>
+              </p>
+            </div>
+          </li><li>
+            <div class="TPost A">
+              <a href="/ver-serie/the-last-of-us">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/tNQWO6cNzQYCyvw36mUcAQQyf5F.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">The Last of Us</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">8.52</span>
+                <span class="Time AAIco-access_time"></span>
+                <span class="Date AAIco-date_range">2023</span>
+              </p>
+            </div>
+          </li><li>
+            <div class="TPost A">
+              <a href="/ver-serie/matabot">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/ntZB7o2CONuXtjPctRVRsiIZvxj.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">Matabot</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">7.24</span>
+                <span class="Time AAIco-access_time"></span>
+                <span class="Date AAIco-date_range">2025</span>
+              </p>
+            </div>
+          </li><li>
+            <div class="TPost A">
+              <a href="/ver-serie/star-wars-andor">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/e3cWQzBxHK803AbZGjp1feQFgyS.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">Andor</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">8.26</span>
+                <span class="Time AAIco-access_time"></span>
+                <span class="Date AAIco-date_range">2022</span>
+              </p>
+            </div>
+          </li><li>
+            <div class="TPost A">
+              <a href="/ver-serie/tierra-de-mafia">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/s7ye2BFq4HjGMi0dGkzGu5c2fyz.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">Tierra de Mafia</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">8.55</span>
+                <span class="Time AAIco-access_time"></span>
+                <span class="Date AAIco-date_range">2025</span>
+              </p>
+            </div>
+          </li>        </ul>
+      </div>
+      <div id="aa-tb-2" class="aa-tb ">
+        <ul class="MovieList">
+          <li>
+            <div class="TPost A">
+              <a href="/ver-serie/fubar">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/fSa1OPyE95Zgu1lufOBIpqv8U2K.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">FUBAR</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">6.7</span>
+                <span class="Time AAIco-access_time"></span>
+                <span class="Date AAIco-date_range">2023</span>
+              </p>
+            </div>
+          </li><li>
+            <div class="TPost A">
+              <a href="/ver-serie/the-last-of-us">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/tNQWO6cNzQYCyvw36mUcAQQyf5F.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">The Last of Us</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">8.52</span>
+                <span class="Time AAIco-access_time"></span>
+                <span class="Date AAIco-date_range">2023</span>
+              </p>
+            </div>
+          </li><li>
+            <div class="TPost A">
+              <a href="/ver-serie/tierra-de-mafia">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/s7ye2BFq4HjGMi0dGkzGu5c2fyz.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">Tierra de Mafia</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">8.55</span>
+                <span class="Time AAIco-access_time"></span>
+                <span class="Date AAIco-date_range">2025</span>
+              </p>
+            </div>
+          </li><li>
+            <div class="TPost A">
+              <a href="/ver-serie/sin-piedad-para-nadie">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/wN2oCVmMh8ey0vh0EfqcGA5X7UI.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">Sin piedad para nadie</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">8.5</span>
+                <span class="Time AAIco-access_time"></span>
+                <span class="Date AAIco-date_range">2025</span>
+              </p>
+            </div>
+          </li><li>
+            <div class="TPost A">
+              <a href="/ver-serie/matabot">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/ntZB7o2CONuXtjPctRVRsiIZvxj.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">Matabot</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">7.24</span>
+                <span class="Time AAIco-access_time"></span>
+                <span class="Date AAIco-date_range">2025</span>
+              </p>
+            </div>
+          </li>        </ul>
+      </div>
+    </div>
+  </section>
+</aside>
+    </div>
+    <script>
+
+        $('#select-season-2').on('change', function (event) {
+            event.preventDefault();
+            let option = $(this).val();
+            option = option * 1 + 1
+            $('.all-episodes').addClass('hide');
+            $(`#season-${option}`).removeClass('hide');
+        });
+
+
+        $('.language-select').on('click', function () {
+            const now_id = $(this).attr('data-id')
+            const ul_el = $(`#ul-${now_id}`)
+            if (ul_el.hasClass('hide')) {
+                ul_el.removeClass('hide')
+            } else {
+                ul_el.addClass('hide')
+            }
+        })
+
+        $('.clili').on('click', function () {
+            const iframe = $('#play-iframe')
+            iframe.attr('src', null)
+            $('.clili').removeClass('actives')
+            $(this).addClass('actives')
+            const link = $(this).data('video')
+            iframe.attr('src', link)
+        })
+    </script>
+
+    <!--aside-->
+  </div>
+
+  <footer class="ft ok">
+    <div class="cont dfxb alg-cr">
+        <figure class="logo-ft"><img src="/static/img/cuevana-logo.png" alt="cuevana"></figure>
+    </div>
+    <p class="copy tac">© 2025 Cuevana 3 Peliculas Online, Todos los derechos reservados.</p>
+</footer>
+</div>
+
+
+<script type="text/javascript" src="/static/cdn/owl.js"></script>
+<script type="text/javascript" src="/static/cdn/loadMoreResults.js"></script>
+<script type="text/javascript" src="/static/cdn/bct-public.js?v=1.8"></script>
+<div style="display:none"><!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
+<!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4682163,4,511,95,18,00000000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4682163&101" alt="free tracking" border="0"></a></noscript>
+<!-- Histats.com  END  --></div>
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=65af1f192bb34700194aa378&product=sticky-share-buttons&source=platform" async="async"></script>
+<script type='text/javascript' src='//jeopardizegrowled.com/dd/96/e5/dd96e5c6537e6beb13142995569b4fc1.js'></script>
+<script type='text/javascript' src='//jeopardizegrowled.com/df/8b/64/df8b644060747a92d7efb671469b1ad3.js'></script></body>
+</html>

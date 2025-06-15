@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Resultados de búsqueda</title>
+  <meta name="robots" content="index,follow"/>
+  <link rel="shortcut icon" href="/static/img/cropped-favicon-1-32x32.png">
+  <meta name="google-site-verification" content=""/>
+  <meta name="description" content="Ver y descargar Películas y Series en Latino, Español, Subtitulado e ingles, los últimos estrenos en la mejor calidad HD sin cortes. Cuevana Online.">
+  <meta name="keywords" content="película géminis completa del 2025 en español latino,castellano y subtitulada. descargar gratis géminis. gemini man.,acción,ciencia ficción,drama,película el camino: una película de breaking bad completa del 2025 en español latino,castellano y subtitulada. descargar gratis el camino: una película de breaking bad. el camino: a breaking bad movie.,película el rey león completa del 2025 en español latino,castellano y subtitulada. descargar gratis el rey león. the lion king.,the-lion-king,aventura,película stuber completa del 2025 en español latino,castellano y subtitulada. descargar gratis stuber. stuber.,comedia,crimen,película el paletero completa del 2016 en español latino,castellano y subtitulada. descargar gratis el paletero. el paletero.,western,película steven universe: the movie completa del 2025 en español latino,castellano y subtitulada. descargar gratis steven universe: the movie. steven universe: the movie.,animación,película galveston completa del 2018 en español latino,castellano y subtitulada. descargar gratis galveston. galveston.,película men in black: internacional completa del 2025 en español latino,castellano y subtitulada. descargar gratis men in black: internacional. men in black: international.,película rambo: last blood completa del 2025 en español latino,castellano y subtitulada. descargar gratis rambo: last blood. rambo: last blood.,thriller,película general commander completa del 2025 en español latino,castellano y subtitulada. descargar gratis general commander. general commander.,película golden job completa del 2018 en español latino,castellano y subtitulada. descargar gratis golden job. golden job.,película the death and return of superman completa del 2025 en español latino,castellano y subtitulada. descargar gratis the death and return of superman. the death and return of superman.,película teen titans go! vs. teen titans completa del 2025 en español latino,castellano y subtitulada. descargar gratis teen titans go! vs. teen titans. teen titans go! vs. teen titans.,película the messenger completa del 2025 en español latino,castellano y subtitulada. descargar gratis the messenger. kurier.,historia,película infierno bajo el agua completa del 2025 en español latino,castellano y subtitulada. descargar gratis infierno bajo el agua. crawl.,terror,película doom: aniquilación completa del 2025 en español latino,castellano y subtitulada. descargar gratis doom: aniquilación. doom: annihilation.,película fast &amp;amp; furious: hobbs &amp;amp; shaw completa del 2025 en español latino,castellano y subtitulada. descargar gratis fast &amp;amp; furious: hobbs &amp;amp; shaw. fast &amp;amp; furious: hobbs &amp;amp; shaw.,fast-furious,película cómo entrenar a tu dragón 3 completa del 2025 en español latino,castellano y subtitulada. descargar gratis cómo entrenar a tu dragón 3. how to train your dragon: the hidden world.,entrenar-dragon,película john wick 3: parabellum completa del 2025 en español latino,castellano y subtitulada. descargar gratis john wick 3: parabellum. john wick: chapter 3 - parabellum.,john-wick,película shadow completa del 2018 en español latino,castellano y subtitulada. descargar gratis shadow. ying.,película shifting gears completa del 2018 en español latino,castellano y subtitulada. descargar gratis shifting gears. shifting gears.,familia,película the tracker completa del 2025 en español latino,castellano y subtitulada. descargar gratis the tracker. the tracker.,película night hunter completa del 2018 en español latino,castellano y subtitulada. descargar gratis night hunter. nomis.,película inside man: most wanted completa del 2025 en español latino,castellano y subtitulada. descargar gratis inside man: most wanted. inside man: most wanted.,película dragged across concrete completa del 2018 en español latino,castellano y subtitulada. descargar gratis dragged across concrete. dragged across concrete.,película anna completa del 2025 en español latino,castellano y subtitulada. descargar gratis anna. anna.,película spider-man: lejos de casa completa del 2025 en español latino,castellano y subtitulada. descargar gratis spider-man: lejos de casa. spider-man: far from home.,marvel,spider-man,película objetivo: washington d.c. completa del 2025 en español latino,castellano y subtitulada. descargar gratis objetivo: washington d.c.. angel has fallen.,película godzilla: rey de los monstruos completa del 2025 en español latino,castellano y subtitulada. descargar gratis godzilla: rey de los monstruos. godzilla: king of the monsters.,fantasía,película hellboy completa del 2025 en español latino,castellano y subtitulada. descargar gratis hellboy. hellboy.">
+  <link rel="stylesheet" type="text/css" href="/static/css/app.css?v=1.91"/>
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css?v=1.8"/>
+  <link rel="stylesheet" type="text/css" href="/static/css/footer.css?v=1.8"/>
+  <script type="text/javascript" src="/static/cdn/jquery.js"></script>
+</head>
+<body data-rsssl=1 class="slider">
+<script>
+    var base_url = '//' + document.domain + '/';
+    var base_url_cdn_api = '//' + document.domain + '/';
+</script>
+<div id="aa-wp">
+  <header class="Header">
+  <script>
+      function onSearch() {
+          const q = document.getElementById('keysss').value
+          if (q.length > 1) {
+              location.href = `/search/${q}`
+          }
+          return false
+      }
+  </script>
+  <div class="cont">
+    <div class="top dfx alg-cr jst-sb">
+      <figure class="logo">
+        <a href="/"><img src="/static/img/cuevana3.png" alt="logo"></a>
+      </figure>
+      <span class="MenuBtn aa-tgl" data-tgl="aa-wp"><i></i><i></i><i></i></span>
+      <span class="MenuBtnClose aa-tgl" data-tgl="aa-wp"></span>
+      <div class="Rght BgA dfxc alg-cr fg1">
+        <div class="Search">
+          <form method="get" id="searchform" onsubmit="return onSearch()">
+            <span class="Form-Icon">
+                <div class="ep-autosuggest-container">
+                    <input id="keysss" name="keyword" type="search" placeholder="Buscador..." autocomplete="off">
+                    <div class="ep-autosuggest" style="display: none;"></div>
+                    <div class="loader"></div>
+                </div>
+                <button id="searchsubmit" type="submit"><i class="fa-search"></i></button>
+            </span>
+          </form>
+        </div>
+
+
+        <nav class="Menu fg1">
+          <ul>
+            <li
+                class="AAIco-home menu-item menu-item-type-custom menu-item-object-custom menu-item-home ">
+              <a href="/" aria-current="page">Inicio</a></li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+              <a href="/peliculas">Películas</a>
+              <ul class="sub-menu">
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                  <a href="/peliculas">Últimas publicadas</a>
+                </li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                  <a href="/peliculas/estrenos">Estrenos</a>
+                </li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                  <a href="/peliculas/tendencias/semana">Tendencias semana</a>
+                </li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                  <a href="/peliculas/tendencias/dia">Tendencias día</a>
+                </li>
+              </ul>
+            </li>
+            <li id="menu-item-1953"
+                class="AAIco-movie_creation menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1953">
+              <a href="#">Géneros</a>
+              <ul class="sub-menu">
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/accion">Acción</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/animacion">Animación</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/aventura">Aventura</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/biografico">Biografico</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/ciencia-ficcion">Ciencia Ficción</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/comedia">Comedia</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/crimen">Crimen</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/documental">Documental</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/drama">Drama</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/familiar">Familiar</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/fantasia">Fantasía</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/misterio">Misterio</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/musica">Música</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/romance">Romance</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/terror">Terror</a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1969">
+                  <a href="/category/thriller">Thriller</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+              <a href="/series">Series</a>
+              <ul class="sub-menu">
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                  <a href="/series">Series</a>
+                </li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                  <a href="/series/estrenos">Estrenos</a>
+                </li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                  <a href="/series/tendencias/dia">Tendencias dia</a>
+                </li>
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                  <a href="/series/tendencias/semana">Tendencias semana</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <div class="bd">
+
+    
+
+    
+  <div class="TpRwCont cont">
+    <main>
+      <section>
+        <div class="Top">
+          <h1 style="text-transform: capitalize;">Search El Camino: Una película de Breaking Bad</h1>
+        </div>
+        <ul class="MovieList Rows">
+          <li class="TPostMv">
+              <div class="TPost C post type-post status-publish format-standard has-post-thumbnail hentry">
+                <a href="/ver-pelicula/el-camino-una-pelicula-de-breaking-bad">
+                  <div class="Image">
+                    <span class="Year">2019</span>
+                    <figure class="Objf TpMvPlay AAIco-play_arrow">
+                      <img width="160" height="242" src="/static/img/loading.gif" data-src="https://image.tmdb.org/t/p/original/hoWADuvXs3Ua4AXBAiZYnppTupO.jpg" class="lazy attachment-thumbnail size-thumbnail wp-post-image" alt="img">
+                    </figure>
+                                      </div>
+                  <h2 class="Title">El Camino: Una película de Breaking Bad</h2>
+                </a>
+                <div class="TPMvCn anmt">
+                  <div class="Title">El Camino: Una película de Breaking Bad</div>
+                  <div class="Description non-href">
+                    <p>Después de escapar de Jack y su pandilla, Jesse Pinkman huye de la policía e intenta escapar de su...</p>
+                    <p class="Genre AAIco-movie_creation"><span>Género :</span> Crimen,Drama,Suspenso</p>
+                    <p class="Actors AAIco-person"><span>Reparto :</span> Aaron Paul,Jesse Plemons,Charles Baker,Matt Jones,Scott MacArthur,Larry Hankin,Scott Shepherd,Tom Bo...</p>
+                  </div>
+                  <img width="160" height="242" data-src="https://image.tmdb.org/t/p/original/hoWADuvXs3Ua4AXBAiZYnppTupO.jpg" class="lazy attachment-thumbnail size-thumbnail wp-post-image bg" alt="img">
+                </div>
+              </div>
+            </li>        </ul>
+              </section>
+    </main>
+    <aside class="widget-area">
+  <section class="peli_movies widget_languages Wdgt">
+    <h3 class="widget-title">Películas Destacadas</h3>
+    <ul class="aa-nv dfx tac" data-tbs="aa-movies">
+      <li class="fg1"><a href="#aa-tb-1" class="on">Día</a></li>
+      <li class="fg1"><a href="#aa-tb-2" class="">Semana</a></li>
+    </ul>
+    <div class="aa-cn" id="aa-movies">
+      <div id="aa-tb-1" class="aa-tb on">
+        <ul class="MovieList">
+          <li>
+            <div class="TPost A">
+              <a href="/ver-pelicula/el-amateur-operacion-venganza">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/9WPWF0AmklsKclrXeyKXbQ543ZA.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">El amateur: Operación venganza</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">6.8</span>
+                <span class="Time AAIco-access_time">2h 03m</span>
+                <span class="Date AAIco-date_range">2025</span>
+              </p>
+            </div>
+          </li><li>
+            <div class="TPost A">
+              <a href="/ver-pelicula/como-entrenar-a-tu-dragon-1087192">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/fTpbUIwdsfyIldzYvzQi2K4Icws.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">Cómo entrenar a tu dragón</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">7.82</span>
+                <span class="Time AAIco-access_time">2h 05m</span>
+                <span class="Date AAIco-date_range">2025</span>
+              </p>
+            </div>
+          </li><li>
+            <div class="TPost A">
+              <a href="/ver-pelicula/pecadores">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/zdClwqpYQXBSCGGDMdtvsuggwec.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">Pecadores</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">7.55</span>
+                <span class="Time AAIco-access_time">2h 18m</span>
+                <span class="Date AAIco-date_range">2025</span>
+              </p>
+            </div>
+          </li><li>
+            <div class="TPost A">
+              <a href="/ver-pelicula/el-contador-2">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/jcV9YfjBRo6occxqeWtEiyWwMoG.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">El contador 2</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">7.22</span>
+                <span class="Time AAIco-access_time">2h 13m</span>
+                <span class="Date AAIco-date_range">2025</span>
+              </p>
+            </div>
+          </li><li>
+            <div class="TPost A">
+              <a href="/ver-pelicula/depredador-cazador-de-asesinos">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/qHDsrBZJRx6ZCO4tocFh3gnbosU.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">Depredador: Cazador de asesinos</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">7.99</span>
+                <span class="Time AAIco-access_time">1h 25m</span>
+                <span class="Date AAIco-date_range">2025</span>
+              </p>
+            </div>
+          </li>        </ul>
+      </div>
+      <div id="aa-tb-2" class="aa-tb ">
+        <ul class="MovieList">
+          <li>
+            <div class="TPost A">
+              <a href="/ver-pelicula/el-amateur-operacion-venganza">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/9WPWF0AmklsKclrXeyKXbQ543ZA.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">El amateur: Operación venganza</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">6.8</span>
+                <span class="Time AAIco-access_time">2h 03m</span>
+                <span class="Date AAIco-date_range">2025</span>
+              </p>
+            </div>
+          </li><li>
+            <div class="TPost A">
+              <a href="/ver-pelicula/como-entrenar-a-tu-dragon-1087192">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/fTpbUIwdsfyIldzYvzQi2K4Icws.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">Cómo entrenar a tu dragón</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">7.82</span>
+                <span class="Time AAIco-access_time">2h 05m</span>
+                <span class="Date AAIco-date_range">2025</span>
+              </p>
+            </div>
+          </li><li>
+            <div class="TPost A">
+              <a href="/ver-pelicula/el-contador-2">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/jcV9YfjBRo6occxqeWtEiyWwMoG.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">El contador 2</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">7.22</span>
+                <span class="Time AAIco-access_time">2h 13m</span>
+                <span class="Date AAIco-date_range">2025</span>
+              </p>
+            </div>
+          </li><li>
+            <div class="TPost A">
+              <a href="/ver-pelicula/depredador-cazador-de-asesinos">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/qHDsrBZJRx6ZCO4tocFh3gnbosU.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">Depredador: Cazador de asesinos</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">7.99</span>
+                <span class="Time AAIco-access_time">1h 25m</span>
+                <span class="Date AAIco-date_range">2025</span>
+              </p>
+            </div>
+          </li><li>
+            <div class="TPost A">
+              <a href="/ver-pelicula/pecadores">
+                <div class="Image">
+                  <img alt="Longlegs: Coleccionista de almas" layout="intrinsic" src="https://image.tmdb.org/t/p/original/zdClwqpYQXBSCGGDMdtvsuggwec.jpg" width="80" height="120" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                </div>
+                <div class="Title">Pecadores</div>
+              </a>
+              <p class="Info Infowdgt">
+                <span class="Vote AAIco-star">7.55</span>
+                <span class="Time AAIco-access_time">2h 18m</span>
+                <span class="Date AAIco-date_range">2025</span>
+              </p>
+            </div>
+          </li>        </ul>
+      </div>
+    </div>
+  </section>
+</aside>
+  </div>
+
+    <!--aside-->
+  </div>
+
+  <footer class="ft ok">
+    <div class="cont dfxb alg-cr">
+        <figure class="logo-ft"><img src="/static/img/cuevana-logo.png" alt="cuevana"></figure>
+    </div>
+    <p class="copy tac">© 2025 Cuevana 3 Peliculas Online, Todos los derechos reservados.</p>
+</footer>
+</div>
+
+
+<script type="text/javascript" src="/static/cdn/owl.js"></script>
+<script type="text/javascript" src="/static/cdn/loadMoreResults.js"></script>
+<script type="text/javascript" src="/static/cdn/bct-public.js?v=1.8"></script>
+<div style="display:none"><!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
+<!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4682163,4,511,95,18,00000000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4682163&101" alt="free tracking" border="0"></a></noscript>
+<!-- Histats.com  END  --></div>
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=65af1f192bb34700194aa378&product=sticky-share-buttons&source=platform" async="async"></script>
+<script type='text/javascript' src='//jeopardizegrowled.com/dd/96/e5/dd96e5c6537e6beb13142995569b4fc1.js'></script>
+<script type='text/javascript' src='//jeopardizegrowled.com/df/8b/64/df8b644060747a92d7efb671469b1ad3.js'></script></body>
+</html>

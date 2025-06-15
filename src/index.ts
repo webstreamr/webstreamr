@@ -1,7 +1,7 @@
 import express, { NextFunction, Request, Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import winston from 'winston';
-import { CineHDPlus, Eurostreaming, Frembed, FrenchCloud, Source, KinoGer, MeineCloud, MostraGuarda, Soaper, StreamKiste, VerHdLink, VidSrc } from './source';
+import { CineHDPlus, Cuevana, Eurostreaming, Frembed, FrenchCloud, Source, KinoGer, MeineCloud, MostraGuarda, Soaper, StreamKiste, VerHdLink, VidSrc } from './source';
 import { createExtractors, ExtractorRegistry } from './extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
 import { envGet, envIsProd, Fetcher, StreamResolver, tmdbFetch, TmdbId } from './utils';
@@ -25,6 +25,7 @@ const sources: Source[] = [
   new VidSrc(fetcher),
   // ES / MX
   new CineHDPlus(fetcher),
+  new Cuevana(fetcher),
   new VerHdLink(fetcher),
   // DE
   new KinoGer(fetcher),
