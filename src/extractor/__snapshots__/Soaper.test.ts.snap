@@ -31,3 +31,18 @@ exports[`Soaper Full Metal Jacket 1`] = `
   },
 ]
 `;
+
+exports[`Soaper last of us s2e3 1`] = `
+[
+  {
+    "label": "Soaper",
+    "meta": {
+      "countryCode": "de",
+      "title": "The Last of Us 2x3",
+    },
+    "sourceId": "soaper_de",
+    "ttl": 900000,
+    "url": "https://soaper.live/home/index/TVM3U8?key=LrezaYpLOxT4O61m8e3mSLdBzLNyRaf8zPmERxvwh1Mrj6zbVEUvAzRv2KZLu5PVvRKqwbcz6qmb9vbOi3wQZ4ae8RsZ9N3Jm9Yatw4yE55bBp.m3u8",
+  },
+]
+`;

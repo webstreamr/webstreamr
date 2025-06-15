@@ -18,5 +18,5 @@ export const guessFromPlaylist = async (ctx: Context, fetcher: Fetcher, url: URL
     .filter(height => height !== undefined)
     .map(height => parseInt(height));
 
-  return Math.max(...heights);
+  return heights.length ? Math.max(...heights) : undefined;
 };

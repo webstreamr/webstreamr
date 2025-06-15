@@ -17,4 +17,8 @@ describe('Soaper', () => {
   test('Black Mirror', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://soaper.live/episode_5KDq78eGp1.html'), CountryCode.en, 'Black Mirror 4x2')).toMatchSnapshot();
   });
+
+  test('last of us s2e3', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://soaper.live/episode_rYg3vMEDL1.html'), CountryCode.de, 'The Last of Us 2x3')).toMatchSnapshot();
+  });
 });
