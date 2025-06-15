@@ -30,7 +30,10 @@ export class ExtractorRegistry {
     this.logger.info(`Extract stream URL using ${extractor.id} extractor from ${url}`, ctx);
 
     urlResults = await extractor.extract(ctx, normalizedUrl, countryCode, title);
-    this.urlResultCache.set(normalizedUrl.href, urlResults, { ttl: extractor.ttl });
+
+    if (!urlResults.some(urlResult => urlResult.error)) {
+      this.urlResultCache.set(normalizedUrl.href, urlResults, { ttl: extractor.ttl });
+    }
 
     return urlResults;
   };
