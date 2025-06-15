@@ -24,7 +24,7 @@ export class ExternalUrl extends Extractor {
   protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode, title: string | undefined): Promise<UrlResult[]> {
     try {
       // Make sure the URL is accessible, but avoid causing noise and delays doing this
-      await this.fetcher.head(ctx, url, { noFlareSolverr: true, timeout: 1000 });
+      await this.fetcher.head(ctx, url, { noFlareSolverr: true, timeout: 1000, headers: { Referer: url.origin } });
     } catch {
       return [];
     }
