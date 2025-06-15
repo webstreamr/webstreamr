@@ -1,6 +1,6 @@
 import { ImdbId, TmdbId } from './id';
 import { Context } from '../types';
-import { Fetcher } from './Fetcher';
+import { CustomRequestInit, Fetcher } from './Fetcher';
 import { envGet } from './env';
 import { NotFoundError } from '../error';
 
@@ -28,7 +28,14 @@ interface TvDetailsResponsePartial {
 }
 
 export const tmdbFetch = async (ctx: Context, fetcher: Fetcher, path: string, searchParams?: Record<string, string | undefined>): Promise<unknown> => {
-  const config = { 'headers': { Authorization: 'Bearer ' + envGet('TMDB_ACCESS_TOKEN') }, 'Content-Type': 'application/json' };
+  const config: CustomRequestInit = {
+    headers: {
+      'Authorization': 'Bearer ' + envGet('TMDB_ACCESS_TOKEN'),
+      'Content-Type': 'application/json',
+    },
+    queueLimit: 50,
+    queueErrorLimit: 100,
+  };
 
   const url = new URL(`https://api.themoviedb.org/3${path}`);
 
