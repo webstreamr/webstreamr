@@ -1,7 +1,7 @@
 import CachePolicy from 'http-cache-semantics';
 import TTLCache from '@isaacs/ttlcache';
 import winston from 'winston';
-import { Mutex } from 'async-mutex';
+import { Semaphore, SemaphoreInterface, withTimeout } from 'async-mutex';
 import { Cookie, CookieJar } from 'tough-cookie';
 import { BlockedReason, Context, TIMEOUT } from '../types';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TooManyRequestsError } from '../error';
@@ -43,7 +43,7 @@ interface FlareSolverrResult {
 export type CustomRequestInit = RequestInit & {
   noFlareSolverr?: boolean;
   queueLimit?: number;
-  queueErrorLimit?: number;
+  queueTimeout?: number;
   timeout?: number;
 };
 
@@ -51,17 +51,15 @@ export class Fetcher {
   private readonly MIN_CACHE_TTL = 900000; // 15m
   private readonly DEFAULT_TIMEOUT = 10000;
   private readonly DEFAULT_QUEUE_LIMIT = 5;
-  private readonly DEFAULT_QUEUE_ERROR_LIMIT = 10;
+  private readonly DEFAULT_QUEUE_TIMEOUT = 5000;
 
   private readonly logger: winston.Logger;
 
   private readonly httpCache: TTLCache<string, HttpCacheItem>;
   private readonly rateLimitedCache: TTLCache<string, undefined>;
+  private readonly semaphores = new Map<string, SemaphoreInterface>();
   private readonly hostUserAgentMap = new Map<string, string>();
   private readonly cookieJar = new CookieJar();
-
-  private readonly hostQueueCount = new Map<string, number>();
-  private readonly countMutex = new Mutex();
 
   public constructor(logger: winston.Logger) {
     this.logger = logger;
@@ -243,49 +241,29 @@ export class Fetcher {
     return response;
   };
 
-  private getHostQueueCount(host: string): number {
-    return this.hostQueueCount.get(host) ?? 0;
-  }
+  private getSemaphore(url: URL, queueLimit: number, queueTimeout: number): SemaphoreInterface {
+    let sem = this.semaphores.get(url.host);
 
-  private async lockFetchSlot(host: string, queueErrorLimit: number) {
-    await this.countMutex.runExclusive(() => {
-      if (this.getHostQueueCount(host) > queueErrorLimit) {
-        throw new QueueIsFullError();
-      }
-
-      this.hostQueueCount.set(host, this.getHostQueueCount(host) + 1);
-    });
-  };
-
-  private async unlockFetchSlot(host: string) {
-    await this.countMutex.runExclusive(() => {
-      this.hostQueueCount.set(host, Math.max(0, this.getHostQueueCount(host) - 1));
-    });
-  };
-
-  private async waitForHostQueueCount(host: string, queueLimit: number, queueErrorLimit: number): Promise<void> {
-    while (this.getHostQueueCount(host) > queueLimit) {
-      if (this.getHostQueueCount(host) > queueErrorLimit) {
-        // Very unlikely to happen..
-        throw new QueueIsFullError();
-      }
-
-      await new Promise(resolve => setTimeout(resolve, 100));
+    if (!sem) {
+      sem = withTimeout(new Semaphore(queueLimit), queueTimeout, new QueueIsFullError());
+      this.semaphores.set(url.host, sem);
     }
-  };
+
+    return sem;
+  }
 
   private async queuedFetch(ctx: Context, url: URL, init?: CustomRequestInit): Promise<Response> {
     const queueLimit = init?.queueLimit ?? this.DEFAULT_QUEUE_LIMIT;
-    const queueErrorLimit = init?.queueErrorLimit ?? this.DEFAULT_QUEUE_ERROR_LIMIT;
+    const queueTimeout = init?.queueTimeout ?? this.DEFAULT_QUEUE_TIMEOUT;
 
-    await this.lockFetchSlot(url.host, queueErrorLimit);
+    const semaphore = this.getSemaphore(url, queueLimit, queueTimeout);
+
+    const [,release] = await semaphore.acquire();
 
     try {
-      await this.waitForHostQueueCount(url.host, queueLimit, queueErrorLimit);
-
       return await this.fetchWithTimeout(ctx, url, init);
     } finally {
-      await this.unlockFetchSlot(url.host);
+      release();
     }
-  };
+  }
 }

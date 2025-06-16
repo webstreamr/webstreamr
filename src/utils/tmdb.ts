@@ -34,7 +34,6 @@ export const tmdbFetch = async (ctx: Context, fetcher: Fetcher, path: string, se
       'Content-Type': 'application/json',
     },
     queueLimit: 50,
-    queueErrorLimit: 100,
   };
 
   const url = new URL(`https://api.themoviedb.org/3${path}`);

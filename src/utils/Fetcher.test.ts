@@ -189,11 +189,11 @@ describe('fetch', () => {
     fetchMock.get('https://some-full-queue-url.test/', 200, { delay: 20 });
 
     const allPromises = Promise.all([
-      fetcher.text(ctx, new URL('https://some-full-queue-url.test/'), { queueLimit: 1, queueErrorLimit: 2 }),
-      fetcher.text(ctx, new URL('https://some-full-queue-url.test/'), { queueLimit: 1, queueErrorLimit: 2 }),
-      fetcher.text(ctx, new URL('https://some-full-queue-url.test/'), { queueLimit: 1, queueErrorLimit: 2 }),
-      fetcher.text(ctx, new URL('https://some-full-queue-url.test/'), { queueLimit: 1, queueErrorLimit: 2 }),
-      fetcher.text(ctx, new URL('https://some-full-queue-url.test/'), { queueLimit: 1, queueErrorLimit: 2 }),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/'), { queueLimit: 1, queueTimeout: 10 }),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/'), { queueLimit: 1, queueTimeout: 10 }),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/'), { queueLimit: 1, queueTimeout: 10 }),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/'), { queueLimit: 1, queueTimeout: 10 }),
+      fetcher.text(ctx, new URL('https://some-full-queue-url.test/'), { queueLimit: 1, queueTimeout: 10 }),
     ]);
 
     await expect(allPromises).rejects.toBeInstanceOf(QueueIsFullError);
