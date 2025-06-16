@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.29.0](https://github.com/webstreamr/webstreamr/compare/v0.28.4...v0.29.0) (2025-06-16)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#144](https://github.com/webstreamr/webstreamr/issues/144)) ([b00ec55](https://github.com/webstreamr/webstreamr/commit/b00ec559e049b06b3246816f91c425bc3651a258))
+* **deps:** update dependency @types/node to v22.15.31 ([#143](https://github.com/webstreamr/webstreamr/issues/143)) ([a5daea4](https://github.com/webstreamr/webstreamr/commit/a5daea497d7f2c607827e9eb4580dc85caf9ed33))
+* **extractor:** set Referer to URL origin for external URLs ([952993a](https://github.com/webstreamr/webstreamr/commit/952993a537bc0fd59229fc8b0091a5e7a6a0ed09))
+* **source:** improve Eurostreaming (IT) search with multi-word keyword ([a4ceca5](https://github.com/webstreamr/webstreamr/commit/a4ceca57ae49fe950fafa6a57204b1d6803d5edf))
+
+
+### Features
+
+* **source:** add basic Cuevana support ([f192051](https://github.com/webstreamr/webstreamr/commit/f192051328bf213521ff54e39549bdf8761310f5))
+
+
+### Code Refactoring
+
+* **fetcher:** introduce constants for defaults ([2a8e67c](https://github.com/webstreamr/webstreamr/commit/2a8e67ca5957a39bbaa839dc3a8070d2169dc4fc))
+* **fetcher:** use Semaphore with timeout for queuing ([d5ee89d](https://github.com/webstreamr/webstreamr/commit/d5ee89db9bb9152bdeff57a3658f2b1a1c97ad8f))
+
 ## [0.28.4](https://github.com/webstreamr/webstreamr/compare/v0.28.3...v0.28.4) (2025-06-15)
 
 
