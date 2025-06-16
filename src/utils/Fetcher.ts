@@ -48,6 +48,11 @@ export type CustomRequestInit = RequestInit & {
 };
 
 export class Fetcher {
+  private readonly MIN_CACHE_TTL = 900000; // 15m
+  private readonly DEFAULT_TIMEOUT = 10000;
+  private readonly DEFAULT_QUEUE_LIMIT = 5;
+  private readonly DEFAULT_QUEUE_ERROR_LIMIT = 10;
+
   private readonly logger: winston.Logger;
 
   private readonly httpCache: TTLCache<string, HttpCacheItem>;
@@ -175,7 +180,7 @@ export class Fetcher {
 
   private determineCacheTtl(httpCacheItem: HttpCacheItem): number {
     if (httpCacheItem.status === 200) {
-      return Math.max(httpCacheItem.policy.timeToLive(), 900000); // 15m at least
+      return Math.max(httpCacheItem.policy.timeToLive(), this.MIN_CACHE_TTL);
     }
 
     return httpCacheItem.policy.timeToLive();
@@ -226,7 +231,7 @@ export class Fetcher {
     }
 
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(TIMEOUT), init?.timeout ?? 10000);
+    const timer = setTimeout(() => controller.abort(TIMEOUT), init?.timeout ?? this.DEFAULT_TIMEOUT);
 
     let response;
     try {
@@ -270,8 +275,8 @@ export class Fetcher {
   };
 
   private async queuedFetch(ctx: Context, url: URL, init?: CustomRequestInit): Promise<Response> {
-    const queueLimit = init?.queueLimit ?? 5;
-    const queueErrorLimit = init?.queueErrorLimit ?? 10;
+    const queueLimit = init?.queueLimit ?? this.DEFAULT_QUEUE_LIMIT;
+    const queueErrorLimit = init?.queueErrorLimit ?? this.DEFAULT_QUEUE_ERROR_LIMIT;
 
     await this.lockFetchSlot(url.host, queueErrorLimit);
 
