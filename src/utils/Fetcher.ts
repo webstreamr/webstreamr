@@ -1,10 +1,10 @@
 import CachePolicy from 'http-cache-semantics';
 import TTLCache from '@isaacs/ttlcache';
 import winston from 'winston';
-import { Semaphore, SemaphoreInterface, withTimeout } from 'async-mutex';
+import { Mutex, Semaphore, SemaphoreInterface, withTimeout } from 'async-mutex';
 import { Cookie, CookieJar } from 'tough-cookie';
 import { BlockedReason, Context } from '../types';
-import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError } from '../error';
+import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyTimeoutsError, TooManyRequestsError } from '../error';
 import { clearTimeout } from 'node:timers';
 import { envGet } from './env';
 
@@ -41,6 +41,7 @@ interface FlareSolverrResult {
 }
 
 export type CustomRequestInit = RequestInit & {
+  timeoutsCountThrow?: number;
   noFlareSolverr?: boolean;
   queueLimit?: number;
   queueTimeout?: number;
@@ -52,20 +53,22 @@ export class Fetcher {
   private readonly DEFAULT_TIMEOUT = 10000;
   private readonly DEFAULT_QUEUE_LIMIT = 5;
   private readonly DEFAULT_QUEUE_TIMEOUT = 5000;
+  private readonly DEFAULT_FAILED_REQUEST_COUNT_THROW = 10;
+  private readonly TIMEOUT_CACHE_TTL = 3600000; // 1h
 
   private readonly logger: winston.Logger;
 
-  private readonly httpCache: TTLCache<string, HttpCacheItem>;
-  private readonly rateLimitedCache: TTLCache<string, undefined>;
+  private readonly httpCache = new TTLCache<string, HttpCacheItem>();
+  private readonly rateLimitedCache = new TTLCache<string, undefined>();
   private readonly semaphores = new Map<string, SemaphoreInterface>();
   private readonly hostUserAgentMap = new Map<string, string>();
   private readonly cookieJar = new CookieJar();
 
+  private readonly timeoutsCountCache = new TTLCache<string, number>();
+  private readonly timeoutsCountMutex = new Mutex();
+
   public constructor(logger: winston.Logger) {
     this.logger = logger;
-
-    this.httpCache = new TTLCache();
-    this.rateLimitedCache = new TTLCache();
   }
 
   public async text(ctx: Context, url: URL, init?: CustomRequestInit): Promise<string> {
@@ -228,6 +231,10 @@ export class Fetcher {
       throw new TooManyRequestsError(this.rateLimitedCache.getRemainingTTL(url.host) / 1000);
     }
 
+    if ((this.timeoutsCountCache.get(url.host) ?? 0) >= (init?.timeoutsCountThrow ?? this.DEFAULT_FAILED_REQUEST_COUNT_THROW)) {
+      throw new TooManyTimeoutsError();
+    }
+
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), init?.timeout ?? this.DEFAULT_TIMEOUT);
 
@@ -236,6 +243,7 @@ export class Fetcher {
       response = await fetch(url, { ...init, keepalive: true, signal: controller.signal });
     } catch (error) {
       if (error instanceof DOMException && error.name === 'AbortError') {
+        await this.increaseTimeoutsCount(url);
         throw new TimeoutError();
       }
 
@@ -244,8 +252,24 @@ export class Fetcher {
       clearTimeout(timer);
     }
 
+    await this.decreaseTimeoutsCount(url);
+
     return response;
   };
+
+  private async increaseTimeoutsCount(url: URL) {
+    await this.timeoutsCountMutex.runExclusive(async () => {
+      const count = (this.timeoutsCountCache.get(url.host) ?? 0) + 1;
+      this.timeoutsCountCache.set(url.host, count, { ttl: this.TIMEOUT_CACHE_TTL });
+    });
+  }
+
+  private async decreaseTimeoutsCount(url: URL) {
+    await this.timeoutsCountMutex.runExclusive(async () => {
+      const count = Math.max(0, (this.timeoutsCountCache.get(url.host) ?? 0) - 1);
+      this.timeoutsCountCache.set(url.host, count, { ttl: this.TIMEOUT_CACHE_TTL });
+    });
+  }
 
   private getSemaphore(url: URL, queueLimit: number, queueTimeout: number): SemaphoreInterface {
     let sem = this.semaphores.get(url.host);

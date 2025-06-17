@@ -2,7 +2,7 @@ import winston from 'winston';
 import fetchMock from 'fetch-mock';
 import { Fetcher } from './Fetcher';
 import { Context } from '../types';
-import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError } from '../error';
+import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
 fetchMock.mockGlobal();
 
 const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
@@ -197,5 +197,13 @@ describe('fetch', () => {
     ]);
 
     await expect(allPromises).rejects.toBeInstanceOf(QueueIsFullError);
+  });
+
+  test('throws if too many recent requests timed-out', async () => {
+    fetchMock.get('https://too-many-recent-timeouts-url.test/', 200, { delay: 20 });
+
+    await expect(fetcher.text(ctx, new URL('https://too-many-recent-timeouts-url.test/'), { timeout: 10, timeoutsCountThrow: 2 })).rejects.toBeInstanceOf(TimeoutError);
+    await expect(fetcher.text(ctx, new URL('https://too-many-recent-timeouts-url.test/'), { timeout: 10, timeoutsCountThrow: 2 })).rejects.toBeInstanceOf(TimeoutError);
+    await expect(fetcher.text(ctx, new URL('https://too-many-recent-timeouts-url.test/'), { timeout: 10, timeoutsCountThrow: 2 })).rejects.toBeInstanceOf(TooManyTimeoutsError);
   });
 });

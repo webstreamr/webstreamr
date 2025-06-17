@@ -4,7 +4,7 @@ import { createExtractors, Extractor, ExtractorRegistry } from '../extractor';
 import { StreamResolver } from './StreamResolver';
 import { Source, SourceResult, MeineCloud, MostraGuarda } from '../source';
 import { BlockedReason, Context, CountryCode, UrlResult } from '../types';
-import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError } from '../error';
+import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyTimeoutsError, TooManyRequestsError } from '../error';
 import { ImdbId } from './id';
 import { FetcherMock } from './FetcherMock';
 
@@ -109,6 +109,16 @@ describe('resolve', () => {
             url: new URL('https://example.com'),
             isExternal: true,
             error: new TooManyRequestsError(10),
+            label: 'hoster.com',
+            sourceId: '',
+            meta: {
+              countryCode: CountryCode.de,
+            },
+          },
+          {
+            url: new URL('https://example.com'),
+            isExternal: true,
+            error: new TooManyTimeoutsError(),
             label: 'hoster.com',
             sourceId: '',
             meta: {
