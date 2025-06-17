@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.29.1](https://github.com/webstreamr/webstreamr/compare/v0.29.0...v0.29.1) (2025-06-17)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency typescript-eslint to v8.34.1 ([#145](https://github.com/webstreamr/webstreamr/issues/145)) ([aa9085c](https://github.com/webstreamr/webstreamr/commit/aa9085c2631bc37cd31e28ae3cb44c800f140181))
+* **fetcher:** remember recent timeouts and throw if count is too high ([f7042b9](https://github.com/webstreamr/webstreamr/commit/f7042b94ef7da5de1c5d581ee5236df910508317))
+
+
+### Code Refactoring
+
+* avoid leaking fetch internals by introducing TimeoutError ([e1f5192](https://github.com/webstreamr/webstreamr/commit/e1f5192f4bfc210cd1d944869b06ca1046d6786f))
+
 ## [0.29.0](https://github.com/webstreamr/webstreamr/compare/v0.28.4...v0.29.0) (2025-06-16)
 
 
