@@ -1,9 +1,9 @@
 import { ContentType, Stream } from 'stremio-addon-sdk';
 import winston from 'winston';
 import bytes from 'bytes';
-import { Context, TIMEOUT, UrlResult } from '../types';
+import { Context, UrlResult } from '../types';
 import { Source } from '../source';
-import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TooManyRequestsError } from '../error';
+import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError } from '../error';
 import { flagFromCountryCode, languageFromCountryCode } from './language';
 import { envGetAppName } from './env';
 import { Id } from './id';
@@ -169,7 +169,7 @@ export class StreamResolver {
       return '🚦 Request was rate-limited. Please try again later or consider self-hosting.';
     }
 
-    if (error === TIMEOUT) {
+    if (error instanceof TimeoutError) {
       this.logger.warn(`${source}: Request timed out.`, ctx);
 
       return '🐢 Request timed out.';

@@ -3,8 +3,8 @@ import TTLCache from '@isaacs/ttlcache';
 import winston from 'winston';
 import { Semaphore, SemaphoreInterface, withTimeout } from 'async-mutex';
 import { Cookie, CookieJar } from 'tough-cookie';
-import { BlockedReason, Context, TIMEOUT } from '../types';
-import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TooManyRequestsError } from '../error';
+import { BlockedReason, Context } from '../types';
+import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError } from '../error';
 import { clearTimeout } from 'node:timers';
 import { envGet } from './env';
 
@@ -229,11 +229,17 @@ export class Fetcher {
     }
 
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(TIMEOUT), init?.timeout ?? this.DEFAULT_TIMEOUT);
+    const timer = setTimeout(() => controller.abort(), init?.timeout ?? this.DEFAULT_TIMEOUT);
 
     let response;
     try {
       response = await fetch(url, { ...init, keepalive: true, signal: controller.signal });
+    } catch (error) {
+      if (error instanceof DOMException && error.name === 'AbortError') {
+        throw new TimeoutError();
+      }
+
+      throw error;
     } finally {
       clearTimeout(timer);
     }

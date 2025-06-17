@@ -2,7 +2,7 @@ import winston from 'winston';
 import fetchMock from 'fetch-mock';
 import { Fetcher } from './Fetcher';
 import { Context } from '../types';
-import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TooManyRequestsError } from '../error';
+import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError } from '../error';
 fetchMock.mockGlobal();
 
 const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
@@ -182,7 +182,7 @@ describe('fetch', () => {
   test('times out', async () => {
     fetchMock.get('https://some-timeout-url.test/', 200, { delay: 20 });
 
-    await expect(fetcher.text(ctx, new URL('https://some-timeout-url.test/'), { timeout: 10 })).rejects.toBeInstanceOf(DOMException);
+    await expect(fetcher.text(ctx, new URL('https://some-timeout-url.test/'), { timeout: 10 })).rejects.toBeInstanceOf(TimeoutError);
   });
 
   test('queues requests and throws if queue is full', async () => {

@@ -3,8 +3,8 @@ import winston from 'winston';
 import { createExtractors, Extractor, ExtractorRegistry } from '../extractor';
 import { StreamResolver } from './StreamResolver';
 import { Source, SourceResult, MeineCloud, MostraGuarda } from '../source';
-import { BlockedReason, Context, CountryCode, TIMEOUT, UrlResult } from '../types';
-import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TooManyRequestsError } from '../error';
+import { BlockedReason, Context, CountryCode, UrlResult } from '../types';
+import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError } from '../error';
 import { ImdbId } from './id';
 import { FetcherMock } from './FetcherMock';
 
@@ -128,7 +128,7 @@ describe('resolve', () => {
           {
             url: new URL('https://example2.com'),
             isExternal: true,
-            error: TIMEOUT,
+            error: new TimeoutError(),
             label: 'hoster.com',
             sourceId: '',
             meta: {

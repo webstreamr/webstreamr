@@ -1,7 +1,5 @@
 import { Manifest, ManifestConfig } from 'stremio-addon-sdk';
 
-export const TIMEOUT = 'timeout';
-
 export interface Context {
   id: string;
   ip: string;
