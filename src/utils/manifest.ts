@@ -51,9 +51,9 @@ export const buildManifest = (sources: Source[], config: Config): ManifestWithCo
   }
 
   manifest.config.push({
-    key: 'excludeExternalUrls',
+    key: 'includeExternalUrls',
     type: 'checkbox',
-    title: 'Exclude external URLs from results',
+    title: 'Include external URLs from results',
   });
 
   return manifest;

@@ -7,7 +7,7 @@ import { ExternalUrl } from './ExternalUrl';
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 const extractorRegistry = new ExtractorRegistry(logger, [new ExternalUrl(new FetcherMock(`${__dirname}/__fixtures__/ExternalUrl`))]);
 
-const ctx: Context = { id: 'id', ip: '127.0.0.1', config: {} };
+const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { includeExternalUrls: 'on' } };
 
 describe('ExternalUrl', () => {
   test('404 - not found', async () => {

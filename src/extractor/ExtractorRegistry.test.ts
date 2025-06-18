@@ -16,14 +16,14 @@ describe('ExtractorRegistry', () => {
     expect(urlResult).toMatchSnapshot();
   });
 
-  test('return external URLs by default', async () => {
-    const urlResult = await extractorRegistry.handle(ctx, new URL('https://mixdrop.ag/e/3nzwveprim63or6'), CountryCode.de);
+  test('returns external URLs if enabled by config', async () => {
+    const urlResult = await extractorRegistry.handle({ ...ctx, config: { ...ctx.config, includeExternalUrls: 'on' } }, new URL('https://mixdrop.ag/e/3nzwveprim63or6'), CountryCode.de);
 
     expect(urlResult).toMatchSnapshot();
   });
 
-  test('does not return external URLs if disabled by config', async () => {
-    const urlResult = await extractorRegistry.handle({ ...ctx, config: { ...ctx.config, excludeExternalUrls: 'on' } }, new URL('https://mixdrop.ag/e/l7v73zqrfdj19z'), CountryCode.de);
+  test('does not return external URLs by default', async () => {
+    const urlResult = await extractorRegistry.handle(ctx, new URL('https://mixdrop.ag/e/l7v73zqrfdj19z'), CountryCode.de);
 
     expect(urlResult).toStrictEqual([]);
   });

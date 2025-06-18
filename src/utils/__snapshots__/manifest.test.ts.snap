@@ -19,8 +19,8 @@ exports[`buildManifest has checked source with appropriate config 1`] = `
     "type": "checkbox",
   },
   {
-    "key": "excludeExternalUrls",
-    "title": "Exclude external URLs from results",
+    "key": "includeExternalUrls",
+    "title": "Include external URLs from results",
     "type": "checkbox",
   },
 ]
@@ -44,8 +44,8 @@ exports[`buildManifest has unchecked source without a config 1`] = `
     "type": "checkbox",
   },
   {
-    "key": "excludeExternalUrls",
-    "title": "Exclude external URLs from results",
+    "key": "includeExternalUrls",
+    "title": "Include external URLs from results",
     "type": "checkbox",
   },
 ]
