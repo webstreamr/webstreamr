@@ -12,7 +12,7 @@ import {
   TooManyTimeoutsError,
   TooManyRequestsError,
 } from '../error';
-import { flagFromCountryCode, languageFromCountryCode } from './language';
+import { flagFromCountryCode } from './language';
 import { envGetAppName } from './env';
 import { Id } from './id';
 import { ExtractorRegistry } from '../extractor';
@@ -151,7 +151,11 @@ export class StreamResolver {
   private buildName(ctx: Context, urlResult: UrlResult): string {
     let name = envGetAppName();
 
-    name += urlResult.meta.height ? ` ${urlResult.meta.height}P` : ' N/A';
+    name += ` ${flagFromCountryCode(urlResult.meta.countryCode)}`;
+
+    if (urlResult.meta.height) {
+      name += ` ${urlResult.meta.height}p`;
+    }
 
     if (urlResult.isExternal && showExternalUrls(ctx.config)) {
       name += ` ⚠️ external`;
@@ -210,15 +214,15 @@ export class StreamResolver {
     const titleLines = [];
 
     if (urlResult.meta.title) {
-      titleLines.push(`📂 ${urlResult.meta.title}`);
+      titleLines.push(urlResult.meta.title);
     }
 
+    const titleDetailsLine = [];
     if (urlResult.meta.bytes) {
-      titleLines.push(`💾 ${bytes.format(urlResult.meta.bytes, { unitSeparator: ' ' })}`);
+      titleDetailsLine.push(`💾 ${bytes.format(urlResult.meta.bytes, { unitSeparator: ' ' })}`);
     }
-
-    titleLines.push(`🌐 ${languageFromCountryCode(urlResult.meta.countryCode)} ${flagFromCountryCode(urlResult.meta.countryCode)}`);
-    titleLines.push(`🔗 ${urlResult.label}`);
+    titleDetailsLine.push(`🔗 ${urlResult.label}`);
+    titleLines.push(titleDetailsLine.join(' '));
 
     if (urlResult.error) {
       titleLines.push(this.logErrorAndReturnNiceString(ctx, urlResult.sourceId, urlResult.error));
