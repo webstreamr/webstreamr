@@ -69,3 +69,18 @@ exports[`Fsst Dead City 1`] = `
   },
 ]
 `;
+
+exports[`Fsst How to Train Your Dragon 1`] = `
+[
+  {
+    "label": "Fsst",
+    "meta": {
+      "countryCode": "de",
+      "height": 360,
+      "title": "How To Train Your Dragon 2025.mp4",
+    },
+    "sourceId": "fsst_de_0",
+    "url": "https://www.secvideo1.online/get_file/10/648fc9b266670e9ad6756a066a68a8db0b36868457/902000/902668/902668_360p.mp4/",
+  },
+]
+`;

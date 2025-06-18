@@ -29,15 +29,17 @@ export class Fsst extends Extractor {
     const filesMatch = html.match(/file:"(.*)"/) as string[];
 
     return (filesMatch[1] as string).split(',').map((fileString, index) => {
-      const heightAndUrlMatch = fileString.match(/\[([\d]+)p\](.*)/) as string[];
+      const heightAndUrlMatch = fileString.match(/\[?([\d]*)p?]?(.*)/) as string[];
+      const fileHref = heightAndUrlMatch[2] as string;
+      const heightFromFileHrefMatch = fileHref.match(/([\d]+)p/) as string[];
 
       return {
-        url: new URL(heightAndUrlMatch[2] as string),
+        url: new URL(fileHref),
         label: this.label,
         sourceId: `${this.id}_${countryCode}_${index}`,
         meta: {
           countryCode,
-          height: parseInt(heightAndUrlMatch[1] as string),
+          height: parseInt(heightAndUrlMatch[1] || heightFromFileHrefMatch[1] as string),
           title,
         },
       };

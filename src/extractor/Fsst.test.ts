@@ -17,4 +17,8 @@ describe('Fsst', () => {
   test('Dead City', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://fsst.online/embed/901994/'), CountryCode.de)).toMatchSnapshot();
   });
+
+  test('How to Train Your Dragon', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://fsst.online/embed/902668/'), CountryCode.de)).toMatchSnapshot();
+  });
 });
