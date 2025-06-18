@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.29.2](https://github.com/webstreamr/webstreamr/compare/v0.29.1...v0.29.2) (2025-06-18)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency fetch-mock to v12.5.3 ([#148](https://github.com/webstreamr/webstreamr/issues/148)) ([9fcc1c6](https://github.com/webstreamr/webstreamr/commit/9fcc1c60d475f3051fa059b52f9799575937fc77))
+* do not show external URLs by default ([c1f9de5](https://github.com/webstreamr/webstreamr/commit/c1f9de58b0a08f240dbf92dfc1e0fe4905bfb84f))
+* more minimal result format with less bloat and icons ([deef8ab](https://github.com/webstreamr/webstreamr/commit/deef8ab58b7a9740ca07cdec3282891ae1d06108))
+
+
+### Bug Fixes
+
+* **extractor:** handle Fsst with single file result ([6c7993c](https://github.com/webstreamr/webstreamr/commit/6c7993cdba324160b47a3734b9c9fd6e693f8284))
+
 ## [0.29.1](https://github.com/webstreamr/webstreamr/compare/v0.29.0...v0.29.1) (2025-06-17)
 
 
