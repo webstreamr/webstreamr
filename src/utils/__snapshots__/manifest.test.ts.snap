@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`buildManifest has checked includeExternalUrls 1`] = `
+[
+  {
+    "default": "checked",
+    "key": "includeExternalUrls",
+    "title": "Include external URLs from results",
+    "type": "checkbox",
+  },
+]
+`;
+
 exports[`buildManifest has checked source with appropriate config 1`] = `
 [
   {
@@ -19,6 +30,7 @@ exports[`buildManifest has checked source with appropriate config 1`] = `
     "type": "checkbox",
   },
   {
+    "default": "checked",
     "key": "includeExternalUrls",
     "title": "Include external URLs from results",
     "type": "checkbox",
@@ -43,6 +55,16 @@ exports[`buildManifest has unchecked source without a config 1`] = `
     "title": "Latin American Spanish 🇲🇽 (VerHdLink)",
     "type": "checkbox",
   },
+  {
+    "key": "includeExternalUrls",
+    "title": "Include external URLs from results",
+    "type": "checkbox",
+  },
+]
+`;
+
+exports[`buildManifest includeExternalUrls is unchecked by default 1`] = `
+[
   {
     "key": "includeExternalUrls",
     "title": "Include external URLs from results",
