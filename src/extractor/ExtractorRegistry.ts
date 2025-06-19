@@ -31,7 +31,7 @@ export class ExtractorRegistry {
 
     urlResults = await extractor.extract(ctx, normalizedUrl, countryCode, title);
 
-    if (!urlResults.some(urlResult => urlResult.error)) {
+    if (!urlResults.some(urlResult => urlResult.error) && extractor.ttl) {
       this.urlResultCache.set(normalizedUrl.href, urlResults, { ttl: extractor.ttl });
     }
 

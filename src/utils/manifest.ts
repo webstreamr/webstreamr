@@ -57,5 +57,19 @@ export const buildManifest = (sources: Source[], config: Config): ManifestWithCo
     ...('includeExternalUrls' in config && { default: 'checked' }),
   });
 
+  manifest.config.push({
+    key: 'mediaFlowProxyUrl',
+    type: 'text',
+    title: 'MediaFlow Proxy URL',
+    default: config['mediaFlowProxyUrl'] ?? '',
+  });
+
+  manifest.config.push({
+    key: 'mediaFlowProxyPassword',
+    type: 'password',
+    title: 'MediaFlow Proxy Password',
+    default: config['mediaFlowProxyPassword'] ?? '',
+  });
+
   return manifest;
 };

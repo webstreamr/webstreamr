@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Mixdrop deleted or expired file 1`] = `[]`;
+
+exports[`Mixdrop mixdrop.my /e/ 1`] = `
+[
+  {
+    "label": "Mixdrop",
+    "meta": {
+      "bytes": 1059806248,
+      "countryCode": "de",
+      "title": "28_giorni_dopo_2002_HD_-_Altadefinizione01.mp4",
+    },
+    "sourceId": "mixdrop_de",
+    "ttl": 0,
+    "url": "https://mediaflow-proxy.test/extractor/video?host=Mixdrop&redirect_stream=true&api_password=asdfg&d=https%3A%2F%2Fmixdrop.my%2Fe%2Fknq0kj8waq44l8",
+  },
+]
+`;

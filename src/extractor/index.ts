@@ -8,6 +8,7 @@ import { Soaper } from './Soaper';
 import { SuperVideo } from './SuperVideo';
 import { VidSrc } from './VidSrc';
 import { Fetcher } from '../utils';
+import { Mixdrop } from './Mixdrop';
 
 export * from './Extractor';
 export * from './ExtractorRegistry';
@@ -18,6 +19,7 @@ export const createExtractors = (fetcher: Fetcher): Extractor[] => [
   new Fsst(fetcher),
   new SuperVideo(fetcher),
   new KinoGer(fetcher),
+  new Mixdrop(fetcher),
   new Soaper(fetcher),
   new VidSrc(fetcher),
   new ExternalUrl(fetcher), // fallback extractor which must come last
