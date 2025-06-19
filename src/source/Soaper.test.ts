@@ -1,8 +1,8 @@
 import { Soaper } from './Soaper';
 import { FetcherMock, ImdbId, TmdbId } from '../utils';
-import { Context } from '../types';
+import { createTestContext } from '../test';
 
-const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { en: 'on' } };
+const ctx = createTestContext();
 
 describe('Soaper', () => {
   let handler: Soaper;

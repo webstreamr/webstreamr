@@ -1,13 +1,14 @@
 import winston from 'winston';
 import { FetcherMock } from '../utils';
-import { Context, CountryCode } from '../types';
+import { CountryCode } from '../types';
 import { ExtractorRegistry } from './ExtractorRegistry';
 import { KinoGer } from './KinoGer';
+import { createTestContext } from '../test';
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 const extractorRegistry = new ExtractorRegistry(logger, [new KinoGer(new FetcherMock(`${__dirname}/__fixtures__/KinoGer`))]);
 
-const ctx: Context = { id: 'id', ip: '127.0.0.1', config: {} };
+const ctx = createTestContext();
 
 describe('KinoGer', () => {
   test('Blood & Sinners', async () => {

@@ -1,13 +1,14 @@
 import winston from 'winston';
 import { FetcherMock } from '../utils';
-import { Context, CountryCode } from '../types';
+import { CountryCode } from '../types';
 import { ExtractorRegistry } from './ExtractorRegistry';
 import { ExternalUrl } from './ExternalUrl';
+import { createTestContext } from '../test';
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 const extractorRegistry = new ExtractorRegistry(logger, [new ExternalUrl(new FetcherMock(`${__dirname}/__fixtures__/ExternalUrl`))]);
 
-const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { includeExternalUrls: 'on' } };
+const ctx = createTestContext({ includeExternalUrls: 'on' });
 
 describe('ExternalUrl', () => {
   test('404 - not found', async () => {

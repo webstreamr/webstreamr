@@ -1,8 +1,8 @@
 import { VidSrc } from './VidSrc';
 import { FetcherMock, ImdbId } from '../utils';
-import { Context } from '../types';
+import { createTestContext } from '../test';
 
-const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { en: 'on' } };
+const ctx = createTestContext();
 
 describe('VidSrc', () => {
   let handler: VidSrc;

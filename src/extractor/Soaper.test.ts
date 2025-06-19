@@ -1,13 +1,14 @@
 import winston from 'winston';
 import { FetcherMock } from '../utils';
-import { Context, CountryCode } from '../types';
+import { CountryCode } from '../types';
 import { ExtractorRegistry } from './ExtractorRegistry';
 import { Soaper } from './Soaper';
+import { createTestContext } from '../test';
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 const extractorRegistry = new ExtractorRegistry(logger, [new Soaper(new FetcherMock(`${__dirname}/__fixtures__/Soaper`))]);
 
-const ctx: Context = { id: 'id', ip: '127.0.0.1', config: {} };
+const ctx = createTestContext();
 
 describe('Soaper', () => {
   test('Full Metal Jacket', async () => {

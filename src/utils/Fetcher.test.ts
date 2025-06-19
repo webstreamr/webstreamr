@@ -1,14 +1,14 @@
 import winston from 'winston';
 import fetchMock from 'fetch-mock';
 import { Fetcher } from './Fetcher';
-import { Context } from '../types';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
+import { createTestContext } from '../test';
 fetchMock.mockGlobal();
 
 const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
 
 describe('fetch', () => {
-  const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on' } };
+  const ctx = createTestContext();
 
   afterEach(() => {
     fetchMock.clearHistory();
@@ -27,12 +27,12 @@ describe('fetch', () => {
       headers: {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'Accept-Language': 'en',
-        'Forwarded': 'for=127.0.0.1',
+        'Forwarded': 'for=0.0.0.0',
         'Priority': 'u=0',
         'User-Agent': 'node',
-        'X-Forwarded-For': '127.0.0.1',
+        'X-Forwarded-For': '0.0.0.0',
         'X-Forwarded-Proto': 'https',
-        'X-Real-IP': '127.0.0.1',
+        'X-Real-IP': '0.0.0.0',
       },
     });
   });

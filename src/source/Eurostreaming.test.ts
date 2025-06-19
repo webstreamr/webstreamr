@@ -1,8 +1,8 @@
 import { Eurostreaming } from './Eurostreaming';
 import { FetcherMock, TmdbId } from '../utils';
-import { Context } from '../types';
+import { createTestContext } from '../test';
 
-const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { it: 'on' } };
+const ctx = createTestContext({ it: 'on' });
 
 describe('Eurostreaming', () => {
   let handler: Eurostreaming;

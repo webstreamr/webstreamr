@@ -35,7 +35,7 @@ exports[`resolve adds error info 1`] = `
       "behaviorHints": {},
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
-❌ Request failed. Request-id: id.",
+❌ Request failed. Request-id: test.",
       "ytId": "E4WlUXrJgy4",
     },
     {
@@ -56,7 +56,7 @@ exports[`resolve adds error info 1`] = `
       "behaviorHints": {},
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
-❌ Request failed with status 500 (Internal Server Error). Request-id: id.",
+❌ Request failed with status 500 (Internal Server Error). Request-id: test.",
       "ytId": "E4WlUXrJgy4",
     },
   ],
@@ -99,7 +99,7 @@ exports[`resolve adds error info 2`] = `
       "externalUrl": "https://example2.com/",
       "name": "WebStreamr 🇩🇪 ⚠️ external",
       "title": "🔗 hoster.com
-❌ Request failed. Request-id: id.",
+❌ Request failed. Request-id: test.",
     },
     {
       "behaviorHints": {},
@@ -120,7 +120,7 @@ exports[`resolve adds error info 2`] = `
       "externalUrl": "https://example4.com/",
       "name": "WebStreamr 🇩🇪 ⚠️ external",
       "title": "🔗 hoster.com
-❌ Request failed with status 500 (Internal Server Error). Request-id: id.",
+❌ Request failed with status 500 (Internal Server Error). Request-id: test.",
     },
   ],
 }
@@ -333,7 +333,7 @@ exports[`resolve returns source errors as stream 1`] = `
     {
       "name": "WebStreamr",
       "title": "🔗 MeineCloud
-❌ Request failed. Request-id: id.",
+❌ Request failed. Request-id: test.",
       "ytId": "E4WlUXrJgy4",
     },
   ],

@@ -3,14 +3,15 @@ import winston from 'winston';
 import { createExtractors, Extractor, ExtractorRegistry } from '../extractor';
 import { StreamResolver } from './StreamResolver';
 import { Source, SourceResult, MeineCloud, MostraGuarda } from '../source';
-import { BlockedReason, Context, CountryCode, UrlResult } from '../types';
+import { BlockedReason, CountryCode, UrlResult } from '../types';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyTimeoutsError, TooManyRequestsError } from '../error';
 import { ImdbId } from './id';
 import { FetcherMock } from './FetcherMock';
+import { createTestContext } from '../test';
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 const fetcher = new FetcherMock(`${__dirname}/__fixtures__/StreamResolver`);
-const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on', it: 'on' } };
+const ctx = createTestContext({ de: 'on', it: 'on' });
 
 const meineCloud = new MeineCloud(fetcher);
 const mostraGuarda = new MostraGuarda(fetcher);

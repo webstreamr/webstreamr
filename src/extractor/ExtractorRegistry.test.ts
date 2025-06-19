@@ -1,14 +1,15 @@
 import winston from 'winston';
 import { ExtractorRegistry } from './ExtractorRegistry';
-import { Context, CountryCode } from '../types';
+import { CountryCode } from '../types';
 import { FetcherMock } from '../utils';
 import { createExtractors } from './index';
+import { createTestContext } from '../test';
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 const extractorRegistry = new ExtractorRegistry(logger, createExtractors(new FetcherMock(`${__dirname}/__fixtures__/ExtractorRegistry`)));
 
 describe('ExtractorRegistry', () => {
-  const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on' } };
+  const ctx = createTestContext();
 
   test('returns error result from extractor', async () => {
     const urlResult = await extractorRegistry.handle(ctx, new URL('https://some-url.test'), CountryCode.de);

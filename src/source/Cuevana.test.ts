@@ -1,8 +1,8 @@
 import { Cuevana } from './Cuevana';
 import { FetcherMock, TmdbId } from '../utils';
-import { Context } from '../types';
+import { createTestContext } from '../test';
 
-const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { es: 'on', mx: 'on' } };
+const ctx = createTestContext({ es: 'on', mx: 'on' });
 
 describe('Cuevana', () => {
   let handler: Cuevana;

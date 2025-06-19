@@ -1,8 +1,8 @@
 import { MeineCloud } from './MeineCloud';
 import { FetcherMock, ImdbId } from '../utils';
-import { Context } from '../types';
+import { createTestContext } from '../test';
 
-const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on' } };
+const ctx = createTestContext({ de: 'on' });
 
 describe('MeineCloud', () => {
   let handler: MeineCloud;

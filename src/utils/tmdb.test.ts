@@ -1,10 +1,10 @@
 import { getImdbIdFromTmdbId, getTmdbIdFromImdbId } from './tmdb';
-import { Context } from '../types';
 import { ImdbId, TmdbId } from './id';
 import { FetcherMock } from './FetcherMock';
+import { createTestContext } from '../test';
 
 const fetcher = new FetcherMock(`${__dirname}/__fixtures__/tmdb`);
-const ctx: Context = { id: 'id', ip: '127.0.0.1', config: { de: 'on' } };
+const ctx = createTestContext();
 
 describe('getTmdbIdFromImdbId', () => {
   test('series', async () => {
