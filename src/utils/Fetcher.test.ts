@@ -8,7 +8,7 @@ fetchMock.mockGlobal();
 const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
 
 describe('fetch', () => {
-  const ctx = createTestContext();
+  const ctx = { ...createTestContext(), ip: '0.0.0.0' };
 
   afterEach(() => {
     fetchMock.clearHistory();

@@ -2,7 +2,7 @@ import { Manifest, ManifestConfig } from 'stremio-addon-sdk';
 
 export interface Context {
   id: string;
-  ip: string;
+  ip?: string;
   config: Config;
 }
 

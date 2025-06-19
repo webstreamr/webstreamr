@@ -72,7 +72,7 @@ addon.listen(port, () => {
 });
 
 const cacheWarmup = async () => {
-  const ctx = { id: 'warmup', ip: '127.0.0.1', config: { de: 'on', en: 'on', es: 'on', fr: 'on', it: 'on', mx: 'on' } };
+  const ctx = { id: 'warmup', config: { de: 'on', en: 'on', es: 'on', fr: 'on', it: 'on', mx: 'on' } };
   logger.info(`starting cache warmup`, ctx);
 
   interface ResponsePartial { results: { id: number }[] }

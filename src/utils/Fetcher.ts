@@ -91,13 +91,15 @@ export class Fetcher {
       headers: {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'Accept-Language': 'en',
-        ...(cookieString && { Cookie: cookieString }),
-        'Forwarded': `for=${ctx.ip}`,
         'Priority': 'u=0',
         'User-Agent': this.hostUserAgentMap.get(url.host) ?? 'node',
-        'X-Forwarded-For': ctx.ip,
-        'X-Forwarded-Proto': url.protocol.slice(0, -1),
-        'X-Real-IP': ctx.ip,
+        ...(cookieString && { Cookie: cookieString }),
+        ...(ctx.ip && {
+          'Forwarded': `for=${ctx.ip}`,
+          'X-Forwarded-For': ctx.ip,
+          'X-Forwarded-Proto': url.protocol.slice(0, -1),
+          'X-Real-IP': ctx.ip,
+        }),
         ...init?.headers,
       },
     };

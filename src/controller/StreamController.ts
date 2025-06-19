@@ -29,7 +29,7 @@ export class StreamController {
 
     const ctx: Context = {
       id: res.getHeader('X-Request-ID') as string,
-      ip: req.ip as string,
+      ...(req.ip && { ip: req.ip }),
       config,
     };
 
