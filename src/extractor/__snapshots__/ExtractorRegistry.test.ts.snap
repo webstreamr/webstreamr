@@ -23,7 +23,7 @@ exports[`ExtractorRegistry returns external url for error 1`] = `
     "error": [Error: Fetcher error: 403: Forbidden
 ],
     "isExternal": true,
-    "label": "dropload.io",
+    "label": "Dropload",
     "meta": {
       "countryCode": "de",
     },
@@ -39,7 +39,7 @@ exports[`ExtractorRegistry returns external url for error with title 1`] = `
     "error": [Error: Fetcher error: 403: Forbidden
 ],
     "isExternal": true,
-    "label": "dropload.io",
+    "label": "Dropload",
     "meta": {
       "countryCode": "de",
       "title": "a title!",

@@ -29,7 +29,7 @@ export abstract class Extractor {
           url,
           isExternal: true,
           error,
-          label: url.host,
+          label: this.label,
           sourceId: `${this.id}`,
           meta: {
             countryCode,
