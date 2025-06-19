@@ -28,6 +28,7 @@ export class StreamController {
     const id: string = req.params['id'] || '';
 
     const ctx: Context = {
+      hostUrl: new URL(`${req.protocol}://${req.host}`),
       id: res.getHeader('X-Request-ID') as string,
       ...(req.ip && { ip: req.ip }),
       config,

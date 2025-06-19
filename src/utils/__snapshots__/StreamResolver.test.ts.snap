@@ -5,59 +5,59 @@ exports[`resolve adds error info 1`] = `
   "streams": [
     {
       "behaviorHints": {},
+      "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 ⚠️ Request was blocked.",
-      "ytId": "E4WlUXrJgy4",
     },
     {
       "behaviorHints": {},
+      "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 ⚠️ Request was blocked.",
-      "ytId": "E4WlUXrJgy4",
     },
     {
       "behaviorHints": {},
+      "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 🚦 Request was rate-limited. Please try again later or consider self-hosting.",
-      "ytId": "E4WlUXrJgy4",
     },
     {
       "behaviorHints": {},
+      "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 🚦 Too many recent timeouts. Please try again later.",
-      "ytId": "E4WlUXrJgy4",
     },
     {
       "behaviorHints": {},
+      "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 ❌ Request failed. Request-id: test.",
-      "ytId": "E4WlUXrJgy4",
     },
     {
       "behaviorHints": {},
+      "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 🐢 Request timed out.",
-      "ytId": "E4WlUXrJgy4",
     },
     {
       "behaviorHints": {},
+      "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 ⏳ Request queue is full. Please try again later or consider self-hosting.",
-      "ytId": "E4WlUXrJgy4",
     },
     {
       "behaviorHints": {},
+      "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 ❌ Request failed with status 500 (Internal Server Error). Request-id: test.",
-      "ytId": "E4WlUXrJgy4",
     },
   ],
 }
@@ -151,9 +151,9 @@ exports[`resolve returns info as stream if no sources were configured 1`] = `
 {
   "streams": [
     {
+      "externalUrl": "http://localhost/",
       "name": "WebStreamr",
       "title": "⚠️ No sources found. Please re-configure the plugin.",
-      "ytId": "E4WlUXrJgy4",
     },
   ],
 }
@@ -331,10 +331,10 @@ exports[`resolve returns source errors as stream 1`] = `
 {
   "streams": [
     {
+      "externalUrl": "http://localhost/",
       "name": "WebStreamr",
       "title": "🔗 MeineCloud
 ❌ Request failed. Request-id: test.",
-      "ytId": "E4WlUXrJgy4",
     },
   ],
 }

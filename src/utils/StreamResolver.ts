@@ -39,7 +39,7 @@ export class StreamResolver {
           {
             name: 'WebStreamr',
             title: '⚠️ No sources found. Please re-configure the plugin.',
-            ytId: 'E4WlUXrJgy4',
+            externalUrl: ctx.hostUrl.href,
           },
         ],
       };
@@ -73,7 +73,7 @@ export class StreamResolver {
         streams.push({
           name: envGetAppName(),
           title: [`🔗 ${handler.label}`, this.logErrorAndReturnNiceString(ctx, handler.id, error)].join('\n'),
-          ytId: 'E4WlUXrJgy4',
+          externalUrl: ctx.hostUrl.href,
         });
       }
     });
@@ -136,7 +136,7 @@ export class StreamResolver {
     return Math.min(...urlResults.map(urlResult => urlResult.ttl as number));
   };
 
-  private buildUrl(ctx: Context, urlResult: UrlResult): { externalUrl: string } | { url: string } | { ytId: string } {
+  private buildUrl(ctx: Context, urlResult: UrlResult): { externalUrl: string } | { url: string } {
     if (!urlResult.isExternal) {
       return { url: urlResult.url.href };
     }
@@ -145,7 +145,7 @@ export class StreamResolver {
       return { externalUrl: urlResult.url.href };
     }
 
-    return { ytId: 'E4WlUXrJgy4' };
+    return { externalUrl: ctx.hostUrl.href };
   };
 
   private buildName(ctx: Context, urlResult: UrlResult): string {

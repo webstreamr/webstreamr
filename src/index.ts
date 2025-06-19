@@ -5,6 +5,7 @@ import { CineHDPlus, Cuevana, Eurostreaming, Frembed, FrenchCloud, Source, KinoG
 import { createExtractors, ExtractorRegistry } from './extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
 import { envGet, envIsProd, Fetcher, StreamResolver, tmdbFetch, TmdbId } from './utils';
+import { Context } from './types';
 
 const logger = winston.createLogger({
   transports: [
@@ -72,7 +73,11 @@ addon.listen(port, () => {
 });
 
 const cacheWarmup = async () => {
-  const ctx = { id: 'warmup', config: { de: 'on', en: 'on', es: 'on', fr: 'on', it: 'on', mx: 'on' } };
+  const ctx: Context = {
+    hostUrl: new URL('http://localhost'),
+    id: 'warmup',
+    config: { de: 'on', en: 'on', es: 'on', fr: 'on', it: 'on', mx: 'on' },
+  };
   logger.info(`starting cache warmup`, ctx);
 
   interface ResponsePartial { results: { id: number }[] }
