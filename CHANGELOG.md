@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.29.3](https://github.com/webstreamr/webstreamr/compare/v0.29.2...v0.29.3) (2025-06-19)
+
+
+### Miscellaneous Chores
+
+* **deps:** update jest monorepo to v30.0.1 ([#152](https://github.com/webstreamr/webstreamr/issues/152)) ([ac73597](https://github.com/webstreamr/webstreamr/commit/ac735976d1d878d4f1d7e8045256c3d8f9af92ab))
+* **deps:** update jest monorepo to v30.0.2 ([#154](https://github.com/webstreamr/webstreamr/issues/154)) ([6f1f046](https://github.com/webstreamr/webstreamr/commit/6f1f04681fbcdd70263be8060e3cc57fed678e2c))
+* **extractor:** show label instead of host for errors ([1d263b5](https://github.com/webstreamr/webstreamr/commit/1d263b5540aa80f10cca460b2407cf6a75f073fa))
+* **fetcher:** remove unneeded istanbul ([d88cfd4](https://github.com/webstreamr/webstreamr/commit/d88cfd404c672ae74f7866b99705d45e7e194d39))
+* make ip in Context optional ([138e92a](https://github.com/webstreamr/webstreamr/commit/138e92afc5c94b9ed60bbd0fc61d5d86d84b068c))
+* use add-on URL as default externalUrl ([552620a](https://github.com/webstreamr/webstreamr/commit/552620a7eb577a8f40d3c74aab2014cfe43f693d))
+
+
+### Bug Fixes
+
+* config checkbox handling of includeExternalUrls ([b5855aa](https://github.com/webstreamr/webstreamr/commit/b5855aaab493deedd497458ce7ea5be42dd2bcf7))
+
+
+### Tests
+
+* introduce helper function createTestContext ([2d4c5a8](https://github.com/webstreamr/webstreamr/commit/2d4c5a82213c111f2138e5e1b330eaf676876316))
+
 ## [0.29.2](https://github.com/webstreamr/webstreamr/compare/v0.29.1...v0.29.2) (2025-06-18)
 
 
