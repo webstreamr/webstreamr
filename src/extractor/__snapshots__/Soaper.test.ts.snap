@@ -3,6 +3,7 @@
 exports[`Soaper Black Mirror 1`] = `
 [
   {
+    "format": "hls",
     "label": "Soaper",
     "meta": {
       "countryCode": "en",
@@ -19,6 +20,7 @@ exports[`Soaper Black Mirror 1`] = `
 exports[`Soaper Full Metal Jacket 1`] = `
 [
   {
+    "format": "hls",
     "label": "Soaper",
     "meta": {
       "countryCode": "en",
@@ -35,6 +37,7 @@ exports[`Soaper Full Metal Jacket 1`] = `
 exports[`Soaper last of us s2e3 1`] = `
 [
   {
+    "format": "hls",
     "label": "Soaper",
     "meta": {
       "countryCode": "de",

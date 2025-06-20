@@ -2,9 +2,9 @@ import { ContentType } from 'stremio-addon-sdk';
 import winston from 'winston';
 import { createExtractors, Extractor, ExtractorRegistry } from '../extractor';
 import { StreamResolver } from './StreamResolver';
-import { Source, SourceResult, MeineCloud, MostraGuarda } from '../source';
-import { BlockedReason, CountryCode, UrlResult } from '../types';
-import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyTimeoutsError, TooManyRequestsError } from '../error';
+import { MeineCloud, MostraGuarda, Source, SourceResult } from '../source';
+import { BlockedReason, CountryCode, Format, UrlResult } from '../types';
+import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
 import { ImdbId } from './id';
 import { FetcherMock } from './FetcherMock';
 import { createTestContext } from '../test';
@@ -92,6 +92,7 @@ describe('resolve', () => {
         [
           {
             url: new URL('https://example.com'),
+            format: Format.unknown,
             isExternal: true,
             error: new BlockedError(BlockedReason.cloudflare_challenge, {}),
             label: 'hoster.com',
@@ -102,6 +103,7 @@ describe('resolve', () => {
           },
           {
             url: new URL('https://example.com'),
+            format: Format.unknown,
             isExternal: true,
             error: new BlockedError(BlockedReason.unknown, {}),
             label: 'hoster.com',
@@ -112,6 +114,7 @@ describe('resolve', () => {
           },
           {
             url: new URL('https://example.com'),
+            format: Format.unknown,
             isExternal: true,
             error: new TooManyRequestsError(10),
             label: 'hoster.com',
@@ -122,6 +125,7 @@ describe('resolve', () => {
           },
           {
             url: new URL('https://example.com'),
+            format: Format.unknown,
             isExternal: true,
             error: new TooManyTimeoutsError(),
             label: 'hoster.com',
@@ -132,6 +136,7 @@ describe('resolve', () => {
           },
           {
             url: new URL('https://example2.com'),
+            format: Format.unknown,
             isExternal: true,
             error: new TypeError(),
             label: 'hoster.com',
@@ -142,6 +147,7 @@ describe('resolve', () => {
           },
           {
             url: new URL('https://example2.com'),
+            format: Format.unknown,
             isExternal: true,
             error: new TimeoutError(),
             label: 'hoster.com',
@@ -152,6 +158,7 @@ describe('resolve', () => {
           },
           {
             url: new URL('https://example3.com'),
+            format: Format.unknown,
             isExternal: true,
             error: new QueueIsFullError(),
             label: 'hoster.com',
@@ -162,6 +169,7 @@ describe('resolve', () => {
           },
           {
             url: new URL('https://example4.com'),
+            format: Format.unknown,
             isExternal: true,
             error: new HttpError(500, 'Internal Server Error', { 'x-foo': 'bar' }),
             label: 'hoster.com',

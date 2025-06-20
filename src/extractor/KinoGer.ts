@@ -1,7 +1,7 @@
 import crypto from 'crypto';
 import { Extractor } from './Extractor';
 import { Fetcher, guessFromTitle } from '../utils';
-import { Context, CountryCode, UrlResult } from '../types';
+import { Context, CountryCode, Format, UrlResult } from '../types';
 
 /** @see https://github.com/Gujal00/ResolveURL/blob/master/script.module.resolveurl/lib/resolveurl/plugins/kinoger.py */
 export class KinoGer extends Extractor {
@@ -41,6 +41,7 @@ export class KinoGer extends Extractor {
     return [
       {
         url: new URL(cf),
+        format: Format.hls,
         label: this.label,
         sourceId: `${this.id}_${countryCode}`,
         ttl: this.ttl,

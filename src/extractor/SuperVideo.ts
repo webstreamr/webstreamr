@@ -2,7 +2,7 @@ import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { Extractor } from './Extractor';
 import { extractUrlFromPacked, Fetcher } from '../utils';
-import { Context, CountryCode, UrlResult } from '../types';
+import { Context, CountryCode, Format, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
 export class SuperVideo extends Extractor {
@@ -45,6 +45,7 @@ export class SuperVideo extends Extractor {
     return [
       {
         url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
+        format: Format.hls,
         label: this.label,
         sourceId: `${this.id}_${countryCode}`,
         ttl: this.ttl,

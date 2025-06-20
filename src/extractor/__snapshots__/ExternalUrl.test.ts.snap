@@ -5,6 +5,7 @@ exports[`ExternalUrl 404 - not found 1`] = `[]`;
 exports[`ExternalUrl johnalwayssame.com with title 1`] = `
 [
   {
+    "format": "unknown",
     "isExternal": true,
     "label": "johnalwayssame.com",
     "meta": {
@@ -21,6 +22,7 @@ exports[`ExternalUrl johnalwayssame.com with title 1`] = `
 exports[`ExternalUrl netu.fanstream.us 1`] = `
 [
   {
+    "format": "unknown",
     "isExternal": true,
     "label": "netu.fanstream.us",
     "meta": {

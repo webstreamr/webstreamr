@@ -1,6 +1,6 @@
 import { Extractor } from './Extractor';
 import { Fetcher, guessFromPlaylist } from '../utils';
-import { Context, CountryCode, UrlResult } from '../types';
+import { Context, CountryCode, Format, UrlResult } from '../types';
 
 interface SoaperInfoResponsePartial {
   val: string;
@@ -53,6 +53,7 @@ export class Soaper extends Extractor {
     return [
       {
         url: m3u8Url,
+        format: Format.hls,
         label: this.label,
         sourceId: `${this.id}_${countryCode}`,
         ttl: this.ttl,

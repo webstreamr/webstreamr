@@ -1,7 +1,7 @@
 import { ContentType, Stream } from 'stremio-addon-sdk';
 import winston from 'winston';
 import bytes from 'bytes';
-import { Context, UrlResult } from '../types';
+import { Context, Format, UrlResult } from '../types';
 import { Source } from '../source';
 import {
   BlockedError,
@@ -9,8 +9,8 @@ import {
   NotFoundError,
   QueueIsFullError,
   TimeoutError,
-  TooManyTimeoutsError,
   TooManyRequestsError,
+  TooManyTimeoutsError,
 } from '../error';
 import { flagFromCountryCode } from './language';
 import { envGetAppName } from './env';
@@ -107,6 +107,7 @@ export class StreamResolver {
           title: this.buildTitle(ctx, urlResult),
           behaviorHints: {
             ...(urlResult.sourceId && { bingeGroup: `webstreamr-${urlResult.sourceId}` }),
+            ...((urlResult.format !== Format.mp4 || urlResult.url.protocol !== 'https:') && { notWebReady: true }),
             ...(urlResult.requestHeaders !== undefined && {
               notWebReady: true,
               proxyHeaders: { request: urlResult.requestHeaders },

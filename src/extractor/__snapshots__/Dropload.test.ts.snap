@@ -3,6 +3,7 @@
 exports[`Dropload dropload.io 1`] = `
 [
   {
+    "format": "hls",
     "label": "Dropload",
     "meta": {
       "bytes": 1395864371,

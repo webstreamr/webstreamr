@@ -1,6 +1,6 @@
 import { Extractor } from './Extractor';
 import { Fetcher, showExternalUrls } from '../utils';
-import { Context, CountryCode, UrlResult } from '../types';
+import { Context, CountryCode, Format, UrlResult } from '../types';
 
 export class ExternalUrl extends Extractor {
   public readonly id = 'external';
@@ -32,6 +32,7 @@ export class ExternalUrl extends Extractor {
     return [
       {
         url: url,
+        format: Format.unknown,
         isExternal: true,
         label: `${url.host}`,
         sourceId: `${this.id}_${countryCode}`,

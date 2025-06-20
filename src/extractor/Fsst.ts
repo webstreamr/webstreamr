@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import { Extractor } from './Extractor';
 import { Fetcher } from '../utils';
-import { Context, CountryCode, UrlResult } from '../types';
+import { Context, CountryCode, Format, UrlResult } from '../types';
 
 export class Fsst extends Extractor {
   public readonly id = 'fsst';
@@ -35,6 +35,7 @@ export class Fsst extends Extractor {
 
       return {
         url: new URL(fileHref),
+        format: Format.mp4,
         label: this.label,
         sourceId: `${this.id}_${countryCode}_${index}`,
         meta: {

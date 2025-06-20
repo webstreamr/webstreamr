@@ -5,6 +5,7 @@ exports[`SuperVideo deleted or expired file 1`] = `[]`;
 exports[`SuperVideo embed only 1`] = `
 [
   {
+    "format": "hls",
     "label": "SuperVideo",
     "meta": {
       "countryCode": "it",
@@ -20,6 +21,7 @@ exports[`SuperVideo embed only 1`] = `
 exports[`SuperVideo supervideo.cc /e/ 1`] = `
 [
   {
+    "format": "hls",
     "label": "SuperVideo",
     "meta": {
       "bytes": 1073741824,
@@ -37,6 +39,7 @@ exports[`SuperVideo supervideo.cc /e/ 1`] = `
 exports[`SuperVideo supervideo.tv /embed-/ 1`] = `
 [
   {
+    "format": "hls",
     "label": "SuperVideo",
     "meta": {
       "bytes": 219571814,

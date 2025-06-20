@@ -33,13 +33,21 @@ export interface Meta {
   title?: string;
 }
 
+export enum Format {
+  hls = 'hls',
+  mp4 = 'mp4',
+  unknown = 'unknown',
+}
+
 export interface UrlResult {
   url: URL;
+  format: Format;
   isExternal?: boolean;
   error?: unknown;
   label: string;
   sourceId: string;
   ttl?: number;
   meta: Meta;
+  notWebReady?: boolean;
   requestHeaders?: Record<string, string>;
 }

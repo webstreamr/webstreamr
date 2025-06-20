@@ -3,6 +3,7 @@
 exports[`VidSrc Black Mirror 1`] = `
 [
   {
+    "format": "hls",
     "label": "VidSrc (CloudStream Pro)",
     "meta": {
       "countryCode": "en",
@@ -19,6 +20,7 @@ exports[`VidSrc Black Mirror 1`] = `
 exports[`VidSrc Full Metal Jacket 1`] = `
 [
   {
+    "format": "hls",
     "label": "VidSrc (CloudStream Pro)",
     "meta": {
       "countryCode": "en",

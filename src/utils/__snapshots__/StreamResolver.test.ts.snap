@@ -4,56 +4,72 @@ exports[`resolve adds error info 1`] = `
 {
   "streams": [
     {
-      "behaviorHints": {},
+      "behaviorHints": {
+        "notWebReady": true,
+      },
       "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 ⚠️ Request was blocked.",
     },
     {
-      "behaviorHints": {},
+      "behaviorHints": {
+        "notWebReady": true,
+      },
       "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 ⚠️ Request was blocked.",
     },
     {
-      "behaviorHints": {},
+      "behaviorHints": {
+        "notWebReady": true,
+      },
       "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 🚦 Request was rate-limited. Please try again later or consider self-hosting.",
     },
     {
-      "behaviorHints": {},
+      "behaviorHints": {
+        "notWebReady": true,
+      },
       "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 🚦 Too many recent timeouts. Please try again later.",
     },
     {
-      "behaviorHints": {},
+      "behaviorHints": {
+        "notWebReady": true,
+      },
       "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 ❌ Request failed. Request-id: test.",
     },
     {
-      "behaviorHints": {},
+      "behaviorHints": {
+        "notWebReady": true,
+      },
       "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 🐢 Request timed out.",
     },
     {
-      "behaviorHints": {},
+      "behaviorHints": {
+        "notWebReady": true,
+      },
       "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 ⏳ Request queue is full. Please try again later or consider self-hosting.",
     },
     {
-      "behaviorHints": {},
+      "behaviorHints": {
+        "notWebReady": true,
+      },
       "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
@@ -67,56 +83,72 @@ exports[`resolve adds error info 2`] = `
 {
   "streams": [
     {
-      "behaviorHints": {},
+      "behaviorHints": {
+        "notWebReady": true,
+      },
       "externalUrl": "https://example.com/",
       "name": "WebStreamr 🇩🇪 ⚠️ external",
       "title": "🔗 hoster.com
 ⚠️ Request was blocked.",
     },
     {
-      "behaviorHints": {},
+      "behaviorHints": {
+        "notWebReady": true,
+      },
       "externalUrl": "https://example.com/",
       "name": "WebStreamr 🇩🇪 ⚠️ external",
       "title": "🔗 hoster.com
 ⚠️ Request was blocked.",
     },
     {
-      "behaviorHints": {},
+      "behaviorHints": {
+        "notWebReady": true,
+      },
       "externalUrl": "https://example.com/",
       "name": "WebStreamr 🇩🇪 ⚠️ external",
       "title": "🔗 hoster.com
 🚦 Request was rate-limited. Please try again later or consider self-hosting.",
     },
     {
-      "behaviorHints": {},
+      "behaviorHints": {
+        "notWebReady": true,
+      },
       "externalUrl": "https://example.com/",
       "name": "WebStreamr 🇩🇪 ⚠️ external",
       "title": "🔗 hoster.com
 🚦 Too many recent timeouts. Please try again later.",
     },
     {
-      "behaviorHints": {},
+      "behaviorHints": {
+        "notWebReady": true,
+      },
       "externalUrl": "https://example2.com/",
       "name": "WebStreamr 🇩🇪 ⚠️ external",
       "title": "🔗 hoster.com
 ❌ Request failed. Request-id: test.",
     },
     {
-      "behaviorHints": {},
+      "behaviorHints": {
+        "notWebReady": true,
+      },
       "externalUrl": "https://example2.com/",
       "name": "WebStreamr 🇩🇪 ⚠️ external",
       "title": "🔗 hoster.com
 🐢 Request timed out.",
     },
     {
-      "behaviorHints": {},
+      "behaviorHints": {
+        "notWebReady": true,
+      },
       "externalUrl": "https://example3.com/",
       "name": "WebStreamr 🇩🇪 ⚠️ external",
       "title": "🔗 hoster.com
 ⏳ Request queue is full. Please try again later or consider self-hosting.",
     },
     {
-      "behaviorHints": {},
+      "behaviorHints": {
+        "notWebReady": true,
+      },
       "externalUrl": "https://example4.com/",
       "name": "WebStreamr 🇩🇪 ⚠️ external",
       "title": "🔗 hoster.com
@@ -164,6 +196,7 @@ exports[`resolve returns sorted results 1`] = `
   {
     "behaviorHints": {
       "bingeGroup": "webstreamr-dropload_de",
+      "notWebReady": true,
       "videoSize": 1395864371,
     },
     "name": "WebStreamr 🇩🇪 1080p",
@@ -174,6 +207,7 @@ exports[`resolve returns sorted results 1`] = `
   {
     "behaviorHints": {
       "bingeGroup": "webstreamr-dropload_it",
+      "notWebReady": true,
       "videoSize": 1181116006,
     },
     "name": "WebStreamr 🇮🇹 720p",
@@ -184,6 +218,7 @@ exports[`resolve returns sorted results 1`] = `
   {
     "behaviorHints": {
       "bingeGroup": "webstreamr-supervideo_it",
+      "notWebReady": true,
       "videoSize": 1181116006,
     },
     "name": "WebStreamr 🇮🇹 720p",
@@ -194,6 +229,7 @@ exports[`resolve returns sorted results 1`] = `
   {
     "behaviorHints": {
       "bingeGroup": "webstreamr-supervideo_de",
+      "notWebReady": true,
       "videoSize": 1073741824,
     },
     "name": "WebStreamr 🇩🇪 720p",
@@ -240,6 +276,7 @@ exports[`resolve returns sorted results 2`] = `
   {
     "behaviorHints": {
       "bingeGroup": "webstreamr-dropload_de",
+      "notWebReady": true,
       "videoSize": 1395864371,
     },
     "name": "WebStreamr 🇩🇪 1080p",
@@ -250,6 +287,7 @@ exports[`resolve returns sorted results 2`] = `
   {
     "behaviorHints": {
       "bingeGroup": "webstreamr-dropload_it",
+      "notWebReady": true,
       "videoSize": 1181116006,
     },
     "name": "WebStreamr 🇮🇹 720p",
@@ -260,6 +298,7 @@ exports[`resolve returns sorted results 2`] = `
   {
     "behaviorHints": {
       "bingeGroup": "webstreamr-supervideo_it",
+      "notWebReady": true,
       "videoSize": 1181116006,
     },
     "name": "WebStreamr 🇮🇹 720p",
@@ -270,6 +309,7 @@ exports[`resolve returns sorted results 2`] = `
   {
     "behaviorHints": {
       "bingeGroup": "webstreamr-supervideo_de",
+      "notWebReady": true,
       "videoSize": 1073741824,
     },
     "name": "WebStreamr 🇩🇪 720p",
@@ -311,6 +351,7 @@ exports[`resolve returns sorted results 2`] = `
   {
     "behaviorHints": {
       "bingeGroup": "webstreamr-external_de",
+      "notWebReady": true,
     },
     "externalUrl": "https://mixdrop.ag/e/3nzwveprim63or6",
     "name": "WebStreamr 🇩🇪 ⚠️ external",
@@ -319,6 +360,7 @@ exports[`resolve returns sorted results 2`] = `
   {
     "behaviorHints": {
       "bingeGroup": "webstreamr-external_it",
+      "notWebReady": true,
     },
     "externalUrl": "https://mixdrop.ag/e/vk196d6xfzwwo1",
     "name": "WebStreamr 🇮🇹 ⚠️ external",

@@ -1,4 +1,4 @@
-import { Context, CountryCode, UrlResult } from '../types';
+import { Context, CountryCode, Format, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
 export abstract class Extractor {
@@ -27,6 +27,7 @@ export abstract class Extractor {
       return [
         {
           url,
+          format: Format.unknown,
           isExternal: true,
           error,
           label: this.label,

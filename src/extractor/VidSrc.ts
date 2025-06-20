@@ -2,7 +2,7 @@ import * as cheerio from 'cheerio';
 import slugify from 'slugify';
 import { Extractor } from './Extractor';
 import { Fetcher, guessFromPlaylist } from '../utils';
-import { Context, CountryCode, UrlResult } from '../types';
+import { Context, CountryCode, Format, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
 export class VidSrc extends Extractor {
@@ -50,6 +50,7 @@ export class VidSrc extends Extractor {
 
           return {
             url: m3u8Url,
+            format: Format.hls,
             label: `${this.label} (${serverName})`,
             sourceId: `${this.id}_${slugify(serverName)}_${countryCode}`,
             ttl: this.ttl,

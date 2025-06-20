@@ -2,7 +2,7 @@ import randomstring from 'randomstring';
 import * as cheerio from 'cheerio';
 import { Extractor } from './Extractor';
 import { Fetcher, guessFromTitle } from '../utils';
-import { Context, CountryCode, UrlResult } from '../types';
+import { Context, CountryCode, Format, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
 export class DoodStream extends Extractor {
@@ -52,6 +52,7 @@ export class DoodStream extends Extractor {
     return [
       {
         url: mp4Url,
+        format: Format.mp4,
         label: this.label,
         sourceId: `${this.id}_${countryCode}`,
         ttl: this.ttl,
