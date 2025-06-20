@@ -5,7 +5,7 @@ exports[`Mixdrop deleted or expired file 1`] = `[]`;
 exports[`Mixdrop mixdrop.my /e/ 1`] = `
 [
   {
-    "label": "Mixdrop",
+    "label": "Mixdrop (via MediaFlow Proxy)",
     "meta": {
       "bytes": 1059806248,
       "countryCode": "de",

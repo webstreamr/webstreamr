@@ -8,7 +8,7 @@ import { NotFoundError } from '../error';
 export class Mixdrop extends Extractor {
   public readonly id = 'mixdrop';
 
-  public readonly label = 'Mixdrop';
+  public readonly label = 'Mixdrop (via MediaFlow Proxy)';
 
   public override readonly ttl = 0;
 
