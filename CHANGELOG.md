@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.30.0](https://github.com/webstreamr/webstreamr/compare/v0.29.3...v0.30.0) (2025-06-21)
+
+
+### Miscellaneous Chores
+
+* **extractor:** add MediaFlow Proxy info to Mixdrop label ([d641fa1](https://github.com/webstreamr/webstreamr/commit/d641fa1c2d19c444d21bbd17162c632daef2026e))
+
+
+### Features
+
+* **extractor:** implement Mixdrop via MediaFlow Proxy ([7c60042](https://github.com/webstreamr/webstreamr/commit/7c600427e6161253bbb3d3d144bd8fca23b6cd1d))
+* **fetcher:** add proxy support ([f90a53d](https://github.com/webstreamr/webstreamr/commit/f90a53da680f73c08216ebbe01cc5c2aa635d17f))
+
+
+### Bug Fixes
+
+* **extractor:** introduce format and set notWebReady accordingly ([fd1145c](https://github.com/webstreamr/webstreamr/commit/fd1145c16223883fb23c9172b7ae3404552e4d33))
+
 ## [0.29.3](https://github.com/webstreamr/webstreamr/compare/v0.29.2...v0.29.3) (2025-06-19)
 
 
