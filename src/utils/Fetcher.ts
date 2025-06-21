@@ -1,3 +1,5 @@
+import { Dispatcher, ProxyAgent } from 'undici';
+import { socksDispatcher } from 'fetch-socks';
 import CachePolicy from 'http-cache-semantics';
 import TTLCache from '@isaacs/ttlcache';
 import winston from 'winston';
@@ -57,6 +59,7 @@ export class Fetcher {
   private readonly TIMEOUT_CACHE_TTL = 3600000; // 1h
 
   private readonly logger: winston.Logger;
+  private readonly dispatcher: Dispatcher | undefined;
 
   private readonly httpCache = new TTLCache<string, HttpCacheItem>();
   private readonly rateLimitedCache = new TTLCache<string, undefined>();
@@ -69,6 +72,15 @@ export class Fetcher {
 
   public constructor(logger: winston.Logger) {
     this.logger = logger;
+
+    if (process.env['ALL_PROXY']) {
+      const proxyUrl = new URL(process.env['ALL_PROXY']);
+      if (proxyUrl.protocol === 'socks5:') {
+        this.dispatcher = socksDispatcher({ type: 5, host: proxyUrl.hostname, port: parseInt(proxyUrl.port) });
+      } else {
+        this.dispatcher = new ProxyAgent(proxyUrl.href);
+      }
+    }
   }
 
   public async text(ctx: Context, url: URL, init?: CustomRequestInit): Promise<string> {
@@ -242,7 +254,7 @@ export class Fetcher {
 
     let response;
     try {
-      response = await fetch(url, { ...init, keepalive: true, signal: controller.signal });
+      response = await fetch(url, { ...init, dispatcher: this.dispatcher, keepalive: true, signal: controller.signal } as RequestInit);
     } catch (error) {
       if (error instanceof DOMException && error.name === 'AbortError') {
         await this.increaseTimeoutsCount(url);

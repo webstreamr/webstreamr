@@ -1,3 +1,4 @@
+import { Agent, ProxyAgent } from 'undici';
 import winston from 'winston';
 import fetchMock from 'fetch-mock';
 import { Fetcher } from './Fetcher';
@@ -35,6 +36,30 @@ describe('fetch', () => {
         'X-Real-IP': '0.0.0.0',
       },
     });
+  });
+
+  test('supports socks5 proxy', async () => {
+    process.env['ALL_PROXY'] = 'socks5://127.0.0.1:1080';
+    const socks5Fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
+    delete process.env['MANIFEST_NAME'];
+    fetchMock.get('https://socks5-proxy-url.test/', 'some text');
+
+    await socks5Fetcher.text(ctx, new URL('https://socks5-proxy-url.test/'));
+
+    // @ts-expect-error non-official property
+    expect(fetchMock.callHistory.callLogs[0]?.args[1]['dispatcher']).toBeInstanceOf(Agent);
+  });
+
+  test('supports http proxy', async () => {
+    process.env['ALL_PROXY'] = 'https://127.0.0.1:8080';
+    const socks5Fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
+    delete process.env['MANIFEST_NAME'];
+    fetchMock.get('https://http-proxy-url.test/', 'some text');
+
+    await socks5Fetcher.text(ctx, new URL('https://http-proxy-url.test/'));
+
+    // @ts-expect-error non-official property
+    expect(fetchMock.callHistory.callLogs[0]?.args[1]['dispatcher']).toBeInstanceOf(ProxyAgent);
   });
 
   test('textPost ', async () => {
