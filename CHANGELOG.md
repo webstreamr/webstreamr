@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.30.1](https://github.com/webstreamr/webstreamr/compare/v0.30.0...v0.30.1) (2025-06-23)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency typescript-eslint to v8.35.0 ([#164](https://github.com/webstreamr/webstreamr/issues/164)) ([5656abb](https://github.com/webstreamr/webstreamr/commit/5656abb26c65e709690f8f7f6431c107f567bbd6))
+
+
+### Bug Fixes
+
+* **source:** do not mix es/mx in Cuevana ([bd67664](https://github.com/webstreamr/webstreamr/commit/bd676648276b44acf109e2a57660f67ba7f94cf1))
+
 ## [0.30.0](https://github.com/webstreamr/webstreamr/compare/v0.29.3...v0.30.0) (2025-06-23)
 
 
