@@ -35,4 +35,14 @@ describe('Cuevana', () => {
     const streams = await handler.handle(ctx, 'movie', new TmdbId(559969, undefined, undefined));
     expect(streams).toMatchSnapshot();
   });
+
+  test('does not return mx content for es', async () => {
+    const streams = await handler.handle(createTestContext({ es: 'on' }), 'movie', new TmdbId(559969, undefined, undefined));
+    expect(streams).toMatchSnapshot();
+  });
+
+  test('does not return es content for mx', async () => {
+    const streams = await handler.handle(createTestContext({ mx: 'on' }), 'movie', new TmdbId(559969, undefined, undefined));
+    expect(streams).toMatchSnapshot();
+  });
 });

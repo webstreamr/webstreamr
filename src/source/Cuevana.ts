@@ -51,11 +51,18 @@ export class Cuevana implements Source {
 
     const urlResults = $('.open_submenu')
       .map((_i, el) => {
-        if ($(el).text().includes('Español Latino') && CountryCode.mx in ctx.config) {
+        const elText = $(el).text();
+        if (!elText.includes('Español')) {
+          return [];
+        }
+
+        const isLatino = elText.includes('Latino');
+
+        if (isLatino && CountryCode.mx in ctx.config) {
           return $('[data-tr], [data-video]', el)
             .map((_i, el) => ({ countryCode: CountryCode.mx, title, url: new URL($(el).attr('data-tr') ?? $(el).attr('data-video') as string) }))
             .toArray();
-        } else if ($(el).text().includes('Español') && CountryCode.es in ctx.config) {
+        } else if (!isLatino && CountryCode.es in ctx.config) {
           return $('[data-tr], [data-video]', el)
             .map((_i, el) => ({ countryCode: CountryCode.es, title, url: new URL($(el).attr('data-tr') ?? $(el).attr('data-video') as string) }))
             .toArray();
