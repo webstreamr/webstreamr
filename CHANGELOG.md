@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.30.0](https://github.com/webstreamr/webstreamr/compare/v0.29.3...v0.30.0) (2025-06-23)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @stylistic/eslint-plugin to v5 ([#160](https://github.com/webstreamr/webstreamr/issues/160)) ([74e9653](https://github.com/webstreamr/webstreamr/commit/74e965399ab0da69bce91d72cf456675f54d1e9c))
+* **deps:** update dependency @types/node to v22.15.32 ([#159](https://github.com/webstreamr/webstreamr/issues/159)) ([fca2841](https://github.com/webstreamr/webstreamr/commit/fca2841ce01b3e5b34adaf2ccf4c82137ec777cd))
+* **extractor:** add MediaFlow Proxy info to Mixdrop label ([d641fa1](https://github.com/webstreamr/webstreamr/commit/d641fa1c2d19c444d21bbd17162c632daef2026e))
+
+
+### Features
+
+* **extractor:** implement Mixdrop via MediaFlow Proxy ([7c60042](https://github.com/webstreamr/webstreamr/commit/7c600427e6161253bbb3d3d144bd8fca23b6cd1d))
+* **extractor:** implement Uqload via MediaFlow Proxy ([ab588a1](https://github.com/webstreamr/webstreamr/commit/ab588a1501658f2c3f93fc93aaa358bc2644ba01))
+* **fetcher:** add proxy support ([f90a53d](https://github.com/webstreamr/webstreamr/commit/f90a53da680f73c08216ebbe01cc5c2aa635d17f))
+
+
+### Bug Fixes
+
+* **extractor:** introduce format and set notWebReady accordingly ([fd1145c](https://github.com/webstreamr/webstreamr/commit/fd1145c16223883fb23c9172b7ae3404552e4d33))
+
 ## [0.29.3](https://github.com/webstreamr/webstreamr/compare/v0.29.2...v0.29.3) (2025-06-19)
 
 
