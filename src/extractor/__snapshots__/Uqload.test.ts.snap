@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Uqload uqload.net / 1`] = `
+[
+  {
+    "format": "mp4",
+    "label": "Uqload (via MediaFlow Proxy)",
+    "meta": {
+      "countryCode": "fr",
+      "height": 360,
+      "title": "Black Mirror S07E06 MULTI VFF 1080p WEBrip EAC3 5 1 x265-TyHD",
+    },
+    "sourceId": "uqload_fr",
+    "ttl": 0,
+    "url": "https://mediaflow-proxy.test/extractor/video?host=Uqload&redirect_stream=true&api_password=asdfg&d=https%3A%2F%2Fuqload.net%2Fz0xbr87oz637.html",
+  },
+]
+`;
+
+exports[`Uqload uqload.net /embed- 1`] = `
+[
+  {
+    "format": "mp4",
+    "label": "Uqload (via MediaFlow Proxy)",
+    "meta": {
+      "countryCode": "fr",
+      "height": 360,
+      "title": "Black Mirror S07E06 MULTI VFF 1080p WEBrip EAC3 5 1 x265-TyHD",
+    },
+    "sourceId": "uqload_fr",
+    "ttl": 0,
+    "url": "https://mediaflow-proxy.test/extractor/video?host=Uqload&redirect_stream=true&api_password=asdfg&d=https%3A%2F%2Fuqload.net%2Fz0xbr87oz637.html",
+  },
+]
+`;
