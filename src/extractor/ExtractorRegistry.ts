@@ -21,10 +21,11 @@ export class ExtractorRegistry {
     }
 
     const normalizedUrl = extractor.normalize(url);
+    const cacheKey = `${extractor.id}_${normalizedUrl}`;
 
-    let urlResults = this.urlResultCache.get(normalizedUrl.href) ?? [];
-    if (this.urlResultCache.has(normalizedUrl.href)) {
-      return urlResults.map(urlResult => ({ ...urlResult, ttl: this.urlResultCache.getRemainingTTL(normalizedUrl.href) }));
+    let urlResults = this.urlResultCache.get(cacheKey) ?? [];
+    if (this.urlResultCache.has(cacheKey)) {
+      return urlResults.map(urlResult => ({ ...urlResult, ttl: this.urlResultCache.getRemainingTTL(cacheKey) }));
     }
 
     this.logger.info(`Extract stream URL using ${extractor.id} extractor from ${url}`, ctx);
@@ -32,7 +33,7 @@ export class ExtractorRegistry {
     urlResults = await extractor.extract(ctx, normalizedUrl, countryCode, title);
 
     if (!urlResults.some(urlResult => urlResult.error) && extractor.ttl) {
-      this.urlResultCache.set(normalizedUrl.href, urlResults, { ttl: extractor.ttl });
+      this.urlResultCache.set(cacheKey, urlResults, { ttl: extractor.ttl });
     }
 
     return urlResults;
