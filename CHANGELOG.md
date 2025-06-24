@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.31.2](https://github.com/webstreamr/webstreamr/compare/v0.31.1...v0.31.2) (2025-06-24)
+
+
+### Miscellaneous Chores
+
+* empty commit to trigger release ([5fffd0a](https://github.com/webstreamr/webstreamr/commit/5fffd0a2d3479e9ed0fdfe605a8577847b99bc69))
+
 ## [0.31.1](https://github.com/webstreamr/webstreamr/compare/v0.31.0...v0.31.1) (2025-06-24)
 
 
