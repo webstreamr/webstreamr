@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.31.1](https://github.com/webstreamr/webstreamr/compare/v0.31.0...v0.31.1) (2025-06-24)
+
+
+### Bug Fixes
+
+* **extractor:** avoid cache clash between context dependent extractors ([287b031](https://github.com/webstreamr/webstreamr/commit/287b031a129e6ba6b4ba6fd1352440694a04eee0))
+
 ## [0.31.0](https://github.com/webstreamr/webstreamr/compare/v0.30.2...v0.31.0) (2025-06-24)
 
 
