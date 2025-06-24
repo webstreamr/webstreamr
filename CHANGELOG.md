@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.31.1](https://github.com/webstreamr/webstreamr/compare/v0.31.0...v0.31.1) (2025-06-24)
+
+
+### Bug Fixes
+
+* typo/grammar mistake in includeExternalUrls config option ([11b5aec](https://github.com/webstreamr/webstreamr/commit/11b5aec2c097b60b77837498e576cc98de21c43d))
+
 ## [0.31.0](https://github.com/webstreamr/webstreamr/compare/v0.30.2...v0.31.0) (2025-06-24)
 
 
