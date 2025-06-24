@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import { Extractor } from './Extractor';
-import { buildMediaFlowProxyUrl, Fetcher, hasMediaFlowProxy } from '../utils';
+import { buildMediaFlowProxyExtractorRedirectUrl, Fetcher, hasMediaFlowProxy } from '../utils';
 import { Context, CountryCode, Format, UrlResult } from '../types';
 
 export class Uqload extends Extractor {
@@ -36,7 +36,7 @@ export class Uqload extends Extractor {
 
     return [
       {
-        url: buildMediaFlowProxyUrl(ctx.config, 'Uqload', url),
+        url: buildMediaFlowProxyExtractorRedirectUrl(ctx.config, 'Uqload', url),
         format: Format.mp4,
         label: this.label,
         sourceId: `${this.id}_${countryCode}`,

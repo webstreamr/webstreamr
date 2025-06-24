@@ -8,4 +8,5 @@ export * from './height';
 export * from './id';
 export * from './language';
 export * from './manifest';
+export * from './media-flow-proxy';
 export * from './tmdb';
