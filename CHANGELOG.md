@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.30.2](https://github.com/webstreamr/webstreamr/compare/v0.30.1...v0.30.2) (2025-06-24)
+
+
+### Bug Fixes
+
+* **source:** update Frembed domain ([24601fe](https://github.com/webstreamr/webstreamr/commit/24601fee3e476e10e858ea20c2681801459d0155))
+
+
+### Code Refactoring
+
+* extract Media Flow Proxy functions ([b2eb16f](https://github.com/webstreamr/webstreamr/commit/b2eb16fc820840b57c2026c7ec3e54f429e860dd))
+
 ## [0.30.1](https://github.com/webstreamr/webstreamr/compare/v0.30.0...v0.30.1) (2025-06-23)
 
 
