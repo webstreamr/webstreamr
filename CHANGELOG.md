@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.31.0](https://github.com/webstreamr/webstreamr/compare/v0.30.2...v0.31.0) (2025-06-24)
+
+
+### Features
+
+* **extractor:** implement VixSrc via MediaFlow Proxy ([f12e3c5](https://github.com/webstreamr/webstreamr/commit/f12e3c5bd823432faa500a76cb6c2c4431bd6f7f))
+* pre-load ElfHosted MediaFlow Proxy config URL ([9e22420](https://github.com/webstreamr/webstreamr/commit/9e2242093c32c6e6537e32e52fae7f7f97996f17))
+
+
+### Bug Fixes
+
+* support password-less MediaFlow Proxy ([39dec26](https://github.com/webstreamr/webstreamr/commit/39dec2645007be92e99872c3efe60573b22908aa))
+* typo/grammar mistake in includeExternalUrls config option ([412e89b](https://github.com/webstreamr/webstreamr/commit/412e89b69048e80e7eefacfc8265a626417e576b))
+
+
+### Code Refactoring
+
+* pass Context instead of Config to MFP helper ([7ea5722](https://github.com/webstreamr/webstreamr/commit/7ea57222d95915478cd1c2713c3f9ef27ea24a0f))
+
 ## [0.30.2](https://github.com/webstreamr/webstreamr/compare/v0.30.1...v0.30.2) (2025-06-24)
 
 
