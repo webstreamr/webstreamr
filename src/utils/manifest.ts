@@ -53,7 +53,7 @@ export const buildManifest = (sources: Source[], config: Config): ManifestWithCo
   manifest.config.push({
     key: 'includeExternalUrls',
     type: 'checkbox',
-    title: 'Include external URLs from results',
+    title: 'Include external URLs in results',
     ...('includeExternalUrls' in config && { default: 'checked' }),
   });
 

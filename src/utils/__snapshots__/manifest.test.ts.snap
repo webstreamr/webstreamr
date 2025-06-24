@@ -5,7 +5,7 @@ exports[`buildManifest has checked includeExternalUrls 1`] = `
   {
     "default": "checked",
     "key": "includeExternalUrls",
-    "title": "Include external URLs from results",
+    "title": "Include external URLs in results",
     "type": "checkbox",
   },
   {
@@ -44,7 +44,7 @@ exports[`buildManifest has checked source with appropriate config 1`] = `
   {
     "default": "checked",
     "key": "includeExternalUrls",
-    "title": "Include external URLs from results",
+    "title": "Include external URLs in results",
     "type": "checkbox",
   },
   {
@@ -81,7 +81,7 @@ exports[`buildManifest has unchecked source without a config 1`] = `
   },
   {
     "key": "includeExternalUrls",
-    "title": "Include external URLs from results",
+    "title": "Include external URLs in results",
     "type": "checkbox",
   },
   {
@@ -103,7 +103,7 @@ exports[`buildManifest includeExternalUrls is unchecked by default 1`] = `
 [
   {
     "key": "includeExternalUrls",
-    "title": "Include external URLs from results",
+    "title": "Include external URLs in results",
     "type": "checkbox",
   },
   {
