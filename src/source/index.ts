@@ -10,4 +10,5 @@ export * from './Soaper';
 export * from './StreamKiste';
 export * from './VerHdLink';
 export * from './VidSrc';
+export * from './VixSrc';
 export * from './types';

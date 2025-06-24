@@ -10,6 +10,7 @@ import { Soaper } from './Soaper';
 import { SuperVideo } from './SuperVideo';
 import { Uqload } from './Uqload';
 import { VidSrc } from './VidSrc';
+import { VixSrc } from './VixSrc';
 
 export * from './Extractor';
 export * from './ExtractorRegistry';
@@ -24,5 +25,6 @@ export const createExtractors = (fetcher: Fetcher): Extractor[] => [
   new Soaper(fetcher),
   new Uqload(fetcher),
   new VidSrc(fetcher),
+  new VixSrc(fetcher),
   new ExternalUrl(fetcher), // fallback extractor which must come last
 ];
