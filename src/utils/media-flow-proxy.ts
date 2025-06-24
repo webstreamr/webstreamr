@@ -8,7 +8,7 @@ interface ExtractResult {
   query_params: Record<string, string>;
 }
 
-export const supportsMediaFlowProxy = (ctx: Context): boolean => !!(ctx.config['mediaFlowProxyUrl'] && ctx.config['mediaFlowProxyPassword']);
+export const supportsMediaFlowProxy = (ctx: Context): boolean => !!ctx.config['mediaFlowProxyUrl'];
 
 const buildMediaFlowProxyExtractorUrl = (ctx: Context, host: string, url: URL): URL => {
   const mediaFlowProxyUrl = new URL(`${ctx.config.mediaFlowProxyUrl}/extractor/video`);
