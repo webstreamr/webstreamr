@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import { Extractor } from './Extractor';
-import { buildMediaFlowProxyExtractorRedirectUrl, Fetcher, hasMediaFlowProxy } from '../utils';
+import { buildMediaFlowProxyExtractorRedirectUrl, Fetcher, supportsMediaFlowProxy } from '../utils';
 import { Context, CountryCode, Format, UrlResult } from '../types';
 
 export class Uqload extends Extractor {
@@ -19,7 +19,7 @@ export class Uqload extends Extractor {
   }
 
   public supports(ctx: Context, url: URL): boolean {
-    return null !== url.host.match(/uqload/) && hasMediaFlowProxy(ctx.config);
+    return null !== url.host.match(/uqload/) && supportsMediaFlowProxy(ctx);
   }
 
   public override normalize(url: URL): URL {
@@ -36,7 +36,7 @@ export class Uqload extends Extractor {
 
     return [
       {
-        url: buildMediaFlowProxyExtractorRedirectUrl(ctx.config, 'Uqload', url),
+        url: buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Uqload', url),
         format: Format.mp4,
         label: this.label,
         sourceId: `${this.id}_${countryCode}`,

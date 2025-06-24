@@ -1,7 +1,7 @@
 import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { Extractor } from './Extractor';
-import { buildMediaFlowProxyExtractorRedirectUrl, Fetcher, hasMediaFlowProxy } from '../utils';
+import { buildMediaFlowProxyExtractorRedirectUrl, Fetcher, supportsMediaFlowProxy } from '../utils';
 import { Context, CountryCode, Format, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
@@ -21,7 +21,7 @@ export class Mixdrop extends Extractor {
   }
 
   public supports(ctx: Context, url: URL): boolean {
-    return null !== url.host.match(/mixdrop/) && hasMediaFlowProxy(ctx.config);
+    return null !== url.host.match(/mixdrop/) && supportsMediaFlowProxy(ctx);
   }
 
   protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
@@ -39,7 +39,7 @@ export class Mixdrop extends Extractor {
 
     return [
       {
-        url: buildMediaFlowProxyExtractorRedirectUrl(ctx.config, 'Mixdrop', url),
+        url: buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Mixdrop', url),
         format: Format.mp4,
         label: this.label,
         sourceId: `${this.id}_${countryCode}`,
