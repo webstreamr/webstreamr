@@ -8,6 +8,8 @@ export class Fsst extends Extractor {
 
   public readonly label = 'Fsst';
 
+  public override readonly ttl = 0;
+
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
