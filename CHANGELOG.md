@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.32.1](https://github.com/webstreamr/webstreamr/compare/v0.32.0...v0.32.1) (2025-06-25)
+
+
+### Bug Fixes
+
+* **extractor:** do not cache session-scoped Fsst ([ec037d7](https://github.com/webstreamr/webstreamr/commit/ec037d7c90e9b4a34187515681b7416eef0fa980))
+* **fetcher:** remove 200 minimum cache ([80e4f4e](https://github.com/webstreamr/webstreamr/commit/80e4f4edc41351b9c92da4bc22e54a0c000947dd))
+
 ## [0.32.0](https://github.com/webstreamr/webstreamr/compare/v0.31.2...v0.32.0) (2025-06-25)
 
 
