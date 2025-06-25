@@ -1,5 +1,30 @@
 # Changelog
 
+## [0.32.0](https://github.com/webstreamr/webstreamr/compare/v0.31.2...v0.32.0) (2025-06-25)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency jest to v30.0.3 ([#174](https://github.com/webstreamr/webstreamr/issues/174)) ([2ed2ea3](https://github.com/webstreamr/webstreamr/commit/2ed2ea372a1602360a4e49a22e79c8795ff853ca))
+* **deps:** update node.js to v22.17.0 ([#178](https://github.com/webstreamr/webstreamr/issues/178)) ([28123ca](https://github.com/webstreamr/webstreamr/commit/28123cab00433a0c866118be6b1a34bf6bca4ebb))
+* handle invalid MediaFlow Proxy password better ([e895077](https://github.com/webstreamr/webstreamr/commit/e895077a7bf8d7c4a3f4417c0bae95428461ad07))
+
+
+### Features
+
+* **extractor:** support multi-language in VixSrc ([c0fc6ff](https://github.com/webstreamr/webstreamr/commit/c0fc6ff7ea9d1885a36b572cd4811c7e259fc4dd))
+* make VixSrc a default multi-language source ([35e049f](https://github.com/webstreamr/webstreamr/commit/35e049f577e05ae58846b63228159212adb5734e))
+
+
+### Bug Fixes
+
+* build MediaFlow Proxy URL without concatenation ([3ac1063](https://github.com/webstreamr/webstreamr/commit/3ac1063c9bd78a0c877f776063ba525377a99de7))
+
+
+### Code Refactoring
+
+* add support for multi-language extractor results ([91d5e9d](https://github.com/webstreamr/webstreamr/commit/91d5e9dd366af6aa693109ff2e0009d7d903cab1))
+
 ## [0.31.2](https://github.com/webstreamr/webstreamr/compare/v0.31.1...v0.31.2) (2025-06-24)
 
 
