@@ -1,6 +1,12 @@
 import bytes from 'bytes';
 import { Extractor } from './Extractor';
-import { Fetcher, buildMediaFlowProxyExtractorStreamUrl, supportsMediaFlowProxy } from '../utils';
+import {
+  buildMediaFlowProxyExtractorStreamUrl,
+  Fetcher,
+  getCountryCodes,
+  iso639FromCountryCode,
+  supportsMediaFlowProxy,
+} from '../utils';
 import { Context, CountryCode, Format, UrlResult } from '../types';
 
 export class VixSrc extends Extractor {
@@ -29,15 +35,18 @@ export class VixSrc extends Extractor {
     const sizeMatch = html.match(/"size":(\d+)/);
     const qualityMatch = html.match(/"quality":(\d+)/);
 
+    const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'VixCloud', url);
+    const countryCodes = await this.determineCountryCodesFromPlaylist(ctx, playlistUrl);
+
     return [
       {
-        url: await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'VixCloud', url),
+        url: playlistUrl,
         format: Format.hls,
         label: this.label,
         sourceId: `${this.id}_${countryCode}`,
         ttl: this.ttl,
         meta: {
-          countryCodes: [countryCode],
+          countryCodes,
           ...(filenameMatch && { title: filenameMatch[1] }),
           ...(sizeMatch && { bytes: bytes.parse(`${sizeMatch[1]} kb`) as number }),
           ...(qualityMatch && { height: parseInt(qualityMatch[1] as string) }),
@@ -45,4 +54,20 @@ export class VixSrc extends Extractor {
       },
     ];
   };
+
+  private async determineCountryCodesFromPlaylist(ctx: Context, playlistUrl: URL): Promise<CountryCode[]> {
+    const playlist = await this.fetcher.text(ctx, playlistUrl);
+
+    const countryCodes: CountryCode[] = [CountryCode.it];
+
+    getCountryCodes(ctx.config).forEach((countryCode) => {
+      const iso639 = iso639FromCountryCode(countryCode);
+
+      if (!countryCodes.includes(countryCode) && (new RegExp(`#EXT-X-MEDIA:TYPE=AUDIO.*LANGUAGE="${iso639}"`)).test(playlist)) {
+        countryCodes.push(countryCode);
+      }
+    });
+
+    return countryCodes;
+  }
 }

@@ -8,7 +8,7 @@ import { createTestContext } from '../test';
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 const extractorRegistry = new ExtractorRegistry(logger, [new VixSrc(new FetcherMock(`${__dirname}/__fixtures__/VixSrc`))]);
 
-const ctx = createTestContext({ mediaFlowProxyUrl: 'https://mediaflow-proxy.test', mediaFlowProxyPassword: 'asdfg' });
+const ctx = createTestContext({ mediaFlowProxyUrl: 'https://mediaflow-proxy.test', mediaFlowProxyPassword: 'asdfg', de: 'on', en: 'on', it: 'on' });
 
 describe('VixSrc', () => {
   test('Full Metal Jacket', async () => {

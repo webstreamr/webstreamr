@@ -9,6 +9,7 @@ exports[`VixSrc Black Mirror 1`] = `
       "bytes": 2389338112,
       "countryCodes": [
         "it",
+        "en",
       ],
       "height": 1080,
       "title": "Black.Mirror.S04E02.Arkangel.1080p.NF.WEB-DL.ITA.ENG.DDP5.1.H.264.mkv",
@@ -29,6 +30,7 @@ exports[`VixSrc Full Metal Jacket 1`] = `
       "bytes": 8544718848,
       "countryCodes": [
         "it",
+        "en",
       ],
       "height": 1080,
       "title": "Full.metal.jacket.1987.1080p.x264.AC3.ITA.AAC.ENG.Subs.mkv",

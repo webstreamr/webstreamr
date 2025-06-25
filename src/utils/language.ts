@@ -1,12 +1,12 @@
 import { CountryCode } from '../types';
 
-const countryCodeMap: Record<CountryCode, { language: string; flag: string }> = {
-  de: { language: 'German', flag: '🇩🇪' },
-  en: { language: 'English', flag: '🇺🇸' },
-  es: { language: 'Castilian Spanish', flag: '🇪🇸' },
-  fr: { language: 'French', flag: '🇫🇷' },
-  it: { language: 'Italian', flag: '🇮🇹' },
-  mx: { language: 'Latin American Spanish', flag: '🇲🇽' },
+const countryCodeMap: Record<CountryCode, { language: string; flag: string; iso639: string }> = {
+  de: { language: 'German', flag: '🇩🇪', iso639: 'ger' },
+  en: { language: 'English', flag: '🇺🇸', iso639: 'eng' },
+  es: { language: 'Castilian Spanish', flag: '🇪🇸', iso639: 'spa' },
+  fr: { language: 'French', flag: '🇫🇷', iso639: 'fra' },
+  it: { language: 'Italian', flag: '🇮🇹', iso639: 'ita' },
+  mx: { language: 'Latin American Spanish', flag: '🇲🇽', iso639: 'spa' },
 };
 
 export const languageFromCountryCode = (countryCode: CountryCode) => {
@@ -15,4 +15,8 @@ export const languageFromCountryCode = (countryCode: CountryCode) => {
 
 export const flagFromCountryCode = (countryCode: CountryCode) => {
   return countryCodeMap[countryCode].flag;
+};
+
+export const iso639FromCountryCode = (countryCode: CountryCode) => {
+  return countryCodeMap[countryCode].iso639;
 };
