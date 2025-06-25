@@ -32,6 +32,22 @@ EXPOSE 51546
 
 CMD ["node", "dist/index.js"]
 ```
+Or you can clone the repo on your machine and add this docker-compose.yml
+```
+  webstreamr:
+    build:
+      context: /path/to/webstreamrfolder
+      dockerfile: Dockerfile
+    container_name: webstreamr
+    ports:
+      - "51546:51546"  # host:container
+    environment:
+      - HOST=0.0.0.0                    # Bind on all the interfaces
+      - PORT=51546                      # Internal Port
+      - TMDB_ACCESS_TOKEN={TMDB API Read Access Token}
+    restart: unless-stopped
+```
+
 
 Alternatively, you can also start WebStreamr directly via
 
