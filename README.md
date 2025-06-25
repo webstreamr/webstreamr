@@ -24,6 +24,15 @@ Self-hosting to stressful? ElfHosted offer [ready-to-go, turn-key WebStreamr ins
 
 You can build an image using the [Dockerfile](./Dockerfile) and run it.
 
+You need to add the TMDB API Read Access Token, you can find it here https://www.themoviedb.org/settings/api, a subscription is needed.
+in the Dockerfile you need also the EXPOSE port
+```
+ENV TMDB_ACCESS_TOKEN={TMDB API Read Access Token}
+EXPOSE 51546
+
+CMD ["node", "dist/index.js"]
+```
+
 Alternatively, you can also start WebStreamr directly via
 
 ```shell
