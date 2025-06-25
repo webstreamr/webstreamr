@@ -1,5 +1,5 @@
 import { buildManifest } from './manifest';
-import { StreamKiste, MeineCloud, VerHdLink } from '../source';
+import { StreamKiste, MeineCloud, VerHdLink, VixSrc } from '../source';
 import { FetcherMock } from './FetcherMock';
 
 const fetcher = new FetcherMock('/dev/null');
@@ -7,6 +7,7 @@ const fetcher = new FetcherMock('/dev/null');
 describe('buildManifest', () => {
   test('has unchecked source without a config', () => {
     const sources = [
+      new VixSrc(fetcher),
       new VerHdLink(fetcher),
       new StreamKiste(fetcher),
       new MeineCloud(fetcher),

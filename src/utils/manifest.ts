@@ -34,8 +34,12 @@ export const buildManifest = (sources: Source[], config: Config): ManifestWithCo
   };
 
   const countryCodeSources: Partial<Record<CountryCode, Source[]>> = {};
-  sources.forEach((handler) => {
-    handler.countryCodes.forEach(countryCode => countryCodeSources[countryCode] = [...(countryCodeSources[countryCode] ?? []), handler]);
+  sources.forEach((source) => {
+    if (source.countryCodes.includes(CountryCode.multi)) {
+      return;
+    }
+
+    source.countryCodes.forEach(countryCode => countryCodeSources[countryCode] = [...(countryCodeSources[countryCode] ?? []), source]);
   });
 
   const sortedLanguageSources = typedEntries(countryCodeSources)

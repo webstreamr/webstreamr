@@ -21,6 +21,8 @@ const logger = winston.createLogger({
 const fetcher = new Fetcher(logger);
 
 const sources: Source[] = [
+  // multi
+  new VixSrc(fetcher),
   // EN
   new Soaper(fetcher),
   new VidSrc(fetcher),
@@ -38,7 +40,6 @@ const sources: Source[] = [
   // IT
   new Eurostreaming(fetcher),
   new MostraGuarda(fetcher),
-  new VixSrc(fetcher),
 ];
 
 const addon = express();

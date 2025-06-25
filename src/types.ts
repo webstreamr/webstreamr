@@ -12,6 +12,7 @@ export type ManifestWithConfig = Manifest & { config: ManifestConfig[] };
 export type Config = Partial<Record<CountryCode | 'includeExternalUrls' | 'mediaFlowProxyUrl' | 'mediaFlowProxyPassword', string>>;
 
 export enum CountryCode {
+  multi = 'multi',
   de = 'de',
   en = 'en',
   es = 'es',

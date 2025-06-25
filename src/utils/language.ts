@@ -1,6 +1,7 @@
 import { CountryCode } from '../types';
 
-const countryCodeMap: Record<CountryCode, { language: string; flag: string; iso639: string }> = {
+const countryCodeMap: Record<CountryCode, { language: string; flag: string; iso639: string | undefined }> = {
+  multi: { language: 'Multi', flag: '🌐', iso639: undefined },
   de: { language: 'German', flag: '🇩🇪', iso639: 'ger' },
   en: { language: 'English', flag: '🇺🇸', iso639: 'eng' },
   es: { language: 'Castilian Spanish', flag: '🇪🇸', iso639: 'spa' },
