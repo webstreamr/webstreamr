@@ -56,3 +56,5 @@ npm install
 npm run build
 npm start
 ```
+
+For mediaflow proxy support you MUST add the mediaflow URL without the / at the end.
