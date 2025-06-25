@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.32.2](https://github.com/webstreamr/webstreamr/compare/v0.32.1...v0.32.2) (2025-06-25)
+
+
+### Bug Fixes
+
+* **extractor:** filter by configured languages in VixSrc ([b9d0fb3](https://github.com/webstreamr/webstreamr/commit/b9d0fb361383fcfdb6b3532faa19033451ea94fa))
+
 ## [0.32.1](https://github.com/webstreamr/webstreamr/compare/v0.32.0...v0.32.1) (2025-06-25)
 
 
