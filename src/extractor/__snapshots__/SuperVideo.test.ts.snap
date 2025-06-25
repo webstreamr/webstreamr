@@ -8,7 +8,9 @@ exports[`SuperVideo embed only 1`] = `
     "format": "hls",
     "label": "SuperVideo",
     "meta": {
-      "countryCode": "it",
+      "countryCodes": [
+        "it",
+      ],
       "title": "",
     },
     "sourceId": "supervideo_it",
@@ -25,7 +27,9 @@ exports[`SuperVideo supervideo.cc /e/ 1`] = `
     "label": "SuperVideo",
     "meta": {
       "bytes": 1073741824,
-      "countryCode": "de",
+      "countryCodes": [
+        "de",
+      ],
       "height": 720,
       "title": "des-teufels-bad-2024",
     },
@@ -43,7 +47,9 @@ exports[`SuperVideo supervideo.tv /embed-/ 1`] = `
     "label": "SuperVideo",
     "meta": {
       "bytes": 219571814,
-      "countryCode": "it",
+      "countryCodes": [
+        "it",
+      ],
       "height": 344,
       "title": "Babylon 5 2x3",
     },

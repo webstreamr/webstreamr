@@ -7,7 +7,9 @@ exports[`Dropload dropload.io 1`] = `
     "label": "Dropload",
     "meta": {
       "bytes": 1395864371,
-      "countryCode": "de",
+      "countryCodes": [
+        "de",
+      ],
       "height": 1080,
       "title": "des-teufels-bad-2024",
     },

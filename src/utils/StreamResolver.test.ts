@@ -98,7 +98,7 @@ describe('resolve', () => {
             label: 'hoster.com',
             sourceId: '',
             meta: {
-              countryCode: CountryCode.de,
+              countryCodes: [CountryCode.de],
             },
           },
           {
@@ -109,7 +109,7 @@ describe('resolve', () => {
             label: 'hoster.com',
             sourceId: '',
             meta: {
-              countryCode: CountryCode.de,
+              countryCodes: [CountryCode.de],
             },
           },
           {
@@ -120,7 +120,7 @@ describe('resolve', () => {
             label: 'hoster.com',
             sourceId: '',
             meta: {
-              countryCode: CountryCode.de,
+              countryCodes: [CountryCode.de],
             },
           },
           {
@@ -131,7 +131,7 @@ describe('resolve', () => {
             label: 'hoster.com',
             sourceId: '',
             meta: {
-              countryCode: CountryCode.de,
+              countryCodes: [CountryCode.de],
             },
           },
           {
@@ -142,7 +142,7 @@ describe('resolve', () => {
             label: 'hoster.com',
             sourceId: '',
             meta: {
-              countryCode: CountryCode.de,
+              countryCodes: [CountryCode.de],
             },
           },
           {
@@ -153,7 +153,7 @@ describe('resolve', () => {
             label: 'hoster.com',
             sourceId: '',
             meta: {
-              countryCode: CountryCode.de,
+              countryCodes: [CountryCode.de],
             },
           },
           {
@@ -164,7 +164,7 @@ describe('resolve', () => {
             label: 'hoster.com',
             sourceId: '',
             meta: {
-              countryCode: CountryCode.de,
+              countryCodes: [CountryCode.de],
             },
           },
           {
@@ -175,7 +175,7 @@ describe('resolve', () => {
             label: 'hoster.com',
             sourceId: '',
             meta: {
-              countryCode: CountryCode.de,
+              countryCodes: [CountryCode.de],
             },
           },
           {
@@ -186,7 +186,7 @@ describe('resolve', () => {
             label: 'hoster.com',
             sourceId: '',
             meta: {
-              countryCode: CountryCode.de,
+              countryCodes: [CountryCode.de],
             },
           },
         ];

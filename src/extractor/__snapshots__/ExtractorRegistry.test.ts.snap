@@ -9,7 +9,9 @@ exports[`ExtractorRegistry returns external URLs if enabled by config 1`] = `
     "isExternal": true,
     "label": "mixdrop.ag",
     "meta": {
-      "countryCode": "de",
+      "countryCodes": [
+        "de",
+      ],
     },
     "sourceId": "external_de",
     "ttl": 3600000,
@@ -27,7 +29,9 @@ exports[`ExtractorRegistry returns external url for error 1`] = `
     "isExternal": true,
     "label": "Dropload",
     "meta": {
-      "countryCode": "de",
+      "countryCodes": [
+        "de",
+      ],
     },
     "sourceId": "dropload",
     "url": "https://dropload.io/mocked-blocked.html",
@@ -44,7 +48,9 @@ exports[`ExtractorRegistry returns external url for error with title 1`] = `
     "isExternal": true,
     "label": "Dropload",
     "meta": {
-      "countryCode": "de",
+      "countryCodes": [
+        "de",
+      ],
       "title": "a title!",
     },
     "sourceId": "dropload",

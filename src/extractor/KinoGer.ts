@@ -46,7 +46,7 @@ export class KinoGer extends Extractor {
         sourceId: `${this.id}_${countryCode}`,
         ttl: this.ttl,
         meta: {
-          countryCode,
+          countryCodes: [countryCode],
           title,
           ...(height && { height }),
         },

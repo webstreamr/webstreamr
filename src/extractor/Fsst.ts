@@ -39,7 +39,7 @@ export class Fsst extends Extractor {
         label: this.label,
         sourceId: `${this.id}_${countryCode}_${index}`,
         meta: {
-          countryCode,
+          countryCodes: [countryCode],
           height: parseInt(heightAndUrlMatch[1] || heightFromFileHrefMatch[1] as string),
           title,
         },

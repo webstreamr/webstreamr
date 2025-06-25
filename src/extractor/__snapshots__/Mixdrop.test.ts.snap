@@ -9,7 +9,9 @@ exports[`Mixdrop mixdrop.my /e/ 1`] = `
     "label": "Mixdrop (via MediaFlow Proxy)",
     "meta": {
       "bytes": 1059806248,
-      "countryCode": "de",
+      "countryCodes": [
+        "de",
+      ],
       "title": "28_giorni_dopo_2002_HD_-_Altadefinizione01.mp4",
     },
     "sourceId": "mixdrop_de",

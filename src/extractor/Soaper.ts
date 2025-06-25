@@ -58,7 +58,7 @@ export class Soaper extends Extractor {
         sourceId: `${this.id}_${countryCode}`,
         ttl: this.ttl,
         meta: {
-          countryCode,
+          countryCodes: [countryCode],
           title: `${title}`,
           ...(height && { height }),
         },

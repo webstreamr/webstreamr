@@ -6,7 +6,9 @@ exports[`Uqload uqload.net / 1`] = `
     "format": "mp4",
     "label": "Uqload (via MediaFlow Proxy)",
     "meta": {
-      "countryCode": "fr",
+      "countryCodes": [
+        "fr",
+      ],
       "height": 360,
       "title": "Black Mirror S07E06 MULTI VFF 1080p WEBrip EAC3 5 1 x265-TyHD",
     },
@@ -23,7 +25,9 @@ exports[`Uqload uqload.net /embed- 1`] = `
     "format": "mp4",
     "label": "Uqload (via MediaFlow Proxy)",
     "meta": {
-      "countryCode": "fr",
+      "countryCodes": [
+        "fr",
+      ],
       "height": 360,
       "title": "Black Mirror S07E06 MULTI VFF 1080p WEBrip EAC3 5 1 x265-TyHD",
     },

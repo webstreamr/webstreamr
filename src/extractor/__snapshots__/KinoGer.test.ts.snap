@@ -6,7 +6,9 @@ exports[`KinoGer Blood & Sinners 1`] = `
     "format": "hls",
     "label": "KinoGer",
     "meta": {
-      "countryCode": "de",
+      "countryCodes": [
+        "de",
+      ],
       "title": "Blood.and.Sinners.2025.mkv",
     },
     "requestHeaders": {
@@ -25,7 +27,9 @@ exports[`KinoGer Dead City 1`] = `
     "format": "hls",
     "label": "KinoGer",
     "meta": {
-      "countryCode": "de",
+      "countryCodes": [
+        "de",
+      ],
       "height": 1080,
       "title": "the.walking.dead.dead.city.s02e05.german.dl.1080p.web.x264-wvf.mkv",
     },

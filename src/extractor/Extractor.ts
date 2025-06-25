@@ -33,7 +33,7 @@ export abstract class Extractor {
           label: this.label,
           sourceId: `${this.id}`,
           meta: {
-            countryCode,
+            countryCodes: [countryCode],
             ...(title && { title }),
           },
         },

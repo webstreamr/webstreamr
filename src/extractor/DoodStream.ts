@@ -57,7 +57,7 @@ export class DoodStream extends Extractor {
         sourceId: `${this.id}_${countryCode}`,
         ttl: this.ttl,
         meta: {
-          countryCode,
+          countryCodes: [countryCode],
           title,
           ...(mp4Head['content-length'] && { bytes: parseInt(mp4Head['content-length'] as string) }),
           ...(height && { height }),

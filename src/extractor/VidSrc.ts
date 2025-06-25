@@ -55,7 +55,7 @@ export class VidSrc extends Extractor {
             sourceId: `${this.id}_${slugify(serverName)}_${countryCode}`,
             ttl: this.ttl,
             meta: {
-              countryCode,
+              countryCodes: [countryCode],
               title,
               ...(height && { height }),
             },

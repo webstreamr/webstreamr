@@ -9,7 +9,9 @@ exports[`ExternalUrl johnalwayssame.com with title 1`] = `
     "isExternal": true,
     "label": "johnalwayssame.com",
     "meta": {
-      "countryCode": "fr",
+      "countryCodes": [
+        "fr",
+      ],
       "title": "Black Mirror 4x2",
     },
     "sourceId": "external_fr",
@@ -26,7 +28,9 @@ exports[`ExternalUrl netu.fanstream.us 1`] = `
     "isExternal": true,
     "label": "netu.fanstream.us",
     "meta": {
-      "countryCode": "fr",
+      "countryCodes": [
+        "fr",
+      ],
     },
     "sourceId": "external_fr",
     "ttl": 3600000,

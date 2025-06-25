@@ -6,7 +6,9 @@ exports[`Fsst Blood & Sinners 1`] = `
     "format": "mp4",
     "label": "Fsst",
     "meta": {
-      "countryCode": "de",
+      "countryCodes": [
+        "de",
+      ],
       "height": 360,
       "title": "Blood.and.Sinners.2025.mkv",
     },
@@ -17,7 +19,9 @@ exports[`Fsst Blood & Sinners 1`] = `
     "format": "mp4",
     "label": "Fsst",
     "meta": {
-      "countryCode": "de",
+      "countryCodes": [
+        "de",
+      ],
       "height": 720,
       "title": "Blood.and.Sinners.2025.mkv",
     },
@@ -28,7 +32,9 @@ exports[`Fsst Blood & Sinners 1`] = `
     "format": "mp4",
     "label": "Fsst",
     "meta": {
-      "countryCode": "de",
+      "countryCodes": [
+        "de",
+      ],
       "height": 1080,
       "title": "Blood.and.Sinners.2025.mkv",
     },
@@ -44,7 +50,9 @@ exports[`Fsst Dead City 1`] = `
     "format": "mp4",
     "label": "Fsst",
     "meta": {
-      "countryCode": "de",
+      "countryCodes": [
+        "de",
+      ],
       "height": 360,
       "title": "the.walking.dead.dead.city.s02e06.german.dl.1080p.web.x264-wvf.mkv",
     },
@@ -55,7 +63,9 @@ exports[`Fsst Dead City 1`] = `
     "format": "mp4",
     "label": "Fsst",
     "meta": {
-      "countryCode": "de",
+      "countryCodes": [
+        "de",
+      ],
       "height": 720,
       "title": "the.walking.dead.dead.city.s02e06.german.dl.1080p.web.x264-wvf.mkv",
     },
@@ -66,7 +76,9 @@ exports[`Fsst Dead City 1`] = `
     "format": "mp4",
     "label": "Fsst",
     "meta": {
-      "countryCode": "de",
+      "countryCodes": [
+        "de",
+      ],
       "height": 1080,
       "title": "the.walking.dead.dead.city.s02e06.german.dl.1080p.web.x264-wvf.mkv",
     },
@@ -82,7 +94,9 @@ exports[`Fsst How to Train Your Dragon 1`] = `
     "format": "mp4",
     "label": "Fsst",
     "meta": {
-      "countryCode": "de",
+      "countryCodes": [
+        "de",
+      ],
       "height": 360,
       "title": "How To Train Your Dragon 2025.mp4",
     },

@@ -7,7 +7,9 @@ exports[`VixSrc Black Mirror 1`] = `
     "label": "VixSrc (via MediaFlow Proxy)",
     "meta": {
       "bytes": 2389338112,
-      "countryCode": "it",
+      "countryCodes": [
+        "it",
+      ],
       "height": 1080,
       "title": "Black.Mirror.S04E02.Arkangel.1080p.NF.WEB-DL.ITA.ENG.DDP5.1.H.264.mkv",
     },
@@ -25,7 +27,9 @@ exports[`VixSrc Full Metal Jacket 1`] = `
     "label": "VixSrc (via MediaFlow Proxy)",
     "meta": {
       "bytes": 8544718848,
-      "countryCode": "it",
+      "countryCodes": [
+        "it",
+      ],
       "height": 1080,
       "title": "Full.metal.jacket.1987.1080p.x264.AC3.ITA.AAC.ENG.Subs.mkv",
     },

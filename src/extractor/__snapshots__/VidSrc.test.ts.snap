@@ -6,7 +6,9 @@ exports[`VidSrc Black Mirror 1`] = `
     "format": "hls",
     "label": "VidSrc (CloudStream Pro)",
     "meta": {
-      "countryCode": "en",
+      "countryCodes": [
+        "en",
+      ],
       "height": 1040,
       "title": "Black Mirror (2011) S04E02",
     },
@@ -23,7 +25,9 @@ exports[`VidSrc Full Metal Jacket 1`] = `
     "format": "hls",
     "label": "VidSrc (CloudStream Pro)",
     "meta": {
-      "countryCode": "en",
+      "countryCodes": [
+        "en",
+      ],
       "height": 714,
       "title": "Full Metal Jacket (1987)",
     },

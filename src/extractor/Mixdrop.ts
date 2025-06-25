@@ -45,7 +45,7 @@ export class Mixdrop extends Extractor {
         sourceId: `${this.id}_${countryCode}`,
         ttl: this.ttl,
         meta: {
-          countryCode,
+          countryCodes: [countryCode],
           title,
           ...(sizeMatch && {
             bytes: bytes.parse((sizeMatch[1] as string).replace(',', '')) as number,

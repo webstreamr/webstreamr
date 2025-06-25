@@ -42,7 +42,7 @@ export class Uqload extends Extractor {
         sourceId: `${this.id}_${countryCode}`,
         ttl: this.ttl,
         meta: {
-          countryCode,
+          countryCodes: [countryCode],
           title,
           ...(heightMatch && {
             height: parseInt(heightMatch[1] as string) as number,

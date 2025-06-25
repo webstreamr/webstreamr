@@ -37,7 +37,7 @@ export class VixSrc extends Extractor {
         sourceId: `${this.id}_${countryCode}`,
         ttl: this.ttl,
         meta: {
-          countryCode,
+          countryCodes: [countryCode],
           ...(filenameMatch && { title: filenameMatch[1] }),
           ...(sizeMatch && { bytes: bytes.parse(`${sizeMatch[1]} kb`) as number }),
           ...(qualityMatch && { height: parseInt(qualityMatch[1] as string) }),

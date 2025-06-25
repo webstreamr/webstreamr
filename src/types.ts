@@ -27,9 +27,11 @@ export enum BlockedReason {
   unknown = 'unknown',
 }
 
+type NonEmptyArray<T> = [T, ...T[]];
+
 export interface Meta {
   bytes?: number;
-  countryCode: CountryCode;
+  countryCodes: NonEmptyArray<CountryCode>;
   height?: number;
   title?: string;
 }

@@ -47,7 +47,7 @@ export class Dropload extends Extractor {
         ttl: this.ttl,
         meta: {
           bytes: bytes.parse(sizeMatch[1] as string) as number,
-          countryCode,
+          countryCodes: [countryCode],
           height: parseInt(heightMatch[1] as string) as number,
           title,
         },

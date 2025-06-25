@@ -152,7 +152,9 @@ export class StreamResolver {
   private buildName(ctx: Context, urlResult: UrlResult): string {
     let name = envGetAppName();
 
-    name += ` ${flagFromCountryCode(urlResult.meta.countryCode)}`;
+    urlResult.meta.countryCodes.forEach((countryCode) => {
+      name += ` ${flagFromCountryCode(countryCode)}`;
+    });
 
     if (urlResult.meta.height) {
       name += ` ${urlResult.meta.height}p`;

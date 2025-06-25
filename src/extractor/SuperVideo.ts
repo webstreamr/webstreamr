@@ -50,7 +50,7 @@ export class SuperVideo extends Extractor {
         sourceId: `${this.id}_${countryCode}`,
         ttl: this.ttl,
         meta: {
-          countryCode,
+          countryCodes: [countryCode],
           title,
           ...(heightAndSizeMatch && {
             bytes: bytes.parse(heightAndSizeMatch[2] as string) as number,
