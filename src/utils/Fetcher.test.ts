@@ -16,8 +16,8 @@ describe('fetch', () => {
     fetchMock.clearHistory();
   });
 
-  test('text passes successful response through setting headers', async () => {
-    fetchMock.get('https://some-url.test/', 'some text');
+  test('text passes successful response through setting headers and utilising cache', async () => {
+    fetchMock.get('https://some-url.test/', { body: 'some text', status: 200, headers: { 'Cache-Control': 'max-age=123' } });
 
     const responseText1 = await fetcher.text(ctx, new URL('https://some-url.test/'));
     const responseText2 = await fetcher.text(ctx, new URL('https://some-url.test/'), { headers: { 'User-Agent': 'jest' } });

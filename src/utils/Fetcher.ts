@@ -51,7 +51,6 @@ export type CustomRequestInit = RequestInit & {
 };
 
 export class Fetcher {
-  private readonly MIN_CACHE_TTL = 900000; // 15m
   private readonly DEFAULT_TIMEOUT = 10000;
   private readonly DEFAULT_QUEUE_LIMIT = 5;
   private readonly DEFAULT_QUEUE_TIMEOUT = 5000;
@@ -164,7 +163,7 @@ export class Fetcher {
 
       httpCacheItem.body = challengeResult.solution.response;
 
-      const ttl = this.determineCacheTtl(httpCacheItem);
+      const ttl = httpCacheItem.policy.timeToLive();
       /* istanbul ignore next */
       if (ttl > 0) {
         this.httpCache.set(this.determineCacheKey(url, init), httpCacheItem, { ttl });
@@ -197,14 +196,6 @@ export class Fetcher {
     return `${url.href}_${init?.body?.toString()}`;
   }
 
-  private determineCacheTtl(httpCacheItem: HttpCacheItem): number {
-    if (httpCacheItem.status === 200) {
-      return Math.max(httpCacheItem.policy.timeToLive(), this.MIN_CACHE_TTL);
-    }
-
-    return httpCacheItem.policy.timeToLive();
-  };
-
   private headersToObject(headers: Headers): Record<string, string> {
     const obj: Record<string, string> = {};
 
@@ -234,7 +225,7 @@ export class Fetcher {
 
     httpCacheItem = { policy, status: response.status, statusText: response.statusText, body };
 
-    const ttl = this.determineCacheTtl(httpCacheItem);
+    const ttl = httpCacheItem.policy.timeToLive();
     if (ttl > 0) {
       this.httpCache.set(cacheKey, httpCacheItem, { ttl });
     }
