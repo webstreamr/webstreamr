@@ -105,6 +105,17 @@ describe('resolve', () => {
             url: new URL('https://example.com'),
             format: Format.unknown,
             isExternal: true,
+            error: new BlockedError(BlockedReason.media_flow_proxy_auth, {}),
+            label: 'hoster.com',
+            sourceId: '',
+            meta: {
+              countryCode: CountryCode.de,
+            },
+          },
+          {
+            url: new URL('https://example.com'),
+            format: Format.unknown,
+            isExternal: true,
             error: new BlockedError(BlockedReason.unknown, {}),
             label: 'hoster.com',
             sourceId: '',

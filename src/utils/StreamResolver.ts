@@ -1,7 +1,7 @@
 import { ContentType, Stream } from 'stremio-addon-sdk';
 import winston from 'winston';
 import bytes from 'bytes';
-import { Context, Format, UrlResult } from '../types';
+import { BlockedReason, Context, Format, UrlResult } from '../types';
 import { Source } from '../source';
 import {
   BlockedError,
@@ -167,8 +167,10 @@ export class StreamResolver {
 
   private logErrorAndReturnNiceString(ctx: Context, source: string, error: unknown): string {
     if (error instanceof BlockedError) {
-      if (error.reason === 'cloudflare_challenge') {
+      if (error.reason === BlockedReason.cloudflare_challenge) {
         this.logger.warn(`${source}: Request was blocked via Cloudflare challenge.`, ctx);
+      } else if (error.reason === BlockedReason.media_flow_proxy_auth) {
+        return '⚠️ MediaFlow Proxy authentication failed. Please set the correct password.';
       } else {
         this.logger.warn(`${source}: Request was blocked, headers: ${JSON.stringify(error.headers)}.`, ctx);
       }

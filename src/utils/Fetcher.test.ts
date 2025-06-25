@@ -4,6 +4,7 @@ import fetchMock from 'fetch-mock';
 import { Fetcher } from './Fetcher';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
 import { createTestContext } from '../test';
+import { BlockedReason } from '../types';
 fetchMock.mockGlobal();
 
 const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
@@ -88,7 +89,7 @@ describe('fetch', () => {
       fail();
     } catch (error) {
       expect(error).toBeInstanceOf(BlockedError);
-      expect(error).toMatchObject({ reason: 'cloudflare_challenge' });
+      expect(error).toMatchObject({ reason: BlockedReason.cloudflare_challenge });
     }
   });
 
@@ -137,7 +138,7 @@ describe('fetch', () => {
       fail();
     } catch (error) {
       expect(error).toBeInstanceOf(BlockedError);
-      expect(error).toMatchObject({ reason: 'flaresolverr_failed' });
+      expect(error).toMatchObject({ reason: BlockedReason.flaresolverr_failed });
     }
 
     delete process.env['FLARESOLVERR_ENDPOINT'];
@@ -151,7 +152,19 @@ describe('fetch', () => {
       fail();
     } catch (error) {
       expect(error).toBeInstanceOf(BlockedError);
-      expect(error).toMatchObject({ reason: 'unknown' });
+      expect(error).toMatchObject({ reason: BlockedReason.unknown });
+    }
+  });
+
+  test('converts MediaFlow Proxy forbidden to custom BlockedError', async () => {
+    fetchMock.get('https://media-flow-proxy-forbidden-url.test/', { status: 403 });
+
+    try {
+      await fetcher.text(createTestContext({ mediaFlowProxyUrl: 'https://media-flow-proxy-forbidden-url.test/' }), new URL('https://media-flow-proxy-forbidden-url.test/'));
+      fail();
+    } catch (error) {
+      expect(error).toBeInstanceOf(BlockedError);
+      expect(error).toMatchObject({ reason: BlockedReason.media_flow_proxy_auth });
     }
   });
 

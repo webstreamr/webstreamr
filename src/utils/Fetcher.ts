@@ -174,6 +174,10 @@ export class Fetcher {
     }
 
     if (httpCacheItem.status === 403) {
+      if (ctx.config.mediaFlowProxyUrl && url.href.startsWith(ctx.config.mediaFlowProxyUrl)) {
+        throw new BlockedError(BlockedReason.media_flow_proxy_auth, httpCacheItem.policy.responseHeaders());
+      }
+
       throw new BlockedError(BlockedReason.unknown, httpCacheItem.policy.responseHeaders());
     }
 

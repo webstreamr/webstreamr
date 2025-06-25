@@ -19,6 +19,15 @@ exports[`resolve adds error info 1`] = `
       "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
+⚠️ MediaFlow Proxy authentication failed. Please set the correct password.",
+    },
+    {
+      "behaviorHints": {
+        "notWebReady": true,
+      },
+      "externalUrl": "http://localhost/",
+      "name": "WebStreamr 🇩🇪",
+      "title": "🔗 hoster.com
 ⚠️ Request was blocked.",
     },
     {
@@ -90,6 +99,15 @@ exports[`resolve adds error info 2`] = `
       "name": "WebStreamr 🇩🇪 ⚠️ external",
       "title": "🔗 hoster.com
 ⚠️ Request was blocked.",
+    },
+    {
+      "behaviorHints": {
+        "notWebReady": true,
+      },
+      "externalUrl": "https://example.com/",
+      "name": "WebStreamr 🇩🇪 ⚠️ external",
+      "title": "🔗 hoster.com
+⚠️ MediaFlow Proxy authentication failed. Please set the correct password.",
     },
     {
       "behaviorHints": {
