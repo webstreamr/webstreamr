@@ -38,6 +38,10 @@ export class VixSrc extends Extractor {
     const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'VixCloud', url);
     const countryCodes = await this.determineCountryCodesFromPlaylist(ctx, playlistUrl);
 
+    if (!countryCodes.some(countryCode => countryCode in ctx.config)) {
+      return [];
+    }
+
     return [
       {
         url: playlistUrl,

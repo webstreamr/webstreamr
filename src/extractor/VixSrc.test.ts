@@ -18,4 +18,10 @@ describe('VixSrc', () => {
   test('Black Mirror', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://vixsrc.to/tv/42009/4/2'), CountryCode.it, 'Black Mirror 4x2')).toMatchSnapshot();
   });
+
+  test('Black Mirror is excluded if no matching language was found', async () => {
+    const ctx = createTestContext({ mediaFlowProxyUrl: 'https://mediaflow-proxy.test', mediaFlowProxyPassword: 'asdfg', de: 'on' });
+
+    expect(await extractorRegistry.handle(ctx, new URL('https://vixsrc.to/tv/42009/4/2'), CountryCode.it, 'Black Mirror 4x2')).toMatchSnapshot();
+  });
 });
