@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.32.4](https://github.com/webstreamr/webstreamr/compare/v0.32.3...v0.32.4) (2025-06-26)
+
+
+### Miscellaneous Chores
+
+* **extractor:** handle Dropload queued files better ([adae573](https://github.com/webstreamr/webstreamr/commit/adae573a0f91cb42ecdd8f5a2c2ac150665f5ce3))
+* keep showing VixSrc for Italian to avoid confusions ([d44da65](https://github.com/webstreamr/webstreamr/commit/d44da650bd3d397bfa2bb97b055662bae2c790bf))
+
 ## [0.32.3](https://github.com/webstreamr/webstreamr/compare/v0.32.2...v0.32.3) (2025-06-26)
 
 
