@@ -21,3 +21,5 @@ exports[`Dropload dropload.io 1`] = `
 `;
 
 exports[`Dropload file not found 1`] = `[]`;
+
+exports[`Dropload processing / internal problem 1`] = `[]`;

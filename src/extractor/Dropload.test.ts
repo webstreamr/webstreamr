@@ -18,4 +18,8 @@ describe('Dropload', () => {
   test('file not found', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://dropload.io/asdfghijklmn.html'), CountryCode.de)).toMatchSnapshot();
   });
+
+  test('processing / internal problem', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://dropload.io/7xtxuac84xyh.html'), CountryCode.de)).toMatchSnapshot();
+  });
 });

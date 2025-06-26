@@ -27,7 +27,7 @@ export class Dropload extends Extractor {
   protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
     const html = await this.fetcher.text(ctx, url);
 
-    if (html.includes('File Not Found')) {
+    if (html.includes('File Not Found') || html.includes('Pending in queue')) {
       throw new NotFoundError();
     }
 
