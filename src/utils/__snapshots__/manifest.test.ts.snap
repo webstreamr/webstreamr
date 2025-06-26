@@ -75,6 +75,11 @@ exports[`buildManifest has unchecked source without a config 1`] = `
     "type": "checkbox",
   },
   {
+    "key": "it",
+    "title": "Italian 🇮🇹 (VixSrc)",
+    "type": "checkbox",
+  },
+  {
     "key": "mx",
     "title": "Latin American Spanish 🇲🇽 (VerHdLink)",
     "type": "checkbox",

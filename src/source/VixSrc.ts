@@ -10,7 +10,7 @@ export class VixSrc implements Source {
 
   public readonly contentTypes: ContentType[] = ['movie', 'series'];
 
-  public readonly countryCodes: CountryCode[] = [CountryCode.multi];
+  public readonly countryCodes: CountryCode[] = [CountryCode.multi, CountryCode.it];
 
   private readonly baseUrl = 'https://vixsrc.to';
 
