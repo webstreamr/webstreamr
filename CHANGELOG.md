@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.32.3](https://github.com/webstreamr/webstreamr/compare/v0.32.2...v0.32.3) (2025-06-26)
+
+
+### Bug Fixes
+
+* **extractor:** disable ip/session locked Fsst ([00681e1](https://github.com/webstreamr/webstreamr/commit/00681e1411547aad03c59b98ae9106352ba5b4de))
+
 ## [0.32.2](https://github.com/webstreamr/webstreamr/compare/v0.32.1...v0.32.2) (2025-06-25)
 
 
