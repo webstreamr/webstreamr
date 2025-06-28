@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.32.5](https://github.com/webstreamr/webstreamr/compare/v0.32.4...v0.32.5) (2025-06-28)
+
+
+### Miscellaneous Chores
+
+* **deps:** update eslint monorepo to v9.30.0 ([#187](https://github.com/webstreamr/webstreamr/issues/187)) ([de3cc10](https://github.com/webstreamr/webstreamr/commit/de3cc10478629e069414cc42c476d13216c40264))
+* **fetcher:** configure max for all TTLCaches ([881fed5](https://github.com/webstreamr/webstreamr/commit/881fed53a4d87e96f4d10dbeb5f83ee0390bf24d))
+* **fetcher:** use gzip to compress HTTP cache ([acaa722](https://github.com/webstreamr/webstreamr/commit/acaa7221dd546ea2a1a0cc4845ef8d410bf9d842))
+* **fetcher:** use LRUCache for HTTP responses ([f5121bb](https://github.com/webstreamr/webstreamr/commit/f5121bb1fbf5914d1ca9a9e17e3726c69d0d1e2d))
+
+
+### Bug Fixes
+
+* **deps:** update dependency undici to v7.11.0 ([#184](https://github.com/webstreamr/webstreamr/issues/184)) ([70df4c2](https://github.com/webstreamr/webstreamr/commit/70df4c269778b229544d206cb4a453d3c6cb9ad7))
+
+
+### Reverts
+
+* Revert "fix(fetcher): remove 200 minimum cache" ([aee0fd8](https://github.com/webstreamr/webstreamr/commit/aee0fd8373ce506713f6e6a14d3dd53e5b08406f))
+
 ## [0.32.4](https://github.com/webstreamr/webstreamr/compare/v0.32.3...v0.32.4) (2025-06-26)
 
 
