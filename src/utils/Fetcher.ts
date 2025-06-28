@@ -1,6 +1,7 @@
 import { Dispatcher, ProxyAgent } from 'undici';
 import { socksDispatcher } from 'fetch-socks';
 import CachePolicy from 'http-cache-semantics';
+import { LRUCache } from 'lru-cache';
 import TTLCache from '@isaacs/ttlcache';
 import winston from 'winston';
 import { Mutex, Semaphore, SemaphoreInterface, withTimeout } from 'async-mutex';
@@ -61,7 +62,7 @@ export class Fetcher {
   private readonly logger: winston.Logger;
   private readonly dispatcher: Dispatcher | undefined;
 
-  private readonly httpCache = new TTLCache<string, HttpCacheItem>({ max: 1024 });
+  private readonly httpCache = new LRUCache<string, HttpCacheItem>({ max: 1024 });
   private readonly rateLimitedCache = new TTLCache<string, undefined>({ max: 1024 });
   private readonly semaphores = new Map<string, SemaphoreInterface>();
   private readonly hostUserAgentMap = new Map<string, string>();
