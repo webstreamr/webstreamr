@@ -1,6 +1,7 @@
 import { Dispatcher, ProxyAgent } from 'undici';
 import { socksDispatcher } from 'fetch-socks';
 import CachePolicy from 'http-cache-semantics';
+import { gzipSync, gunzipSync } from 'zlib';
 import { LRUCache } from 'lru-cache';
 import TTLCache from '@isaacs/ttlcache';
 import winston from 'winston';
@@ -62,7 +63,7 @@ export class Fetcher {
   private readonly logger: winston.Logger;
   private readonly dispatcher: Dispatcher | undefined;
 
-  private readonly httpCache = new LRUCache<string, HttpCacheItem>({ max: 1024 });
+  private readonly httpCache = new LRUCache<string, Buffer>({ max: 1024 });
   private readonly rateLimitedCache = new TTLCache<string, undefined>({ max: 1024 });
   private readonly semaphores = new Map<string, SemaphoreInterface>();
   private readonly hostUserAgentMap = new Map<string, string>();
@@ -165,11 +166,7 @@ export class Fetcher {
 
       httpCacheItem.body = challengeResult.solution.response;
 
-      const ttl = this.determineCacheTtl(httpCacheItem);
-      /* istanbul ignore next */
-      if (ttl > 0) {
-        this.httpCache.set(this.determineCacheKey(url, init), httpCacheItem, { ttl });
-      }
+      this.cacheSet(this.determineCacheKey(url, init), httpCacheItem);
 
       return httpCacheItem;
     }
@@ -206,6 +203,21 @@ export class Fetcher {
     return httpCacheItem.policy.timeToLive();
   };
 
+  private cacheGet(key: string): HttpCacheItem | undefined {
+    const buffer = this.httpCache.get(key);
+
+    return buffer ? JSON.parse(gunzipSync(buffer).toString()) : undefined;
+  }
+
+  private cacheSet(key: string, httpCacheItem: HttpCacheItem) {
+    const ttl = this.determineCacheTtl(httpCacheItem);
+    if (ttl <= 0) {
+      return;
+    }
+
+    this.httpCache.set(key, gzipSync(JSON.stringify(httpCacheItem)), { ttl });
+  }
+
   private headersToObject(headers: Headers): Record<string, string> {
     const obj: Record<string, string> = {};
 
@@ -222,7 +234,7 @@ export class Fetcher {
     const request: CachePolicy.Request = { url: url.href, method: newInit.method ?? 'GET', headers: {} };
 
     const cacheKey = this.determineCacheKey(url, init);
-    let httpCacheItem: HttpCacheItem | undefined = this.httpCache.get(cacheKey);
+    let httpCacheItem = this.cacheGet(cacheKey);
     if (httpCacheItem) {
       this.logger.info(`Cached fetch ${request.method} ${url}`, ctx);
       return this.handleHttpCacheItem(ctx, httpCacheItem, url, init);
@@ -235,10 +247,7 @@ export class Fetcher {
 
     httpCacheItem = { policy, status: response.status, statusText: response.statusText, body };
 
-    const ttl = this.determineCacheTtl(httpCacheItem);
-    if (ttl > 0) {
-      this.httpCache.set(cacheKey, httpCacheItem, { ttl });
-    }
+    this.cacheSet(cacheKey, httpCacheItem);
 
     return this.handleHttpCacheItem(ctx, httpCacheItem, url, init);
   };
