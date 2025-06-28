@@ -61,13 +61,13 @@ export class Fetcher {
   private readonly logger: winston.Logger;
   private readonly dispatcher: Dispatcher | undefined;
 
-  private readonly httpCache = new TTLCache<string, HttpCacheItem>();
-  private readonly rateLimitedCache = new TTLCache<string, undefined>();
+  private readonly httpCache = new TTLCache<string, HttpCacheItem>({ max: 1024 });
+  private readonly rateLimitedCache = new TTLCache<string, undefined>({ max: 1024 });
   private readonly semaphores = new Map<string, SemaphoreInterface>();
   private readonly hostUserAgentMap = new Map<string, string>();
   private readonly cookieJar = new CookieJar();
 
-  private readonly timeoutsCountCache = new TTLCache<string, number>();
+  private readonly timeoutsCountCache = new TTLCache<string, number>({ max: 1024 });
   private readonly timeoutsCountMutex = new Mutex();
 
   public constructor(logger: winston.Logger) {
