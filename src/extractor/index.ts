@@ -10,6 +10,7 @@ import { SuperVideo } from './SuperVideo';
 import { Uqload } from './Uqload';
 import { VidSrc } from './VidSrc';
 import { VixSrc } from './VixSrc';
+import { Streamtape } from './Streamtape';
 
 export * from './Extractor';
 export * from './ExtractorRegistry';
@@ -21,6 +22,7 @@ export const createExtractors = (fetcher: Fetcher): Extractor[] => [
   new KinoGer(fetcher),
   new Mixdrop(fetcher),
   new Soaper(fetcher),
+  new Streamtape(fetcher),
   new Uqload(fetcher),
   new VidSrc(fetcher),
   new VixSrc(fetcher),
