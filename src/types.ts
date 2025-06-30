@@ -31,8 +31,8 @@ export enum BlockedReason {
 export interface Meta {
   bytes?: number;
   countryCodes: CountryCode[];
-  height?: number;
-  title?: string;
+  height?: number | undefined;
+  title?: string | undefined;
 }
 
 export enum Format {

@@ -1,7 +1,7 @@
 import { CustomRequestInit, Fetcher } from './Fetcher';
 import { Context } from '../types';
 
-export const guessFromTitle = (title: string): number | undefined => {
+export const guessHeightFromTitle = (title: string): number | undefined => {
   const heightMatch = title.match(/([0-9]+)p/);
   if (heightMatch && heightMatch[1]) {
     return parseInt(heightMatch[1]);
@@ -10,7 +10,7 @@ export const guessFromTitle = (title: string): number | undefined => {
   return undefined;
 };
 
-export const guessFromPlaylist = async (ctx: Context, fetcher: Fetcher, url: URL, init?: CustomRequestInit): Promise<number | undefined> => {
+export const guessHeightFromPlaylist = async (ctx: Context, fetcher: Fetcher, url: URL, init?: CustomRequestInit): Promise<number | undefined> => {
   const m3u8Data = await fetcher.text(ctx, url, init);
 
   const heights = Array.from(m3u8Data.matchAll(/\d+x(\d+)|(\d+)p/g))

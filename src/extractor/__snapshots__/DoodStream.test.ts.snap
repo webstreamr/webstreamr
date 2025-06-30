@@ -32,6 +32,7 @@ exports[`DoodStream dood.to 1`] = `
       "countryCodes": [
         "de",
       ],
+      "height": undefined,
       "title": "des-teufels-bad-2024",
     },
     "requestHeaders": {
@@ -53,6 +54,7 @@ exports[`DoodStream doodster 1`] = `
       "countryCodes": [
         "de",
       ],
+      "height": undefined,
       "title": "Brokeback Mountain 2005",
     },
     "requestHeaders": {

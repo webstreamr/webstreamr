@@ -48,7 +48,7 @@ export class Dropload extends Extractor {
         meta: {
           bytes: bytes.parse(sizeMatch[1] as string) as number,
           countryCodes: [countryCode],
-          height: parseInt(heightMatch[1] as string) as number,
+          height: parseInt(heightMatch[1] as string),
           title,
         },
       },

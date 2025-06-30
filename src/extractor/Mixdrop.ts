@@ -1,7 +1,7 @@
 import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { Extractor } from './Extractor';
-import { buildMediaFlowProxyExtractorRedirectUrl, Fetcher, supportsMediaFlowProxy } from '../utils';
+import { buildMediaFlowProxyExtractorRedirectUrl, Fetcher, guessHeightFromTitle, supportsMediaFlowProxy } from '../utils';
 import { Context, CountryCode, Format, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
@@ -48,6 +48,7 @@ export class Mixdrop extends Extractor {
         ttl: this.ttl,
         meta: {
           countryCodes: [countryCode],
+          height: guessHeightFromTitle(title),
           title,
           ...(sizeMatch && {
             bytes: bytes.parse((sizeMatch[1] as string).replace(',', '')) as number,

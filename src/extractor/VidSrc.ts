@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import slugify from 'slugify';
 import { Extractor } from './Extractor';
-import { Fetcher, guessFromPlaylist } from '../utils';
+import { Fetcher, guessHeightFromPlaylist } from '../utils';
 import { Context, CountryCode, Format, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
@@ -46,7 +46,6 @@ export class VidSrc extends Extractor {
           }
 
           const m3u8Url = new URL(fileMatch[1] as string);
-          const height = await guessFromPlaylist(ctx, this.fetcher, m3u8Url);
 
           return {
             url: m3u8Url,
@@ -56,8 +55,8 @@ export class VidSrc extends Extractor {
             ttl: this.ttl,
             meta: {
               countryCodes: [countryCode],
+              height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url),
               title,
-              ...(height && { height }),
             },
           };
         }),

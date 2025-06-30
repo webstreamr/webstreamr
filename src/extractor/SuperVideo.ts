@@ -54,7 +54,7 @@ export class SuperVideo extends Extractor {
           title,
           ...(heightAndSizeMatch && {
             bytes: bytes.parse(heightAndSizeMatch[2] as string) as number,
-            height: parseInt(heightAndSizeMatch[1] as string) as number,
+            height: parseInt(heightAndSizeMatch[1] as string),
           }),
         },
       },

@@ -12,6 +12,7 @@ exports[`Mixdrop mixdrop.my /e/ 1`] = `
       "countryCodes": [
         "de",
       ],
+      "height": undefined,
       "title": "28_giorni_dopo_2002_HD_-_Altadefinizione01.mp4",
     },
     "sourceId": "mixdrop_de",

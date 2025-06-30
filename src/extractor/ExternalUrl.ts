@@ -39,7 +39,7 @@ export class ExternalUrl extends Extractor {
         ttl: this.ttl,
         meta: {
           countryCodes: [countryCode],
-          ...(title && { title }),
+          title,
         },
       },
     ];

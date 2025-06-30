@@ -47,7 +47,7 @@ export class Uqload extends Extractor {
           countryCodes: [countryCode],
           title,
           ...(heightMatch && {
-            height: parseInt(heightMatch[1] as string) as number,
+            height: parseInt(heightMatch[1] as string),
           }),
         },
       },

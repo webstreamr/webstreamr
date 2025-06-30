@@ -1,5 +1,5 @@
 import { Extractor } from './Extractor';
-import { Fetcher, guessFromPlaylist } from '../utils';
+import { Fetcher, guessHeightFromPlaylist } from '../utils';
 import { Context, CountryCode, Format, UrlResult } from '../types';
 
 interface SoaperInfoResponsePartial {
@@ -48,7 +48,6 @@ export class Soaper extends Extractor {
     const jsonResponse = JSON.parse(response) as SoaperInfoResponsePartial;
 
     const m3u8Url = new URL(jsonResponse['val'], url.origin);
-    const height = await guessFromPlaylist(ctx, this.fetcher, m3u8Url);
 
     return [
       {
@@ -59,8 +58,8 @@ export class Soaper extends Extractor {
         ttl: this.ttl,
         meta: {
           countryCodes: [countryCode],
+          height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url),
           title: `${title}`,
-          ...(height && { height }),
         },
       },
     ];
