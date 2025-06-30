@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.32.6](https://github.com/webstreamr/webstreamr/compare/v0.32.5...v0.32.6) (2025-06-30)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @stylistic/eslint-plugin to v5.1.0 ([#190](https://github.com/webstreamr/webstreamr/issues/190)) ([4213b15](https://github.com/webstreamr/webstreamr/commit/4213b1571dc653b451510ea19b241474479e66cb))
+* **deps:** update dependency @types/jest to v30 ([#193](https://github.com/webstreamr/webstreamr/issues/193)) ([947060b](https://github.com/webstreamr/webstreamr/commit/947060b07e8f2654bc9056a38069d62c30fb4e73))
+* **deps:** update dependency @types/node to v22.15.34 ([#192](https://github.com/webstreamr/webstreamr/issues/192)) ([091bb44](https://github.com/webstreamr/webstreamr/commit/091bb44ccd6171371c6c919d0081cbd4d8b829e7))
+
 ## [0.32.5](https://github.com/webstreamr/webstreamr/compare/v0.32.4...v0.32.5) (2025-06-28)
 
 
