@@ -8,6 +8,8 @@ export abstract class Extractor {
 
   public readonly ttl: number = 900000; // 15m
 
+  public readonly viaMediaFlowProxy: boolean = false;
+
   public abstract supports(ctx: Context, url: URL): boolean;
 
   public normalize(url: URL): URL {

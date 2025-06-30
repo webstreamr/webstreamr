@@ -12,6 +12,8 @@ export class Mixdrop extends Extractor {
 
   public override readonly ttl = 0;
 
+  public override viaMediaFlowProxy = true;
+
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
