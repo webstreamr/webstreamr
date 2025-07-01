@@ -21,7 +21,7 @@ export class Frembed implements Source {
   public async handle(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
-    const apiUrl = new URL(`https://frembed.store/api/series?id=${tmdbId.id}&sa=${tmdbId.season}&epi=${tmdbId.episode}&idType=tmdb`);
+    const apiUrl = new URL(`https://frembed.wiki/api/series?id=${tmdbId.id}&sa=${tmdbId.season}&epi=${tmdbId.episode}&idType=tmdb`);
 
     const json = JSON.parse(await this.fetcher.text(ctx, apiUrl));
 
