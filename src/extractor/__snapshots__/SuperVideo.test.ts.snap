@@ -11,6 +11,7 @@ exports[`SuperVideo embed only 1`] = `
       "countryCodes": [
         "it",
       ],
+      "height": undefined,
       "title": "",
     },
     "sourceId": "supervideo_it",

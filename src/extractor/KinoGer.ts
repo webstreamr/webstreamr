@@ -1,6 +1,6 @@
 import crypto from 'crypto';
 import { Extractor } from './Extractor';
-import { Fetcher, guessHeightFromTitle } from '../utils';
+import { Fetcher } from '../utils';
 import { Context, CountryCode, Format, UrlResult } from '../types';
 
 /** @see https://github.com/Gujal00/ResolveURL/blob/master/script.module.resolveurl/lib/resolveurl/plugins/kinoger.py */
@@ -45,7 +45,6 @@ export class KinoGer extends Extractor {
         ttl: this.ttl,
         meta: {
           countryCodes: [countryCode],
-          height: guessHeightFromTitle(title),
           title,
         },
         requestHeaders: {

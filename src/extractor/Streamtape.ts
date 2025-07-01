@@ -3,7 +3,6 @@ import { Extractor } from './Extractor';
 import {
   buildMediaFlowProxyExtractorRedirectUrl,
   Fetcher,
-  guessHeightFromTitle,
   supportsMediaFlowProxy,
 } from '../utils';
 import { Context, CountryCode, Format, UrlResult } from '../types';
@@ -42,7 +41,6 @@ export class Streamtape extends Extractor {
         ttl: this.ttl,
         meta: {
           countryCodes: [countryCode],
-          height: guessHeightFromTitle(title),
           title,
         },
       },

@@ -1,7 +1,7 @@
 import randomstring from 'randomstring';
 import * as cheerio from 'cheerio';
 import { Extractor } from './Extractor';
-import { Fetcher, guessHeightFromTitle } from '../utils';
+import { Fetcher } from '../utils';
 import { Context, CountryCode, Format, UrlResult } from '../types';
 import { NotFoundError } from '../error';
 
@@ -57,7 +57,6 @@ export class DoodStream extends Extractor {
         ttl: this.ttl,
         meta: {
           countryCodes: [countryCode],
-          height: guessHeightFromTitle(title),
           title,
           ...(mp4Head['content-length'] && { bytes: parseInt(mp4Head['content-length'] as string) }),
         },
