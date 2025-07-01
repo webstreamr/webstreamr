@@ -1,5 +1,30 @@
 # Changelog
 
+## [0.33.0](https://github.com/webstreamr/webstreamr/compare/v0.32.5...v0.33.0) (2025-07-01)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @stylistic/eslint-plugin to v5.1.0 ([#190](https://github.com/webstreamr/webstreamr/issues/190)) ([4213b15](https://github.com/webstreamr/webstreamr/commit/4213b1571dc653b451510ea19b241474479e66cb))
+* **deps:** update dependency @types/jest to v30 ([#193](https://github.com/webstreamr/webstreamr/issues/193)) ([947060b](https://github.com/webstreamr/webstreamr/commit/947060b07e8f2654bc9056a38069d62c30fb4e73))
+* **deps:** update dependency @types/node to v22.15.34 ([#192](https://github.com/webstreamr/webstreamr/issues/192)) ([091bb44](https://github.com/webstreamr/webstreamr/commit/091bb44ccd6171371c6c919d0081cbd4d8b829e7))
+* **deps:** update dependency typescript-eslint to v8.35.1 ([#194](https://github.com/webstreamr/webstreamr/issues/194)) ([ac78e68](https://github.com/webstreamr/webstreamr/commit/ac78e6831b42308ecac1c9d15b0e90be41544f49))
+* **extractor:** add viaMediaFlowProxy flag to extractors ([8c8bfd6](https://github.com/webstreamr/webstreamr/commit/8c8bfd6051b88c036d539713f33f6f1bf4282c2e))
+* **extractor:** simplify type and passing of height ([b88eba0](https://github.com/webstreamr/webstreamr/commit/b88eba017d59bc14dc6d3e326d008a23698bbdb2))
+* remove warmup ([bf2187b](https://github.com/webstreamr/webstreamr/commit/bf2187bbbdd397a4189427ca9b96b29219339ab3))
+
+
+### Features
+
+* add Japanese and Korean to languages for VixSrc ([81434ff](https://github.com/webstreamr/webstreamr/commit/81434fff0e19e3df56d6069bfc62608fd8402192))
+* **extractor:** implement Streamtape via MediaFlow Proxy ([9d3ce24](https://github.com/webstreamr/webstreamr/commit/9d3ce24b9031256ef0d7c2ee4d7dfb16ab58ba8b))
+* make multi sources explicitly configurable ([a0ed13f](https://github.com/webstreamr/webstreamr/commit/a0ed13f18ee2e37ca5a940cbdb2adadfbda0ca3d))
+
+
+### Bug Fixes
+
+* **source:** update Frembed domain ([0fe5659](https://github.com/webstreamr/webstreamr/commit/0fe5659f08fad23edd1d1aba0722616f5fb8aabd))
+
 ## [0.32.5](https://github.com/webstreamr/webstreamr/compare/v0.32.4...v0.32.5) (2025-06-28)
 
 
