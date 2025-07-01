@@ -6,11 +6,11 @@ import { Fetcher } from '../utils';
 import { KinoGer } from './KinoGer';
 import { Mixdrop } from './Mixdrop';
 import { Soaper } from './Soaper';
+import { Streamtape } from './Streamtape';
 import { SuperVideo } from './SuperVideo';
 import { Uqload } from './Uqload';
 import { VidSrc } from './VidSrc';
 import { VixSrc } from './VixSrc';
-import { Streamtape } from './Streamtape';
 
 export * from './Extractor';
 export * from './ExtractorRegistry';
@@ -18,11 +18,11 @@ export * from './ExtractorRegistry';
 export const createExtractors = (fetcher: Fetcher): Extractor[] => [
   new DoodStream(fetcher),
   new Dropload(fetcher),
-  new SuperVideo(fetcher),
   new KinoGer(fetcher),
   new Mixdrop(fetcher),
   new Soaper(fetcher),
   new Streamtape(fetcher),
+  new SuperVideo(fetcher),
   new Uqload(fetcher),
   new VidSrc(fetcher),
   new VixSrc(fetcher),
