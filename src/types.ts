@@ -18,6 +18,8 @@ export enum CountryCode {
   es = 'es',
   fr = 'fr',
   it = 'it',
+  ja = 'ja',
+  ko = 'ko',
   mx = 'mx',
 }
 

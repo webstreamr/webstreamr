@@ -3,7 +3,6 @@ import { Extractor } from './Extractor';
 import {
   buildMediaFlowProxyExtractorStreamUrl,
   Fetcher,
-  getCountryCodes,
   iso639FromCountryCode,
   supportsMediaFlowProxy,
 } from '../utils';
@@ -66,7 +65,7 @@ export class VixSrc extends Extractor {
 
     const countryCodes: CountryCode[] = [CountryCode.it];
 
-    getCountryCodes(ctx.config).forEach((countryCode) => {
+    (Object.keys(CountryCode) as CountryCode[]).forEach((countryCode) => {
       const iso639 = iso639FromCountryCode(countryCode);
 
       if (!countryCodes.includes(countryCode) && (new RegExp(`#EXT-X-MEDIA:TYPE=AUDIO.*LANGUAGE="${iso639}"`)).test(playlist)) {
