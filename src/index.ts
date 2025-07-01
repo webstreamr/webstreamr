@@ -4,8 +4,7 @@ import winston from 'winston';
 import { CineHDPlus, Cuevana, Eurostreaming, Frembed, FrenchCloud, Source, KinoGer, MeineCloud, MostraGuarda, Soaper, StreamKiste, VerHdLink, VidSrc, VixSrc } from './source';
 import { createExtractors, ExtractorRegistry } from './extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
-import { envGet, envIsProd, Fetcher, StreamResolver, tmdbFetch, TmdbId } from './utils';
-import { Context } from './types';
+import { envGet, envIsProd, Fetcher, StreamResolver } from './utils';
 
 const logger = winston.createLogger({
   transports: [
@@ -73,48 +72,3 @@ const port = parseInt(envGet('PORT') || '51546');
 addon.listen(port, () => {
   logger.info(`Add-on Repository URL: http://127.0.0.1:${port}/manifest.json`);
 });
-
-const cacheWarmup = async () => {
-  const ctx: Context = {
-    hostUrl: new URL('http://localhost'),
-    id: 'warmup',
-    config: { de: 'on', en: 'on', es: 'on', fr: 'on', it: 'on', mx: 'on' },
-  };
-  logger.info(`starting cache warmup`, ctx);
-
-  interface ResponsePartial { results: { id: number }[] }
-
-  const movies = [
-    ...(await tmdbFetch(ctx, fetcher, '/trending/movie/day') as ResponsePartial)['results'],
-  ];
-  const movieIds: number[] = [];
-  movies.forEach((movie) => {
-    if (!movieIds.includes(movie.id)) {
-      movieIds.push(movie.id);
-    }
-  });
-  for (const id of movieIds) {
-    await streamResolver.resolve(ctx, sources, 'movie', new TmdbId(id, undefined, undefined));
-  }
-  logger.info(`warmed up cache with ${movieIds.length} movies`, ctx);
-
-  const tvShows = [
-    ...(await tmdbFetch(ctx, fetcher, '/trending/tv/day') as ResponsePartial)['results'],
-  ];
-  const tvShowIds: number[] = [];
-  tvShows.forEach((tvShow) => {
-    if (!tvShowIds.includes(tvShow.id)) {
-      tvShowIds.push(tvShow.id);
-    }
-  });
-  for (const id of tvShowIds) {
-    await streamResolver.resolve(ctx, sources, 'series', new TmdbId(id, 1, 1));
-  }
-  logger.info(`warmed up cache with ${tvShowIds.length} tv shows`, ctx);
-
-  setTimeout(cacheWarmup, 3600000); // 1 hour
-};
-
-if (envIsProd()) {
-  setTimeout(cacheWarmup, 10000);
-}
