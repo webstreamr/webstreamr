@@ -36,11 +36,16 @@ export const buildManifest = (sources: Source[], config: Config): ManifestWithCo
   const countryCodeSources: Partial<Record<CountryCode, Source[]>> = {};
   sources.forEach(source =>
     source.countryCodes
-      .filter(countryCode => countryCode !== CountryCode.multi)
       .forEach(countryCode => countryCodeSources[countryCode] = [...(countryCodeSources[countryCode] ?? []), source]));
 
   const sortedLanguageSources = typedEntries(countryCodeSources)
-    .sort(([countryCodeA], [countryCodeB]) => countryCodeA.localeCompare(countryCodeB));
+    .sort(([countryCodeA], [countryCodeB]) => {
+      if (countryCodeB === CountryCode.multi) {
+        return 1;
+      }
+
+      return countryCodeA.localeCompare(countryCodeB);
+    });
 
   for (const [countryCode, sources] of sortedLanguageSources) {
     manifest.config.push({

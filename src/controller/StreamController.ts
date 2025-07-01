@@ -1,7 +1,7 @@
 import { Request, Response, Router } from 'express';
 import winston from 'winston';
 import { Source } from '../source';
-import { Config, Context, CountryCode } from '../types';
+import { Config, Context } from '../types';
 import { envIsProd, getDefaultConfig, ImdbId, StreamResolver } from '../utils';
 import { ContentType } from 'stremio-addon-sdk';
 
@@ -36,7 +36,7 @@ export class StreamController {
 
     this.logger.info(`Search stream for type "${type}" and id "${id}" for ip ${ctx.ip}`, ctx);
 
-    const sources = this.sources.filter(handler => handler.countryCodes.filter(countryCode => countryCode in ctx.config || countryCode === CountryCode.multi).length);
+    const sources = this.sources.filter(handler => handler.countryCodes.filter(countryCode => countryCode in ctx.config).length);
 
     const { streams, ttl } = await this.streamResolver.resolve(ctx, sources, type, ImdbId.fromString(id));
 

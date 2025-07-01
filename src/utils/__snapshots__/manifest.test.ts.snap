@@ -65,6 +65,11 @@ exports[`buildManifest has checked source with appropriate config 1`] = `
 exports[`buildManifest has unchecked source without a config 1`] = `
 [
   {
+    "key": "multi",
+    "title": "Multi 🌐 (VixSrc)",
+    "type": "checkbox",
+  },
+  {
     "key": "de",
     "title": "German 🇩🇪 (StreamKiste, MeineCloud)",
     "type": "checkbox",

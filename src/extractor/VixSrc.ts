@@ -3,6 +3,7 @@ import { Extractor } from './Extractor';
 import {
   buildMediaFlowProxyExtractorStreamUrl,
   Fetcher,
+  hasMultiEnabled,
   iso639FromCountryCode,
   supportsMediaFlowProxy,
 } from '../utils';
@@ -39,7 +40,7 @@ export class VixSrc extends Extractor {
     const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'VixCloud', url);
     const countryCodes = await this.determineCountryCodesFromPlaylist(ctx, playlistUrl);
 
-    if (!countryCodes.some(countryCode => countryCode in ctx.config)) {
+    if (!hasMultiEnabled(ctx.config) && !countryCodes.some(countryCode => countryCode in ctx.config)) {
       return [];
     }
 

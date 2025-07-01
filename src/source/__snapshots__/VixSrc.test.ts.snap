@@ -3,7 +3,7 @@
 exports[`VixSrc handle imdb black mirror s4e2 1`] = `
 [
   {
-    "countryCode": "it",
+    "countryCode": "multi",
     "url": "https://vixsrc.to/tv/42009/4/2",
   },
 ]
@@ -12,7 +12,7 @@ exports[`VixSrc handle imdb black mirror s4e2 1`] = `
 exports[`VixSrc handle imdb full metal jacket 1`] = `
 [
   {
-    "countryCode": "it",
+    "countryCode": "multi",
     "url": "https://vixsrc.to/movie/600",
   },
 ]
