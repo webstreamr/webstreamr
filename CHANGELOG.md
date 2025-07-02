@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.34.0](https://github.com/webstreamr/webstreamr/compare/v0.33.0...v0.34.0) (2025-07-02)
+
+
+### Miscellaneous Chores
+
+* **deps:** update eslint monorepo to v9.30.1 ([#196](https://github.com/webstreamr/webstreamr/issues/196)) ([2515a34](https://github.com/webstreamr/webstreamr/commit/2515a3487478388f8aac46b058c227511bfc90db))
+* **source:** improve Soaper matching ([ce4a00c](https://github.com/webstreamr/webstreamr/commit/ce4a00cfddaa5c99ddf88fabe32d001b04077175))
+
+
+### Features
+
+* **extractor:** add StreamEmbed support ([3d28b22](https://github.com/webstreamr/webstreamr/commit/3d28b226e5e6c33bef638d3c751be01a03aaf4c2))
+* **source:** add MegaKino support ([e73dba8](https://github.com/webstreamr/webstreamr/commit/e73dba8445c86ee6b8a0fe7239d73e53af8f39d7))
+
+
+### Code Refactoring
+
+* **extractor:** move title height guessing into central place ([5da52d6](https://github.com/webstreamr/webstreamr/commit/5da52d648a8fab039ea3b9c691b36ea9e05e9aac))
+* **extractor:** sort extractors ([1c986b0](https://github.com/webstreamr/webstreamr/commit/1c986b052186a326f134ca4d76550ac356acbfd9))
+* more consistent import style ([5c7b3fb](https://github.com/webstreamr/webstreamr/commit/5c7b3fb7f2f34116263e00fe375a6084e24952e2))
+
 ## [0.33.0](https://github.com/webstreamr/webstreamr/compare/v0.32.5...v0.33.0) (2025-07-01)
 
 
