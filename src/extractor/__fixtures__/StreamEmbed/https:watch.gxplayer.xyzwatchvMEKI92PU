@@ -1,0 +1,626 @@
+
+<!DOCTYPE html>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="content-language" content="EN"/>
+<title>Baymax%20-%20Riesiges%20Robowabohu.mp4</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
+
+<meta name="referrer" content="origin-when-cross-origin"> 
+<meta name="og:title" content="Baymax%20-%20Riesiges%20Robowabohu.mp4"> 
+<meta name="og:type" content="video.movie">  
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Baymax%20-%20Riesiges%20Robowabohu.mp4">   
+<script>
+ 
+        function showMessage(title, message) { 
+             $('playerbase').hide(); 
+             
+            document.write('<html lang="en"><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><head><meta charset="utf-8"><title>Warning</title><style>body,html{width:100%;height:100%;margin:0;padding:0;background-color:#151515;overflow:hidden}body{text-align:center;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#fff}#horizon{display:table;height:100%;position:static;width:100%}#sun{display:table-cell;vertical-align:middle;position:static;margin:0 auto}a,h1,p{margin:0 auto;max-width:80%}h1,p{display:block}h1{font-size:48px;margin-bottom:5px}p{font-size:24px;max-width:475px}a{color:#4bf;text-decoration:none}a[role=button]{margin-top:15px;display:inline-block;color:#fff;font-weight:700;padding:10px 20px;border-radius:5px;background:#4bf;text-shadow:none;font-size:16px}a[role=button]:active{background:#3795cc}.smaller p{font-size:18px}.smaller h1{font-size:42px}@media (max-width:499px){p{font-size:16px;line-height:1.4;max-width:290px}a[role=button]{font-size:16px;padding:7px 15px}.smaller p{font-size:15px}.smaller a[role=button]{font-size:14px}.smaller h1{font-size:36px}}@media (max-width:300px){h1{font-size:36px}p{font-size:14px;line-height:1.4;max-width:250px}a[role=button]{margin-top:10px;font-size:14px}.smaller p{font-size:12px}.smaller a[role=button]{font-size:12px}.smaller h1{font-size:28px}}</style> </head><body><div id="horizon"><div id="sun"><h1>'+title+'</h1><p>'+message+'</p> </div></div></body></html>');
+ 
+            
+        }
+        
+ 
+
+ 
+        
+
+ </script>
+<!--<script src='https://content.jwplatform.com/libraries/hDZaZjnc.js'></script>
+<script>jwplayer.key='ksaKvjlJRbnrPXSGpuPVqfscYS9+rZFhulEcXvUQMbyWAmIQyyjPjZAQPLw=';</script>   -->
+ 
+<!--  <script src='https://ssl.p.jwpcdn.com/player/v/8.9.5/jwplayer.js'></script> -->
+
+
+<script src='/assets/player/jwplayer-8.26.5/jwplayer.js'></script>
+ <!--<script src='/assets/player/jw8.26.2.js'></script>  -->
+ 
+ <!--<script src="/assets/player/provider.hlsjs.js"></script> 
+ <script>jwplayer.key='W7zSm81+mmIsg7F+fyHRKhF3ggLkTqtGMhvI92kbqf/ysE99';</script>  
+<!--<link href="netflix.css" rel="stylesheet">-->
+
+<style type="text/css">
+html,
+body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: black
+}
+
+#player,
+#playerbase {
+	position: fixed;
+	width: 100%;
+	height: 100%!important;
+	left: 0;
+	top: 0;
+	z-index: 10
+}
+
+.jw-rightclick {
+	display: none!important
+}
+
+.jw-display-icon-display {
+	border-radius: 50%
+}
+
+.loader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999996;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .3)
+}
+
+.loader>.page-loader__spinner {
+	position: absolute;
+	float: left;
+	left: 50%;
+	top: 50%;
+	height: 100px;
+	width: 100px;
+	background: url('/images/loading.svg');
+	background-repeat: no-repeat;
+	background-size: 100px 100px;
+	transform: translate(-50%, -50%)
+}
+
+.rek {
+	position: absolute;
+	z-index: 999998;
+	float: left;
+	left: 50%;
+	top: 50%;
+	height: auto;
+	width: auto;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0, 0, 0, .3)
+}
+
+.rek_close {
+	z-index: 999999;
+	position: absolute;
+	color: white;
+	top: 12px;
+	right: 3px;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 0;
+	-webkit-transition-duration: 0.4s;
+	opacity: 1
+}
+
+.rek_counter {
+	z-index: 999999;
+	position: absolute;
+	color: black;
+	margin: auto;
+	width: 100%;
+	bottom: 8px;
+	background-color: rgba(255, 255, 255, .5);
+	font-family: tahoma;
+	text-align: center;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 700;
+	text-shadow: 1px 1px 1px white, 0 0 1em white, 0 0 .2em black
+}
+
+.blockout {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 999996;
+	width: 45px;
+	height: 45px;
+	background-color: rgba(0, 0, 0, 0.0);
+}
+    .buffer-percentage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 12px;
+        color: white;
+        z-index: 2;
+        text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+    }   
+    .custom-quality-selector {
+    position: absolute;
+    top: 10px; /* Adjust based on player controls layout */
+    right: 10px;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.custom-quality-selector ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.custom-quality-selector li {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.custom-quality-selector li:hover {
+    background-color: #333;
+}
+
+</style>
+<!--<script
+    disable-devtool-auto
+    src='https://cdn.jsdelivr.net/npm/disable-devtool'  
+    clear-log='true'
+    disable-select='true'
+    disable-copy='true'
+    disable-cut='true'
+    disable-paste='true'
+></script> 
+-->
+
+
+
+
+
+</head>
+
+ 
+<body>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<!-- 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+<script src="https://cdn.jsdelivr.net/countupjs/1.8.5/countUp.min.js"></script>-->
+
+
+ 
+<!-- <script src='/assets/player/jw8.26.2.js'></script> 
+  <script src="/assets/player/customhls.js"></script>  
+
+<script src="provider.hlsjs.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>  --> 
+
+
+<div class="blockout" style="display:none;"></div>
+
+<div class="loader" >
+	<div class="page-loader__spinner" ></div>
+</div>
+ <div id="customQualitySelector" class="custom-quality-selector" style="display: none;">
+    <ul>
+        <!-- Quality options will be populated here via JavaScript -->
+    </ul>
+</div>
+
+ 
+<!--
+ -->
+<div id="playerbase" style="display:none;"></div>
+
+    
+        
+    <script> 
+    
+         
+
+$( document ).ready(function() { 
+    
+
+        
+        
+        
+    var playersettings = {"language":"en","stretching":"","skin":{"name":"original"},"logo":{"image":"","position":""},"captions":{"fontSize":"","fontfamily":""},"vastexclude":"bollywatch.co,www.bollywatch.co"}; 
+    var vast = null;
+    
+    var video = {"id":"11782","uid":"3","slug":"MEKI92PU","title":"Baymax%20-%20Riesiges%20Robowabohu.mp4","folderid":null,"quality":"[\"720p\",\"480p\",\"240p\"]","sources":null,"type":"hls","userlinkhost":"local","poster":"\/poster\/bXlzdEkwN2RMQUdKR29qZDJCMXFiT2JZMXJnOEY2ZzVFRkNtVFlyYld6K2lNN29RNFV6VUxhc2M4OUpoQkRkYw%3D%3D.jpg","subtitles":null,"added":"2024-05-15 00:15:30","updatedtime":"2024-11-20 15:16:43","status":"1","errorcount":"0","progressbar":"100","progress":"all done.","views":"2315","md5":"30b4a92517ace5825f5944c8a794ad3e"}; 
+
+    //var userplayer = []; 
+    var playerConfig = {
+        
+        playlist: [{
+            sources: [{
+                file: `/m3u8/${video.uid}/${video.md5}/master.txt?s=1&id=${video.id}&cache=${video.status}`,
+                type: "hls",
+                preload: "auto"
+            }],
+            image: video.poster
+        }],
+        playbackRateControls: [0.75, 1, 1.25, 1.5],
+        controls: true,
+        hlshtml: true,
+        primary: "hlsjs",
+        autostart: false,
+        width: "100%",
+        aspectratio: "16:9",
+        preload: "auto",
+        captions: {
+            color: "#FFF",
+            fontSize: 14,
+            backgroundOpacity: 0,
+            edgeStyle: "raised"
+        },
+        hlsjsConfig: {
+            //"debug": true,
+            "maxBufferSize": 0,
+            "maxBufferLength": 180,
+            "fragLoadingTimeOut": 60000,
+            "fragLoadingMaxRetry": 600
+        }
+    };
+
+ 
+
+// Initialize JWPlayer with the configured settings
+const player = jwplayer('playerbase').setup(playerConfig);
+
+
+function updateBufferingPercentage() {
+    let bufferPercent = player.getBuffer(); // Current segment's buffer percentage
+    let bufferIcon = document.querySelector('.jw-svg-icon-buffer');
+
+    // Check if the buffer icon is available and if our element is not already added
+    if (bufferIcon && !document.getElementById('buffer-percentage')) {
+        let bufferPercentageElement = document.createElement('span');
+        bufferPercentageElement.id = 'buffer-percentage';
+        bufferPercentageElement.className = 'buffer-percentage';
+        bufferPercentageElement.style.cssText = 'position: absolute; font-size: 12px; color: white; text-align: center; width: 100%;';
+        //bufferIcon.appendChild(bufferPercentageElement);
+        $(".jw-svg-icon-buffer").parent().append(bufferPercentageElement );
+
+    }
+
+    // Update the buffer percentage text
+    let bufferPercentageElement = document.getElementById('buffer-percentage');
+    if (bufferPercentageElement) {
+        bufferPercentageElement.innerText = `${bufferPercent.toFixed(0)}%`;
+    }
+}
+
+let bufferingInterval;
+
+player.on('buffer', function() {
+    // Clear existing interval if any
+    if (bufferingInterval) {
+        clearInterval(bufferingInterval);
+    }
+    bufferingInterval = setInterval(updateBufferingPercentage, 100); // Update every 300 milliseconds
+});
+
+player.on('play', function() {
+    if (bufferingInterval) {
+        clearInterval(bufferingInterval);
+        bufferingInterval = null;
+    }
+    let bufferPercentageElement = document.getElementById('buffer-percentage');
+    if (bufferPercentageElement) {
+        bufferPercentageElement.remove();
+    }
+});
+
+function lockOrientationOnFullscreen(playerInstance) {
+    playerInstance.on('fullscreen', function(event) {
+        if (event.fullscreen && screen.orientation) {
+            screen.orientation.lock("landscape").catch(function(error) {
+                console.warn("Screen orientation lock failed:", error);
+            });
+        }
+    });
+}
+
+ function createCustomQualitySelector(playerInstance) {
+    const qualities = playerInstance.getQualityLevels();
+    const qualitySelector = document.getElementById('customQualitySelector');
+    const qualityList = qualitySelector.querySelector('ul');
+    qualityList.innerHTML = ''; // Clear existing list items
+
+    qualities.forEach((quality, index) => {
+        const li = document.createElement('li');
+        li.textContent = quality.label;
+        li.onclick = function() {
+            playerInstance.setCurrentQuality(index);
+            qualitySelector.style.display = 'none'; // Hide selector after selection
+        };
+        qualityList.appendChild(li);
+    });
+
+    qualitySelector.style.display = 'block'; // Show the custom quality selector
+}
+player.on('levels', function() {
+ //alert(JSON.stringify(this.getQualityLevels()));
+});
+(function() {
+    var originalSend = XMLHttpRequest.prototype.send;
+    XMLHttpRequest.prototype.send = function() {
+        this.addEventListener('load', function() {
+            console.log('Response URL:', this.responseURL);
+            console.log('Response Status:', this.status);
+            console.log('Response Content:', this.responseText);
+        });
+
+        originalSend.apply(this, arguments);
+    };
+})();
+
+player.on('ready', function() {
+    
+    // Check if the built-in quality selector is visible
+    /*if (!isQualitySelectorVisible()) {
+        // If not visible, create and display the custom quality selector
+        createCustomQualitySelector(player);
+    }*/
+    // Attempt to lock screen orientation on fullscreen
+    lockOrientationOnFullscreen(player);
+
+
+
+var ads = true;
+            if (playersettings.vastexclude) {
+                var vastexclude = playersettings.vastexclude; 
+                const urlParams = new URLSearchParams(window.location.search);
+                let ref = urlParams.get('ref');
+                var refdom = document.referrer.split( '/' )[2];
+                if (ref) {
+                    if (vastexclude.includes(',')){
+                        var str_array = vastexclude.split(',');
+                        for(var i = 0; i < str_array.length; i++) {
+                            str_array[i] = str_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
+                            if(ref == str_array[i]) {
+                                ads = false;
+                                break;
+                            } 
+                        }
+                    } else {
+                        vastexclude = vastexclude.replace(/^\s*/, "").replace(/\s*$/, "");
+                        if(ref == vastexclude) {
+                            ads = false; 
+                        } 
+                    }
+                } else {
+                    if (vastexclude.includes(',')){
+                        var str_array = vastexclude.split(',');
+                        for(var i = 0; i < str_array.length; i++) {
+                            str_array[i] = str_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
+                            if(refdom == str_array[i]) {
+                                ads = false;
+                                break;
+                            } 
+                        }
+                    } else {
+                        vastexclude = vastexclude.replace(/^\s*/, "").replace(/\s*$/, "");
+                        if(refdom == vastexclude) {
+                            ads = false; 
+                        } 
+                    }
+                }
+            }  
+
+            if (vast && hasValidVastUrls(vast) && ads) {
+                playerConfig.advertising = {
+                    client: "vast",
+                    schedule: buildVastSchedule(vast)
+                };
+            }
+            
+            
+            
+
+	$('.loader').remove();
+	$('#playerbase').show(); 
+	
+//createCustomQualitySelector(player);
+});
+  
+
+
+    player.on("audioTracks", function () {
+        audioTracks = player.getAudioTracks();
+        console.log(audioTracks);
+        if (audioTracks.length > 1 ) {
+            player.addButton("assets/images/audio2.svg","Audio Tracks", function () {
+                var ailea = $(".jw-controls").hasClass("jw-settings-open");
+                    if (ailea) {
+                        $(".jw-settings-back").css("display", "none");
+                        $(".jw-settings-topbar").removeClass("jw-nested-menu-open");
+                        $(".jw-controls").removeClass("jw-settings-open");
+                        $(".jw-settings-menu").attr("aria-expanded", "false");
+                        $(".jw-submenu-audioTracks").attr("aria-expanded", "false");
+                        $(".jw-settings-submenu").each(function () {
+                          $(this).removeClass("jw-settings-submenu-active").attr("aria-expanded", "false");
+                        });
+                    } else {
+                        $(".jw-controls").addClass("jw-settings-open");
+                        $(".jw-settings-menu").attr("aria-expanded", "true");
+                        $(".jw-submenu-audioTracks").attr("aria-expanded", "true");
+                        $(".jw-settings-submenu-audioTracks").addClass("jw-settings-submenu-active").attr("aria-expanded", "true");
+                    }
+                    }, "audioTracks");
+                        $(".jw-submenu-playbackRates, .jw-submenu-captions, .jw-submenu-quality, .jw-settings-submenu-button").on("click", function () {
+                            $(".jw-submenu-audioTracks").attr("aria-expanded", "false");
+                            $(".jw-settings-submenu-audioTracks").removeClass("jw-settings-submenu-active").attr("aria-expanded", "false");
+                        });
+        }
+    });
+    
+/*
+/*if (playersettings.key) {
+    player.key = playersettings.key; 
+} else {
+    player.key='ksaKvjlJRbnrPXSGpuPVqfscYS9+rZFhulEcXvUQMbyWAmIQyyjPjZAQPLw=';
+}
+*/
+   //const player = jwplayer('playerbase');
+    //player.setup(playerConfig); 
+    
+    // Add click listener to JWPlayer's settings button
+   /* player.on("audioTracks", function () {
+        audioTracks = player.getAudioTracks();
+        console.log(audioTracks);
+        if (audioTracks.length > 1 ) {
+            player.addButton("assets/images/audio2.svg","Audio Tracks", function () {
+                var uniquea = $(".jw-controls").hasClass("jw-settings-open");
+        console.log(uniquea);
+                if (uniquea) { 
+                    $(".jw-settings-back").css("display", "none");
+                    $(".jw-settings-back").css("display", "none");
+                    $(".jw-settings-topbar").removeClass("jw-nested-menu-open");
+                    $(".jw-controls").removeClass("jw-settings-open");
+                    $(".jw-settings-menu").attr("aria-expanded", "false");
+                    $(".jw-submenu-audioTracks").attr("aria-expanded", "false");
+                    $(".jw-settings-submenu").each(function () {
+                      $(this).removeClass("jw-settings-submenu-active").attr("aria-expanded", "false");
+                    }); 
+                    $(".jw-settings-submenu-audioTracks").removeClass("jw-settings-submenu-active") ;
+                    $(".jw-settings-submenu-audioTracks").attr("aria-expanded", "false");
+                } else {
+                    $(".jw-controls").addClass("jw-settings-open");
+                    $(".jw-settings-menu").attr("aria-expanded", "true");
+                    $(".jw-submenu-audioTracks").attr("aria-expanded", "true");
+                    $(".jw-settings-submenu-audioTracks").addClass("jw-settings-submenu-active").attr("aria-expanded", "true");
+                }
+            }, "audioTracks");
+        }
+    });
+ 
+    
+    
+    $('.jw-icon').on('click', function() {
+        console.log('Settings button clicked');
+        // Your custom logic here
+    });
+    
+function closeAudioTracksSubmenu() { 
+    $(".jw-settings-back").css("display", "none");
+    $(".jw-settings-topbar").removeClass("jw-nested-menu-open");
+    /*$(".jw-controls").removeClass("jw-settings-open");
+    *$(".jw-settings-menu").attr("aria-expanded", "false");
+    $(".jw-submenu-audioTracks").attr("aria-expanded", "false");
+    /*$(".jw-settings-submenu").each(function () {
+      $(this).removeClass("jw-settings-submenu-active").attr("aria-expanded", "false");
+    });*
+    $(".jw-settings-submenu-audioTracks").removeClass("jw-settings-submenu-active") ;
+    $(".jw-settings-submenu-audioTracks").attr("aria-expanded", "false");
+}
+$(document).on('click', function(event) {
+    // Check if the click is outside the audio tracks submenu and button
+    if (!$(event.target).closest('.jw-submenu-audioTracks, .jw-icon-audioTracks').length) {
+        closeAudioTracksSubmenu();
+    }
+});*/
+// Function to toggle the audio tracks submenu
+// Wait for JWPlayer to be ready 
+
+// CSS should handle the styling and initial hidden state of the submenu
+
+     
+    /*function addButton() {
+    
+        smallLogoFile = 'https://i0.wp.com/streamembed.com/usersc/templates/filestream/assets/img/iconstreamembed.png',
+        smallLogoURL = 'https://streamembed.com/',
+        
+        player.addButton(smallLogoFile, 'Free Video Hosting', function() {
+            if (smallLogoURL !== '') window.open(smallLogoURL, "_blank");
+            return true;
+        }, "logo");
+    }*/
+    
+ 
+    
+
+});
+     /*devtoolsDetector.addListener(function (isOpen, detail) { 
+    if (isOpen) {
+        removeJwp();
+        showMessage('404','not found');
+    }  
+    });
+    devtoolsDetector.launch(); */
+ 
+
+
+
+        function hasValidVastUrls(vastSettings) {
+            return vastSettings && vastSettings.link && vastSettings.link.some(url => url && url.trim() !== '');
+        }
+
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        function buildVastSchedule(vastSettings) {
+            console.log("VAST Settings:", vastSettings);
+            var schedule = {};
+            if (!vastSettings || !vastSettings.type) {
+                return schedule;
+            }
+            
+            var dKey = getQueryParameter('d');  // Correct parameter
+            
+            vastSettings.type.forEach((type, index) => {
+                console.log("Index:", index);  // Debugging output
+                if (vastSettings.link[index] && vastSettings.link[index] !== '') {
+                    var offset;
+                    if (type === 'preroll') {
+                        offset = 'pre';
+                    } else if (type === 'postroll') {
+                        offset = 'post';
+                    } else {
+                        // Only calculate timing for non preroll/postroll types
+                        if (vastSettings.timingType && vastSettings.timingType[index] === 'percentage') {
+                            offset = vastSettings.timingValue[index] + '%';
+                        } else {
+                            offset = vastSettings.timingValue[index];
+                        }
+                    }
+
+                    var vastUrl = vastSettings.link[index] + (vastSettings.link[index].includes('?') ? '&' : '?') + 'cp.host=' + encodeURIComponent(dKey);
+
+                    schedule['adbreak' + (index + 1)] = {
+                        offset: offset,
+                        skipoffset: "10",
+                        tag: vastUrl
+                    };
+                }
+            });
+            return schedule;
+        }
+     
+    </script>
+     
+</body>
+</html>
+	

@@ -6,6 +6,7 @@ import { Extractor } from './Extractor';
 import { KinoGer } from './KinoGer';
 import { Mixdrop } from './Mixdrop';
 import { Soaper } from './Soaper';
+import { StreamEmbed } from './StreamEmbed';
 import { Streamtape } from './Streamtape';
 import { SuperVideo } from './SuperVideo';
 import { Uqload } from './Uqload';
@@ -21,6 +22,7 @@ export const createExtractors = (fetcher: Fetcher): Extractor[] => [
   new KinoGer(fetcher),
   new Mixdrop(fetcher),
   new Soaper(fetcher),
+  new StreamEmbed(fetcher),
   new Streamtape(fetcher),
   new SuperVideo(fetcher),
   new Uqload(fetcher),
