@@ -1,7 +1,7 @@
 import { ContentType } from 'stremio-addon-sdk';
-import { Source, SourceResult } from './types';
-import { Fetcher, getImdbId, Id } from '../utils';
 import { Context, CountryCode } from '../types';
+import { Fetcher, getImdbId, Id } from '../utils';
+import { Source, SourceResult } from './types';
 
 export class VidSrc implements Source {
   public readonly id = 'vidsrc';

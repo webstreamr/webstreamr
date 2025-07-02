@@ -1,8 +1,8 @@
-import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
-import { Source, SourceResult } from './types';
-import { ImdbId, Fetcher, getImdbId, Id } from '../utils';
+import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
+import { Fetcher, getImdbId, Id, ImdbId } from '../utils';
+import { Source, SourceResult } from './types';
 
 export class StreamKiste implements Source {
   public readonly id = 'streamkiste';

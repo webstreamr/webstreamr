@@ -1,5 +1,5 @@
-import { CustomRequestInit, Fetcher } from './Fetcher';
 import { Context } from '../types';
+import { CustomRequestInit, Fetcher } from './Fetcher';
 
 export const guessHeightFromTitle = (title: string): number | undefined => {
   const heightMatch = title.match(/([0-9]+)p/);

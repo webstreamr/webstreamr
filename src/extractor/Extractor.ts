@@ -1,5 +1,5 @@
-import { Context, CountryCode, Format, UrlResult } from '../types';
 import { NotFoundError } from '../error';
+import { Context, CountryCode, Format, UrlResult } from '../types';
 import { guessHeightFromTitle } from '../utils';
 
 export abstract class Extractor {

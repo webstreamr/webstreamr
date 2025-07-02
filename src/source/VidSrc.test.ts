@@ -1,6 +1,6 @@
-import { VidSrc } from './VidSrc';
-import { FetcherMock, ImdbId } from '../utils';
 import { createTestContext } from '../test';
+import { FetcherMock, ImdbId } from '../utils';
+import { VidSrc } from './VidSrc';
 
 const ctx = createTestContext();
 

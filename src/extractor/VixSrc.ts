@@ -1,5 +1,5 @@
 import bytes from 'bytes';
-import { Extractor } from './Extractor';
+import { Context, CountryCode, Format, UrlResult } from '../types';
 import {
   buildMediaFlowProxyExtractorStreamUrl,
   Fetcher,
@@ -7,7 +7,7 @@ import {
   iso639FromCountryCode,
   supportsMediaFlowProxy,
 } from '../utils';
-import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Extractor } from './Extractor';
 
 export class VixSrc extends Extractor {
   public readonly id = 'vixsrc';

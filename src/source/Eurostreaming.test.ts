@@ -1,6 +1,6 @@
-import { Eurostreaming } from './Eurostreaming';
-import { FetcherMock, TmdbId } from '../utils';
 import { createTestContext } from '../test';
+import { FetcherMock, TmdbId } from '../utils';
+import { Eurostreaming } from './Eurostreaming';
 
 const ctx = createTestContext({ it: 'on' });
 

@@ -1,8 +1,8 @@
-import { ContentType } from 'stremio-addon-sdk';
 import * as cheerio from 'cheerio';
-import { Source, SourceResult } from './types';
-import { Fetcher, getTmdbId, getTmdbMovieDetails, getTmdbTvDetails, Id, TmdbId } from '../utils';
+import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
+import { Fetcher, getTmdbId, getTmdbMovieDetails, getTmdbTvDetails, Id, TmdbId } from '../utils';
+import { Source, SourceResult } from './types';
 
 export class Soaper implements Source {
   public readonly id = 'soaper';

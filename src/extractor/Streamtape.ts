@@ -1,11 +1,11 @@
 import * as cheerio from 'cheerio';
-import { Extractor } from './Extractor';
+import { Context, CountryCode, Format, UrlResult } from '../types';
 import {
   buildMediaFlowProxyExtractorRedirectUrl,
   Fetcher,
   supportsMediaFlowProxy,
 } from '../utils';
-import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Extractor } from './Extractor';
 
 export class Streamtape extends Extractor {
   public readonly id = 'streamtape';

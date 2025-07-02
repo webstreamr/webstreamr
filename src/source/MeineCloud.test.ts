@@ -1,6 +1,6 @@
-import { MeineCloud } from './MeineCloud';
-import { FetcherMock, ImdbId } from '../utils';
 import { createTestContext } from '../test';
+import { FetcherMock, ImdbId } from '../utils';
+import { MeineCloud } from './MeineCloud';
 
 const ctx = createTestContext({ de: 'on' });
 

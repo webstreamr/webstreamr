@@ -1,9 +1,9 @@
 import * as cheerio from 'cheerio';
 import slugify from 'slugify';
-import { Extractor } from './Extractor';
-import { Fetcher, guessHeightFromPlaylist } from '../utils';
-import { Context, CountryCode, Format, UrlResult } from '../types';
 import { NotFoundError } from '../error';
+import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Fetcher, guessHeightFromPlaylist } from '../utils';
+import { Extractor } from './Extractor';
 
 export class VidSrc extends Extractor {
   public readonly id = 'vidsrc';

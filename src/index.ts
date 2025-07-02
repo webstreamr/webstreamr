@@ -1,9 +1,9 @@
 import express, { NextFunction, Request, Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import winston from 'winston';
-import { CineHDPlus, Cuevana, Eurostreaming, Frembed, FrenchCloud, Source, KinoGer, MeineCloud, MostraGuarda, Soaper, StreamKiste, VerHdLink, VidSrc, VixSrc } from './source';
-import { createExtractors, ExtractorRegistry } from './extractor';
 import { ConfigureController, ManifestController, StreamController } from './controller';
+import { createExtractors, ExtractorRegistry } from './extractor';
+import { CineHDPlus, Cuevana, Eurostreaming, Frembed, FrenchCloud, KinoGer, MeineCloud, MostraGuarda, Soaper, Source, StreamKiste, VerHdLink, VidSrc, VixSrc } from './source';
 import { envGet, envIsProd, Fetcher, StreamResolver } from './utils';
 
 const logger = winston.createLogger({

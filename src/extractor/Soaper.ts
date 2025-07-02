@@ -1,6 +1,6 @@
-import { Extractor } from './Extractor';
-import { Fetcher, guessHeightFromPlaylist } from '../utils';
 import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Fetcher, guessHeightFromPlaylist } from '../utils';
+import { Extractor } from './Extractor';
 
 interface SoaperInfoResponsePartial {
   val: string;

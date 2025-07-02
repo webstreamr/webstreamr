@@ -1,9 +1,9 @@
 import winston from 'winston';
-import { FetcherMock } from '../utils';
-import { CountryCode } from '../types';
-import { ExtractorRegistry } from './ExtractorRegistry';
-import { ExternalUrl } from './ExternalUrl';
 import { createTestContext } from '../test';
+import { CountryCode } from '../types';
+import { FetcherMock } from '../utils';
+import { ExternalUrl } from './ExternalUrl';
+import { ExtractorRegistry } from './ExtractorRegistry';
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 const extractorRegistry = new ExtractorRegistry(logger, [new ExternalUrl(new FetcherMock(`${__dirname}/__fixtures__/ExternalUrl`))]);

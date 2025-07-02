@@ -1,13 +1,13 @@
 import { ContentType } from 'stremio-addon-sdk';
 import winston from 'winston';
-import { createExtractors, Extractor, ExtractorRegistry } from '../extractor';
-import { StreamResolver } from './StreamResolver';
-import { MeineCloud, MostraGuarda, Source, SourceResult } from '../source';
-import { BlockedReason, CountryCode, Format, UrlResult } from '../types';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
-import { ImdbId } from './id';
-import { FetcherMock } from './FetcherMock';
+import { createExtractors, Extractor, ExtractorRegistry } from '../extractor';
+import { MeineCloud, MostraGuarda, Source, SourceResult } from '../source';
 import { createTestContext } from '../test';
+import { BlockedReason, CountryCode, Format, UrlResult } from '../types';
+import { FetcherMock } from './FetcherMock';
+import { ImdbId } from './id';
+import { StreamResolver } from './StreamResolver';
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 const fetcher = new FetcherMock(`${__dirname}/__fixtures__/StreamResolver`);

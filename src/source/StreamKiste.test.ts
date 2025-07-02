@@ -1,6 +1,6 @@
-import { StreamKiste } from './StreamKiste';
-import { FetcherMock, ImdbId } from '../utils';
 import { createTestContext } from '../test';
+import { FetcherMock, ImdbId } from '../utils';
+import { StreamKiste } from './StreamKiste';
 
 const ctx = createTestContext({ de: 'on' });
 

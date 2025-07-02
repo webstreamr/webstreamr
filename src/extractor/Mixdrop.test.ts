@@ -1,9 +1,9 @@
 import winston from 'winston';
-import { FetcherMock } from '../utils';
+import { createTestContext } from '../test';
 import { CountryCode } from '../types';
+import { FetcherMock } from '../utils';
 import { ExtractorRegistry } from './ExtractorRegistry';
 import { Mixdrop } from './Mixdrop';
-import { createTestContext } from '../test';
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 const extractorRegistry = new ExtractorRegistry(logger, [new Mixdrop(new FetcherMock(`${__dirname}/__fixtures__/Mixdrop`))]);

@@ -1,8 +1,6 @@
+import bytes from 'bytes';
 import { ContentType, Stream } from 'stremio-addon-sdk';
 import winston from 'winston';
-import bytes from 'bytes';
-import { BlockedReason, Context, Format, UrlResult } from '../types';
-import { Source } from '../source';
 import {
   BlockedError,
   HttpError,
@@ -12,11 +10,13 @@ import {
   TooManyRequestsError,
   TooManyTimeoutsError,
 } from '../error';
-import { flagFromCountryCode } from './language';
+import { ExtractorRegistry } from '../extractor';
+import { Source } from '../source';
+import { BlockedReason, Context, Format, UrlResult } from '../types';
+import { showExternalUrls } from './config';
 import { envGetAppName } from './env';
 import { Id } from './id';
-import { ExtractorRegistry } from '../extractor';
-import { showExternalUrls } from './config';
+import { flagFromCountryCode } from './language';
 
 interface ResolveResponse {
   streams: Stream[];

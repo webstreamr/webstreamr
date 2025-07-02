@@ -1,8 +1,8 @@
+import { Context } from '../../types';
+import { Fetcher } from '../Fetcher';
+import { getImdbIdFromTmdbId, getTmdbIdFromImdbId } from '../tmdb';
 import { ImdbId } from './ImdbId';
 import { TmdbId } from './TmdbId';
-import { getImdbIdFromTmdbId, getTmdbIdFromImdbId } from '../tmdb';
-import { Fetcher } from '../Fetcher';
-import { Context } from '../../types';
 
 export * from './ImdbId';
 export * from './TmdbId';

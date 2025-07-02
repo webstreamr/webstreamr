@@ -1,6 +1,6 @@
-import { Soaper } from './Soaper';
-import { FetcherMock, ImdbId, TmdbId } from '../utils';
 import { createTestContext } from '../test';
+import { FetcherMock, ImdbId, TmdbId } from '../utils';
+import { Soaper } from './Soaper';
 
 const ctx = createTestContext();
 

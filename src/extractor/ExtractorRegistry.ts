@@ -1,7 +1,7 @@
 import TTLCache from '@isaacs/ttlcache';
 import winston from 'winston';
-import { Extractor } from './Extractor';
 import { Context, CountryCode, UrlResult } from '../types';
+import { Extractor } from './Extractor';
 
 export class ExtractorRegistry {
   private readonly logger: winston.Logger;

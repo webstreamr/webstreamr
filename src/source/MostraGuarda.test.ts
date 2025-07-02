@@ -1,6 +1,6 @@
-import { MostraGuarda } from './MostraGuarda';
-import { FetcherMock, ImdbId } from '../utils';
 import { createTestContext } from '../test';
+import { FetcherMock, ImdbId } from '../utils';
+import { MostraGuarda } from './MostraGuarda';
 
 const ctx = createTestContext({ it: 'on' });
 

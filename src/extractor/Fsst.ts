@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
-import { Extractor } from './Extractor';
-import { Fetcher } from '../utils';
 import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Fetcher } from '../utils';
+import { Extractor } from './Extractor';
 
 export class Fsst extends Extractor {
   public readonly id = 'fsst';

@@ -1,9 +1,9 @@
 import bytes from 'bytes';
 import * as cheerio from 'cheerio';
-import { Extractor } from './Extractor';
-import { buildMediaFlowProxyExtractorRedirectUrl, Fetcher, supportsMediaFlowProxy } from '../utils';
-import { Context, CountryCode, Format, UrlResult } from '../types';
 import { NotFoundError } from '../error';
+import { Context, CountryCode, Format, UrlResult } from '../types';
+import { buildMediaFlowProxyExtractorRedirectUrl, Fetcher, supportsMediaFlowProxy } from '../utils';
+import { Extractor } from './Extractor';
 
 export class Mixdrop extends Extractor {
   public readonly id = 'mixdrop';

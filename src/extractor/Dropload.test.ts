@@ -1,9 +1,9 @@
 import winston from 'winston';
-import { FetcherMock } from '../utils';
-import { CountryCode } from '../types';
-import { ExtractorRegistry } from './ExtractorRegistry';
-import { Dropload } from './Dropload';
 import { createTestContext } from '../test';
+import { CountryCode } from '../types';
+import { FetcherMock } from '../utils';
+import { Dropload } from './Dropload';
+import { ExtractorRegistry } from './ExtractorRegistry';
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 const extractorRegistry = new ExtractorRegistry(logger, [new Dropload(new FetcherMock(`${__dirname}/__fixtures__/Dropload`))]);

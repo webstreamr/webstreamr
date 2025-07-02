@@ -1,8 +1,8 @@
 import { Request, Response, Router } from 'express';
 import { landingTemplate } from '../landingTemplate';
-import { buildManifest, getDefaultConfig } from '../utils';
 import { Source } from '../source';
 import { Config } from '../types';
+import { buildManifest, getDefaultConfig } from '../utils';
 
 export class ConfigureController {
   public readonly router: Router;

@@ -1,8 +1,8 @@
+import { Fetcher } from '../utils';
 import { DoodStream } from './DoodStream';
 import { Dropload } from './Dropload';
 import { ExternalUrl } from './ExternalUrl';
 import { Extractor } from './Extractor';
-import { Fetcher } from '../utils';
 import { KinoGer } from './KinoGer';
 import { Mixdrop } from './Mixdrop';
 import { Soaper } from './Soaper';

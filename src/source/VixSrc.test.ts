@@ -1,6 +1,6 @@
-import { VixSrc } from './VixSrc';
-import { FetcherMock, ImdbId } from '../utils';
 import { createTestContext } from '../test';
+import { FetcherMock, ImdbId } from '../utils';
+import { VixSrc } from './VixSrc';
 
 const ctx = createTestContext();
 

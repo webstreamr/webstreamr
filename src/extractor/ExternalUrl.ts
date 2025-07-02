@@ -1,6 +1,6 @@
-import { Extractor } from './Extractor';
-import { Fetcher, showExternalUrls } from '../utils';
 import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Fetcher, showExternalUrls } from '../utils';
+import { Extractor } from './Extractor';
 
 export class ExternalUrl extends Extractor {
   public readonly id = 'external';

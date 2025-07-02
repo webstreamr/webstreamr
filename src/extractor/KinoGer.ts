@@ -1,7 +1,7 @@
 import crypto from 'crypto';
-import { Extractor } from './Extractor';
-import { Fetcher } from '../utils';
 import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Fetcher } from '../utils';
+import { Extractor } from './Extractor';
 
 /** @see https://github.com/Gujal00/ResolveURL/blob/master/script.module.resolveurl/lib/resolveurl/plugins/kinoger.py */
 export class KinoGer extends Extractor {

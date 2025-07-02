@@ -1,6 +1,6 @@
-import { KinoGer } from './KinoGer';
-import { FetcherMock, ImdbId } from '../utils';
 import { createTestContext } from '../test';
+import { FetcherMock, ImdbId } from '../utils';
+import { KinoGer } from './KinoGer';
 
 const ctx = createTestContext({ de: 'on' });
 

@@ -1,15 +1,15 @@
-import { Dispatcher, ProxyAgent } from 'undici';
+import { clearTimeout } from 'node:timers';
+import { gunzipSync, gzipSync } from 'zlib';
+import TTLCache from '@isaacs/ttlcache';
+import { Mutex, Semaphore, SemaphoreInterface, withTimeout } from 'async-mutex';
 import { socksDispatcher } from 'fetch-socks';
 import CachePolicy from 'http-cache-semantics';
-import { gzipSync, gunzipSync } from 'zlib';
 import { LRUCache } from 'lru-cache';
-import TTLCache from '@isaacs/ttlcache';
-import winston from 'winston';
-import { Mutex, Semaphore, SemaphoreInterface, withTimeout } from 'async-mutex';
 import { Cookie, CookieJar } from 'tough-cookie';
+import { Dispatcher, ProxyAgent } from 'undici';
+import winston from 'winston';
+import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
 import { BlockedReason, Context } from '../types';
-import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyTimeoutsError, TooManyRequestsError } from '../error';
-import { clearTimeout } from 'node:timers';
 import { envGet } from './env';
 
 interface HttpCacheItem {

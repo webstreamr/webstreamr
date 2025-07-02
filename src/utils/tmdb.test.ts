@@ -1,7 +1,7 @@
-import { getImdbIdFromTmdbId, getTmdbIdFromImdbId } from './tmdb';
-import { ImdbId, TmdbId } from './id';
-import { FetcherMock } from './FetcherMock';
 import { createTestContext } from '../test';
+import { FetcherMock } from './FetcherMock';
+import { ImdbId, TmdbId } from './id';
+import { getImdbIdFromTmdbId, getTmdbIdFromImdbId } from './tmdb';
 
 const fetcher = new FetcherMock(`${__dirname}/__fixtures__/tmdb`);
 const ctx = createTestContext();

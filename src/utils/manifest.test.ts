@@ -1,6 +1,6 @@
-import { buildManifest } from './manifest';
-import { StreamKiste, MeineCloud, VerHdLink, VixSrc } from '../source';
+import { MeineCloud, StreamKiste, VerHdLink, VixSrc } from '../source';
 import { FetcherMock } from './FetcherMock';
+import { buildManifest } from './manifest';
 
 const fetcher = new FetcherMock('/dev/null');
 

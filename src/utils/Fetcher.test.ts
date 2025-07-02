@@ -1,10 +1,10 @@
+import fetchMock from 'fetch-mock';
 import { Agent, ProxyAgent } from 'undici';
 import winston from 'winston';
-import fetchMock from 'fetch-mock';
-import { Fetcher } from './Fetcher';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
 import { createTestContext } from '../test';
 import { BlockedReason } from '../types';
+import { Fetcher } from './Fetcher';
 fetchMock.mockGlobal();
 
 const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));

@@ -1,6 +1,6 @@
-import { CineHDPlus } from './CineHDPlus';
-import { FetcherMock, ImdbId } from '../utils';
 import { createTestContext } from '../test';
+import { FetcherMock, ImdbId } from '../utils';
+import { CineHDPlus } from './CineHDPlus';
 
 const ctx = createTestContext({ es: 'on', mx: 'on' });
 

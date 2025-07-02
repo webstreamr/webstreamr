@@ -1,9 +1,9 @@
 import { Request, Response, Router } from 'express';
+import { ContentType } from 'stremio-addon-sdk';
 import winston from 'winston';
 import { Source } from '../source';
 import { Config, Context } from '../types';
 import { envIsProd, getDefaultConfig, ImdbId, StreamResolver } from '../utils';
-import { ContentType } from 'stremio-addon-sdk';
 
 export class StreamController {
   public readonly router: Router;

@@ -1,6 +1,6 @@
-import { Cuevana } from './Cuevana';
-import { FetcherMock, TmdbId } from '../utils';
 import { createTestContext } from '../test';
+import { FetcherMock, TmdbId } from '../utils';
+import { Cuevana } from './Cuevana';
 
 const ctx = createTestContext({ es: 'on', mx: 'on' });
 
