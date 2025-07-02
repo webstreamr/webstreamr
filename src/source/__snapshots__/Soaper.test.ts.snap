@@ -20,6 +20,16 @@ exports[`Soaper handle imdb full metal jacket 1`] = `
 ]
 `;
 
+exports[`Soaper handle lego heroes flash 1`] = `
+[
+  {
+    "countryCode": "en",
+    "title": "LEGO DC Comics Super Heroes: The Flash (2018)",
+    "url": "https://soaper.live/movie_lOGwQVEDV0.html",
+  },
+]
+`;
+
 exports[`Soaper handle tmdb black mirror s4e2 1`] = `
 [
   {

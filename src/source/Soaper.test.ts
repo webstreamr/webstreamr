@@ -40,4 +40,9 @@ describe('Soaper', () => {
     const streams = await handler.handle(ctx, 'series', new ImdbId('tt0093058', undefined, undefined));
     expect(streams).toMatchSnapshot();
   });
+
+  test('handle lego heroes flash', async () => {
+    const streams = await handler.handle(ctx, 'movie', new TmdbId(504997, undefined, undefined));
+    expect(streams).toMatchSnapshot();
+  });
 });

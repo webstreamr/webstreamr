@@ -58,9 +58,16 @@ export class Soaper implements Source {
 
     const $ = cheerio.load(html);
 
-    return $(`.thumbnail .img-group:has(.img-tip:contains("${year}")) a[href^="${hrefPrefix}"]`)
+    const exactKeyWordMatchUrl = $(`a[href^="${hrefPrefix}"]`)
+      .filter((_i, el) => $(el).text().toLowerCase() === keyword.toLowerCase())
       .map((_i, el) => new URL($(el).attr('href') as string, this.baseUrl))
       .get(0);
+
+    const yearMatchUrl = $(`.thumbnail .img-group:has(.img-tip:contains("${year}")) a[href^="${hrefPrefix}"]`)
+      .map((_i, el) => new URL($(el).attr('href') as string, this.baseUrl))
+      .get(0);
+
+    return exactKeyWordMatchUrl ?? yearMatchUrl;
   };
 
   private readonly getKeywordYearAndHrefPrefix = async (ctx: Context, tmdbId: TmdbId): Promise<[string, number, string]> => {
