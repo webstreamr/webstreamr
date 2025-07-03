@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.34.1](https://github.com/webstreamr/webstreamr/compare/v0.34.0...v0.34.1) (2025-07-03)
+
+
+### Miscellaneous Chores
+
+* **deps:** update jest monorepo to v30.0.4 ([#198](https://github.com/webstreamr/webstreamr/issues/198)) ([1b40ecd](https://github.com/webstreamr/webstreamr/commit/1b40ecdd07776610ba2dd3427226a691f79074a0))
+
 ## [0.34.0](https://github.com/webstreamr/webstreamr/compare/v0.33.0...v0.34.0) (2025-07-02)
 
 
