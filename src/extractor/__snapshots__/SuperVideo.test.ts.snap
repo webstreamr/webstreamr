@@ -21,6 +21,8 @@ exports[`SuperVideo embed only 1`] = `
 ]
 `;
 
+exports[`SuperVideo processing video 1`] = `[]`;
+
 exports[`SuperVideo supervideo.cc /e/ 1`] = `
 [
   {

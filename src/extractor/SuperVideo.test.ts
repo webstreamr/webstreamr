@@ -26,4 +26,8 @@ describe('SuperVideo', () => {
   test('deleted or expired file', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://supervideo.cc/ndf5shmy9lpt'), CountryCode.it)).toMatchSnapshot();
   });
+
+  test('processing video', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://supervideo.cc/3h1qqoqtldo8'), CountryCode.it)).toMatchSnapshot();
+  });
 });
