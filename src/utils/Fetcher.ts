@@ -1,12 +1,10 @@
-import { clearTimeout } from 'node:timers';
 import { gunzipSync, gzipSync } from 'zlib';
 import TTLCache from '@isaacs/ttlcache';
 import { Mutex, Semaphore, SemaphoreInterface, withTimeout } from 'async-mutex';
-import { socksDispatcher } from 'fetch-socks';
 import CachePolicy from 'http-cache-semantics';
 import { LRUCache } from 'lru-cache';
 import { Cookie, CookieJar } from 'tough-cookie';
-import { Dispatcher, ProxyAgent } from 'undici';
+import { fetch, RequestInit, Response } from 'undici';
 import winston from 'winston';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
 import { BlockedReason, Context } from '../types';
@@ -61,7 +59,6 @@ export class Fetcher {
   private readonly TIMEOUT_CACHE_TTL = 3600000; // 1h
 
   private readonly logger: winston.Logger;
-  private readonly dispatcher: Dispatcher | undefined;
 
   private readonly httpCache = new LRUCache<string, Buffer>({ max: 1024 });
   private readonly rateLimitedCache = new TTLCache<string, undefined>({ max: 1024 });
@@ -74,15 +71,6 @@ export class Fetcher {
 
   public constructor(logger: winston.Logger) {
     this.logger = logger;
-
-    if (process.env['ALL_PROXY']) {
-      const proxyUrl = new URL(process.env['ALL_PROXY']);
-      if (proxyUrl.protocol === 'socks5:') {
-        this.dispatcher = socksDispatcher({ type: 5, host: proxyUrl.hostname, port: parseInt(proxyUrl.port) });
-      } else {
-        this.dispatcher = new ProxyAgent(proxyUrl.href);
-      }
-    }
   }
 
   public async text(ctx: Context, url: URL, init?: CustomRequestInit): Promise<string> {
@@ -263,21 +251,16 @@ export class Fetcher {
       throw new TooManyTimeoutsError();
     }
 
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), init?.timeout ?? this.DEFAULT_TIMEOUT);
-
     let response;
     try {
-      response = await fetch(url, { ...init, dispatcher: this.dispatcher, keepalive: true, signal: controller.signal } as RequestInit);
+      response = await fetch(url, { ...init, keepalive: true, signal: AbortSignal.timeout(init?.timeout ?? this.DEFAULT_TIMEOUT) });
     } catch (error) {
-      if (error instanceof DOMException && error.name === 'AbortError') {
+      if (error instanceof DOMException && error.name === 'TimeoutError') {
         await this.increaseTimeoutsCount(url);
         throw new TimeoutError();
       }
 
       throw error;
-    } finally {
-      clearTimeout(timer);
     }
 
     await this.decreaseTimeoutsCount(url);

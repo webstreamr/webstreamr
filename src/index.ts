@@ -1,4 +1,6 @@
 import express, { NextFunction, Request, Response } from 'express';
+import { socksDispatcher } from 'fetch-socks';
+import { ProxyAgent, setGlobalDispatcher } from 'undici';
 import { v4 as uuidv4 } from 'uuid';
 import winston from 'winston';
 import { ConfigureController, ManifestController, StreamController } from './controller';
@@ -17,6 +19,14 @@ const logger = winston.createLogger({
   ],
 });
 
+if (process.env['ALL_PROXY']) {
+  const proxyUrl = new URL(process.env['ALL_PROXY']);
+  if (proxyUrl.protocol === 'socks5:') {
+    setGlobalDispatcher(socksDispatcher({ type: 5, host: proxyUrl.hostname, port: parseInt(proxyUrl.port) }));
+  } else {
+    setGlobalDispatcher(new ProxyAgent({ uri: proxyUrl.href }));
+  }
+}
 const fetcher = new Fetcher(logger);
 
 const sources: Source[] = [
