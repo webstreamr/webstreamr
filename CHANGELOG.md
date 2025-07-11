@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.34.1](https://github.com/webstreamr/webstreamr/compare/v0.34.0...v0.34.1) (2025-07-11)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#202](https://github.com/webstreamr/webstreamr/issues/202)) ([32d125d](https://github.com/webstreamr/webstreamr/commit/32d125d7a7feed61698905673c7c1f2b030a60f8))
+* **deps:** update dependency @types/node to v22.16.0 ([#201](https://github.com/webstreamr/webstreamr/issues/201)) ([3eae8f0](https://github.com/webstreamr/webstreamr/commit/3eae8f0d2a3b6b7241483abe17dcad5cc68fbeb3))
+* **deps:** update dependency typescript-eslint to v8.36.0 ([#203](https://github.com/webstreamr/webstreamr/issues/203)) ([7503503](https://github.com/webstreamr/webstreamr/commit/7503503ccf0d9518547362c3bfb9d13d2b060ae2))
+* **deps:** update jest monorepo to v30.0.4 ([#198](https://github.com/webstreamr/webstreamr/issues/198)) ([1b40ecd](https://github.com/webstreamr/webstreamr/commit/1b40ecdd07776610ba2dd3427226a691f79074a0))
+
+
+### Bug Fixes
+
+* **extractor:** ignore processing SuperVideo files ([b11bba7](https://github.com/webstreamr/webstreamr/commit/b11bba761a34274ddd50b7f8c60b8a9563ed3da1))
+
+
+### Code Refactoring
+
+* **fetcher:** switch to undici fetch ([2c21094](https://github.com/webstreamr/webstreamr/commit/2c210941aae7b039ef85cc968ad5ad805fe05c36))
+
 ## [0.34.0](https://github.com/webstreamr/webstreamr/compare/v0.33.0...v0.34.0) (2025-07-02)
 
 
