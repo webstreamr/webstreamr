@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.35.0](https://github.com/webstreamr/webstreamr/compare/v0.34.1...v0.35.0) (2025-07-13)
+
+
+### Miscellaneous Chores
+
+* **deps:** update eslint monorepo to v9.31.0 ([#206](https://github.com/webstreamr/webstreamr/issues/206)) ([b4d5563](https://github.com/webstreamr/webstreamr/commit/b4d556399afdf7d77ad9b7bf5f7844bb48cd91b3))
+
+
+### Features
+
+* **source:** fix Frembed domain and enable it for movies ([a4e2472](https://github.com/webstreamr/webstreamr/commit/a4e24722c222ce68fd237587ccb63f334cd0343b))
+
 ## [0.34.1](https://github.com/webstreamr/webstreamr/compare/v0.34.0...v0.34.1) (2025-07-11)
 
 
