@@ -8,9 +8,11 @@ export class Frembed implements Source {
 
   public readonly label = 'Frembed';
 
-  public readonly contentTypes: ContentType[] = ['series'];
+  public readonly contentTypes: ContentType[] = ['movie', 'series'];
 
   public readonly countryCodes: CountryCode[] = [CountryCode.fr];
+
+  private readonly baseUrl = 'https://frembed.top';
 
   private readonly fetcher: Fetcher;
 
@@ -21,7 +23,9 @@ export class Frembed implements Source {
   public async handle(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
-    const apiUrl = new URL(`https://frembed.wiki/api/series?id=${tmdbId.id}&sa=${tmdbId.season}&epi=${tmdbId.episode}&idType=tmdb`);
+    const apiUrl = tmdbId.season
+      ? new URL(`/api/series?id=${tmdbId.id}&sa=${tmdbId.season}&epi=${tmdbId.episode}&idType=tmdb`, this.baseUrl)
+      : new URL(`/api/films?id=${tmdbId.id}&idType=tmdb`, this.baseUrl);
 
     const json = JSON.parse(await this.fetcher.text(ctx, apiUrl));
 
@@ -36,6 +40,10 @@ export class Frembed implements Source {
       }
     }
 
-    return urls.map(url => ({ countryCode: CountryCode.fr, title: `${json['title']} ${tmdbId.season}x${tmdbId.episode}`, url }));
+    const title = tmdbId.season
+      ? `${json['title']} ${tmdbId.season}x${tmdbId.episode}`
+      : json['title'];
+
+    return urls.map(url => ({ countryCode: CountryCode.fr, title, url }));
   };
 }

@@ -20,4 +20,9 @@ describe('Frembed', () => {
     const streams = await handler.handle(ctx, 'series', new TmdbId(42009, 4, 2));
     expect(streams).toMatchSnapshot();
   });
+
+  test('handle battle royal', async () => {
+    const streams = await handler.handle(ctx, 'movie', new TmdbId(3176, undefined, undefined));
+    expect(streams).toMatchSnapshot();
+  });
 });
