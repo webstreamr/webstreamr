@@ -32,7 +32,11 @@ export class Movix implements Source {
       : new URL(`/api/tmdb/movie/${tmdbId.id}`, this.baseUrl);
 
     const json = JSON.parse(await this.fetcher.text(ctx, apiUrl));
-    const data: MovixApiData = tmdbId.season ? json['current_episode'] : json;
+    const data: MovixApiData | undefined = tmdbId.season ? json['current_episode'] : json;
+
+    if (!data) {
+      return [];
+    }
 
     const urls: URL[] = data['player_links'].map(({ decoded_url }) => new URL(decoded_url));
 

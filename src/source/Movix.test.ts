@@ -11,6 +11,11 @@ describe('Movix', () => {
     handler = new Movix(new FetcherMock(`${__dirname}/__fixtures__/Movix`));
   });
 
+  test('handles non-existent content gracefully', async () => {
+    const streams = await handler.handle(ctx, 'series', new TmdbId(46080, 1, 999));
+    expect(streams).toMatchSnapshot();
+  });
+
   test('handle tmdb black mirror s4e2', async () => {
     const streams = await handler.handle(ctx, 'series', new TmdbId(42009, 4, 2));
     expect(streams).toMatchSnapshot();
