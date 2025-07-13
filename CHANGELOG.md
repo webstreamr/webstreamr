@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.36.0](https://github.com/webstreamr/webstreamr/compare/v0.35.0...v0.36.0) (2025-07-13)
+
+
+### Features
+
+* **source:** add Movix ([ca0db32](https://github.com/webstreamr/webstreamr/commit/ca0db32d196170493684fd4eac4f91879f0560e0))
+
 ## [0.35.0](https://github.com/webstreamr/webstreamr/compare/v0.34.1...v0.35.0) (2025-07-13)
 
 
