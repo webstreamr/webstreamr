@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.36.1](https://github.com/webstreamr/webstreamr/compare/v0.36.0...v0.36.1) (2025-07-13)
+
+
+### Bug Fixes
+
+* **source:** handle non-existent content gracefully via Movix ([599e6ea](https://github.com/webstreamr/webstreamr/commit/599e6eaf7e1286eed967fb213bfeab1476e9f680))
+
 ## [0.36.0](https://github.com/webstreamr/webstreamr/compare/v0.35.0...v0.36.0) (2025-07-13)
 
 
