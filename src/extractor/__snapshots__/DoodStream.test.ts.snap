@@ -22,6 +22,28 @@ exports[`DoodStream can guess height from title 1`] = `
 ]
 `;
 
+exports[`DoodStream cloudflare storage 1`] = `
+[
+  {
+    "format": "mp4",
+    "label": "DoodStream",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "height": undefined,
+      "title": "241653--5bf448d3-184a-4b3f-a766-fa98d93c1300--bllz--2100527-doodstream",
+    },
+    "requestHeaders": {
+      "Referer": "http://dood.to",
+    },
+    "sourceId": "doodstream_mx",
+    "ttl": 900000,
+    "url": "https://wec6bnh7rx7rw11bv9e9vslw4rud8nam.5f1ebd98099ce35faeeddb30c1752191.r2.cloudflarestorage.com/icxxqqdsfdc4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ab085b515b950aae0a86cae59456cacd%2F20250714%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250714T154400Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=845ebfa5feedd840027e431f31e013513dd4c4f74364b4e75a2c8ddb213bd97a",
+  },
+]
+`;
+
 exports[`DoodStream dood.to 1`] = `
 [
   {

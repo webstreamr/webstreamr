@@ -44,9 +44,17 @@ export class DoodStream extends Extractor {
     const $ = cheerio.load(html);
     const title = $('title').text().trim().replace(/ - DoodStream$/, '').trim();
 
-    const mp4Url = new URL(`${baseUrl}${randomstring.generate(10)}?token=${token}&expiry=${Date.now()}`);
-
-    const mp4Head = await this.fetcher.head(ctx, mp4Url, { headers: { Referer: url.origin } });
+    let mp4Url: URL;
+    let bytes: number | undefined;
+    if (baseUrl.includes('cloudflarestorage')) {
+      mp4Url = new URL(baseUrl);
+    } else {
+      mp4Url = new URL(`${baseUrl}${randomstring.generate(10)}?token=${token}&expiry=${Date.now()}`);
+      const mp4Head = await this.fetcher.head(ctx, mp4Url, { headers: { Referer: url.origin } });
+      if (mp4Head['content-length']) {
+        bytes = parseInt(mp4Head['content-length'] as string);
+      }
+    }
 
     return [
       {
@@ -58,7 +66,7 @@ export class DoodStream extends Extractor {
         meta: {
           countryCodes: [countryCode],
           title,
-          ...(mp4Head['content-length'] && { bytes: parseInt(mp4Head['content-length'] as string) }),
+          ...(bytes && { bytes }),
         },
         requestHeaders: {
           Referer: url.origin,

@@ -26,4 +26,8 @@ describe('DoodStream', () => {
   test('can guess height from title', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://do7go.com/e/dfx8me4un4ul'), CountryCode.fr)).toMatchSnapshot();
   });
+
+  test('cloudflare storage', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://doodstream.com/e/wfpwtsgyr1xi'), CountryCode.mx)).toMatchSnapshot();
+  });
 });
