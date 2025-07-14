@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.36.2](https://github.com/webstreamr/webstreamr/compare/v0.36.1...v0.36.2) (2025-07-14)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#212](https://github.com/webstreamr/webstreamr/issues/212)) ([7e2858d](https://github.com/webstreamr/webstreamr/commit/7e2858def30c92f1e3b74754b8c6d333a3935a26))
+* **deps:** update dependency @types/node to v22.16.3 ([#211](https://github.com/webstreamr/webstreamr/issues/211)) ([ae9c43e](https://github.com/webstreamr/webstreamr/commit/ae9c43edef6421000ce9c638db433da175fc66db))
+* remove Soaper 😭 ([df60013](https://github.com/webstreamr/webstreamr/commit/df60013e1621b82ad0a79d137766e39e572accc5))
+* sort errors down ([d6e2918](https://github.com/webstreamr/webstreamr/commit/d6e29185e586e0a233913eed91ee54ba0ce9108d))
+
+
+### Bug Fixes
+
+* **extractor:** support DoodStream via cloudflarestorage ([25d3211](https://github.com/webstreamr/webstreamr/commit/25d32117eda3857b3a6f4de2b9fe3a4444f6e111))
+* **source:** handle non-existent movies gracefully ([a371f86](https://github.com/webstreamr/webstreamr/commit/a371f86933f972357148b3fa11cd9047cc14ddca))
+
 ## [0.36.1](https://github.com/webstreamr/webstreamr/compare/v0.36.0...v0.36.1) (2025-07-13)
 
 
