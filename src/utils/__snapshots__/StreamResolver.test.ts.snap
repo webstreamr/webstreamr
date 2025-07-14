@@ -5,6 +5,24 @@ exports[`resolve adds error info 1`] = `
   "streams": [
     {
       "behaviorHints": {
+        "bingeGroup": "webstreamr-hostercom",
+        "notWebReady": true,
+      },
+      "name": "WebStreamr 🇩🇪",
+      "title": "🔗 working1",
+      "url": "https://working2.com/",
+    },
+    {
+      "behaviorHints": {
+        "bingeGroup": "webstreamr-hostercom",
+        "notWebReady": true,
+      },
+      "name": "WebStreamr 🇩🇪",
+      "title": "🔗 working2",
+      "url": "https://working1.com/",
+    },
+    {
+      "behaviorHints": {
         "notWebReady": true,
       },
       "externalUrl": "http://localhost/",
@@ -91,6 +109,24 @@ exports[`resolve adds error info 1`] = `
 exports[`resolve adds error info 2`] = `
 {
   "streams": [
+    {
+      "behaviorHints": {
+        "bingeGroup": "webstreamr-hostercom",
+        "notWebReady": true,
+      },
+      "name": "WebStreamr 🇩🇪",
+      "title": "🔗 working1",
+      "url": "https://working2.com/",
+    },
+    {
+      "behaviorHints": {
+        "bingeGroup": "webstreamr-hostercom",
+        "notWebReady": true,
+      },
+      "name": "WebStreamr 🇩🇪",
+      "title": "🔗 working2",
+      "url": "https://working1.com/",
+    },
     {
       "behaviorHints": {
         "notWebReady": true,

@@ -124,6 +124,15 @@ describe('resolve', () => {
             },
           },
           {
+            url: new URL('https://working2.com'),
+            format: Format.hls,
+            label: 'working1',
+            sourceId: 'hostercom',
+            meta: {
+              countryCodes: [CountryCode.de],
+            },
+          },
+          {
             url: new URL('https://example.com'),
             format: Format.unknown,
             isExternal: true,
@@ -141,6 +150,15 @@ describe('resolve', () => {
             error: new TooManyTimeoutsError(),
             label: 'hoster.com',
             sourceId: '',
+            meta: {
+              countryCodes: [CountryCode.de],
+            },
+          },
+          {
+            url: new URL('https://working1.com'),
+            format: Format.hls,
+            label: 'working2',
+            sourceId: 'hostercom',
             meta: {
               countryCodes: [CountryCode.de],
             },
