@@ -8,7 +8,6 @@ export * from './MegaKino';
 export * from './MeineCloud';
 export * from './MostraGuarda';
 export * from './Movix';
-export * from './Soaper';
 export * from './StreamKiste';
 export * from './VerHdLink';
 export * from './VidSrc';
