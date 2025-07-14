@@ -4,7 +4,7 @@ import { Fetcher, getTmdbId, Id } from '../utils';
 import { Source, SourceResult } from './types';
 
 interface MovixApiData {
-  player_links: { decoded_url: string }[];
+  player_links?: { decoded_url: string }[];
 }
 
 export class Movix implements Source {
@@ -34,7 +34,7 @@ export class Movix implements Source {
     const json = JSON.parse(await this.fetcher.text(ctx, apiUrl));
     const data: MovixApiData | undefined = tmdbId.season ? json['current_episode'] : json;
 
-    if (!data) {
+    if (!data || !data.player_links) {
       return [];
     }
 

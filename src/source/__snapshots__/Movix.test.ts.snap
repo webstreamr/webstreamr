@@ -135,4 +135,6 @@ exports[`Movix handle tmdb black mirror s4e2 1`] = `
 ]
 `;
 
-exports[`Movix handles non-existent content gracefully 1`] = `[]`;
+exports[`Movix handles non-existent movie gracefully 1`] = `[]`;
+
+exports[`Movix handles non-existent show gracefully 1`] = `[]`;
