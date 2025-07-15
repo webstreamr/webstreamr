@@ -22,4 +22,8 @@ describe('Dropload', () => {
   test('processing / internal problem', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://dropload.io/7xtxuac84xyh.html'), CountryCode.de)).toMatchSnapshot();
   });
+
+  test('download URL', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://dropload.io/d/xhcmgcc2txnv'), CountryCode.en)).toMatchSnapshot();
+  });
 });

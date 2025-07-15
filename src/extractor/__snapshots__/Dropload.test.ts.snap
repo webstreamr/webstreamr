@@ -1,5 +1,25 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`Dropload download URL 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "Dropload",
+    "meta": {
+      "bytes": 333027737,
+      "countryCodes": [
+        "en",
+      ],
+      "height": 720,
+      "title": "[~Squid~Game~EnG~]~S03E01~720p~WebRip ~❤️GLD❤️~",
+    },
+    "sourceId": "dropload_en",
+    "ttl": 900000,
+    "url": "https://srv29.dropload.io/hls2/01/00305/xhcmgcc2txnv_h/master.m3u8?t=MBKiIoVlA42YcZEixT7ZR1xJA5qKhcKgBi84GPmyT7U&s=1752613129&e=14400&f=1526758&i=0.0&sp=0&ii=130.61.236.204",
+  },
+]
+`;
+
 exports[`Dropload dropload.io 1`] = `
 [
   {

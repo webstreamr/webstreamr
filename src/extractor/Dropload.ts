@@ -22,7 +22,7 @@ export class Dropload extends Extractor {
     return null !== url.host.match(/dropload/);
   }
 
-  public override readonly normalize = (url: URL): URL => new URL(url.href.replace('/e/', '/').replace('/embed-', '/'));
+  public override readonly normalize = (url: URL): URL => new URL(url.href.replace('/d/', '/').replace('/e/', '/').replace('/embed-', '/'));
 
   protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
     const html = await this.fetcher.text(ctx, url);
