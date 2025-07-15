@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.37.0](https://github.com/webstreamr/webstreamr/compare/v0.36.2...v0.37.0) (2025-07-15)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency typescript-eslint to v8.37.0 ([#215](https://github.com/webstreamr/webstreamr/issues/215)) ([f701ed3](https://github.com/webstreamr/webstreamr/commit/f701ed39ef1726e3c1187da50d8ae9b4f3b968c5))
+* **extractor:** normalize Dropload download URLs ([69afcdc](https://github.com/webstreamr/webstreamr/commit/69afcdcdb253e426585677a6ed357a02ee4691e8))
+
+
+### Features
+
+* **source:** add PrimeWire ([8f7039b](https://github.com/webstreamr/webstreamr/commit/8f7039bbb36f39a9550f49e5b01408cf742ad88c))
+
+
+### Bug Fixes
+
+* **fetcher:** import correct Headers ([e03621d](https://github.com/webstreamr/webstreamr/commit/e03621db0bf394eedf01f491f115f348defc171a))
+
 ## [0.36.2](https://github.com/webstreamr/webstreamr/compare/v0.36.1...v0.36.2) (2025-07-14)
 
 
