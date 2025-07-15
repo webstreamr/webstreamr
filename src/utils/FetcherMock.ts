@@ -65,7 +65,7 @@ export class FetcherMock extends Fetcher {
         throw error;
       }
 
-      if (!response.ok) {
+      if (response.status < 200 || response.status > 399) {
         const message = `Fetcher error: ${response.status}: ${response.statusText}`;
         fs.writeFileSync(errorPath, message);
         throw new Error(message);
@@ -73,7 +73,13 @@ export class FetcherMock extends Fetcher {
 
       let result;
       if (init?.method === 'HEAD') {
-        result = JSON.stringify(response.headers);
+        const headers: Record<string, string> = {};
+
+        response.headers.forEach((value, key) => {
+          headers[key] = value;
+        });
+
+        result = JSON.stringify(headers);
       } else {
         result = await response.text();
       }
