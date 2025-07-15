@@ -108,7 +108,7 @@ export class Fetcher {
   };
 
   private async handleHttpCacheItem(ctx: Context, httpCacheItem: HttpCacheItem, url: URL, init?: CustomRequestInit): Promise<HttpCacheItem> {
-    if (httpCacheItem.status && httpCacheItem.status >= 200 && httpCacheItem.status <= 299) {
+    if (httpCacheItem.status && httpCacheItem.status >= 200 && httpCacheItem.status <= 399) {
       return httpCacheItem;
     }
 

@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import winston from 'winston';
 import { ConfigureController, ManifestController, StreamController } from './controller';
 import { createExtractors, ExtractorRegistry } from './extractor';
-import { CineHDPlus, Cuevana, Eurostreaming, Frembed, FrenchCloud, KinoGer, MegaKino, MeineCloud, MostraGuarda, Movix, Source, StreamKiste, VerHdLink, VidSrc, VixSrc } from './source';
+import { CineHDPlus, Cuevana, Eurostreaming, Frembed, FrenchCloud, KinoGer, MegaKino, MeineCloud, MostraGuarda, Movix, PrimeWire, Source, StreamKiste, VerHdLink, VidSrc, VixSrc } from './source';
 import { envGet, envIsProd, Fetcher, StreamResolver } from './utils';
 
 const logger = winston.createLogger({
@@ -33,6 +33,7 @@ const sources: Source[] = [
   // multi
   new VixSrc(fetcher),
   // EN
+  new PrimeWire(fetcher),
   new VidSrc(fetcher),
   // ES / MX
   new CineHDPlus(fetcher),
