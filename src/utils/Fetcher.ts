@@ -4,7 +4,7 @@ import { Mutex, Semaphore, SemaphoreInterface, withTimeout } from 'async-mutex';
 import CachePolicy from 'http-cache-semantics';
 import { LRUCache } from 'lru-cache';
 import { Cookie, CookieJar } from 'tough-cookie';
-import { fetch, RequestInit, Response } from 'undici';
+import { fetch, Headers, RequestInit, Response } from 'undici';
 import winston from 'winston';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
 import { BlockedReason, Context } from '../types';
