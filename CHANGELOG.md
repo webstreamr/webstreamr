@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.37.1](https://github.com/webstreamr/webstreamr/compare/v0.37.0...v0.37.1) (2025-07-16)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @stylistic/eslint-plugin to v5.2.0 ([#219](https://github.com/webstreamr/webstreamr/issues/219)) ([1fda7f6](https://github.com/webstreamr/webstreamr/commit/1fda7f6c50826825f9659fb0694e6c895bb1aa8d))
+* **extractor:** normalize Mixdrop non-embed URLs ([7cf313c](https://github.com/webstreamr/webstreamr/commit/7cf313cedbfe7d6fa7e6a43a3e140ecbeb669f5a))
+
 ## [0.37.0](https://github.com/webstreamr/webstreamr/compare/v0.36.2...v0.37.0) (2025-07-15)
 
 
