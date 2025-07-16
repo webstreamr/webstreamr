@@ -26,6 +26,8 @@ export class Mixdrop extends Extractor {
     return null !== url.host.match(/mixdrop/) && supportsMediaFlowProxy(ctx);
   }
 
+  public override readonly normalize = (url: URL): URL => new URL(url.href.replace('/f/', '/e/'));
+
   protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
     const fileUrl = new URL(url.href.replace('/e/', '/f/'));
     const html = await this.fetcher.text(ctx, fileUrl);
