@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.37.2](https://github.com/webstreamr/webstreamr/compare/v0.37.1...v0.37.2) (2025-07-17)
+
+
+### Reverts
+
+* "chore: remove Soaper 😭" 🎉 ([1b9ee36](https://github.com/webstreamr/webstreamr/commit/1b9ee36cfdf9583bd59511528361c1339a384ee8))
+
 ## [0.37.1](https://github.com/webstreamr/webstreamr/compare/v0.37.0...v0.37.1) (2025-07-16)
 
 
