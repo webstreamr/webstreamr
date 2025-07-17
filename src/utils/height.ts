@@ -18,6 +18,5 @@ export const guessHeightFromPlaylist = async (ctx: Context, fetcher: Fetcher, ur
     .filter(height => height !== undefined)
     .map(height => parseInt(height));
 
-  /* istanbul ignore next We don't have a source that returns playlists with no resolution atm. */
   return heights.length ? Math.max(...heights) : undefined;
 };

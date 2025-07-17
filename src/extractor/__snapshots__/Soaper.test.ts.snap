@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Soaper Black Mirror 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "Soaper",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+      "height": 720,
+      "title": "Black Mirror 4x2",
+    },
+    "sourceId": "soaper_en",
+    "ttl": 900000,
+    "url": "https://soaper.live/home/index/TVM3U8?key=RnX8mnL4l5hEz38dxBAbFjV27jbe3Yh13LqxV48ViM7j60OLjmh3w5PJ8nQPh2brz0eEAAt50Zvv7d89hpM3OLWQ6nsjb4n0l3ApSna13LB3EbUxbbyJ70KwuVjaooMP5mIE4MbjyvqJHjRq3amYA5SPV8NRl8wmivl8YyrlMmFx6VomOAp2C5WR46w10v.m3u8",
+  },
+]
+`;
+
+exports[`Soaper Full Metal Jacket 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "Soaper",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+      "height": 1080,
+      "title": "Full Metal Jacket (1987)",
+    },
+    "sourceId": "soaper_en",
+    "ttl": 900000,
+    "url": "https://soaper.live/home/index/M3U8?key=RnX8BOr9NRiEz3W5ownqUjVQ3LQew9S13L8VbnEQCM72wz1AEyIrld1z4NXwF2ByZneoX7i5Ez9BlPpxUpMeqJ2qdOhjb4PlArnASnlEpp2b8Whx1lwpx4oRIVzEKX0Z6rcEQWArMlxvTjRq3aMEnQUP3mvva8RZfvldjM9mz5FxZZv6QKdzcVxqX8q.m3u8",
+  },
+]
+`;
+
+exports[`Soaper last of us s2e3 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "Soaper",
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+      "height": undefined,
+      "title": "The Last of Us 2x3",
+    },
+    "sourceId": "soaper_de",
+    "ttl": 900000,
+    "url": "https://soaper.live/home/index/TVM3U8?key=LrezaYpLOxT4O61m8e3mSLdBzLNyRaf8zPmERxvwh1Mrj6zbVEUvAzRv2KZLu5PVvRKqwbcz6qmb9vbOi3wQZ4ae8RsZ9N3Jm9Yatw4yE55bBp.m3u8",
+  },
+]
+`;
