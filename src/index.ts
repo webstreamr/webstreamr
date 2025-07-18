@@ -6,7 +6,7 @@ import winston from 'winston';
 import { ConfigureController, ManifestController, StreamController } from './controller';
 import { createExtractors, ExtractorRegistry } from './extractor';
 import { CineHDPlus, Cuevana, Eurostreaming, Frembed, FrenchCloud, KinoGer, MegaKino, MeineCloud, MostraGuarda, Movix, PrimeWire, Soaper, Source, StreamKiste, VerHdLink, VidSrc, VixSrc } from './source';
-import { envGet, envIsProd, Fetcher, StreamResolver } from './utils';
+import { contextFromRequest, envGet, envIsProd, Fetcher, StreamResolver } from './utils';
 
 const logger = winston.createLogger({
   transports: [
@@ -79,6 +79,21 @@ addon.use('/', (new StreamController(logger, sources, streamResolver)).router);
 
 addon.get('/', (_req: Request, res: Response) => {
   res.redirect('/configure');
+});
+
+addon.get('/health', async (req: Request, res: Response) => {
+  const ctx = contextFromRequest(req);
+
+  try {
+    const ip = await fetcher.text(ctx, new URL('https://api.ipify.org'));
+
+    res.json({ status: 'ok', ip });
+  } catch (error) {
+    const cause = (error as Error & { cause?: unknown }).cause;
+    logger.error(`health check error: ${error}, cause: ${cause}`, ctx);
+
+    res.status(503).json({ status: 'error' });
+  }
 });
 
 const port = parseInt(envGet('PORT') || '51546');
