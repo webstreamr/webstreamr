@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`HomeCine does not return es content for mx 1`] = `
+[
+  {
+    "countryCode": "mx",
+    "title": "El Camino: Una película de Breaking Bad (2019)",
+    "url": "https://fastream.to/embed-kc5dvcy34x8p.html",
+  },
+]
+`;
+
+exports[`HomeCine does not return mx content for es 1`] = `
+[
+  {
+    "countryCode": "es",
+    "title": "El Camino: Una película de Breaking Bad (2019)",
+    "url": "https://fastream.to/embed-c9tmfzsbfj0z.html",
+  },
+]
+`;
+
+exports[`HomeCine handle el camino 1`] = `
+[
+  {
+    "countryCode": "mx",
+    "title": "El Camino: Una película de Breaking Bad (2019)",
+    "url": "https://fastream.to/embed-kc5dvcy34x8p.html",
+  },
+  {
+    "countryCode": "es",
+    "title": "El Camino: Una película de Breaking Bad (2019)",
+    "url": "https://fastream.to/embed-c9tmfzsbfj0z.html",
+  },
+]
+`;
+
+exports[`HomeCine handle walking dead s1e1 1`] = `
+[
+  {
+    "countryCode": "mx",
+    "title": "The Walking Dead 1x1",
+    "url": "https://fastream.to/embed-nkztf1memuca.html",
+  },
+  {
+    "countryCode": "es",
+    "title": "The Walking Dead 1x1",
+    "url": "https://fastream.to/embed-5bv96pdifz0b.html",
+  },
+]
+`;

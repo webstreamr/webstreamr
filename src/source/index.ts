@@ -3,6 +3,7 @@ export * from './Cuevana';
 export * from './Eurostreaming';
 export * from './Frembed';
 export * from './FrenchCloud';
+export * from './HomeCine';
 export * from './KinoGer';
 export * from './MegaKino';
 export * from './MeineCloud';

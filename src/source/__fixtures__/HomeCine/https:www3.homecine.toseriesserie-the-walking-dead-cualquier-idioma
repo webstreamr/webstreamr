@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="es">
+ <head>
+<meta charset="UTF-8">
+<meta name="robots" content="index,follow">
+<meta http-equiv="content-language" content="en">
+<title>The Walking Dead  </title>
+<meta property="og:image:width" content="300"/>
+<meta property="og:image:height" content="425"/>
+<meta property="og:image:type" content="image/jpeg"/>
+<meta property="og:image" content="https://image.tmdb.org/t/p/w300/wsq1xCuC9kDhFeoE7xuQFDC5iRC.jpg"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<meta name="Generator" content="PsyPlay 1.2.5 and WordPress">
+<link rel="shortcut icon" href="https://homecine.to/wp-content/uploads/2018/02/Favhomec.png" type="image/x-icon" />
+<meta name='robots' content='max-image-preview:large' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel="alternate" type="application/rss+xml" title="HomeCine &raquo; Comentario The Walking Dead del feed" href="https://www3.homecine.to/series/serie-the-walking-dead-cualquier-idioma/feed" />
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www3.homecine.to\/wp-includes\/js\/wp-emoji-release.min.js?ver=33bd35601afcee31a892b2b34de00c74"}};
+/*! This file is auto-generated */
+!function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://www3.homecine.to/wp-includes/css/dist/block-library/style.min.css?ver=33bd35601afcee31a892b2b34de00c74' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='theme-style-css' href='https://www3.homecine.to/wp-content/themes/custom/assets/css/theme.style.css?ver=1.2.5' type='text/css' media='all' />
+<link rel='stylesheet' id='maindark-css' href='https://www3.homecine.to/wp-content/themes/custom/assets/css/theme.main.dark.css?ver=1.2.5' type='text/css' media='all' />
+<script type="text/javascript" src="https://www3.homecine.to/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://www3.homecine.to/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js?ver=2.1.3" id="jquery-main-js"></script>
+<script type="text/javascript" src="https://www3.homecine.to/wp-content/themes/custom/assets/js/jquery.lazyload.js?ver=1.2.5" id="lazyload-js"></script>
+<script type="text/javascript" src="https://www3.homecine.to/wp-content/themes/custom/assets/js/owl.carousel.js?ver=1.2.5" id="owl-carousel-js"></script>
+<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?ver=1.2.5" id="recaptcha-js"></script>
+<script type="text/javascript" id="psy_front_ajax-js-extra">
+/* <![CDATA[ */
+var psyAjax = {"url":"https:\/\/www3.homecine.to\/wp-admin\/admin-ajax.php","like":"Favorite","unlike":"Remove Favorite"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www3.homecine.to/wp-content/themes/custom/assets/js/theme.script.min.js?ver=1.2.5" id="psy_front_ajax-js"></script>
+<link rel="https://api.w.org/" href="https://www3.homecine.to/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www3.homecine.to/xmlrpc.php?rsd" />
+
+<link rel="canonical" href="https://www3.homecine.to/series/serie-the-walking-dead-cualquier-idioma" />
+<link rel='shortlink' href='https://www3.homecine.to/?p=11244' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www3.homecine.to/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww3.homecine.to%2Fseries%2Fserie-the-walking-dead-cualquier-idioma" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www3.homecine.to/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww3.homecine.to%2Fseries%2Fserie-the-walking-dead-cualquier-idioma&#038;format=xml" />
+<style type='text/css'>@media screen and (max-width: 1325px) {#slider:hover .slide-caption { left: auto; right: 320px!important; opacity: 1;}}@media screen and (max-width: 1199px) {#slider:hover .slide-caption { right: 280px!important;}}@media screen and (max-width: 991px) {#slider .slide-caption { right: -280px!important;}#slider:hover .slide-caption {right: 0!important;}}.fb-comments. span iframe, .fb_iframe_widget_fluid_desktop iframe {min-width:100%!important;}.pad { height:20px;}div#content-embed #next-ep-notice .alert-warning { margin: 0; }#slider{width:100%} #slider .slide-caption { left: auto!important; right: -380px!important; } #slider:hover .slide-caption { right: 0!important; left: auto!important; opacity: 1; }.breadcrumb>li+li:before {padding-left:9px;}#mv-info .mvi-content .mvic-desc { width: calc(100% - 160px);padding-right:0;margin-right:0;border-right:0;}#mv-info .mvi-content .mvic-btn{display:none;}@media screen and (max-width: 991px) { #mv-info .mvi-content .mvic-desc {width:100%;} }.wp-video-shortcode video, video.wp-video-shortcode {height:100%!important;}.movieplay .mejs-container.mejs-container-fullscreen { max-height: 100%!important; height: 100%!important; }#main {min-height: calc(100vh - 371px);}.alert-bottom { background: #fe7c3b; }@media screen and (max-width: 520px){#switch-mode{top:8px;right:95px}.mobile-search{left:auto;right:55px}}@media screen and (max-width: 991px){#switch-mode{right:95px}.mobile-search{right:55px}.user-content .uct-avatar{display:none}.user-content .uct-info{padding-left:0}}@media screen and (max-width: 670px){.profiles-wrap .pp-main .ppm-content.user-content.profile,.ppm-content.user-content.profile-comment{padding:40px 20px !important}}@media screen and (max-width: 350px){.user-content .uct-info .block label{width:100%}}@media screen and (max-width: 520px) {#switch-mode { top: 8px; right: 137px;}.mobile-search { left: auto; right: 95px;}}@media screen and (max-width: 991px) {#switch-mode { right: 95px; } .mobile-search {right:95px;}}fake_player section span.barra span.played { background: #ff7b39;}.fake_player section span.barra span.played { background: #ff7b39;}.fake_player section span.controles i.fa:hover { color: #ff7b39;}.fake_player a.lnkplay:hover>.playads i.fa.fa-play { color: #ff7b39;}.fake_player a.lnkplay:hover>span.playads { background: rgba(0,0,0,0);}ann-home a { color: #0d010d;}#logo.night, #logo-home.night {background-image: url(https://homecine.to/wp-content/uploads/2018/05/homedark-1-3.png);}#logo.light, #logo-home.light {background-image: url(https://homecine.to/wp-content/uploads/2018/05/homedark-1-2.png);}#logo, #logo-home {background-image: url(https://homecine.to/wp-content/uploads/2018/05/homedark-1-3.png);}#filter ul.fc-main-list li a.active, #filter ul.fc-main-list li a:hover {background: #ff7b39!important;}#filter .fc-title, .wpas-field .label-container {color: #ff7b39;}.block .ep_title,.jt-info .ep_airdate,a, .movies-letter a.btn-letter:hover{color:#ef7305}a:focus,a:hover{color:#d24d0c}.movies-list-wrap .ml-title span{background:#ff7b39}#slider .slide-caption h2{color:#ff712a}.qtip .qtip-title,a.psy_type{color:#ff7b39}.btn-successful{background:#f3702f;border-bottom:3px solid #e65e2a}.btn-successful:active,.btn-successful:focus,.btn-successful:hover{background:#e2682b;border-bottom:3px solid #c7562a}#top-news .nav li.active a{border-bottom:2px solid #d65103}.movies-list .ml-item .mli-eps{background:rgba(214,82,3,.9)}.footer-social a:hover{color:#ff742f}.sidebar .sb-title{background:#ff7b39}ul.idTabs li a.active,ul.idTabs li a.selected{border-bottom:3px solid #cc5527;background:#e86734}.btn-primary:active,.btn-primary:focus,.btn-primary:hover{background:#d86932;border-bottom:3px solid #bf532a!important}.btn-primary{background:#ef7336;border-bottom:3px solid #e46230!important}.box .box-head .nav-tabs li.active a{background:#ff7b39!important}#menu ul.top-menu li.active a,#menu ul.top-menu li:hover a{color:#f97534}#menu .sub-container ul.sub-menu li:hover a{background:#ff7b39}#menu .sub-container{border-top:1px solid #e87339}#searchform .fa{color:#e87339}#mv-info .mvi-cover:before,.movies-list .ml-item .ml-mask:after{background-image:url(https://www3.homecine.to/wp-content/themes/custom/assets/css/img/buttons/btn-overlay-orange.png)}#button-favorite a.liked i.fa{color:#ea6727}.footer-tags a:hover{color:#ff7c19}.test_container .nav>li.active>a:focus,.test_container .nav>li.active>a {background:#f3702f!important;}#lnk-dl-button, #lnk-watch-button {background:#f3702f;}#lnk-watch-button:hover, #lnk-dl-button:hover { background:#d06029;!important}.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover { background:#f3702f;}form#psy-loginform p input[type=submit] {background:#f3702f;border-bottom: 3px solid #e65e2a!important;}form#psy-loginform p input[type=submit]:hover {background: #e2682b;border-bottom: 3px solid #c7562a!important;}@media screen and (max-width: 991px) {.movies-list-wrap .ml-title span { background:none; }#menu .sub-container {border:0;}#menu ul.top-menu li a {color:#ff722c!important; }}.tvseason .les-content a:hover {border-bottom:3px solid #e65e2a;background:#f3702f;}.home-main #hm-search button, .search-suggest ul li.ss-bottom a { background: #ff7b39;}.search-suggest ul {border-top: 1px solid #ff7b39;}a.comment-reply-link, #respond p input.submit {color: #fff; background: #f3702f;} a.comment-reply-link:hover, #respond p input.submit:hover {color: #fff; background: #d06029;}#mv-keywords a:hover { color: #ec5f0f; } .cssload span, .cssload span:before, .cssload span:after { border: 2px solid #f3702f; }</style></style><link rel="icon" href="https://www3.homecine.to/wp-content/uploads/2019/10/cropped-ICONO512x512-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://www3.homecine.to/wp-content/uploads/2019/10/cropped-ICONO512x512-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www3.homecine.to/wp-content/uploads/2019/10/cropped-ICONO512x512-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www3.homecine.to/wp-content/uploads/2019/10/cropped-ICONO512x512-1-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			/* PART 2 - Upon Lazy Load */
+img.litespeed-loaded{
+    -webkit-transition: opacity .5s linear 0.2s;
+    -moz-transition: opacity .5s linear 0.2s;
+    transition: opacity .5s linear 0.2s;
+    opacity: 1;
+}		</style>
+		</head>
+<body>
+<!--header-->
+<header>
+<div class="container">
+<div class="header-logo">
+<a title="HomeCine" href="https://www3.homecine.to" id="logo"></a>
+</div>
+<div class="mobile-menu"><i class="fa fa-reorder"></i></div>
+<div class="mobile-search"><i class="fa fa-search"></i></div>
+<div id="menu">
+<ul id="menu-menu-oficial-2k19" class="top-menu"><li id="menu-item-24256" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24256"><a href="https://homecine.to">Inicio</a></li>
+<li id="menu-item-127696" class="menu-item menu-item-type-taxonomy menu-item-object-release-year menu-item-has-children menu-item-127696"><a href="https://www3.homecine.to/release-year/2021">Estrenos</a>
+<div class='sub-container' style='display: none;'><ul class='sub-menu'>
+	<li id="menu-item-90064" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90064"><a href="https://www3.homecine.to/sugerir-pelicula-serie">Sugerir Pelicula/Serie</a></li>
+</ul></div>
+</li>
+<li id="menu-item-24258" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-24258"><a href="#">Géneros</a>
+<div class='sub-container' style='display: none;'><ul class='sub-menu'>
+	<li id="menu-item-24259" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24259"><a href="https://www3.homecine.to/genre/accion">Acción</a></li>
+	<li id="menu-item-24260" class="menu-item menu-item-type-taxonomy menu-item-object-category current-tvshows-ancestor current-menu-parent current-tvshows-parent menu-item-24260"><a href="https://www3.homecine.to/genre/action-adventure">Action &amp; Adventure</a></li>
+	<li id="menu-item-24261" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24261"><a href="https://www3.homecine.to/genre/animacion">Animación</a></li>
+	<li id="menu-item-24262" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24262"><a href="https://www3.homecine.to/genre/aventura">Aventura</a></li>
+	<li id="menu-item-24263" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24263"><a href="https://www3.homecine.to/genre/belica">Bélica</a></li>
+	<li id="menu-item-24264" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24264"><a href="https://www3.homecine.to/genre/biografia">Biografía</a></li>
+	<li id="menu-item-24265" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24265"><a href="https://www3.homecine.to/genre/ciencia-ficcion">Ciencia ficción</a></li>
+	<li id="menu-item-24266" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24266"><a href="https://www3.homecine.to/genre/peliculas-de-comedia">Comedia</a></li>
+	<li id="menu-item-24267" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24267"><a href="https://www3.homecine.to/genre/comedia">Comedia (s)</a></li>
+	<li id="menu-item-24268" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24268"><a href="https://www3.homecine.to/genre/crimen">Crimen</a></li>
+	<li id="menu-item-24269" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24269"><a href="https://www3.homecine.to/genre/deporte">Deporte</a></li>
+	<li id="menu-item-24271" class="menu-item menu-item-type-taxonomy menu-item-object-category current-tvshows-ancestor current-menu-parent current-tvshows-parent menu-item-24271"><a href="https://www3.homecine.to/genre/drama">Drama</a></li>
+	<li id="menu-item-24272" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24272"><a href="https://www3.homecine.to/genre/familia">Familia</a></li>
+	<li id="menu-item-24273" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24273"><a href="https://www3.homecine.to/genre/fantasia">Fantasía</a></li>
+	<li id="menu-item-24274" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24274"><a href="https://www3.homecine.to/genre/guerra">Guerra</a></li>
+	<li id="menu-item-24275" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24275"><a href="https://www3.homecine.to/genre/historia">Historia</a></li>
+	<li id="menu-item-24276" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24276"><a href="https://www3.homecine.to/genre/misterio">Misterio</a></li>
+	<li id="menu-item-24277" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24277"><a href="https://www3.homecine.to/genre/musica">Música</a></li>
+	<li id="menu-item-24282" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24282"><a href="https://www3.homecine.to/genre/romance">Romance</a></li>
+	<li id="menu-item-24283" class="menu-item menu-item-type-taxonomy menu-item-object-category current-tvshows-ancestor current-menu-parent current-tvshows-parent menu-item-24283"><a href="https://www3.homecine.to/genre/sci-fi-fantasy">Sci-Fi &amp; Fantasy</a></li>
+	<li id="menu-item-24284" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24284"><a href="https://www3.homecine.to/genre/soap">Soap</a></li>
+	<li id="menu-item-24285" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24285"><a href="https://www3.homecine.to/genre/suspense">Suspense</a></li>
+	<li id="menu-item-24286" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24286"><a href="https://www3.homecine.to/genre/talk">Talk</a></li>
+	<li id="menu-item-24287" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24287"><a href="https://www3.homecine.to/genre/terror">Terror</a></li>
+	<li id="menu-item-24288" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24288"><a href="https://www3.homecine.to/genre/war-politics">War &amp; Politics</a></li>
+	<li id="menu-item-24289" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24289"><a href="https://www3.homecine.to/genre/western">Western</a></li>
+</ul></div>
+</li>
+<li id="menu-item-24290" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24290"><a href="https://www3.homecine.to/peliculas-nuevas">Peliculas</a></li>
+<li id="menu-item-24291" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24291"><a href="https://homecine.to/series">Series</a></li>
+<li id="menu-item-180013" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-180013"><a target="_blank" href="https://www3.homecine.to/desbloquear-videos-enlaces">✅ DESBLOQUEAR VIDEOS/ENLACES</a></li>
+</ul><div class="clearfix"></div>
+</div>
+<div id="top-user">
+<div class="top-user-content guest">
+<style tyle="text/css">
+
+</style>
+<a href="#pt-login" class="btn btn-successful btn-login" title="Login" data-target="" data-toggle="modal"> LOGIN</a>
+</div>
+</div>
+<div id="search">
+<div class="search-content">
+<form method="get" id="searchform" action="https://www3.homecine.to">
+<input class="form-control search-input" type="text" placeholder="Search.." name="s" id="s" value="" data-swplive="true">
+<button type="submit"><i class="fa fa-search"></i></button>
+
+</form>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+</header>
+<!--/header-->
+<div class="header-pad"></div>
+
+<div id="main" class="page-detail" style="padding-top: 70px;">
+<div class="container">
+<div class="pad"></div>
+<div class="main-content main-detail">
+<div id="cookiedata" class="ann-home alert text-center" style=" font-size: 16px; font-weight: bold; background: #232323; color: #fff;">
+<span><i class="fa fa-blink fa-bullseye mr10"></i> <h2>Únete a nuestro grupo de <span style="color: #ffffff;"><span style="color: #4AF1F2;">TELEGRAM</span> Pide tu Pelicula o Serie, Reporta Errores, Etc.. </span> <span style="color: #ffffff;"><a style="color: #ff6600;" href="https://t.me/homecineoficial" target="_blank" rel="noopener">¡Clic Aquí!</a>.</span></h2></span>
+</div>
+<div id="bread">
+		<ol class="breadcrumb" itemtype="https://schema.org/BreadcrumbList" itemscope>
+		<li itemtype="https://schema.org/ListItem" itemscope itemprop="itemListElement"><a itemprop="item" href="https://www3.homecine.to">Inicio </a></li><li><a href="https://www3.homecine.to/series/">TV Series </a></li><li class="active">The Walking Dead</li></ol></div>
+ 			
+<div id="mv-info">
+
+<div id="content-embed" style="display:block;">
+<div id="content-cover" style="background-image:url(https://image.tmdb.org/t/p/original/r7zUXadc1saFFSWz8lbUx7q9bkG.jpg);"></div>
+<div id="bar-player">
+<style>#bar-player span:after {content: ""!important;}</style>
+<a href="https://www3.homecine.to/series/serie-the-walking-dead-cualquier-idioma#mv-info" class="btn bp-btn-light" style="display:none;"><i class="fa fa-lightbulb-o" ></i> <span>Turn off light</span></a>
+
+	                    <span id="button-favorite">
+										<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-11244" data-nonce="82efb0f60b" data-post-id="11244" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span>					    
+                    </span>
+					
+
+<a href="https://www3.homecine.to/series/serie-the-walking-dead-cualquier-idioma#commentfb" class="btn bp-btn-review"><i class="fa fa-comments"></i>
+<span>Comments</span> 
+(<span id="comment-count">0</span>)
+</a>
+
+<a class="btn bp-btn-report" data-target="#pop-report" data-toggle="modal" style="color: #fff000; float: right"><i class="fa fa-warning"></i> <span>Report</span></a>
+
+<div class="clearfix"></div>
+</div>
+
+
+ 
+<div id="seasons">
+
+
+<div class="tvseason" >    
+
+<div class="les-title"> <i class="fa fa-server mr5"></i><strong>Season 1</strong></div>
+
+
+<div class="les-content" style="display: block">
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-1-capitulo-1">
+Episode 1 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-1-capitulo-2">
+Episode 2 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-1-capitulo-3">
+Episode 3 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-1-capitulo-4">
+Episode 4 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-1-capitulo-5">
+Episode 5 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-1-capitulo-6">
+Episode 6 </a>
+ 
+ 
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+ 
+
+<div class="tvseason" >    
+
+<div class="les-title"> <i class="fa fa-server mr5"></i><strong>Season 2</strong></div>
+
+
+<div class="les-content" >
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-2-capitulo-1">
+Episode 1 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-2-capitulo-2">
+Episode 2 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-2-capitulo-3">
+Episode 3 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-2-capitulo-4">
+Episode 4 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-2-capitulo-5">
+Episode 5 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-2-capitulo-6">
+Episode 6 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-2-capitulo-7">
+Episode 7 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-2-capitulo-8">
+Episode 8 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-2-capitulo-9">
+Episode 9 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-2-capitulo-10">
+Episode 10 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-2-capitulo-11">
+Episode 11 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-2-capitulo-12">
+Episode 12 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-2-capitulo-13">
+Episode 13 </a>
+ 
+ 
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+ 
+
+<div class="tvseason" >    
+
+<div class="les-title"> <i class="fa fa-server mr5"></i><strong>Season 3</strong></div>
+
+
+<div class="les-content" >
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-3-capitulo-1">
+Episode 1 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-3-capitulo-2">
+Episode 2 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-3-capitulo-3">
+Episode 3 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-3-capitulo-4">
+Episode 4 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-3-capitulo-5">
+Episode 5 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-3-capitulo-6">
+Episode 6 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-3-capitulo-7">
+Episode 7 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-3-capitulo-8">
+Episode 8 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-3-capitulo-9">
+Episode 9 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-3-capitulo-10">
+Episode 10 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-3-capitulo-11">
+Episode 11 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-3-capitulo-12">
+Episode 12 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-3-capitulo-13">
+Episode 13 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-3-capitulo-14">
+Episode 14 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-3-capitulo-15">
+Episode 15 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-3-capitulo-16">
+Episode 16 </a>
+ 
+ 
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+ 
+
+<div class="tvseason" >    
+
+<div class="les-title"> <i class="fa fa-server mr5"></i><strong>Season 4</strong></div>
+
+
+<div class="les-content" >
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-4-capitulo-1">
+Episode 1 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-4-capitulo-2">
+Episode 2 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-4-capitulo-3">
+Episode 3 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-4-capitulo-4">
+Episode 4 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-4-capitulo-5">
+Episode 5 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-4-capitulo-6">
+Episode 6 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-4-capitulo-7">
+Episode 7 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-4-capitulo-8">
+Episode 8 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-4-capitulo-9">
+Episode 9 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-4-capitulo-10">
+Episode 10 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-4-capitulo-11">
+Episode 11 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-4-capitulo-12">
+Episode 12 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-4-capitulo-13">
+Episode 13 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-4-capitulo-14">
+Episode 14 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-4-capitulo-15">
+Episode 15 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-4-capitulo-16">
+Episode 16 </a>
+ 
+ 
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+ 
+
+<div class="tvseason" >    
+
+<div class="les-title"> <i class="fa fa-server mr5"></i><strong>Season 5</strong></div>
+
+
+<div class="les-content" >
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-5-capitulo-1">
+Episode 1 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-5-capitulo-2">
+Episode 2 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-5-capitulo-3">
+Episode 3 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-5-capitulo-4">
+Episode 4 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-5-capitulo-5">
+Episode 5 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-5-capitulo-6">
+Episode 6 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-5-capitulo-7">
+Episode 7 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-5-capitulo-8">
+Episode 8 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-5-capitulo-9">
+Episode 9 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-5-capitulo-10">
+Episode 10 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-5-capitulo-11">
+Episode 11 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-5-capitulo-12">
+Episode 12 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-5-capitulo-13">
+Episode 13 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-5-capitulo-14">
+Episode 14 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-5-capitulo-15">
+Episode 15 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-5-capitulo-16">
+Episode 16 </a>
+ 
+ 
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+ 
+
+<div class="tvseason" >    
+
+<div class="les-title"> <i class="fa fa-server mr5"></i><strong>Season 6</strong></div>
+
+
+<div class="les-content" >
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-6-capitulo-1">
+Episode 1 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-6-capitulo-2">
+Episode 2 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-6-capitulo-3">
+Episode 3 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-6-capitulo-4">
+Episode 4 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-6-capitulo-5">
+Episode 5 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-6-capitulo-6">
+Episode 6 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-6-capitulo-7">
+Episode 7 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-6-capitulo-8">
+Episode 8 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-6-capitulo-9">
+Episode 9 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-6-capitulo-10">
+Episode 10 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-6-capitulo-11">
+Episode 11 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-6-capitulo-12">
+Episode 12 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-6-capitulo-13">
+Episode 13 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-6-capitulo-14">
+Episode 14 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-6-capitulo-15">
+Episode 15 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-6-capitulo-16">
+Episode 16 </a>
+ 
+ 
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+ 
+
+<div class="tvseason" >    
+
+<div class="les-title"> <i class="fa fa-server mr5"></i><strong>Season 7</strong></div>
+
+
+<div class="les-content" >
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-7-capitulo-1">
+Episode 1 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-7-capitulo-2">
+Episode 2 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-7-capitulo-3">
+Episode 3 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-7-capitulo-4">
+Episode 4 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-7-capitulo-5">
+Episode 5 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-7-capitulo-6">
+Episode 6 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-7-capitulo-7">
+Episode 7 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-7-capitulo-8">
+Episode 8 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-7-capitulo-9">
+Episode 9 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-7-capitulo-10">
+Episode 10 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-7-capitulo-11">
+Episode 11 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-7-capitulo-12">
+Episode 12 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-7-capitulo-13">
+Episode 13 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-7-capitulo-14">
+Episode 14 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-7-capitulo-15">
+Episode 15 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-7-capitulo-16">
+Episode 16 </a>
+ 
+ 
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+ 
+
+<div class="tvseason" >    
+
+<div class="les-title"> <i class="fa fa-server mr5"></i><strong>Season 8</strong></div>
+
+
+<div class="les-content" >
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-8-capitulo-1">
+Episode 1 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-8-capitulo-2">
+Episode 2 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-8-capitulo-3">
+Episode 3 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-8-capitulo-4">
+Episode 4 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-8-capitulo-5">
+Episode 5 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-8-capitulo-6">
+Episode 6 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-8-capitulo-7">
+Episode 7 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-8-capitulo-8">
+Episode 8 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-8-capitulo-9">
+Episode 9 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-8-capitulo-10">
+Episode 10 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-8-capitulo-11">
+Episode 11 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-8-capitulo-12">
+Episode 12 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-8-capitulo-13">
+Episode 13 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-8-capitulo-14">
+Episode 14 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-8-capitulo-15">
+Episode 15 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-8-capitulo-16">
+Episode 16 </a>
+ 
+ 
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+ 
+
+<div class="tvseason" >    
+
+<div class="les-title"> <i class="fa fa-server mr5"></i><strong>Season 9</strong></div>
+
+
+<div class="les-content" >
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-9-capitulo-1">
+Episode 1 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-9-capitulo-2">
+Episode 2 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-9-capitulo-3">
+Episode 3 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-9-capitulo-4">
+Episode 4 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-9-capitulo-5">
+Episode 5 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-9-capitulo-6">
+Episode 6 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-9-capitulo-7">
+Episode 7 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-9-capitulo-8">
+Episode 8 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-9-capitulo-9">
+Episode 9 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-9-capitulo-10">
+Episode 10 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-9-capitulo-11">
+Episode 11 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-9-capitulo-12">
+Episode 12 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-9-capitulo-13">
+Episode 13 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-9-capitulo-14">
+Episode 14 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-9-capitulo-15">
+Episode 15 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-9-capitulo-16">
+Episode 16 </a>
+ 
+ 
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+ 
+
+<div class="tvseason" >    
+
+<div class="les-title"> <i class="fa fa-server mr5"></i><strong>Season 10</strong></div>
+
+
+<div class="les-content" >
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-1">
+Episode 1 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-2">
+Episode 2 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-3">
+Episode 3 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-4">
+Episode 4 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-5">
+Episode 5 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-6">
+Episode 6 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-7">
+Episode 7 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-8">
+Episode 8 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-9">
+Episode 9 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-10">
+Episode 10 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-11">
+Episode 11 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-12">
+Episode 12 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-13">
+Episode 13 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-14">
+Episode 14 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-15">
+Episode 15 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-16">
+Episode 16 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-17">
+Episode 17 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-18">
+Episode 18 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-19">
+Episode 19 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-20">
+Episode 20 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-21">
+Episode 21 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-10-capitulo-22">
+Episode 22 </a>
+ 
+ 
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+ 
+
+<div class="tvseason" >    
+
+<div class="les-title"> <i class="fa fa-server mr5"></i><strong>Season 11</strong></div>
+
+
+<div class="les-content" >
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-1">
+Episode 1 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-2">
+Episode 2 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-3">
+Episode 3 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-4">
+Episode 4 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-5">
+Episode 5 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-6">
+Episode 6 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-7">
+Episode 7 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-8">
+Episode 8 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-9">
+Episode 9 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-10">
+Episode 10 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-11">
+Episode 11 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-12">
+Episode 12 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-13">
+Episode 13 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-14">
+Episode 14 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-15">
+Episode 15 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-16">
+Episode 16 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-17">
+Episode 17 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-18">
+Episode 18 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-19">
+Episode 19 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-20">
+Episode 20 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-21">
+Episode 21 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-22">
+Episode 22 </a>
+ 
+<a href="https://www3.homecine.to/episode/the-walking-dead-temporada-11-capitulo-23">
+Episode 23 </a>
+ 
+ 
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+ 
+ 
+</div>
+</div>
+  
+
+ 			
+  
+ <div class="mvi-content" itemscope itemtype="http://schema.org/TVSeries" style="margin-top:0;">
+<!-- Micro data -->
+<meta itemprop="datePublished" content="2018-03-13T20:00:15-04:00"/>
+<meta itemprop="url" content="https://www3.homecine.to/series/serie-the-walking-dead-cualquier-idioma" />
+<!-- end Micro data -->
+<div class="mvic-btn">
+<div class="clearfix"></div>
+ </div>
+ <div class="thumb mvic-thumb" style="background-image: url('https://www3.homecine.to/wp-content/uploads/2018/01/the-walking-dead-7871-poster.jpg');">
+<img itemprop="image" title="The Walking Dead" alt="The Walking Dead" src="https://www3.homecine.to/wp-content/uploads/2018/01/the-walking-dead-7871-poster.jpg" class="hidden" style="width: 140px; height: 210px;">
+</div>
+ <div class="mvic-desc">
+<h3 itemprop="name">The Walking Dead</h3>
+<div class="block-trailer">
+<a data-target="#pop-trailer" data-toggle="modal" class="pop-trailer btn btn-primary">
+<i class="fa fa-video-camera mr5"></i>Trailer</a>
+</div>
+<div class="block-social">
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<div class="addthis_inline_share_toolbox"></div>
+</div>
+<div itemprop="description" class="desc">
+<p class="f-desc">«The Walking Dead» está ambientada en un futuro apocalíptico con la Tierra devastada por el efecto de un cataclismo, que ha provocado la mutación en zombies de la mayor parte de los habitantes del planeta. La serie, explora las dificultades de los protagonistas para sobrevivir en un mundo poblado por el horror, así como las relaciones personales que se establecen entre ellos, en ocasiones también una amenaza para su supervivencia.</p>
+</div>
+<div class="mvic-info">
+<div class="mvici-left">
+<p><strong>Views:</strong> 1221</p><p>
+<strong>Genre: </strong>
+<a href="https://www3.homecine.to/genre/action-adventure" rel="category tag">Action &amp; Adventure</a>,&nbsp;<a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a>,&nbsp;<a href="https://www3.homecine.to/genre/sci-fi-fantasy" rel="category tag">Sci-Fi &amp; Fantasy</a></p>
+<p><strong>Director: </strong><span itemprop="director"><a href="https://www3.homecine.to/director/frank-darabont" rel="tag">Frank Darabont</a></span></p><p ><strong>Actors: </strong><span ><a href="https://www3.homecine.to/stars/alanna-masterson" rel="tag">Alanna Masterson</a>, <a href="https://www3.homecine.to/stars/andrew-lincoln" rel="tag">Andrew Lincoln</a>, <a href="https://www3.homecine.to/stars/callan-mcauliffe" rel="tag">Callan McAuliffe</a>, <a href="https://www3.homecine.to/stars/chandler-riggs" rel="tag">Chandler Riggs</a>, <a href="https://www3.homecine.to/stars/christian-serratos" rel="tag">Christian Serratos</a>, <a href="https://www3.homecine.to/stars/cooper-andrews" rel="tag">Cooper Andrews</a>, <a href="https://www3.homecine.to/stars/danai-gurira" rel="tag">Danai Gurira</a>, <a href="https://www3.homecine.to/stars/jeffrey-dean-morgan" rel="tag">Jeffrey Dean Morgan</a>, <a href="https://www3.homecine.to/stars/josh-mcdermitt" rel="tag">Josh McDermitt</a>, <a href="https://www3.homecine.to/stars/katelyn-nacon" rel="tag">Katelyn Nacon</a>, <a href="https://www3.homecine.to/stars/khary-payton" rel="tag">Khary Payton</a>, <a href="https://www3.homecine.to/stars/lauren-cohan" rel="tag">Lauren Cohan</a>, <a href="https://www3.homecine.to/stars/melissa-mcbride" rel="tag">Melissa McBride</a>, <a href="https://www3.homecine.to/stars/norman-reedus" rel="tag">Norman Reedus</a>, <a href="https://www3.homecine.to/stars/ross-marquand" rel="tag">Ross Marquand</a>, <a href="https://www3.homecine.to/stars/ryan-hurst" rel="tag">Ryan Hurst</a>, <a href="https://www3.homecine.to/stars/samantha-morton" rel="tag">Samantha Morton</a>, <a href="https://www3.homecine.to/stars/seth-gilliam" rel="tag">Seth Gilliam</a>, <a href="https://www3.homecine.to/stars/tom-payne" rel="tag">Tom Payne</a></span></p><p><strong>Studio: </strong><span itemprop="productionCompany"><a href="https://www3.homecine.to/studio/amc-networks" rel="tag">AMC Networks</a>, <a href="https://www3.homecine.to/studio/amc-studios" rel="tag">AMC Studios</a>, <a href="https://www3.homecine.to/studio/american-movie-classics-amc" rel="tag">American Movie Classics (AMC)</a>, <a href="https://www3.homecine.to/studio/circle-of-confusion" rel="tag">Circle of Confusion</a>, <a href="https://www3.homecine.to/studio/darkwoods-productions" rel="tag">Darkwoods Productions</a>, <a href="https://www3.homecine.to/studio/valhalla-motion-pictures" rel="tag">Valhalla Motion Pictures</a></span></p></div>
+<div class="mvici-right">
+<p><strong>TV Status:</strong> <span itemprop="duration">Returning Series</span></p>
+ 
+<p><strong>Duration:</strong> <span itemprop="duration">42,60,45 min</span></p>
+ 
+<p><strong>Release:</strong> <a href="https://www3.homecine.to/release-year/2010" rel="tag">2010</a></p>
+ <div itemscope itemtype="http://schema.org/VideoObject">       
+<meta itemprop="embedUrl" content="https://www.youtube.com/embed/BXqUmob-nfg"><meta itemprop="name" content="The Walking Dead">
+<meta itemprop="thumbnailUrl" conTent="https://image.tmdb.org/t/p/original/r7zUXadc1saFFSWz8lbUx7q9bkG.jpg"><meta itemprop="uploadDate" content="">
+</div>
+<!-- Micro data -->
+<meta itemprop="url" content="https://www3.homecine.to/series/serie-the-walking-dead-cualquier-idioma" />
+<meta itemprop="datePublished" content=""/>
+
+<!-- Micro data -->				
+
+<div class="imdb_r" itemtype="http://schema.org/AggregateRating" itemscope="" itemprop="aggregateRating">
+ 
+<p><strong>TMDb:</strong> <span itemprop="ratingValue" class="imdb-r">8.1</span></p>
+<p><strong>Networks: </strong><a href="https://www3.homecine.to/networks/amc" rel="tag">AMC</a></p></div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+</div>
+  
+
+
+</div>
+
+<!-- keywords -->
+<!-- /keywords -->
+
+<!-- movie images -->
+<div class="mvi-images">
+<div id="backdrops" class="galeria">
+  <div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/r7zUXadc1saFFSWz8lbUx7q9bkG.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/uro2Khv7JxlzXtLb8tCIbRhkb9E.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/wvdWb5kTQipdMDqCclC6Y3zr4j3.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/qaQH3qWucxIYv5ztQ176Q59CYSy.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/qpUAdvHZDe7Cl7X2uHO3K8swW6A.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/lhX3Oy5KmckDhhJAiqdQTfFLd4F.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/2eKVV5oR4Jvc8Sp2MnlQQpl628o.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/tCQ32pH7qAgxhhFohykWMOYux1E.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/ugndFTbGW9G4iGOu0H5zE6NDp85.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/qUzFThnGSxh7BIj2a4BxU0OLSuV.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/wXXaPMgrv96NkH8KD1TMdS2d7iq.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/xOdA6paXYAWURfNNdYk7Oz62mxA.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/hPLCWOq8eS98YIsxlrK2OQkmgah.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/AjwsOW62iFDUAx9ehJYoPdHC5h8.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/qLLojy8QmrSsBkyqO1iTsVltR6V.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/AgyXlYwp2I0uw7GoImt1c0kqWYv.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/wY3KAlS1VgyOc5rJ6kBierv1iKW.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/q1h0WnbeCc8l05bQxHfP9vrez2W.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/xVzvD5BPAU4HpleFSo8QOdHkndo.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/f9fpHGgqRpoaL2CnBg7ro7RAzkI.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/xJFUzxOMfksl0tQ1dtYsftOL22n.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/pNiKSsohk61JXimcXAhyZVU3Q60.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/l4IDRg8ftb2XLlSqeWGIXAs8Rxl.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/sx7uUF60THIOREsfjSDc9fWrf9V.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/5Zku50IiNK5GhpfrA10m1A5JtAp.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/71QUWH80ncYAACkGuaVjy6nqwM9.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/nMmder0qNHWlv002Lp0SHT7dw81.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/qgEqN2evfxGhXyIjIpMdKSc1kF6.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/yX9f5SJOU2JUda92h3FJiWg4dK2.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/kFyWlNS1hPtjEcH0D2VBzR2ZkJ2.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/r2NcIZ1FPMlxCty3vRITVTgGNVS.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/ApNaiz3I75crK7hw0H5lQ0e9YhI.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/bCTvcTTnco4T4T9rjuPL4tS7q1T.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/dUUMb48Cvsy7cv0uiHb5zdBwM9J.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/yNxQZDpumaXcltBcnBTgHzwJz8q.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/qCScjVeyF39X00uMAL1PxS2OVU0.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/pQWbhhdanete8xQtj7cD6NlmXMw.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/pIKHhyj7LfJ5TAgjwvf1lTDsqlV.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/4235qrpX0AJCnpy4TVjGZPOMS4O.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/miNotOZGqExGW0kvBVrwbiw7fQT.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/msI6QiIIgPaRo2l9IagGyEYKh6U.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/sZdtZAYlXGTwAzCei70jQw6b7Bh.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/5jLHclxjoxvwg5uALMn2IO5HyDz.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/5O803b2tGLIONpALFzmExCmMi6y.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/rbUXlnm7i0s90P5YFW7CM43sqAz.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/wBXQSnUKfZUmvwuGe0lUWwyOVUl.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/hsI4CoLAtXvdcef9fnXf9iIitEu.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/ghGic3JMdgg1fSuPMj45S0QYUl9.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/c1oaRBVodSfINHHgU5qBbMraTkz.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/xIHKPS6ozh0qN3oJAHFIkKiPRSI.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/1UQEDgNEmFORG444Umas57i0jYB.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/agAW8pvlYeenRsrrcQoFcuJEhSh.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/sZ5D5jNbeZcMZFU4dyKz6fZv9xj.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/qgnq0zbCBidOQrpMOufONN6H2Pj.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/cQ8PITBWEzAsjZyuv4mODDA6PU6.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/5iX0BTcbWQWD0LPUz1fBotc6niC.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/lp90CpPOxRJR53PAKgVBe5FRQUq.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/uARjuqJiLADVvL75JqtziX29KLr.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/qK6FZ2tTAMkIUbxeuRGPnxcbMh1.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/fIMoRM0tScmGnM1VPe2ectek05w.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/e7y0gJgUbqOyrtvRCBK9EmgnnDe.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/mmhoctloPRkRT4w4bRN9csj0FVM.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/9PKw4skjparoEH2Uxf6EFPDXNVz.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/inf1Y20DR0rBjQCZWpDgUbw2nre.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/bdPXGsSHFYi7GiDzcnr5LEAL0x.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/chz08QCTb9Im4q3cdku4HOxbvkd.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/sqr6ewa8swofHrPEFft2UeyGh9O.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/zByPqS1zcxxKJT9V9WmuiQXbEBm.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/5r38hDdoAsWpeub2JUVipBR68gF.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/eOWLg5NCYSI0GZZHzh7XDzGg9A3.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/yFXYkwPLijbTmr9t4CAGkSIzMaT.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/3ynZzFOTXVKgN9zaIXLehZCKKfY.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/4Q3IsigYf60coTMlYIZSzhqSpxu.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/w75xv0Wm3FQkFiLFM7AHxobLEPw.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/AmbxjNa0hCrn9nnfk3EUChCU6So.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/brJlfR8gxsedjVlcgu2158dggRz.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/aUuXlnsSRSn2gtzl2Hp3k65bhGT.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/ikRfRM1kHYafpuL717kVjjrdJDG.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/mjYtLqGEMv1c9jQDAZybVYJPSn9.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/9GuHz1PIyXWWNB2YwNo0FR1wbB5.jpg" alt="The Walking Dead" /></div>
+<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/9m0I4WZhsresL22ogzftuE7kbfK.jpg" alt="The Walking Dead" /></div>
+<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+</div>
+<!-- / movie images -->
+
+
+ 			
+
+
+<div id="commentfb">
+<div class="comentarios">
+ 
+<h3 class="title">Comments </h3>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Deja una respuesta <small><a rel="nofollow" id="cancel-comment-reply-link" href="/series/serie-the-walking-dead-cualquier-idioma#respond" style="display:none;">Cancelar la respuesta</a></small></h3><form action="https://www3.homecine.to/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Tu dirección de correo electrónico no será publicada.</span> <span class="required-field-message">Los campos obligatorios están marcados con <span class="required">*</span></span></p><p class="comment-form-comment"><label for="comment">Comentario <span class="required">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Nombre <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required" /></p>
+<p class="comment-form-email"><label for="email">Correo electrónico <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required="required" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Publicar el comentario" /> <input type='hidden' name='comment_post_ID' value='11244' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p></form>	</div><!-- #respond -->
+	<section id="comments" class="themeform">
+</section></div>
+
+
+</div>
+
+<!--related-->
+<div class="movies-list-wrap mlw-related">
+<div class="ml-title ml-title-page">
+<span>Series Relacionadas</span>
+</div>
+<div class="movies-list movies-list-full">
+<div data-movie-id="31907" class="ml-item">
+<a href="https://www3.homecine.to/series/gotham" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Gotham" title="">
+ 
+<span class="mli-quality">HD 1080p</span>
+
+
+<img data-original="https://www3.homecine.to/wp-content/uploads/2019/01/4XddcRDtnNjYmLRMYpbrhFxsbuq.jpg"class="lazy thumb mli-thumb" alt="Gotham">
+<span class="mli-info"><h2>Gotham</h2></span>
+</a>
+			
+<div id="hidden_tip">
+<div id="" class="qtip-title">Gotham</div>
+<div class="jtip-quality">HD 1080p</div>
+
+
+<div class="jtip-top">
+<div class="jt-info jt-imdb">TMDb: 7.6</div>
+   
+   
+<div class="jt-info"><a href="https://www3.homecine.to/release-year/2014" rel="tag">2014</a></div>
+
+
+<div class="jt-info">43 min</div>
+<div class="clearfix"></div>
+</div>
+
+ <p class="f-desc"><p>Un nuevo recluta en el Departamento de Policía de Gotham City , James Gordon , se empareja con el veterano detective Harvey Bullock para resolver uno de los casos de&#8230;</p>
+</p>
+
+<div class="block">Status: Ended</div>
+
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/crimen" rel="category tag">Crimen</a>, <a href="https://www3.homecine.to/genre/sci-fi-fantasy" rel="category tag">Sci-Fi &amp; Fantasy</a> </div>
+
+<div class="jtip-bottom">
+<a href="https://www3.homecine.to/series/gotham" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Series</a>
+
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-31907" data-nonce="82efb0f60b" data-post-id="31907" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+
+</div>
+</div><div data-movie-id="259854" class="ml-item">
+<a href="https://www3.homecine.to/series/amazon-wish-list-games" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Amazon Wish List Games" title="">
+ 
+<span class="mli-quality">720p</span>
+
+
+<img data-original="https://image.tmdb.org/t/p/w185/x9xvcclvwzpxR6jgmCQEmJQgM8R.jpg"class="lazy thumb mli-thumb" alt="Amazon Wish List Games">
+<span class="mli-info"><h2>Amazon Wish List Games</h2></span>
+</a>
+			
+<div id="hidden_tip">
+<div id="" class="qtip-title">Amazon Wish List Games</div>
+<div class="jtip-quality">720p</div>
+
+
+<div class="jtip-top">
+<div class="jt-info jt-imdb"> IMDb: N/A</div>
+   
+   
+<div class="jt-info"><a href="https://www3.homecine.to/release-year/2024" rel="tag">2024</a></div>
+
+
+<div class="jt-info">N/A</div>
+<div class="clearfix"></div>
+</div>
+
+ <p class="f-desc"><p>Un programa interactivo y lleno de diversión donde los concursantes compiten en emocionantes desafíos para ganar artículos de sus listas de deseos de Amazon. Con una mezcla de estrategia, juegos&#8230;</p>
+</p>
+
+<div class="block">Status: Ended</div>
+
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/reality" rel="category tag">Reality</a> </div>
+
+<div class="jtip-bottom">
+<a href="https://www3.homecine.to/series/amazon-wish-list-games" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Movie</a>
+
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-259854" data-nonce="82efb0f60b" data-post-id="259854" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+
+</div>
+</div><div data-movie-id="257014" class="ml-item">
+<a href="https://www3.homecine.to/series/lego-star-wars-reconstruye-la-galaxia" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="LEGO Star Wars: Reconstruye la galaxia" title="">
+
+
+<img data-original="https://image.tmdb.org/t/p/w185/8bviGSTxUIjAS1oFUddA3DQ1XG0.jpg"class="lazy thumb mli-thumb" alt="LEGO Star Wars: Reconstruye la galaxia">
+<span class="mli-info"><h2>LEGO Star Wars: Reconstruye la galaxia</h2></span>
+</a>
+			
+<div id="hidden_tip">
+<div id="" class="qtip-title">LEGO Star Wars: Reconstruye la galaxia</div>
+
+
+<div class="jtip-top">
+<div class="jt-info jt-imdb">TMDb: 7</div>
+   
+   
+<div class="jt-info"><a href="https://www3.homecine.to/release-year/2024" rel="tag">2024</a></div>
+
+
+<div class="jt-info">104 min</div>
+<div class="clearfix"></div>
+</div>
+
+ <p class="f-desc"><p>LEGO Star Wars: Rebuild the Galaxy La galaxia entera se entremezcla totalmente cuando Sig Greebling, un pastor de nerfs corriente y moliente, descubre un poderoso artefacto en un templo jedi&#8230;</p>
+</p>
+
+<div class="block">Status: Ended</div>
+
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/action-adventure" rel="category tag">Action &amp; Adventure</a>, <a href="https://www3.homecine.to/genre/animacion" rel="category tag">Animación</a>, <a href="https://www3.homecine.to/genre/peliculas-de-comedia" rel="category tag">Comedia</a>, <a href="https://www3.homecine.to/genre/familia" rel="category tag">Familia</a>, <a href="https://www3.homecine.to/genre/sci-fi-fantasy" rel="category tag">Sci-Fi &amp; Fantasy</a> </div>
+
+<div class="jtip-bottom">
+<a href="https://www3.homecine.to/series/lego-star-wars-reconstruye-la-galaxia" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Series</a>
+
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-257014" data-nonce="82efb0f60b" data-post-id="257014" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+
+</div>
+</div><div data-movie-id="252147" class="ml-item">
+<a href="https://www3.homecine.to/series/dragon-ball-super" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Dragon Ball Super" title="">
+ 
+<span class="mli-quality">720p</span>
+
+
+<img data-original="https://image.tmdb.org/t/p/w185/kbhu0tIv5E1PbAw2YPjrhoQ7I1s.jpg"class="lazy thumb mli-thumb" alt="Dragon Ball Super">
+<span class="mli-info"><h2>Dragon Ball Super</h2></span>
+</a>
+			
+<div id="hidden_tip">
+<div id="" class="qtip-title">Dragon Ball Super</div>
+<div class="jtip-quality">720p</div>
+
+
+<div class="jtip-top">
+<div class="jt-info jt-imdb">TMDb: 8.196</div>
+   
+   
+<div class="jt-info"><a href="https://www3.homecine.to/release-year/2015" rel="tag">2015</a></div>
+
+
+<div class="jt-info">24 min</div>
+<div class="clearfix"></div>
+</div>
+
+ <p class="f-desc"><p>La trama de la serie tiene lugar después de la batalla contra Pequeño Buu en medio del período de 10 años hacia el Torneo Mundial de las Artes Marciales 28. Está enlazada con las&#8230;</p>
+</p>
+
+<div class="block">Status: Ended</div>
+
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/action-adventure" rel="category tag">Action &amp; Adventure</a>, <a href="https://www3.homecine.to/genre/animacion" rel="category tag">Animación</a>, <a href="https://www3.homecine.to/genre/sci-fi-fantasy" rel="category tag">Sci-Fi &amp; Fantasy</a> </div>
+
+<div class="jtip-bottom">
+<a href="https://www3.homecine.to/series/dragon-ball-super" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Series</a>
+
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-252147" data-nonce="82efb0f60b" data-post-id="252147" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+
+</div>
+</div><div data-movie-id="198030" class="ml-item">
+<a href="https://www3.homecine.to/series/the-winchesters" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="The Winchesters" title="">
+
+
+<img data-original="https://image.tmdb.org/t/p/w185/sx9CxQCQmt6oYYLs0MKyx4G940S.jpg"class="lazy thumb mli-thumb" alt="The Winchesters">
+<span class="mli-info"><h2>The Winchesters</h2></span>
+</a>
+			
+<div id="hidden_tip">
+<div id="" class="qtip-title">The Winchesters</div>
+
+
+<div class="jtip-top">
+<div class="jt-info jt-imdb">TMDb: 7.9</div>
+   
+   
+<div class="jt-info"><a href="https://www3.homecine.to/release-year/2022" rel="tag">2022</a></div>
+
+
+<div class="jt-info">N/A</div>
+<div class="clearfix"></div>
+</div>
+
+ <p class="f-desc"><p>Los Winchesters Antes de Sam y Dean, estaban John y Mary. Contada desde la perspectiva del narrador Dean Winchester, esta es la épica historia de amor no contada de cómo&#8230;</p>
+</p>
+
+<div class="block">Status: Returning Series</div>
+
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/action-adventure" rel="category tag">Action &amp; Adventure</a>, <a href="https://www3.homecine.to/genre/sci-fi-fantasy" rel="category tag">Sci-Fi &amp; Fantasy</a> </div>
+
+<div class="jtip-bottom">
+<a href="https://www3.homecine.to/series/the-winchesters" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Series</a>
+
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-198030" data-nonce="82efb0f60b" data-post-id="198030" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+
+</div>
+</div><div data-movie-id="42867" class="ml-item">
+<a href="https://www3.homecine.to/series/reas" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Reas" title="">
+ 
+<span class="mli-quality">HD 1080p</span>
+
+
+<img data-original="https://www3.homecine.to/wp-content/uploads/2019/06/cymY9UQs6PoAhHQ5sLYIV9JzSz0.jpg"class="lazy thumb mli-thumb" alt="Reas">
+<span class="mli-info"><h2>Reas</h2></span>
+</a>
+			
+<div id="hidden_tip">
+<div id="" class="qtip-title">Reas</div>
+<div class="jtip-quality">HD 1080p</div>
+
+
+<div class="jtip-top">
+<div class="jt-info jt-imdb">TMDb: 7</div>
+   
+   
+<div class="jt-info"><a href="https://www3.homecine.to/release-year/2019" rel="tag">2019</a></div>
+
+
+<div class="jt-info">45 min</div>
+<div class="clearfix"></div>
+</div>
+
+ <p class="f-desc"><p>Jailbirds En la cárcel del condado de Sacramento, las reclusas luchan por el poder y se oponen a la autoridad, mientras intentan impedir que el encierro les quite el brillo.</p>
+</p>
+
+<div class="block">Status: Returning Series</div>
+
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/reality" rel="category tag">Reality</a> </div>
+
+<div class="jtip-bottom">
+<a href="https://www3.homecine.to/series/reas" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Series</a>
+
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-42867" data-nonce="82efb0f60b" data-post-id="42867" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+
+</div>
+</div> </div>
+</div>
+<!--/related-->
+
+
+ 			
+</div>
+</div>
+
+<div id="overlay"></div>
+
+<!-- Modal -->
+<div class="modal fade modal-cuz modal-trailer" id="pop-trailer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-close"></i>
+</button>
+<h4 class="modal-title" id="myModalLabel">Trailer: The Walking Dead</h4>
+</div>
+<div class="modal-body">
+<div class="modal-body-trailer">
+<iframe id="iframe-trailer" width="600" height="450" src="//www.youtube.com/embed/BXqUmob-nfg" frameborder="0" allowfullscreen></iframe><div itemscope itemtype="http://schema.org/VideoObject">       
+<meta itemprop="embedUrl" content="https://www.youtube.com/embed/BXqUmob-nfg"><meta itemprop="name" content="The Walking Dead">
+<meta itemprop="description" conTent="The Walking Dead Trailer">
+<meta itemprop="thumbnailUrl" conTent="https://image.tmdb.org/t/p/original/r7zUXadc1saFFSWz8lbUx7q9bkG.jpg"><meta itemprop="uploadDate" conTent="2010-10-31"></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="modal fade modal-report" id="pop-report" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-close"></i>
+                </button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-warning"></i> Report</h4>
+            </div>
+            <div class="modal-body">
+			
+<div class="reportform">
+<p>Please help us to describe the issue so we can fix it asap.</p>
+<form method="post" action="https://www3.homecine.to/series/serie-the-walking-dead-cualquier-idioma?report=O3IIDJQSV#uwee"> 
+<div class="aff">
+
+<div class="rep_cont">
+<label>Episodes</label>
+<select name="videos" style="margin-bottom: 5px;">
+<option value="n/a" disabled selected>-----</option>
+<option value="Incorrect episode">Incorrect episode</option>
+<option value="Broken link">Broken link</option>
+<option value="Others">Others</option>
+</select>
+</div>
+<div class="rep_cont">
+<label>Contents</label>
+<select name="audio" style="margin-bottom: 5px;">
+<option value="n/a" disabled selected>-----</option>
+<option value="Incorrect details">Incorrect details</option>
+<option value="Wrong images">Wrong images</option>
+<option value="Others">Others</option>
+</select>
+</div>
+<div class="rep_cont2">
+<input type="email" name="email"  required placeholder="Enter your email. (It will not be shared)">
+<textarea name="detalles" required placeholder="Describe the issue here."></textarea>
+<div class="g-recaptcha" data-sitekey="6LcTYJUaAAAAADJpvF3DUTyrP_9PyQBc7lFhGSaT"></div>
+<input type="submit" value="Send Report" class="btn btn-block btn-successful">
+</div>
+   <div class="clearfix"></div>
+</div>
+<input type="hidden" name="titulo" value="The Walking Dead">
+<input type="hidden" name="enlace" value="https://www3.homecine.to/series/serie-the-walking-dead-cualquier-idioma">
+<input type="hidden" name="id" value="11244">
+<input type="hidden" name="ip" value="130.61.236.204">
+<input type="hidden" name="link" value="https://www3.homecine.to">
+<input type="hidden" name="action" value="send" />
+</form>
+</div>
+            </div>
+        </div>
+    </div>
+</div><!--/ modal -->
+<!--footer-->
+<footer>
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 footer-one">
+<div id="foot_nav">
+<div class="footer-link"><h3 class="footer-link-head">Menu</h3>
+<p><a href='https://www3.homecine.to/most-viewed'>Mas Vistas</a></p>
+</li>
+
+<p><a href='https://www3.homecine.to/mas-favoritas'>Mas Favoritas</a></p>
+</li>
+
+<p><a href='https://www3.homecine.to/mas-rating'>Mas Rating</a></p>
+</li>
+
+<p><a href='https://www3.homecine.to/cuenta'>Mi Cuenta</a></p>
+</li>
+</div>
+
+<div class="footer-link"><h3 class="footer-link-head">Por Año</h3>
+<p><a href='https://www3.homecine.to/release-year/2020'>2020</a></p>
+</li>
+
+<p><a href='https://www3.homecine.to/release-year/2019'>2019</a></p>
+</li>
+
+<p><a href='https://www3.homecine.to/release-year/2018'>2018</a></p>
+</li>
+
+<p><a href='https://www3.homecine.to/release-year/2017'>2017</a></p>
+</li>
+</div>
+<div class="footer-link"><h3 class="footer-link-head">Webs amigas</h3>
+<p><a href='https://pelismart.tv'>Pelismart</a></p>
+</li>
+</div></div>
+<script>$("#foot_nav div.footer-link:last-child").addClass("end");</script>
+<div class="clearfix"></div>
+</div>
+
+
+<div class="col-lg-4 footer-subs">
+<h3 class="footer-link-head">Mantente actualizado!</h3>
+
+                    <p class="desc">Síguenos en las redes sociales y activate con los estrenos de Series y Películas HD!</p>
+
+<div class="form-subs mt20"><div id="social-foot" class="footer-social">
+<a href="https://facebook.com/homecinenet" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a> <a href="https://twitter.com/homecinenet" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>  <a href="https://www.youtube.com/channel/UC99F6zwtFMGdk_EcLB-Jyqg" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>  </div><div class="clearfix"></div>
+                    </div>
+                    <div id="error-email-subs-footer" class="alert alert-danger error-block"></div>
+                    <div id="success-subs-footer" class="alert alert-success error-block"></div>
+                    <div class="clearfix"></div>
+                </div>
+				
+				
+<div class="col-lg-4 footer-copyright">
+<p>
+<img id="logo-footer" border="0" src="https://homecine.to/wp-content/uploads/2018/05/homedark-1-3.png" alt="HomeCine" class="mv-ft-logo" />
+</p>
+
+                    <p><span class="copyright">
+Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
+
+</p>
+                    <p style="font-size: 11px; line-height: 14px; color: rgba(255,255,255,0.4)">Homecine no almacena ninguna película o serie en sus servidores.</p>
+					                </div>
+                <div class="clearfix"></div>
+            </div></div>
+</div>
+</footer>
+<!--/footer-->
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/custom\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script type='text/javascript'>jQuery(document).ready(function() {(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-84269634-19','auto');ga('send','pageview');$('img.lazy').lazyload({effect:'fadeIn'});function a(){$(this).find(".sub-container").css("display","block")}function b(){$(this).find(".sub-container").css("display","none")}$("#search a.box-title").click(function(){$("#search .box").toggleClass("active")}),$(".mobile-menu").click(function(){$("#menu,.mobile-menu").toggleClass("active"),$("#search, .mobile-search").removeClass("active")}),$(".mobile-search").click(function(){$("#search,.mobile-search").toggleClass("active"),$("#menu, .mobile-menu").removeClass("active")}),$(".filter-toggle").click(function(){$("#filter").toggleClass("active"),$(".filter-toggle").toggleClass("active")}),$(".bp-btn-light").click(function(){$(".bp-btn-light, #overlay, #media-player, #content-embed, #comment-area").toggleClass("active")}),$("#overlay").click(function(){$(".bp-btn-light, #overlay, #media-player, #content-embed, #comment-area").removeClass("active")}),$(".bp-btn-auto").click(function(){$(".bp-btn-auto").toggleClass("active")}),$("#toggle, .cac-close").click(function(){$("#comment").toggleClass("active")}),$(".top-menu> li").bind("mouseover",a),$(".top-menu> li").bind("mouseout",b);var c=0;$(window).on("scroll",function(){$(window).scrollTop()<c?"fixed"!=$("header").css("position")&&($("header").css({position:"fixed",top:-$("header").outerHeight(),backgroundColor:"#fff"}),$("header").animate({top:"0px"},500),$("#main").css("padding-top",$("header").outerHeight())):($("header").css({position:"relative",top:"0px"}),$("#main").css("padding-top","0px")),c=$(window).scrollTop()});$('.averagerate').each(function(t){len=$(this).text().length,len>3&&$(this).text($(this).text().substr(0,3))});$('#backdrops').owlCarousel({items:4, lazyLoad:!0, autoPlay:!0, pagination:!1, navigation:!0, navigationText:['',''], itemsDesktop:[800,3], itemsDesktopSmall:[600,2], itemsTablet:[500,2], itemsMobile:[400,2], autoHeight:!0}); $('.mvi-images').addClass('show');$(function() { $('a.pop-trailer').on('click', function(e) { $('#iframe-trailer').attr('src', '//www.youtube.com/embed/BXqUmob-nfg/');});var container = $('.modal-content');$(document).mouseup(function(e) {if (!container.is(e.target) && container.has(e.target).length === 0){ $('#iframe-trailer').attr('src', '');}});});});</script><div class="modal fade modal-cuz" id="pt-user-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" data-active-tab="">
+        <div class="modal-content">
+					<div class="modal-body">
+						
+						
+								<!-- Register form -->
+								<div class="pt-register">
+							 
+							 	<div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-close"></i>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">You are welcome</h4>
+            </div>
+  <p class="desc">When becoming members of the site, you could use the full range of functions and enjoy the most exciting films.</p>
+
+									<form id="pt_registration_form" action="https://www3.homecine.to/" method="POST">
+
+										<div class="block">
+																						<input class="form-control   required" name="pt_user_login" type="text" placeholder="Username"/>
+										</div>
+										<div class="block">
+											
+											<input class="form-control   required" name="pt_user_email" id="pt_user_email" type="email" placeholder="Email"/>
+										</div>
+
+										<div class="block">
+											<input type="hidden" name="action" value="pt_register_member"/>
+											
+										</div>
+										<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Register</button>
+										<input type="hidden" id="register-security" name="register-security" value="e7c0c672df" /><input type="hidden" name="_wp_http_referer" value="/series/serie-the-walking-dead-cualquier-idioma" />									</form>
+									<div class="pt-errors"></div>
+								</div>
+
+								<!-- Login form -->
+								<div class="pt-login">
+							 
+									<div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-close"></i>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Member Login Area</h4>
+            </div>
+							  <p class="desc">Watch HD Movies Online For Free and Download the latest movies. For everybody,
+                    everywhere, everydevice, and everything ;)</p>
+									<form id="pt_login_form" action="https://www3.homecine.to/" method="post">
+
+										<div class="block">
+											
+											<input class="form-control   required" name="pt_user_login" type="text" placeholder="Username or Email"/>
+										</div>
+										<div class="block">
+											
+											<input class="form-control   required" name="pt_user_pass" id="pt_user_pass" type="password" placeholder="Password"/>
+										</div>
+										<input type="hidden" name="action" value="pt_login_member"/>
+										<div class="pull-right" style="margin-bottom:10px;">
+											<a id="open-forgot" class="alignright" href="#pt-reset-password" style="font-size: 85%;">Forgot Password?</a>
+										</div>
+										<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Login</button> 
+										<input type="hidden" id="login-security" name="login-security" value="e7c0c672df" /><input type="hidden" name="_wp_http_referer" value="/series/serie-the-walking-dead-cualquier-idioma" />									</form>
+									<div class="pt-errors"></div>
+								</div>
+
+								<!-- Lost Password form -->
+								<div class="pt-reset-password">
+							 <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-close"></i>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Forgot Password</h4>
+            </div>
+								
+							 <p class="desc">We will send a new password to your email. Please fill your email to form below.</p>
+									<form id="pt_reset_password_form" action="https://www3.homecine.to/" method="post">
+										<div class="block">
+																						<input class="form-control   required" name="pt_user_or_email" id="pt_user_or_email" type="text" placeholder="Username or Email"/>
+										</div>
+										<div class="block">
+											<input type="hidden" name="action" value="pt_reset_password"/>
+											<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Submit</button>
+										</div>
+										<input type="hidden" id="password-security" name="password-security" value="e7c0c672df" /><input type="hidden" name="_wp_http_referer" value="/series/serie-the-walking-dead-cualquier-idioma" />									</form>
+									<div class="pt-errors"></div>
+								</div>
+
+								<div class="pt-loading">
+									<p><i class="fa fa-refresh fa-spin"></i><br>Loading...</p>
+								</div>					</div>
+					<div class="modal-footer">
+							<span class="pt-register-footer">Not a member yet? <a href="#pt-register">Join Now</a></span>
+							<span class="pt-login-footer"><a href="#pt-login" style="color:#888;"><i class="fa fa-chevron-left mr10"></i> Back to login</a></span>
+					</div>				
+				</div>
+			</div>
+		</div>
+<script type="text/javascript" src="https://www3.homecine.to/wp-content/themes/custom/assets/js/bootstrap.min.js?ver=1.2.5" id="bootstrap-js"></script>
+<script type="text/javascript" id="swp-live-search-client-js-extra">
+/* <![CDATA[ */
+var searchwp_live_search_params = [];
+searchwp_live_search_params = {"ajaxurl":"https:\/\/www3.homecine.to\/wp-admin\/admin-ajax.php","config":{"default":{"engine":"default","input":{"delay":500,"min_chars":3},"results":{"position":"bottom","width":"auto","offset":{"x":0,"y":5}},"spinner":{"lines":10,"length":8,"width":4,"radius":8,"corners":1,"rotate":0,"direction":1,"color":"#000","speed":1,"trail":60,"shadow":false,"hwaccel":false,"className":"spinner","zIndex":2000000000,"top":"50%","left":"50%"}},"home-search":{"engine":"default","parent_el":"#search-homepage-results","input":{"delay":300,"min_chars":3},"results":{"position":"bottom","width":"css","offset":{"x":0,"y":0}},"spinner":{"lines":8,"length":6,"width":5,"radius":6,"corners":1,"rotate":0,"direction":1,"color":"#000","speed":1,"trail":60,"shadow":false,"hwaccel":false,"className":"spinner","zIndex":2000000000,"top":"50%","left":"50%"}}},"msg_no_config_found":"No valid Live Search configuration found!"};;
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www3.homecine.to/wp-content/themes/custom/includes/plugins/livesearch/assets/javascript/build/psythemes-live-search.min.js?ver=1.2.0" id="swp-live-search-client-js"></script>
+
+<script>
+	var base ="https://unlock.uberxviral.com/";
+	var links = document.querySelectorAll('a[class~="lnk-1"]');
+		for (i = 0; i < links.length; i++) {
+		var link = links[i].getAttribute('href');
+		links[i].setAttribute('href', base + "#" + btoa(btoa(btoa(link))));
+		}
+</script>
+</body>
+</html>
