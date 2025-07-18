@@ -1,3 +1,4 @@
+import { BlockedError } from '../error';
 import { Context, CountryCode, Format, UrlResult } from '../types';
 import { Fetcher, showExternalUrls } from '../utils';
 import { Extractor } from './Extractor';
@@ -25,8 +26,11 @@ export class ExternalUrl extends Extractor {
     try {
       // Make sure the URL is accessible, but avoid causing noise and delays doing this
       await this.fetcher.head(ctx, url, { noFlareSolverr: true, timeout: 1000, headers: { Referer: url.origin } });
-    } catch {
-      return [];
+    } catch (error) {
+      /* istanbul ignore if */
+      if (!(error instanceof BlockedError)) {
+        return [];
+      }
     }
 
     return [
