@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.38.0](https://github.com/webstreamr/webstreamr/compare/v0.37.2...v0.38.0) (2025-07-18)
+
+
+### Features
+
+* add health endpoint ([cd19f1c](https://github.com/webstreamr/webstreamr/commit/cd19f1c99965fafc2b7d59712b61a47fcd69c410))
+
+
+### Code Refactoring
+
+* extract context creation ([5555ba7](https://github.com/webstreamr/webstreamr/commit/5555ba70407b68680fdfe8d1c4a2a41d0e49c00e))
+
 ## [0.37.2](https://github.com/webstreamr/webstreamr/compare/v0.37.1...v0.37.2) (2025-07-17)
 
 
