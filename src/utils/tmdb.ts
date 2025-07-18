@@ -27,7 +27,7 @@ interface TvDetailsResponsePartial {
   name: string;
 }
 
-export const tmdbFetch = async (ctx: Context, fetcher: Fetcher, path: string, searchParams?: Record<string, string | undefined>): Promise<unknown> => {
+const tmdbFetch = async (ctx: Context, fetcher: Fetcher, path: string, searchParams?: Record<string, string | undefined>): Promise<unknown> => {
   const config: CustomRequestInit = {
     headers: {
       'Authorization': 'Bearer ' + envGet('TMDB_ACCESS_TOKEN'),
@@ -79,10 +79,22 @@ export const getImdbIdFromTmdbId = async (ctx: Context, fetcher: Fetcher, tmdbId
   return new ImdbId(response.imdb_id, tmdbId.season, tmdbId.episode);
 };
 
-export const getTmdbMovieDetails = async (ctx: Context, fetcher: Fetcher, tmdbId: TmdbId, language?: string): Promise<MovieDetailsResponsePartial> => {
+const getTmdbMovieDetails = async (ctx: Context, fetcher: Fetcher, tmdbId: TmdbId, language?: string): Promise<MovieDetailsResponsePartial> => {
   return await tmdbFetch(ctx, fetcher, `/movie/${tmdbId.id}`, { language }) as MovieDetailsResponsePartial;
 };
 
-export const getTmdbTvDetails = async (ctx: Context, fetcher: Fetcher, tmdbId: TmdbId, language?: string): Promise<TvDetailsResponsePartial> => {
+const getTmdbTvDetails = async (ctx: Context, fetcher: Fetcher, tmdbId: TmdbId, language?: string): Promise<TvDetailsResponsePartial> => {
   return await tmdbFetch(ctx, fetcher, `/tv/${tmdbId.id}`, { language }) as TvDetailsResponsePartial;
+};
+
+export const getTmdbNameAndYear = async (ctx: Context, fetcher: Fetcher, tmdbId: TmdbId, language?: string): Promise<[string, number]> => {
+  if (tmdbId.season) {
+    const tmdbDetails = await getTmdbTvDetails(ctx, fetcher, tmdbId, language);
+
+    return [tmdbDetails.name, (new Date(tmdbDetails.first_air_date)).getFullYear()];
+  }
+
+  const tmdbDetails = await getTmdbMovieDetails(ctx, fetcher, tmdbId, language);
+
+  return [tmdbDetails.title, (new Date(tmdbDetails.release_date)).getFullYear()];
 };

@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
-import { Fetcher, getTmdbId, getTmdbMovieDetails, getTmdbTvDetails, Id, TmdbId } from '../utils';
+import { Fetcher, getTmdbId, getTmdbNameAndYear, Id } from '../utils';
 import { Source, SourceResult } from './types';
 
 export class Soaper implements Source {
@@ -24,9 +24,10 @@ export class Soaper implements Source {
   public async handle(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
-    const [keyword, year, hrefPrefix] = await this.getKeywordYearAndHrefPrefix(ctx, tmdbId);
+    const [name, year] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId);
+    const hrefPrefix = tmdbId.season ? '/tv_' : '/movie_';
 
-    const pageUrl = await this.fetchPageUrl(ctx, keyword, year, hrefPrefix);
+    const pageUrl = await this.fetchPageUrl(ctx, name, year, hrefPrefix);
     if (!pageUrl) {
       return [];
     }
@@ -42,12 +43,12 @@ export class Soaper implements Source {
       }
 
       const episodeUrl = new URL(episodePageHref, this.baseUrl);
-      const title = `${keyword} ${tmdbId.season}x${tmdbId.episode}`;
+      const title = `${name} ${tmdbId.season}x${tmdbId.episode}`;
 
       return [{ countryCode: CountryCode.en, title, url: episodeUrl }];
     }
 
-    const title = `${keyword} (${year})`;
+    const title = `${name} (${year})`;
 
     return [{ countryCode: CountryCode.en, title, url: pageUrl }];
   };
@@ -68,17 +69,5 @@ export class Soaper implements Source {
       .get(0);
 
     return exactKeyWordMatchUrl ?? yearMatchUrl;
-  };
-
-  private readonly getKeywordYearAndHrefPrefix = async (ctx: Context, tmdbId: TmdbId): Promise<[string, number, string]> => {
-    if (tmdbId.season) {
-      const tmdbDetails = await getTmdbTvDetails(ctx, this.fetcher, tmdbId);
-
-      return [tmdbDetails.name, (new Date(tmdbDetails.first_air_date)).getFullYear(), '/tv_'];
-    }
-
-    const tmdbDetails = await getTmdbMovieDetails(ctx, this.fetcher, tmdbId);
-
-    return [tmdbDetails.title, (new Date(tmdbDetails.release_date)).getFullYear(), '/movie_'];
   };
 }

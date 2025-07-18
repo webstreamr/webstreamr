@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
-import { Fetcher, getTmdbId, getTmdbMovieDetails, getTmdbTvDetails, Id, TmdbId } from '../utils';
+import { Fetcher, getTmdbId, getTmdbNameAndYear, Id, TmdbId } from '../utils';
 import { Source, SourceResult } from './types';
 
 export class Cuevana implements Source {
@@ -22,9 +22,7 @@ export class Cuevana implements Source {
   public async handle(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
-    const name = tmdbId.season
-      ? (await getTmdbTvDetails(ctx, this.fetcher, tmdbId, 'es')).name
-      : (await getTmdbMovieDetails(ctx, this.fetcher, tmdbId, 'es')).title;
+    const [name] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId, 'es');
 
     const pageUrl = await this.fetchPageUrl(ctx, name);
     if (!pageUrl) {

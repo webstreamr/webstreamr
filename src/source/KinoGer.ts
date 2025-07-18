@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
-import { Fetcher, getTmdbId, getTmdbMovieDetails, getTmdbTvDetails, Id, TmdbId } from '../utils';
+import { Fetcher, getTmdbId, getTmdbNameAndYear, Id } from '../utils';
 import { Source, SourceResult } from './types';
 
 export class KinoGer implements Source {
@@ -24,14 +24,14 @@ export class KinoGer implements Source {
   public async handle(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
-    const [keyword, year] = await this.getKeywordAndYear(ctx, tmdbId);
+    const [name, year] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId, 'de');
 
-    const pageUrl = await this.fetchPageUrl(ctx, keyword, year);
+    const pageUrl = await this.fetchPageUrl(ctx, name, year);
     if (!pageUrl) {
       return [];
     }
 
-    const title = tmdbId.season ? `${keyword} ${tmdbId.season}x${tmdbId.episode}` : `${keyword} (${year})`;
+    const title = tmdbId.season ? `${name} ${tmdbId.season}x${tmdbId.episode}` : `${name} (${year})`;
     const seasonIndex = (tmdbId.season ?? 1) - 1;
     const episodeIndex = (tmdbId.episode ?? 1) - 1;
 
@@ -72,17 +72,5 @@ export class KinoGer implements Source {
     return $(`.title a:contains("${year}")`)
       .map((_i, el) => new URL($(el).attr('href') as string, this.baseUrl))
       .get(0);
-  };
-
-  private readonly getKeywordAndYear = async (ctx: Context, tmdbId: TmdbId): Promise<[string, number]> => {
-    if (tmdbId.season) {
-      const tmdbDetails = await getTmdbTvDetails(ctx, this.fetcher, tmdbId, 'de');
-
-      return [tmdbDetails.name, (new Date(tmdbDetails.first_air_date)).getFullYear()];
-    }
-
-    const tmdbDetails = await getTmdbMovieDetails(ctx, this.fetcher, tmdbId, 'de');
-
-    return [tmdbDetails.title, (new Date(tmdbDetails.release_date)).getFullYear()];
   };
 }

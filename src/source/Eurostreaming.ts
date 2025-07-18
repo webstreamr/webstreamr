@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
-import { Fetcher, getTmdbId, getTmdbTvDetails, Id } from '../utils';
+import { Fetcher, getTmdbId, getTmdbNameAndYear, Id } from '../utils';
 import { Source, SourceResult } from './types';
 
 export class Eurostreaming implements Source {
@@ -21,9 +21,9 @@ export class Eurostreaming implements Source {
 
   public async handle(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
-    const tmdbTvDetails = await getTmdbTvDetails(ctx, this.fetcher, tmdbId, 'it');
+    const [name] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId, 'it');
 
-    const seriesPageUrl = await this.fetchSeriesPageUrl(ctx, tmdbTvDetails.name);
+    const seriesPageUrl = await this.fetchSeriesPageUrl(ctx, name);
     if (!seriesPageUrl) {
       return [];
     }
@@ -32,7 +32,7 @@ export class Eurostreaming implements Source {
 
     const $ = cheerio.load(html);
 
-    const title = `${tmdbTvDetails.name} ${tmdbId.season}x${tmdbId.episode}`;
+    const title = `${name} ${tmdbId.season}x${tmdbId.episode}`;
 
     return Promise.all(
       $(`[data-num="${tmdbId.season}x${tmdbId.episode}"]`)
