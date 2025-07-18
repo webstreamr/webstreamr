@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.38.1](https://github.com/webstreamr/webstreamr/compare/v0.38.0...v0.38.1) (2025-07-18)
+
+
+### Bug Fixes
+
+* do not use cache and proxy headers for health requests ([de8e0bd](https://github.com/webstreamr/webstreamr/commit/de8e0bdd94f6402edbd60c14b6e3bff22643c283))
+
 ## [0.38.0](https://github.com/webstreamr/webstreamr/compare/v0.37.2...v0.38.0) (2025-07-18)
 
 
