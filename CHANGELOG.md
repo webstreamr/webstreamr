@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.39.0](https://github.com/webstreamr/webstreamr/compare/v0.38.1...v0.39.0) (2025-07-18)
+
+
+### Features
+
+* **extractor:** add Fastream via MediaFlow Proxy ([f3f61c8](https://github.com/webstreamr/webstreamr/commit/f3f61c85cce79f57b15abe74f60075aee413d073))
+* **source:** add HomeCine ([5759a31](https://github.com/webstreamr/webstreamr/commit/5759a311aa7c434e721a7cdebaca4752c110522c))
+
+
+### Bug Fixes
+
+* **deps:** update dependency undici to v7.12.0 ([#223](https://github.com/webstreamr/webstreamr/issues/223)) ([603bcff](https://github.com/webstreamr/webstreamr/commit/603bcff935172db253a6a73008c143c233b15838))
+* **extractor:** do not skip external blocked URLs ([533470d](https://github.com/webstreamr/webstreamr/commit/533470d0809768308a7fcde29c85c8403ebe4454))
+
+
+### Code Refactoring
+
+* make TMDB detail fetching more DRY ([f6dcd74](https://github.com/webstreamr/webstreamr/commit/f6dcd74dfbfd3696c6462b1963c7e2645eb3d99f))
+
 ## [0.38.1](https://github.com/webstreamr/webstreamr/compare/v0.38.0...v0.38.1) (2025-07-18)
 
 
