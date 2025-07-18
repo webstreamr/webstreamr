@@ -2,6 +2,7 @@ export * from './Fetcher';
 export * from './FetcherMock';
 export * from './StreamResolver';
 export * from './config';
+export * from './context';
 export * from './embed';
 export * from './env';
 export * from './height';

@@ -2,8 +2,7 @@ import { Request, Response, Router } from 'express';
 import { ContentType } from 'stremio-addon-sdk';
 import winston from 'winston';
 import { Source } from '../source';
-import { Config, Context } from '../types';
-import { envIsProd, getDefaultConfig, ImdbId, StreamResolver } from '../utils';
+import { contextFromRequest, envIsProd, ImdbId, StreamResolver } from '../utils';
 
 export class StreamController {
   public readonly router: Router;
@@ -23,16 +22,10 @@ export class StreamController {
   }
 
   private async getStream(req: Request, res: Response) {
-    const config: Config = req.params['config'] ? JSON.parse(req.params['config']) : getDefaultConfig();
     const type: ContentType = (req.params['type'] || '') as ContentType;
     const id: string = req.params['id'] || '';
 
-    const ctx: Context = {
-      hostUrl: new URL(`${req.protocol}://${req.host}`),
-      id: res.getHeader('X-Request-ID') as string,
-      ...(req.ip && { ip: req.ip }),
-      config,
-    };
+    const ctx = contextFromRequest(req);
 
     this.logger.info(`Search stream for type "${type}" and id "${id}" for ip ${ctx.ip}`, ctx);
 

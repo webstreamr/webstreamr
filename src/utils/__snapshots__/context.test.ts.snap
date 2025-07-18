@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`contextFromRequest with config and ip 1`] = `
+{
+  "config": {
+    "de": "on",
+  },
+  "hostUrl": "https://localhost/",
+  "id": "fake-id",
+  "ip": "127.0.0.1",
+}
+`;
+
+exports[`contextFromRequest without config 1`] = `
+{
+  "config": {
+    "en": "on",
+    "multi": "on",
+  },
+  "hostUrl": "https://localhost/",
+  "id": "fake-id",
+}
+`;
