@@ -3,6 +3,7 @@ import { DoodStream } from './DoodStream';
 import { Dropload } from './Dropload';
 import { ExternalUrl } from './ExternalUrl';
 import { Extractor } from './Extractor';
+import { Fastream } from './Fastream';
 import { KinoGer } from './KinoGer';
 import { Mixdrop } from './Mixdrop';
 import { Soaper } from './Soaper';
@@ -19,6 +20,7 @@ export * from './ExtractorRegistry';
 export const createExtractors = (fetcher: Fetcher): Extractor[] => [
   new DoodStream(fetcher),
   new Dropload(fetcher),
+  new Fastream(fetcher),
   new KinoGer(fetcher),
   new Mixdrop(fetcher),
   new Soaper(fetcher),
