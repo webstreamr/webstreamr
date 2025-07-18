@@ -44,7 +44,9 @@ interface FlareSolverrResult {
 
 export type CustomRequestInit = RequestInit & {
   timeoutsCountThrow?: number;
+  noCache?: boolean;
   noFlareSolverr?: boolean;
+  noProxyHeaders?: boolean;
   queueLimit?: number;
   queueTimeout?: number;
   timeout?: number;
@@ -87,6 +89,7 @@ export class Fetcher {
 
   private getInit(ctx: Context, url: URL, init?: CustomRequestInit): CustomRequestInit {
     const cookieString = this.cookieJar.getCookieStringSync(url.href);
+    const noProxyHeaders = init?.noProxyHeaders ?? false;
 
     return {
       ...init,
@@ -96,7 +99,7 @@ export class Fetcher {
         'Priority': 'u=0',
         'User-Agent': this.hostUserAgentMap.get(url.host) ?? 'node',
         ...(cookieString && { Cookie: cookieString }),
-        ...(ctx.ip && {
+        ...(ctx.ip && !noProxyHeaders && {
           'Forwarded': `for=${ctx.ip}`,
           'X-Forwarded-For': ctx.ip,
           'X-Forwarded-Proto': url.protocol.slice(0, -1),
@@ -223,7 +226,8 @@ export class Fetcher {
 
     const cacheKey = this.determineCacheKey(url, init);
     let httpCacheItem = this.cacheGet(cacheKey);
-    if (httpCacheItem) {
+    const noCache = init?.noCache ?? false;
+    if (httpCacheItem && !noCache) {
       this.logger.info(`Cached fetch ${request.method} ${url}`, ctx);
       return this.handleHttpCacheItem(ctx, httpCacheItem, url, init);
     }

@@ -85,7 +85,7 @@ addon.get('/health', async (req: Request, res: Response) => {
   const ctx = contextFromRequest(req);
 
   try {
-    const ip = await fetcher.text(ctx, new URL('https://api.ipify.org'));
+    const ip = await fetcher.text(ctx, new URL('https://api.ipify.org'), { noCache: true, noProxyHeaders: true });
 
     res.json({ status: 'ok', ip });
   } catch (error) {
