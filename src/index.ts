@@ -8,6 +8,8 @@ import { createExtractors, ExtractorRegistry } from './extractor';
 import { CineHDPlus, Cuevana, Eurostreaming, Frembed, FrenchCloud, HomeCine, KinoGer, MegaKino, MeineCloud, MostraGuarda, Movix, PrimeWire, Soaper, Source, StreamKiste, VerHdLink, VidSrc, VixSrc } from './source';
 import { contextFromRequestAndResponse, envGet, envIsProd, Fetcher, StreamResolver } from './utils';
 
+console.log = console.warn = console.error = console.info = console.debug = () => { /* disable in favor of logger */ };
+
 const logger = winston.createLogger({
   transports: [
     new winston.transports.Console({
