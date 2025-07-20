@@ -210,6 +210,11 @@ export class StreamResolver {
 
     if (error instanceof HttpError) {
       this.logger.error(`${source}: HTTP status ${error.status} (${error.statusText}), headers: ${JSON.stringify(error.headers)}, stack: ${error.stack}.`, ctx);
+
+      if (error.status >= 500) {
+        return `❌ Remote server has issues. We can't fix this, please try later again.`;
+      }
+
       return `❌ Request failed with status ${error.status} (${error.statusText}). Request-id: ${ctx.id}.`;
     }
 

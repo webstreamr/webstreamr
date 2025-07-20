@@ -100,7 +100,16 @@ exports[`resolve adds error info 1`] = `
       "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
-❌ Request failed with status 500 (Internal Server Error). Request-id: test.",
+❌ Remote server has issues. We can't fix this, please try later again.",
+    },
+    {
+      "behaviorHints": {
+        "notWebReady": true,
+      },
+      "externalUrl": "http://localhost/",
+      "name": "WebStreamr 🇩🇪",
+      "title": "🔗 hoster.com
+❌ Request failed with status 418 (I'm a tea pot). Request-id: test.",
     },
   ],
 }
@@ -206,7 +215,16 @@ exports[`resolve adds error info 2`] = `
       "externalUrl": "https://example4.com/",
       "name": "WebStreamr 🇩🇪 ⚠️ external",
       "title": "🔗 hoster.com
-❌ Request failed with status 500 (Internal Server Error). Request-id: test.",
+❌ Remote server has issues. We can't fix this, please try later again.",
+    },
+    {
+      "behaviorHints": {
+        "notWebReady": true,
+      },
+      "externalUrl": "https://example5.com/",
+      "name": "WebStreamr 🇩🇪 ⚠️ external",
+      "title": "🔗 hoster.com
+❌ Request failed with status 418 (I'm a tea pot). Request-id: test.",
     },
   ],
 }

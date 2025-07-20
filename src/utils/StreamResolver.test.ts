@@ -207,6 +207,17 @@ describe('resolve', () => {
               countryCodes: [CountryCode.de],
             },
           },
+          {
+            url: new URL('https://example5.com'),
+            format: Format.unknown,
+            isExternal: true,
+            error: new HttpError(418, 'I\'m a tea pot', { 'x-foo': 'bar' }),
+            label: 'hoster.com',
+            sourceId: '',
+            meta: {
+              countryCodes: [CountryCode.de],
+            },
+          },
         ];
     }
 
