@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.39.1](https://github.com/webstreamr/webstreamr/compare/v0.39.0...v0.39.1) (2025-07-20)
+
+
+### Miscellaneous Chores
+
+* add explicit info that we can't fix 5xx errors ([8ad5a8f](https://github.com/webstreamr/webstreamr/commit/8ad5a8f8e69842d801fde2eaea22e2c77af82804))
+* disable all console functions in favor of logger ([d1e410e](https://github.com/webstreamr/webstreamr/commit/d1e410ef33d95b9d24955dbe36224f6646979a12))
+
+
+### Bug Fixes
+
+* use correct request ID header in context ([1a37662](https://github.com/webstreamr/webstreamr/commit/1a37662502c68effdb153b887ba47f495b17585d))
+
 ## [0.39.0](https://github.com/webstreamr/webstreamr/compare/v0.38.1...v0.39.0) (2025-07-18)
 
 
