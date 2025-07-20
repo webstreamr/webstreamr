@@ -13,6 +13,8 @@ export class Eurostreaming implements Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.it];
 
+  private readonly baseUrl = 'https://eurostreaming.luxe';
+
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
@@ -46,10 +48,9 @@ export class Eurostreaming implements Source {
   };
 
   private fetchSeriesPageUrl = async (ctx: Context, keyword: string): Promise<URL | undefined> => {
-    const postUrl = new URL('https://eurostreaming.my/');
+    const postUrl = new URL('/index.php?do=search', this.baseUrl);
 
     const form = new URLSearchParams();
-    form.append('do', 'search');
     form.append('subaction', 'search');
     form.append('story', keyword);
 
