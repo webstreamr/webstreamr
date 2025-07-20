@@ -6,7 +6,7 @@ import winston from 'winston';
 import { ConfigureController, ManifestController, StreamController } from './controller';
 import { createExtractors, ExtractorRegistry } from './extractor';
 import { CineHDPlus, Cuevana, Eurostreaming, Frembed, FrenchCloud, HomeCine, KinoGer, MegaKino, MeineCloud, MostraGuarda, Movix, PrimeWire, Soaper, Source, StreamKiste, VerHdLink, VidSrc, VixSrc } from './source';
-import { contextFromRequest, envGet, envIsProd, Fetcher, StreamResolver } from './utils';
+import { contextFromRequestAndResponse, envGet, envIsProd, Fetcher, StreamResolver } from './utils';
 
 const logger = winston.createLogger({
   transports: [
@@ -83,7 +83,7 @@ addon.get('/', (_req: Request, res: Response) => {
 });
 
 addon.get('/health', async (req: Request, res: Response) => {
-  const ctx = contextFromRequest(req);
+  const ctx = contextFromRequestAndResponse(req, res);
 
   try {
     const ip = await fetcher.text(ctx, new URL('https://api.ipify.org'), { noCache: true, noProxyHeaders: true });

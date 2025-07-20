@@ -1,5 +1,5 @@
-import { Request } from 'express';
-import { contextFromRequest } from './context';
+import { Request, Response } from 'express';
+import { contextFromRequestAndResponse } from './context';
 
 describe('contextFromRequest', () => {
   test('with config and ip', () => {
@@ -12,8 +12,11 @@ describe('contextFromRequest', () => {
       ip: '127.0.0.1',
       params: { config: '{"de":"on"}' },
     };
+    const res = {
+      getHeader: (name: string) => ({ 'X-Request-ID': 'fake-id' })[name],
+    };
 
-    expect(contextFromRequest(req as unknown as Request)).toMatchSnapshot();
+    expect(contextFromRequestAndResponse(req as unknown as Request, res as unknown as Response)).toMatchSnapshot();
   });
 
   test('without config', () => {
@@ -25,7 +28,10 @@ describe('contextFromRequest', () => {
       },
       params: { },
     };
+    const res = {
+      getHeader: (name: string) => ({ 'X-Request-ID': 'fake-id' })[name],
+    };
 
-    expect(contextFromRequest(req as unknown as Request)).toMatchSnapshot();
+    expect(contextFromRequestAndResponse(req as unknown as Request, res as unknown as Response)).toMatchSnapshot();
   });
 });

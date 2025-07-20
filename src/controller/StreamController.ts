@@ -2,7 +2,7 @@ import { Request, Response, Router } from 'express';
 import { ContentType } from 'stremio-addon-sdk';
 import winston from 'winston';
 import { Source } from '../source';
-import { contextFromRequest, envIsProd, ImdbId, StreamResolver } from '../utils';
+import { contextFromRequestAndResponse, envIsProd, ImdbId, StreamResolver } from '../utils';
 
 export class StreamController {
   public readonly router: Router;
@@ -25,7 +25,7 @@ export class StreamController {
     const type: ContentType = (req.params['type'] || '') as ContentType;
     const id: string = req.params['id'] || '';
 
-    const ctx = contextFromRequest(req);
+    const ctx = contextFromRequestAndResponse(req, res);
 
     this.logger.info(`Search stream for type "${type}" and id "${id}" for ip ${ctx.ip}`, ctx);
 

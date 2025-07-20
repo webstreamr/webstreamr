@@ -1,11 +1,11 @@
-import { Request } from 'express';
+import { Request, Response } from 'express';
 import { Context } from '../types';
 import { getDefaultConfig } from './config';
 
-export const contextFromRequest = (req: Request): Context => {
+export const contextFromRequestAndResponse = (req: Request, res: Response): Context => {
   return {
     hostUrl: new URL(`${req.protocol}://${req.host}`),
-    id: req.headers['X-Request-ID'] as string,
+    id: res.getHeader('X-Request-ID') as string,
     ...(req.ip && { ip: req.ip }),
     config: req.params['config'] ? JSON.parse(req.params['config']) : getDefaultConfig(),
   };
