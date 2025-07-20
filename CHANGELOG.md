@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.39.2](https://github.com/webstreamr/webstreamr/compare/v0.39.1...v0.39.2) (2025-07-20)
+
+
+### Bug Fixes
+
+* **fetcher:** support Basic Auth ([674eb7c](https://github.com/webstreamr/webstreamr/commit/674eb7ca6d13c7d5d5083913c6a8e3231da3791d))
+* **source:** use latest search params for Eurostreaming ([c62870a](https://github.com/webstreamr/webstreamr/commit/c62870a465f92c0ddf7d1ec39f3574a26ddec9c1))
+
 ## [0.39.1](https://github.com/webstreamr/webstreamr/compare/v0.39.0...v0.39.1) (2025-07-20)
 
 
