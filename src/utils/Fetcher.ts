@@ -96,6 +96,7 @@ export class Fetcher {
       headers: {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'Accept-Language': 'en',
+        ...(url.username && { Authorization: 'Basic ' + Buffer.from(`${url.username}:${url.password}`).toString('base64') }),
         'Priority': 'u=0',
         'User-Agent': this.hostUserAgentMap.get(url.host) ?? 'node',
         ...(cookieString && { Cookie: cookieString }),
@@ -257,7 +258,13 @@ export class Fetcher {
 
     let response;
     try {
-      response = await fetch(url, { ...init, keepalive: true, signal: AbortSignal.timeout(init?.timeout ?? this.DEFAULT_TIMEOUT) });
+      const finalUrl = new URL(url.href);
+      finalUrl.username = '';
+      finalUrl.password = '';
+
+      const finalInit = { ...init, keepalive: true, signal: AbortSignal.timeout(init?.timeout ?? this.DEFAULT_TIMEOUT) };
+
+      response = await fetch(finalUrl, finalInit);
     } catch (error) {
       if (error instanceof DOMException && error.name === 'TimeoutError') {
         await this.increaseTimeoutsCount(url);

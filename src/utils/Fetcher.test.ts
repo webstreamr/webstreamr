@@ -21,8 +21,8 @@ describe('fetch', () => {
     const mockPool = mockAgent.get('https://some-url.test');
     mockPool.intercept({ path: '/' }).reply(200, 'some text');
 
-    const responseText1 = await fetcher.text(ctx, new URL('https://some-url.test/'));
-    const responseText2 = await fetcher.text(ctx, new URL('https://some-url.test/'), { headers: { 'User-Agent': 'jest' } });
+    const responseText1 = await fetcher.text(ctx, new URL('https://user:pass@some-url.test/'));
+    const responseText2 = await fetcher.text(ctx, new URL('https://user:pass@some-url.test/'), { headers: { 'User-Agent': 'jest' } });
 
     expect(responseText1).toBe('some text');
     expect(responseText2).toStrictEqual(responseText1);
@@ -30,6 +30,7 @@ describe('fetch', () => {
     expect(mockAgent.getCallHistory()?.firstCall()?.headers).toMatchObject({
       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
       'Accept-Language': 'en',
+      'Authorization': 'Basic dXNlcjpwYXNz',
       'Forwarded': 'for=0.0.0.0',
       'Priority': 'u=0',
       'User-Agent': 'node',
