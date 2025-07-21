@@ -32,6 +32,7 @@ export enum CountryCode {
 export enum BlockedReason {
   cloudflare_challenge = 'cloudflare_challenge',
   flaresolverr_failed = 'flaresolverr_failed',
+  cloudflare_censor = 'cloudflare_censor',
   media_flow_proxy_auth = 'media_flow_proxy_auth',
   unknown = 'unknown',
 }

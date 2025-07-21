@@ -175,13 +175,15 @@ export class StreamResolver {
     if (error instanceof BlockedError) {
       if (error.reason === BlockedReason.cloudflare_challenge) {
         this.logger.warn(`${source}: Request was blocked via Cloudflare challenge.`, ctx);
+      } else if (error.reason === BlockedReason.cloudflare_censor) {
+        this.logger.warn(`${source}: Request was censored by Cloudflare.`, ctx);
       } else if (error.reason === BlockedReason.media_flow_proxy_auth) {
         return '⚠️ MediaFlow Proxy authentication failed. Please set the correct password.';
       } else {
         this.logger.warn(`${source}: Request was blocked, headers: ${JSON.stringify(error.headers)}.`, ctx);
       }
 
-      return '⚠️ Request was blocked.';
+      return `⚠️ Request was blocked. Reason: ${error.reason}`;
     }
 
     if (error instanceof TooManyRequestsError) {

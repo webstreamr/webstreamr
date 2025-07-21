@@ -28,7 +28,16 @@ exports[`resolve adds error info 1`] = `
       "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
-⚠️ Request was blocked.",
+⚠️ Request was blocked. Reason: cloudflare_challenge",
+    },
+    {
+      "behaviorHints": {
+        "notWebReady": true,
+      },
+      "externalUrl": "http://localhost/",
+      "name": "WebStreamr 🇩🇪",
+      "title": "🔗 hoster.com
+⚠️ Request was blocked. Reason: cloudflare_censor",
     },
     {
       "behaviorHints": {
@@ -46,7 +55,7 @@ exports[`resolve adds error info 1`] = `
       "externalUrl": "http://localhost/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
-⚠️ Request was blocked.",
+⚠️ Request was blocked. Reason: unknown",
     },
     {
       "behaviorHints": {
@@ -143,7 +152,16 @@ exports[`resolve adds error info 2`] = `
       "externalUrl": "https://example.com/",
       "name": "WebStreamr 🇩🇪 ⚠️ external",
       "title": "🔗 hoster.com
-⚠️ Request was blocked.",
+⚠️ Request was blocked. Reason: cloudflare_challenge",
+    },
+    {
+      "behaviorHints": {
+        "notWebReady": true,
+      },
+      "externalUrl": "https://example.com/",
+      "name": "WebStreamr 🇩🇪 ⚠️ external",
+      "title": "🔗 hoster.com
+⚠️ Request was blocked. Reason: cloudflare_censor",
     },
     {
       "behaviorHints": {
@@ -161,7 +179,7 @@ exports[`resolve adds error info 2`] = `
       "externalUrl": "https://example.com/",
       "name": "WebStreamr 🇩🇪 ⚠️ external",
       "title": "🔗 hoster.com
-⚠️ Request was blocked.",
+⚠️ Request was blocked. Reason: unknown",
     },
     {
       "behaviorHints": {

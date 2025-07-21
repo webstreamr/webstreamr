@@ -149,6 +149,19 @@ describe('fetch', () => {
     }
   });
 
+  test('converts cloudflare 451 to custom BlockedError', async () => {
+    const mockPool = mockAgent.get('https://some-cloudflare-forbidden-url.test');
+    mockPool.intercept({ path: '/' }).reply(451);
+
+    try {
+      await fetcher.text(ctx, new URL('https://some-cloudflare-forbidden-url.test/'));
+      fail();
+    } catch (error) {
+      expect(error).toBeInstanceOf(BlockedError);
+      expect(error).toMatchObject({ reason: BlockedReason.cloudflare_censor });
+    }
+  });
+
   test('converts MediaFlow Proxy forbidden to custom BlockedError', async () => {
     const mockPool = mockAgent.get('https://media-flow-proxy-forbidden-url.test');
     mockPool.intercept({ path: '/' }).reply(403);

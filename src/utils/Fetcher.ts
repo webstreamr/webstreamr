@@ -171,6 +171,10 @@ export class Fetcher {
       throw new BlockedError(BlockedReason.unknown, httpCacheItem.policy.responseHeaders());
     }
 
+    if (httpCacheItem.status === 451) {
+      throw new BlockedError(BlockedReason.cloudflare_censor, httpCacheItem.policy.responseHeaders());
+    }
+
     if (httpCacheItem.status === 429) {
       const retryAfter = parseInt(`${httpCacheItem.policy.responseHeaders()['retry-after']}`);
       if (!isNaN(retryAfter)) {
