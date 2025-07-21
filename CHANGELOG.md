@@ -1,5 +1,35 @@
 # Changelog
 
+## [0.40.0](https://github.com/webstreamr/webstreamr/compare/v0.39.2...v0.40.0) (2025-07-21)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#231](https://github.com/webstreamr/webstreamr/issues/231)) ([b0dd5de](https://github.com/webstreamr/webstreamr/commit/b0dd5de51d407888575befd2142712264bf749d8))
+* **deps:** update dependency @stylistic/eslint-plugin to v5.2.1 ([#234](https://github.com/webstreamr/webstreamr/issues/234)) ([ff45f43](https://github.com/webstreamr/webstreamr/commit/ff45f431ee80a9dd6c0c48e8e119d398a3b64468))
+* **deps:** update dependency @types/node to v22.16.5 ([#230](https://github.com/webstreamr/webstreamr/issues/230)) ([ea7b392](https://github.com/webstreamr/webstreamr/commit/ea7b39200f6aeb3026c8450f1548419ff40ecd94))
+* **deps:** update dependency typescript-eslint to v8.38.0 ([#236](https://github.com/webstreamr/webstreamr/issues/236)) ([3c65768](https://github.com/webstreamr/webstreamr/commit/3c657680cb77783d16ccca16c60159dffc1640eb))
+* handle cloudflare 451 censor block, show block reasons ([51b9104](https://github.com/webstreamr/webstreamr/commit/51b9104f07f3f1af805e5920c54e6e6bcdb7b187))
+* mention languages and MediaFlow Proxy in description ([05773d3](https://github.com/webstreamr/webstreamr/commit/05773d3ecc50ff6ce48cc97e20039b66210f4ec3))
+* try checking for blocks in health check endpoint ([c659508](https://github.com/webstreamr/webstreamr/commit/c6595085b40dbf5e2638b79e60377cc9acf1bcad))
+
+
+### Features
+
+* disable extractors via config ([114d296](https://github.com/webstreamr/webstreamr/commit/114d296fe38839694ed49ef2aa1c197b22c6db3b))
+
+
+### Bug Fixes
+
+* **deps:** update dependency cheerio to v1.1.1 ([#228](https://github.com/webstreamr/webstreamr/issues/228)) ([3401525](https://github.com/webstreamr/webstreamr/commit/3401525ab63b76e8f17d3b9366b32b5b6ca35bc9))
+* **deps:** update dependency cheerio to v1.1.2 ([#235](https://github.com/webstreamr/webstreamr/issues/235)) ([3d76b0a](https://github.com/webstreamr/webstreamr/commit/3d76b0a7b7df5ee9fb93e65c865f117d064d1a37))
+
+
+### Code Refactoring
+
+* improve manifest type ([6fe09fc](https://github.com/webstreamr/webstreamr/commit/6fe09fc459223a8b2ace1904690978f3af927294))
+* introduce createSources() analogue to createExtractors() ([453cc74](https://github.com/webstreamr/webstreamr/commit/453cc747a1008cf8b904549870d6369f7287b774))
+
 ## [0.39.2](https://github.com/webstreamr/webstreamr/compare/v0.39.1...v0.39.2) (2025-07-20)
 
 
