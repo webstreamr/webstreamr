@@ -50,8 +50,8 @@ addon.use((_req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
-addon.use('/', (new ConfigureController(sources)).router);
-addon.use('/', (new ManifestController(sources)).router);
+addon.use('/', (new ConfigureController(sources, extractors)).router);
+addon.use('/', (new ManifestController(sources, extractors)).router);
 
 const extractorRegistry = new ExtractorRegistry(logger, extractors);
 const streamResolver = new StreamResolver(logger, extractorRegistry);

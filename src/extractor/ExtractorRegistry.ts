@@ -1,6 +1,7 @@
 import TTLCache from '@isaacs/ttlcache';
 import winston from 'winston';
 import { Context, CountryCode, UrlResult } from '../types';
+import { isExtractorDisabled } from '../utils';
 import { Extractor } from './Extractor';
 
 export class ExtractorRegistry {
@@ -15,7 +16,7 @@ export class ExtractorRegistry {
   }
 
   public async handle(ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined): Promise<UrlResult[]> {
-    const extractor = this.extractors.find(extractor => extractor.supports(ctx, url));
+    const extractor = this.extractors.find(extractor => !isExtractorDisabled(ctx.config, extractor) && extractor.supports(ctx, url));
     if (!extractor) {
       return [];
     }

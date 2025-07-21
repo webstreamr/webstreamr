@@ -1,11 +1,13 @@
+import { Extractor } from '../extractor';
 import { Source } from '../source';
 import { Config, CountryCode, CustomManifest } from '../types';
+import { disableExtractorConfigKey, isExtractorDisabled } from './config';
 import { envGetAppId, envGetAppName } from './env';
 import { flagFromCountryCode, languageFromCountryCode } from './language';
 
 const typedEntries = <T extends object>(obj: T): [keyof T, T[keyof T]][] => (Object.entries(obj) as [keyof T, T[keyof T]][]);
 
-export const buildManifest = (sources: Source[], config: Config): CustomManifest => {
+export const buildManifest = (sources: Source[], extractors: Extractor[], config: Config): CustomManifest => {
   const manifest: CustomManifest = {
     id: envGetAppId(),
     version: '0.39.2', // x-release-please-version
@@ -74,6 +76,19 @@ export const buildManifest = (sources: Source[], config: Config): CustomManifest
     type: 'password',
     title: 'MediaFlow Proxy Password',
     default: config['mediaFlowProxyPassword'] ?? '',
+  });
+
+  extractors.forEach((extractor) => {
+    if (extractor.id === 'external') {
+      return;
+    }
+
+    manifest.config.push({
+      key: disableExtractorConfigKey(extractor),
+      type: 'checkbox',
+      title: `Disable extractor ${extractor.label}`,
+      ...(isExtractorDisabled(config, extractor) && { default: 'checked' }),
+    });
   });
 
   return manifest;

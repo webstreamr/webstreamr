@@ -1,3 +1,6 @@
+import { DoodStream } from '../extractor/DoodStream';
+import { ExternalUrl } from '../extractor/ExternalUrl';
+import { SuperVideo } from '../extractor/SuperVideo';
 import { MeineCloud } from '../source/MeineCloud';
 import { StreamKiste } from '../source/StreamKiste';
 import { VerHdLink } from '../source/VerHdLink';
@@ -16,7 +19,7 @@ describe('buildManifest', () => {
       new MeineCloud(fetcher),
     ];
 
-    const manifest = buildManifest(sources, {});
+    const manifest = buildManifest(sources, [], {});
 
     expect(manifest.config).toMatchSnapshot();
   });
@@ -27,19 +30,30 @@ describe('buildManifest', () => {
       new StreamKiste(fetcher),
       new MeineCloud(fetcher),
     ];
-    const manifest = buildManifest(sources, { de: 'on', includeExternalUrls: 'on' });
+    const manifest = buildManifest(sources, [], { de: 'on', includeExternalUrls: 'on' });
 
     expect(manifest.config).toMatchSnapshot();
   });
 
   test('includeExternalUrls is unchecked by default', () => {
-    const manifest = buildManifest([], {});
+    const manifest = buildManifest([], [], {});
 
     expect(manifest.config).toMatchSnapshot();
   });
 
   test('has checked includeExternalUrls', () => {
-    const manifest = buildManifest([], { includeExternalUrls: 'on' });
+    const manifest = buildManifest([], [], { includeExternalUrls: 'on' });
+
+    expect(manifest.config).toMatchSnapshot();
+  });
+
+  test('disable extractors', () => {
+    const extractors = [
+      new DoodStream(fetcher),
+      new SuperVideo(fetcher),
+      new ExternalUrl(fetcher),
+    ];
+    const manifest = buildManifest([], extractors, { disableExtractor_doodstream: 'on' });
 
     expect(manifest.config).toMatchSnapshot();
   });
