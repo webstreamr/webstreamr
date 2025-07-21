@@ -7,7 +7,13 @@ export interface Context {
   config: Config;
 }
 
-export type ManifestWithConfig = Manifest & { config: ManifestConfig[] };
+export type CustomManifest = Manifest & {
+  config: ManifestConfig[];
+  stremioAddonsConfig: { // needed for add-on claiming on https://stremio-addons.net
+    issuer: string;
+    signature: string;
+  };
+};
 
 export type Config = Partial<Record<CountryCode | 'includeExternalUrls' | 'mediaFlowProxyUrl' | 'mediaFlowProxyPassword', string>>;
 

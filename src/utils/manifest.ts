@@ -1,12 +1,12 @@
 import { Source } from '../source';
-import { Config, CountryCode, ManifestWithConfig } from '../types';
+import { Config, CountryCode, CustomManifest } from '../types';
 import { envGetAppId, envGetAppName } from './env';
 import { flagFromCountryCode, languageFromCountryCode } from './language';
 
 const typedEntries = <T extends object>(obj: T): [keyof T, T[keyof T]][] => (Object.entries(obj) as [keyof T, T[keyof T]][]);
 
-export const buildManifest = (sources: Source[], config: Config): ManifestWithConfig => {
-  const manifest: ManifestWithConfig = {
+export const buildManifest = (sources: Source[], config: Config): CustomManifest => {
+  const manifest: CustomManifest = {
     id: envGetAppId(),
     version: '0.39.2', // x-release-please-version
     name: envGetAppName(),
@@ -26,7 +26,6 @@ export const buildManifest = (sources: Source[], config: Config): ManifestWithCo
       configurationRequired: Object.keys(config).length === 0,
     },
     config: [],
-    // @ts-expect-error inofficial prop needed for add-on claiming on https://stremio-addons.net
     stremioAddonsConfig: {
       issuer: 'https://stremio-addons.net',
       signature: 'eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..D3-Wl15vxnYltwx8G52rRg.16-0VzsSgTvnv0wampIR8YPZsFhH8-7IgpuqxcUfC2p7kIJtuk8xQzrzqQOLXANEpaH_w7a4JOEpNo8wv28Zo_nMGCLOXgWbyGM3sQ-tfq6DCK3JU0ol6YMC1UDX2z_c.IOLlZyTYx_swutjYSTES0Q',

@@ -1,5 +1,5 @@
 // Adapted version of https://github.com/Stremio/stremio-addon-sdk/blob/v1.6.2/src/landingTemplate.js
-import { ManifestWithConfig } from './types';
+import { CustomManifest } from './types';
 import { envGet } from './utils';
 
 const STYLESHEET = `
@@ -169,7 +169,7 @@ button:active {
 }
 `;
 
-export function landingTemplate(manifest: ManifestWithConfig) {
+export function landingTemplate(manifest: CustomManifest) {
   const background = manifest.background || 'https://dl.strem.io/addon-background.jpg';
   const logo = manifest.logo || 'https://dl.strem.io/addon-logo.png';
   const contactHTML = manifest.contactEmail
