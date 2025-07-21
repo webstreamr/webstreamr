@@ -4,6 +4,7 @@ import { ProxyAgent, setGlobalDispatcher } from 'undici';
 import { v4 as uuidv4 } from 'uuid';
 import winston from 'winston';
 import { ConfigureController, ManifestController, StreamController } from './controller';
+import { BlockedError } from './error';
 import { createExtractors, ExtractorRegistry } from './extractor';
 import { createSources } from './source';
 import { contextFromRequestAndResponse, envGet, envIsProd, Fetcher, StreamResolver } from './utils';
@@ -64,15 +65,35 @@ addon.get('/', (_req: Request, res: Response) => {
 addon.get('/health', async (req: Request, res: Response) => {
   const ctx = contextFromRequestAndResponse(req, res);
 
-  try {
-    const ip = await fetcher.text(ctx, new URL('https://api.ipify.org'), { noCache: true, noProxyHeaders: true });
+  const urls = [
+    new URL('https://www3.homecine.to'),
+    new URL('https://soaper.live'),
+    new URL('https://supervideo.cc'),
+  ];
 
-    res.json({ status: 'ok', ip });
-  } catch (error) {
-    const cause = (error as Error & { cause?: unknown }).cause;
-    logger.error(`health check error: ${error}, cause: ${cause}`, ctx);
+  let blockedCount = 0;
+  let errorCount = 0;
 
+  const fetchPromises = urls.map(async (url) => {
+    try {
+      await fetcher.head(ctx, url, { noCache: true });
+    } catch (error) {
+      if (error instanceof BlockedError) {
+        blockedCount++;
+      } else {
+        logger.error(`health check error: ${JSON.stringify(error)}`, ctx);
+        errorCount++;
+      }
+    }
+  });
+  await Promise.all(fetchPromises);
+
+  if (blockedCount > 0) {
+    res.status(503).json({ status: 'blocked' });
+  } else if (errorCount === urls.length) {
     res.status(503).json({ status: 'error' });
+  } else {
+    res.json({ status: 'ok' });
   }
 });
 
