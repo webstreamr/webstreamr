@@ -1,18 +1,47 @@
-export * from './CineHDPlus';
-export * from './Cuevana';
-export * from './Eurostreaming';
-export * from './Frembed';
-export * from './FrenchCloud';
-export * from './HomeCine';
-export * from './KinoGer';
-export * from './MegaKino';
-export * from './MeineCloud';
-export * from './MostraGuarda';
-export * from './Movix';
-export * from './PrimeWire';
-export * from './Soaper';
-export * from './StreamKiste';
-export * from './VerHdLink';
-export * from './VidSrc';
-export * from './VixSrc';
+import { Fetcher } from '../utils';
+import { CineHDPlus } from './CineHDPlus';
+import { Cuevana } from './Cuevana';
+import { Eurostreaming } from './Eurostreaming';
+import { Frembed } from './Frembed';
+import { FrenchCloud } from './FrenchCloud';
+import { HomeCine } from './HomeCine';
+import { KinoGer } from './KinoGer';
+import { MegaKino } from './MegaKino';
+import { MeineCloud } from './MeineCloud';
+import { MostraGuarda } from './MostraGuarda';
+import { Movix } from './Movix';
+import { PrimeWire } from './PrimeWire';
+import { Soaper } from './Soaper';
+import { StreamKiste } from './StreamKiste';
+import { Source } from './types';
+import { VerHdLink } from './VerHdLink';
+import { VidSrc } from './VidSrc';
+import { VixSrc } from './VixSrc';
+
 export * from './types';
+
+export const createSources = (fetcher: Fetcher): Source[] => [
+  // multi
+  new VixSrc(fetcher),
+  // EN
+  new PrimeWire(fetcher),
+  new Soaper(fetcher),
+  new VidSrc(fetcher),
+  // ES / MX
+  new CineHDPlus(fetcher),
+  new Cuevana(fetcher),
+  new HomeCine(fetcher),
+  new VerHdLink(fetcher),
+  // DE
+  new KinoGer(fetcher),
+  new MegaKino(fetcher),
+  new MeineCloud(fetcher),
+  new StreamKiste(fetcher),
+  // FR
+  new Frembed(fetcher),
+  new FrenchCloud(fetcher),
+  new Movix(fetcher),
+  // IT
+  new Eurostreaming(fetcher),
+  new MostraGuarda(fetcher),
+];

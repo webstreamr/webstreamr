@@ -1,4 +1,7 @@
-import { MeineCloud, StreamKiste, VerHdLink, VixSrc } from '../source';
+import { MeineCloud } from '../source/MeineCloud';
+import { StreamKiste } from '../source/StreamKiste';
+import { VerHdLink } from '../source/VerHdLink';
+import { VixSrc } from '../source/VixSrc';
 import { FetcherMock } from './FetcherMock';
 import { buildManifest } from './manifest';
 

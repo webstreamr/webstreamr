@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import winston from 'winston';
 import { ConfigureController, ManifestController, StreamController } from './controller';
 import { createExtractors, ExtractorRegistry } from './extractor';
-import { CineHDPlus, Cuevana, Eurostreaming, Frembed, FrenchCloud, HomeCine, KinoGer, MegaKino, MeineCloud, MostraGuarda, Movix, PrimeWire, Soaper, Source, StreamKiste, VerHdLink, VidSrc, VixSrc } from './source';
+import { createSources } from './source';
 import { contextFromRequestAndResponse, envGet, envIsProd, Fetcher, StreamResolver } from './utils';
 
 console.log = console.warn = console.error = console.info = console.debug = () => { /* disable in favor of logger */ };
@@ -31,31 +31,8 @@ if (process.env['ALL_PROXY']) {
 }
 const fetcher = new Fetcher(logger);
 
-const sources: Source[] = [
-  // multi
-  new VixSrc(fetcher),
-  // EN
-  new PrimeWire(fetcher),
-  new Soaper(fetcher),
-  new VidSrc(fetcher),
-  // ES / MX
-  new CineHDPlus(fetcher),
-  new Cuevana(fetcher),
-  new HomeCine(fetcher),
-  new VerHdLink(fetcher),
-  // DE
-  new KinoGer(fetcher),
-  new MegaKino(fetcher),
-  new MeineCloud(fetcher),
-  new StreamKiste(fetcher),
-  // FR
-  new Frembed(fetcher),
-  new FrenchCloud(fetcher),
-  new Movix(fetcher),
-  // IT
-  new Eurostreaming(fetcher),
-  new MostraGuarda(fetcher),
-];
+const sources = createSources(fetcher);
+const extractors = createExtractors(fetcher);
 
 const addon = express();
 addon.set('trust proxy', true);
@@ -76,7 +53,7 @@ addon.use((_req: Request, res: Response, next: NextFunction) => {
 addon.use('/', (new ConfigureController(sources)).router);
 addon.use('/', (new ManifestController(sources)).router);
 
-const extractorRegistry = new ExtractorRegistry(logger, createExtractors(fetcher));
+const extractorRegistry = new ExtractorRegistry(logger, extractors);
 const streamResolver = new StreamResolver(logger, extractorRegistry);
 addon.use('/', (new StreamController(logger, sources, streamResolver)).router);
 
