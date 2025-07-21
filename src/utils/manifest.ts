@@ -12,7 +12,7 @@ export const buildManifest = (sources: Source[], extractors: Extractor[], config
     id: envGetAppId(),
     version: '0.39.2', // x-release-please-version
     name: envGetAppName(),
-    description: 'Provides HTTP URLs from streaming websites.',
+    description: 'Provides HTTP URLs from streaming websites. Configure add-on for additional languages. Add MediaFlow proxy for more URLs.',
     resources: [
       'stream',
     ],
