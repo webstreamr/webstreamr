@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.40.1](https://github.com/webstreamr/webstreamr/compare/v0.40.0...v0.40.1) (2025-07-22)
+
+
+### Miscellaneous Chores
+
+* **deps:** update jest monorepo to v30.0.5 ([#238](https://github.com/webstreamr/webstreamr/issues/238)) ([93194e3](https://github.com/webstreamr/webstreamr/commit/93194e37c947032b9da70ce8e6f9b6beb9a85f45))
+
+
+### Bug Fixes
+
+* **source:** disable Frembed for now since it keeps timing-out ([5803148](https://github.com/webstreamr/webstreamr/commit/580314883769a08d3fa7f6c8f10da90f8cafce5b))
+
 ## [0.40.0](https://github.com/webstreamr/webstreamr/compare/v0.39.2...v0.40.0) (2025-07-21)
 
 
