@@ -2,7 +2,6 @@ import { Fetcher } from '../utils';
 import { CineHDPlus } from './CineHDPlus';
 import { Cuevana } from './Cuevana';
 import { Eurostreaming } from './Eurostreaming';
-import { Frembed } from './Frembed';
 import { FrenchCloud } from './FrenchCloud';
 import { HomeCine } from './HomeCine';
 import { KinoGer } from './KinoGer';
@@ -38,7 +37,7 @@ export const createSources = (fetcher: Fetcher): Source[] => [
   new MeineCloud(fetcher),
   new StreamKiste(fetcher),
   // FR
-  new Frembed(fetcher),
+  // new Frembed(fetcher), // timing-out regularly since days
   new FrenchCloud(fetcher),
   new Movix(fetcher),
   // IT
