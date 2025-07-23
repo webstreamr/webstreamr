@@ -3,7 +3,7 @@ import { Extractor } from '../extractor';
 import { landingTemplate } from '../landingTemplate';
 import { Source } from '../source';
 import { Config } from '../types';
-import { buildManifest, getDefaultConfig } from '../utils';
+import { buildManifest, getDefaultConfig, isElfHostedInstance } from '../utils';
 
 export class ConfigureController {
   public readonly router: Router;
@@ -25,7 +25,7 @@ export class ConfigureController {
     const config: Config = JSON.parse(req.params['config'] || JSON.stringify(getDefaultConfig()));
 
     // Convenience preset for ElfHosted WebStreamr bundle including Media Flow Proxy
-    if (!req.params['config'] && req.host.endsWith('elfhosted.com')) {
+    if (!req.params['config'] && isElfHostedInstance(req)) {
       config.mediaFlowProxyUrl = `${req.protocol}://${req.host.replace('webstreamr', 'mediaflow-proxy')}`;
     }
 
