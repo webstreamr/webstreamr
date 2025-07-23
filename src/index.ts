@@ -7,7 +7,7 @@ import { ConfigureController, ManifestController, StreamController } from './con
 import { BlockedError } from './error';
 import { createExtractors, ExtractorRegistry } from './extractor';
 import { createSources } from './source';
-import { contextFromRequestAndResponse, envGet, envIsProd, Fetcher, StreamResolver } from './utils';
+import { contextFromRequestAndResponse, envGet, envIsProd, Fetcher, isHaydukInstance, StreamResolver } from './utils';
 
 console.log = console.warn = console.error = console.info = console.debug = () => { /* disable in favor of logger */ };
 
@@ -88,7 +88,7 @@ addon.get('/health', async (req: Request, res: Response) => {
   });
   await Promise.all(fetchPromises);
 
-  if (blockedCount > 0) {
+  if (isHaydukInstance(req) && blockedCount > 0) {
     res.status(503).json({ status: 'blocked' });
   } else if (errorCount === urls.length) {
     res.status(503).json({ status: 'error' });
