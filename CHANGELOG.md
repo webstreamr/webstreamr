@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.40.2](https://github.com/webstreamr/webstreamr/compare/v0.40.1...v0.40.2) (2025-07-23)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @stylistic/eslint-plugin to v5.2.2 ([#240](https://github.com/webstreamr/webstreamr/issues/240)) ([4ab0c88](https://github.com/webstreamr/webstreamr/commit/4ab0c882625982c1ce53f83d98c875ca0899eeed))
+
+
+### Bug Fixes
+
+* disable health check failing for blocked issues on non-hayd.uk instances ([ece3b45](https://github.com/webstreamr/webstreamr/commit/ece3b45f59278e209f18dc3cc29a0d2e26f2d4d7))
+
+
+### Code Refactoring
+
+* extract helpers to figure out which instance we're running on ([be8c664](https://github.com/webstreamr/webstreamr/commit/be8c664b476b834376f75968a31993031ec7b7cd))
+
 ## [0.40.1](https://github.com/webstreamr/webstreamr/compare/v0.40.0...v0.40.1) (2025-07-22)
 
 
