@@ -4,7 +4,7 @@ import { ProxyAgent, setGlobalDispatcher } from 'undici';
 import { v4 as uuidv4 } from 'uuid';
 import winston from 'winston';
 import { ConfigureController, ManifestController, StreamController } from './controller';
-import { BlockedError } from './error';
+import { BlockedError, logErrorAndReturnNiceString } from './error';
 import { createExtractors, ExtractorRegistry } from './extractor';
 import { createSources } from './source';
 import { contextFromRequestAndResponse, envGet, envIsProd, Fetcher, isHaydukInstance, StreamResolver } from './utils';
@@ -76,14 +76,15 @@ addon.get('/health', async (req: Request, res: Response) => {
 
   const fetchPromises = urls.map(async (url) => {
     try {
-      await fetcher.head(ctx, url, { noCache: true });
+      await fetcher.head(ctx, url, { noCache: true, timeout: 5000 });
     } catch (error) {
       if (error instanceof BlockedError) {
         blockedCount++;
       } else {
-        logger.error(`health check error: ${JSON.stringify(error)}`, ctx);
         errorCount++;
       }
+
+      logErrorAndReturnNiceString(ctx, logger, url.href, error);
     }
   });
   await Promise.all(fetchPromises);
