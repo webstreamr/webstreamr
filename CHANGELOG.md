@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.40.3](https://github.com/webstreamr/webstreamr/compare/v0.40.2...v0.40.3) (2025-07-24)
+
+
+### Bug Fixes
+
+* **health check:** better logging, decrease request timeouts ([9a8e6f9](https://github.com/webstreamr/webstreamr/commit/9a8e6f9c690353c4c4a20adbd3f6ec324035a994))
+
+
+### Code Refactoring
+
+* extract error and logging helper ([cc3dacd](https://github.com/webstreamr/webstreamr/commit/cc3dacdd76cb679c1e9a84b30101a2832b485e72))
+
 ## [0.40.2](https://github.com/webstreamr/webstreamr/compare/v0.40.1...v0.40.2) (2025-07-23)
 
 
