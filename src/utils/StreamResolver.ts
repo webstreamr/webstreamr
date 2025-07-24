@@ -1,18 +1,10 @@
 import bytes from 'bytes';
 import { ContentType, Stream } from 'stremio-addon-sdk';
 import winston from 'winston';
-import {
-  BlockedError,
-  HttpError,
-  NotFoundError,
-  QueueIsFullError,
-  TimeoutError,
-  TooManyRequestsError,
-  TooManyTimeoutsError,
-} from '../error';
+import { logErrorAndReturnNiceString, NotFoundError } from '../error';
 import { ExtractorRegistry } from '../extractor';
 import { Source } from '../source';
-import { BlockedReason, Context, Format, UrlResult } from '../types';
+import { Context, Format, UrlResult } from '../types';
 import { showExternalUrls } from './config';
 import { envGetAppName } from './env';
 import { Id } from './id';
@@ -72,7 +64,7 @@ export class StreamResolver {
 
         streams.push({
           name: envGetAppName(),
-          title: [`🔗 ${handler.label}`, this.logErrorAndReturnNiceString(ctx, handler.id, error)].join('\n'),
+          title: [`🔗 ${handler.label}`, logErrorAndReturnNiceString(ctx, this.logger, handler.id, error)].join('\n'),
           externalUrl: ctx.hostUrl.href,
         });
       }
@@ -171,61 +163,6 @@ export class StreamResolver {
     return name;
   };
 
-  private logErrorAndReturnNiceString(ctx: Context, source: string, error: unknown): string {
-    if (error instanceof BlockedError) {
-      if (error.reason === BlockedReason.cloudflare_challenge) {
-        this.logger.warn(`${source}: Request was blocked via Cloudflare challenge.`, ctx);
-      } else if (error.reason === BlockedReason.cloudflare_censor) {
-        this.logger.warn(`${source}: Request was censored by Cloudflare.`, ctx);
-      } else if (error.reason === BlockedReason.media_flow_proxy_auth) {
-        return '⚠️ MediaFlow Proxy authentication failed. Please set the correct password.';
-      } else {
-        this.logger.warn(`${source}: Request was blocked, headers: ${JSON.stringify(error.headers)}.`, ctx);
-      }
-
-      return `⚠️ Request was blocked. Reason: ${error.reason}`;
-    }
-
-    if (error instanceof TooManyRequestsError) {
-      this.logger.warn(`${source}: Rate limited for ${error.retryAfter} seconds.`, ctx);
-
-      return '🚦 Request was rate-limited. Please try again later or consider self-hosting.';
-    }
-
-    if (error instanceof TooManyTimeoutsError) {
-      this.logger.warn(`${source}: Too many timeouts.`, ctx);
-
-      return '🚦 Too many recent timeouts. Please try again later.';
-    }
-
-    if (error instanceof TimeoutError) {
-      this.logger.warn(`${source}: Request timed out.`, ctx);
-
-      return '🐢 Request timed out.';
-    }
-
-    if (error instanceof QueueIsFullError) {
-      this.logger.warn(`${source}: Request queue is full.`, ctx);
-
-      return '⏳ Request queue is full. Please try again later or consider self-hosting.';
-    }
-
-    if (error instanceof HttpError) {
-      this.logger.error(`${source}: HTTP status ${error.status} (${error.statusText}), headers: ${JSON.stringify(error.headers)}, stack: ${error.stack}.`, ctx);
-
-      if (error.status >= 500) {
-        return `❌ Remote server has issues. We can't fix this, please try later again.`;
-      }
-
-      return `❌ Request failed with status ${error.status} (${error.statusText}). Request-id: ${ctx.id}.`;
-    }
-
-    const cause = (error as Error & { cause?: unknown }).cause;
-    this.logger.error(`${source} error: ${error}, cause: ${cause}, stack: ${(error as Error).stack}`, ctx);
-
-    return `❌ Request failed. Request-id: ${ctx.id}.`;
-  };
-
   private buildTitle(ctx: Context, urlResult: UrlResult): string {
     const titleLines = [];
 
@@ -241,7 +178,7 @@ export class StreamResolver {
     titleLines.push(titleDetailsLine.join(' '));
 
     if (urlResult.error) {
-      titleLines.push(this.logErrorAndReturnNiceString(ctx, urlResult.sourceId, urlResult.error));
+      titleLines.push(logErrorAndReturnNiceString(ctx, this.logger, urlResult.sourceId, urlResult.error));
     }
 
     return titleLines.join('\n');
