@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.40.4](https://github.com/webstreamr/webstreamr/compare/v0.40.3...v0.40.4) (2025-07-31)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#246](https://github.com/webstreamr/webstreamr/issues/246)) ([f5d3e95](https://github.com/webstreamr/webstreamr/commit/f5d3e95884244b0064aa8d10ca9acc66b6773ab4))
+* **deps:** update eslint monorepo to v9.32.0 ([#243](https://github.com/webstreamr/webstreamr/issues/243)) ([0dc9d4b](https://github.com/webstreamr/webstreamr/commit/0dc9d4bf35ba9ded57e1124439321a98da305137))
+
+
+### Bug Fixes
+
+* **deps:** update dependency undici to v7.13.0 ([#248](https://github.com/webstreamr/webstreamr/issues/248)) ([43d971a](https://github.com/webstreamr/webstreamr/commit/43d971a1474d65b584df7de9cfcf966e20f2da08))
+
 ## [0.40.3](https://github.com/webstreamr/webstreamr/compare/v0.40.2...v0.40.3) (2025-07-24)
 
 
