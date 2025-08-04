@@ -32,8 +32,10 @@ describe('resolve', () => {
     const streamResolver = new StreamResolver(logger, new ExtractorRegistry(logger, createExtractors(fetcher)));
 
     const streams = await streamResolver.resolve(ctx, [meineCloud], 'movie', new ImdbId('tt123456789', undefined, undefined));
-
     expect(streams).toMatchSnapshot();
+
+    const streamsWithShowErrors = await streamResolver.resolve({ ...ctx, config: { ...ctx.config, showErrors: 'on' } }, [meineCloud], 'movie', new ImdbId('tt123456789', undefined, undefined));
+    expect(streamsWithShowErrors).toMatchSnapshot();
 
     fetcherSpy.mockRestore();
   });
@@ -241,8 +243,8 @@ describe('resolve', () => {
     const streams = await streamResolver.resolve(ctx, [new MockHandler()], 'movie', new ImdbId('tt11655566', undefined, undefined));
     expect(streams).toMatchSnapshot();
 
-    const streamsWithExternalUrls = await streamResolver.resolve({ ...ctx, config: { ...ctx.config, includeExternalUrls: 'on' } }, [new MockHandler()], 'movie', new ImdbId('tt11655566', undefined, undefined));
-    expect(streamsWithExternalUrls).toMatchSnapshot();
+    const streamsWithShowErrors = await streamResolver.resolve({ ...ctx, config: { ...ctx.config, showErrors: 'on' } }, [new MockHandler()], 'movie', new ImdbId('tt11655566', undefined, undefined));
+    expect(streamsWithShowErrors).toMatchSnapshot();
   });
 
   test('ignores not found errors', async () => {

@@ -5,6 +5,8 @@ export const getDefaultConfig = (): Config => {
   return { multi: 'on', en: 'on' };
 };
 
+export const showErrors = (config: Config): boolean => 'showErrors' in config;
+
 export const showExternalUrls = (config: Config): boolean => 'includeExternalUrls' in config;
 
 export const hasMultiEnabled = (config: Config): boolean => 'multi' in config;

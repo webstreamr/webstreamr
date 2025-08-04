@@ -21,105 +21,6 @@ exports[`resolve adds error info 1`] = `
       "title": "🔗 working2",
       "url": "https://working1.com/",
     },
-    {
-      "behaviorHints": {
-        "notWebReady": true,
-      },
-      "externalUrl": "http://localhost/",
-      "name": "WebStreamr 🇩🇪",
-      "title": "🔗 hoster.com
-⚠️ Request was blocked. Reason: cloudflare_challenge",
-    },
-    {
-      "behaviorHints": {
-        "notWebReady": true,
-      },
-      "externalUrl": "http://localhost/",
-      "name": "WebStreamr 🇩🇪",
-      "title": "🔗 hoster.com
-⚠️ Request was blocked. Reason: cloudflare_censor",
-    },
-    {
-      "behaviorHints": {
-        "notWebReady": true,
-      },
-      "externalUrl": "http://localhost/",
-      "name": "WebStreamr 🇩🇪",
-      "title": "🔗 hoster.com
-⚠️ MediaFlow Proxy authentication failed. Please set the correct password.",
-    },
-    {
-      "behaviorHints": {
-        "notWebReady": true,
-      },
-      "externalUrl": "http://localhost/",
-      "name": "WebStreamr 🇩🇪",
-      "title": "🔗 hoster.com
-⚠️ Request was blocked. Reason: unknown",
-    },
-    {
-      "behaviorHints": {
-        "notWebReady": true,
-      },
-      "externalUrl": "http://localhost/",
-      "name": "WebStreamr 🇩🇪",
-      "title": "🔗 hoster.com
-🚦 Request was rate-limited. Please try again later or consider self-hosting.",
-    },
-    {
-      "behaviorHints": {
-        "notWebReady": true,
-      },
-      "externalUrl": "http://localhost/",
-      "name": "WebStreamr 🇩🇪",
-      "title": "🔗 hoster.com
-🚦 Too many recent timeouts. Please try again later.",
-    },
-    {
-      "behaviorHints": {
-        "notWebReady": true,
-      },
-      "externalUrl": "http://localhost/",
-      "name": "WebStreamr 🇩🇪",
-      "title": "🔗 hoster.com
-❌ Request failed. Request-id: test.",
-    },
-    {
-      "behaviorHints": {
-        "notWebReady": true,
-      },
-      "externalUrl": "http://localhost/",
-      "name": "WebStreamr 🇩🇪",
-      "title": "🔗 hoster.com
-🐢 Request timed out.",
-    },
-    {
-      "behaviorHints": {
-        "notWebReady": true,
-      },
-      "externalUrl": "http://localhost/",
-      "name": "WebStreamr 🇩🇪",
-      "title": "🔗 hoster.com
-⏳ Request queue is full. Please try again later or consider self-hosting.",
-    },
-    {
-      "behaviorHints": {
-        "notWebReady": true,
-      },
-      "externalUrl": "http://localhost/",
-      "name": "WebStreamr 🇩🇪",
-      "title": "🔗 hoster.com
-❌ Remote server has issues. We can't fix this, please try later again.",
-    },
-    {
-      "behaviorHints": {
-        "notWebReady": true,
-      },
-      "externalUrl": "http://localhost/",
-      "name": "WebStreamr 🇩🇪",
-      "title": "🔗 hoster.com
-❌ Request failed with status 418 (I'm a tea pot). Request-id: test.",
-    },
   ],
 }
 `;
@@ -150,7 +51,7 @@ exports[`resolve adds error info 2`] = `
         "notWebReady": true,
       },
       "externalUrl": "https://example.com/",
-      "name": "WebStreamr 🇩🇪 ⚠️ external",
+      "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 ⚠️ Request was blocked. Reason: cloudflare_challenge",
     },
@@ -159,7 +60,7 @@ exports[`resolve adds error info 2`] = `
         "notWebReady": true,
       },
       "externalUrl": "https://example.com/",
-      "name": "WebStreamr 🇩🇪 ⚠️ external",
+      "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 ⚠️ Request was blocked. Reason: cloudflare_censor",
     },
@@ -168,7 +69,7 @@ exports[`resolve adds error info 2`] = `
         "notWebReady": true,
       },
       "externalUrl": "https://example.com/",
-      "name": "WebStreamr 🇩🇪 ⚠️ external",
+      "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 ⚠️ MediaFlow Proxy authentication failed. Please set the correct password.",
     },
@@ -177,7 +78,7 @@ exports[`resolve adds error info 2`] = `
         "notWebReady": true,
       },
       "externalUrl": "https://example.com/",
-      "name": "WebStreamr 🇩🇪 ⚠️ external",
+      "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 ⚠️ Request was blocked. Reason: unknown",
     },
@@ -186,7 +87,7 @@ exports[`resolve adds error info 2`] = `
         "notWebReady": true,
       },
       "externalUrl": "https://example.com/",
-      "name": "WebStreamr 🇩🇪 ⚠️ external",
+      "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 🚦 Request was rate-limited. Please try again later or consider self-hosting.",
     },
@@ -195,7 +96,7 @@ exports[`resolve adds error info 2`] = `
         "notWebReady": true,
       },
       "externalUrl": "https://example.com/",
-      "name": "WebStreamr 🇩🇪 ⚠️ external",
+      "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 🚦 Too many recent timeouts. Please try again later.",
     },
@@ -204,7 +105,7 @@ exports[`resolve adds error info 2`] = `
         "notWebReady": true,
       },
       "externalUrl": "https://example2.com/",
-      "name": "WebStreamr 🇩🇪 ⚠️ external",
+      "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 ❌ Request failed. Request-id: test.",
     },
@@ -213,7 +114,7 @@ exports[`resolve adds error info 2`] = `
         "notWebReady": true,
       },
       "externalUrl": "https://example2.com/",
-      "name": "WebStreamr 🇩🇪 ⚠️ external",
+      "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 🐢 Request timed out.",
     },
@@ -222,7 +123,7 @@ exports[`resolve adds error info 2`] = `
         "notWebReady": true,
       },
       "externalUrl": "https://example3.com/",
-      "name": "WebStreamr 🇩🇪 ⚠️ external",
+      "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 ⏳ Request queue is full. Please try again later or consider self-hosting.",
     },
@@ -231,7 +132,7 @@ exports[`resolve adds error info 2`] = `
         "notWebReady": true,
       },
       "externalUrl": "https://example4.com/",
-      "name": "WebStreamr 🇩🇪 ⚠️ external",
+      "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 ❌ Remote server has issues. We can't fix this, please try later again.",
     },
@@ -240,7 +141,7 @@ exports[`resolve adds error info 2`] = `
         "notWebReady": true,
       },
       "externalUrl": "https://example5.com/",
-      "name": "WebStreamr 🇩🇪 ⚠️ external",
+      "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
 ❌ Request failed with status 418 (I'm a tea pot). Request-id: test.",
     },
@@ -460,6 +361,12 @@ exports[`resolve returns sorted results 2`] = `
 `;
 
 exports[`resolve returns source errors as stream 1`] = `
+{
+  "streams": [],
+}
+`;
+
+exports[`resolve returns source errors as stream 2`] = `
 {
   "streams": [
     {

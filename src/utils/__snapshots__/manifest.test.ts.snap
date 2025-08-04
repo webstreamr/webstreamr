@@ -3,6 +3,11 @@
 exports[`buildManifest disable extractors 1`] = `
 [
   {
+    "key": "showErrors",
+    "title": "Show errors",
+    "type": "checkbox",
+  },
+  {
     "key": "includeExternalUrls",
     "title": "Include external URLs in results",
     "type": "checkbox",
@@ -33,8 +38,14 @@ exports[`buildManifest disable extractors 1`] = `
 ]
 `;
 
-exports[`buildManifest has checked includeExternalUrls 1`] = `
+exports[`buildManifest has checked showErrors and includeExternalUrls 1`] = `
 [
+  {
+    "default": "checked",
+    "key": "showErrors",
+    "title": "Show errors",
+    "type": "checkbox",
+  },
   {
     "default": "checked",
     "key": "includeExternalUrls",
@@ -72,6 +83,11 @@ exports[`buildManifest has checked source with appropriate config 1`] = `
   {
     "key": "mx",
     "title": "Latin American Spanish 🇲🇽 (VerHdLink)",
+    "type": "checkbox",
+  },
+  {
+    "key": "showErrors",
+    "title": "Show errors",
     "type": "checkbox",
   },
   {
@@ -123,6 +139,11 @@ exports[`buildManifest has unchecked source without a config 1`] = `
     "type": "checkbox",
   },
   {
+    "key": "showErrors",
+    "title": "Show errors",
+    "type": "checkbox",
+  },
+  {
     "key": "includeExternalUrls",
     "title": "Include external URLs in results",
     "type": "checkbox",
@@ -142,8 +163,13 @@ exports[`buildManifest has unchecked source without a config 1`] = `
 ]
 `;
 
-exports[`buildManifest includeExternalUrls is unchecked by default 1`] = `
+exports[`buildManifest showErrors and includeExternalUrls are unchecked by default 1`] = `
 [
+  {
+    "key": "showErrors",
+    "title": "Show errors",
+    "type": "checkbox",
+  },
   {
     "key": "includeExternalUrls",
     "title": "Include external URLs in results",

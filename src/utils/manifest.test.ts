@@ -35,14 +35,14 @@ describe('buildManifest', () => {
     expect(manifest.config).toMatchSnapshot();
   });
 
-  test('includeExternalUrls is unchecked by default', () => {
+  test('showErrors and includeExternalUrls are unchecked by default', () => {
     const manifest = buildManifest([], [], {});
 
     expect(manifest.config).toMatchSnapshot();
   });
 
-  test('has checked includeExternalUrls', () => {
-    const manifest = buildManifest([], [], { includeExternalUrls: 'on' });
+  test('has checked showErrors and includeExternalUrls', () => {
+    const manifest = buildManifest([], [], { showErrors: 'on', includeExternalUrls: 'on' });
 
     expect(manifest.config).toMatchSnapshot();
   });

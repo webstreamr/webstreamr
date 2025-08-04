@@ -5,7 +5,7 @@ import { logErrorAndReturnNiceString, NotFoundError } from '../error';
 import { ExtractorRegistry } from '../extractor';
 import { Source } from '../source';
 import { Context, Format, UrlResult } from '../types';
-import { showExternalUrls } from './config';
+import { showErrors, showExternalUrls } from './config';
 import { envGetAppName } from './env';
 import { Id } from './id';
 import { flagFromCountryCode } from './language';
@@ -62,11 +62,13 @@ export class StreamResolver {
 
         handlerErrorOccurred = true;
 
-        streams.push({
-          name: envGetAppName(),
-          title: [`🔗 ${source.label}`, logErrorAndReturnNiceString(ctx, this.logger, source.id, error)].join('\n'),
-          externalUrl: source.baseUrl,
-        });
+        if (showErrors(ctx.config)) {
+          streams.push({
+            name: envGetAppName(),
+            title: [`🔗 ${source.label}`, logErrorAndReturnNiceString(ctx, this.logger, source.id, error)].join('\n'),
+            externalUrl: source.baseUrl,
+          });
+        }
       }
     });
     await Promise.all(handlerPromises);
@@ -96,9 +98,9 @@ export class StreamResolver {
     this.logger.info(`Return ${urlResults.length} streams`, ctx);
 
     streams.push(
-      ...urlResults.filter(urlResult => !urlResult.isExternal || showExternalUrls(ctx.config) || urlResult.error)
+      ...urlResults.filter(urlResult => !urlResult.error || showErrors(ctx.config))
         .map(urlResult => ({
-          ...this.buildUrl(ctx, urlResult),
+          ...this.buildUrl(urlResult),
           name: this.buildName(ctx, urlResult),
           title: this.buildTitle(ctx, urlResult),
           behaviorHints: {
@@ -133,16 +135,12 @@ export class StreamResolver {
     return Math.min(...urlResults.map(urlResult => urlResult.ttl as number));
   };
 
-  private buildUrl(ctx: Context, urlResult: UrlResult): { externalUrl: string } | { url: string } {
+  private buildUrl(urlResult: UrlResult): { externalUrl: string } | { url: string } {
     if (!urlResult.isExternal) {
       return { url: urlResult.url.href };
     }
 
-    if (showExternalUrls(ctx.config)) {
-      return { externalUrl: urlResult.url.href };
-    }
-
-    return { externalUrl: ctx.hostUrl.href };
+    return { externalUrl: urlResult.url.href };
   };
 
   private buildName(ctx: Context, urlResult: UrlResult): string {

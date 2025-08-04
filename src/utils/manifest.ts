@@ -58,6 +58,13 @@ export const buildManifest = (sources: Source[], extractors: Extractor[], config
   }
 
   manifest.config.push({
+    key: 'showErrors',
+    type: 'checkbox',
+    title: 'Show errors',
+    ...('showErrors' in config && { default: 'checked' }),
+  });
+
+  manifest.config.push({
     key: 'includeExternalUrls',
     type: 'checkbox',
     title: 'Include external URLs in results',
