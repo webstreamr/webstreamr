@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.41.0](https://github.com/webstreamr/webstreamr/compare/v0.40.3...v0.41.0) (2025-08-04)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#246](https://github.com/webstreamr/webstreamr/issues/246)) ([f5d3e95](https://github.com/webstreamr/webstreamr/commit/f5d3e95884244b0064aa8d10ca9acc66b6773ab4))
+* **deps:** lock file maintenance ([#251](https://github.com/webstreamr/webstreamr/issues/251)) ([9f5652e](https://github.com/webstreamr/webstreamr/commit/9f5652eb150aa69b7f6b865e26e1031cd7e1b8ba))
+* **deps:** update dependency @types/node to v22.17.0 ([#250](https://github.com/webstreamr/webstreamr/issues/250)) ([e270737](https://github.com/webstreamr/webstreamr/commit/e270737882e39fdf98e50978af0c13f7127194f0))
+* **deps:** update dependency ts-jest to v29.4.1 ([#249](https://github.com/webstreamr/webstreamr/issues/249)) ([9bf5011](https://github.com/webstreamr/webstreamr/commit/9bf5011882c48a032a7d223befc9eea1838d5a75))
+* **deps:** update eslint monorepo to v9.32.0 ([#243](https://github.com/webstreamr/webstreamr/issues/243)) ([0dc9d4b](https://github.com/webstreamr/webstreamr/commit/0dc9d4bf35ba9ded57e1124439321a98da305137))
+* use source baseUrl for source errors ([c81f17a](https://github.com/webstreamr/webstreamr/commit/c81f17a19ae2f6faf56a794cddf8e45f984737cf))
+
+
+### Features
+
+* do not show errors by default ([854b211](https://github.com/webstreamr/webstreamr/commit/854b211f2c30abc149a8f2d33fd77f727ce565d1))
+
+
+### Bug Fixes
+
+* **deps:** update dependency undici to v7.13.0 ([#248](https://github.com/webstreamr/webstreamr/issues/248)) ([43d971a](https://github.com/webstreamr/webstreamr/commit/43d971a1474d65b584df7de9cfcf966e20f2da08))
+
+
+### Code Refactoring
+
+* **source:** consistently define baseUrl ([b94c539](https://github.com/webstreamr/webstreamr/commit/b94c539269f1e5196d561e2513c759ffa3b94d46))
+
 ## [0.40.3](https://github.com/webstreamr/webstreamr/compare/v0.40.2...v0.40.3) (2025-07-24)
 
 
