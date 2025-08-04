@@ -463,7 +463,7 @@ exports[`resolve returns source errors as stream 1`] = `
 {
   "streams": [
     {
-      "externalUrl": "http://localhost/",
+      "externalUrl": "https://meinecloud.click",
       "name": "WebStreamr",
       "title": "🔗 MeineCloud
 ❌ Request failed. Request-id: test.",

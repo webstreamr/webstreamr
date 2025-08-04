@@ -41,17 +41,17 @@ export class StreamResolver {
 
     let handlerErrorOccurred = false;
     const urlResults: UrlResult[] = [];
-    const handlerPromises = sources.map(async (handler) => {
-      if (!handler.contentTypes.includes(type)) {
+    const handlerPromises = sources.map(async (source) => {
+      if (!source.contentTypes.includes(type)) {
         return;
       }
 
       try {
-        const handleResults = await handler.handle(ctx, type, id);
-        this.logger.info(`${handler.id} returned ${handleResults.length} urls`, ctx);
+        const sourceResults = await source.handle(ctx, type, id);
+        this.logger.info(`${source.id} returned ${sourceResults.length} urls`, ctx);
 
         const handlerUrlResults = await Promise.all(
-          handleResults.map(({ countryCode, title, url }) => this.extractorRegistry.handle(ctx, url, countryCode, title)),
+          sourceResults.map(({ countryCode, title, url }) => this.extractorRegistry.handle(ctx, url, countryCode, title)),
         );
 
         urlResults.push(...handlerUrlResults.flat());
@@ -64,8 +64,8 @@ export class StreamResolver {
 
         streams.push({
           name: envGetAppName(),
-          title: [`🔗 ${handler.label}`, logErrorAndReturnNiceString(ctx, this.logger, handler.id, error)].join('\n'),
-          externalUrl: ctx.hostUrl.href,
+          title: [`🔗 ${source.label}`, logErrorAndReturnNiceString(ctx, this.logger, source.id, error)].join('\n'),
+          externalUrl: source.baseUrl,
         });
       }
     });
