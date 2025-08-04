@@ -1,4 +1,4 @@
-FROM node:22.17-alpine AS builder
+FROM node:22.18-alpine AS builder
 WORKDIR /app
 
 COPY package*.json ./
@@ -10,7 +10,7 @@ RUN npm run build
 
 RUN npm ci --only=production
 
-FROM node:22.17-alpine
+FROM node:22.18-alpine
 WORKDIR /app
 
 COPY --from=builder /app/dist ./dist
