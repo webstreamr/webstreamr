@@ -13,7 +13,7 @@ export class Soaper implements Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.en];
 
-  private readonly baseUrl = 'https://soaper.live';
+  public readonly baseUrl = 'https://soaper.live';
 
   private readonly fetcher: Fetcher;
 

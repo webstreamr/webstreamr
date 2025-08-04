@@ -13,7 +13,7 @@ export class HomeCine implements Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.es, CountryCode.mx];
 
-  private readonly baseUrl = 'https://www3.homecine.to';
+  public readonly baseUrl = 'https://www3.homecine.to';
 
   private readonly fetcher: Fetcher;
 

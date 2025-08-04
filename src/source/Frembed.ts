@@ -12,7 +12,7 @@ export class Frembed implements Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.fr];
 
-  private readonly baseUrl = 'https://frembed.top';
+  public readonly baseUrl = 'https://frembed.top';
 
   private readonly fetcher: Fetcher;
 

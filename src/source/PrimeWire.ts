@@ -15,7 +15,7 @@ export class PrimeWire implements Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.en];
 
-  private readonly baseUrl = 'https://www.primewire.tf';
+  public readonly baseUrl = 'https://www.primewire.tf';
 
   private readonly fetcher: Fetcher;
 

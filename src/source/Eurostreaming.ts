@@ -13,7 +13,7 @@ export class Eurostreaming implements Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.it];
 
-  private readonly baseUrl = 'https://eurostreaming.luxe';
+  public readonly baseUrl = 'https://eurostreaming.luxe';
 
   private readonly fetcher: Fetcher;
 

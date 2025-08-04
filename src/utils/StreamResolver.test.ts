@@ -76,6 +76,8 @@ describe('resolve', () => {
 
       public readonly countryCodes: CountryCode[] = [CountryCode.de];
 
+      public readonly baseUrl = 'https://example.com';
+
       public readonly handle = async (): Promise<SourceResult[]> => {
         return [{ countryCode: CountryCode.de, url: new URL('https://example.com') }];
       };
@@ -249,6 +251,7 @@ describe('resolve', () => {
       label: 'MockHandler',
       contentTypes: ['movie'],
       countryCodes: [CountryCode.de],
+      baseUrl: 'https://example.com',
       handle: jest.fn().mockRejectedValue(new NotFoundError()),
     };
     const streamResolver = new StreamResolver(logger, new ExtractorRegistry(logger, createExtractors(fetcher)));

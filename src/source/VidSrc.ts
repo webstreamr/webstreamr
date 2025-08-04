@@ -12,7 +12,7 @@ export class VidSrc implements Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.en];
 
-  private readonly baseUrl = 'https://vidsrc.xyz';
+  public readonly baseUrl = 'https://vidsrc.xyz';
 
   private readonly fetcher: Fetcher;
 

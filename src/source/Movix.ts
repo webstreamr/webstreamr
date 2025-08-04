@@ -16,7 +16,7 @@ export class Movix implements Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.fr];
 
-  private readonly baseUrl = 'https://api.movix.site';
+  public readonly baseUrl = 'https://api.movix.site';
 
   private readonly fetcher: Fetcher;
 

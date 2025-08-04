@@ -17,5 +17,7 @@ export interface Source {
 
   readonly countryCodes: CountryCode[];
 
+  readonly baseUrl: string;
+
   handle(ctx: Context, type: ContentType, id: Id): Promise<(SourceResult[])>;
 }

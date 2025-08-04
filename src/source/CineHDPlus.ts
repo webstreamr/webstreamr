@@ -13,6 +13,8 @@ export class CineHDPlus implements Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.es, CountryCode.mx];
 
+  public readonly baseUrl = 'https://cinehdplus.cam';
+
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
@@ -50,7 +52,7 @@ export class CineHDPlus implements Source {
   };
 
   private fetchSeriesPageUrl = async (ctx: Context, imdbId: ImdbId): Promise<URL | undefined> => {
-    const html = await this.fetcher.text(ctx, new URL(`https://cinehdplus.cam/series/?story=${imdbId.id}&do=search&subaction=search`));
+    const html = await this.fetcher.text(ctx, new URL(`/series/?story=${imdbId.id}&do=search&subaction=search`, this.baseUrl));
 
     const $ = cheerio.load(html);
 

@@ -13,6 +13,8 @@ export class Cuevana implements Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.es, CountryCode.mx];
 
+  public readonly baseUrl = 'https://ww1.cuevana3.is';
+
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
@@ -86,7 +88,7 @@ export class Cuevana implements Source {
   };
 
   private async fetchPageUrl(ctx: Context, keyword: string): Promise<URL | undefined> {
-    const searchUrl = new URL(`https://ww1.cuevana3.is/search/${encodeURIComponent(keyword)}/`);
+    const searchUrl = new URL(`/search/${encodeURIComponent(keyword)}/`, this.baseUrl);
     const html = await this.fetcher.text(ctx, searchUrl, { headers: { Referer: searchUrl.origin } });
 
     const $ = cheerio.load(html);

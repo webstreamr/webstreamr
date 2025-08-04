@@ -13,6 +13,8 @@ export class StreamKiste implements Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.de];
 
+  public readonly baseUrl = 'https://streamkiste.taxi';
+
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
@@ -45,7 +47,7 @@ export class StreamKiste implements Source {
   };
 
   private fetchSeriesPageUrl = async (ctx: Context, imdbId: ImdbId): Promise<URL | undefined> => {
-    const html = await this.fetcher.text(ctx, new URL(`https://streamkiste.taxi/?story=${imdbId.id}&do=search&subaction=search`));
+    const html = await this.fetcher.text(ctx, new URL(`/?story=${imdbId.id}&do=search&subaction=search`, this.baseUrl));
 
     const $ = cheerio.load(html);
 

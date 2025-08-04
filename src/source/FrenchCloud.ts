@@ -13,6 +13,8 @@ export class FrenchCloud implements Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.fr];
 
+  public readonly baseUrl = 'https://frenchcloud.cam';
+
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
@@ -22,7 +24,7 @@ export class FrenchCloud implements Source {
   public async handle(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const imdbId = await getImdbId(ctx, this.fetcher, id);
 
-    const pageUrl = new URL(`https://frenchcloud.cam/movie/${imdbId.id}`);
+    const pageUrl = new URL(`/movie/${imdbId.id}`, this.baseUrl);
     const html = await this.fetcher.text(ctx, pageUrl);
 
     const $ = cheerio.load(html);

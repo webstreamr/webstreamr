@@ -13,6 +13,8 @@ export class MegaKino implements Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.de];
 
+  public readonly baseUrl = 'https://megakino.si';
+
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
@@ -42,7 +44,7 @@ export class MegaKino implements Source {
   };
 
   private fetchPageUrl = async (ctx: Context, imdbId: ImdbId): Promise<URL | undefined> => {
-    const html = await this.fetcher.text(ctx, new URL(`https://megakino.si/?do=search&subaction=search&story=${imdbId.id}`));
+    const html = await this.fetcher.text(ctx, new URL(`/?do=search&subaction=search&story=${imdbId.id}`, this.baseUrl));
 
     const $ = cheerio.load(html);
 

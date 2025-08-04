@@ -13,7 +13,7 @@ export class KinoGer implements Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.de];
 
-  private readonly baseUrl = 'https://kinoger.com';
+  public readonly baseUrl = 'https://kinoger.com';
 
   private readonly fetcher: Fetcher;
 

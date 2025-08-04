@@ -12,7 +12,7 @@ export class VixSrc implements Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.multi, CountryCode.it];
 
-  private readonly baseUrl = 'https://vixsrc.to';
+  public readonly baseUrl = 'https://vixsrc.to';
 
   private readonly fetcher: Fetcher;
 
