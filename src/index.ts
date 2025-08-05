@@ -82,7 +82,7 @@ addon.get('/health', async (req: Request, res: Response) => {
     const url = new URL(source.baseUrl);
 
     try {
-      await fetcher.head(ctx, url, { queueLimit: 1, noCache: true });
+      await fetcher.head(ctx, url, { noCache: true });
     } catch (error) {
       if (error instanceof BlockedError) {
         blockedCount++;
