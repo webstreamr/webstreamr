@@ -1,5 +1,5 @@
 import { Request } from 'express';
-import { envGet, envGetAppId, envGetAppName, envIsProd, isElfHostedInstance, isHaydukInstance } from './env';
+import { envGet, envGetAppId, envGetAppName, envIsProd, isElfHostedInstance } from './env';
 
 describe('env', () => {
   test('envGet', () => {
@@ -34,10 +34,5 @@ describe('env', () => {
   test('isElfHostedInstancce', () => {
     expect(isElfHostedInstance({ host: 'someuser.elfhosted.com' } as Request)).toBeTruthy();
     expect(isElfHostedInstance({ host: 'webstreamr.hayd.uk' } as Request)).toBeFalsy();
-  });
-
-  test('isHaydukInstance', () => {
-    expect(isHaydukInstance({ host: 'webstreamr.hayd.uk' } as Request)).toBeTruthy();
-    expect(isHaydukInstance({ host: 'someuser.elfhosted.com' } as Request)).toBeFalsy();
   });
 });

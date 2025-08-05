@@ -7,7 +7,7 @@ import { ConfigureController, ManifestController, StreamController } from './con
 import { BlockedError, logErrorAndReturnNiceString } from './error';
 import { createExtractors, ExtractorRegistry } from './extractor';
 import { createSources } from './source';
-import { contextFromRequestAndResponse, envGet, envIsProd, Fetcher, isHaydukInstance, StreamResolver } from './utils';
+import { contextFromRequestAndResponse, envGet, envIsProd, Fetcher, StreamResolver } from './utils';
 
 console.log = console.warn = console.error = console.info = console.debug = () => { /* disable in favor of logger */ };
 
@@ -62,6 +62,7 @@ addon.get('/', (_req: Request, res: Response) => {
   res.redirect('/configure');
 });
 
+let lastHealthCheckRequestsTimestamp = 0;
 addon.get('/health', async (req: Request, res: Response) => {
   const ctx = contextFromRequestAndResponse(req, res);
 
@@ -74,9 +75,9 @@ addon.get('/health', async (req: Request, res: Response) => {
   let blockedCount = 0;
   let errorCount = 0;
 
-  const fetchPromises = urls.map(async (url) => {
+  const fetchFactories = urls.map(url => async () => {
     try {
-      await fetcher.head(ctx, url, { noCache: true, timeout: 5000 });
+      await fetcher.head(ctx, url, { queueLimit: 1, noCache: true });
     } catch (error) {
       if (error instanceof BlockedError) {
         blockedCount++;
@@ -87,11 +88,18 @@ addon.get('/health', async (req: Request, res: Response) => {
       logErrorAndReturnNiceString(ctx, logger, url.href, error);
     }
   });
-  await Promise.all(fetchPromises);
 
-  if (isHaydukInstance(req) && blockedCount > 0) {
-    res.status(503).json({ status: 'blocked' });
-  } else if (errorCount === urls.length) {
+  if (Date.now() - lastHealthCheckRequestsTimestamp > 60000) { // every minute
+    await Promise.all(fetchFactories.map(fn => fn()));
+    lastHealthCheckRequestsTimestamp = Date.now();
+  }
+
+  if (blockedCount > 0) {
+    // TODO: fail health check and try to get a clean IP if infra is ready
+    logger.warn('IP might be not clean and leading to blocking.', ctx);
+  }
+
+  if (errorCount === urls.length) {
     res.status(503).json({ status: 'error' });
   } else {
     res.json({ status: 'ok' });
