@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.41.1](https://github.com/webstreamr/webstreamr/compare/v0.41.0...v0.41.1) (2025-08-05)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency typescript to v5.9.2 ([#255](https://github.com/webstreamr/webstreamr/issues/255)) ([115e227](https://github.com/webstreamr/webstreamr/commit/115e2278d895b6767361731126e7b4d34c1dc8a9))
+* **deps:** update dependency typescript-eslint to v8.39.0 ([#254](https://github.com/webstreamr/webstreamr/issues/254)) ([d6fd346](https://github.com/webstreamr/webstreamr/commit/d6fd34668d1771bbfadf0d4dea3dcf09189ec178))
+* **deps:** update node.js to v22.18.0 ([#252](https://github.com/webstreamr/webstreamr/issues/252)) ([8ed6321](https://github.com/webstreamr/webstreamr/commit/8ed63213bb2bcbabce02cd733062c34467935434))
+* **fetcher:** increase default timeout to 15s ([009bb93](https://github.com/webstreamr/webstreamr/commit/009bb930b5c5a038e2f00bc8429198f58d710c76))
+* health check improvements to avoid performance issues ([086c32f](https://github.com/webstreamr/webstreamr/commit/086c32f980f53caec96424234443224a88c817f2))
+* use source instances instead of hard-coded URL for health check ([522034b](https://github.com/webstreamr/webstreamr/commit/522034b61cc2f0a3bfb46b7a2690291d4f1883ce))
+
+
+### Bug Fixes
+
+* **source:** remove useless KinoGer p2pplay.pro URLs ([faa91ce](https://github.com/webstreamr/webstreamr/commit/faa91ce238171fb55efdaf071ca2db53e5a291e4))
+
 ## [0.41.0](https://github.com/webstreamr/webstreamr/compare/v0.40.3...v0.41.0) (2025-08-04)
 
 
