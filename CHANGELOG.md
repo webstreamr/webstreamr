@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.41.2](https://github.com/webstreamr/webstreamr/compare/v0.41.1...v0.41.2) (2025-08-05)
+
+
+### Bug Fixes
+
+* do not use special queue config for health check ([dbe27c2](https://github.com/webstreamr/webstreamr/commit/dbe27c29dab5165f86828f0d898c4cc916369aa4))
+
 ## [0.41.1](https://github.com/webstreamr/webstreamr/compare/v0.41.0...v0.41.1) (2025-08-05)
 
 
