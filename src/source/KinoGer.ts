@@ -52,7 +52,7 @@ export class KinoGer implements Source {
       }
 
       const urlMatch = (urlsMatch[1].split(',')[episodeIndex] ?? '').match(/https?:\/\/[^\s'"<>]+/);
-      if (!urlMatch) {
+      if (!urlMatch || urlMatch[0].includes('p2pplay.pro')) {
         return;
       }
 
