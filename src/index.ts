@@ -65,8 +65,16 @@ addon.get('/', (_req: Request, res: Response) => {
   res.redirect('/configure');
 });
 
-let lastHealthCheckRequestsTimestamp = 0;
-addon.get('/health', async (req: Request, res: Response) => {
+addon.get('/startup', async (_req: Request, res: Response) => {
+  res.json({ status: 'ok' });
+});
+
+addon.get('/ready', async (_req: Request, res: Response) => {
+  res.json({ status: 'ok' });
+});
+
+let lastLiveProbeRequestsTimestamp = 0;
+const liveHandler = async (req: Request, res: Response) => {
   const ctx = contextFromRequestAndResponse(req, res);
 
   const sources: Source[] = [
@@ -94,9 +102,9 @@ addon.get('/health', async (req: Request, res: Response) => {
     }
   });
 
-  if (Date.now() - lastHealthCheckRequestsTimestamp > 60000) { // every minute
+  if (Date.now() - lastLiveProbeRequestsTimestamp > 60000) { // every minute
     await Promise.all(fetchFactories.map(fn => fn()));
-    lastHealthCheckRequestsTimestamp = Date.now();
+    lastLiveProbeRequestsTimestamp = Date.now();
   }
 
   if (blockedCount > 0) {
@@ -109,7 +117,9 @@ addon.get('/health', async (req: Request, res: Response) => {
   } else {
     res.json({ status: 'ok' });
   }
-});
+};
+addon.get('/live', liveHandler);
+addon.get('/health', liveHandler); // for BC
 
 const port = parseInt(envGet('PORT') || '51546');
 addon.listen(port, () => {
