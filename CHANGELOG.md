@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.41.3](https://github.com/webstreamr/webstreamr/compare/v0.41.2...v0.41.3) (2025-08-06)
+
+
+### Miscellaneous Chores
+
+* introduce dedicated startup/ready and live endpoints ([db21d78](https://github.com/webstreamr/webstreamr/commit/db21d78aff3d47d4326a9f6b2346f199a8be207c))
+
 ## [0.41.2](https://github.com/webstreamr/webstreamr/compare/v0.41.1...v0.41.2) (2025-08-05)
 
 
