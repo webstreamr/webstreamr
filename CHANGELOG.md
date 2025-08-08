@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.41.5](https://github.com/webstreamr/webstreamr/compare/v0.41.4...v0.41.5) (2025-08-08)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @stylistic/eslint-plugin to v5.2.3 ([#261](https://github.com/webstreamr/webstreamr/issues/261)) ([e365538](https://github.com/webstreamr/webstreamr/commit/e365538699c3a0b838fa02628a02f8dfe8e1177f))
+* **deps:** update eslint monorepo to v9.33.0 ([#263](https://github.com/webstreamr/webstreamr/issues/263)) ([f7b6ba4](https://github.com/webstreamr/webstreamr/commit/f7b6ba435b6b491f16c4e0b2975ab5a46ab67733))
+
 ## [0.41.4](https://github.com/webstreamr/webstreamr/compare/v0.41.3...v0.41.4) (2025-08-08)
 
 
