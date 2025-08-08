@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.41.4](https://github.com/webstreamr/webstreamr/compare/v0.41.3...v0.41.4) (2025-08-08)
+
+
+### Miscellaneous Chores
+
+* add MostraGuarda to live/health check ([8cd5c91](https://github.com/webstreamr/webstreamr/commit/8cd5c91aea797273fbad155403936f13891326f3))
+* **fetcher:** block a host temporarily after 30 times timing out instead of 10 ([78ced84](https://github.com/webstreamr/webstreamr/commit/78ced847740e1c6100a924a0d4975e71f6c8fb39))
+* remove health endpoint in favor of live ([785091f](https://github.com/webstreamr/webstreamr/commit/785091f340ab08db49785d2b9af9feb59dcba7e2))
+
 ## [0.41.3](https://github.com/webstreamr/webstreamr/compare/v0.41.2...v0.41.3) (2025-08-06)
 
 
