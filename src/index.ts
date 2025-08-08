@@ -9,6 +9,7 @@ import { createExtractors, ExtractorRegistry } from './extractor';
 import { createSources, Source } from './source';
 import { HomeCine } from './source/HomeCine';
 import { MeineCloud } from './source/MeineCloud';
+import { MostraGuarda } from './source/MostraGuarda';
 import { Soaper } from './source/Soaper';
 import { contextFromRequestAndResponse, envGet, envIsProd, Fetcher, StreamResolver } from './utils';
 
@@ -80,6 +81,7 @@ const liveHandler = async (req: Request, res: Response) => {
   const sources: Source[] = [
     new HomeCine(fetcher),
     new MeineCloud(fetcher),
+    new MostraGuarda(fetcher),
     new Soaper(fetcher),
   ];
 
