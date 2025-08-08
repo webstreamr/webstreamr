@@ -57,7 +57,7 @@ export class Fetcher {
   private readonly DEFAULT_TIMEOUT = 15000;
   private readonly DEFAULT_QUEUE_LIMIT = 5;
   private readonly DEFAULT_QUEUE_TIMEOUT = 5000;
-  private readonly DEFAULT_FAILED_REQUEST_COUNT_THROW = 10;
+  private readonly DEFAULT_TIMEOUTS_COUNT_THROW = 30;
   private readonly TIMEOUT_CACHE_TTL = 3600000; // 1h
 
   private readonly logger: winston.Logger;
@@ -256,7 +256,7 @@ export class Fetcher {
       throw new TooManyRequestsError(this.rateLimitedCache.getRemainingTTL(url.host) / 1000);
     }
 
-    if ((this.timeoutsCountCache.get(url.host) ?? 0) >= (init?.timeoutsCountThrow ?? this.DEFAULT_FAILED_REQUEST_COUNT_THROW)) {
+    if ((this.timeoutsCountCache.get(url.host) ?? 0) >= (init?.timeoutsCountThrow ?? this.DEFAULT_TIMEOUTS_COUNT_THROW)) {
       throw new TooManyTimeoutsError();
     }
 
