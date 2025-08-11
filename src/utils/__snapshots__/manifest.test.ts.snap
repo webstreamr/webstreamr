@@ -21,7 +21,7 @@ exports[`buildManifest default manifest 1`] = `
     },
     {
       "key": "en",
-      "title": "English 🇺🇸 (Soaper, VidSrc)",
+      "title": "English 🇺🇸 (Soaper, VidSrc, VixSrc)",
       "type": "checkbox",
     },
     {
@@ -209,6 +209,11 @@ exports[`buildManifest has unchecked source without a config 1`] = `
   {
     "key": "de",
     "title": "German 🇩🇪 (MeineCloud, StreamKiste)",
+    "type": "checkbox",
+  },
+  {
+    "key": "en",
+    "title": "English 🇺🇸 (VixSrc)",
     "type": "checkbox",
   },
   {
