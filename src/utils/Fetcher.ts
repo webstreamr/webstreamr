@@ -11,10 +11,11 @@ import { BlockedReason, Context } from '../types';
 import { envGet } from './env';
 
 interface HttpCacheItem {
-  policy: CachePolicy;
+  headers: CachePolicy.Headers;
   status: number;
   statusText: string;
   body: string;
+  ttl: number;
 }
 
 interface FlareSolverrResult {
@@ -83,7 +84,7 @@ export class Fetcher {
   };
 
   public async head(ctx: Context, url: URL, init?: CustomRequestInit): Promise<CachePolicy.Headers> {
-    return (await this.cachedFetch(ctx, url, { ...init, method: 'HEAD' })).policy.responseHeaders();
+    return (await this.cachedFetch(ctx, url, { ...init, method: 'HEAD' })).headers;
   };
 
   private getInit(url: URL, init?: CustomRequestInit): CustomRequestInit {
@@ -114,13 +115,11 @@ export class Fetcher {
       throw new NotFoundError();
     }
 
-    const responseHeaders = httpCacheItem.policy.responseHeaders();
-
-    if (httpCacheItem.policy.responseHeaders()['cf-mitigated'] === 'challenge' || triggeredCloudflareTurnstile) {
+    if (httpCacheItem.headers['cf-mitigated'] === 'challenge' || triggeredCloudflareTurnstile) {
       const noFlareSolverr = init?.noFlareSolverr ?? false;
       const flareSolverrEndpoint = envGet('FLARESOLVERR_ENDPOINT');
       if (noFlareSolverr || !flareSolverrEndpoint) {
-        throw new BlockedError(BlockedReason.cloudflare_challenge, httpCacheItem.policy.responseHeaders());
+        throw new BlockedError(BlockedReason.cloudflare_challenge, httpCacheItem.headers);
       }
 
       this.logger.info(`Query FlareSolverr for ${url.href}`, ctx);
@@ -152,25 +151,23 @@ export class Fetcher {
 
       httpCacheItem.body = challengeResult.solution.response;
 
-      this.cacheSet(this.determineCacheKey(url, init), httpCacheItem);
-
       return httpCacheItem;
     }
 
     if (httpCacheItem.status === 403) {
       if (ctx.config.mediaFlowProxyUrl && url.href.startsWith(ctx.config.mediaFlowProxyUrl)) {
-        throw new BlockedError(BlockedReason.media_flow_proxy_auth, httpCacheItem.policy.responseHeaders());
+        throw new BlockedError(BlockedReason.media_flow_proxy_auth, httpCacheItem.headers);
       }
 
-      throw new BlockedError(BlockedReason.unknown, httpCacheItem.policy.responseHeaders());
+      throw new BlockedError(BlockedReason.unknown, httpCacheItem.headers);
     }
 
     if (httpCacheItem.status === 451) {
-      throw new BlockedError(BlockedReason.cloudflare_censor, httpCacheItem.policy.responseHeaders());
+      throw new BlockedError(BlockedReason.cloudflare_censor, httpCacheItem.headers);
     }
 
     if (httpCacheItem.status === 429) {
-      const retryAfter = parseInt(`${httpCacheItem.policy.responseHeaders()['retry-after']}`);
+      const retryAfter = parseInt(`${httpCacheItem.headers['retry-after']}`);
       if (!isNaN(retryAfter)) {
         this.rateLimitedCache.set(url.host, undefined, { ttl: retryAfter * 1000 });
       }
@@ -178,19 +175,19 @@ export class Fetcher {
       throw new TooManyRequestsError(retryAfter);
     }
 
-    throw new HttpError(httpCacheItem.status, httpCacheItem.statusText, responseHeaders);
+    throw new HttpError(httpCacheItem.status, httpCacheItem.statusText, httpCacheItem.headers);
   };
 
   private determineCacheKey(url: URL, init?: CustomRequestInit): string {
     return `${url.href}_${init?.body?.toString()}`;
   }
 
-  private determineCacheTtl(httpCacheItem: HttpCacheItem): number {
-    if (httpCacheItem.status === 200) {
-      return Math.max(httpCacheItem.policy.timeToLive(), this.MIN_CACHE_TTL);
+  private determineCacheTtl(status: number, policy: CachePolicy): number {
+    if (status === 200) {
+      return Math.max(policy.timeToLive(), this.MIN_CACHE_TTL);
     }
 
-    return httpCacheItem.policy.timeToLive();
+    return policy.timeToLive();
   };
 
   private cacheGet(key: string): HttpCacheItem | undefined {
@@ -200,12 +197,11 @@ export class Fetcher {
   }
 
   private cacheSet(key: string, httpCacheItem: HttpCacheItem) {
-    const ttl = this.determineCacheTtl(httpCacheItem);
-    if (ttl <= 0) {
+    if (httpCacheItem.ttl <= 0) {
       return;
     }
 
-    this.httpCache.set(key, gzipSync(JSON.stringify(httpCacheItem)), { ttl });
+    this.httpCache.set(key, gzipSync(JSON.stringify(httpCacheItem)), { ttl: httpCacheItem.ttl });
   }
 
   private headersToObject(headers: Headers): Record<string, string> {
@@ -235,8 +231,9 @@ export class Fetcher {
     const body = await response.text();
 
     const policy = new CachePolicy(request, { status: response.status, headers: this.headersToObject(response.headers) }, { shared: false });
+    const ttl = this.determineCacheTtl(response.status, policy);
 
-    httpCacheItem = { policy, status: response.status, statusText: response.statusText, body };
+    httpCacheItem = { headers: policy.responseHeaders(), status: response.status, statusText: response.statusText, body, ttl };
 
     this.cacheSet(cacheKey, httpCacheItem);
 
