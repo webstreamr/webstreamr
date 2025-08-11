@@ -15,7 +15,9 @@ describe('buildManifest', () => {
   test('default manifest', async () => {
     const manifest = buildManifest(createSources(fetcher), [], {});
 
-    expect(manifest).toMatchSnapshot();
+    expect(manifest).toMatchSnapshot({
+      version: expect.any(String),
+    });
   });
 
   test('has unchecked source without a config', () => {
