@@ -112,7 +112,9 @@ export class Fetcher {
   };
 
   private async handleHttpCacheItem(ctx: Context, httpCacheItem: HttpCacheItem, url: URL, init?: CustomRequestInit): Promise<HttpCacheItem> {
-    if (httpCacheItem.status && httpCacheItem.status >= 200 && httpCacheItem.status <= 399) {
+    const triggeredCloudflareTurnstile = httpCacheItem.body.includes('cf-turnstile');
+
+    if (httpCacheItem.status && httpCacheItem.status >= 200 && httpCacheItem.status <= 399 && !triggeredCloudflareTurnstile) {
       return httpCacheItem;
     }
 
@@ -122,7 +124,7 @@ export class Fetcher {
 
     const responseHeaders = httpCacheItem.policy.responseHeaders();
 
-    if (httpCacheItem.policy.responseHeaders()['cf-mitigated'] === 'challenge') {
+    if (httpCacheItem.policy.responseHeaders()['cf-mitigated'] === 'challenge' || triggeredCloudflareTurnstile) {
       const noFlareSolverr = init?.noFlareSolverr ?? false;
       const flareSolverrEndpoint = envGet('FLARESOLVERR_ENDPOINT');
       if (noFlareSolverr || !flareSolverrEndpoint) {
