@@ -1,5 +1,93 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`buildManifest default manifest 1`] = `
+{
+  "behaviorHints": {
+    "configurable": true,
+    "configurationRequired": true,
+    "p2p": false,
+  },
+  "catalogs": [],
+  "config": [
+    {
+      "key": "multi",
+      "title": "Multi 🌐 (VixSrc)",
+      "type": "checkbox",
+    },
+    {
+      "key": "de",
+      "title": "German 🇩🇪 (KinoGer, MegaKino, MeineCloud, StreamKiste)",
+      "type": "checkbox",
+    },
+    {
+      "key": "en",
+      "title": "English 🇺🇸 (Soaper, VidSrc)",
+      "type": "checkbox",
+    },
+    {
+      "key": "es",
+      "title": "Castilian Spanish 🇪🇸 (CineHDPlus, Cuevana, HomeCine, VerHdLink)",
+      "type": "checkbox",
+    },
+    {
+      "key": "fr",
+      "title": "French 🇫🇷 (FrenchCloud, Movix)",
+      "type": "checkbox",
+    },
+    {
+      "key": "it",
+      "title": "Italian 🇮🇹 (VixSrc, Eurostreaming, MostraGuarda)",
+      "type": "checkbox",
+    },
+    {
+      "key": "mx",
+      "title": "Latin American Spanish 🇲🇽 (CineHDPlus, Cuevana, HomeCine, VerHdLink)",
+      "type": "checkbox",
+    },
+    {
+      "key": "showErrors",
+      "title": "Show errors",
+      "type": "checkbox",
+    },
+    {
+      "key": "includeExternalUrls",
+      "title": "Include external URLs in results",
+      "type": "checkbox",
+    },
+    {
+      "default": "",
+      "key": "mediaFlowProxyUrl",
+      "title": "MediaFlow Proxy URL",
+      "type": "text",
+    },
+    {
+      "default": "",
+      "key": "mediaFlowProxyPassword",
+      "title": "MediaFlow Proxy Password",
+      "type": "password",
+    },
+  ],
+  "description": "Provides HTTP URLs from streaming websites. Configure add-on for additional languages. Add MediaFlow proxy for more URLs. Supported languages: German, English, Castilian Spanish, French, Italian, Latin American Spanish",
+  "id": "webstreamr",
+  "idPrefixes": [
+    "tt",
+  ],
+  "name": "WebStreamr",
+  "resources": [
+    "stream",
+  ],
+  "stremioAddonsConfig": {
+    "issuer": "https://stremio-addons.net",
+    "signature": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..D3-Wl15vxnYltwx8G52rRg.16-0VzsSgTvnv0wampIR8YPZsFhH8-7IgpuqxcUfC2p7kIJtuk8xQzrzqQOLXANEpaH_w7a4JOEpNo8wv28Zo_nMGCLOXgWbyGM3sQ-tfq6DCK3JU0ol6YMC1UDX2z_c.IOLlZyTYx_swutjYSTES0Q",
+  },
+  "types": [
+    "movie",
+    "series",
+  ],
+  "version": "0.41.3",
+}
+`;
+
 exports[`buildManifest disable extractors 1`] = `
 [
   {

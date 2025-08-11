@@ -48,11 +48,15 @@ export const buildManifest = (sources: Source[], extractors: Extractor[], config
       return countryCodeA.localeCompare(countryCodeB);
     });
 
+  const languages: string[] = [];
   for (const [countryCode, sources] of sortedLanguageSources) {
+    const language = languageFromCountryCode(countryCode);
+    languages.push(language);
+
     manifest.config.push({
       key: countryCode,
       type: 'checkbox',
-      title: `${languageFromCountryCode(countryCode)} ${flagFromCountryCode(countryCode)} (${(sources as Source[]).map(handler => handler.label).join(', ')})`,
+      title: `${language} ${flagFromCountryCode(countryCode)} (${(sources as Source[]).map(handler => handler.label).join(', ')})`,
       ...(countryCode in config && { default: 'checked' }),
     });
   }
@@ -97,6 +101,8 @@ export const buildManifest = (sources: Source[], extractors: Extractor[], config
       ...(isExtractorDisabled(config, extractor) && { default: 'checked' }),
     });
   });
+
+  manifest.description += ` Supported languages: ${languages.filter(language => language !== 'Multi').join(', ')}`;
 
   return manifest;
 };

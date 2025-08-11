@@ -1,6 +1,7 @@
 import { DoodStream } from '../extractor/DoodStream';
 import { ExternalUrl } from '../extractor/ExternalUrl';
 import { SuperVideo } from '../extractor/SuperVideo';
+import { createSources } from '../source';
 import { MeineCloud } from '../source/MeineCloud';
 import { StreamKiste } from '../source/StreamKiste';
 import { VerHdLink } from '../source/VerHdLink';
@@ -11,6 +12,12 @@ import { buildManifest } from './manifest';
 const fetcher = new FetcherMock('/dev/null');
 
 describe('buildManifest', () => {
+  test('default manifest', async () => {
+    const manifest = buildManifest(createSources(fetcher), [], {});
+
+    expect(manifest).toMatchSnapshot();
+  });
+
   test('has unchecked source without a config', () => {
     const sources = [
       new VixSrc(fetcher),
