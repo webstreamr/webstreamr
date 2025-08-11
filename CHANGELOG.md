@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.41.5](https://github.com/webstreamr/webstreamr/compare/v0.41.4...v0.41.5) (2025-08-11)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#265](https://github.com/webstreamr/webstreamr/issues/265)) ([6d44e67](https://github.com/webstreamr/webstreamr/commit/6d44e67a455e0e560e130a411e819056bd17b6b4))
+* **deps:** update dependency @stylistic/eslint-plugin to v5.2.3 ([#261](https://github.com/webstreamr/webstreamr/issues/261)) ([e365538](https://github.com/webstreamr/webstreamr/commit/e365538699c3a0b838fa02628a02f8dfe8e1177f))
+* **deps:** update dependency @types/node to v22.17.1 ([#264](https://github.com/webstreamr/webstreamr/issues/264)) ([1618fa3](https://github.com/webstreamr/webstreamr/commit/1618fa3c328c222c129f130e91695b42c1a8516b))
+* **deps:** update eslint monorepo to v9.33.0 ([#263](https://github.com/webstreamr/webstreamr/issues/263)) ([f7b6ba4](https://github.com/webstreamr/webstreamr/commit/f7b6ba435b6b491f16c4e0b2975ab5a46ab67733))
+* disable console methods only on prod ([b7ada8b](https://github.com/webstreamr/webstreamr/commit/b7ada8bbdfdf8c0f11e55045c63e034f77f0a7ad))
+* **fetcher:** decrease default timeout back to 10s ([7d70010](https://github.com/webstreamr/webstreamr/commit/7d700103c42f74e215ba5d6f7c0713043a20e3bb))
+* **manifest:** add supported languages to description ([3aff950](https://github.com/webstreamr/webstreamr/commit/3aff950598e1a3c09015c1a882467d62a80b680a))
+* **manifest:** sort sources for each language in configuration ([491df54](https://github.com/webstreamr/webstreamr/commit/491df542429664a749ecdf8e8f308e13d566d8c0))
+* **source:** add English to VixSrc ([6489b10](https://github.com/webstreamr/webstreamr/commit/6489b1052797c7da3a986a1ad62c0c498f4447aa))
+* **source:** disable PrimeWire for now ([c3d86fb](https://github.com/webstreamr/webstreamr/commit/c3d86fb47f9b938bd3cdfe5a3ae4ac4d749266b7))
+
 ## [0.41.4](https://github.com/webstreamr/webstreamr/compare/v0.41.3...v0.41.4) (2025-08-08)
 
 
