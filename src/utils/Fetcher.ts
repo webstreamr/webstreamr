@@ -46,7 +46,6 @@ export type CustomRequestInit = RequestInit & {
   timeoutsCountThrow?: number;
   noCache?: boolean;
   noFlareSolverr?: boolean;
-  noProxyHeaders?: boolean;
   queueLimit?: number;
   queueTimeout?: number;
   timeout?: number;
@@ -87,9 +86,8 @@ export class Fetcher {
     return (await this.cachedFetch(ctx, url, { ...init, method: 'HEAD' })).policy.responseHeaders();
   };
 
-  private getInit(ctx: Context, url: URL, init?: CustomRequestInit): CustomRequestInit {
+  private getInit(url: URL, init?: CustomRequestInit): CustomRequestInit {
     const cookieString = this.cookieJar.getCookieStringSync(url.href);
-    const noProxyHeaders = init?.noProxyHeaders ?? false;
 
     return {
       ...init,
@@ -100,12 +98,6 @@ export class Fetcher {
         'Priority': 'u=0',
         'User-Agent': this.hostUserAgentMap.get(url.host) ?? 'node',
         ...(cookieString && { Cookie: cookieString }),
-        ...(ctx.ip && !noProxyHeaders && {
-          'Forwarded': `for=${ctx.ip}`,
-          'X-Forwarded-For': ctx.ip,
-          'X-Forwarded-Proto': url.protocol.slice(0, -1),
-          'X-Real-IP': ctx.ip,
-        }),
         ...init?.headers,
       },
     };
@@ -227,7 +219,7 @@ export class Fetcher {
   };
 
   private async cachedFetch(ctx: Context, url: URL, init?: CustomRequestInit): Promise<HttpCacheItem> {
-    const newInit = this.getInit(ctx, url, init);
+    const newInit = this.getInit(url, init);
 
     const request: CachePolicy.Request = { url: url.href, method: newInit.method ?? 'GET', headers: {} };
 
