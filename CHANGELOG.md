@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.41.6](https://github.com/webstreamr/webstreamr/compare/v0.41.5...v0.41.6) (2025-08-11)
+
+
+### Bug Fixes
+
+* **fetcher:** better detect inline Cloudflare Turnstile ([0efdfa4](https://github.com/webstreamr/webstreamr/commit/0efdfa4a6ff3f1a2b5e0369e3fd974e1a9b93205))
+* **fetcher:** remove weird proxy headers in request ([ee09e10](https://github.com/webstreamr/webstreamr/commit/ee09e10e6eefc3fc564115961ef590c842e6c366))
+
 ## [0.41.5](https://github.com/webstreamr/webstreamr/compare/v0.41.4...v0.41.5) (2025-08-11)
 
 
