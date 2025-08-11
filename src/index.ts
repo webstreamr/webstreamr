@@ -13,7 +13,9 @@ import { MostraGuarda } from './source/MostraGuarda';
 import { Soaper } from './source/Soaper';
 import { contextFromRequestAndResponse, envGet, envIsProd, Fetcher, StreamResolver } from './utils';
 
-console.log = console.warn = console.error = console.info = console.debug = () => { /* disable in favor of logger */ };
+if (envIsProd()) {
+  console.log = console.warn = console.error = console.info = console.debug = () => { /* disable in favor of logger */ };
+}
 
 const logger = winston.createLogger({
   transports: [
