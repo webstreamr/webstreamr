@@ -54,7 +54,7 @@ export type CustomRequestInit = RequestInit & {
 
 export class Fetcher {
   private readonly MIN_CACHE_TTL = 900000; // 15m
-  private readonly DEFAULT_TIMEOUT = 15000;
+  private readonly DEFAULT_TIMEOUT = 10000;
   private readonly DEFAULT_QUEUE_LIMIT = 5;
   private readonly DEFAULT_QUEUE_TIMEOUT = 5000;
   private readonly DEFAULT_TIMEOUTS_COUNT_THROW = 30;
