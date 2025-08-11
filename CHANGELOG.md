@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.41.7](https://github.com/webstreamr/webstreamr/compare/v0.41.6...v0.41.7) (2025-08-11)
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/checkout action to v5 ([#267](https://github.com/webstreamr/webstreamr/issues/267)) ([ccbebe7](https://github.com/webstreamr/webstreamr/commit/ccbebe751693071d2334eed75b3f50aec93c90b3))
+
+
+### Bug Fixes
+
+* **fetcher:** simplify header and ttl determination, fix edge case bug ([9a01939](https://github.com/webstreamr/webstreamr/commit/9a019396c847d3867fc0ff24ef7f73bd944cf809))
+
 ## [0.41.6](https://github.com/webstreamr/webstreamr/compare/v0.41.5...v0.41.6) (2025-08-11)
 
 
