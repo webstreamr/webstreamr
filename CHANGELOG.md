@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.41.8](https://github.com/webstreamr/webstreamr/compare/v0.41.7...v0.41.8) (2025-08-12)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency typescript-eslint to v8.39.1 ([#269](https://github.com/webstreamr/webstreamr/issues/269)) ([ec8c35a](https://github.com/webstreamr/webstreamr/commit/ec8c35af180635db4e045d693f446681cbe48551))
+
+
+### Bug Fixes
+
+* **source:** bring back PrimeWire 🎉 ([617ae77](https://github.com/webstreamr/webstreamr/commit/617ae77825a02b4d7427ec7644822e7afd1d5e47))
+
 ## [0.41.7](https://github.com/webstreamr/webstreamr/compare/v0.41.6...v0.41.7) (2025-08-11)
 
 
