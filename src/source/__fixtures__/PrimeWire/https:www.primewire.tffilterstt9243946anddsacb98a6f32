@@ -7,7 +7,7 @@
   window.appTrigger = document.createEvent("Event");
   window.appTrigger.initEvent("appTrigger", true, true);
 </script>
-<script async type="text/javascript" src="/js/app-21205005105979fb964d17bf03570023.js?vsn=d"></script>
+<script async type="text/javascript" src="/js/app-28c2d56eea85cbacb6b45a5d0da6fb62.js?vsn=d"></script>
 
 <title>
 Movies and TV Shows matching &quot;tt9243946&quot;  | PrimeWire
@@ -46,18 +46,14 @@ document.querySelector('meta[name=viewport]').setAttribute('content', 'width=670
 
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="/css/app-fb4fae4fffa981555ebd9a719faf4d68.css?vsn=d" type="text/css">
+<link rel="stylesheet" href="/css/app-d9a4ac98a016dee0bfe32443cfb9e57e.css?vsn=d" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-
-
-
-
-
 
 <script>
 window.series = {}
 </script>
 
+<script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="358633"></script>
 </head>
 <body class="">
 
@@ -66,7 +62,7 @@ window.series = {}
   <div class="col1">
 
     <div class="menu">
-      <h1 id="a_header"><a href="/" title="PrimeWire"><span>PrimeWire</span></a></h1>
+      <h1 id="a_header"><a href="/home" title="PrimeWire"><span>PrimeWire</span></a></h1>
       <div class="header ">
         <div class="header_search">
           <form method="get" action="/filter" id="searchform">
@@ -95,7 +91,7 @@ window.series = {}
 
 
 
-        <div class="info_message">Email service has been restored so that <a href="/registrations/new">account creation</a>, <a href="/passwords/new">pasword resets</a>, and <a href="/confirmations/new">requesting email confirmation</a> etc work again.</div>
+        <div class="info_message">Try our new domain, <a href="https://www.primewire.mov">PrimeWire.mov</a></div>
       </div>
 
 
@@ -366,12 +362,12 @@ window.preview_list = [1334196, ]
 
 
   <div class="col2">
-    <a href="/"><div class="logo"></div></a>
+    <a href="/home"><div class="logo"></div></a>
 
     <div class="sidebar">
 
 <div class="loginform" style="width: 280px;">
-<form action="/sessions" class="secure" method="post"><input name="_csrf_token" type="hidden" value="eTsbMkUkIFoBKDU3OgULBRU9dV1bRl0x8ILT1Jq-pMsfLjGv8MX1v6dc">
+<form action="/sessions" class="secure" method="post"><input name="_csrf_token" type="hidden" value="QjcgCk0MIzF8Xx4hOD4-BB9KXHdfAx0_zNVx4TArH0qePOoIG36OjMTN">
   <div class="form-group">
 <label for="session_email">Email</label>
 <input id="session_email" name="session[email]" type="text">
@@ -416,58 +412,37 @@ window.preview_list = [1334196, ]
  PrimeWire is a social site for discovering, sharing and watching movies and TV shows.  <a href="/start" style="text-decoration: underline;">more info</a>
  </div>
  <div style="padding: 0 5px;">
- <a href="https://www.primewire.tf">PrimeWire.tf</a> is the official domain for PrimeWire
+ <a href="https://www.primewire.tf">PrimeWire.tf</a> and <a href="https://www.primewire.mov">PrimeWire.mov</a> are the official domain for PrimeWire
 </div>
 
 
 
+
+  <script async data-cfasync="false" src="https://platform.pubadx.one/pubadx-ad.js" type="text/javascript"></script>
+  <div id="bg-ssp-6816">
+  <script data-cfasync="false" data-no-optimize="1">
+  var adx_id_6816 = document.getElementById('bg-ssp-6816');
+  adx_id_6816.id = 'bg-ssp-6816-' + Math.floor(Math.random() * Date.now());
+  window.pubadxtag = window.pubadxtag || [];
+  window.pubadxtag.push({zoneid: 6816, id: adx_id_6816.id, wu: window.location.href})
+  </script>
+  </div>
 
 
 <h2>Latest Comments</h2>
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/1476367-high-potential">High Potential</a>
+    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/greyfur">greyfur</a> : 
+    <a href="/user/Balthasar">Balthasar</a> : 
 
     </span> 
 
-I like that idea!
-
-    </p>
-    </div>
-
-
-
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/1566200-flight-149-hostage-of-war">Flight 149: Hostage of War</a>
-    <p>
-    <span class="latest_comments_poster">
-
-    <a href="/user/Technosamurai">Technosamurai</a> : 
-
-    </span> 
-
-A Really great documentary, would recommend it, try watching when you have time to really ...
-
-    </p>
-    </div>
-
-
-
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/1407378-from-the-world-of-john-wick-ballerina">From the World of John Wick: Ballerina</a>
-    <p>
-    <span class="latest_comments_poster">
-
-    <a href="/user/%25CE%259C%25CE%25A5%25CE%2593%25CE%2591%25CE%25A3">ΜΥΓΑΣ</a> : 
-
-    </span> 
-
-Now a sequal has to be made, so that Eve faces the &quot;consequences of here actions&quot; just lik...
+Dude! TMI!!!
+I fell asleep:) 🥱💤
 
     </p>
     </div>
@@ -475,15 +450,15 @@ Now a sequal has to be made, so that Eve faces the &quot;consequences of here ac
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/1476367-high-potential">High Potential</a>
+    <a href="/tv/1342735/star-trek-strange-new-worlds-season-3-episode-5">Star Trek: Strange New Worlds S3 E5</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/Piglet">Piglet</a> : 
+    <a href="/user/Balthasar">Balthasar</a> : 
 
     </span> 
 
-A new character is being added to the 2nd season. Mekhi Phifer (you may remember him from ...
+On it! 🔪🔪💣💥💀
 
     </p>
     </div>
@@ -491,15 +466,47 @@ A new character is being added to the 2nd season. Mekhi Phifer (you may remember
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/1542248/liberation-d-day-to-berlin-season-1-episode-4">Liberation: D-Day to Berlin S1 E4</a>
+    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/mkmikas">mkmikas</a> : 
+    <a href="/user/Xsile">Xsile</a> : 
 
     </span> 
 
-a very selective history of ww2, but otherwise well done and accurate, again just very sel...
+Isaac Asimov&#39;s &quot;I, Robot&quot; and &quot;Foundation&quot; series are connected through his broader &quot;Robot...
+
+    </p>
+    </div>
+
+
+
+    <div class="latest_comments  com_class_mov">
+    <a href="/movie/1514833-eddington">Eddington</a>
+    <p>
+    <span class="latest_comments_poster">
+
+    <a href="/user/deimos737">deimos737</a> : 
+
+    </span> 
+
+Yikes.... I&#39;m all for creative free speech, or whatever you like to call it, but this is r...
+
+    </p>
+    </div>
+
+
+
+    <div class="latest_comments  com_class_tv">
+    <a href="/tv/1563210/survival-mode-season-1-episode-4">Survival Mode S1 E4</a>
+    <p>
+    <span class="latest_comments_poster">
+
+    <a href="/user/FeltMountain">FeltMountain</a> : 
+
+    </span> 
+
+I lived nearby when this happened.  There were train cars on the side of the freeway for w...
 
     </p>
     </div>
@@ -510,14 +517,28 @@ a very selective history of ww2, but otherwise well done and accurate, again jus
 <h2>Top Comments</h2>
 
 
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/1542677-cheers-portland-the-strip-club-capital-of-america">Cheers! Portland, the Strip Club Capital of America</a>
+    <div class="latest_comments  com_class_tv">
+    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/coolwhip">coolwhip</a> : 
+    <a href="/user/dd3dd">dd3dd</a> : 
     </span> 
 
-i wouldve never guessed it. . 
+This is Seaseon 3 .. I am confused... what do you mean?
+
+    </p>
+    </div>
+
+
+
+    <div class="latest_comments  com_class_mov">
+    <a href="/movie/250153-biodome">Bio-Dome</a>
+    <p>
+    <span class="latest_comments_poster">
+    <a href="/user/Davidleefl43">Davidleefl43</a> : 
+    </span> 
+
+awesome ! 
 
     </p>
     </div>
@@ -525,56 +546,41 @@ i wouldve never guessed it. .
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/1497200/murderbot-season-1-episode-10">Murderbot S1 E10</a>
+    <a href="/tv/10153/star-trek-voyager-season-2-episode-16">Star Trek: Voyager S2 E16</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/hackenprof">hackenprof</a> : 
+    <a href="/user/Twixtid">Twixtid</a> : 
     </span> 
 
-This show is based on The Murderbot Diaries series of books and short stories by Martha We...
+The acting in this series is seriously good. I did love DS9 but the acting on DS9 is nowhe...
 
     </p>
     </div>
 
 
 
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/1485768-manufacturing-the-threat">Manufacturing the Threat</a>
+    <div class="latest_comments  com_class_tv">
+    <a href="/tv/10153/star-trek-voyager-season-2-episode-15">Star Trek: Voyager S2 E15</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/twizzee">twizzee</a> : 
+    <a href="/user/Twixtid">Twixtid</a> : 
     </span> 
 
-They Just Call it a Psychological Operation Where I&#39;m From and
-It would Indulge you if you...
+Welp, that just happened, I was wondering if anyone was gonna get some action from Janeway...
 
     </p>
     </div>
 
 
 
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/692277-big-fish">Big Fish</a>
+    <div class="latest_comments  com_class_tv">
+    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/hackenprof">hackenprof</a> : 
+    <a href="/user/Xsile">Xsile</a> : 
     </span> 
 
-Came here to say this.
-
-    </p>
-    </div>
-
-
-
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/1360405-the-tomorrow-war">The Tomorrow War</a>
-    <p>
-    <span class="latest_comments_poster">
-    <a href="/user/footshot">footshot</a> : 
-    </span> 
-
-how did i miss this , greatt scifi 
+I really like this show but wished they had started at the beginning. This series is the t...
 
     </p>
     </div>
@@ -585,7 +591,7 @@ how did i miss this , greatt scifi
     </div>
 
     <div class="footer footer_right">
-      <a href="#" title=" unregistered">666 users online</a> -
+      <a href="#" title=" unregistered">582 users online</a> -
       <a href="/contact">Contacts</a> -
       <a href="/faq">FAQ</a> -
       <a href="/dmca">DMCA</a> -
@@ -599,7 +605,7 @@ how did i miss this , greatt scifi
 
 <script>
 
-window.csrf_token = "eTsbMkUkIFoBKDU3OgULBRU9dV1bRl0x8ILT1Jq-pMsfLjGv8MX1v6dc";
+window.csrf_token = "QjcgCk0MIzF8Xx4hOD4-BB9KXHdfAx0_zNVx4TArH0qePOoIG36OjMTN";
 window.subs = false
 window.tsr = false
 document.dispatchEvent(window.appTrigger);
@@ -608,7 +614,14 @@ window.appTriggered = true;
 
 <div id="previewer-el"></div>
 
-<div id="bg_6301167358"></div>
-
+  <script async data-cfasync="false" src="https://platform.pubadx.one/pubadx-ad.js" type="text/javascript"></script>
+  <div id="bg-ssp-7358">
+  <script data-cfasync="false" data-no-optimize="1">
+  var adx_id_7358 = document.getElementById('bg-ssp-7358');
+  adx_id_7358.id = 'bg-ssp-7358-' + Math.floor(Math.random() * Date.now());
+  window.pubadxtag = window.pubadxtag || [];
+  window.pubadxtag.push({zoneid: 7358, id: adx_id_7358.id, wu: window.location.href})
+  </script>
+  </div>
 
 </body></html>

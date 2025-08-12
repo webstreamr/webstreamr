@@ -7,7 +7,7 @@
   window.appTrigger = document.createEvent("Event");
   window.appTrigger.initEvent("appTrigger", true, true);
 </script>
-<script async type="text/javascript" src="/js/app-21205005105979fb964d17bf03570023.js?vsn=d"></script>
+<script async type="text/javascript" src="/js/app-28c2d56eea85cbacb6b45a5d0da6fb62.js?vsn=d"></script>
 
 <title>
 
@@ -42,18 +42,14 @@ document.querySelector('meta[name=viewport]').setAttribute('content', 'width=670
 
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="/css/app-fb4fae4fffa981555ebd9a719faf4d68.css?vsn=d" type="text/css">
+<link rel="stylesheet" href="/css/app-d9a4ac98a016dee0bfe32443cfb9e57e.css?vsn=d" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-
-
-
-
-
 
 <script>
 window.series = {}
 </script>
 
+<script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="358633"></script>
 </head>
 <body class="">
 
@@ -62,7 +58,7 @@ window.series = {}
   <div class="col1">
 
     <div class="menu">
-      <h1 id="a_header"><a href="/" title="PrimeWire"><span>PrimeWire</span></a></h1>
+      <h1 id="a_header"><a href="/home" title="PrimeWire"><span>PrimeWire</span></a></h1>
       <div class="header ">
         <div class="header_search">
           <form method="get" action="/filter" id="searchform">
@@ -91,14 +87,14 @@ window.series = {}
 
 
 
-        <div class="info_message">Email service has been restored so that <a href="/registrations/new">account creation</a>, <a href="/passwords/new">pasword resets</a>, and <a href="/confirmations/new">requesting email confirmation</a> etc work again.</div>
+        <div class="info_message">Try our new domain, <a href="https://www.primewire.mov">PrimeWire.mov</a></div>
       </div>
 
 
 <script>window.show_info = {"imdb_id":"tt9243946","release_date":"2019-10-11","title":"El Camino: A Breaking Bad Movie","tmdb_id":559969,"tvmaze_id":null,"type":"movie"}</script>
 <div class="form-popup" id="report-form">
 <a href="#" class="close-popup" style="position: fixed; right: 10px">[X]</a>
-<form action="/links/report/new" class="async-form" method="post"><input name="_csrf_token" type="hidden" value="SzcqKwhARFA7Fx8JTU8aAwUbGCwyMBwW3oLimut4izFgy6Q5Q_wtfiTY">
+<form action="/links/report/new" class="async-form" method="post"><input name="_csrf_token" type="hidden" value="Ix4-BjUCFWlwNz4IHColCTooEjgiAwMbbxhtjEXDGGZdZedMPKUlQ2Im">
   Report Link <input id="link_id" name="report[link_id]" readonly="" style="border: 0px;" type="text">
   <div class="form-group">
     <div><input checked="" id="report_option_deleted" name="report[option]" type="radio" value="deleted"> Video has been deleted </div>
@@ -299,11 +295,11 @@ October 11, 2019
          <tr>
             <td colspan="2">
 
-
-
-
-
-
+<div class="service-banner">
+    <a href="https://click.picvenxs.com/mapOquS1" target="_blank">
+        <img src="/images/service/netflix-728x90.jpg"  style="width: 100%"/>
+    </a>
+</div>
 
 
             </td>
@@ -360,6 +356,8 @@ window.show_id = 1334196
 
 
 
+
+
 <table width="100%" cellpadding="0" cellspacing="0" class="movie_version">
   <tbody>
     <tr>
@@ -369,23 +367,19 @@ window.show_id = 1334196
       <td align="left" valign="middle">
         <span class="movie_version_link">
 
-          <a href="javascript:void(0)" class="embed-link popper" link_version="0" open-text="Close" close-text="Version 1">Version 1</a>
+          <a href="javascript:void(0)" class="embed-link popper auto_open" link_version="0" open-text="Close" close-text="Version 1">Version 1</a>
 
           <a href="#" class="go-link propper-link popper ico-btn" link_version="0" rel="nofollow" target="_blank">
           <i class="fas fa-external-link-alt"></i>
           </a>
 
-          <a href="javascript:void(0)" data-wp-menu="pLBKU" class="ico-btn wp-menu-btn"><i class="fas fa-glass-cheers"></i></a>
-
-
-          <span class="quality_tag" title="El Camino A Breaking Bad Movie 2019 720p BluRay x264 AAC-YTS MX.mp4">1.1 GB</span>
 
         </span>
-      </td> 
-      <td align="center" width="115" valign="middle"><span class="version-host" host_id="29">
-mixdrop.ag
+      </td>
+      <td align="center" width="115" valign="middle"><span class="version-host" host_id="64">
+filelions.to
   </span> </td>
-      <td width="65" align="center" valign="middle"><span class="version_veiws"> 142 views</span></td>
+      <td width="65" align="center" valign="middle"><span class="version_veiws"> 25 views</span></td>
       <td width="80" align="center" valign="middle">
 
         <span class="report_broken"><a href="/sessions/new">Report Link</a></span>
@@ -395,15 +389,15 @@ mixdrop.ag
         <div class="movie_ratings">
           <ul class="unit-rating" style="width:100px;">
 
-            <li class="current-rating" style="width:63.05283757338552px;">Currently 3.152641878669276/5</li>
-            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="29" rating="1"></a></li>
-            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="29" rating="2"></a></li>
-            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="29" rating="3"></a></li>
-            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="29" rating="4"></a></li>
-            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="29" rating="5"></a></li>
+            <li class="current-rating" style="width:70.05714285714286px;">Currently 3.502857142857143/5</li>
+            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="64" rating="1"></a></li>
+            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="64" rating="2"></a></li>
+            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="64" rating="3"></a></li>
+            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="64" rating="4"></a></li>
+            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="64" rating="5"></a></li>
           </ul>
           <center>
-            <div class="not_voted">(511 votes)</div>
+            <div class="not_voted">(175 votes)</div>
           </center>
         </div></td>
     </tr>
@@ -413,6 +407,10 @@ mixdrop.ag
     </td></tr>
   </tbody>
 </table>
+
+
+
+
 <table width="100%" cellpadding="0" cellspacing="0" class="movie_version">
   <tbody>
     <tr>
@@ -422,23 +420,19 @@ mixdrop.ag
       <td align="left" valign="middle">
         <span class="movie_version_link">
 
-          <a href="javascript:void(0)" class="embed-link popper" link_version="1" open-text="Close" close-text="Version 2">Version 2</a>
+          <a href="javascript:void(0)" class="embed-link popper " link_version="1" open-text="Close" close-text="Version 2">Version 2</a>
 
           <a href="#" class="go-link propper-link popper ico-btn" link_version="1" rel="nofollow" target="_blank">
           <i class="fas fa-external-link-alt"></i>
           </a>
 
-          <a href="javascript:void(0)" data-wp-menu="XwFmZ" class="ico-btn wp-menu-btn"><i class="fas fa-glass-cheers"></i></a>
-
-
-          <span class="quality_tag" title="El Camino A Breaking Bad Movie 2019 HDRip AC3-EVO.mp4">380.3 MB</span>
 
         </span>
-      </td> 
-      <td align="center" width="115" valign="middle"><span class="version-host" host_id="29">
-mixdrop.ag
+      </td>
+      <td align="center" width="115" valign="middle"><span class="version-host" host_id="64">
+filelions.to
   </span> </td>
-      <td width="65" align="center" valign="middle"><span class="version_veiws"> 431 views</span></td>
+      <td width="65" align="center" valign="middle"><span class="version_veiws"> 18 views</span></td>
       <td width="80" align="center" valign="middle">
 
         <span class="report_broken"><a href="/sessions/new">Report Link</a></span>
@@ -448,15 +442,15 @@ mixdrop.ag
         <div class="movie_ratings">
           <ul class="unit-rating" style="width:100px;">
 
-            <li class="current-rating" style="width:63.05283757338552px;">Currently 3.152641878669276/5</li>
-            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="29" rating="1"></a></li>
-            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="29" rating="2"></a></li>
-            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="29" rating="3"></a></li>
-            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="29" rating="4"></a></li>
-            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="29" rating="5"></a></li>
+            <li class="current-rating" style="width:70.05714285714286px;">Currently 3.502857142857143/5</li>
+            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="64" rating="1"></a></li>
+            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="64" rating="2"></a></li>
+            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="64" rating="3"></a></li>
+            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="64" rating="4"></a></li>
+            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="64" rating="5"></a></li>
           </ul>
           <center>
-            <div class="not_voted">(511 votes)</div>
+            <div class="not_voted">(175 votes)</div>
           </center>
         </div></td>
     </tr>
@@ -466,6 +460,10 @@ mixdrop.ag
     </td></tr>
   </tbody>
 </table>
+
+
+
+
 <table width="100%" cellpadding="0" cellspacing="0" class="movie_version">
   <tbody>
     <tr>
@@ -475,23 +473,21 @@ mixdrop.ag
       <td align="left" valign="middle">
         <span class="movie_version_link">
 
-          <a href="javascript:void(0)" class="embed-link popper" link_version="2" open-text="Close" close-text="Version 3">Version 3</a>
+          <a href="javascript:void(0)" class="embed-link popper " link_version="2" open-text="Close" close-text="Version 3">Version 3</a>
 
           <a href="#" class="go-link propper-link popper ico-btn" link_version="2" rel="nofollow" target="_blank">
           <i class="fas fa-external-link-alt"></i>
           </a>
 
-          <a href="javascript:void(0)" data-wp-menu="CyrR4" class="ico-btn wp-menu-btn"><i class="fas fa-glass-cheers"></i></a>
 
-
-          <span class="quality_tag" title="El.Camino.A.Breaking.Bad.Movie.2019.720p.BluRay.x264.AAC-[YTS.MX].mp4">1.1 GB</span>
+          <span class="quality_tag" title="El Camino A Breaking Bad Movie 2019 720p BluRay x264 AAC-YTS MX.mp4">1.1 GB</span>
 
         </span>
-      </td> 
-      <td align="center" width="115" valign="middle"><span class="version-host" host_id="29">
-mixdrop.ag
+      </td>
+      <td align="center" width="115" valign="middle"><span class="version-host" host_id="48">
+voe.sx
   </span> </td>
-      <td width="65" align="center" valign="middle"><span class="version_veiws"> 161 views</span></td>
+      <td width="65" align="center" valign="middle"><span class="version_veiws"> 10 views</span></td>
       <td width="80" align="center" valign="middle">
 
         <span class="report_broken"><a href="/sessions/new">Report Link</a></span>
@@ -501,15 +497,15 @@ mixdrop.ag
         <div class="movie_ratings">
           <ul class="unit-rating" style="width:100px;">
 
-            <li class="current-rating" style="width:63.05283757338552px;">Currently 3.152641878669276/5</li>
-            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="29" rating="1"></a></li>
-            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="29" rating="2"></a></li>
-            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="29" rating="3"></a></li>
-            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="29" rating="4"></a></li>
-            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="29" rating="5"></a></li>
+            <li class="current-rating" style="width:67.83783783783784px;">Currently 3.391891891891892/5</li>
+            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="48" rating="1"></a></li>
+            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="48" rating="2"></a></li>
+            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="48" rating="3"></a></li>
+            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="48" rating="4"></a></li>
+            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="48" rating="5"></a></li>
           </ul>
           <center>
-            <div class="not_voted">(511 votes)</div>
+            <div class="not_voted">(296 votes)</div>
           </center>
         </div></td>
     </tr>
@@ -519,6 +515,10 @@ mixdrop.ag
     </td></tr>
   </tbody>
 </table>
+
+
+
+
 <table width="100%" cellpadding="0" cellspacing="0" class="movie_version">
   <tbody>
     <tr>
@@ -528,7 +528,7 @@ mixdrop.ag
       <td align="left" valign="middle">
         <span class="movie_version_link">
 
-          <a href="javascript:void(0)" class="embed-link popper" link_version="3" open-text="Close" close-text="Version 4">Version 4</a>
+          <a href="javascript:void(0)" class="embed-link popper " link_version="3" open-text="Close" close-text="Version 4">Version 4</a>
 
           <a href="#" class="go-link propper-link popper ico-btn" link_version="3" rel="nofollow" target="_blank">
           <i class="fas fa-external-link-alt"></i>
@@ -538,11 +538,11 @@ mixdrop.ag
           <span class="quality_tag" title="El.Camino.A.Breaking.Bad.Movie.2019.720p.BluRay.x264.AAC-[YTS.MX].mp4">1.1 GB</span>
 
         </span>
-      </td> 
+      </td>
       <td align="center" width="115" valign="middle"><span class="version-host" host_id="48">
 voe.sx
   </span> </td>
-      <td width="65" align="center" valign="middle"><span class="version_veiws"> 93 views</span></td>
+      <td width="65" align="center" valign="middle"><span class="version_veiws"> 94 views</span></td>
       <td width="80" align="center" valign="middle">
 
         <span class="report_broken"><a href="/sessions/new">Report Link</a></span>
@@ -552,7 +552,7 @@ voe.sx
         <div class="movie_ratings">
           <ul class="unit-rating" style="width:100px;">
 
-            <li class="current-rating" style="width:68.15047021943573px;">Currently 3.4075235109717865/5</li>
+            <li class="current-rating" style="width:67.83783783783784px;">Currently 3.391891891891892/5</li>
             <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="48" rating="1"></a></li>
             <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="48" rating="2"></a></li>
             <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="48" rating="3"></a></li>
@@ -560,7 +560,7 @@ voe.sx
             <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="48" rating="5"></a></li>
           </ul>
           <center>
-            <div class="not_voted">(319 votes)</div>
+            <div class="not_voted">(296 votes)</div>
           </center>
         </div></td>
     </tr>
@@ -570,6 +570,10 @@ voe.sx
     </td></tr>
   </tbody>
 </table>
+
+
+
+
 <table width="100%" cellpadding="0" cellspacing="0" class="movie_version">
   <tbody>
     <tr>
@@ -579,7 +583,7 @@ voe.sx
       <td align="left" valign="middle">
         <span class="movie_version_link">
 
-          <a href="javascript:void(0)" class="embed-link popper" link_version="4" open-text="Close" close-text="Version 5">Version 5</a>
+          <a href="javascript:void(0)" class="embed-link popper " link_version="4" open-text="Close" close-text="Version 5">Version 5</a>
 
           <a href="#" class="go-link propper-link popper ico-btn" link_version="4" rel="nofollow" target="_blank">
           <i class="fas fa-external-link-alt"></i>
@@ -589,7 +593,7 @@ voe.sx
           <span class="quality_tag" title="El Camino A Breaking Bad Movie 2019 720p BluRay x264 AAC-YTS MX.mp4">1.1 GB</span>
 
         </span>
-      </td> 
+      </td>
       <td align="center" width="115" valign="middle"><span class="version-host" host_id="48">
 voe.sx
   </span> </td>
@@ -603,7 +607,7 @@ voe.sx
         <div class="movie_ratings">
           <ul class="unit-rating" style="width:100px;">
 
-            <li class="current-rating" style="width:68.15047021943573px;">Currently 3.4075235109717865/5</li>
+            <li class="current-rating" style="width:67.83783783783784px;">Currently 3.391891891891892/5</li>
             <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="48" rating="1"></a></li>
             <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="48" rating="2"></a></li>
             <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="48" rating="3"></a></li>
@@ -611,7 +615,7 @@ voe.sx
             <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="48" rating="5"></a></li>
           </ul>
           <center>
-            <div class="not_voted">(319 votes)</div>
+            <div class="not_voted">(296 votes)</div>
           </center>
         </div></td>
     </tr>
@@ -621,6 +625,10 @@ voe.sx
     </td></tr>
   </tbody>
 </table>
+
+
+
+
 <table width="100%" cellpadding="0" cellspacing="0" class="movie_version">
   <tbody>
     <tr>
@@ -630,21 +638,23 @@ voe.sx
       <td align="left" valign="middle">
         <span class="movie_version_link">
 
-          <a href="javascript:void(0)" class="embed-link popper" link_version="5" open-text="Close" close-text="Version 6">Version 6</a>
+          <a href="javascript:void(0)" class="embed-link popper " link_version="5" open-text="Close" close-text="Version 6">Version 6</a>
 
           <a href="#" class="go-link propper-link popper ico-btn" link_version="5" rel="nofollow" target="_blank">
           <i class="fas fa-external-link-alt"></i>
           </a>
 
+          <a href="javascript:void(0)" data-wp-menu="_f2fA" class="ico-btn wp-menu-btn"><i class="fas fa-glass-cheers"></i></a>
 
-          <span class="quality_tag" title="El Camino A Breaking Bad Movie 2019 720p BluRay x264 AAC-YTS MX.mp4">1.1 GB</span>
+
+          <span class="quality_tag" title="El.Camino.A.Breaking.Bad.Movie.2019.1080p.WEBRip.x264 YTS.LT.mp4">1.2 GB</span>
 
         </span>
-      </td> 
-      <td align="center" width="115" valign="middle"><span class="version-host" host_id="48">
-voe.sx
+      </td>
+      <td align="center" width="115" valign="middle"><span class="version-host" host_id="43">
+streamtape.com
   </span> </td>
-      <td width="65" align="center" valign="middle"><span class="version_veiws"> 6 views</span></td>
+      <td width="65" align="center" valign="middle"><span class="version_veiws"> 14 views</span></td>
       <td width="80" align="center" valign="middle">
 
         <span class="report_broken"><a href="/sessions/new">Report Link</a></span>
@@ -654,15 +664,15 @@ voe.sx
         <div class="movie_ratings">
           <ul class="unit-rating" style="width:100px;">
 
-            <li class="current-rating" style="width:68.15047021943573px;">Currently 3.4075235109717865/5</li>
-            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="48" rating="1"></a></li>
-            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="48" rating="2"></a></li>
-            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="48" rating="3"></a></li>
-            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="48" rating="4"></a></li>
-            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="48" rating="5"></a></li>
+            <li class="current-rating" style="width:71.89189189189189px;">Currently 3.5945945945945943/5</li>
+            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="43" rating="1"></a></li>
+            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="43" rating="2"></a></li>
+            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="43" rating="3"></a></li>
+            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="43" rating="4"></a></li>
+            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="43" rating="5"></a></li>
           </ul>
           <center>
-            <div class="not_voted">(319 votes)</div>
+            <div class="not_voted">(74 votes)</div>
           </center>
         </div></td>
     </tr>
@@ -672,6 +682,10 @@ voe.sx
     </td></tr>
   </tbody>
 </table>
+
+
+
+
 <table width="100%" cellpadding="0" cellspacing="0" class="movie_version">
   <tbody>
     <tr>
@@ -681,19 +695,23 @@ voe.sx
       <td align="left" valign="middle">
         <span class="movie_version_link">
 
-          <a href="javascript:void(0)" class="embed-link popper" link_version="6" open-text="Close" close-text="Version 7">Version 7</a>
+          <a href="javascript:void(0)" class="embed-link popper " link_version="6" open-text="Close" close-text="Version 7">Version 7</a>
 
           <a href="#" class="go-link propper-link popper ico-btn" link_version="6" rel="nofollow" target="_blank">
           <i class="fas fa-external-link-alt"></i>
           </a>
 
+          <a href="javascript:void(0)" data-wp-menu="IsbCY" class="ico-btn wp-menu-btn"><i class="fas fa-glass-cheers"></i></a>
+
+
+          <span class="quality_tag" title="El.Camino.A.Breaking.Bad.Movie.2019.1080p.WEBRip.x264 YTS.LT.mp4">1.2 GB</span>
 
         </span>
-      </td> 
-      <td align="center" width="115" valign="middle"><span class="version-host" host_id="64">
-filelions.to
+      </td>
+      <td align="center" width="115" valign="middle"><span class="version-host" host_id="43">
+streamtape.com
   </span> </td>
-      <td width="65" align="center" valign="middle"><span class="version_veiws"> 16 views</span></td>
+      <td width="65" align="center" valign="middle"><span class="version_veiws"> 226 views</span></td>
       <td width="80" align="center" valign="middle">
 
         <span class="report_broken"><a href="/sessions/new">Report Link</a></span>
@@ -703,15 +721,15 @@ filelions.to
         <div class="movie_ratings">
           <ul class="unit-rating" style="width:100px;">
 
-            <li class="current-rating" style="width:67.97546012269939px;">Currently 3.3987730061349692/5</li>
-            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="64" rating="1"></a></li>
-            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="64" rating="2"></a></li>
-            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="64" rating="3"></a></li>
-            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="64" rating="4"></a></li>
-            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="64" rating="5"></a></li>
+            <li class="current-rating" style="width:71.89189189189189px;">Currently 3.5945945945945943/5</li>
+            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="43" rating="1"></a></li>
+            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="43" rating="2"></a></li>
+            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="43" rating="3"></a></li>
+            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="43" rating="4"></a></li>
+            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="43" rating="5"></a></li>
           </ul>
           <center>
-            <div class="not_voted">(163 votes)</div>
+            <div class="not_voted">(74 votes)</div>
           </center>
         </div></td>
     </tr>
@@ -721,6 +739,10 @@ filelions.to
     </td></tr>
   </tbody>
 </table>
+
+
+
+
 <table width="100%" cellpadding="0" cellspacing="0" class="movie_version">
   <tbody>
     <tr>
@@ -730,19 +752,21 @@ filelions.to
       <td align="left" valign="middle">
         <span class="movie_version_link">
 
-          <a href="javascript:void(0)" class="embed-link popper" link_version="7" open-text="Close" close-text="Version 8">Version 8</a>
+          <a href="javascript:void(0)" class="embed-link popper " link_version="7" open-text="Close" close-text="Version 8">Version 8</a>
 
           <a href="#" class="go-link propper-link popper ico-btn" link_version="7" rel="nofollow" target="_blank">
           <i class="fas fa-external-link-alt"></i>
           </a>
 
 
+          <span class="quality_tag" title="El Camino A Breaking Bad Movie 2019 720p BluRay AAC-[YTS MX]">1.1 GB</span>
+
         </span>
-      </td> 
-      <td align="center" width="115" valign="middle"><span class="version-host" host_id="64">
-filelions.to
+      </td>
+      <td align="center" width="115" valign="middle"><span class="version-host" host_id="42">
+dood.watch
   </span> </td>
-      <td width="65" align="center" valign="middle"><span class="version_veiws"> 24 views</span></td>
+      <td width="65" align="center" valign="middle"><span class="version_veiws"> 36 views</span></td>
       <td width="80" align="center" valign="middle">
 
         <span class="report_broken"><a href="/sessions/new">Report Link</a></span>
@@ -752,15 +776,15 @@ filelions.to
         <div class="movie_ratings">
           <ul class="unit-rating" style="width:100px;">
 
-            <li class="current-rating" style="width:67.97546012269939px;">Currently 3.3987730061349692/5</li>
-            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="64" rating="1"></a></li>
-            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="64" rating="2"></a></li>
-            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="64" rating="3"></a></li>
-            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="64" rating="4"></a></li>
-            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="64" rating="5"></a></li>
+            <li class="current-rating" style="width:66.66666666666667px;">Currently 3.3333333333333335/5</li>
+            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="42" rating="1"></a></li>
+            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="42" rating="2"></a></li>
+            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="42" rating="3"></a></li>
+            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="42" rating="4"></a></li>
+            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="42" rating="5"></a></li>
           </ul>
           <center>
-            <div class="not_voted">(163 votes)</div>
+            <div class="not_voted">(261 votes)</div>
           </center>
         </div></td>
     </tr>
@@ -770,6 +794,10 @@ filelions.to
     </td></tr>
   </tbody>
 </table>
+
+
+
+
 <table width="100%" cellpadding="0" cellspacing="0" class="movie_version">
   <tbody>
     <tr>
@@ -779,19 +807,21 @@ filelions.to
       <td align="left" valign="middle">
         <span class="movie_version_link">
 
-          <a href="javascript:void(0)" class="embed-link popper" link_version="8" open-text="Close" close-text="Version 9">Version 9</a>
+          <a href="javascript:void(0)" class="embed-link popper " link_version="8" open-text="Close" close-text="Version 9">Version 9</a>
 
           <a href="#" class="go-link propper-link popper ico-btn" link_version="8" rel="nofollow" target="_blank">
           <i class="fas fa-external-link-alt"></i>
           </a>
 
 
+          <span class="quality_tag" title="El Camino A Breaking Bad Movie 2019 1080p WEBRip YTS LT">1.2 GB</span>
+
         </span>
-      </td> 
-      <td align="center" width="115" valign="middle"><span class="version-host" host_id="65">
-streamwish.to
+      </td>
+      <td align="center" width="115" valign="middle"><span class="version-host" host_id="42">
+dood.watch
   </span> </td>
-      <td width="65" align="center" valign="middle"><span class="version_veiws"> 41 views</span></td>
+      <td width="65" align="center" valign="middle"><span class="version_veiws"> 83 views</span></td>
       <td width="80" align="center" valign="middle">
 
         <span class="report_broken"><a href="/sessions/new">Report Link</a></span>
@@ -801,15 +831,15 @@ streamwish.to
         <div class="movie_ratings">
           <ul class="unit-rating" style="width:100px;">
 
-            <li class="current-rating" style="width:67.23809523809524px;">Currently 3.361904761904762/5</li>
-            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="65" rating="1"></a></li>
-            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="65" rating="2"></a></li>
-            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="65" rating="3"></a></li>
-            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="65" rating="4"></a></li>
-            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="65" rating="5"></a></li>
+            <li class="current-rating" style="width:66.66666666666667px;">Currently 3.3333333333333335/5</li>
+            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="42" rating="1"></a></li>
+            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="42" rating="2"></a></li>
+            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="42" rating="3"></a></li>
+            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="42" rating="4"></a></li>
+            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="42" rating="5"></a></li>
           </ul>
           <center>
-            <div class="not_voted">(210 votes)</div>
+            <div class="not_voted">(261 votes)</div>
           </center>
         </div></td>
     </tr>
@@ -819,6 +849,10 @@ streamwish.to
     </td></tr>
   </tbody>
 </table>
+
+
+
+
 <table width="100%" cellpadding="0" cellspacing="0" class="movie_version">
   <tbody>
     <tr>
@@ -828,111 +862,9 @@ streamwish.to
       <td align="left" valign="middle">
         <span class="movie_version_link">
 
-          <a href="javascript:void(0)" class="embed-link popper" link_version="9" open-text="Close" close-text="Version 10">Version 10</a>
+          <a href="javascript:void(0)" class="embed-link popper " link_version="9" open-text="Close" close-text="Version 10">Version 10</a>
 
           <a href="#" class="go-link propper-link popper ico-btn" link_version="9" rel="nofollow" target="_blank">
-          <i class="fas fa-external-link-alt"></i>
-          </a>
-
-
-          <span class="quality_tag" title="El Camino A Breaking Bad Movie 2019 1080p WEBRip YTS LT">1.2 GB</span>
-
-        </span>
-      </td> 
-      <td align="center" width="115" valign="middle"><span class="version-host" host_id="42">
-dood.watch
-  </span> </td>
-      <td width="65" align="center" valign="middle"><span class="version_veiws"> 82 views</span></td>
-      <td width="80" align="center" valign="middle">
-
-        <span class="report_broken"><a href="/sessions/new">Report Link</a></span>
-
-        </td>
-      <td align="center" width="100" valign="middle">
-        <div class="movie_ratings">
-          <ul class="unit-rating" style="width:100px;">
-
-            <li class="current-rating" style="width:65.86080586080585px;">Currently 3.293040293040293/5</li>
-            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="42" rating="1"></a></li>
-            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="42" rating="2"></a></li>
-            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="42" rating="3"></a></li>
-            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="42" rating="4"></a></li>
-            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="42" rating="5"></a></li>
-          </ul>
-          <center>
-            <div class="not_voted">(273 votes)</div>
-          </center>
-        </div></td>
-    </tr>
-    <tr><td colspan="6">
-      <div class="player closed" link_version="9">
-      <div>
-    </td></tr>
-  </tbody>
-</table>
-<table width="100%" cellpadding="0" cellspacing="0" class="movie_version">
-  <tbody>
-    <tr>
-      <td align="center" width="40" valign="middle" class="link_version_quality">
-      <span class="quality_dvd"></span>
-      </td>
-      <td align="left" valign="middle">
-        <span class="movie_version_link">
-
-          <a href="javascript:void(0)" class="embed-link popper" link_version="10" open-text="Close" close-text="Version 11">Version 11</a>
-
-          <a href="#" class="go-link propper-link popper ico-btn" link_version="10" rel="nofollow" target="_blank">
-          <i class="fas fa-external-link-alt"></i>
-          </a>
-
-
-          <span class="quality_tag" title="El Camino A Breaking Bad Movie 2019 720p BluRay AAC-[YTS MX]">1.1 GB</span>
-
-        </span>
-      </td> 
-      <td align="center" width="115" valign="middle"><span class="version-host" host_id="42">
-dood.watch
-  </span> </td>
-      <td width="65" align="center" valign="middle"><span class="version_veiws"> 34 views</span></td>
-      <td width="80" align="center" valign="middle">
-
-        <span class="report_broken"><a href="/sessions/new">Report Link</a></span>
-
-        </td>
-      <td align="center" width="100" valign="middle">
-        <div class="movie_ratings">
-          <ul class="unit-rating" style="width:100px;">
-
-            <li class="current-rating" style="width:65.86080586080585px;">Currently 3.293040293040293/5</li>
-            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="42" rating="1"></a></li>
-            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="42" rating="2"></a></li>
-            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="42" rating="3"></a></li>
-            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="42" rating="4"></a></li>
-            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="42" rating="5"></a></li>
-          </ul>
-          <center>
-            <div class="not_voted">(273 votes)</div>
-          </center>
-        </div></td>
-    </tr>
-    <tr><td colspan="6">
-      <div class="player closed" link_version="10">
-      <div>
-    </td></tr>
-  </tbody>
-</table>
-<table width="100%" cellpadding="0" cellspacing="0" class="movie_version">
-  <tbody>
-    <tr>
-      <td align="center" width="40" valign="middle" class="link_version_quality">
-      <span class="quality_dvd"></span>
-      </td>
-      <td align="left" valign="middle">
-        <span class="movie_version_link">
-
-          <a href="javascript:void(0)" class="embed-link popper" link_version="11" open-text="Close" close-text="Version 12">Version 12</a>
-
-          <a href="#" class="go-link propper-link popper ico-btn" link_version="11" rel="nofollow" target="_blank">
           <i class="fas fa-external-link-alt"></i>
           </a>
 
@@ -940,7 +872,7 @@ dood.watch
           <span class="quality_tag" title="El Camino A Breaking Bad Movie 2019 720p BluRay AAC-YTS MX">1.1 GB</span>
 
         </span>
-      </td> 
+      </td>
       <td align="center" width="115" valign="middle"><span class="version-host" host_id="42">
 dood.watch
   </span> </td>
@@ -954,7 +886,7 @@ dood.watch
         <div class="movie_ratings">
           <ul class="unit-rating" style="width:100px;">
 
-            <li class="current-rating" style="width:65.86080586080585px;">Currently 3.293040293040293/5</li>
+            <li class="current-rating" style="width:66.66666666666667px;">Currently 3.3333333333333335/5</li>
             <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="42" rating="1"></a></li>
             <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="42" rating="2"></a></li>
             <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="42" rating="3"></a></li>
@@ -962,7 +894,117 @@ dood.watch
             <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="42" rating="5"></a></li>
           </ul>
           <center>
-            <div class="not_voted">(273 votes)</div>
+            <div class="not_voted">(261 votes)</div>
+          </center>
+        </div></td>
+    </tr>
+    <tr><td colspan="6">
+      <div class="player closed" link_version="9">
+      <div>
+    </td></tr>
+  </tbody>
+</table>
+
+
+
+
+<table width="100%" cellpadding="0" cellspacing="0" class="movie_version">
+  <tbody>
+    <tr>
+      <td align="center" width="40" valign="middle" class="link_version_quality">
+      <span class="quality_dvd"></span>
+      </td>
+      <td align="left" valign="middle">
+        <span class="movie_version_link">
+
+          <a href="javascript:void(0)" class="embed-link popper " link_version="10" open-text="Close" close-text="Version 11">Version 11</a>
+
+          <a href="#" class="go-link propper-link popper ico-btn" link_version="10" rel="nofollow" target="_blank">
+          <i class="fas fa-external-link-alt"></i>
+          </a>
+
+
+        </span>
+      </td>
+      <td align="center" width="115" valign="middle"><span class="version-host" host_id="65">
+streamwish.to
+  </span> </td>
+      <td width="65" align="center" valign="middle"><span class="version_veiws"> 42 views</span></td>
+      <td width="80" align="center" valign="middle">
+
+        <span class="report_broken"><a href="/sessions/new">Report Link</a></span>
+
+        </td>
+      <td align="center" width="100" valign="middle">
+        <div class="movie_ratings">
+          <ul class="unit-rating" style="width:100px;">
+
+            <li class="current-rating" style="width:66.4321608040201px;">Currently 3.321608040201005/5</li>
+            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="65" rating="1"></a></li>
+            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="65" rating="2"></a></li>
+            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="65" rating="3"></a></li>
+            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="65" rating="4"></a></li>
+            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="65" rating="5"></a></li>
+          </ul>
+          <center>
+            <div class="not_voted">(199 votes)</div>
+          </center>
+        </div></td>
+    </tr>
+    <tr><td colspan="6">
+      <div class="player closed" link_version="10">
+      <div>
+    </td></tr>
+  </tbody>
+</table>
+
+
+
+
+<table width="100%" cellpadding="0" cellspacing="0" class="movie_version">
+  <tbody>
+    <tr>
+      <td align="center" width="40" valign="middle" class="link_version_quality">
+      <span class="quality_dvd"></span>
+      </td>
+      <td align="left" valign="middle">
+        <span class="movie_version_link">
+
+          <a href="javascript:void(0)" class="embed-link popper " link_version="11" open-text="Close" close-text="Version 12">Version 12</a>
+
+          <a href="#" class="go-link propper-link popper ico-btn" link_version="11" rel="nofollow" target="_blank">
+          <i class="fas fa-external-link-alt"></i>
+          </a>
+
+          <a href="javascript:void(0)" data-wp-menu="XwFmZ" class="ico-btn wp-menu-btn"><i class="fas fa-glass-cheers"></i></a>
+
+
+          <span class="quality_tag" title="El Camino A Breaking Bad Movie 2019 HDRip AC3-EVO.mp4">2 GB</span>
+
+        </span>
+      </td>
+      <td align="center" width="115" valign="middle"><span class="version-host" host_id="29">
+mixdrop.ag
+  </span> </td>
+      <td width="65" align="center" valign="middle"><span class="version_veiws"> 432 views</span></td>
+      <td width="80" align="center" valign="middle">
+
+        <span class="report_broken"><a href="/sessions/new">Report Link</a></span>
+
+        </td>
+      <td align="center" width="100" valign="middle">
+        <div class="movie_ratings">
+          <ul class="unit-rating" style="width:100px;">
+
+            <li class="current-rating" style="width:64.30327868852459px;">Currently 3.2151639344262293/5</li>
+            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="29" rating="1"></a></li>
+            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="29" rating="2"></a></li>
+            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="29" rating="3"></a></li>
+            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="29" rating="4"></a></li>
+            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="29" rating="5"></a></li>
+          </ul>
+          <center>
+            <div class="not_voted">(488 votes)</div>
           </center>
         </div></td>
     </tr>
@@ -972,6 +1014,10 @@ dood.watch
     </td></tr>
   </tbody>
 </table>
+
+
+
+
 <table width="100%" cellpadding="0" cellspacing="0" class="movie_version">
   <tbody>
     <tr>
@@ -981,23 +1027,23 @@ dood.watch
       <td align="left" valign="middle">
         <span class="movie_version_link">
 
-          <a href="javascript:void(0)" class="embed-link popper" link_version="12" open-text="Close" close-text="Version 13">Version 13</a>
+          <a href="javascript:void(0)" class="embed-link popper " link_version="12" open-text="Close" close-text="Version 13">Version 13</a>
 
           <a href="#" class="go-link propper-link popper ico-btn" link_version="12" rel="nofollow" target="_blank">
           <i class="fas fa-external-link-alt"></i>
           </a>
 
-          <a href="javascript:void(0)" data-wp-menu="IsbCY" class="ico-btn wp-menu-btn"><i class="fas fa-glass-cheers"></i></a>
+          <a href="javascript:void(0)" data-wp-menu="pLBKU" class="ico-btn wp-menu-btn"><i class="fas fa-glass-cheers"></i></a>
 
 
-          <span class="quality_tag" title="El.Camino.A.Breaking.Bad.Movie.2019.1080p.WEBRip.x264 YTS.LT.mp4">1.2 GB</span>
+          <span class="quality_tag" title="El Camino A Breaking Bad Movie 2019 720p BluRay x264 AAC-YTS MX.mp4">2 GB</span>
 
         </span>
-      </td> 
-      <td align="center" width="115" valign="middle"><span class="version-host" host_id="43">
-streamtape.com
+      </td>
+      <td align="center" width="115" valign="middle"><span class="version-host" host_id="29">
+mixdrop.ag
   </span> </td>
-      <td width="65" align="center" valign="middle"><span class="version_veiws"> 225 views</span></td>
+      <td width="65" align="center" valign="middle"><span class="version_veiws"> 144 views</span></td>
       <td width="80" align="center" valign="middle">
 
         <span class="report_broken"><a href="/sessions/new">Report Link</a></span>
@@ -1007,15 +1053,15 @@ streamtape.com
         <div class="movie_ratings">
           <ul class="unit-rating" style="width:100px;">
 
-            <li class="current-rating" style="width:70.0px;">Currently 3.5/5</li>
-            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="43" rating="1"></a></li>
-            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="43" rating="2"></a></li>
-            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="43" rating="3"></a></li>
-            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="43" rating="4"></a></li>
-            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="43" rating="5"></a></li>
+            <li class="current-rating" style="width:64.30327868852459px;">Currently 3.2151639344262293/5</li>
+            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="29" rating="1"></a></li>
+            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="29" rating="2"></a></li>
+            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="29" rating="3"></a></li>
+            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="29" rating="4"></a></li>
+            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="29" rating="5"></a></li>
           </ul>
           <center>
-            <div class="not_voted">(60 votes)</div>
+            <div class="not_voted">(488 votes)</div>
           </center>
         </div></td>
     </tr>
@@ -1025,6 +1071,10 @@ streamtape.com
     </td></tr>
   </tbody>
 </table>
+
+
+
+
 <table width="100%" cellpadding="0" cellspacing="0" class="movie_version">
   <tbody>
     <tr>
@@ -1034,23 +1084,23 @@ streamtape.com
       <td align="left" valign="middle">
         <span class="movie_version_link">
 
-          <a href="javascript:void(0)" class="embed-link popper" link_version="13" open-text="Close" close-text="Version 14">Version 14</a>
+          <a href="javascript:void(0)" class="embed-link popper " link_version="13" open-text="Close" close-text="Version 14">Version 14</a>
 
           <a href="#" class="go-link propper-link popper ico-btn" link_version="13" rel="nofollow" target="_blank">
           <i class="fas fa-external-link-alt"></i>
           </a>
 
-          <a href="javascript:void(0)" data-wp-menu="_f2fA" class="ico-btn wp-menu-btn"><i class="fas fa-glass-cheers"></i></a>
+          <a href="javascript:void(0)" data-wp-menu="CyrR4" class="ico-btn wp-menu-btn"><i class="fas fa-glass-cheers"></i></a>
 
 
-          <span class="quality_tag" title="El.Camino.A.Breaking.Bad.Movie.2019.1080p.WEBRip.x264 YTS.LT.mp4">1.2 GB</span>
+          <span class="quality_tag" title="El.Camino.A.Breaking.Bad.Movie.2019.720p.BluRay.x264.AAC-[YTS.MX].mp4">2 GB</span>
 
         </span>
-      </td> 
-      <td align="center" width="115" valign="middle"><span class="version-host" host_id="43">
-streamtape.com
+      </td>
+      <td align="center" width="115" valign="middle"><span class="version-host" host_id="29">
+mixdrop.ag
   </span> </td>
-      <td width="65" align="center" valign="middle"><span class="version_veiws"> 13 views</span></td>
+      <td width="65" align="center" valign="middle"><span class="version_veiws"> 165 views</span></td>
       <td width="80" align="center" valign="middle">
 
         <span class="report_broken"><a href="/sessions/new">Report Link</a></span>
@@ -1060,15 +1110,15 @@ streamtape.com
         <div class="movie_ratings">
           <ul class="unit-rating" style="width:100px;">
 
-            <li class="current-rating" style="width:70.0px;">Currently 3.5/5</li>
-            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="43" rating="1"></a></li>
-            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="43" rating="2"></a></li>
-            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="43" rating="3"></a></li>
-            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="43" rating="4"></a></li>
-            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="43" rating="5"></a></li>
+            <li class="current-rating" style="width:64.30327868852459px;">Currently 3.2151639344262293/5</li>
+            <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" host-id="29" rating="1"></a></li>
+            <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" host-id="29" rating="2"></a></li>
+            <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" host-id="29" rating="3"></a></li>
+            <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" host-id="29" rating="4"></a></li>
+            <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" host-id="29" rating="5"></a></li>
           </ul>
           <center>
-            <div class="not_voted">(60 votes)</div>
+            <div class="not_voted">(488 votes)</div>
           </center>
         </div></td>
     </tr>
@@ -1078,6 +1128,8 @@ streamtape.com
     </td></tr>
   </tbody>
 </table>
+
+
     <div class="clearer"></div>
         <table cellspacing="2" cellpadding="2" border="0" width="100%" style="padding:5px;">
             <tbody>
@@ -1123,11 +1175,15 @@ streamtape.com
 
   <option value="AL">Albania</option>
 
+  <option value="AO">Angola</option>
+
   <option value="AR">Argentina</option>
 
   <option value="AT">Austria</option>
 
   <option value="AU">Australia</option>
+
+  <option value="AZ">Azerbaijan</option>
 
   <option value="BA">Bosnia and Herzegovina</option>
 
@@ -1147,6 +1203,10 @@ streamtape.com
 
   <option value="BS">Bahamas</option>
 
+  <option value="BY">Belarus</option>
+
+  <option value="BZ">Belize</option>
+
   <option value="CA">Canada</option>
 
   <option value="CH">Switzerland</option>
@@ -1155,11 +1215,17 @@ streamtape.com
 
   <option value="CL">Chile</option>
 
+  <option value="CM">Cameroon</option>
+
   <option value="CO">Colombia</option>
 
   <option value="CR">Costa Rica</option>
 
+  <option value="CU">Cuba</option>
+
   <option value="CV">Cabo Verde</option>
+
+  <option value="CY">Cyprus</option>
 
   <option value="CZ">Czechia</option>
 
@@ -1243,6 +1309,8 @@ streamtape.com
 
   <option value="LT">Lithuania</option>
 
+  <option value="LU">Luxembourg</option>
+
   <option value="LV">Latvia</option>
 
   <option value="LY">Libya</option>
@@ -1253,7 +1321,13 @@ streamtape.com
 
   <option value="MD">Moldova (Republic of)</option>
 
+  <option value="ME">Montenegro</option>
+
+  <option value="MG">Madagascar</option>
+
   <option value="MK">Macedonia (the former Yugoslav Republic of)</option>
+
+  <option value="ML">Mali</option>
 
   <option value="MT">Malta</option>
 
@@ -1323,6 +1397,8 @@ streamtape.com
 
   <option value="TC">Turks and Caicos Islands</option>
 
+  <option value="TD">Chad</option>
+
   <option value="TH">Thailand</option>
 
   <option value="TN">Tunisia</option>
@@ -1334,6 +1410,8 @@ streamtape.com
   <option value="TW">Taiwan</option>
 
   <option value="TZ">Tanzania</option>
+
+  <option value="UA">Ukraine</option>
 
   <option value="UG">Uganda</option>
 
@@ -1348,6 +1426,8 @@ streamtape.com
   <option value="ZA">South Africa</option>
 
   <option value="ZM">Zambia</option>
+
+  <option value="ZW">Zimbabwe</option>
 
 </select>
 </span>
@@ -1420,13 +1500,6 @@ streamtape.com
       </div>
 
       <div class="index_item index_item_ie">
-         <a href="/playlist/4748-action" title="Action">
-            <img src="/poster/small/223387-john-wick-chapter-3-parabellum-RIjb0.jpg" border="0" width="150" height="225" alt="Watch Action">
-            <h2><div class="title-cutoff">Action</div> 287 items</h2>
-         </a>
-      </div>
-
-      <div class="index_item index_item_ie">
          <a href="/playlist/1574-raw-gritty-drama" title="Raw Gritty Drama">
             <img src="/poster/small/28887-wentworth-jf-FT.jpg" border="0" width="150" height="225" alt="Watch Raw Gritty Drama">
             <h2><div class="title-cutoff">Raw Gritty Drama</div> 65 items</h2>
@@ -1434,9 +1507,9 @@ streamtape.com
       </div>
 
       <div class="index_item index_item_ie">
-         <a href="/playlist/3052-starts-with-b" title="Starts with B">
-            <img src="/poster/small/17263-the-bachelor-piQ4o.jpg" border="0" width="150" height="225" alt="Watch Starts with B">
-            <h2><div class="title-cutoff">Starts with B</div> 33 items</h2>
+         <a href="/playlist/4748-action" title="Action">
+            <img src="/poster/small/223387-john-wick-chapter-3-parabellum-RIjb0.jpg" border="0" width="150" height="225" alt="Watch Action">
+            <h2><div class="title-cutoff">Action</div> 287 items</h2>
          </a>
       </div>
 
@@ -1444,6 +1517,13 @@ streamtape.com
          <a href="/playlist/1573-starring-my-favourite-actors" title="Starring my Favourite Actors">
             <img src="/poster/small/29832-this-is-england-lsghS.jpg" border="0" width="150" height="225" alt="Watch Starring my Favourite Actors">
             <h2><div class="title-cutoff">Starring my Favourite Actors</div> 63 items</h2>
+         </a>
+      </div>
+
+      <div class="index_item index_item_ie">
+         <a href="/playlist/3052-starts-with-b" title="Starts with B">
+            <img src="/poster/small/17263-the-bachelor-piQ4o.jpg" border="0" width="150" height="225" alt="Watch Starts with B">
+            <h2><div class="title-cutoff">Starts with B</div> 33 items</h2>
          </a>
       </div>
 
@@ -1497,12 +1577,12 @@ window.video_specifier = "m-1334196"
 
 
   <div class="col2">
-    <a href="/"><div class="logo"></div></a>
+    <a href="/home"><div class="logo"></div></a>
 
     <div class="sidebar">
 
 <div class="loginform" style="width: 280px;">
-<form action="/sessions" class="secure" method="post"><input name="_csrf_token" type="hidden" value="SzcqKwhARFA7Fx8JTU8aAwUbGCwyMBwW3oLimut4izFgy6Q5Q_wtfiTY">
+<form action="/sessions" class="secure" method="post"><input name="_csrf_token" type="hidden" value="Ix4-BjUCFWlwNz4IHColCTooEjgiAwMbbxhtjEXDGGZdZedMPKUlQ2Im">
   <div class="form-group">
 <label for="session_email">Email</label>
 <input id="session_email" name="session[email]" type="text">
@@ -1547,58 +1627,37 @@ window.video_specifier = "m-1334196"
  PrimeWire is a social site for discovering, sharing and watching movies and TV shows.  <a href="/start" style="text-decoration: underline;">more info</a>
  </div>
  <div style="padding: 0 5px;">
- <a href="https://www.primewire.tf">PrimeWire.tf</a> is the official domain for PrimeWire
+ <a href="https://www.primewire.tf">PrimeWire.tf</a> and <a href="https://www.primewire.mov">PrimeWire.mov</a> are the official domain for PrimeWire
 </div>
 
 
 
+
+  <script async data-cfasync="false" src="https://platform.pubadx.one/pubadx-ad.js" type="text/javascript"></script>
+  <div id="bg-ssp-6816">
+  <script data-cfasync="false" data-no-optimize="1">
+  var adx_id_6816 = document.getElementById('bg-ssp-6816');
+  adx_id_6816.id = 'bg-ssp-6816-' + Math.floor(Math.random() * Date.now());
+  window.pubadxtag = window.pubadxtag || [];
+  window.pubadxtag.push({zoneid: 6816, id: adx_id_6816.id, wu: window.location.href})
+  </script>
+  </div>
 
 
 <h2>Latest Comments</h2>
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/1476367-high-potential">High Potential</a>
+    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/greyfur">greyfur</a> : 
+    <a href="/user/Balthasar">Balthasar</a> : 
 
     </span> 
 
-I like that idea!
-
-    </p>
-    </div>
-
-
-
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/1566200-flight-149-hostage-of-war">Flight 149: Hostage of War</a>
-    <p>
-    <span class="latest_comments_poster">
-
-    <a href="/user/Technosamurai">Technosamurai</a> : 
-
-    </span> 
-
-A Really great documentary, would recommend it, try watching when you have time to really ...
-
-    </p>
-    </div>
-
-
-
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/1407378-from-the-world-of-john-wick-ballerina">From the World of John Wick: Ballerina</a>
-    <p>
-    <span class="latest_comments_poster">
-
-    <a href="/user/%25CE%259C%25CE%25A5%25CE%2593%25CE%2591%25CE%25A3">ΜΥΓΑΣ</a> : 
-
-    </span> 
-
-Now a sequal has to be made, so that Eve faces the &quot;consequences of here actions&quot; just lik...
+Dude! TMI!!!
+I fell asleep:) 🥱💤
 
     </p>
     </div>
@@ -1606,15 +1665,15 @@ Now a sequal has to be made, so that Eve faces the &quot;consequences of here ac
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/1476367-high-potential">High Potential</a>
+    <a href="/tv/1342735/star-trek-strange-new-worlds-season-3-episode-5">Star Trek: Strange New Worlds S3 E5</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/Piglet">Piglet</a> : 
+    <a href="/user/Balthasar">Balthasar</a> : 
 
     </span> 
 
-A new character is being added to the 2nd season. Mekhi Phifer (you may remember him from ...
+On it! 🔪🔪💣💥💀
 
     </p>
     </div>
@@ -1622,15 +1681,47 @@ A new character is being added to the 2nd season. Mekhi Phifer (you may remember
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/1542248/liberation-d-day-to-berlin-season-1-episode-4">Liberation: D-Day to Berlin S1 E4</a>
+    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/mkmikas">mkmikas</a> : 
+    <a href="/user/Xsile">Xsile</a> : 
 
     </span> 
 
-a very selective history of ww2, but otherwise well done and accurate, again just very sel...
+Isaac Asimov&#39;s &quot;I, Robot&quot; and &quot;Foundation&quot; series are connected through his broader &quot;Robot...
+
+    </p>
+    </div>
+
+
+
+    <div class="latest_comments  com_class_mov">
+    <a href="/movie/1514833-eddington">Eddington</a>
+    <p>
+    <span class="latest_comments_poster">
+
+    <a href="/user/deimos737">deimos737</a> : 
+
+    </span> 
+
+Yikes.... I&#39;m all for creative free speech, or whatever you like to call it, but this is r...
+
+    </p>
+    </div>
+
+
+
+    <div class="latest_comments  com_class_tv">
+    <a href="/tv/1563210/survival-mode-season-1-episode-4">Survival Mode S1 E4</a>
+    <p>
+    <span class="latest_comments_poster">
+
+    <a href="/user/FeltMountain">FeltMountain</a> : 
+
+    </span> 
+
+I lived nearby when this happened.  There were train cars on the side of the freeway for w...
 
     </p>
     </div>
@@ -1641,14 +1732,28 @@ a very selective history of ww2, but otherwise well done and accurate, again jus
 <h2>Top Comments</h2>
 
 
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/1542677-cheers-portland-the-strip-club-capital-of-america">Cheers! Portland, the Strip Club Capital of America</a>
+    <div class="latest_comments  com_class_tv">
+    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/coolwhip">coolwhip</a> : 
+    <a href="/user/dd3dd">dd3dd</a> : 
     </span> 
 
-i wouldve never guessed it. . 
+This is Seaseon 3 .. I am confused... what do you mean?
+
+    </p>
+    </div>
+
+
+
+    <div class="latest_comments  com_class_mov">
+    <a href="/movie/250153-biodome">Bio-Dome</a>
+    <p>
+    <span class="latest_comments_poster">
+    <a href="/user/Davidleefl43">Davidleefl43</a> : 
+    </span> 
+
+awesome ! 
 
     </p>
     </div>
@@ -1656,56 +1761,41 @@ i wouldve never guessed it. .
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/1497200/murderbot-season-1-episode-10">Murderbot S1 E10</a>
+    <a href="/tv/10153/star-trek-voyager-season-2-episode-16">Star Trek: Voyager S2 E16</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/hackenprof">hackenprof</a> : 
+    <a href="/user/Twixtid">Twixtid</a> : 
     </span> 
 
-This show is based on The Murderbot Diaries series of books and short stories by Martha We...
+The acting in this series is seriously good. I did love DS9 but the acting on DS9 is nowhe...
 
     </p>
     </div>
 
 
 
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/1485768-manufacturing-the-threat">Manufacturing the Threat</a>
+    <div class="latest_comments  com_class_tv">
+    <a href="/tv/10153/star-trek-voyager-season-2-episode-15">Star Trek: Voyager S2 E15</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/twizzee">twizzee</a> : 
+    <a href="/user/Twixtid">Twixtid</a> : 
     </span> 
 
-They Just Call it a Psychological Operation Where I&#39;m From and
-It would Indulge you if you...
+Welp, that just happened, I was wondering if anyone was gonna get some action from Janeway...
 
     </p>
     </div>
 
 
 
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/692277-big-fish">Big Fish</a>
+    <div class="latest_comments  com_class_tv">
+    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/hackenprof">hackenprof</a> : 
+    <a href="/user/Xsile">Xsile</a> : 
     </span> 
 
-Came here to say this.
-
-    </p>
-    </div>
-
-
-
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/1360405-the-tomorrow-war">The Tomorrow War</a>
-    <p>
-    <span class="latest_comments_poster">
-    <a href="/user/footshot">footshot</a> : 
-    </span> 
-
-how did i miss this , greatt scifi 
+I really like this show but wished they had started at the beginning. This series is the t...
 
     </p>
     </div>
@@ -1716,7 +1806,7 @@ how did i miss this , greatt scifi
     </div>
 
     <div class="footer footer_right">
-      <a href="#" title=" unregistered">666 users online</a> -
+      <a href="#" title=" unregistered">582 users online</a> -
       <a href="/contact">Contacts</a> -
       <a href="/faq">FAQ</a> -
       <a href="/dmca">DMCA</a> -
@@ -1728,11 +1818,11 @@ how did i miss this , greatt scifi
 
 </div>
 
-<span id="user-data" v="OibfPdQg2y/mkik1bsNT5Y/Xor2W0NgCbOaw2H9WutUK4tiJLQD9WpgF1STbP2/gMa+RorWFjDUSiR7/9Y6qzJ1vn7TAjG2dzsExhzZqjV">
+<span id="user-data" v="MGEmzYnwkzq3dBq1xyVbaLKHZzNoWUM0+Gqhwt2s4xLm6Mnb3Pu8DQxXjdn/c53anioVAksOCiT6EYYWicLQ/wDvxB1m1BQBd27fLkUQM_">
 
 <script>
 
-window.csrf_token = "SzcqKwhARFA7Fx8JTU8aAwUbGCwyMBwW3oLimut4izFgy6Q5Q_wtfiTY";
+window.csrf_token = "Ix4-BjUCFWlwNz4IHColCTooEjgiAwMbbxhtjEXDGGZdZedMPKUlQ2Im";
 window.subs = false
 window.tsr = false
 document.dispatchEvent(window.appTrigger);
@@ -1741,7 +1831,14 @@ window.appTriggered = true;
 
 <div id="previewer-el"></div>
 
-<div id="bg_6301167358"></div>
-
+  <script async data-cfasync="false" src="https://platform.pubadx.one/pubadx-ad.js" type="text/javascript"></script>
+  <div id="bg-ssp-7358">
+  <script data-cfasync="false" data-no-optimize="1">
+  var adx_id_7358 = document.getElementById('bg-ssp-7358');
+  adx_id_7358.id = 'bg-ssp-7358-' + Math.floor(Math.random() * Date.now());
+  window.pubadxtag = window.pubadxtag || [];
+  window.pubadxtag.push({zoneid: 7358, id: adx_id_7358.id, wu: window.location.href})
+  </script>
+  </div>
 
 </body></html>

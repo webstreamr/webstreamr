@@ -7,7 +7,7 @@
   window.appTrigger = document.createEvent("Event");
   window.appTrigger.initEvent("appTrigger", true, true);
 </script>
-<script async type="text/javascript" src="/js/app-21205005105979fb964d17bf03570023.js?vsn=d"></script>
+<script async type="text/javascript" src="/js/app-28c2d56eea85cbacb6b45a5d0da6fb62.js?vsn=d"></script>
 
 <title>
 
@@ -42,18 +42,14 @@ document.querySelector('meta[name=viewport]').setAttribute('content', 'width=670
 
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="/css/app-fb4fae4fffa981555ebd9a719faf4d68.css?vsn=d" type="text/css">
+<link rel="stylesheet" href="/css/app-d9a4ac98a016dee0bfe32443cfb9e57e.css?vsn=d" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-
-
-
-
-
 
 <script>
 window.series = {}
 </script>
 
+<script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="358633"></script>
 </head>
 <body class="">
 
@@ -62,7 +58,7 @@ window.series = {}
   <div class="col1">
 
     <div class="menu">
-      <h1 id="a_header"><a href="/" title="PrimeWire"><span>PrimeWire</span></a></h1>
+      <h1 id="a_header"><a href="/home" title="PrimeWire"><span>PrimeWire</span></a></h1>
       <div class="header ">
         <div class="header_search">
           <form method="get" action="/filter" id="searchform">
@@ -91,7 +87,7 @@ window.series = {}
 
 
 
-        <div class="info_message">Email service has been restored so that <a href="/registrations/new">account creation</a>, <a href="/passwords/new">pasword resets</a>, and <a href="/confirmations/new">requesting email confirmation</a> etc work again.</div>
+        <div class="info_message">Try our new domain, <a href="https://www.primewire.mov">PrimeWire.mov</a></div>
       </div>
 
 
@@ -120,19 +116,19 @@ window.series = {}
                   <img src="/poster/small/1423432-the-walking-dead-dead-city-iTJlz.jpg" width="150" border="0" style="border-radius: 5px 5px 0px 0px;">
                   </a>
 
-                  <div class="tv_show_status" style="background-color:#518CB3;">To Be Determined</div>
+                  <div class="tv_show_status" style="background-color:#518CB3;">Running</div>
                </div>
                <div class="movie_ratings">
                      <ul class="unit-rating" style="width:100px;">
 
-                        <li class="current-rating" style="width: 80.0px;">Currently 80.0/5</li>
+                        <li class="current-rating" style="width: 79.23076923076923px;">Currently 79.23076923076923/5</li>
                         <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" show-id="1423432" rating="1"></a></li>
                         <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" show-id="1423432" rating="2"></a></li>
                         <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" show-id="1423432" rating="3"></a></li>
                         <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" show-id="1423432" rating="4"></a></li>
                         <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" show-id="1423432" rating="5"></a></li>
                      </ul>
-                     <div class="not_voted">(47 votes)</div>
+                     <div class="not_voted">(52 votes)</div>
 <div class="library-widget">
   <span class="title">
     <label>
@@ -435,9 +431,11 @@ June 15, 2023
          <tr>
             <td colspan="2">
 
-
-
-
+<div class="service-banner">
+    <a href="https://click.picvenxs.com/LnAAgYeu" target="_blank">
+        <img src="/images/service/disney-728x90.jpg"  style="width: 100%"/>
+    </a>
+</div>
 
 
             </td>
@@ -515,7 +513,7 @@ E1
                   <span class="tv_num_versions">
 
 
-                     [ 20 Links ]
+                     [ 16 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="2422207" data-season="1" >
@@ -529,7 +527,7 @@ E2
                   <span class="tv_num_versions">
 
 
-                     [ 21 Links ]
+                     [ 14 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="2422208" data-season="1" >
@@ -543,7 +541,7 @@ E3
                   <span class="tv_num_versions">
 
 
-                     [ 19 Links ]
+                     [ 14 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="2422209" data-season="1" >
@@ -557,7 +555,7 @@ E4
                   <span class="tv_num_versions">
 
 
-                     [ 17 Links ]
+                     [ 12 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="2422210" data-season="1" >
@@ -571,7 +569,7 @@ E5
                   <span class="tv_num_versions">
 
 
-                     [ 15 Links ]
+                     [ 12 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="2422211" data-season="1" >
@@ -585,7 +583,7 @@ E6
                   <span class="tv_num_versions">
 
 
-                     [ 16 Links ]
+                     [ 12 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="2422212" data-season="1" >
@@ -609,7 +607,7 @@ E1
                   <span class="tv_num_versions">
 
 
-                     [ 28 Links ]
+                     [ 24 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="3063850" data-season="2" >
@@ -623,7 +621,7 @@ E2
                   <span class="tv_num_versions">
 
 
-                     [ 34 Links ]
+                     [ 29 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="3063851" data-season="2" >
@@ -637,7 +635,7 @@ E3
                   <span class="tv_num_versions">
 
 
-                     [ 36 Links ]
+                     [ 29 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="3063852" data-season="2" >
@@ -651,7 +649,7 @@ E4
                   <span class="tv_num_versions">
 
 
-                     [ 42 Links ]
+                     [ 34 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="3063853" data-season="2" >
@@ -665,7 +663,7 @@ E5
                   <span class="tv_num_versions">
 
 
-                     [ 52 Links ]
+                     [ 40 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="3063854" data-season="2" >
@@ -679,7 +677,7 @@ E6
                   <span class="tv_num_versions">
 
 
-                     [ 44 Links ]
+                     [ 34 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="3063855" data-season="2" >
@@ -693,7 +691,7 @@ E7
                   <span class="tv_num_versions">
 
 
-                     [ 46 Links ]
+                     [ 39 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="3063856" data-season="2" >
@@ -707,7 +705,7 @@ E8
                   <span class="tv_num_versions">
 
 
-                     [ 49 Links ]
+                     [ 40 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="3063857" data-season="2" >
@@ -795,6 +793,8 @@ E8
   <option value="IE">Ireland</option>
 
   <option value="IN">India</option>
+
+  <option value="IT">Italy</option>
 
   <option value="JM">Jamaica</option>
 
@@ -905,7 +905,7 @@ E8
   <a href="https://www.google.com/search?q=Youtube+TV+The+Walking+Dead%3A+Dead+City+%282023%29" target="_blank">
   <div class="provider" title="Youtube TV">
     <div class="provider-img">
-    <img src="https://www.themoviedb.org/t/p/original//G4ywpel53eVohvZ8INFihZkuti.jpg" alt="Youtube TV">
+    <img src="https://www.themoviedb.org/t/p/original//x9zOHTUkQzt3PgPVKbMH9CKBwLK.jpg" alt="Youtube TV">
     </div>
   </div>
   </a>
@@ -982,7 +982,7 @@ E8
       <div class="index_item index_item_ie">
          <a href="/playlist/1832-dystopian-future-cyberpunk-films-and-tv-shows" title="🤖 Dystopian future &amp; cyberpunk films and TV shows">
             <img src="/poster/small/1114124-chappie-AxCZM.jpg" border="0" width="150" height="225" alt="Watch 🤖 Dystopian future &amp; cyberpunk films and TV shows">
-            <h2><div class="title-cutoff">🤖 Dystopian future &amp; cyberpunk films and TV shows</div> 1175 items</h2>
+            <h2><div class="title-cutoff">🤖 Dystopian future &amp; cyberpunk films and TV shows</div> 1176 items</h2>
          </a>
       </div>
 
@@ -1003,7 +1003,7 @@ E8
       <div class="index_item index_item_ie">
          <a href="/playlist/5995-horror-supernatural-fantasy-tv-series-movies" title="HORROR/SUPERNATURAL/FANTASY TV SERIES &amp; MOVIES">
             <img src="/poster/small/23-supernatural-Q_bt5.jpg" border="0" width="150" height="225" alt="Watch HORROR/SUPERNATURAL/FANTASY TV SERIES &amp; MOVIES">
-            <h2><div class="title-cutoff">HORROR/SUPERNATURAL/FANTASY TV SERIES &amp; MOVIES</div> 322 items</h2>
+            <h2><div class="title-cutoff">HORROR/SUPERNATURAL/FANTASY TV SERIES &amp; MOVIES</div> 356 items</h2>
          </a>
       </div>
 
@@ -1038,7 +1038,7 @@ E8
       <div class="index_item index_item_ie">
          <a href="/playlist/7245-interesting-tv-shows" title="interesting tv shows">
             <img src="/poster/small/1506362-doctor-odyssey-y8p7R.jpg" border="0" width="150" height="225" alt="Watch interesting tv shows">
-            <h2><div class="title-cutoff">interesting tv shows</div> 68 items</h2>
+            <h2><div class="title-cutoff">interesting tv shows</div> 77 items</h2>
          </a>
       </div>
 
@@ -1094,12 +1094,12 @@ E8
 
 
   <div class="col2">
-    <a href="/"><div class="logo"></div></a>
+    <a href="/home"><div class="logo"></div></a>
 
     <div class="sidebar">
 
 <div class="loginform" style="width: 280px;">
-<form action="/sessions" class="secure" method="post"><input name="_csrf_token" type="hidden" value="IXM6fSQoQn52BAd1LjMcI2M_Yh0TNQonG9s9pru-NocMOekl3k-YcdAo">
+<form action="/sessions" class="secure" method="post"><input name="_csrf_token" type="hidden" value="KAMvXmEufxM9FhA5Xn4YYRBwQAV3VH0tFoFlTh3ybyDs9MT0wH2NDl3i">
   <div class="form-group">
 <label for="session_email">Email</label>
 <input id="session_email" name="session[email]" type="text">
@@ -1144,58 +1144,37 @@ E8
  PrimeWire is a social site for discovering, sharing and watching movies and TV shows.  <a href="/start" style="text-decoration: underline;">more info</a>
  </div>
  <div style="padding: 0 5px;">
- <a href="https://www.primewire.tf">PrimeWire.tf</a> is the official domain for PrimeWire
+ <a href="https://www.primewire.tf">PrimeWire.tf</a> and <a href="https://www.primewire.mov">PrimeWire.mov</a> are the official domain for PrimeWire
 </div>
 
 
 
+
+  <script async data-cfasync="false" src="https://platform.pubadx.one/pubadx-ad.js" type="text/javascript"></script>
+  <div id="bg-ssp-6816">
+  <script data-cfasync="false" data-no-optimize="1">
+  var adx_id_6816 = document.getElementById('bg-ssp-6816');
+  adx_id_6816.id = 'bg-ssp-6816-' + Math.floor(Math.random() * Date.now());
+  window.pubadxtag = window.pubadxtag || [];
+  window.pubadxtag.push({zoneid: 6816, id: adx_id_6816.id, wu: window.location.href})
+  </script>
+  </div>
 
 
 <h2>Latest Comments</h2>
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/1476367-high-potential">High Potential</a>
+    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/greyfur">greyfur</a> : 
+    <a href="/user/Balthasar">Balthasar</a> : 
 
     </span> 
 
-I like that idea!
-
-    </p>
-    </div>
-
-
-
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/1566200-flight-149-hostage-of-war">Flight 149: Hostage of War</a>
-    <p>
-    <span class="latest_comments_poster">
-
-    <a href="/user/Technosamurai">Technosamurai</a> : 
-
-    </span> 
-
-A Really great documentary, would recommend it, try watching when you have time to really ...
-
-    </p>
-    </div>
-
-
-
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/1407378-from-the-world-of-john-wick-ballerina">From the World of John Wick: Ballerina</a>
-    <p>
-    <span class="latest_comments_poster">
-
-    <a href="/user/%25CE%259C%25CE%25A5%25CE%2593%25CE%2591%25CE%25A3">ΜΥΓΑΣ</a> : 
-
-    </span> 
-
-Now a sequal has to be made, so that Eve faces the &quot;consequences of here actions&quot; just lik...
+Dude! TMI!!!
+I fell asleep:) 🥱💤
 
     </p>
     </div>
@@ -1203,15 +1182,15 @@ Now a sequal has to be made, so that Eve faces the &quot;consequences of here ac
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/1476367-high-potential">High Potential</a>
+    <a href="/tv/1342735/star-trek-strange-new-worlds-season-3-episode-5">Star Trek: Strange New Worlds S3 E5</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/Piglet">Piglet</a> : 
+    <a href="/user/Balthasar">Balthasar</a> : 
 
     </span> 
 
-A new character is being added to the 2nd season. Mekhi Phifer (you may remember him from ...
+On it! 🔪🔪💣💥💀
 
     </p>
     </div>
@@ -1219,15 +1198,47 @@ A new character is being added to the 2nd season. Mekhi Phifer (you may remember
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/1542248/liberation-d-day-to-berlin-season-1-episode-4">Liberation: D-Day to Berlin S1 E4</a>
+    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/mkmikas">mkmikas</a> : 
+    <a href="/user/Xsile">Xsile</a> : 
 
     </span> 
 
-a very selective history of ww2, but otherwise well done and accurate, again just very sel...
+Isaac Asimov&#39;s &quot;I, Robot&quot; and &quot;Foundation&quot; series are connected through his broader &quot;Robot...
+
+    </p>
+    </div>
+
+
+
+    <div class="latest_comments  com_class_mov">
+    <a href="/movie/1514833-eddington">Eddington</a>
+    <p>
+    <span class="latest_comments_poster">
+
+    <a href="/user/deimos737">deimos737</a> : 
+
+    </span> 
+
+Yikes.... I&#39;m all for creative free speech, or whatever you like to call it, but this is r...
+
+    </p>
+    </div>
+
+
+
+    <div class="latest_comments  com_class_tv">
+    <a href="/tv/1563210/survival-mode-season-1-episode-4">Survival Mode S1 E4</a>
+    <p>
+    <span class="latest_comments_poster">
+
+    <a href="/user/FeltMountain">FeltMountain</a> : 
+
+    </span> 
+
+I lived nearby when this happened.  There were train cars on the side of the freeway for w...
 
     </p>
     </div>
@@ -1238,14 +1249,28 @@ a very selective history of ww2, but otherwise well done and accurate, again jus
 <h2>Top Comments</h2>
 
 
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/1542677-cheers-portland-the-strip-club-capital-of-america">Cheers! Portland, the Strip Club Capital of America</a>
+    <div class="latest_comments  com_class_tv">
+    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/coolwhip">coolwhip</a> : 
+    <a href="/user/dd3dd">dd3dd</a> : 
     </span> 
 
-i wouldve never guessed it. . 
+This is Seaseon 3 .. I am confused... what do you mean?
+
+    </p>
+    </div>
+
+
+
+    <div class="latest_comments  com_class_mov">
+    <a href="/movie/250153-biodome">Bio-Dome</a>
+    <p>
+    <span class="latest_comments_poster">
+    <a href="/user/Davidleefl43">Davidleefl43</a> : 
+    </span> 
+
+awesome ! 
 
     </p>
     </div>
@@ -1253,56 +1278,41 @@ i wouldve never guessed it. .
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/1497200/murderbot-season-1-episode-10">Murderbot S1 E10</a>
+    <a href="/tv/10153/star-trek-voyager-season-2-episode-16">Star Trek: Voyager S2 E16</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/hackenprof">hackenprof</a> : 
+    <a href="/user/Twixtid">Twixtid</a> : 
     </span> 
 
-This show is based on The Murderbot Diaries series of books and short stories by Martha We...
+The acting in this series is seriously good. I did love DS9 but the acting on DS9 is nowhe...
 
     </p>
     </div>
 
 
 
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/1485768-manufacturing-the-threat">Manufacturing the Threat</a>
+    <div class="latest_comments  com_class_tv">
+    <a href="/tv/10153/star-trek-voyager-season-2-episode-15">Star Trek: Voyager S2 E15</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/twizzee">twizzee</a> : 
+    <a href="/user/Twixtid">Twixtid</a> : 
     </span> 
 
-They Just Call it a Psychological Operation Where I&#39;m From and
-It would Indulge you if you...
+Welp, that just happened, I was wondering if anyone was gonna get some action from Janeway...
 
     </p>
     </div>
 
 
 
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/692277-big-fish">Big Fish</a>
+    <div class="latest_comments  com_class_tv">
+    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/hackenprof">hackenprof</a> : 
+    <a href="/user/Xsile">Xsile</a> : 
     </span> 
 
-Came here to say this.
-
-    </p>
-    </div>
-
-
-
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/1360405-the-tomorrow-war">The Tomorrow War</a>
-    <p>
-    <span class="latest_comments_poster">
-    <a href="/user/footshot">footshot</a> : 
-    </span> 
-
-how did i miss this , greatt scifi 
+I really like this show but wished they had started at the beginning. This series is the t...
 
     </p>
     </div>
@@ -1313,7 +1323,7 @@ how did i miss this , greatt scifi
     </div>
 
     <div class="footer footer_right">
-      <a href="#" title=" unregistered">668 users online</a> -
+      <a href="#" title=" unregistered">577 users online</a> -
       <a href="/contact">Contacts</a> -
       <a href="/faq">FAQ</a> -
       <a href="/dmca">DMCA</a> -
@@ -1327,7 +1337,7 @@ how did i miss this , greatt scifi
 
 <script>
 
-window.csrf_token = "IXM6fSQoQn52BAd1LjMcI2M_Yh0TNQonG9s9pru-NocMOekl3k-YcdAo";
+window.csrf_token = "KAMvXmEufxM9FhA5Xn4YYRBwQAV3VH0tFoFlTh3ybyDs9MT0wH2NDl3i";
 window.subs = false
 window.tsr = false
 document.dispatchEvent(window.appTrigger);
@@ -1336,7 +1346,14 @@ window.appTriggered = true;
 
 <div id="previewer-el"></div>
 
-<div id="bg_6301167358"></div>
-
+  <script async data-cfasync="false" src="https://platform.pubadx.one/pubadx-ad.js" type="text/javascript"></script>
+  <div id="bg-ssp-7358">
+  <script data-cfasync="false" data-no-optimize="1">
+  var adx_id_7358 = document.getElementById('bg-ssp-7358');
+  adx_id_7358.id = 'bg-ssp-7358-' + Math.floor(Math.random() * Date.now());
+  window.pubadxtag = window.pubadxtag || [];
+  window.pubadxtag.push({zoneid: 7358, id: adx_id_7358.id, wu: window.location.href})
+  </script>
+  </div>
 
 </body></html>

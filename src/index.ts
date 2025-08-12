@@ -17,6 +17,16 @@ if (envIsProd()) {
   console.log = console.warn = console.error = console.info = console.debug = () => { /* disable in favor of logger */ };
 }
 
+// At your app’s entry point
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught exception caught:', err);
+  // Decide: exit gracefully or continue
+});
+
+process.on('unhandledRejection', (reason) => {
+  console.error('Unhandled rejection:', reason);
+});
+
 const logger = winston.createLogger({
   transports: [
     new winston.transports.Console({

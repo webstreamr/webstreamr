@@ -9,6 +9,7 @@ import { MegaKino } from './MegaKino';
 import { MeineCloud } from './MeineCloud';
 import { MostraGuarda } from './MostraGuarda';
 import { Movix } from './Movix';
+import { PrimeWire } from './PrimeWire';
 import { Soaper } from './Soaper';
 import { StreamKiste } from './StreamKiste';
 import { Source } from './types';
@@ -22,7 +23,7 @@ export const createSources = (fetcher: Fetcher): Source[] => [
   // multi
   new VixSrc(fetcher),
   // EN
-  // new PrimeWire(fetcher), // links are shortened and redirect works via obfuscated JS
+  new PrimeWire(fetcher),
   new Soaper(fetcher),
   new VidSrc(fetcher),
   // ES / MX
