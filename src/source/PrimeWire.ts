@@ -1,6 +1,6 @@
 import crypto from 'crypto';
 import * as cheerio from 'cheerio';
-import { Browser, BrowserErrorCaptureEnum } from 'happy-dom';
+import { JSDOM } from 'jsdom';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
 import { Fetcher, getImdbId, Id, ImdbId } from '../utils';
@@ -50,25 +50,13 @@ export class PrimeWire implements Source {
       linksHtml = await this.fetcher.text(ctx, episodeUrl);
     }
 
-    const browser = new Browser({
-      settings: {
-        disableCSSFileLoading: true,
-        disableComputedStyleRendering: true,
-        disableJavaScriptFileLoading: true,
-        errorCapture: BrowserErrorCaptureEnum.processLevel,
-        fetch: {
-          interceptor: {
-            beforeAsyncRequest: async () => { /* silence */ },
-          },
-        },
-      },
-    });
+    // Yes, we are aware of the risks.. 😰
+    const jsdom = new JSDOM(linksHtml, { runScripts: 'dangerously' });
+    const scriptElement = jsdom.window.document.createElement('script');
+    scriptElement.textContent = appJs;
+    jsdom.window.document.body.appendChild(scriptElement);
 
-    const linksPage = browser.newPage();
-    linksPage.content = linksHtml;
-    linksPage.evaluate(appJs);
-
-    const $ = cheerio.load(linksPage.content);
+    const $ = cheerio.load(jsdom.window.document.documentElement.outerHTML);
 
     const linksTokenMatch = appJs.match(/t="(0\.x.*?)"/) as string[];
     const linksToken = linksTokenMatch[1] as string;
