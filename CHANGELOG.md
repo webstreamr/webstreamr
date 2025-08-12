@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.41.9](https://github.com/webstreamr/webstreamr/compare/v0.41.8...v0.41.9) (2025-08-12)
+
+
+### Miscellaneous Chores
+
+* clean-up critical error handling ([1a5cad4](https://github.com/webstreamr/webstreamr/commit/1a5cad40a2eedf1eb848157cb1944a8ca556d775))
+
+
+### Bug Fixes
+
+* **source:** keep using jsdom for now because of performance issues ([2d96e1d](https://github.com/webstreamr/webstreamr/commit/2d96e1db8fed5c4ce564cf81cb472d17c08fb44e))
+
 ## [0.41.8](https://github.com/webstreamr/webstreamr/compare/v0.41.7...v0.41.8) (2025-08-12)
 
 
