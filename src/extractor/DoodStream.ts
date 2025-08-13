@@ -30,7 +30,7 @@ export class DoodStream extends Extractor {
   };
 
   protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
-    const html = await this.fetcher.text(ctx, new URL(url));
+    const html = await this.fetcher.text(ctx, url);
 
     const passMd5Match = html.match(/\/pass_md5\/[\w-]+\/([\w-]+)/);
     if (!passMd5Match) {
@@ -39,7 +39,7 @@ export class DoodStream extends Extractor {
 
     const token = passMd5Match[1] as string;
 
-    const baseUrl = await this.fetcher.text(ctx, new URL(`http://dood.to${passMd5Match[0]}`));
+    const baseUrl = await this.fetcher.text(ctx, new URL(passMd5Match[0], url.origin));
 
     const $ = cheerio.load(html);
     const title = $('title').text().trim().replace(/ - DoodStream$/, '').trim();
