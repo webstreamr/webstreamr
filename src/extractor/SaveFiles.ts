@@ -1,4 +1,5 @@
 import * as cheerio from 'cheerio';
+import { NotFoundError } from '../error';
 import { Context, CountryCode, Format, UrlResult } from '../types';
 import { Fetcher } from '../utils';
 import { Extractor } from './Extractor';
@@ -26,6 +27,10 @@ export class SaveFiles extends Extractor {
 
   protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
     const html = await this.fetcher.text(ctx, url);
+
+    if (/File was locked by administrator/.test(html)) {
+      throw new NotFoundError();
+    }
 
     const fileMatch = html.match(/file:"(.*?)"/) as string[];
     const sizeMatch = html.match(/\[\d{3,}x(\d{3,})/) as string[];

@@ -15,6 +15,10 @@ describe('SafeFiles', () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://savefiles.com/ip0k0dj2g0i3'), CountryCode.en)).toMatchSnapshot();
   });
 
+  test('savefiles locked file', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://savefiles.com/omqq55i59nvv'), CountryCode.en)).toMatchSnapshot();
+  });
+
   test('streamhls /e/', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://streamhls.to/e/ip0k0dj2g0i3'), CountryCode.en)).toMatchSnapshot();
   });
