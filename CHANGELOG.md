@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.42.0](https://github.com/webstreamr/webstreamr/compare/v0.41.9...v0.42.0) (2025-08-13)
+
+
+### Miscellaneous Chores
+
+* **fetcher:** retry 5xx errors up to 3 times ([a12ae7a](https://github.com/webstreamr/webstreamr/commit/a12ae7aaa5291835b23ed3da5c84fd5952f08ea0))
+
+
+### Features
+
+* **extractor:** add SaveFiles support ([c9aaf8b](https://github.com/webstreamr/webstreamr/commit/c9aaf8bb8f23d52dccd58668d089bae428fe8ce5))
+
+
+### Bug Fixes
+
+* support stream resolving without config ([17da20f](https://github.com/webstreamr/webstreamr/commit/17da20f6d0c18dd7f22fb291b0bfd6256b85a79c))
+
+
+### Code Refactoring
+
+* **extractor:** clean-up DoodStream sightly ([3e964f2](https://github.com/webstreamr/webstreamr/commit/3e964f28ff3f9a0acbc929e648f7531fbeb40468))
+
 ## [0.41.9](https://github.com/webstreamr/webstreamr/compare/v0.41.8...v0.41.9) (2025-08-12)
 
 
