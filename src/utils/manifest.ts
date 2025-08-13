@@ -25,7 +25,7 @@ export const buildManifest = (sources: Source[], extractors: Extractor[], config
     behaviorHints: {
       p2p: false,
       configurable: true,
-      configurationRequired: Object.keys(config).length === 0,
+      configurationRequired: false,
     },
     config: [],
     stremioAddonsConfig: {

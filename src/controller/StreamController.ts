@@ -18,6 +18,7 @@ export class StreamController {
     this.sources = sources;
     this.streamResolver = streams;
 
+    this.router.get('/stream/:type/:id.json', this.getStream.bind(this));
     this.router.get('/:config/stream/:type/:id.json', this.getStream.bind(this));
   }
 
