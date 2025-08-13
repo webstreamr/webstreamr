@@ -6,6 +6,7 @@ import { Extractor } from './Extractor';
 import { Fastream } from './Fastream';
 import { KinoGer } from './KinoGer';
 import { Mixdrop } from './Mixdrop';
+import { SaveFiles } from './SaveFiles';
 import { Soaper } from './Soaper';
 import { StreamEmbed } from './StreamEmbed';
 import { Streamtape } from './Streamtape';
@@ -23,6 +24,7 @@ export const createExtractors = (fetcher: Fetcher): Extractor[] => [
   new Fastream(fetcher),
   new KinoGer(fetcher),
   new Mixdrop(fetcher),
+  new SaveFiles(fetcher),
   new Soaper(fetcher),
   new StreamEmbed(fetcher),
   new Streamtape(fetcher),
