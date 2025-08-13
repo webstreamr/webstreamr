@@ -248,7 +248,7 @@ export class Fetcher {
     return this.handleHttpCacheItem(ctx, httpCacheItem, url, init);
   };
 
-  protected async fetchWithTimeout(ctx: Context, url: URL, init?: CustomRequestInit): Promise<Response> {
+  protected async fetchWithTimeout(ctx: Context, url: URL, init?: CustomRequestInit, tryCount = 0): Promise<Response> {
     this.logger.info(`Fetch ${init?.method ?? 'GET'} ${url}`, ctx);
 
     if (this.rateLimitedCache.has(url.host)) {
@@ -278,6 +278,12 @@ export class Fetcher {
     }
 
     await this.decreaseTimeoutsCount(url);
+
+    if (response.status >= 500 && tryCount < 3) {
+      await new Promise(sleep => setTimeout(sleep, 333));
+
+      return await this.fetchWithTimeout(ctx, url, init, ++tryCount);
+    }
 
     return response;
   };
