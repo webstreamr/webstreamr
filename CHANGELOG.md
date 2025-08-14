@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.42.1](https://github.com/webstreamr/webstreamr/compare/v0.42.0...v0.42.1) (2025-08-14)
+
+
+### Miscellaneous Chores
+
+* **extractor:** use all VidSrc TLDs to handle rate-limit better ([6492e6b](https://github.com/webstreamr/webstreamr/commit/6492e6be820e0e50b814aa3e661d10517184ac38))
+* use mutex per id when resolving streams ([c0797f3](https://github.com/webstreamr/webstreamr/commit/c0797f368733ae3e30bb1fb4cc92949f4a928f47))
+
+
+### Bug Fixes
+
+* **extractor:** handle SaveFiles locked file ([285996c](https://github.com/webstreamr/webstreamr/commit/285996cbf6f8a8a92fd18cc365006fb980436d75))
+
 ## [0.42.0](https://github.com/webstreamr/webstreamr/compare/v0.41.9...v0.42.0) (2025-08-13)
 
 
