@@ -1,5 +1,7 @@
 import { Manifest, ManifestConfig } from 'stremio-addon-sdk';
 
+export type NonEmptyArray<T> = [T, ...T[]];
+
 export interface Context {
   hostUrl: URL;
   id: string;

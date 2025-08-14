@@ -30,7 +30,7 @@ export const createExtractors = (fetcher: Fetcher): Extractor[] => [
   new Streamtape(fetcher),
   new SuperVideo(fetcher),
   new Uqload(fetcher),
-  new VidSrc(fetcher),
+  new VidSrc(fetcher, ['in', 'pm', 'net', 'xyz', 'io', 'vc']), // https://vidsrc.domains/
   new VixSrc(fetcher),
   new ExternalUrl(fetcher), // fallback extractor which must come last
 ];

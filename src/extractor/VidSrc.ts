@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import slugify from 'slugify';
-import { NotFoundError } from '../error';
-import { Context, CountryCode, Format, UrlResult } from '../types';
+import { NotFoundError, TooManyRequestsError } from '../error';
+import { Context, CountryCode, Format, NonEmptyArray, UrlResult } from '../types';
 import { Fetcher, guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -11,11 +11,13 @@ export class VidSrc extends Extractor {
   public readonly label = 'VidSrc';
 
   private readonly fetcher: Fetcher;
+  private readonly tlds: NonEmptyArray<string>;
 
-  public constructor(fetcher: Fetcher) {
+  public constructor(fetcher: Fetcher, tlds: NonEmptyArray<string>) {
     super();
 
     this.fetcher = fetcher;
+    this.tlds = tlds;
   }
 
   public supports(_ctx: Context, url: URL): boolean {
@@ -23,7 +25,28 @@ export class VidSrc extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
-    const html = await this.fetcher.text(ctx, url);
+    return this.extractUsingRandomTld(ctx, url, countryCode, [...this.tlds]);
+  };
+
+  private async extractUsingRandomTld(ctx: Context, url: URL, countryCode: CountryCode, tlds: string[]): Promise<UrlResult[]> {
+    const tldIndex = Math.floor(Math.random() * tlds.length);
+    const [tld] = tlds.splice(tldIndex, 1) as [string];
+
+    const newUrl = new URL(url);
+    const hostnameParts = newUrl.hostname.split('.');
+    hostnameParts[hostnameParts.length - 1] = tld;
+    newUrl.hostname = hostnameParts.join('.');
+
+    let html: string;
+    try {
+      html = await this.fetcher.text(ctx, newUrl);
+    } catch (error) {
+      if (error instanceof TooManyRequestsError && tlds.length) {
+        return this.extractUsingRandomTld(ctx, url, countryCode, tlds);
+      }
+
+      throw error;
+    }
 
     const $ = cheerio.load(html);
 
@@ -61,5 +84,5 @@ export class VidSrc extends Extractor {
           };
         }),
     );
-  };
+  }
 }
