@@ -1,8 +1,11 @@
+import { Mutex } from 'async-mutex';
 import { Request, Response, Router } from 'express';
 import { ContentType } from 'stremio-addon-sdk';
 import winston from 'winston';
 import { Source } from '../source';
 import { contextFromRequestAndResponse, envIsProd, ImdbId, StreamResolver } from '../utils';
+
+const locks = new Map<string, Mutex>();
 
 export class StreamController {
   public readonly router: Router;
@@ -32,13 +35,25 @@ export class StreamController {
 
     const sources = this.sources.filter(handler => handler.countryCodes.filter(countryCode => countryCode in ctx.config).length);
 
-    const { streams, ttl } = await this.streamResolver.resolve(ctx, sources, type, ImdbId.fromString(id));
-
-    if (ttl && envIsProd()) {
-      res.setHeader('Cache-Control', `max-age=${ttl / 1000}, public`);
+    let mutex = locks.get(id);
+    if (!mutex) {
+      mutex = new Mutex();
+      locks.set(id, mutex);
     }
 
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({ streams }));
+    await mutex.runExclusive(async () => {
+      const { streams, ttl } = await this.streamResolver.resolve(ctx, sources, type, ImdbId.fromString(id));
+
+      if (ttl && envIsProd()) {
+        res.setHeader('Cache-Control', `max-age=${ttl / 1000}, public`);
+      }
+
+      res.setHeader('Content-Type', 'application/json');
+      res.send(JSON.stringify({ streams }));
+    });
+
+    if (!mutex.isLocked()) {
+      locks.delete(id);
+    }
   };
 }
