@@ -44,13 +44,13 @@ interface FlareSolverrResult {
 }
 
 export type CustomRequestInit = RequestInit & {
-  timeoutsCountThrow?: number;
   noCache?: boolean;
   noFlareSolverr?: boolean;
   noProxyHeaders?: boolean;
   queueLimit?: number;
   queueTimeout?: number;
   timeout?: number;
+  timeoutsCountThrow?: number;
 };
 
 export class Fetcher {
