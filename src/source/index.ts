@@ -16,6 +16,7 @@ import { Source } from './types';
 import { VerHdLink } from './VerHdLink';
 import { VidSrc } from './VidSrc';
 import { VixSrc } from './VixSrc';
+import { XPrime } from './XPrime';
 
 export * from './types';
 
@@ -26,6 +27,7 @@ export const createSources = (fetcher: Fetcher): Source[] => [
   new PrimeWire(fetcher),
   new Soaper(fetcher),
   new VidSrc(fetcher),
+  new XPrime(fetcher),
   // ES / MX
   new CineHDPlus(fetcher),
   new Cuevana(fetcher),

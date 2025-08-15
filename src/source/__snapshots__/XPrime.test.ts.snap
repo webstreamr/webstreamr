@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`XPrime handle alien: earth 1x1 1`] = `
+[
+  {
+    "countryCode": "en",
+    "title": "Alien: Earth 1x1",
+    "url": "https://backend.xprime.tv/primebox?name=Alien%3A%20Earth&year=2025&season=1&episode=1",
+  },
+]
+`;
+
+exports[`XPrime handle superman 1`] = `
+[
+  {
+    "countryCode": "en",
+    "title": "Superman (2025)",
+    "url": "https://backend.xprime.tv/primebox?name=Superman&year=2025",
+  },
+]
+`;

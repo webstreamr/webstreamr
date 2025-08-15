@@ -21,7 +21,7 @@ exports[`buildManifest default manifest 1`] = `
     },
     {
       "key": "en",
-      "title": "English 🇺🇸 (PrimeWire, Soaper, VidSrc, VixSrc)",
+      "title": "English 🇺🇸 (PrimeWire, Soaper, VidSrc, VixSrc, XPrime)",
       "type": "checkbox",
     },
     {
