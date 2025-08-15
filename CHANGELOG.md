@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.43.0](https://github.com/webstreamr/webstreamr/compare/v0.42.1...v0.43.0) (2025-08-15)
+
+
+### Miscellaneous Chores
+
+* **fetcher:** allow to customize minimum cache ttl ([fe5b3af](https://github.com/webstreamr/webstreamr/commit/fe5b3af88781df8626121f367a5273bcfea629af))
+
+
+### Features
+
+* **source:** add XPrime ([cfe3887](https://github.com/webstreamr/webstreamr/commit/cfe38878d7bd9a4c09c1295ddfdc4d83842dc689))
+
+
+### Code Refactoring
+
+* **fetcher:** sort custom request init props ([2a5284d](https://github.com/webstreamr/webstreamr/commit/2a5284d5555f022ced5770127b23c924a8961607))
+
+
+### Tests
+
+* use proxy in tests ([9854d3b](https://github.com/webstreamr/webstreamr/commit/9854d3b5b6e01a09d6e10e71f3365fabc1d0c4ef))
+
 ## [0.42.1](https://github.com/webstreamr/webstreamr/compare/v0.42.0...v0.42.1) (2025-08-14)
 
 
