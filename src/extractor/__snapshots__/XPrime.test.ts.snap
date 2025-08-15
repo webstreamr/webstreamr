@@ -11,7 +11,7 @@ exports[`XPrime primebox Alien: Earth 1`] = `
         "en",
       ],
       "height": 1080,
-      "title": "Alien: Earth",
+      "title": "Alien: Earth 1x1 (2025)",
     },
     "requestHeaders": {
       "Referer": "https://xprime.tv",
@@ -29,7 +29,7 @@ exports[`XPrime primebox Alien: Earth 1`] = `
         "en",
       ],
       "height": 480,
-      "title": "Alien: Earth",
+      "title": "Alien: Earth 1x1 (2025)",
     },
     "requestHeaders": {
       "Referer": "https://xprime.tv",
@@ -52,7 +52,7 @@ exports[`XPrime primebox Superman 1`] = `
         "en",
       ],
       "height": 480,
-      "title": "Superman (2025)",
+      "title": "Superman",
     },
     "requestHeaders": {
       "Referer": "https://xprime.tv",
@@ -70,7 +70,7 @@ exports[`XPrime primebox Superman 1`] = `
         "en",
       ],
       "height": 720,
-      "title": "Superman (2025)",
+      "title": "Superman",
     },
     "requestHeaders": {
       "Referer": "https://xprime.tv",

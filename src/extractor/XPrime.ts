@@ -4,6 +4,13 @@ import { Extractor } from './Extractor';
 
 interface XPrimePrimeboxResponsePartial {
   streams: Record<string, string>;
+  series_info?: {
+    episode: number;
+    season: number;
+    title: string;
+    year: string;
+  };
+  title?: string;
 }
 
 export class XPrime extends Extractor {
@@ -25,7 +32,7 @@ export class XPrime extends Extractor {
     return null !== url.host.match(/xprime/);
   }
 
-  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode, title: string | undefined): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
     const urlResults: UrlResult[] = [];
 
     const referer = url.protocol + '//' + url.hostname.split('.').slice(-2).join('.'); // Strip subdomains
@@ -35,6 +42,9 @@ export class XPrime extends Extractor {
 
       for (const [resolution, stream] of Object.entries(jsonResponse.streams)) {
         const url = new URL(stream);
+        const title = jsonResponse.series_info
+          ? `${jsonResponse.series_info.title} ${jsonResponse.series_info.season}x${jsonResponse.series_info.episode} (${jsonResponse.series_info.year})`
+          : jsonResponse.title;
 
         urlResults.push({
           url,
@@ -46,7 +56,7 @@ export class XPrime extends Extractor {
             countryCodes: [countryCode],
             bytes: parseInt((await this.fetcher.head(ctx, url, { headers: { Referer: referer }, minCacheTtl: this.ttl }))['content-length'] as string),
             height: parseInt(resolution),
-            title: `${title}`,
+            title,
           },
           requestHeaders: {
             Referer: referer,

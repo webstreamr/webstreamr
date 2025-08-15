@@ -20,7 +20,7 @@ describe('XPrime', () => {
   });
 
   test('primebox Alien: Earth', async () => {
-    expect(await extractorRegistry.handle(ctx, new URL('https://backend.xprime.tv/primebox?name=Alien%3A%20Earth&year=2025&season=1&episode=1'), CountryCode.en, 'Alien: Earth')).toMatchSnapshot();
+    expect(await extractorRegistry.handle(ctx, new URL('https://backend.xprime.tv/primebox?name=Alien%3A%20Earth&year=2025&season=1&episode=1'), CountryCode.en, 'Alien: Earth 1x1')).toMatchSnapshot();
   });
 
   test('primebox not found', async () => {
