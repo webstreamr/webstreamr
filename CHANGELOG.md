@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.43.1](https://github.com/webstreamr/webstreamr/compare/v0.43.0...v0.43.1) (2025-08-15)
+
+
+### Miscellaneous Chores
+
+* use XPrime in live endpoint ([be33b0b](https://github.com/webstreamr/webstreamr/commit/be33b0b3b99d6e104e201193dc6f3ed00e602240))
+
+
+### Bug Fixes
+
+* **deps:** update dependency tough-cookie to v6 ([#278](https://github.com/webstreamr/webstreamr/issues/278)) ([7b7b0e1](https://github.com/webstreamr/webstreamr/commit/7b7b0e1e7e515af5b2a649081d502dc710661e8e))
+* **extractor:** use title from XPrime API ([a65b8fb](https://github.com/webstreamr/webstreamr/commit/a65b8fb507f1127ec4335b2bb50b4e89283f0cc9))
+
 ## [0.43.0](https://github.com/webstreamr/webstreamr/compare/v0.42.1...v0.43.0) (2025-08-15)
 
 
