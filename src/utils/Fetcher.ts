@@ -44,6 +44,7 @@ interface FlareSolverrResult {
 }
 
 export type CustomRequestInit = RequestInit & {
+  minCacheTtl?: number;
   noCache?: boolean;
   noFlareSolverr?: boolean;
   noProxyHeaders?: boolean;
@@ -190,9 +191,9 @@ export class Fetcher {
     return `${url.href}_${init?.body?.toString()}`;
   }
 
-  private determineCacheTtl(status: number, policy: CachePolicy): number {
+  private determineCacheTtl(status: number, policy: CachePolicy, init?: CustomRequestInit): number {
     if (status === 200) {
-      return Math.max(policy.timeToLive(), this.MIN_CACHE_TTL);
+      return Math.max(policy.timeToLive(), init?.minCacheTtl ?? this.MIN_CACHE_TTL);
     }
 
     return policy.timeToLive();
@@ -239,7 +240,7 @@ export class Fetcher {
     const body = await response.text();
 
     const policy = new CachePolicy(request, { status: response.status, headers: this.headersToObject(response.headers) }, { shared: false });
-    const ttl = this.determineCacheTtl(response.status, policy);
+    const ttl = this.determineCacheTtl(response.status, policy, init);
 
     httpCacheItem = { headers: policy.responseHeaders(), status: response.status, statusText: response.statusText, body, ttl };
 
