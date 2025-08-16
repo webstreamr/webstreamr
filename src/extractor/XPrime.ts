@@ -18,8 +18,6 @@ export class XPrime extends Extractor {
 
   public readonly label = 'XPrime';
 
-  public override readonly ttl: number = 43200000; // 12h
-
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
