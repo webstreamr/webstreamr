@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.43.3](https://github.com/webstreamr/webstreamr/compare/v0.43.2...v0.43.3) (2025-08-16)
+
+
+### Bug Fixes
+
+* **extractor:** use default TTL for XPrime ([63e598a](https://github.com/webstreamr/webstreamr/commit/63e598a725fc6caef0882ce937f5b5137a77493b))
+
 ## [0.43.2](https://github.com/webstreamr/webstreamr/compare/v0.43.1...v0.43.2) (2025-08-16)
 
 
