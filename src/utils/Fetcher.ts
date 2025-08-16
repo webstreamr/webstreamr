@@ -64,7 +64,7 @@ export class Fetcher {
 
   private readonly logger: winston.Logger;
 
-  private readonly httpCache = new LRUCache<string, Buffer>({ max: 1024 });
+  private readonly httpCache = new LRUCache<string, Buffer>({ max: 2048 });
   private readonly rateLimitedCache = new TTLCache<string, undefined>({ max: 1024 });
   private readonly semaphores = new Map<string, SemaphoreInterface>();
   private readonly hostUserAgentMap = new Map<string, string>();

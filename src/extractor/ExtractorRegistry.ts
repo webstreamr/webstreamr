@@ -12,7 +12,7 @@ export class ExtractorRegistry {
   public constructor(logger: winston.Logger, extractors: Extractor[]) {
     this.logger = logger;
     this.extractors = extractors;
-    this.urlResultCache = new TTLCache({ max: 1024 });
+    this.urlResultCache = new TTLCache({ max: 4096 });
   }
 
   public async handle(ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined): Promise<UrlResult[]> {
