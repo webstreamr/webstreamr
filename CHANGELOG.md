@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.43.2](https://github.com/webstreamr/webstreamr/compare/v0.43.1...v0.43.2) (2025-08-16)
+
+
+### Miscellaneous Chores
+
+* double HTTP cache, quadruple extractor cache ([ef613f2](https://github.com/webstreamr/webstreamr/commit/ef613f274247efc382e50475765172c7216a48e5))
+* **extractor:** increase XPrime cache to 12 hours ([5316199](https://github.com/webstreamr/webstreamr/commit/5316199b8cf5427699b031bbdfa5eb0b2a77aa32))
+* **extractor:** remove HEAD request to XPrime hosters to determine size ([fdf1415](https://github.com/webstreamr/webstreamr/commit/fdf1415f6d6a5ad1d2a45c5e33acbf623cce6bb3))
+
 ## [0.43.1](https://github.com/webstreamr/webstreamr/compare/v0.43.0...v0.43.1) (2025-08-15)
 
 
