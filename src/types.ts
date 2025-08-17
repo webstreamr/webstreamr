@@ -56,6 +56,7 @@ export interface UrlResult {
   url: URL;
   format: Format;
   isExternal?: boolean;
+  ytId?: string;
   error?: unknown;
   label: string;
   sourceId: string;

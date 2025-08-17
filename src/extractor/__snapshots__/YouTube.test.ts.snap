@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`YouTube Solaris 1`] = `
+[
+  {
+    "format": "unknown",
+    "label": "YouTube",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+      "height": undefined,
+      "title": "Solaris | SCIENCE FICTION | FULL MOVIE | directed by Tarkovsky",
+    },
+    "sourceId": "youtube_en",
+    "ttl": 900000,
+    "url": "https://www.youtube.com/watch?v=Z8ZhQPaw4rE",
+    "ytId": "Z8ZhQPaw4rE",
+  },
+]
+`;
+
+exports[`YouTube unsupported format 1`] = `[]`;

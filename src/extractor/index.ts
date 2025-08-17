@@ -15,6 +15,7 @@ import { Uqload } from './Uqload';
 import { VidSrc } from './VidSrc';
 import { VixSrc } from './VixSrc';
 import { XPrime } from './XPrime';
+import { YouTube } from './YouTube';
 
 export * from './Extractor';
 export * from './ExtractorRegistry';
@@ -34,5 +35,6 @@ export const createExtractors = (fetcher: Fetcher): Extractor[] => [
   new VidSrc(fetcher, ['in', 'pm', 'net', 'xyz', 'io', 'vc']), // https://vidsrc.domains/
   new VixSrc(fetcher),
   new XPrime(fetcher),
+  new YouTube(fetcher),
   new ExternalUrl(fetcher), // fallback extractor which must come last
 ];

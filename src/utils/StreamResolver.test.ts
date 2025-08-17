@@ -5,6 +5,7 @@ import { createExtractors, Extractor, ExtractorRegistry } from '../extractor';
 import { Source, SourceResult } from '../source';
 import { MeineCloud } from '../source/MeineCloud';
 import { MostraGuarda } from '../source/MostraGuarda';
+import { PrimeWire } from '../source/PrimeWire';
 import { createTestContext } from '../test';
 import { BlockedReason, CountryCode, Format, UrlResult } from '../types';
 import { FetcherMock } from './FetcherMock';
@@ -17,6 +18,7 @@ const ctx = createTestContext({ de: 'on', it: 'on' });
 
 const meineCloud = new MeineCloud(fetcher);
 const mostraGuarda = new MostraGuarda(fetcher);
+const primeWire = new PrimeWire(fetcher);
 
 describe('resolve', () => {
   test('returns info as stream if no sources were configured', async () => {
@@ -66,6 +68,14 @@ describe('resolve', () => {
     const streamsWithExternalUrls = await streamResolver.resolve({ ...ctx, config: { ...ctx.config, includeExternalUrls: 'on' } }, [meineCloud, mostraGuarda], 'movie', new ImdbId('tt29141112', undefined, undefined));
     expect(streamsWithExternalUrls.ttl).not.toBeUndefined();
     expect(streamsWithExternalUrls.streams).toMatchSnapshot();
+  });
+
+  test('returns ytId instead of url for YouTube video', async () => {
+    const streamResolver = new StreamResolver(logger, new ExtractorRegistry(logger, createExtractors(fetcher)));
+
+    const streams = await streamResolver.resolve(ctx, [primeWire], 'movie', new ImdbId('tt0069293', undefined, undefined));
+    expect(streams.ttl).not.toBeUndefined();
+    expect(streams.streams).toMatchSnapshot();
   });
 
   test('adds error info', async () => {
@@ -248,7 +258,7 @@ describe('resolve', () => {
   });
 
   test('ignores not found errors', async () => {
-    const mockSource: Source = {
+    const mockHandler: Source = {
       id: 'mocksource',
       label: 'MockSource',
       contentTypes: ['movie'],
@@ -258,7 +268,7 @@ describe('resolve', () => {
     };
     const streamResolver = new StreamResolver(logger, new ExtractorRegistry(logger, createExtractors(fetcher)));
 
-    const streams = await streamResolver.resolve(ctx, [mockSource], 'movie', new ImdbId('tt12345678', undefined, undefined));
+    const streams = await streamResolver.resolve(ctx, [mockHandler], 'movie', new ImdbId('tt12345678', undefined, undefined));
 
     expect(streams).toMatchSnapshot();
   });

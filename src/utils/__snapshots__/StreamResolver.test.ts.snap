@@ -378,3 +378,18 @@ exports[`resolve returns source errors as stream 2`] = `
   ],
 }
 `;
+
+exports[`resolve returns ytId instead of url for YouTube video 1`] = `
+[
+  {
+    "behaviorHints": {
+      "bingeGroup": "webstreamr-youtube_en",
+      "notWebReady": true,
+    },
+    "name": "WebStreamr 🇺🇸",
+    "title": "Solaris | SCIENCE FICTION | FULL MOVIE | directed by Tarkovsky
+🔗 YouTube",
+    "ytId": "Z8ZhQPaw4rE",
+  },
+]
+`;

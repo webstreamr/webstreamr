@@ -135,7 +135,11 @@ export class StreamResolver {
     return Math.min(...urlResults.map(urlResult => urlResult.ttl as number));
   };
 
-  private buildUrl(urlResult: UrlResult): { externalUrl: string } | { url: string } {
+  private buildUrl(urlResult: UrlResult): { externalUrl: string } | { url: string } | { ytId: string } {
+    if (urlResult.ytId) {
+      return { ytId: urlResult.ytId };
+    }
+
     if (!urlResult.isExternal) {
       return { url: urlResult.url.href };
     }
