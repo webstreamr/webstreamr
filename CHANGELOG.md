@@ -1,5 +1,33 @@
 # Changelog
 
+## [0.44.0](https://github.com/webstreamr/webstreamr/compare/v0.43.3...v0.44.0) (2025-08-17)
+
+
+### Miscellaneous Chores
+
+* **source:** bring back Frembed ([f58c302](https://github.com/webstreamr/webstreamr/commit/f58c30299ac5d6a458e96e63b3907f20b35936fb))
+* **source:** disable Soaper ([71979d8](https://github.com/webstreamr/webstreamr/commit/71979d82b6843d1b7059d40d29d1aabce40ef8a0))
+
+
+### Features
+
+* **extractor:** add YouTube extractor ([5e6c71f](https://github.com/webstreamr/webstreamr/commit/5e6c71f4ad81cb3f407d73337f9dd05f93469870))
+
+
+### Bug Fixes
+
+* **deps:** update dependency undici to v7.14.0 ([#287](https://github.com/webstreamr/webstreamr/issues/287)) ([fe19a91](https://github.com/webstreamr/webstreamr/commit/fe19a91cecc9ed947e7553b9b3bb02b1d0baf0e5))
+
+
+### Code Refactoring
+
+* fully replace handler with source ([176c4c9](https://github.com/webstreamr/webstreamr/commit/176c4c93e709945eaeda8450a6703b51f4c7a39d))
+
+
+### Reverts
+
+* "chore(extractor): remove HEAD request to XPrime hosters to determine size" ([73627fb](https://github.com/webstreamr/webstreamr/commit/73627fbf0dc50ba6daf2d7c341c387596ff520cf))
+
 ## [0.43.3](https://github.com/webstreamr/webstreamr/compare/v0.43.2...v0.43.3) (2025-08-16)
 
 
