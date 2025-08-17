@@ -10,7 +10,6 @@ import { MeineCloud } from './MeineCloud';
 import { MostraGuarda } from './MostraGuarda';
 import { Movix } from './Movix';
 import { PrimeWire } from './PrimeWire';
-import { Soaper } from './Soaper';
 import { StreamKiste } from './StreamKiste';
 import { Source } from './types';
 import { VerHdLink } from './VerHdLink';
@@ -25,7 +24,7 @@ export const createSources = (fetcher: Fetcher): Source[] => [
   new VixSrc(fetcher),
   // EN
   new PrimeWire(fetcher),
-  new Soaper(fetcher),
+  // new Soaper(fetcher), // timing-out regularly since days
   new VidSrc(fetcher),
   new XPrime(fetcher),
   // ES / MX
