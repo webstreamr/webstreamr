@@ -56,7 +56,7 @@ export const buildManifest = (sources: Source[], extractors: Extractor[], config
     manifest.config.push({
       key: countryCode,
       type: 'checkbox',
-      title: `${language} ${flagFromCountryCode(countryCode)} (${(sources as Source[]).map(handler => handler.label).sort().join(', ')})`,
+      title: `${language} ${flagFromCountryCode(countryCode)} (${(sources as Source[]).map(source => source.label).sort().join(', ')})`,
       ...(countryCode in config && { default: 'checked' }),
     });
   }

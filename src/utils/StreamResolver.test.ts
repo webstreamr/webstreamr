@@ -69,10 +69,10 @@ describe('resolve', () => {
   });
 
   test('adds error info', async () => {
-    class MockHandler implements Source {
-      public readonly id = 'mockhandler';
+    class MockSource implements Source {
+      public readonly id = 'mocksource';
 
-      public readonly label = 'MockHandler';
+      public readonly label = 'MockSource';
 
       public readonly contentTypes: ContentType[] = ['movie'];
 
@@ -240,17 +240,17 @@ describe('resolve', () => {
 
     const streamResolver = new StreamResolver(logger, new ExtractorRegistry(logger, [new MockExtractor()]));
 
-    const streams = await streamResolver.resolve(ctx, [new MockHandler()], 'movie', new ImdbId('tt11655566', undefined, undefined));
+    const streams = await streamResolver.resolve(ctx, [new MockSource()], 'movie', new ImdbId('tt11655566', undefined, undefined));
     expect(streams).toMatchSnapshot();
 
-    const streamsWithShowErrors = await streamResolver.resolve({ ...ctx, config: { ...ctx.config, showErrors: 'on' } }, [new MockHandler()], 'movie', new ImdbId('tt11655566', undefined, undefined));
+    const streamsWithShowErrors = await streamResolver.resolve({ ...ctx, config: { ...ctx.config, showErrors: 'on' } }, [new MockSource()], 'movie', new ImdbId('tt11655566', undefined, undefined));
     expect(streamsWithShowErrors).toMatchSnapshot();
   });
 
   test('ignores not found errors', async () => {
-    const mockHandler: Source = {
-      id: 'mockhandler',
-      label: 'MockHandler',
+    const mockSource: Source = {
+      id: 'mocksource',
+      label: 'MockSource',
       contentTypes: ['movie'],
       countryCodes: [CountryCode.de],
       baseUrl: 'https://example.com',
@@ -258,7 +258,7 @@ describe('resolve', () => {
     };
     const streamResolver = new StreamResolver(logger, new ExtractorRegistry(logger, createExtractors(fetcher)));
 
-    const streams = await streamResolver.resolve(ctx, [mockHandler], 'movie', new ImdbId('tt12345678', undefined, undefined));
+    const streams = await streamResolver.resolve(ctx, [mockSource], 'movie', new ImdbId('tt12345678', undefined, undefined));
 
     expect(streams).toMatchSnapshot();
   });

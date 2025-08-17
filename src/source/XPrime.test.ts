@@ -5,19 +5,19 @@ import { XPrime } from './XPrime';
 const ctx = createTestContext();
 
 describe('XPrime', () => {
-  let handler: XPrime;
+  let source: XPrime;
 
   beforeEach(() => {
-    handler = new XPrime(new FetcherMock(`${__dirname}/__fixtures__/XPrime`));
+    source = new XPrime(new FetcherMock(`${__dirname}/__fixtures__/XPrime`));
   });
 
   test('handle alien: earth 1x1', async () => {
-    const streams = await handler.handle(ctx, 'series', new TmdbId(157239, 1, 1));
+    const streams = await source.handle(ctx, 'series', new TmdbId(157239, 1, 1));
     expect(streams).toMatchSnapshot();
   });
 
   test('handle superman', async () => {
-    const streams = await handler.handle(ctx, 'series', new TmdbId(1061474, undefined, undefined));
+    const streams = await source.handle(ctx, 'series', new TmdbId(1061474, undefined, undefined));
     expect(streams).toMatchSnapshot();
   });
 });

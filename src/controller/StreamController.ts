@@ -33,7 +33,7 @@ export class StreamController {
 
     this.logger.info(`Search stream for type "${type}" and id "${id}" for ip ${ctx.ip}`, ctx);
 
-    const sources = this.sources.filter(handler => handler.countryCodes.filter(countryCode => countryCode in ctx.config).length);
+    const sources = this.sources.filter(source => source.countryCodes.filter(countryCode => countryCode in ctx.config).length);
 
     let mutex = locks.get(id);
     if (!mutex) {

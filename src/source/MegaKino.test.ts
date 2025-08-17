@@ -5,19 +5,19 @@ import { MegaKino } from './MegaKino';
 const ctx = createTestContext({ de: 'on' });
 
 describe('MegaKino', () => {
-  let handler: MegaKino;
+  let source: MegaKino;
 
   beforeEach(() => {
-    handler = new MegaKino(new FetcherMock(`${__dirname}/__fixtures__/MegaKino`));
+    source = new MegaKino(new FetcherMock(`${__dirname}/__fixtures__/MegaKino`));
   });
 
   test('handles non-existent movies gracefully', async () => {
-    const streams = await handler.handle(ctx, 'movie', new ImdbId('tt12345678', undefined, undefined));
+    const streams = await source.handle(ctx, 'movie', new ImdbId('tt12345678', undefined, undefined));
     expect(streams).toHaveLength(0);
   });
 
   test('handle imdb baymax', async () => {
-    const streams = await handler.handle(ctx, 'movie', new ImdbId('tt2245084', undefined, undefined));
+    const streams = await source.handle(ctx, 'movie', new ImdbId('tt2245084', undefined, undefined));
     expect(streams).toMatchSnapshot();
   });
 });

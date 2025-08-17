@@ -39,9 +39,9 @@ export class StreamResolver {
 
     const streams: Stream[] = [];
 
-    let handlerErrorOccurred = false;
+    let sourceErrorOccurred = false;
     const urlResults: UrlResult[] = [];
-    const handlerPromises = sources.map(async (source) => {
+    const sourcePromises = sources.map(async (source) => {
       if (!source.contentTypes.includes(type)) {
         return;
       }
@@ -50,17 +50,17 @@ export class StreamResolver {
         const sourceResults = await source.handle(ctx, type, id);
         this.logger.info(`${source.id} returned ${sourceResults.length} urls`, ctx);
 
-        const handlerUrlResults = await Promise.all(
+        const sourceUrlResults = await Promise.all(
           sourceResults.map(({ countryCode, title, url }) => this.extractorRegistry.handle(ctx, url, countryCode, title)),
         );
 
-        urlResults.push(...handlerUrlResults.flat());
+        urlResults.push(...sourceUrlResults.flat());
       } catch (error) {
         if (error instanceof NotFoundError) {
           return;
         }
 
-        handlerErrorOccurred = true;
+        sourceErrorOccurred = true;
 
         if (showErrors(ctx.config)) {
           streams.push({
@@ -71,7 +71,7 @@ export class StreamResolver {
         }
       }
     });
-    await Promise.all(handlerPromises);
+    await Promise.all(sourcePromises);
 
     urlResults.sort((a, b) => {
       const heightComparison = (b.meta.height ?? 0) - (a.meta.height ?? 0);
@@ -115,7 +115,7 @@ export class StreamResolver {
         })),
     );
 
-    const ttl = !handlerErrorOccurred ? this.determineTtl(urlResults) : undefined;
+    const ttl = !sourceErrorOccurred ? this.determineTtl(urlResults) : undefined;
 
     return {
       streams,
