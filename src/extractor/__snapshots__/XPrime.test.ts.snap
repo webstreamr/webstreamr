@@ -6,6 +6,7 @@ exports[`XPrime primebox Alien: Earth 1`] = `
     "format": "mp4",
     "label": "XPrime Primebox",
     "meta": {
+      "bytes": 871281904,
       "countryCodes": [
         "en",
       ],
@@ -23,6 +24,7 @@ exports[`XPrime primebox Alien: Earth 1`] = `
     "format": "mp4",
     "label": "XPrime Primebox",
     "meta": {
+      "bytes": 420170402,
       "countryCodes": [
         "en",
       ],
@@ -45,6 +47,7 @@ exports[`XPrime primebox Superman 1`] = `
     "format": "mp4",
     "label": "XPrime Primebox",
     "meta": {
+      "bytes": 401394599,
       "countryCodes": [
         "en",
       ],
@@ -62,6 +65,7 @@ exports[`XPrime primebox Superman 1`] = `
     "format": "mp4",
     "label": "XPrime Primebox",
     "meta": {
+      "bytes": 896638128,
       "countryCodes": [
         "en",
       ],

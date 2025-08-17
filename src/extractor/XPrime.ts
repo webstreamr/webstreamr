@@ -52,6 +52,7 @@ export class XPrime extends Extractor {
           ttl: this.ttl,
           meta: {
             countryCodes: [countryCode],
+            bytes: parseInt((await this.fetcher.head(ctx, url, { headers: { Referer: referer }, minCacheTtl: this.ttl }))['content-length'] as string),
             height: parseInt(resolution),
             title,
           },
