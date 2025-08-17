@@ -31,7 +31,7 @@ exports[`buildManifest default manifest 1`] = `
     },
     {
       "key": "fr",
-      "title": "French 🇫🇷 (FrenchCloud, Movix)",
+      "title": "French 🇫🇷 (Frembed, FrenchCloud, Movix)",
       "type": "checkbox",
     },
     {
