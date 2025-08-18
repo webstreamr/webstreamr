@@ -1,6 +1,5 @@
 import { NotFoundError } from '../error';
 import { Context, CountryCode, Format, UrlResult } from '../types';
-import { guessHeightFromTitle } from '../utils';
 
 export abstract class Extractor {
   public abstract readonly id: string;
@@ -21,17 +20,7 @@ export abstract class Extractor {
 
   public async extract(ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined): Promise<UrlResult[]> {
     try {
-      const urlResults = await this.extractInternal(ctx, url, countryCode, title);
-
-      return urlResults.map((urlResult) => {
-        let height = urlResult.meta.height;
-
-        if (!height && urlResult.meta.title) {
-          height = guessHeightFromTitle(urlResult.meta.title);
-        }
-
-        return { ...urlResult, meta: { ...urlResult.meta, height } };
-      });
+      return await this.extractInternal(ctx, url, countryCode, title);
     } catch (error) {
       if (error instanceof NotFoundError) {
         return [];

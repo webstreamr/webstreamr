@@ -9,7 +9,6 @@ exports[`DoodStream can guess height from title 1`] = `
       "countryCodes": [
         "fr",
       ],
-      "height": 720,
       "title": "Black Mirror S04E02 FRENCH 720p WEB x264-RiPiT",
     },
     "requestHeaders": {
@@ -31,7 +30,6 @@ exports[`DoodStream cloudflare storage 1`] = `
       "countryCodes": [
         "mx",
       ],
-      "height": undefined,
       "title": "241653--5bf448d3-184a-4b3f-a766-fa98d93c1300--bllz--2100527-doodstream",
     },
     "requestHeaders": {
@@ -54,7 +52,6 @@ exports[`DoodStream dood.to 1`] = `
       "countryCodes": [
         "de",
       ],
-      "height": undefined,
       "title": "des-teufels-bad-2024",
     },
     "requestHeaders": {
@@ -76,7 +73,6 @@ exports[`DoodStream doodster 1`] = `
       "countryCodes": [
         "de",
       ],
-      "height": undefined,
       "title": "Brokeback Mountain 2005",
     },
     "requestHeaders": {

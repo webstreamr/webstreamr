@@ -12,7 +12,6 @@ exports[`ExtractorRegistry returns external URLs if enabled by config 1`] = `
       "countryCodes": [
         "de",
       ],
-      "height": undefined,
       "title": undefined,
     },
     "sourceId": "external_de",
