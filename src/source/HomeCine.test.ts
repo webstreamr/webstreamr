@@ -31,6 +31,11 @@ describe('HomeCine', () => {
     expect(streams).toMatchSnapshot();
   });
 
+  test('handle marvel - the punisher', async () => {
+    const streams = await source.handle(createTestContext({ es: 'on' }), 'movie', new TmdbId(67178, 1, 1));
+    expect(streams).toMatchSnapshot();
+  });
+
   test('does not return mx content for es', async () => {
     const streams = await source.handle(createTestContext({ es: 'on' }), 'movie', new TmdbId(559969, undefined, undefined));
     expect(streams).toMatchSnapshot();

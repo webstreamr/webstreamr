@@ -62,18 +62,28 @@ export class HomeCine implements Source {
       }).toArray();
   };
 
-  private readonly fetchPageUrl = async (ctx: Context, keyword: string, year: number, tmdbId: TmdbId): Promise<URL | undefined> => {
-    const searchUrl = new URL(`/?s=${encodeURIComponent(keyword)}`, this.baseUrl);
+  private readonly fetchPageUrl = async (ctx: Context, name: string, year: number, tmdbId: TmdbId): Promise<URL | undefined> => {
+    const searchUrl = new URL(`/?s=${encodeURIComponent(name)}`, this.baseUrl);
 
     const html = await this.fetcher.text(ctx, searchUrl);
 
     const $ = cheerio.load(html);
 
-    const urls = $(`a[oldtitle="${keyword} (${year})"], a[oldtitle="${keyword}"]`)
-      .filter((_i, el) => $(el).siblings('#hidden_tip').find(`a[href$="release-year/${year}"]`).length !== 0)
-      .map((_i, el) => new URL($(el).attr('href') as string))
-      .toArray()
-      .filter(url => tmdbId.season ? url.href.includes('/series/') : !url.href.includes('/series/'));
+    const keywords = [
+      name,
+      name.replace('-', '–'),
+    ];
+
+    const urls: URL[] = [];
+    keywords.map((keyword) => {
+      urls.push(
+        ...$(`a[oldtitle="${keyword} (${year})"], a[oldtitle="${keyword}"]`)
+          .filter((_i, el) => $(el).siblings('#hidden_tip').find(`a[href$="release-year/${year}"]`).length !== 0)
+          .map((_i, el) => new URL($(el).attr('href') as string))
+          .toArray()
+          .filter(url => tmdbId.season ? url.href.includes('/series/') : !url.href.includes('/series/')),
+      );
+    });
 
     return urls[0];
   };

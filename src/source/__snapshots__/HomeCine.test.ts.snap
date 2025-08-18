@@ -35,6 +35,16 @@ exports[`HomeCine handle el camino 1`] = `
 ]
 `;
 
+exports[`HomeCine handle marvel - the punisher 1`] = `
+[
+  {
+    "countryCode": "es",
+    "title": "Marvel - The Punisher 1x1",
+    "url": "https://fastream.to/embed-ujq9uojoftog.html",
+  },
+]
+`;
+
 exports[`HomeCine handle walking dead s1e1 1`] = `
 [
   {
