@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.44.1](https://github.com/webstreamr/webstreamr/compare/v0.44.0...v0.44.1) (2025-08-18)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#290](https://github.com/webstreamr/webstreamr/issues/290)) ([747ea84](https://github.com/webstreamr/webstreamr/commit/747ea84880e8f88ac74c77fe6cd2359396de565e))
+* **deps:** update dependency @types/node to v22.17.2 ([#289](https://github.com/webstreamr/webstreamr/issues/289)) ([8a24dbc](https://github.com/webstreamr/webstreamr/commit/8a24dbcd24b054d498d765c225c556062c054969))
+* **extractor:** extract size and title for Fastream URLs ([36f3d70](https://github.com/webstreamr/webstreamr/commit/36f3d70467bca8396d0af847b110ab8b6688772e))
+
+
+### Bug Fixes
+
+* **extractor:** remove unreliable title height guessing ([35acb49](https://github.com/webstreamr/webstreamr/commit/35acb49545438257615c775161d525989b688c6f))
+* **source:** do alternative dash search for HomeCine ([bfdb212](https://github.com/webstreamr/webstreamr/commit/bfdb212770007582c3577f325daef91bbb0a33fe))
+
 ## [0.44.0](https://github.com/webstreamr/webstreamr/compare/v0.43.3...v0.44.0) (2025-08-17)
 
 
