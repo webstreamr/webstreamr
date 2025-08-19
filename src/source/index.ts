@@ -1,6 +1,7 @@
 import { Fetcher } from '../utils';
 import { CineHDPlus } from './CineHDPlus';
 import { Cuevana } from './Cuevana';
+import { Einschalten } from './Einschalten';
 import { Eurostreaming } from './Eurostreaming';
 import { Frembed } from './Frembed';
 import { FrenchCloud } from './FrenchCloud';
@@ -34,6 +35,7 @@ export const createSources = (fetcher: Fetcher): Source[] => [
   new HomeCine(fetcher),
   new VerHdLink(fetcher),
   // DE
+  new Einschalten(fetcher),
   new KinoGer(fetcher),
   new MegaKino(fetcher),
   new MeineCloud(fetcher),

@@ -16,7 +16,7 @@ exports[`buildManifest default manifest 1`] = `
     },
     {
       "key": "de",
-      "title": "German 🇩🇪 (KinoGer, MegaKino, MeineCloud, StreamKiste)",
+      "title": "German 🇩🇪 (Einschalten, KinoGer, MegaKino, MeineCloud, StreamKiste)",
       "type": "checkbox",
     },
     {

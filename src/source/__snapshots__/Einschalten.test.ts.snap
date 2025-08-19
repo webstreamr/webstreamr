@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Einschalten handle superman 1`] = `
+[
+  {
+    "countryCode": "de",
+    "title": "Superman.2025.German.DL.720p.WEB.H264-ZeroTwo",
+    "url": "https://vide0.net/e/qtvqjblhu74i",
+  },
+]
+`;
