@@ -9,6 +9,7 @@ exports[`KinoGer Blood & Sinners 1`] = `
       "countryCodes": [
         "de",
       ],
+      "height": 1080,
       "title": "Blood.and.Sinners.2025.mkv",
     },
     "requestHeaders": {
@@ -16,7 +17,7 @@ exports[`KinoGer Blood & Sinners 1`] = `
     },
     "sourceId": "kinoger_de",
     "ttl": 900000,
-    "url": "https://sipt.mazedukhkortfj.sbs/v4/bgm/ge5fhb/cf-master.txt?v=1748766126",
+    "url": "https://scvo.processorprediction.shop/v4/bgm/ge5fhb/cf-master.txt?v=1748766126",
   },
 ]
 `;
@@ -30,6 +31,7 @@ exports[`KinoGer Dead City 1`] = `
       "countryCodes": [
         "de",
       ],
+      "height": 1080,
       "title": "the.walking.dead.dead.city.s02e05.german.dl.1080p.web.x264-wvf.mkv",
     },
     "requestHeaders": {
@@ -37,7 +39,7 @@ exports[`KinoGer Dead City 1`] = `
     },
     "sourceId": "kinoger_de",
     "ttl": 900000,
-    "url": "https://sskt.amberwels.sbs/v4/vz1/x6tsx9/cf-master.txt?v=1748957184",
+    "url": "https://sipt.responseautomation.cyou/v4/vz1/x6tsx9/cf-master.txt?v=1748957184",
   },
 ]
 `;

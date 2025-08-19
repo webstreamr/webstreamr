@@ -1,6 +1,6 @@
 import crypto from 'crypto';
 import { Context, CountryCode, Format, UrlResult } from '../types';
-import { Fetcher } from '../utils';
+import { Fetcher, guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
 
 /** @see https://github.com/Gujal00/ResolveURL/blob/master/script.module.resolveurl/lib/resolveurl/plugins/kinoger.py */
@@ -18,7 +18,21 @@ export class KinoGer extends Extractor {
   }
 
   public supports(_ctx: Context, url: URL): boolean {
-    return null !== url.host.match(/kinoger\.re|shiid4u\.upn\.one|moflix\.upns\.xyz|player\.upn\.one|wasuytm\.store|ultrastream\.online/);
+    return [
+      'asianembed.cam',
+      'disneycdn.net',
+      'filedecrypt.link',
+      'kinoger.re',
+      'moflix.rpmplay.xyz',
+      'moflix.upns.xyz',
+      'player.upn.one',
+      'shiid4u.upn.one',
+      'tuktuk.rpmvid.com',
+      'ultrastream.online',
+      'videoland.cfd',
+      'videoshar.uns.bio',
+      'wasuytm.store',
+    ].includes(url.host);
   }
 
   public override normalize(url: URL): URL {
@@ -36,6 +50,8 @@ export class KinoGer extends Extractor {
 
     const { cf, title } = JSON.parse(decrypted) as { cf: string; title: string };
 
+    const m3u8Url = new URL(cf);
+
     return [
       {
         url: new URL(cf),
@@ -45,6 +61,7 @@ export class KinoGer extends Extractor {
         ttl: this.ttl,
         meta: {
           countryCodes: [countryCode],
+          height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, { headers: { Referer: url.origin } }),
           title,
         },
         requestHeaders: {
