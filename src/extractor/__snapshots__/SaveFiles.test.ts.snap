@@ -1,5 +1,43 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`SafeFiles savefiles /d/ 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "SaveFiles",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+      "height": 532,
+      "title": "dexter resurrection s01e01 1080p web h264-successfulcrab",
+    },
+    "sourceId": "savefiles_en",
+    "ttl": 900000,
+    "url": "https://s3.savefiles.com/hls2/01/00133/,c51qm3p0rhtm_n,.urlset/master.m3u8?t=ptFA7PhoGXdNqH2jfu3EVKT4Fn5laaqfHBW1MMOa74o&s=1755775635&e=43200&v=199331&srv=s1&i=0.0&sp=0",
+  },
+]
+`;
+
+exports[`SafeFiles savefiles /e/ 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "SaveFiles",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+      "height": 720,
+      "title": "dexter resurrection s01e01 1080p web h264-successfulcrab",
+    },
+    "sourceId": "savefiles_en",
+    "ttl": 900000,
+    "url": "https://s3.savefiles.com/hls2/01/00133/,j4orffalv89e_n,.urlset/master.m3u8?t=uwZgBnJBJ-wfgWvDwmLamHkR-vuqzrBFuLH7QoAH-QE&s=1755775635&e=43200&v=199330&srv=s1&i=0.0&sp=0",
+  },
+]
+`;
+
 exports[`SafeFiles savefiles 1`] = `
 [
   {

@@ -22,7 +22,7 @@ export class SaveFiles extends Extractor {
   }
 
   public override normalize(url: URL): URL {
-    return new URL(url.href.replace('/e/', '/'));
+    return new URL(url.href.replace('/e/', '/').replace('/d/', '/'));
   }
 
   protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
