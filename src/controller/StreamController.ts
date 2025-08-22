@@ -3,7 +3,7 @@ import { Request, Response, Router } from 'express';
 import { ContentType } from 'stremio-addon-sdk';
 import winston from 'winston';
 import { Source } from '../source';
-import { contextFromRequestAndResponse, envIsProd, ImdbId, StreamResolver } from '../utils';
+import { contextFromRequestAndResponse, envIsProd, Id, ImdbId, StreamResolver, TmdbId } from '../utils';
 
 const locks = new Map<string, Mutex>();
 
@@ -27,22 +27,31 @@ export class StreamController {
 
   private async getStream(req: Request, res: Response) {
     const type: ContentType = (req.params['type'] || '') as ContentType;
-    const id: string = req.params['id'] || '';
+    const rawId: string = req.params['id'] || '';
+
+    let id: Id;
+    if (rawId.startsWith('tmdb:')) {
+      id = TmdbId.fromString(rawId.replace('tmdb:', ''));
+    } else if (rawId.startsWith('tt')) {
+      id = ImdbId.fromString(rawId);
+    } else {
+      throw new Error(`Unsupported ID: ${rawId}`);
+    }
 
     const ctx = contextFromRequestAndResponse(req, res);
 
-    this.logger.info(`Search stream for type "${type}" and id "${id}" for ip ${ctx.ip}`, ctx);
+    this.logger.info(`Search stream for type "${type}" and id "${rawId}" for ip ${ctx.ip}`, ctx);
 
     const sources = this.sources.filter(source => source.countryCodes.filter(countryCode => countryCode in ctx.config).length);
 
-    let mutex = locks.get(id);
+    let mutex = locks.get(rawId);
     if (!mutex) {
       mutex = new Mutex();
-      locks.set(id, mutex);
+      locks.set(rawId, mutex);
     }
 
     await mutex.runExclusive(async () => {
-      const { streams, ttl } = await this.streamResolver.resolve(ctx, sources, type, ImdbId.fromString(id));
+      const { streams, ttl } = await this.streamResolver.resolve(ctx, sources, type, id);
 
       if (ttl && envIsProd()) {
         res.setHeader('Cache-Control', `max-age=${ttl / 1000}, public`);
@@ -53,7 +62,7 @@ export class StreamController {
     });
 
     if (!mutex.isLocked()) {
-      locks.delete(id);
+      locks.delete(rawId);
     }
   };
 }

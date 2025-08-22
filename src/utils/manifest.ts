@@ -21,7 +21,7 @@ export const buildManifest = (sources: Source[], extractors: Extractor[], config
       'series',
     ],
     catalogs: [],
-    idPrefixes: ['tt'],
+    idPrefixes: ['tmdb:', 'tt'],
     behaviorHints: {
       p2p: false,
       configurable: true,
