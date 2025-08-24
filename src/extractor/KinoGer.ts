@@ -21,6 +21,7 @@ export class KinoGer extends Extractor {
     return [
       'asianembed.cam',
       'disneycdn.net',
+      'dzo.vidplayer.live',
       'filedecrypt.link',
       'kinoger.re',
       'moflix.rpmplay.xyz',
@@ -31,6 +32,7 @@ export class KinoGer extends Extractor {
       'ultrastream.online',
       'videoland.cfd',
       'videoshar.uns.bio',
+      'w1tv.xyz',
       'wasuytm.store',
     ].includes(url.host);
   }
