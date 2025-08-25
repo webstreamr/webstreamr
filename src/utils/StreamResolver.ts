@@ -51,7 +51,7 @@ export class StreamResolver {
         this.logger.info(`${source.id} returned ${sourceResults.length} urls`, ctx);
 
         const sourceUrlResults = await Promise.all(
-          sourceResults.map(({ countryCode, title, url }) => this.extractorRegistry.handle(ctx, url, countryCode, title)),
+          sourceResults.map(({ countryCode, title, url }) => this.extractorRegistry.handle(ctx, url, countryCode, title, source.baseUrl)),
         );
 
         urlResults.push(...sourceUrlResults.flat());
