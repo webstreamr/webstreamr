@@ -16,11 +16,11 @@ export abstract class Extractor {
     return url;
   };
 
-  protected abstract extractInternal(ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined): Promise<UrlResult[]>;
+  protected abstract extractInternal(ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined, referer?: string | undefined): Promise<UrlResult[]>;
 
-  public async extract(ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined): Promise<UrlResult[]> {
+  public async extract(ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined, referer?: string | undefined): Promise<UrlResult[]> {
     try {
-      return await this.extractInternal(ctx, url, countryCode, title);
+      return await this.extractInternal(ctx, url, countryCode, title, referer);
     } catch (error) {
       if (error instanceof NotFoundError) {
         return [];

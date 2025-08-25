@@ -15,7 +15,7 @@ export class ExtractorRegistry {
     this.urlResultCache = new TTLCache({ max: 4096 });
   }
 
-  public async handle(ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined): Promise<UrlResult[]> {
+  public async handle(ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined, referer?: string | undefined): Promise<UrlResult[]> {
     const extractor = this.extractors.find(extractor => !isExtractorDisabled(ctx.config, extractor) && extractor.supports(ctx, url));
     if (!extractor) {
       return [];
@@ -31,7 +31,7 @@ export class ExtractorRegistry {
 
     this.logger.info(`Extract stream URL using ${extractor.id} extractor from ${url}`, ctx);
 
-    urlResults = await extractor.extract(ctx, normalizedUrl, countryCode, title);
+    urlResults = await extractor.extract(ctx, normalizedUrl, countryCode, title, referer);
 
     if (!urlResults.some(urlResult => urlResult.error) && extractor.ttl) {
       this.urlResultCache.set(cacheKey, urlResults, { ttl: extractor.ttl });
