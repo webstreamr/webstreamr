@@ -70,6 +70,7 @@ export interface Meta {
   bytes?: number | undefined;
   countryCodes?: CountryCode[];
   height?: number | undefined;
+  referer?: string | undefined;
   title?: string | undefined;
 }
 

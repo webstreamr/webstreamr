@@ -54,7 +54,7 @@ export class ExtractorRegistry {
 
     this.logger.info(`Extract stream URL using ${extractor.id} extractor from ${url}`, ctx);
 
-    const urlResults = await extractor.extract(ctx, normalizedUrl, meta || { countryCodes: [] });
+    const urlResults = await extractor.extract(ctx, normalizedUrl, { ...meta, countryCodes: meta?.countryCodes ?? [] });
 
     if (!urlResults.some(urlResult => urlResult.error) && extractor.ttl) {
       await this.urlResultCache.set<UrlResult[]>(cacheKey, urlResults, extractor.ttl);
