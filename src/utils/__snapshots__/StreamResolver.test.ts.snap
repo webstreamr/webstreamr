@@ -234,7 +234,7 @@ exports[`resolve returns sorted results 1`] = `
       "notWebReady": true,
       "proxyHeaders": {
         "request": {
-          "Referer": "http://dood.to",
+          "Referer": "https://d-s.io",
         },
       },
       "videoSize": 791702409,
@@ -250,7 +250,7 @@ exports[`resolve returns sorted results 1`] = `
       "notWebReady": true,
       "proxyHeaders": {
         "request": {
-          "Referer": "http://dood.to",
+          "Referer": "https://d-s.io",
         },
       },
     },
@@ -314,7 +314,7 @@ exports[`resolve returns sorted results 2`] = `
       "notWebReady": true,
       "proxyHeaders": {
         "request": {
-          "Referer": "http://dood.to",
+          "Referer": "https://d-s.io",
         },
       },
       "videoSize": 791702409,
@@ -330,7 +330,7 @@ exports[`resolve returns sorted results 2`] = `
       "notWebReady": true,
       "proxyHeaders": {
         "request": {
-          "Referer": "http://dood.to",
+          "Referer": "https://d-s.io",
         },
       },
     },

@@ -12,7 +12,7 @@ exports[`DoodStream can guess height from title 1`] = `
       "title": "Black Mirror S04E02 FRENCH 720p WEB x264-RiPiT",
     },
     "requestHeaders": {
-      "Referer": "http://dood.to",
+      "Referer": "https://d-s.io",
     },
     "sourceId": "doodstream_fr",
     "ttl": 900000,
@@ -33,7 +33,7 @@ exports[`DoodStream cloudflare storage 1`] = `
       "title": "241653--5bf448d3-184a-4b3f-a766-fa98d93c1300--bllz--2100527-doodstream",
     },
     "requestHeaders": {
-      "Referer": "http://dood.to",
+      "Referer": "https://doodstream.com",
     },
     "sourceId": "doodstream_mx",
     "ttl": 900000,
@@ -55,7 +55,7 @@ exports[`DoodStream dood.to 1`] = `
       "title": "des-teufels-bad-2024",
     },
     "requestHeaders": {
-      "Referer": "http://dood.to",
+      "Referer": "http://d-s.io",
     },
     "sourceId": "doodstream_de",
     "ttl": 900000,
@@ -76,7 +76,7 @@ exports[`DoodStream doodster 1`] = `
       "title": "Brokeback Mountain 2005",
     },
     "requestHeaders": {
-      "Referer": "http://dood.to",
+      "Referer": "https://d-s.io",
     },
     "sourceId": "doodstream_de",
     "ttl": 900000,
