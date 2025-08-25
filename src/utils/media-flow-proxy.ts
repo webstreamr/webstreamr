@@ -28,8 +28,11 @@ export const buildMediaFlowProxyExtractorRedirectUrl = (ctx: Context, host: stri
   return mediaFlowProxyUrl;
 };
 
-export const buildMediaFlowProxyExtractorStreamUrl = async (ctx: Context, fetcher: Fetcher, host: string, url: URL): Promise<URL> => {
+export const buildMediaFlowProxyExtractorStreamUrl = async (ctx: Context, fetcher: Fetcher, host: string, url: URL, headers: Record<string, string> = {}): Promise<URL> => {
   const mediaFlowProxyUrl = buildMediaFlowProxyExtractorUrl(ctx, host, url);
+  for (const headerKey in headers) {
+    mediaFlowProxyUrl.searchParams.set('h_' + headerKey.toLowerCase(), headers[headerKey] as string);
+  }
 
   const extractResult: ExtractResult = JSON.parse(await fetcher.text(ctx, mediaFlowProxyUrl));
 
@@ -40,6 +43,9 @@ export const buildMediaFlowProxyExtractorStreamUrl = async (ctx: Context, fetche
   }
   for (const requestHeadersKey in extractResult.request_headers) {
     streamUrl.searchParams.append(`h_${requestHeadersKey}`, extractResult.request_headers[requestHeadersKey] as string);
+  }
+  for (const headerKey in headers) {
+    streamUrl.searchParams.set('h_' + headerKey.toLowerCase(), headers[headerKey] as string);
   }
   streamUrl.searchParams.append('d', extractResult.destination_url);
 
