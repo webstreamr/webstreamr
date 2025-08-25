@@ -1,4 +1,5 @@
 import bytes from 'bytes';
+import * as cheerio from 'cheerio';
 import { Context, CountryCode, Format, UrlResult } from '../types';
 import {
   buildMediaFlowProxyExtractorStreamUrl,
@@ -69,12 +70,17 @@ export class FileLions extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode, _title: string | undefined, referer: string | undefined): Promise<UrlResult[]> {
-    const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'FileLions', url, { ...(referer && { Referer: referer }) });
+    const headers = { ...(referer && { Referer: referer }) };
 
-    const downloadUrl = new URL(url.href.replace('/v/', '/download/'));
-    const html = await this.fetcher.text(ctx, downloadUrl);
+    const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'FileLions', url, headers);
+
+    const fileUrl = new URL(url.href.replace('/v/', '/f/'));
+    const html = await this.fetcher.text(ctx, fileUrl, { headers });
 
     const sizeMatch = html.match(/([\d.]+ ?[GM]B)/);
+
+    const $ = cheerio.load(html);
+    const title = $('title').text().trim().replace(/^Watch /, '').trim();
 
     return [
       {
@@ -89,6 +95,7 @@ export class FileLions extends Extractor {
           ...(sizeMatch && {
             bytes: bytes.parse(sizeMatch[1] as string) as number,
           }),
+          ...(title && { title }),
         },
       },
     ];
