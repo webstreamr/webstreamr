@@ -24,6 +24,31 @@ Self-hosting to stressful? ElfHosted offer [ready-to-go, turn-key WebStreamr ins
 
 You can build an image using the [Dockerfile](./Dockerfile) and run it.
 
+You need to add the TMDB API Read Access Token, you can find it here https://www.themoviedb.org/settings/api, a subscription is needed.
+in the Dockerfile you need also the EXPOSE port
+```
+ENV TMDB_ACCESS_TOKEN={TMDB API Read Access Token}
+EXPOSE 51546
+
+CMD ["node", "dist/index.js"]
+```
+Or you can clone the repo on your machine and add this docker-compose.yml
+```
+  webstreamr:
+    build:
+      context: /path/to/webstreamrfolder
+      dockerfile: Dockerfile
+    container_name: webstreamr
+    ports:
+      - "51546:51546"  # host:container
+    environment:
+      - HOST=0.0.0.0                    # Bind on all the interfaces
+      - PORT=51546                      # Internal Port
+      - TMDB_ACCESS_TOKEN={TMDB API Read Access Token}
+    restart: unless-stopped
+```
+
+
 Alternatively, you can also start WebStreamr directly via
 
 ```shell
@@ -31,3 +56,5 @@ npm install
 npm run build
 npm start
 ```
+
+For mediaflow proxy support you MUST add the mediaflow URL without the / at the end.
