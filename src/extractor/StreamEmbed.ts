@@ -1,19 +1,10 @@
 import { Context, CountryCode, Format, UrlResult } from '../types';
-import { Fetcher } from '../utils';
 import { Extractor } from './Extractor';
 
 export class StreamEmbed extends Extractor {
   public readonly id = 'streamembed';
 
   public readonly label = 'StreamEmbed';
-
-  private readonly fetcher: Fetcher;
-
-  public constructor(fetcher: Fetcher) {
-    super();
-
-    this.fetcher = fetcher;
-  }
 
   public supports(_ctx: Context, url: URL): boolean {
     return null !== url.host.match(/bullstream|mp4player|watch\.gxplayer/);

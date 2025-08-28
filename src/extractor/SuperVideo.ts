@@ -2,21 +2,13 @@ import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
 import { Context, CountryCode, Format, UrlResult } from '../types';
-import { extractUrlFromPacked, Fetcher } from '../utils';
+import { extractUrlFromPacked, guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
 
 export class SuperVideo extends Extractor {
   public readonly id = 'supervideo';
 
   public readonly label = 'SuperVideo';
-
-  private readonly fetcher: Fetcher;
-
-  public constructor(fetcher: Fetcher) {
-    super();
-
-    this.fetcher = fetcher;
-  }
 
   public supports(_ctx: Context, url: URL): boolean {
     return null !== url.host.match(/supervideo/);
@@ -37,14 +29,20 @@ export class SuperVideo extends Extractor {
       throw new NotFoundError();
     }
 
+    const m3u8Url = extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]);
+
     const heightAndSizeMatch = html.match(/\d{3,}x(\d{3,}), ([\d.]+ ?[GM]B)/);
+    const size = heightAndSizeMatch ? bytes.parse(heightAndSizeMatch[2] as string) as number : undefined;
+    const height = heightAndSizeMatch
+      ? parseInt(heightAndSizeMatch[1] as string)
+      : await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url);
 
     const $ = cheerio.load(html);
     const title = $('.download__title').text().trim();
 
     return [
       {
-        url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
+        url: m3u8Url,
         format: Format.hls,
         label: this.label,
         sourceId: `${this.id}_${countryCode}`,
@@ -52,10 +50,8 @@ export class SuperVideo extends Extractor {
         meta: {
           countryCodes: [countryCode],
           title,
-          ...(heightAndSizeMatch && {
-            bytes: bytes.parse(heightAndSizeMatch[2] as string) as number,
-            height: parseInt(heightAndSizeMatch[1] as string),
-          }),
+          ...(size && { bytes: size }),
+          ...(height && { height }),
         },
       },
     ];

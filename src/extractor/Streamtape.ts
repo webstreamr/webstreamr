@@ -2,7 +2,6 @@ import * as cheerio from 'cheerio';
 import { Context, CountryCode, Format, UrlResult } from '../types';
 import {
   buildMediaFlowProxyExtractorRedirectUrl,
-  Fetcher,
   supportsMediaFlowProxy,
 } from '../utils';
 import { Extractor } from './Extractor';
@@ -13,14 +12,6 @@ export class Streamtape extends Extractor {
   public readonly label = 'Streamtape (via MediaFlow Proxy)';
 
   public override readonly ttl = 0;
-
-  private readonly fetcher: Fetcher;
-
-  public constructor(fetcher: Fetcher) {
-    super();
-
-    this.fetcher = fetcher;
-  }
 
   public supports(ctx: Context, url: URL): boolean {
     return null !== url.host.match(/streamtape/) && supportsMediaFlowProxy(ctx);

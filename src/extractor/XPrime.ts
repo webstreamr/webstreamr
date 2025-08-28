@@ -1,5 +1,4 @@
 import { Context, CountryCode, Format, UrlResult } from '../types';
-import { Fetcher } from '../utils';
 import { Extractor } from './Extractor';
 
 interface XPrimePrimeboxResponsePartial {
@@ -17,14 +16,6 @@ export class XPrime extends Extractor {
   public readonly id = 'xprime';
 
   public readonly label = 'XPrime';
-
-  private readonly fetcher: Fetcher;
-
-  public constructor(fetcher: Fetcher) {
-    super();
-
-    this.fetcher = fetcher;
-  }
 
   public supports(_ctx: Context, url: URL): boolean {
     return null !== url.host.match(/xprime/);

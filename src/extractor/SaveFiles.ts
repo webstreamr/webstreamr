@@ -1,21 +1,12 @@
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
 import { Context, CountryCode, Format, UrlResult } from '../types';
-import { Fetcher } from '../utils';
 import { Extractor } from './Extractor';
 
 export class SaveFiles extends Extractor {
   public readonly id = 'savefiles';
 
   public readonly label = 'SaveFiles';
-
-  private readonly fetcher: Fetcher;
-
-  public constructor(fetcher: Fetcher) {
-    super();
-
-    this.fetcher = fetcher;
-  }
 
   public supports(_ctx: Context, url: URL): boolean {
     return null !== url.host.match(/savefiles|streamhls/);

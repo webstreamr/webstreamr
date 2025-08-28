@@ -1,5 +1,5 @@
 import { Context, CountryCode, Format, UrlResult } from '../types';
-import { Fetcher, guessHeightFromPlaylist } from '../utils';
+import { guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
 
 interface SoaperInfoResponsePartial {
@@ -11,14 +11,6 @@ export class Soaper extends Extractor {
   public readonly id = 'soaper';
 
   public readonly label = 'Soaper';
-
-  private readonly fetcher: Fetcher;
-
-  public constructor(fetcher: Fetcher) {
-    super();
-
-    this.fetcher = fetcher;
-  }
 
   public supports(_ctx: Context, url: URL): boolean {
     return null !== url.host.match(/soaper/) && null !== url.pathname.match(/^\/(episode|movie)_/);

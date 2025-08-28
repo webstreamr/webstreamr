@@ -152,7 +152,7 @@ describe('resolve', () => {
           },
           {
             url: new URL('https://working2.com'),
-            format: Format.hls,
+            format: Format.unknown,
             label: 'working1',
             sourceId: 'hostercom',
             meta: {
@@ -183,7 +183,7 @@ describe('resolve', () => {
           },
           {
             url: new URL('https://working1.com'),
-            format: Format.hls,
+            format: Format.unknown,
             label: 'working2',
             sourceId: 'hostercom',
             meta: {
@@ -248,7 +248,7 @@ describe('resolve', () => {
         ];
     }
 
-    const streamResolver = new StreamResolver(logger, new ExtractorRegistry(logger, [new MockExtractor()]));
+    const streamResolver = new StreamResolver(logger, new ExtractorRegistry(logger, [new MockExtractor(fetcher)]));
 
     const streams = await streamResolver.resolve(ctx, [new MockSource()], 'movie', new ImdbId('tt11655566', undefined, undefined));
     expect(streams).toMatchSnapshot();

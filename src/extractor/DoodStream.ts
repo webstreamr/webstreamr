@@ -2,21 +2,12 @@ import * as cheerio from 'cheerio';
 import randomstring from 'randomstring';
 import { NotFoundError } from '../error';
 import { Context, CountryCode, Format, UrlResult } from '../types';
-import { Fetcher } from '../utils';
 import { Extractor } from './Extractor';
 
 export class DoodStream extends Extractor {
   public readonly id = 'doodstream';
 
   public readonly label = 'DoodStream';
-
-  private readonly fetcher: Fetcher;
-
-  public constructor(fetcher: Fetcher) {
-    super();
-
-    this.fetcher = fetcher;
-  }
 
   /** @see https://github.com/Gujal00/ResolveURL/blob/master/script.module.resolveurl/lib/resolveurl/plugins/doodstream.py */
   public supports(_ctx: Context, url: URL): boolean {

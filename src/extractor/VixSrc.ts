@@ -2,7 +2,6 @@ import bytes from 'bytes';
 import { Context, CountryCode, Format, UrlResult } from '../types';
 import {
   buildMediaFlowProxyExtractorStreamUrl,
-  Fetcher,
   hasMultiEnabled,
   iso639FromCountryCode,
   supportsMediaFlowProxy,
@@ -17,14 +16,6 @@ export class VixSrc extends Extractor {
   public override readonly ttl = 0;
 
   public override viaMediaFlowProxy = true;
-
-  private readonly fetcher: Fetcher;
-
-  public constructor(fetcher: Fetcher) {
-    super();
-
-    this.fetcher = fetcher;
-  }
 
   public supports(ctx: Context, url: URL): boolean {
     return null !== url.host.match(/vixsrc/) && supportsMediaFlowProxy(ctx);

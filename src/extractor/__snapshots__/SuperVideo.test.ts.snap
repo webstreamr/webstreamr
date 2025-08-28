@@ -11,11 +11,12 @@ exports[`SuperVideo embed only 1`] = `
       "countryCodes": [
         "it",
       ],
+      "height": 1080,
       "title": "",
     },
     "sourceId": "supervideo_it",
     "ttl": 900000,
-    "url": "https://hfs308.serversicuro.cc/hls/,dnzpe7rf5xg4a3gyva3h5orlyw23xosfzwunl5xbmjpz2hqr27aodtfrseia,.urlset/master.m3u8",
+    "url": "https://hfs308.serversicuro.cc/hls/,dnzpe7rf5xg4a3gyva3h5orlyw23xosfzwunl5xbmjpz2l6t3doh5zbwynna,.urlset/master.m3u8",
   },
 ]
 `;

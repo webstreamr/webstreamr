@@ -2,7 +2,7 @@ import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
 import { Context, CountryCode, Format, UrlResult } from '../types';
-import { buildMediaFlowProxyExtractorRedirectUrl, Fetcher, supportsMediaFlowProxy } from '../utils';
+import { buildMediaFlowProxyExtractorRedirectUrl, supportsMediaFlowProxy } from '../utils';
 import { Extractor } from './Extractor';
 
 export class Mixdrop extends Extractor {
@@ -13,14 +13,6 @@ export class Mixdrop extends Extractor {
   public override readonly ttl = 0;
 
   public override viaMediaFlowProxy = true;
-
-  private readonly fetcher: Fetcher;
-
-  public constructor(fetcher: Fetcher) {
-    super();
-
-    this.fetcher = fetcher;
-  }
 
   public supports(ctx: Context, url: URL): boolean {
     return null !== url.host.match(/mixdrop/) && supportsMediaFlowProxy(ctx);

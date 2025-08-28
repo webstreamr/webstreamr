@@ -10,13 +10,11 @@ export class VidSrc extends Extractor {
 
   public readonly label = 'VidSrc';
 
-  private readonly fetcher: Fetcher;
   private readonly tlds: NonEmptyArray<string>;
 
   public constructor(fetcher: Fetcher, tlds: NonEmptyArray<string>) {
-    super();
+    super(fetcher);
 
-    this.fetcher = fetcher;
     this.tlds = tlds;
   }
 

@@ -1,5 +1,6 @@
 import { NotFoundError } from '../error';
 import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Fetcher } from '../utils';
 
 export abstract class Extractor {
   public abstract readonly id: string;
@@ -9,6 +10,12 @@ export abstract class Extractor {
   public readonly ttl: number = 900000; // 15m
 
   public readonly viaMediaFlowProxy: boolean = false;
+
+  protected readonly fetcher: Fetcher;
+
+  public constructor(fetcher: Fetcher) {
+    this.fetcher = fetcher;
+  }
 
   public abstract supports(ctx: Context, url: URL): boolean;
 
