@@ -2,6 +2,7 @@ import * as cheerio from 'cheerio';
 import randomstring from 'randomstring';
 import { NotFoundError } from '../error';
 import { Context, CountryCode, Format, UrlResult } from '../types';
+import { guessSizeFromMp4 } from '../utils/size';
 import { Extractor } from './Extractor';
 
 export class DoodStream extends Extractor {
@@ -41,10 +42,7 @@ export class DoodStream extends Extractor {
       mp4Url = new URL(baseUrl);
     } else {
       mp4Url = new URL(`${baseUrl}${randomstring.generate(10)}?token=${token}&expiry=${Date.now()}`);
-      const mp4Head = await this.fetcher.head(ctx, mp4Url, { headers: { Referer: url.origin } });
-      if (mp4Head['content-length']) {
-        bytes = parseInt(mp4Head['content-length'] as string);
-      }
+      bytes = await guessSizeFromMp4(ctx, this.fetcher, mp4Url, { headers: { Referer: url.origin } });
     }
 
     return [
