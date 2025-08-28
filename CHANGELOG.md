@@ -1,5 +1,44 @@
 # Changelog
 
+## [0.45.0](https://github.com/webstreamr/webstreamr/compare/v0.44.1...v0.45.0) (2025-08-28)
+
+
+### Miscellaneous Chores
+
+* configure undici dispatcher allowing HTTP2, caching DNS and retrying connection errors ([05d11e3](https://github.com/webstreamr/webstreamr/commit/05d11e366b39f4f6fe6c81cd85c58a4aef6d8203))
+* **deps:** lock file maintenance ([#300](https://github.com/webstreamr/webstreamr/issues/300)) ([2381a2c](https://github.com/webstreamr/webstreamr/commit/2381a2c2adc47fbf23e1f006ff1edda5a6e54116))
+* **deps:** update dependency typescript-eslint to v8.40.0 ([#292](https://github.com/webstreamr/webstreamr/issues/292)) ([14da5da](https://github.com/webstreamr/webstreamr/commit/14da5da205e4b49cc87dbd55b97a91ac3d90c89a))
+* **deps:** update dependency typescript-eslint to v8.41.0 ([#302](https://github.com/webstreamr/webstreamr/issues/302)) ([0449150](https://github.com/webstreamr/webstreamr/commit/0449150874b478d6626f2ed0df5809e88317a0c6))
+* **deps:** update eslint monorepo to v9.34.0 ([#298](https://github.com/webstreamr/webstreamr/issues/298)) ([b616fef](https://github.com/webstreamr/webstreamr/commit/b616fef018c0d4b99685ac729695a9773100008d))
+* **deps:** update jest monorepo to v30.1.0 ([#304](https://github.com/webstreamr/webstreamr/issues/304)) ([b4dca46](https://github.com/webstreamr/webstreamr/commit/b4dca46e5e670919dc02d8904f0b24309c0e2394))
+* **deps:** update jest monorepo to v30.1.1 ([#305](https://github.com/webstreamr/webstreamr/issues/305)) ([ada3ff1](https://github.com/webstreamr/webstreamr/commit/ada3ff19269e70013e0c11ff336f6b3d0f22c49f))
+* **extractor:** add more KinoGer domains ([c8cd2ec](https://github.com/webstreamr/webstreamr/commit/c8cd2ec7943830b2691cdbf7f3c29658a1945b86))
+* **extractor:** add more KinoGer domains and determine resolution ([2d9f9bf](https://github.com/webstreamr/webstreamr/commit/2d9f9bf1af22502608942c6aee8a8a37670b1eb2))
+* **extractor:** move Fetcher into parent, guess missing heights for SuperVideo ([cefc80f](https://github.com/webstreamr/webstreamr/commit/cefc80fa5506b928adfa53eddc4351a597b0dbf3))
+* **extractor:** use guessSizeFromMp4 in Streamtape, Uqload and XPrime ([18d8ee6](https://github.com/webstreamr/webstreamr/commit/18d8ee6b79967fc7719272f38abfcbfa1d1c1252))
+
+
+### Features
+
+* **source:** add Einschalten ([b6a8e6f](https://github.com/webstreamr/webstreamr/commit/b6a8e6f448c30dd91e3ac3ea624e4e01c8e4ac2b))
+* support TMDB IDs ([c7c2ebf](https://github.com/webstreamr/webstreamr/commit/c7c2ebf353287763d2af83e1adc0943494806822))
+
+
+### Bug Fixes
+
+* **deps:** update dependency undici to v7.15.0 ([#297](https://github.com/webstreamr/webstreamr/issues/297)) ([41b4425](https://github.com/webstreamr/webstreamr/commit/41b44252b1274b3ed489c87172cc784441ede2a7))
+* **extractor:** handle SaveFiles /d/ links properly ([eecd325](https://github.com/webstreamr/webstreamr/commit/eecd3255f0be0e11e551933771d2c3d4c5121654))
+
+
+### Code Refactoring
+
+* introduce guessSizeFromMp4 ([4a1a3b1](https://github.com/webstreamr/webstreamr/commit/4a1a3b19aac292256adc92d4d4b17e16e21dadec))
+
+
+### Reverts
+
+* Revert "chore(source): disable Soaper" ([795c033](https://github.com/webstreamr/webstreamr/commit/795c033a82f5d8e48a7b3e52d943352cac2a6535))
+
 ## [0.44.1](https://github.com/webstreamr/webstreamr/compare/v0.44.0...v0.44.1) (2025-08-18)
 
 
