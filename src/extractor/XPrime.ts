@@ -1,4 +1,5 @@
 import { Context, CountryCode, Format, UrlResult } from '../types';
+import { guessSizeFromMp4 } from '../utils/size';
 import { Extractor } from './Extractor';
 
 interface XPrimePrimeboxResponsePartial {
@@ -43,7 +44,7 @@ export class XPrime extends Extractor {
           ttl: this.ttl,
           meta: {
             countryCodes: [countryCode],
-            bytes: parseInt((await this.fetcher.head(ctx, url, { headers: { Referer: referer }, minCacheTtl: this.ttl }))['content-length'] as string),
+            bytes: await guessSizeFromMp4(ctx, this.fetcher, url, { headers: { Referer: referer }, minCacheTtl: this.ttl }),
             height: parseInt(resolution),
             title,
           },

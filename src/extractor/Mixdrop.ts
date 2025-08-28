@@ -28,7 +28,7 @@ export class Mixdrop extends Extractor {
       throw new NotFoundError();
     }
 
-    const sizeMatch = html.match(/([\d.,]+ ?[GM]B)/);
+    const sizeMatch = html.match(/([\d.,]+ ?[GM]B)/) as string[];
 
     const $ = cheerio.load(html);
     const title = $('.title b').text().trim();
@@ -42,10 +42,8 @@ export class Mixdrop extends Extractor {
         ttl: this.ttl,
         meta: {
           countryCodes: [countryCode],
+          bytes: bytes.parse((sizeMatch[1] as string).replace(',', '')) as number,
           title,
-          ...(sizeMatch && {
-            bytes: bytes.parse((sizeMatch[1] as string).replace(',', '')) as number,
-          }),
         },
       },
     ];

@@ -6,6 +6,7 @@ exports[`Uqload uqload.net / 1`] = `
     "format": "mp4",
     "label": "Uqload (via MediaFlow Proxy)",
     "meta": {
+      "bytes": 431690639,
       "countryCodes": [
         "fr",
       ],
@@ -14,7 +15,7 @@ exports[`Uqload uqload.net / 1`] = `
     },
     "sourceId": "uqload_fr",
     "ttl": 0,
-    "url": "https://mediaflow-proxy.test/extractor/video?host=Uqload&api_password=asdfg&d=https%3A%2F%2Fuqload.net%2Fz0xbr87oz637.html&redirect_stream=true",
+    "url": "https://mediaflow.test.org/extractor/video?host=Uqload&api_password=test&d=https%3A%2F%2Fuqload.net%2Fz0xbr87oz637.html&redirect_stream=true",
   },
 ]
 `;
@@ -25,6 +26,7 @@ exports[`Uqload uqload.net /embed- 1`] = `
     "format": "mp4",
     "label": "Uqload (via MediaFlow Proxy)",
     "meta": {
+      "bytes": 431690639,
       "countryCodes": [
         "fr",
       ],
@@ -33,7 +35,7 @@ exports[`Uqload uqload.net /embed- 1`] = `
     },
     "sourceId": "uqload_fr",
     "ttl": 0,
-    "url": "https://mediaflow-proxy.test/extractor/video?host=Uqload&api_password=asdfg&d=https%3A%2F%2Fuqload.net%2Fz0xbr87oz637.html&redirect_stream=true",
+    "url": "https://mediaflow.test.org/extractor/video?host=Uqload&api_password=test&d=https%3A%2F%2Fuqload.net%2Fz0xbr87oz637.html&redirect_stream=true",
   },
 ]
 `;

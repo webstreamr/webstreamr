@@ -4,6 +4,7 @@ import {
   buildMediaFlowProxyExtractorRedirectUrl,
   supportsMediaFlowProxy,
 } from '../utils';
+import { guessSizeFromMp4 } from '../utils/size';
 import { Extractor } from './Extractor';
 
 export class Streamtape extends Extractor {
@@ -23,9 +24,11 @@ export class Streamtape extends Extractor {
     const $ = cheerio.load(html);
     const title = $('meta[name="og:title"]').attr('content') as string;
 
+    const mp4Url = buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Streamtape', url);
+
     return [
       {
-        url: buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Streamtape', url),
+        url: mp4Url,
         format: Format.mp4,
         label: this.label,
         sourceId: `${this.id}_${countryCode}`,
@@ -33,6 +36,7 @@ export class Streamtape extends Extractor {
         meta: {
           countryCodes: [countryCode],
           title,
+          bytes: await guessSizeFromMp4(ctx, this.fetcher, mp4Url),
         },
       },
     ];
