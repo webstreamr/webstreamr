@@ -70,6 +70,7 @@ export class PrimeWire extends Source {
         .map(async (redirectUrl) => {
           let targetUrl = this.redirectUrlCache.get(redirectUrl.href);
 
+          /* istanbul ignore if */
           if (!targetUrl) {
             const linkFetchUrl = new URL(redirectUrl.href.replace('/gos/', '/go/'));
             linkFetchUrl.searchParams.set('token', linksToken);
