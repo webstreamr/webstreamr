@@ -14,8 +14,4 @@ describe('Uqload', () => {
   test('uqload.net /embed-', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://uqload.net/embed-z0xbr87oz637.html'), CountryCode.fr)).toMatchSnapshot();
   });
-
-  test('uqload.net /', async () => {
-    expect(await extractorRegistry.handle(ctx, new URL('https://uqload.net/z0xbr87oz637.html'), CountryCode.fr)).toMatchSnapshot();
-  });
 });

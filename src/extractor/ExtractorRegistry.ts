@@ -22,7 +22,9 @@ export class ExtractorRegistry {
     }
 
     const normalizedUrl = extractor.normalize(url);
-    const cacheKey = `${extractor.id}_${normalizedUrl}`;
+    const cacheKey = extractor.viaMediaFlowProxy
+      ? `${extractor.id}_${normalizedUrl}_${ctx.config.mediaFlowProxyUrl}`
+      : `${extractor.id}_${normalizedUrl}`;
 
     let urlResults = this.urlResultCache.get(cacheKey) ?? [];
     if (this.urlResultCache.has(cacheKey)) {

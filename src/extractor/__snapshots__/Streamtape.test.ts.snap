@@ -13,7 +13,7 @@ exports[`Streamtape streamtape.com /e 1`] = `
       "title": "mickey-17-2025-[latino].mp4",
     },
     "sourceId": "streamtape_es",
-    "ttl": 0,
+    "ttl": 900000,
     "url": "https://mediaflow.test.org/extractor/video?host=Streamtape&api_password=test&d=https%3A%2F%2Fstreamtape.com%2Fe%2F84Kb3mkoYAiokmW&redirect_stream=true",
   },
 ]

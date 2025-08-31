@@ -15,26 +15,7 @@ exports[`Mixdrop mixdrop.my /e/ 1`] = `
       "title": "28_giorni_dopo_2002_HD_-_Altadefinizione01.mp4",
     },
     "sourceId": "mixdrop_de",
-    "ttl": 0,
-    "url": "https://mediaflow-proxy.test/extractor/video?host=Mixdrop&api_password=asdfg&d=https%3A%2F%2Fmixdrop.my%2Fe%2Fknq0kj8waq44l8&redirect_stream=true",
-  },
-]
-`;
-
-exports[`Mixdrop mixdrop.my /f/ 1`] = `
-[
-  {
-    "format": "mp4",
-    "label": "Mixdrop (via MediaFlow Proxy)",
-    "meta": {
-      "bytes": 1059806248,
-      "countryCodes": [
-        "de",
-      ],
-      "title": "28_giorni_dopo_2002_HD_-_Altadefinizione01.mp4",
-    },
-    "sourceId": "mixdrop_de",
-    "ttl": 0,
+    "ttl": 900000,
     "url": "https://mediaflow-proxy.test/extractor/video?host=Mixdrop&api_password=asdfg&d=https%3A%2F%2Fmixdrop.my%2Fe%2Fknq0kj8waq44l8&redirect_stream=true",
   },
 ]

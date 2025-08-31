@@ -13,8 +13,6 @@ export class VixSrc extends Extractor {
 
   public readonly label = 'VixSrc (via MediaFlow Proxy)';
 
-  public override readonly ttl = 0;
-
   public override viaMediaFlowProxy = true;
 
   public supports(ctx: Context, url: URL): boolean {
