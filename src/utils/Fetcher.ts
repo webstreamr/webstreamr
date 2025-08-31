@@ -271,6 +271,12 @@ export class Fetcher {
       response = await fetch(finalUrl, finalInit);
     } catch (error) {
       if (error instanceof DOMException && error.name === 'TimeoutError') {
+        if (tryCount < 1) {
+          await new Promise(sleep => setTimeout(sleep, 333));
+
+          return await this.fetchWithTimeout(ctx, url, init, ++tryCount);
+        }
+
         await this.increaseTimeoutsCount(url);
         throw new TimeoutError();
       }
