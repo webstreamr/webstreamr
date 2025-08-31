@@ -7,8 +7,6 @@ export class Fsst extends Extractor {
 
   public readonly label = 'Fsst';
 
-  public override readonly ttl = 0;
-
   public supports(_ctx: Context, url: URL): boolean {
     return null !== url.host.match(/fsst/);
   };
