@@ -2,9 +2,9 @@ import * as cheerio from 'cheerio';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
 import { Fetcher, getImdbId, Id, ImdbId } from '../utils';
-import { Source, SourceResult } from './types';
+import { Source, SourceResult } from './Source';
 
-export class MegaKino implements Source {
+export class MegaKino extends Source {
   public readonly id = 'megakino';
 
   public readonly label = 'MegaKino';
@@ -18,10 +18,12 @@ export class MegaKino implements Source {
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
+    super();
+
     this.fetcher = fetcher;
   }
 
-  public async handle(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
+  public async handleInternal(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const imdbId = await getImdbId(ctx, this.fetcher, id);
 
     const pageUrl = await this.fetchPageUrl(ctx, imdbId);

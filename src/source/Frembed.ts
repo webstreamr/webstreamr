@@ -1,9 +1,9 @@
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
 import { Fetcher, getTmdbId, Id } from '../utils';
-import { Source, SourceResult } from './types';
+import { Source, SourceResult } from './Source';
 
-export class Frembed implements Source {
+export class Frembed extends Source {
   public readonly id = 'frembed';
 
   public readonly label = 'Frembed';
@@ -17,10 +17,12 @@ export class Frembed implements Source {
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
+    super();
+
     this.fetcher = fetcher;
   }
 
-  public async handle(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
+  public async handleInternal(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
     const apiUrl = tmdbId.season

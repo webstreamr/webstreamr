@@ -13,14 +13,14 @@ import { MostraGuarda } from './MostraGuarda';
 import { Movix } from './Movix';
 import { PrimeWire } from './PrimeWire';
 import { Soaper } from './Soaper';
+import { Source } from './Source';
 import { StreamKiste } from './StreamKiste';
-import { Source } from './types';
 import { VerHdLink } from './VerHdLink';
 import { VidSrc } from './VidSrc';
 import { VixSrc } from './VixSrc';
 import { XPrime } from './XPrime';
 
-export * from './types';
+export * from './Source';
 
 export const createSources = (fetcher: Fetcher): Source[] => [
   // multi

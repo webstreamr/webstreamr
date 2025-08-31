@@ -1,13 +1,13 @@
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
 import { Fetcher, getTmdbId, Id } from '../utils';
-import { Source, SourceResult } from './types';
+import { Source, SourceResult } from './Source';
 
 interface MovixApiData {
   player_links?: { decoded_url: string }[];
 }
 
-export class Movix implements Source {
+export class Movix extends Source {
   public readonly id = 'movix';
 
   public readonly label = 'Movix';
@@ -21,10 +21,12 @@ export class Movix implements Source {
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
+    super();
+
     this.fetcher = fetcher;
   }
 
-  public async handle(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
+  public async handleInternal(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
     const apiUrl = tmdbId.season

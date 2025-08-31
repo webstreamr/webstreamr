@@ -79,7 +79,7 @@ describe('resolve', () => {
   });
 
   test('adds error info', async () => {
-    class MockSource implements Source {
+    class MockSource extends Source {
       public readonly id = 'mocksource';
 
       public readonly label = 'MockSource';
@@ -90,7 +90,7 @@ describe('resolve', () => {
 
       public readonly baseUrl = 'https://example.com';
 
-      public readonly handle = async (): Promise<SourceResult[]> => {
+      public readonly handleInternal = async (): Promise<SourceResult[]> => {
         return [{ countryCode: CountryCode.de, url: new URL('https://example.com') }];
       };
     }
@@ -258,17 +258,25 @@ describe('resolve', () => {
   });
 
   test('ignores not found errors', async () => {
-    const mockHandler: Source = {
-      id: 'mocksource',
-      label: 'MockSource',
-      contentTypes: ['movie'],
-      countryCodes: [CountryCode.de],
-      baseUrl: 'https://example.com',
-      handle: jest.fn().mockRejectedValue(new NotFoundError()),
-    };
+    class MockSource extends Source {
+      public readonly id = 'mocksource';
+
+      public readonly label = 'MockSource';
+
+      public readonly contentTypes: ContentType[] = ['movie'];
+
+      public readonly countryCodes: CountryCode[] = [CountryCode.de];
+
+      public readonly baseUrl = 'https://example.com';
+
+      public readonly handleInternal = async (): Promise<SourceResult[]> => {
+        throw new NotFoundError();
+      };
+    }
+
     const streamResolver = new StreamResolver(logger, new ExtractorRegistry(logger, createExtractors(fetcher)));
 
-    const streams = await streamResolver.resolve(ctx, [mockHandler], 'movie', new ImdbId('tt12345678', undefined, undefined));
+    const streams = await streamResolver.resolve(ctx, [new MockSource()], 'movie', new ImdbId('tt12345678', undefined, undefined));
 
     expect(streams).toMatchSnapshot();
   });
