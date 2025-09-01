@@ -192,7 +192,7 @@ export class Fetcher {
   }
 
   private determineCacheTtl(status: number, policy: CachePolicy, init?: CustomRequestInit): number {
-    if (status === 200) {
+    if (status === 200 || status === 404) {
       return Math.max(policy.timeToLive(), init?.minCacheTtl ?? this.MIN_CACHE_TTL);
     }
 

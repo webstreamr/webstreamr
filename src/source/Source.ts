@@ -1,5 +1,6 @@
 import TTLCache from '@isaacs/ttlcache';
 import { ContentType } from 'stremio-addon-sdk';
+import { NotFoundError } from '../error';
 import { Context, CountryCode } from '../types';
 import { Id } from '../utils';
 
@@ -35,7 +36,17 @@ export abstract class Source {
       return this.sourceResultCache.get(id.id) as SourceResult[];
     }
 
-    const sourceResults = await this.handleInternal(ctx, type, id);
+    let sourceResults: SourceResult[];
+    try {
+      sourceResults = await this.handleInternal(ctx, type, id);
+    } catch (error) {
+      if (error instanceof NotFoundError) {
+        sourceResults = [];
+      } else {
+        throw error;
+      }
+    }
+
     this.sourceResultCache.set(id.id, sourceResults);
 
     return sourceResults;
