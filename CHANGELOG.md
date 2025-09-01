@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.45.2](https://github.com/webstreamr/webstreamr/compare/v0.45.1...v0.45.2) (2025-09-01)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @stylistic/eslint-plugin to v5.3.1 ([#309](https://github.com/webstreamr/webstreamr/issues/309)) ([285746a](https://github.com/webstreamr/webstreamr/commit/285746a4a9ba62ed17f30306f3e57ec0e8bb5f39))
+* handle NotFoundError / 404 inside source and cache it also ([4d05ac8](https://github.com/webstreamr/webstreamr/commit/4d05ac859f14ccdd123f13d7c46fea6195e17a93))
+* **source:** remove outdated comment ([2468fbd](https://github.com/webstreamr/webstreamr/commit/2468fbde4e826f4e313e202a1a2cdace655b7706))
+
+
+### Bug Fixes
+
+* catch all timeouts ([b47a512](https://github.com/webstreamr/webstreamr/commit/b47a5125870c7bd764756f38e4493e0e5b894b55))
+* **source:** consider season and episode for cache key ([ceb520d](https://github.com/webstreamr/webstreamr/commit/ceb520d49d0c9ff3056fce32075b201499805fcf))
+
+
+### Code Refactoring
+
+* move locks into StreamController ([e109637](https://github.com/webstreamr/webstreamr/commit/e109637e48cdf4b2c1418fa00c30cf95268fbf0e))
+
 ## [0.45.1](https://github.com/webstreamr/webstreamr/compare/v0.45.0...v0.45.1) (2025-09-01)
 
 
