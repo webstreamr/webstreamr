@@ -32,8 +32,9 @@ export abstract class Source {
   protected abstract handleInternal(ctx: Context, type: ContentType, id: Id): Promise<(SourceResult[])>;
 
   public async handle(ctx: Context, type: ContentType, id: Id): Promise<(SourceResult[])> {
-    if (this.sourceResultCache.has(id.id)) {
-      return this.sourceResultCache.get(id.id) as SourceResult[];
+    const cacheKey = id.toString();
+    if (this.sourceResultCache.has(cacheKey)) {
+      return this.sourceResultCache.get(cacheKey) as SourceResult[];
     }
 
     let sourceResults: SourceResult[];
@@ -47,7 +48,7 @@ export abstract class Source {
       }
     }
 
-    this.sourceResultCache.set(id.id, sourceResults);
+    this.sourceResultCache.set(cacheKey, sourceResults);
 
     return sourceResults;
   }

@@ -22,4 +22,8 @@ export class ImdbId {
       idParts[2] ? parseInt(idParts[2]) : undefined,
     );
   }
+
+  public toString(): string {
+    return this.season ? `${this.id}:${this.season}:${this.episode}` : this.id;
+  }
 }
