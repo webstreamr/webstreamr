@@ -42,7 +42,7 @@ export const createSources = (fetcher: Fetcher): Source[] => [
   new MeineCloud(fetcher),
   new StreamKiste(fetcher),
   // FR
-  new Frembed(fetcher), // timing-out regularly since days
+  new Frembed(fetcher),
   new FrenchCloud(fetcher),
   new Movix(fetcher),
   // IT
