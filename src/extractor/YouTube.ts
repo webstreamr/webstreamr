@@ -1,19 +1,10 @@
 import { Context, CountryCode, Format, UrlResult } from '../types';
-import { Fetcher } from '../utils';
 import { Extractor } from './Extractor';
 
 export class YouTube extends Extractor {
   public readonly id = 'youtube';
 
   public readonly label = 'YouTube';
-
-  private readonly fetcher: Fetcher;
-
-  public constructor(fetcher: Fetcher) {
-    super();
-
-    this.fetcher = fetcher;
-  }
 
   public supports(_ctx: Context, url: URL): boolean {
     return null !== url.host.match(/youtube/) && url.searchParams.has('v');

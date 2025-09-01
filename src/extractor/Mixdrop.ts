@@ -2,7 +2,7 @@ import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
 import { Context, CountryCode, Format, UrlResult } from '../types';
-import { buildMediaFlowProxyExtractorRedirectUrl, Fetcher, supportsMediaFlowProxy } from '../utils';
+import { buildMediaFlowProxyExtractorRedirectUrl, supportsMediaFlowProxy } from '../utils';
 import { Extractor } from './Extractor';
 
 export class Mixdrop extends Extractor {
@@ -10,17 +10,7 @@ export class Mixdrop extends Extractor {
 
   public readonly label = 'Mixdrop (via MediaFlow Proxy)';
 
-  public override readonly ttl = 0;
-
   public override viaMediaFlowProxy = true;
-
-  private readonly fetcher: Fetcher;
-
-  public constructor(fetcher: Fetcher) {
-    super();
-
-    this.fetcher = fetcher;
-  }
 
   public supports(ctx: Context, url: URL): boolean {
     return null !== url.host.match(/mixdrop/) && supportsMediaFlowProxy(ctx);
@@ -36,7 +26,7 @@ export class Mixdrop extends Extractor {
       throw new NotFoundError();
     }
 
-    const sizeMatch = html.match(/([\d.,]+ ?[GM]B)/);
+    const sizeMatch = html.match(/([\d.,]+ ?[GM]B)/) as string[];
 
     const $ = cheerio.load(html);
     const title = $('.title b').text().trim();
@@ -50,10 +40,8 @@ export class Mixdrop extends Extractor {
         ttl: this.ttl,
         meta: {
           countryCodes: [countryCode],
+          bytes: bytes.parse((sizeMatch[1] as string).replace(',', '')) as number,
           title,
-          ...(sizeMatch && {
-            bytes: bytes.parse((sizeMatch[1] as string).replace(',', '')) as number,
-          }),
         },
       },
     ];

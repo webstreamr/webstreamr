@@ -5,14 +5,14 @@ import winston from 'winston';
 import { Source } from '../source';
 import { contextFromRequestAndResponse, envIsProd, Id, ImdbId, StreamResolver, TmdbId } from '../utils';
 
-const locks = new Map<string, Mutex>();
-
 export class StreamController {
   public readonly router: Router;
 
   private readonly logger: winston.Logger;
   private readonly sources: Source[];
   private readonly streamResolver: StreamResolver;
+
+  private readonly locks = new Map<string, Mutex>();
 
   public constructor(logger: winston.Logger, sources: Source[], streams: StreamResolver) {
     this.router = Router();
@@ -44,10 +44,10 @@ export class StreamController {
 
     const sources = this.sources.filter(source => source.countryCodes.filter(countryCode => countryCode in ctx.config).length);
 
-    let mutex = locks.get(rawId);
+    let mutex = this.locks.get(rawId);
     if (!mutex) {
       mutex = new Mutex();
-      locks.set(rawId, mutex);
+      this.locks.set(rawId, mutex);
     }
 
     await mutex.runExclusive(async () => {
@@ -62,7 +62,7 @@ export class StreamController {
     });
 
     if (!mutex.isLocked()) {
-      locks.delete(rawId);
+      this.locks.delete(rawId);
     }
   };
 }

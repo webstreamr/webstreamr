@@ -1,6 +1,6 @@
 import crypto from 'crypto';
 import { Context, CountryCode, Format, UrlResult } from '../types';
-import { Fetcher, guessHeightFromPlaylist } from '../utils';
+import { guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
 
 /** @see https://github.com/Gujal00/ResolveURL/blob/master/script.module.resolveurl/lib/resolveurl/plugins/kinoger.py */
@@ -8,14 +8,6 @@ export class KinoGer extends Extractor {
   public readonly id = 'kinoger';
 
   public readonly label = 'KinoGer';
-
-  private readonly fetcher: Fetcher;
-
-  public constructor(fetcher: Fetcher) {
-    super();
-
-    this.fetcher = fetcher;
-  }
 
   public supports(_ctx: Context, url: URL): boolean {
     return [

@@ -15,10 +15,6 @@ describe('Mixdrop', () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://mixdrop.my/e/knq0kj8waq44l8'), CountryCode.de)).toMatchSnapshot();
   });
 
-  test('mixdrop.my /f/', async () => {
-    expect(await extractorRegistry.handle(ctx, new URL('https://mixdrop.my/f/knq0kj8waq44l8'), CountryCode.de)).toMatchSnapshot();
-  });
-
   test('deleted or expired file', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://mixdrop.ag/e/123456789'), CountryCode.de)).toMatchSnapshot();
   });

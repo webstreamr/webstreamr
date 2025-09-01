@@ -228,16 +228,16 @@ describe('fetch', () => {
     await expect(fetcher.text(ctx, new URL('https://some-exception-url.test/'))).rejects.toBeInstanceOf(TypeError);
   });
 
-  test('times out', async () => {
+  test('times out, retries and times out again', async () => {
     const mockPool = mockAgent.get('https://some-timeout-url.test');
-    mockPool.intercept({ path: '/' }).reply(200).delay(20);
+    mockPool.intercept({ path: '/' }).reply(200).delay(20).persist();
 
     await expect(fetcher.text(ctx, new URL('https://some-timeout-url.test/'), { timeout: 10 })).rejects.toBeInstanceOf(TimeoutError);
   });
 
   test('queues requests and throws if queue is full', async () => {
     const mockPool = mockAgent.get('https://some-full-queue-url.test');
-    mockPool.intercept({ path: '/' }).reply(200).delay(20);
+    mockPool.intercept({ path: '/' }).reply(200).delay(20).persist();
 
     const allPromises = Promise.all([
       fetcher.text(ctx, new URL('https://some-full-queue-url.test/'), { queueLimit: 1, queueTimeout: 10 }),
@@ -252,12 +252,10 @@ describe('fetch', () => {
 
   test('throws if too many recent requests timed-out', async () => {
     const mockPool = mockAgent.get('https://too-many-recent-timeouts-url.test');
+    mockPool.intercept({ path: '/' }).reply(200).delay(20).persist();
 
-    mockPool.intercept({ path: '/' }).reply(200).delay(20);
     await expect(fetcher.text(ctx, new URL('https://too-many-recent-timeouts-url.test/'), { timeout: 10, timeoutsCountThrow: 2 })).rejects.toBeInstanceOf(TimeoutError);
-    mockPool.intercept({ path: '/' }).reply(200).delay(20);
     await expect(fetcher.text(ctx, new URL('https://too-many-recent-timeouts-url.test/'), { timeout: 10, timeoutsCountThrow: 2 })).rejects.toBeInstanceOf(TimeoutError);
-    mockPool.intercept({ path: '/' }).reply(200).delay(20);
     await expect(fetcher.text(ctx, new URL('https://too-many-recent-timeouts-url.test/'), { timeout: 10, timeoutsCountThrow: 2 })).rejects.toBeInstanceOf(TooManyTimeoutsError);
   });
 });

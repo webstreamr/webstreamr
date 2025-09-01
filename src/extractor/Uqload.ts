@@ -1,6 +1,7 @@
 import * as cheerio from 'cheerio';
 import { Context, CountryCode, Format, UrlResult } from '../types';
-import { buildMediaFlowProxyExtractorRedirectUrl, Fetcher, supportsMediaFlowProxy } from '../utils';
+import { buildMediaFlowProxyExtractorRedirectUrl, supportsMediaFlowProxy } from '../utils';
+import { guessSizeFromMp4 } from '../utils/size';
 import { Extractor } from './Extractor';
 
 export class Uqload extends Extractor {
@@ -8,17 +9,7 @@ export class Uqload extends Extractor {
 
   public readonly label = 'Uqload (via MediaFlow Proxy)';
 
-  public override readonly ttl = 0;
-
   public override viaMediaFlowProxy = true;
-
-  private readonly fetcher: Fetcher;
-
-  public constructor(fetcher: Fetcher) {
-    super();
-
-    this.fetcher = fetcher;
-  }
 
   public supports(ctx: Context, url: URL): boolean {
     return null !== url.host.match(/uqload/) && supportsMediaFlowProxy(ctx);
@@ -36,9 +27,11 @@ export class Uqload extends Extractor {
     const $ = cheerio.load(html);
     const title = $('h1').text().trim();
 
+    const mp4Url = buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Uqload', url);
+
     return [
       {
-        url: buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Uqload', url),
+        url: mp4Url,
         format: Format.mp4,
         label: this.label,
         sourceId: `${this.id}_${countryCode}`,
@@ -46,6 +39,7 @@ export class Uqload extends Extractor {
         meta: {
           countryCodes: [countryCode],
           title,
+          bytes: await guessSizeFromMp4(ctx, this.fetcher, mp4Url),
           ...(heightMatch && {
             height: parseInt(heightMatch[1] as string),
           }),

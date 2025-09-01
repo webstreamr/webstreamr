@@ -1,6 +1,6 @@
 import { BlockedError } from '../error';
 import { Context, CountryCode, Format, UrlResult } from '../types';
-import { Fetcher, showExternalUrls } from '../utils';
+import { showExternalUrls } from '../utils';
 import { Extractor } from './Extractor';
 
 export class ExternalUrl extends Extractor {
@@ -9,14 +9,6 @@ export class ExternalUrl extends Extractor {
   public readonly label = 'External';
 
   public override readonly ttl = 3600000; // 1h
-
-  private readonly fetcher: Fetcher;
-
-  public constructor(fetcher: Fetcher) {
-    super();
-
-    this.fetcher = fetcher;
-  }
 
   public supports(ctx: Context, url: URL): boolean {
     return showExternalUrls(ctx.config) && null !== url.host.match(/.*/);

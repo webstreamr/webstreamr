@@ -1,7 +1,7 @@
 import bytes from 'bytes';
 import { ContentType, Stream } from 'stremio-addon-sdk';
 import winston from 'winston';
-import { logErrorAndReturnNiceString, NotFoundError } from '../error';
+import { logErrorAndReturnNiceString } from '../error';
 import { ExtractorRegistry } from '../extractor';
 import { Source } from '../source';
 import { Context, Format, UrlResult } from '../types';
@@ -56,10 +56,6 @@ export class StreamResolver {
 
         urlResults.push(...sourceUrlResults.flat());
       } catch (error) {
-        if (error instanceof NotFoundError) {
-          return;
-        }
-
         sourceErrorOccurred = true;
 
         if (showErrors(ctx.config)) {

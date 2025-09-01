@@ -2,9 +2,9 @@ import * as cheerio from 'cheerio';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
 import { Fetcher, getTmdbId, getTmdbNameAndYear, Id, TmdbId } from '../utils';
-import { Source, SourceResult } from './types';
+import { Source, SourceResult } from './Source';
 
-export class HomeCine implements Source {
+export class HomeCine extends Source {
   public readonly id = 'homecine';
 
   public readonly label = 'HomeCine';
@@ -18,10 +18,12 @@ export class HomeCine implements Source {
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
+    super();
+
     this.fetcher = fetcher;
   }
 
-  public async handle(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
+  public async handleInternal(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
     const [name, year] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId, 'es');

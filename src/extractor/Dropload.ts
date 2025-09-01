@@ -2,21 +2,13 @@ import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
 import { Context, CountryCode, Format, UrlResult } from '../types';
-import { extractUrlFromPacked, Fetcher } from '../utils';
+import { extractUrlFromPacked } from '../utils';
 import { Extractor } from './Extractor';
 
 export class Dropload extends Extractor {
   public readonly id = 'dropload';
 
   public readonly label = 'Dropload';
-
-  private readonly fetcher: Fetcher;
-
-  public constructor(fetcher: Fetcher) {
-    super();
-
-    this.fetcher = fetcher;
-  }
 
   public supports(_ctx: Context, url: URL): boolean {
     return null !== url.host.match(/dropload/);

@@ -1,6 +1,6 @@
 import bytes from 'bytes';
 import { Context, CountryCode, Format, UrlResult } from '../types';
-import { buildMediaFlowProxyExtractorStreamUrl, Fetcher, supportsMediaFlowProxy } from '../utils';
+import { buildMediaFlowProxyExtractorStreamUrl, supportsMediaFlowProxy } from '../utils';
 import { Extractor } from './Extractor';
 
 export class Fastream extends Extractor {
@@ -8,17 +8,7 @@ export class Fastream extends Extractor {
 
   public readonly label = 'Fastream (via MediaFlow Proxy)';
 
-  public override readonly ttl = 0;
-
   public override viaMediaFlowProxy = true;
-
-  private readonly fetcher: Fetcher;
-
-  public constructor(fetcher: Fetcher) {
-    super();
-
-    this.fetcher = fetcher;
-  }
 
   public supports(ctx: Context, url: URL): boolean {
     return null !== url.host.match(/fastream/) && supportsMediaFlowProxy(ctx);

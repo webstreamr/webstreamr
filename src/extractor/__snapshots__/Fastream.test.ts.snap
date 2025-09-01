@@ -14,7 +14,7 @@ exports[`Fastream fastream.to embed 1`] = `
       "title": "black.mirror.s01e01.lat.720p.mp4",
     },
     "sourceId": "fastream_es",
-    "ttl": 0,
+    "ttl": 900000,
     "url": "https://mediaflow-proxy.test/proxy/hls/manifest.m3u8?api_password=asdfg&h_user-agent=Mozilla%2F5.0+%28X11%3B+Linux+x86_64%3B+rv%3A138.0%29+Gecko%2F20100101+Firefox%2F138.0&h_Accept=*%2F*&h_Connection=keep-alive&h_Accept-Language=en-US%2Cen%3Bq%3D0.5&h_referer=https%3A%2F%2Ffastream.to%2F&h_origin=https%3A%2F%2Ffastream.to&d=https%3A%2F%2Fs28.fastream.to%2Fhls2%2F09%2F00024%2F3aooif4ozt10_%2Cl%2Cn%2Ch%2Cx%2C.urlset%2Fmaster.m3u8%3Ft%3Dnw6_aeN6pDROuXsJQwyrJVm3qHKFedVfbTNj5LgXH-4%26s%3D1752863379%26e%3D43200%26v%3D1058373%26i%3D0.3%26sp%3D0",
   },
 ]

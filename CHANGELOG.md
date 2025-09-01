@@ -1,5 +1,91 @@
 # Changelog
 
+## [0.45.2](https://github.com/webstreamr/webstreamr/compare/v0.45.1...v0.45.2) (2025-09-01)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @stylistic/eslint-plugin to v5.3.1 ([#309](https://github.com/webstreamr/webstreamr/issues/309)) ([285746a](https://github.com/webstreamr/webstreamr/commit/285746a4a9ba62ed17f30306f3e57ec0e8bb5f39))
+* handle NotFoundError / 404 inside source and cache it also ([4d05ac8](https://github.com/webstreamr/webstreamr/commit/4d05ac859f14ccdd123f13d7c46fea6195e17a93))
+* **source:** remove outdated comment ([2468fbd](https://github.com/webstreamr/webstreamr/commit/2468fbde4e826f4e313e202a1a2cdace655b7706))
+
+
+### Bug Fixes
+
+* catch all timeouts ([b47a512](https://github.com/webstreamr/webstreamr/commit/b47a5125870c7bd764756f38e4493e0e5b894b55))
+* **source:** consider season and episode for cache key ([ceb520d](https://github.com/webstreamr/webstreamr/commit/ceb520d49d0c9ff3056fce32075b201499805fcf))
+
+
+### Code Refactoring
+
+* move locks into StreamController ([e109637](https://github.com/webstreamr/webstreamr/commit/e109637e48cdf4b2c1418fa00c30cf95268fbf0e))
+
+## [0.45.1](https://github.com/webstreamr/webstreamr/compare/v0.45.0...v0.45.1) (2025-09-01)
+
+
+### Miscellaneous Chores
+
+* **deps:** update jest monorepo to v30.1.2 ([#308](https://github.com/webstreamr/webstreamr/issues/308)) ([4414324](https://github.com/webstreamr/webstreamr/commit/4414324a08197671ab2360d648c14d06b5792447))
+* **deps:** update node.js to v22.19.0 ([#306](https://github.com/webstreamr/webstreamr/issues/306)) ([3044e41](https://github.com/webstreamr/webstreamr/commit/3044e41d9b3e4c3e3df94a51e549dc51886ae087))
+* **extractor:** support caching via MediaFlow Proxy ([c556d95](https://github.com/webstreamr/webstreamr/commit/c556d9500b99ece8f1c83402f35ba2516796d8bc))
+* **fetcher:** log retries ([c47f48c](https://github.com/webstreamr/webstreamr/commit/c47f48c64bf89f91d5ed0b8d2a25b1665733c82d))
+* **fetcher:** retry timeouts once ([0fc7675](https://github.com/webstreamr/webstreamr/commit/0fc76755606d235efa2f963c7460815a726816df))
+* **source:** cache source results for 3 hours ([c82a7ab](https://github.com/webstreamr/webstreamr/commit/c82a7ab75675b8fe45912febd5bf69a1cd3d2e23))
+
+
+### Bug Fixes
+
+* **extractor:** set missing viaMediaFlowProxy in Streamtape ([33ee150](https://github.com/webstreamr/webstreamr/commit/33ee150915f6cc3e07c14b26182b3ac99c379e6c))
+
+
+### Code Refactoring
+
+* **source:** introduce abstract parent class ([9da7c07](https://github.com/webstreamr/webstreamr/commit/9da7c07dc6350910d6ef30b24033fdcefc480a06))
+
+
+### Tests
+
+* disable console logging to reduce noise ([3c4507b](https://github.com/webstreamr/webstreamr/commit/3c4507b1981d284baf3058f9ca761eae5342b03e))
+
+## [0.45.0](https://github.com/webstreamr/webstreamr/compare/v0.44.1...v0.45.0) (2025-08-28)
+
+
+### Miscellaneous Chores
+
+* configure undici dispatcher allowing HTTP2, caching DNS and retrying connection errors ([05d11e3](https://github.com/webstreamr/webstreamr/commit/05d11e366b39f4f6fe6c81cd85c58a4aef6d8203))
+* **deps:** lock file maintenance ([#300](https://github.com/webstreamr/webstreamr/issues/300)) ([2381a2c](https://github.com/webstreamr/webstreamr/commit/2381a2c2adc47fbf23e1f006ff1edda5a6e54116))
+* **deps:** update dependency typescript-eslint to v8.40.0 ([#292](https://github.com/webstreamr/webstreamr/issues/292)) ([14da5da](https://github.com/webstreamr/webstreamr/commit/14da5da205e4b49cc87dbd55b97a91ac3d90c89a))
+* **deps:** update dependency typescript-eslint to v8.41.0 ([#302](https://github.com/webstreamr/webstreamr/issues/302)) ([0449150](https://github.com/webstreamr/webstreamr/commit/0449150874b478d6626f2ed0df5809e88317a0c6))
+* **deps:** update eslint monorepo to v9.34.0 ([#298](https://github.com/webstreamr/webstreamr/issues/298)) ([b616fef](https://github.com/webstreamr/webstreamr/commit/b616fef018c0d4b99685ac729695a9773100008d))
+* **deps:** update jest monorepo to v30.1.0 ([#304](https://github.com/webstreamr/webstreamr/issues/304)) ([b4dca46](https://github.com/webstreamr/webstreamr/commit/b4dca46e5e670919dc02d8904f0b24309c0e2394))
+* **deps:** update jest monorepo to v30.1.1 ([#305](https://github.com/webstreamr/webstreamr/issues/305)) ([ada3ff1](https://github.com/webstreamr/webstreamr/commit/ada3ff19269e70013e0c11ff336f6b3d0f22c49f))
+* **extractor:** add more KinoGer domains ([c8cd2ec](https://github.com/webstreamr/webstreamr/commit/c8cd2ec7943830b2691cdbf7f3c29658a1945b86))
+* **extractor:** add more KinoGer domains and determine resolution ([2d9f9bf](https://github.com/webstreamr/webstreamr/commit/2d9f9bf1af22502608942c6aee8a8a37670b1eb2))
+* **extractor:** move Fetcher into parent, guess missing heights for SuperVideo ([cefc80f](https://github.com/webstreamr/webstreamr/commit/cefc80fa5506b928adfa53eddc4351a597b0dbf3))
+* **extractor:** use guessSizeFromMp4 in Streamtape, Uqload and XPrime ([18d8ee6](https://github.com/webstreamr/webstreamr/commit/18d8ee6b79967fc7719272f38abfcbfa1d1c1252))
+
+
+### Features
+
+* **source:** add Einschalten ([b6a8e6f](https://github.com/webstreamr/webstreamr/commit/b6a8e6f448c30dd91e3ac3ea624e4e01c8e4ac2b))
+* support TMDB IDs ([c7c2ebf](https://github.com/webstreamr/webstreamr/commit/c7c2ebf353287763d2af83e1adc0943494806822))
+
+
+### Bug Fixes
+
+* **deps:** update dependency undici to v7.15.0 ([#297](https://github.com/webstreamr/webstreamr/issues/297)) ([41b4425](https://github.com/webstreamr/webstreamr/commit/41b44252b1274b3ed489c87172cc784441ede2a7))
+* **extractor:** handle SaveFiles /d/ links properly ([eecd325](https://github.com/webstreamr/webstreamr/commit/eecd3255f0be0e11e551933771d2c3d4c5121654))
+
+
+### Code Refactoring
+
+* introduce guessSizeFromMp4 ([4a1a3b1](https://github.com/webstreamr/webstreamr/commit/4a1a3b19aac292256adc92d4d4b17e16e21dadec))
+
+
+### Reverts
+
+* Revert "chore(source): disable Soaper" ([795c033](https://github.com/webstreamr/webstreamr/commit/795c033a82f5d8e48a7b3e52d943352cac2a6535))
+
 ## [0.44.1](https://github.com/webstreamr/webstreamr/compare/v0.44.0...v0.44.1) (2025-08-18)
 
 

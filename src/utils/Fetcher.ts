@@ -192,7 +192,7 @@ export class Fetcher {
   }
 
   private determineCacheTtl(status: number, policy: CachePolicy, init?: CustomRequestInit): number {
-    if (status === 200) {
+    if (status === 200 || status === 404) {
       return Math.max(policy.timeToLive(), init?.minCacheTtl ?? this.MIN_CACHE_TTL);
     }
 
@@ -271,6 +271,13 @@ export class Fetcher {
       response = await fetch(finalUrl, finalInit);
     } catch (error) {
       if (error instanceof DOMException && error.name === 'TimeoutError') {
+        if (tryCount < 1) {
+          this.logger.warn(`Retrying fetch ${init?.method ?? 'GET'} ${url} because of timeout`, ctx);
+          await new Promise(sleep => setTimeout(sleep, 333));
+
+          return await this.fetchWithTimeout(ctx, url, init, ++tryCount);
+        }
+
         await this.increaseTimeoutsCount(url);
         throw new TimeoutError();
       }
@@ -281,6 +288,7 @@ export class Fetcher {
     await this.decreaseTimeoutsCount(url);
 
     if (response.status >= 500 && tryCount < 3) {
+      this.logger.warn(`Retrying fetch ${init?.method ?? 'GET'} ${url} because of error`, ctx);
       await new Promise(sleep => setTimeout(sleep, 333));
 
       return await this.fetchWithTimeout(ctx, url, init, ++tryCount);

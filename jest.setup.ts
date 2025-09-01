@@ -9,6 +9,8 @@ beforeEach(() => {
   jest.spyOn(Date, 'now').mockImplementation(() => 639837296000);
 });
 
+console.log = console.warn = console.error = console.info = console.debug = () => { /* disable in favor of logger */ };
+
 let dispatcher: Dispatcher;
 if (process.env['ALL_PROXY']) {
   const proxyUrl = new URL(process.env['ALL_PROXY']);

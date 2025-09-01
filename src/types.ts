@@ -40,7 +40,7 @@ export enum BlockedReason {
 }
 
 export interface Meta {
-  bytes?: number;
+  bytes?: number | undefined;
   countryCodes: CountryCode[];
   height?: number | undefined;
   title?: string | undefined;

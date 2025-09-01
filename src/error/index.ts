@@ -42,7 +42,10 @@ export const logErrorAndReturnNiceString = (ctx: Context, logger: winston.Logger
     return '🚦 Too many recent timeouts. Please try again later.';
   }
 
-  if (error instanceof TimeoutError) {
+  if (
+    error instanceof TimeoutError
+    || (error instanceof DOMException && error.name === 'TimeoutError') // sometimes this gets through, no idea why..
+  ) {
     logger.warn(`${source}: Request timed out.`, ctx);
 
     return '🐢 Request timed out.';
