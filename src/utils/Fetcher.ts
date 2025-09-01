@@ -272,6 +272,7 @@ export class Fetcher {
     } catch (error) {
       if (error instanceof DOMException && error.name === 'TimeoutError') {
         if (tryCount < 1) {
+          this.logger.warn(`Retrying fetch ${init?.method ?? 'GET'} ${url} because of timeout`, ctx);
           await new Promise(sleep => setTimeout(sleep, 333));
 
           return await this.fetchWithTimeout(ctx, url, init, ++tryCount);
@@ -287,6 +288,7 @@ export class Fetcher {
     await this.decreaseTimeoutsCount(url);
 
     if (response.status >= 500 && tryCount < 3) {
+      this.logger.warn(`Retrying fetch ${init?.method ?? 'GET'} ${url} because of error`, ctx);
       await new Promise(sleep => setTimeout(sleep, 333));
 
       return await this.fetchWithTimeout(ctx, url, init, ++tryCount);
