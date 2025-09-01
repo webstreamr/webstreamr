@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.45.1](https://github.com/webstreamr/webstreamr/compare/v0.45.0...v0.45.1) (2025-09-01)
+
+
+### Miscellaneous Chores
+
+* **deps:** update jest monorepo to v30.1.2 ([#308](https://github.com/webstreamr/webstreamr/issues/308)) ([4414324](https://github.com/webstreamr/webstreamr/commit/4414324a08197671ab2360d648c14d06b5792447))
+* **deps:** update node.js to v22.19.0 ([#306](https://github.com/webstreamr/webstreamr/issues/306)) ([3044e41](https://github.com/webstreamr/webstreamr/commit/3044e41d9b3e4c3e3df94a51e549dc51886ae087))
+* **extractor:** support caching via MediaFlow Proxy ([c556d95](https://github.com/webstreamr/webstreamr/commit/c556d9500b99ece8f1c83402f35ba2516796d8bc))
+* **fetcher:** log retries ([c47f48c](https://github.com/webstreamr/webstreamr/commit/c47f48c64bf89f91d5ed0b8d2a25b1665733c82d))
+* **fetcher:** retry timeouts once ([0fc7675](https://github.com/webstreamr/webstreamr/commit/0fc76755606d235efa2f963c7460815a726816df))
+* **source:** cache source results for 3 hours ([c82a7ab](https://github.com/webstreamr/webstreamr/commit/c82a7ab75675b8fe45912febd5bf69a1cd3d2e23))
+
+
+### Bug Fixes
+
+* **extractor:** set missing viaMediaFlowProxy in Streamtape ([33ee150](https://github.com/webstreamr/webstreamr/commit/33ee150915f6cc3e07c14b26182b3ac99c379e6c))
+
+
+### Code Refactoring
+
+* **source:** introduce abstract parent class ([9da7c07](https://github.com/webstreamr/webstreamr/commit/9da7c07dc6350910d6ef30b24033fdcefc480a06))
+
+
+### Tests
+
+* disable console logging to reduce noise ([3c4507b](https://github.com/webstreamr/webstreamr/commit/3c4507b1981d284baf3058f9ca761eae5342b03e))
+
 ## [0.45.0](https://github.com/webstreamr/webstreamr/compare/v0.44.1...v0.45.0) (2025-08-28)
 
 
