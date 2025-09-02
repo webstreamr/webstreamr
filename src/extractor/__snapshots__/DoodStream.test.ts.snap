@@ -15,7 +15,7 @@ exports[`DoodStream can guess height from title 1`] = `
       "Referer": "http://dood.to",
     },
     "sourceId": "doodstream_fr",
-    "ttl": 900000,
+    "ttl": 21600000,
     "url": "https://ee317r.cloudatacdn.com/u5kj63yvxddlsdgge7qremqqka27irwiupc4k7o5cikbhjliz6xwv2xr53uq/lco4d3heif~mocked-random-string?token=fh3rdlhjvao7chgxndsi3ra7&expiry=639837296000",
   },
 ]
@@ -36,7 +36,7 @@ exports[`DoodStream cloudflare storage 1`] = `
       "Referer": "http://dood.to",
     },
     "sourceId": "doodstream_mx",
-    "ttl": 900000,
+    "ttl": 21600000,
     "url": "https://wec6bnh7rx7rw11bv9e9vslw4rud8nam.5f1ebd98099ce35faeeddb30c1752191.r2.cloudflarestorage.com/icxxqqdsfdc4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ab085b515b950aae0a86cae59456cacd%2F20250714%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250714T154400Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=845ebfa5feedd840027e431f31e013513dd4c4f74364b4e75a2c8ddb213bd97a",
   },
 ]
@@ -58,7 +58,7 @@ exports[`DoodStream dood.to 1`] = `
       "Referer": "http://dood.to",
     },
     "sourceId": "doodstream_de",
-    "ttl": 900000,
+    "ttl": 21600000,
     "url": "https://aa360cc.cloudatacdn.com/u5kjv4jxytd3sdgge5uogji5dg4huat2pxrm2qibdbm5rlyusvl46iz3u3ta/1f4isxg0tw~mocked-random-string?token=7uebebipnnhusa4xnyea1er4&expiry=639837296000",
   },
 ]
@@ -79,7 +79,7 @@ exports[`DoodStream doodster 1`] = `
       "Referer": "http://dood.to",
     },
     "sourceId": "doodstream_de",
-    "ttl": 900000,
+    "ttl": 21600000,
     "url": "https://ijs155l.cloudatacdn.com/u5kj2rz5qtdlsdgge4hrgj2flz5cjodea6auatveaphxogr2vvukxfzmwzva/egprvdjvpr~mocked-random-string?token=fbsg3301phkef2s4swo8bssg&expiry=639837296000",
   },
 ]
