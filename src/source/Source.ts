@@ -15,7 +15,7 @@ export abstract class Source {
 
   public abstract readonly label: string;
 
-  public readonly ttl: number = 10800000; // 3h
+  public readonly ttl: number = 43200000; // 12h
 
   public abstract readonly contentTypes: ContentType[];
 
