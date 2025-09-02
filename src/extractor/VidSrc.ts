@@ -10,6 +10,8 @@ export class VidSrc extends Extractor {
 
   public readonly label = 'VidSrc';
 
+  public override readonly ttl: number = 10800000; // 3h
+
   private readonly tlds: NonEmptyArray<string>;
 
   public constructor(fetcher: Fetcher, tlds: NonEmptyArray<string>) {
