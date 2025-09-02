@@ -6,6 +6,8 @@ export class YouTube extends Extractor {
 
   public readonly label = 'YouTube';
 
+  public override readonly ttl: number = 21600000; // 6h
+
   public supports(_ctx: Context, url: URL): boolean {
     return null !== url.host.match(/youtube/) && url.searchParams.has('v');
   }

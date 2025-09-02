@@ -12,7 +12,7 @@ exports[`YouTube Solaris 1`] = `
       "title": "Solaris | SCIENCE FICTION | FULL MOVIE | directed by Tarkovsky",
     },
     "sourceId": "youtube_en",
-    "ttl": 900000,
+    "ttl": 21600000,
     "url": "https://www.youtube.com/watch?v=Z8ZhQPaw4rE",
     "ytId": "Z8ZhQPaw4rE",
   },
