@@ -8,6 +8,8 @@ export class SaveFiles extends Extractor {
 
   public readonly label = 'SaveFiles';
 
+  public override readonly ttl: number = 21600000; // 6h
+
   public supports(_ctx: Context, url: URL): boolean {
     return null !== url.host.match(/savefiles|streamhls/);
   }
