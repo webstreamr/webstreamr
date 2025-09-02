@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.45.3](https://github.com/webstreamr/webstreamr/compare/v0.45.2...v0.45.3) (2025-09-02)
+
+
+### Miscellaneous Chores
+
+* always return integers for Cache-Control max-age ([1b89cad](https://github.com/webstreamr/webstreamr/commit/1b89cadab5b36cd86895df46d6b54e757cfd4df5))
+* **deps:** update dependency jest to v30.1.3 ([#314](https://github.com/webstreamr/webstreamr/issues/314)) ([896ec74](https://github.com/webstreamr/webstreamr/commit/896ec74959363ace6158098f241b17a9d21f90b5))
+* **deps:** update dependency typescript-eslint to v8.42.0 ([#312](https://github.com/webstreamr/webstreamr/issues/312)) ([50764b3](https://github.com/webstreamr/webstreamr/commit/50764b3602039f3911da4b5586efb0d37fe1a287))
+* **extractor:** cache Doodstream for 6h ([a250440](https://github.com/webstreamr/webstreamr/commit/a250440670501aefefac96d36c978111ff11f367))
+* **extractor:** cache Dropload for 3h ([ccf8006](https://github.com/webstreamr/webstreamr/commit/ccf8006f1368e36a8431e7f2a5f9c768ee612fe2))
+* **extractor:** cache KinoGer for 6h ([316fd46](https://github.com/webstreamr/webstreamr/commit/316fd4621b65061c2023caa8e592167bc8faac0e))
+* **extractor:** cache SaveFiles for 6h ([bb95118](https://github.com/webstreamr/webstreamr/commit/bb95118d2ba7f96ab830b42c6711696b07eae770))
+* **extractor:** cache Soaper for 12h ([1e100e6](https://github.com/webstreamr/webstreamr/commit/1e100e6d2e3d42cba87800c31176a0811065387f))
+* **extractor:** cache SuperVideo for 3h ([7ac7183](https://github.com/webstreamr/webstreamr/commit/7ac71837b35a40a3c5033ee5176437abaed3e5c9))
+* **extractor:** cache VidSrc for 3h ([c68570d](https://github.com/webstreamr/webstreamr/commit/c68570d2bc9469623a0ec2a801c421810b90c06b))
+* **extractor:** cache XPrime for 6h ([fc17545](https://github.com/webstreamr/webstreamr/commit/fc17545860b1d10602009c587506be98ed669b4f))
+* **extractor:** start refreshing results randomly after at least 2/3 of the TTL passed ([969ab8d](https://github.com/webstreamr/webstreamr/commit/969ab8d0d77390ff3cd7757645978ac3355c92ae))
+* **source:** cache sources for 12h ([bc06cb5](https://github.com/webstreamr/webstreamr/commit/bc06cb5750f59f183e8796024f0abd843c01486a))
+
+
+### Code Refactoring
+
+* consistently use `cacheable` for caching ([dc093f7](https://github.com/webstreamr/webstreamr/commit/dc093f7109198db095900ed77f13c1d146df366f))
+
 ## [0.45.2](https://github.com/webstreamr/webstreamr/compare/v0.45.1...v0.45.2) (2025-09-01)
 
 
