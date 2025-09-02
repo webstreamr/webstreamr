@@ -16,7 +16,7 @@ exports[`KinoGer Blood & Sinners 1`] = `
       "Referer": "https://kinoger.re",
     },
     "sourceId": "kinoger_de",
-    "ttl": 900000,
+    "ttl": 21600000,
     "url": "https://scvo.processorprediction.shop/v4/bgm/ge5fhb/cf-master.txt?v=1748766126",
   },
 ]
@@ -38,7 +38,7 @@ exports[`KinoGer Dead City 1`] = `
       "Referer": "https://kinoger.re",
     },
     "sourceId": "kinoger_de",
-    "ttl": 900000,
+    "ttl": 21600000,
     "url": "https://sipt.responseautomation.cyou/v4/vz1/x6tsx9/cf-master.txt?v=1748957184",
   },
 ]
