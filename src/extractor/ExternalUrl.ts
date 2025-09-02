@@ -8,7 +8,7 @@ export class ExternalUrl extends Extractor {
 
   public readonly label = 'External';
 
-  public override readonly ttl = 3600000; // 1h
+  public override readonly ttl = 21600000; // 6h
 
   public supports(ctx: Context, url: URL): boolean {
     return showExternalUrls(ctx.config) && null !== url.host.match(/.*/);

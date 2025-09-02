@@ -15,7 +15,7 @@ exports[`ExtractorRegistry returns external URLs if enabled by config 1`] = `
       "title": undefined,
     },
     "sourceId": "external_de",
-    "ttl": 3600000,
+    "ttl": 21600000,
     "url": "https://mixdrop.ag/e/3nzwveprim63or6",
   },
 ]

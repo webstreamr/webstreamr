@@ -15,7 +15,7 @@ exports[`ExternalUrl johnalwayssame.com with title 1`] = `
       "title": "Black Mirror 4x2",
     },
     "sourceId": "external_fr",
-    "ttl": 3600000,
+    "ttl": 21600000,
     "url": "https://johnalwayssame.com/e/cqy9oue7sv0g",
   },
 ]
@@ -34,7 +34,7 @@ exports[`ExternalUrl netu.fanstream.us 1`] = `
       "title": undefined,
     },
     "sourceId": "external_fr",
-    "ttl": 3600000,
+    "ttl": 21600000,
     "url": "https://netu.fanstream.us/e/0DFgfkcXOsDP",
   },
 ]
