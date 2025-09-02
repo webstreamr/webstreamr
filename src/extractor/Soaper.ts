@@ -12,6 +12,8 @@ export class Soaper extends Extractor {
 
   public readonly label = 'Soaper';
 
+  public override readonly ttl: number = 43200000; // 12h
+
   public supports(_ctx: Context, url: URL): boolean {
     return null !== url.host.match(/soaper/) && null !== url.pathname.match(/^\/(episode|movie)_/);
   }
