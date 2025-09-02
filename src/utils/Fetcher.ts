@@ -1,8 +1,7 @@
 import { gunzipSync, gzipSync } from 'zlib';
-import TTLCache from '@isaacs/ttlcache';
 import { Mutex, Semaphore, SemaphoreInterface, withTimeout } from 'async-mutex';
+import { Cacheable, CacheableMemory, Keyv } from 'cacheable';
 import CachePolicy from 'http-cache-semantics';
-import { LRUCache } from 'lru-cache';
 import { Cookie, CookieJar } from 'tough-cookie';
 import { fetch, Headers, RequestInit, Response } from 'undici';
 import winston from 'winston';
@@ -64,13 +63,13 @@ export class Fetcher {
 
   private readonly logger: winston.Logger;
 
-  private readonly httpCache = new LRUCache<string, Buffer>({ max: 2048 });
-  private readonly rateLimitedCache = new TTLCache<string, undefined>({ max: 1024 });
+  private readonly httpCache = new Cacheable({ primary: new Keyv({ store: new CacheableMemory({ lruSize: 2048 }) }) });
+  private readonly rateLimitedCache = new Cacheable({ primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }) });
   private readonly semaphores = new Map<string, SemaphoreInterface>();
   private readonly hostUserAgentMap = new Map<string, string>();
   private readonly cookieJar = new CookieJar();
 
-  private readonly timeoutsCountCache = new TTLCache<string, number>({ max: 1024 });
+  private readonly timeoutsCountCache = new Cacheable({ primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }) });
   private readonly timeoutsCountMutex = new Mutex();
 
   public constructor(logger: winston.Logger) {
@@ -178,7 +177,7 @@ export class Fetcher {
     if (httpCacheItem.status === 429) {
       const retryAfter = parseInt(`${httpCacheItem.headers['retry-after']}`);
       if (!isNaN(retryAfter)) {
-        this.rateLimitedCache.set(url.host, undefined, { ttl: retryAfter * 1000 });
+        await this.rateLimitedCache.set<true>(url.host, true, retryAfter);
       }
 
       throw new TooManyRequestsError(retryAfter);
@@ -199,18 +198,18 @@ export class Fetcher {
     return policy.timeToLive();
   };
 
-  private cacheGet(key: string): HttpCacheItem | undefined {
-    const buffer = this.httpCache.get(key);
+  private async cacheGet(key: string): Promise<HttpCacheItem | undefined> {
+    const buffer = await this.httpCache.get<Buffer>(key);
 
     return buffer ? JSON.parse(gunzipSync(buffer).toString()) : undefined;
   }
 
-  private cacheSet(key: string, httpCacheItem: HttpCacheItem) {
+  private async cacheSet(key: string, httpCacheItem: HttpCacheItem) {
     if (httpCacheItem.ttl <= 0) {
       return;
     }
 
-    this.httpCache.set(key, gzipSync(JSON.stringify(httpCacheItem)), { ttl: httpCacheItem.ttl });
+    await this.httpCache.set<Buffer>(key, gzipSync(JSON.stringify(httpCacheItem)), httpCacheItem.ttl);
   }
 
   private headersToObject(headers: Headers): Record<string, string> {
@@ -229,7 +228,7 @@ export class Fetcher {
     const request: CachePolicy.Request = { url: url.href, method: newInit.method ?? 'GET', headers: {} };
 
     const cacheKey = this.determineCacheKey(url, init);
-    let httpCacheItem = this.cacheGet(cacheKey);
+    let httpCacheItem = await this.cacheGet(cacheKey);
     const noCache = init?.noCache ?? false;
     if (httpCacheItem && !noCache) {
       this.logger.info(`Cached fetch ${request.method} ${url}`, ctx);
@@ -244,7 +243,7 @@ export class Fetcher {
 
     httpCacheItem = { headers: policy.responseHeaders(), status: response.status, statusText: response.statusText, body, ttl };
 
-    this.cacheSet(cacheKey, httpCacheItem);
+    await this.cacheSet(cacheKey, httpCacheItem);
 
     return this.handleHttpCacheItem(ctx, httpCacheItem, url, init);
   };
@@ -252,11 +251,13 @@ export class Fetcher {
   protected async fetchWithTimeout(ctx: Context, url: URL, init?: CustomRequestInit, tryCount = 0): Promise<Response> {
     this.logger.info(`Fetch ${init?.method ?? 'GET'} ${url}`, ctx);
 
-    if (this.rateLimitedCache.has(url.host)) {
-      throw new TooManyRequestsError(this.rateLimitedCache.getRemainingTTL(url.host) / 1000);
+    const isRateLimitedRaw = await this.rateLimitedCache.get<true>(url.host, { raw: true });
+    if (isRateLimitedRaw && isRateLimitedRaw.value) {
+      throw new TooManyRequestsError((isRateLimitedRaw.expires as number - Date.now()) / 1000);
     }
 
-    if ((this.timeoutsCountCache.get(url.host) ?? 0) >= (init?.timeoutsCountThrow ?? this.DEFAULT_TIMEOUTS_COUNT_THROW)) {
+    const timeouts = (await this.timeoutsCountCache.get<number>(url.host)) ?? 0;
+    if (timeouts >= (init?.timeoutsCountThrow ?? this.DEFAULT_TIMEOUTS_COUNT_THROW)) {
       throw new TooManyTimeoutsError();
     }
 
@@ -299,15 +300,17 @@ export class Fetcher {
 
   private async increaseTimeoutsCount(url: URL) {
     await this.timeoutsCountMutex.runExclusive(async () => {
-      const count = (this.timeoutsCountCache.get(url.host) ?? 0) + 1;
-      this.timeoutsCountCache.set(url.host, count, { ttl: this.TIMEOUT_CACHE_TTL });
+      const count = (await this.timeoutsCountCache.get<number>(url.host)) ?? 0;
+      const newCount = count + 1;
+      await this.timeoutsCountCache.set<number>(url.host, newCount, this.TIMEOUT_CACHE_TTL);
     });
   }
 
   private async decreaseTimeoutsCount(url: URL) {
     await this.timeoutsCountMutex.runExclusive(async () => {
-      const count = Math.max(0, (this.timeoutsCountCache.get(url.host) ?? 0) - 1);
-      this.timeoutsCountCache.set(url.host, count, { ttl: this.TIMEOUT_CACHE_TTL });
+      const count = (await this.timeoutsCountCache.get<number>(url.host)) ?? 0;
+      const newCount = Math.max(0, count - 1);
+      await this.timeoutsCountCache.set<number>(url.host, newCount, this.TIMEOUT_CACHE_TTL);
     });
   }
 

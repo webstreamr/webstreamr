@@ -1,4 +1,4 @@
-import TTLCache from '@isaacs/ttlcache';
+import { Cacheable, CacheableMemory, Keyv } from 'cacheable';
 import { ContentType } from 'stremio-addon-sdk';
 import { NotFoundError } from '../error';
 import { Context, CountryCode } from '../types';
@@ -23,21 +23,22 @@ export abstract class Source {
 
   public abstract readonly baseUrl: string;
 
-  private readonly sourceResultCache: TTLCache<string | number, SourceResult[]>;
+  private readonly sourceResultCache: Cacheable;
 
   public constructor() {
-    this.sourceResultCache = new TTLCache({ max: 1024, ttl: this.ttl });
+    this.sourceResultCache = new Cacheable({ primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024, ttl: this.ttl }) }) });
   }
 
   protected abstract handleInternal(ctx: Context, type: ContentType, id: Id): Promise<(SourceResult[])>;
 
   public async handle(ctx: Context, type: ContentType, id: Id): Promise<(SourceResult[])> {
     const cacheKey = id.toString();
-    if (this.sourceResultCache.has(cacheKey)) {
-      return this.sourceResultCache.get(cacheKey) as SourceResult[];
+
+    let sourceResults = await this.sourceResultCache.get<SourceResult[]>(cacheKey);
+    if (sourceResults) {
+      return sourceResults.map(sourceResult => ({ ...sourceResult, url: new URL(sourceResult.url) }));
     }
 
-    let sourceResults: SourceResult[];
     try {
       sourceResults = await this.handleInternal(ctx, type, id);
     } catch (error) {
@@ -48,7 +49,7 @@ export abstract class Source {
       }
     }
 
-    this.sourceResultCache.set(cacheKey, sourceResults);
+    await this.sourceResultCache.set<SourceResult[]>(cacheKey, sourceResults);
 
     return sourceResults;
   }
