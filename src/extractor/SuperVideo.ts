@@ -10,6 +10,8 @@ export class SuperVideo extends Extractor {
 
   public readonly label = 'SuperVideo';
 
+  public override readonly ttl: number = 10800000; // 3h
+
   public supports(_ctx: Context, url: URL): boolean {
     return null !== url.host.match(/supervideo/);
   }
