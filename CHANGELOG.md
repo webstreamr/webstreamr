@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.46.0](https://github.com/webstreamr/webstreamr/compare/v0.45.3...v0.46.0) (2025-09-03)
+
+
+### Miscellaneous Chores
+
+* add ipStatus to /live endpoint ([94abcd3](https://github.com/webstreamr/webstreamr/commit/94abcd3f0ae814d2e057e14c7e5cbc96822c6803))
+* **fetcher:** decrease timeout to 5 seconds ([83021fb](https://github.com/webstreamr/webstreamr/commit/83021fb773e87711b812e327c4dec003fb27eb01))
+* no special sorting for errors ([12ac42e](https://github.com/webstreamr/webstreamr/commit/12ac42ef5f67c20be2fedfb0dea9183504529663))
+
+
+### Features
+
+* add stats endpoint with cache stats ([fd0900e](https://github.com/webstreamr/webstreamr/commit/fd0900e0533ad2f56a1546f55f1e92a48c366b2e))
+* configure sqlite as secondary source and extractor cache ([2b7e9c4](https://github.com/webstreamr/webstreamr/commit/2b7e9c403d646bde10c30e4eb48d55815b1aacff))
+* **source:** persist PrimeWire redirect URL cache ([8979060](https://github.com/webstreamr/webstreamr/commit/89790609db3a24274b0b9f8ef39478f81657da4c))
+
+
+### Bug Fixes
+
+* **source:** make cache prop static ([5ea34f6](https://github.com/webstreamr/webstreamr/commit/5ea34f66dd5106112eae792e657af51513064df4))
+* **source:** move countryCode filtering into central place ([5547fd5](https://github.com/webstreamr/webstreamr/commit/5547fd5486e61a260a208e343f837bd06978cd26))
+
 ## [0.45.3](https://github.com/webstreamr/webstreamr/compare/v0.45.2...v0.45.3) (2025-09-02)
 
 
