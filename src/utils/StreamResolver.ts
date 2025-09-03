@@ -80,10 +80,6 @@ export class StreamResolver {
         return bytesComparison;
       }
 
-      if (a.error || b.error) {
-        return a.error ? 1 : -1;
-      }
-
       if (a.isExternal || b.isExternal) {
         return a.isExternal ? 1 : -1;
       }
