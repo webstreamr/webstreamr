@@ -64,7 +64,7 @@ export class Fetcher {
   private readonly logger: winston.Logger;
 
   private readonly httpCache = new Cacheable({
-    primary: new Keyv({ store: new CacheableMemory({ lruSize: 2048 }) }),
+    primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }),
     stats: true,
   });
 
