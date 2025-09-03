@@ -1,6 +1,8 @@
 import { socksDispatcher } from 'fetch-socks';
 import { Agent, Dispatcher, interceptors, ProxyAgent, setGlobalDispatcher } from 'undici';
 
+process.env['CACHE_DIR'] = '/dev/null';
+
 jest.mock('randomstring', () => ({
   generate: jest.fn(() => 'mocked-random-string'),
 }));

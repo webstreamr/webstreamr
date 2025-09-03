@@ -1,8 +1,10 @@
+// eslint-disable-next-line import/no-named-as-default
+import KeyvSqlite from '@keyv/sqlite';
 import { Cacheable, CacheableMemory, Keyv } from 'cacheable';
 import { ContentType } from 'stremio-addon-sdk';
 import { NotFoundError } from '../error';
 import { Context, CountryCode } from '../types';
-import { Id } from '../utils';
+import { getCacheDir, Id } from '../utils';
 
 export interface SourceResult {
   countryCode: CountryCode;
@@ -26,13 +28,16 @@ export abstract class Source {
   private readonly sourceResultCache: Cacheable;
 
   public constructor() {
-    this.sourceResultCache = new Cacheable({ primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024, ttl: this.ttl }) }) });
+    this.sourceResultCache = new Cacheable({
+      primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024, ttl: this.ttl }) }),
+      secondary: new Keyv(new KeyvSqlite(`sqlite://${getCacheDir()}/webstreamr-source-cache.sqlite`)),
+    });
   }
 
   protected abstract handleInternal(ctx: Context, type: ContentType, id: Id): Promise<(SourceResult[])>;
 
   public async handle(ctx: Context, type: ContentType, id: Id): Promise<(SourceResult[])> {
-    const cacheKey = id.toString();
+    const cacheKey = `${this.id}_${id.toString()}`;
 
     let sourceResults = await this.sourceResultCache.get<SourceResult[]>(cacheKey);
     if (sourceResults) {
