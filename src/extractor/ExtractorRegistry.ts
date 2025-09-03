@@ -2,7 +2,7 @@
 import KeyvSqlite from '@keyv/sqlite';
 import { Cacheable, CacheableMemory, Keyv } from 'cacheable';
 import winston from 'winston';
-import { Context, CountryCode, UrlResult } from '../types';
+import { Context, Meta, UrlResult } from '../types';
 import { getCacheDir, isExtractorDisabled } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -28,7 +28,7 @@ export class ExtractorRegistry {
     };
   };
 
-  public async handle(ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined): Promise<UrlResult[]> {
+  public async handle(ctx: Context, url: URL, meta?: Meta): Promise<UrlResult[]> {
     const extractor = this.extractors.find(extractor => !isExtractorDisabled(ctx.config, extractor) && extractor.supports(ctx, url));
     if (!extractor) {
       return [];
@@ -54,7 +54,7 @@ export class ExtractorRegistry {
 
     this.logger.info(`Extract stream URL using ${extractor.id} extractor from ${url}`, ctx);
 
-    const urlResults = await extractor.extract(ctx, normalizedUrl, countryCode, title);
+    const urlResults = await extractor.extract(ctx, normalizedUrl, meta || { countryCodes: [] });
 
     if (!urlResults.some(urlResult => urlResult.error) && extractor.ttl) {
       await this.urlResultCache.set<UrlResult[]>(cacheKey, urlResults, extractor.ttl);

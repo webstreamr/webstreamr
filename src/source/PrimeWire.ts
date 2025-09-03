@@ -85,7 +85,7 @@ export class PrimeWire extends Source {
             await this.redirectUrlCache.set<string>(redirectUrl.href, targetUrlHref);
           }
 
-          return { countryCode: CountryCode.en, url: new URL(targetUrlHref) };
+          return { url: new URL(targetUrlHref), meta: { countryCodes: [CountryCode.en] } };
         }),
     );
   };

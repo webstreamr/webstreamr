@@ -33,11 +33,11 @@ export class VerHdLink extends Source {
 
     return $('._player-mirrors')
       .map((_i, el) => {
-        let countryCode: CountryCode;
+        let countryCodes: CountryCode[];
         if ($(el).hasClass('latino')) {
-          countryCode = CountryCode.mx;
+          countryCodes = [CountryCode.mx];
         } else if ($(el).hasClass('castellano')) {
-          countryCode = CountryCode.es;
+          countryCodes = [CountryCode.es];
         } else {
           return [];
         }
@@ -46,7 +46,7 @@ export class VerHdLink extends Source {
           .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
           .toArray()
           .filter(url => !url.host.match(/verhdlink/))
-          .map(url => ({ countryCode, referer: pageUrl, url }));
+          .map(url => ({ url, meta: { countryCodes } }));
       }).toArray();
   };
 }

@@ -1,5 +1,5 @@
 import crypto from 'crypto';
-import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Context, Format, Meta, UrlResult } from '../types';
 import { guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -35,7 +35,7 @@ export class KinoGer extends Extractor {
     return new URL(`${url.origin}/api/v1/video?id=${url.hash.slice(1)}`);
   }
 
-  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const hexData = await this.fetcher.text(ctx, url, { headers: { 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36' } });
 
     const encrypted = Buffer.from(hexData, 'hex');
@@ -53,10 +53,10 @@ export class KinoGer extends Extractor {
         url: new URL(cf),
         format: Format.hls,
         label: this.label,
-        sourceId: `${this.id}_${countryCode}`,
+        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
-          countryCodes: [countryCode],
+          ...meta,
           height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, { headers: { Referer: url.origin } }),
           title,
         },

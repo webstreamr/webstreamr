@@ -2,25 +2,6 @@
 
 exports[`ExternalUrl 404 - not found 1`] = `[]`;
 
-exports[`ExternalUrl johnalwayssame.com with title 1`] = `
-[
-  {
-    "format": "unknown",
-    "isExternal": true,
-    "label": "johnalwayssame.com",
-    "meta": {
-      "countryCodes": [
-        "fr",
-      ],
-      "title": "Black Mirror 4x2",
-    },
-    "sourceId": "external_fr",
-    "ttl": 21600000,
-    "url": "https://johnalwayssame.com/e/cqy9oue7sv0g",
-  },
-]
-`;
-
 exports[`ExternalUrl netu.fanstream.us 1`] = `
 [
   {
@@ -28,12 +9,9 @@ exports[`ExternalUrl netu.fanstream.us 1`] = `
     "isExternal": true,
     "label": "netu.fanstream.us",
     "meta": {
-      "countryCodes": [
-        "fr",
-      ],
-      "title": undefined,
+      "countryCodes": [],
     },
-    "sourceId": "external_fr",
+    "sourceId": "external_",
     "ttl": 21600000,
     "url": "https://netu.fanstream.us/e/0DFgfkcXOsDP",
   },

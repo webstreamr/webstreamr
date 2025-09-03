@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import slugify from 'slugify';
 import { NotFoundError, TooManyRequestsError } from '../error';
-import { Context, CountryCode, Format, NonEmptyArray, UrlResult } from '../types';
+import { Context, Format, Meta, NonEmptyArray, UrlResult } from '../types';
 import { Fetcher, guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -24,11 +24,11 @@ export class VidSrc extends Extractor {
     return null !== url.host.match(/vidsrc/);
   }
 
-  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
-    return this.extractUsingRandomTld(ctx, url, countryCode, [...this.tlds]);
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+    return this.extractUsingRandomTld(ctx, url, meta, [...this.tlds]);
   };
 
-  private async extractUsingRandomTld(ctx: Context, url: URL, countryCode: CountryCode, tlds: string[]): Promise<UrlResult[]> {
+  private async extractUsingRandomTld(ctx: Context, url: URL, meta: Meta, tlds: string[]): Promise<UrlResult[]> {
     const tldIndex = Math.floor(Math.random() * tlds.length);
     const [tld] = tlds.splice(tldIndex, 1) as [string];
 
@@ -42,7 +42,7 @@ export class VidSrc extends Extractor {
       html = await this.fetcher.text(ctx, newUrl);
     } catch (error) {
       if (error instanceof TooManyRequestsError && tlds.length) {
-        return this.extractUsingRandomTld(ctx, url, countryCode, tlds);
+        return this.extractUsingRandomTld(ctx, url, meta, tlds);
       }
 
       throw error;
@@ -74,10 +74,10 @@ export class VidSrc extends Extractor {
             url: m3u8Url,
             format: Format.hls,
             label: `${this.label} (${serverName})`,
-            sourceId: `${this.id}_${slugify(serverName)}_${countryCode}`,
+            sourceId: `${this.id}_${slugify(serverName)}_${meta.countryCodes?.join('_')}`,
             ttl: this.ttl,
             meta: {
-              countryCodes: [countryCode],
+              ...meta,
               height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url),
               title,
             },

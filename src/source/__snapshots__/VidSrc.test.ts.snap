@@ -3,7 +3,11 @@
 exports[`VidSrc handle imdb black mirror s4e2 1`] = `
 [
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://vidsrc.xyz/embed/tv/tt2085059/4/2",
   },
 ]
@@ -12,7 +16,11 @@ exports[`VidSrc handle imdb black mirror s4e2 1`] = `
 exports[`VidSrc handle imdb full metal jacket 1`] = `
 [
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://vidsrc.xyz/embed/movie/tt0093058",
   },
 ]

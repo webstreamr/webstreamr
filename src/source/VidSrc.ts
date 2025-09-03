@@ -29,6 +29,6 @@ export class VidSrc extends Source {
       ? new URL(`/embed/tv/${imdbId.id}/${imdbId.season}/${imdbId.episode}`, this.baseUrl)
       : new URL(`/embed/movie/${imdbId.id}`, this.baseUrl);
 
-    return [{ countryCode: CountryCode.en, url }];
+    return [{ url, meta: { countryCodes: [CountryCode.en] } }];
   };
 }

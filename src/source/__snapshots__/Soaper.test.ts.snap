@@ -3,8 +3,12 @@
 exports[`Soaper handle imdb black mirror s4e2 1`] = `
 [
   {
-    "countryCode": "en",
-    "title": "Black Mirror 4x2",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+      "title": "Black Mirror 4x2",
+    },
     "url": "https://soaper.live/episode_5KDq78eGp1.html",
   },
 ]
@@ -13,8 +17,12 @@ exports[`Soaper handle imdb black mirror s4e2 1`] = `
 exports[`Soaper handle imdb full metal jacket 1`] = `
 [
   {
-    "countryCode": "en",
-    "title": "Full Metal Jacket (1987)",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+      "title": "Full Metal Jacket (1987)",
+    },
     "url": "https://soaper.live/movie_d8kdeypDY9.html",
   },
 ]
@@ -23,8 +31,12 @@ exports[`Soaper handle imdb full metal jacket 1`] = `
 exports[`Soaper handle lego heroes flash 1`] = `
 [
   {
-    "countryCode": "en",
-    "title": "LEGO DC Comics Super Heroes: The Flash (2018)",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+      "title": "LEGO DC Comics Super Heroes: The Flash (2018)",
+    },
     "url": "https://soaper.live/movie_lOGwQVEDV0.html",
   },
 ]
@@ -33,8 +45,12 @@ exports[`Soaper handle lego heroes flash 1`] = `
 exports[`Soaper handle tmdb black mirror s4e2 1`] = `
 [
   {
-    "countryCode": "en",
-    "title": "Black Mirror 4x2",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+      "title": "Black Mirror 4x2",
+    },
     "url": "https://soaper.live/episode_5KDq78eGp1.html",
   },
 ]

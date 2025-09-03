@@ -1,5 +1,5 @@
 import * as cheerio from 'cheerio';
-import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Context, Format, Meta, UrlResult } from '../types';
 import {
   buildMediaFlowProxyExtractorRedirectUrl,
   supportsMediaFlowProxy,
@@ -16,7 +16,7 @@ export class Streamtape extends Extractor {
     return null !== url.host.match(/streamtape/) && supportsMediaFlowProxy(ctx);
   }
 
-  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const html = await this.fetcher.text(ctx, url);
 
     const $ = cheerio.load(html);
@@ -29,10 +29,10 @@ export class Streamtape extends Extractor {
         url: mp4Url,
         format: Format.mp4,
         label: this.label,
-        sourceId: `${this.id}_${countryCode}`,
+        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
-          countryCodes: [countryCode],
+          ...meta,
           title,
           bytes: await guessSizeFromMp4(ctx, this.fetcher, mp4Url),
         },

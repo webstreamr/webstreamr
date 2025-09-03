@@ -46,6 +46,6 @@ export class Movix extends Source {
       ? `${json['tmdb_details']['title']} ${tmdbId.season}x${tmdbId.episode}`
       : json['tmdb_details']['title'];
 
-    return urls.map(url => ({ countryCode: CountryCode.fr, title, url }));
+    return urls.map(url => ({ url, meta: { countryCodes: [CountryCode.fr], title } }));
   };
 }

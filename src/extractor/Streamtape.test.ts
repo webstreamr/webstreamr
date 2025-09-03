@@ -1,6 +1,5 @@
 import winston from 'winston';
 import { createTestContext } from '../test';
-import { CountryCode } from '../types';
 import { FetcherMock } from '../utils';
 import { ExtractorRegistry } from './ExtractorRegistry';
 import { Streamtape } from './Streamtape';
@@ -12,6 +11,6 @@ const ctx = createTestContext({ mediaFlowProxyUrl: 'https://mediaflow.test.org',
 
 describe('Streamtape', () => {
   test('streamtape.com /e', async () => {
-    expect(await extractorRegistry.handle(ctx, new URL('https://streamtape.com/e/84Kb3mkoYAiokmW'), CountryCode.es)).toMatchSnapshot();
+    expect(await extractorRegistry.handle(ctx, new URL('https://streamtape.com/e/84Kb3mkoYAiokmW'))).toMatchSnapshot();
   });
 });

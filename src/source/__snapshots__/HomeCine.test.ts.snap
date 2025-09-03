@@ -3,8 +3,12 @@
 exports[`HomeCine does not return es content for mx 1`] = `
 [
   {
-    "countryCode": "mx",
-    "title": "El Camino: Una película de Breaking Bad (2019)",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "El Camino: Una película de Breaking Bad (2019)",
+    },
     "url": "https://fastream.to/embed-kc5dvcy34x8p.html",
   },
 ]
@@ -13,8 +17,12 @@ exports[`HomeCine does not return es content for mx 1`] = `
 exports[`HomeCine does not return mx content for es 1`] = `
 [
   {
-    "countryCode": "es",
-    "title": "El Camino: Una película de Breaking Bad (2019)",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "El Camino: Una película de Breaking Bad (2019)",
+    },
     "url": "https://fastream.to/embed-c9tmfzsbfj0z.html",
   },
 ]
@@ -23,13 +31,21 @@ exports[`HomeCine does not return mx content for es 1`] = `
 exports[`HomeCine handle el camino 1`] = `
 [
   {
-    "countryCode": "mx",
-    "title": "El Camino: Una película de Breaking Bad (2019)",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "El Camino: Una película de Breaking Bad (2019)",
+    },
     "url": "https://fastream.to/embed-kc5dvcy34x8p.html",
   },
   {
-    "countryCode": "es",
-    "title": "El Camino: Una película de Breaking Bad (2019)",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "El Camino: Una película de Breaking Bad (2019)",
+    },
     "url": "https://fastream.to/embed-c9tmfzsbfj0z.html",
   },
 ]
@@ -38,8 +54,12 @@ exports[`HomeCine handle el camino 1`] = `
 exports[`HomeCine handle marvel - the punisher 1`] = `
 [
   {
-    "countryCode": "es",
-    "title": "Marvel - The Punisher 1x1",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "Marvel - The Punisher 1x1",
+    },
     "url": "https://fastream.to/embed-ujq9uojoftog.html",
   },
 ]
@@ -48,13 +68,21 @@ exports[`HomeCine handle marvel - the punisher 1`] = `
 exports[`HomeCine handle walking dead s1e1 1`] = `
 [
   {
-    "countryCode": "mx",
-    "title": "The Walking Dead 1x1",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "The Walking Dead 1x1",
+    },
     "url": "https://fastream.to/embed-nkztf1memuca.html",
   },
   {
-    "countryCode": "es",
-    "title": "The Walking Dead 1x1",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "The Walking Dead 1x1",
+    },
     "url": "https://fastream.to/embed-5bv96pdifz0b.html",
   },
 ]

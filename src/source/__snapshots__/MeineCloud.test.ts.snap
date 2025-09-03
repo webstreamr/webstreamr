@@ -3,23 +3,35 @@
 exports[`MeineCloud handle imdb the devil's bath 1`] = `
 [
   {
-    "countryCode": "de",
-    "referer": "https://meinecloud.click/movie/tt29141112",
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+    },
     "url": "https://supervideo.cc/e/q7i0sw1oytw3",
   },
   {
-    "countryCode": "de",
-    "referer": "https://meinecloud.click/movie/tt29141112",
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+    },
     "url": "https://dropload.io/embed-lyo2h1snpe5c.html",
   },
   {
-    "countryCode": "de",
-    "referer": "https://meinecloud.click/movie/tt29141112",
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+    },
     "url": "https://mixdrop.ag/e/3nzwveprim63or6",
   },
   {
-    "countryCode": "de",
-    "referer": "https://meinecloud.click/movie/tt29141112",
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+    },
     "url": "https://dood.to/e/sk1m9eumzyjj",
   },
 ]

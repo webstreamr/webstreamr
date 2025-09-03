@@ -7,13 +7,11 @@ exports[`Dropload download URL 1`] = `
     "label": "Dropload",
     "meta": {
       "bytes": 333027737,
-      "countryCodes": [
-        "en",
-      ],
+      "countryCodes": [],
       "height": 720,
       "title": "[~Squid~Game~EnG~]~S03E01~720p~WebRip ~❤️GLD❤️~",
     },
-    "sourceId": "dropload_en",
+    "sourceId": "dropload_",
     "ttl": 10800000,
     "url": "https://srv29.dropload.io/hls2/01/00305/xhcmgcc2txnv_h/master.m3u8?t=MBKiIoVlA42YcZEixT7ZR1xJA5qKhcKgBi84GPmyT7U&s=1752613129&e=14400&f=1526758&i=0.0&sp=0&ii=130.61.236.204",
   },
@@ -27,13 +25,11 @@ exports[`Dropload dropload.io 1`] = `
     "label": "Dropload",
     "meta": {
       "bytes": 1395864371,
-      "countryCodes": [
-        "de",
-      ],
+      "countryCodes": [],
       "height": 1080,
       "title": "des-teufels-bad-2024",
     },
-    "sourceId": "dropload_de",
+    "sourceId": "dropload_",
     "ttl": 10800000,
     "url": "https://srv34.dropload.io/hls2/01/00197/lyo2h1snpe5c_h/master.m3u8?t=ESjD9Le53ttKN2JPyxrhLUqTebDZvx3vcQUlNgP6Vko&s=1749845553&e=14400&f=987607&srv=srv27&i=0.0&sp=0&ii=50.99.15.93&p1=srv27&p2=srv27",
   },

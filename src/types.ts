@@ -41,7 +41,7 @@ export enum BlockedReason {
 
 export interface Meta {
   bytes?: number | undefined;
-  countryCodes: CountryCode[];
+  countryCodes?: CountryCode[];
   height?: number | undefined;
   title?: string | undefined;
 }
@@ -61,7 +61,7 @@ export interface UrlResult {
   label: string;
   sourceId: string;
   ttl?: number;
-  meta: Meta;
+  meta?: Meta;
   notWebReady?: boolean;
   requestHeaders?: Record<string, string>;
 }

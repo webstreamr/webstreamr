@@ -1,4 +1,4 @@
-import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Context, Format, Meta, UrlResult } from '../types';
 import { Extractor } from './Extractor';
 
 export class YouTube extends Extractor {
@@ -12,7 +12,7 @@ export class YouTube extends Extractor {
     return null !== url.host.match(/youtube/) && url.searchParams.has('v');
   }
 
-  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const html = await this.fetcher.text(ctx, url);
 
     const titleMatch = html.match(/"title":{"runs":\[{"text":"(.*?)"/) as string[];
@@ -23,10 +23,10 @@ export class YouTube extends Extractor {
         format: Format.unknown,
         ytId: url.searchParams.get('v') as string,
         label: this.label,
-        sourceId: `${this.id}_${countryCode}`,
+        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
-          countryCodes: [countryCode],
+          ...meta,
           title: titleMatch[1] as string,
         },
       },

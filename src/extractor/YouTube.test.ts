@@ -1,6 +1,5 @@
 import winston from 'winston';
 import { createTestContext } from '../test';
-import { CountryCode } from '../types';
 import { FetcherMock } from '../utils';
 import { ExtractorRegistry } from './ExtractorRegistry';
 import { YouTube } from './YouTube';
@@ -12,10 +11,10 @@ const ctx = createTestContext();
 
 describe('YouTube', () => {
   test('Solaris', async () => {
-    expect(await extractorRegistry.handle(ctx, new URL('https://www.youtube.com/watch?v=Z8ZhQPaw4rE'), CountryCode.en)).toMatchSnapshot();
+    expect(await extractorRegistry.handle(ctx, new URL('https://www.youtube.com/watch?v=Z8ZhQPaw4rE'))).toMatchSnapshot();
   });
 
   test('unsupported format', async () => {
-    expect(await extractorRegistry.handle(ctx, new URL('https://youtu.be/Z8ZhQPaw4rE?feature=shared'), CountryCode.en)).toMatchSnapshot();
+    expect(await extractorRegistry.handle(ctx, new URL('https://youtu.be/Z8ZhQPaw4rE?feature=shared'))).toMatchSnapshot();
   });
 });

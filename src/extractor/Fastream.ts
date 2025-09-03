@@ -1,5 +1,5 @@
 import bytes from 'bytes';
-import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Context, Format, Meta, UrlResult } from '../types';
 import { buildMediaFlowProxyExtractorStreamUrl, supportsMediaFlowProxy } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -18,7 +18,7 @@ export class Fastream extends Extractor {
     return new URL(url.href.replace('/e/', '/embed-').replace('/d/', '/embed-'));
   }
 
-  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'Fastream', url);
 
     const downloadUrl = new URL(url.href.replace('/embed-', '/d/'));
@@ -32,10 +32,10 @@ export class Fastream extends Extractor {
         url: playlistUrl,
         format: Format.hls,
         label: this.label,
-        sourceId: `${this.id}_${countryCode}`,
+        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
-          countryCodes: [countryCode],
+          ...meta,
           bytes: bytes.parse(heightAndSizeMatch[2] as string) as number,
           height: parseInt(heightAndSizeMatch[1] as string),
           title: titleMatch[1],

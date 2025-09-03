@@ -51,7 +51,7 @@ export class StreamResolver {
         this.logger.info(`${source.id} returned ${sourceResults.length} urls`, ctx);
 
         const sourceUrlResults = await Promise.all(
-          sourceResults.map(({ countryCode, title, url }) => this.extractorRegistry.handle(ctx, url, countryCode, title)),
+          sourceResults.map(({ url, meta }) => this.extractorRegistry.handle(ctx, url, meta)),
         );
 
         urlResults.push(...sourceUrlResults.flat());
@@ -70,12 +70,12 @@ export class StreamResolver {
     await Promise.all(sourcePromises);
 
     urlResults.sort((a, b) => {
-      const heightComparison = (b.meta.height ?? 0) - (a.meta.height ?? 0);
+      const heightComparison = (b.meta?.height ?? 0) - (a.meta?.height ?? 0);
       if (heightComparison !== 0) {
         return heightComparison;
       }
 
-      const bytesComparison = (b.meta.bytes ?? 0) - (a.meta.bytes ?? 0);
+      const bytesComparison = (b.meta?.bytes ?? 0) - (a.meta?.bytes ?? 0);
       if (bytesComparison !== 0) {
         return bytesComparison;
       }
@@ -102,7 +102,7 @@ export class StreamResolver {
               notWebReady: true,
               proxyHeaders: { request: urlResult.requestHeaders },
             }),
-            ...(urlResult.meta.bytes && { videoSize: urlResult.meta.bytes }),
+            ...(urlResult.meta?.bytes && { videoSize: urlResult.meta.bytes }),
           },
         })),
     );
@@ -142,11 +142,11 @@ export class StreamResolver {
   private buildName(ctx: Context, urlResult: UrlResult): string {
     let name = envGetAppName();
 
-    urlResult.meta.countryCodes.forEach((countryCode) => {
+    urlResult.meta?.countryCodes?.forEach((countryCode) => {
       name += ` ${flagFromCountryCode(countryCode)}`;
     });
 
-    if (urlResult.meta.height) {
+    if (urlResult.meta?.height) {
       name += ` ${urlResult.meta.height}p`;
     }
 
@@ -160,12 +160,12 @@ export class StreamResolver {
   private buildTitle(ctx: Context, urlResult: UrlResult): string {
     const titleLines = [];
 
-    if (urlResult.meta.title) {
+    if (urlResult.meta?.title) {
       titleLines.push(urlResult.meta.title);
     }
 
     const titleDetailsLine = [];
-    if (urlResult.meta.bytes) {
+    if (urlResult.meta?.bytes) {
       titleDetailsLine.push(`💾 ${bytes.format(urlResult.meta.bytes, { unitSeparator: ' ' })}`);
     }
     titleDetailsLine.push(`🔗 ${urlResult.label}`);

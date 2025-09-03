@@ -60,27 +60,27 @@ export class Cuevana extends Source {
 
         if (elText.includes('Latino')) {
           return $('[data-tr], [data-video]', el)
-            .map((_i, el) => ({ countryCode: CountryCode.mx, title, url: new URL($(el).attr('data-tr') ?? $(el).attr('data-video') as string) }))
+            .map((_i, el) => ({ url: new URL($(el).attr('data-tr') ?? $(el).attr('data-video') as string), meta: { countryCodes: [CountryCode.mx], title } }))
             .toArray();
         }
 
         return $('[data-tr], [data-video]', el)
-          .map((_i, el) => ({ countryCode: CountryCode.es, title, url: new URL($(el).attr('data-tr') ?? $(el).attr('data-video') as string) }))
+          .map((_i, el) => ({ url: new URL($(el).attr('data-tr') ?? $(el).attr('data-video') as string), meta: { countryCodes: [CountryCode.es], title } }))
           .toArray();
       })
       .toArray();
 
     return Promise.all(
-      urlResults.map(async (urlResult) => {
-        if (!urlResult.url.host.includes('cuevana3')) {
-          return urlResult;
+      urlResults.map(async ({ url, meta }) => {
+        if (!url.host.includes('cuevana3')) {
+          return { url, meta };
         }
 
-        const html = await this.fetcher.text(ctx, urlResult.url, { headers: { Referer: pageUrl.origin } });
+        const html = await this.fetcher.text(ctx, url, { headers: { Referer: pageUrl.origin } });
 
         const urlMatcher = html.match(/url ?= ?'(.*)'/) as string[];
 
-        return { ...urlResult, url: new URL(urlMatcher[1] as string) };
+        return { url: new URL(urlMatcher[1] as string), meta };
       }),
     );
   };

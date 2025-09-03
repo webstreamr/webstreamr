@@ -3,28 +3,43 @@
 exports[`FrenchCloud handle imdb the devil's bath 1`] = `
 [
   {
-    "countryCode": "fr",
-    "referer": "https://frenchcloud.cam/movie/tt29141112",
+    "meta": {
+      "countryCodes": [
+        "fr",
+      ],
+    },
     "url": "https://supervideo.cc/e/ttnqt211ebtg",
   },
   {
-    "countryCode": "fr",
-    "referer": "https://frenchcloud.cam/movie/tt29141112",
+    "meta": {
+      "countryCodes": [
+        "fr",
+      ],
+    },
     "url": "https://dropload.io/embed-w4yit5wiia9y.html",
   },
   {
-    "countryCode": "fr",
-    "referer": "https://frenchcloud.cam/movie/tt29141112",
+    "meta": {
+      "countryCodes": [
+        "fr",
+      ],
+    },
     "url": "https://mixdrop.ag/e/8l3634dmt68rnp",
   },
   {
-    "countryCode": "fr",
-    "referer": "https://frenchcloud.cam/movie/tt29141112",
+    "meta": {
+      "countryCodes": [
+        "fr",
+      ],
+    },
     "url": "https://streamtape.com/e/gjA1OQ4klyHxgJ",
   },
   {
-    "countryCode": "fr",
-    "referer": "https://frenchcloud.cam/movie/tt29141112",
+    "meta": {
+      "countryCodes": [
+        "fr",
+      ],
+    },
     "url": "https://dood.to/e/osbcylatzy6m",
   },
 ]

@@ -1,4 +1,4 @@
-import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Context, Format, Meta, UrlResult } from '../types';
 import { guessSizeFromMp4 } from '../utils/size';
 import { Extractor } from './Extractor';
 
@@ -24,7 +24,7 @@ export class XPrime extends Extractor {
     return null !== url.host.match(/xprime/);
   }
 
-  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const urlResults: UrlResult[] = [];
 
     const referer = url.protocol + '//' + url.hostname.split('.').slice(-2).join('.'); // Strip subdomains
@@ -42,10 +42,10 @@ export class XPrime extends Extractor {
           url,
           format: Format.mp4,
           label: `${this.label} Primebox`,
-          sourceId: `${this.id}_${countryCode}_primebox`,
+          sourceId: `${this.id}_primebox_${meta.countryCodes?.join('_')}`,
           ttl: this.ttl,
           meta: {
-            countryCodes: [countryCode],
+            ...meta,
             bytes: await guessSizeFromMp4(ctx, this.fetcher, url, { headers: { Referer: referer }, minCacheTtl: this.ttl }),
             height: parseInt(resolution),
             title,

@@ -3,13 +3,12 @@ import KeyvSqlite from '@keyv/sqlite';
 import { Cacheable, CacheableMemory, Keyv } from 'cacheable';
 import { ContentType } from 'stremio-addon-sdk';
 import { NotFoundError } from '../error';
-import { Context, CountryCode } from '../types';
+import { Context, CountryCode, Meta } from '../types';
 import { getCacheDir, Id } from '../utils';
 
 export interface SourceResult {
-  countryCode: CountryCode;
-  title?: string;
   url: URL;
+  meta: Meta;
 }
 
 export abstract class Source {
@@ -27,7 +26,7 @@ export abstract class Source {
 
   private static readonly sourceResultCache = new Cacheable({
     primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }),
-    secondary: new Keyv(new KeyvSqlite(`sqlite://${getCacheDir()}/webstreamr-source-cache.sqlite`)),
+    secondary: new Keyv(new KeyvSqlite(`sqlite://${getCacheDir()}/webstreamr-source-cache-v2.sqlite`)),
     stats: true,
   });
 
@@ -59,6 +58,6 @@ export abstract class Source {
       await Source.sourceResultCache.set<SourceResult[]>(cacheKey, sourceResults, this.ttl);
     }
 
-    return sourceResults.filter(sourceResult => sourceResult.countryCode in ctx.config);
+    return sourceResults.filter(sourceResult => sourceResult.meta.countryCodes?.some(countryCode => countryCode in ctx.config));
   }
 }

@@ -3,8 +3,12 @@
 exports[`Einschalten handle superman 1`] = `
 [
   {
-    "countryCode": "de",
-    "title": "Superman.2025.German.DL.720p.WEB.H264-ZeroTwo",
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+      "title": "Superman.2025.German.DL.720p.WEB.H264-ZeroTwo",
+    },
     "url": "https://vide0.net/e/qtvqjblhu74i",
   },
 ]

@@ -47,12 +47,12 @@ export class Soaper extends Source {
       const episodeUrl = new URL(episodePageHref, this.baseUrl);
       const title = `${name} ${tmdbId.season}x${tmdbId.episode}`;
 
-      return [{ countryCode: CountryCode.en, title, url: episodeUrl }];
+      return [{ url: episodeUrl, meta: { countryCodes: [CountryCode.en], title } }];
     }
 
     const title = `${name} (${year})`;
 
-    return [{ countryCode: CountryCode.en, title, url: pageUrl }];
+    return [{ url: pageUrl, meta: { countryCodes: [CountryCode.en], title } }];
   };
 
   private readonly fetchPageUrl = async (ctx: Context, keyword: string, year: number, hrefPrefix: string): Promise<URL | undefined> => {

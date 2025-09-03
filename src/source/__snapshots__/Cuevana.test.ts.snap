@@ -3,43 +3,75 @@
 exports[`Cuevana does not return es content for mx 1`] = `
 [
   {
-    "countryCode": "mx",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://streamwish.to/e/9icce2ca0yir",
   },
   {
-    "countryCode": "mx",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://filemoon.sx/e/fgxxkidqq4jp",
   },
   {
-    "countryCode": "mx",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://voe.sx/e/h87m8wyj5x8j",
   },
   {
-    "countryCode": "mx",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://doodstream.com/e/ju53ufkqy9hc",
   },
   {
-    "countryCode": "mx",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://streamtape.com/e/WgxgBAwOyGfbZxY",
   },
   {
-    "countryCode": "mx",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://waaw.to/f/xtG7M9GL2MmV",
   },
   {
-    "countryCode": "mx",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://filelions.to/v/tnehp8g7zght",
   },
   {
-    "countryCode": "mx",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://plustream.com/embedb2/gHHRwqKdHgF5MYniuxGWnG8j_vIW77uC4a4vrO5iwLktMwS8ryr2i.bhH3SiGHw6PKNBoqxCHLDyc1Pw6EPhwg--",
   },
 ]
@@ -48,38 +80,66 @@ exports[`Cuevana does not return es content for mx 1`] = `
 exports[`Cuevana does not return mx content for es 1`] = `
 [
   {
-    "countryCode": "es",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://streamwish.to/e/mtb09rms1njz",
   },
   {
-    "countryCode": "es",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://filemoon.sx/e/r77fu9ez9nsv",
   },
   {
-    "countryCode": "es",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://voe.sx/e/cepsnqy0qgyo",
   },
   {
-    "countryCode": "es",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://doodstream.com/e/ny5qlz61x9xt",
   },
   {
-    "countryCode": "es",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://waaw.to/f/hlHhgFkmWHom",
   },
   {
-    "countryCode": "es",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://plustream.com/embedb2/DpAUEfJrAHkBAdb.6erU25OAypGXqMugDfQuWU2sTDBKHNQmIxzyq1b2Ma06kb7EgL6d4hdzw8quWDimAGnIvQ--",
   },
   {
-    "countryCode": "es",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://vidhidepro.com/v/lhaueh479t2v",
   },
 ]
@@ -88,78 +148,138 @@ exports[`Cuevana does not return mx content for es 1`] = `
 exports[`Cuevana handle el camino 1`] = `
 [
   {
-    "countryCode": "mx",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://streamwish.to/e/9icce2ca0yir",
   },
   {
-    "countryCode": "mx",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://filemoon.sx/e/fgxxkidqq4jp",
   },
   {
-    "countryCode": "mx",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://voe.sx/e/h87m8wyj5x8j",
   },
   {
-    "countryCode": "mx",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://doodstream.com/e/ju53ufkqy9hc",
   },
   {
-    "countryCode": "mx",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://streamtape.com/e/WgxgBAwOyGfbZxY",
   },
   {
-    "countryCode": "mx",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://waaw.to/f/xtG7M9GL2MmV",
   },
   {
-    "countryCode": "mx",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://filelions.to/v/tnehp8g7zght",
   },
   {
-    "countryCode": "mx",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://plustream.com/embedb2/gHHRwqKdHgF5MYniuxGWnG8j_vIW77uC4a4vrO5iwLktMwS8ryr2i.bhH3SiGHw6PKNBoqxCHLDyc1Pw6EPhwg--",
   },
   {
-    "countryCode": "es",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://streamwish.to/e/mtb09rms1njz",
   },
   {
-    "countryCode": "es",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://filemoon.sx/e/r77fu9ez9nsv",
   },
   {
-    "countryCode": "es",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://voe.sx/e/cepsnqy0qgyo",
   },
   {
-    "countryCode": "es",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://doodstream.com/e/ny5qlz61x9xt",
   },
   {
-    "countryCode": "es",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://waaw.to/f/hlHhgFkmWHom",
   },
   {
-    "countryCode": "es",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://plustream.com/embedb2/DpAUEfJrAHkBAdb.6erU25OAypGXqMugDfQuWU2sTDBKHNQmIxzyq1b2Ma06kb7EgL6d4hdzw8quWDimAGnIvQ--",
   },
   {
-    "countryCode": "es",
-    "title": "El Camino: Una película de Breaking Bad",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "El Camino: Una película de Breaking Bad",
+    },
     "url": "https://vidhidepro.com/v/lhaueh479t2v",
   },
 ]
@@ -168,33 +288,57 @@ exports[`Cuevana handle el camino 1`] = `
 exports[`Cuevana handle la frontera s1e1 1`] = `
 [
   {
-    "countryCode": "es",
-    "title": "La frontera 1x1",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "La frontera 1x1",
+    },
     "url": "https://streamwish.to/e/tpzbrzz7p41k",
   },
   {
-    "countryCode": "es",
-    "title": "La frontera 1x1",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "La frontera 1x1",
+    },
     "url": "https://filemoon.sx/e/nhbmj6o6zl0l",
   },
   {
-    "countryCode": "es",
-    "title": "La frontera 1x1",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "La frontera 1x1",
+    },
     "url": "https://vidhidepro.com/v/x5w6b0wys1fs",
   },
   {
-    "countryCode": "es",
-    "title": "La frontera 1x1",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "La frontera 1x1",
+    },
     "url": "https://voe.sx/e/nfal9zqu9yvy",
   },
   {
-    "countryCode": "es",
-    "title": "La frontera 1x1",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "La frontera 1x1",
+    },
     "url": "https://doodstream.com/e/dyvg7ofnnqgi",
   },
   {
-    "countryCode": "es",
-    "title": "La frontera 1x1",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "La frontera 1x1",
+    },
     "url": "https://waaw.to/f/goypdL0qGqks",
   },
 ]
@@ -203,33 +347,57 @@ exports[`Cuevana handle la frontera s1e1 1`] = `
 exports[`Cuevana handle walking dead s1e1 1`] = `
 [
   {
-    "countryCode": "mx",
-    "title": "The Walking Dead 1x1",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "The Walking Dead 1x1",
+    },
     "url": "https://streamwish.to/e/gudk6hvc4qwl",
   },
   {
-    "countryCode": "mx",
-    "title": "The Walking Dead 1x1",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "The Walking Dead 1x1",
+    },
     "url": "https://filemoon.sx/e/kp39yor1z0js",
   },
   {
-    "countryCode": "mx",
-    "title": "The Walking Dead 1x1",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "The Walking Dead 1x1",
+    },
     "url": "https://voe.sx/e/4ahrkbnofnty",
   },
   {
-    "countryCode": "mx",
-    "title": "The Walking Dead 1x1",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "The Walking Dead 1x1",
+    },
     "url": "https://doodstream.com/e/wvk23p39ikyd",
   },
   {
-    "countryCode": "mx",
-    "title": "The Walking Dead 1x1",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "The Walking Dead 1x1",
+    },
     "url": "https://streamtape.com/e/qMjrKleBMpCLO0",
   },
   {
-    "countryCode": "mx",
-    "title": "The Walking Dead 1x1",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "The Walking Dead 1x1",
+    },
     "url": "https://filelions.to/v/rvyogjvsejlh",
   },
 ]

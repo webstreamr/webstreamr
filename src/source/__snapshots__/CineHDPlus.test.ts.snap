@@ -3,15 +3,21 @@
 exports[`CineHDPlus handle imdb babylon 5 s2e3 (es) 1`] = `
 [
   {
-    "countryCode": "es",
-    "referer": "https://cinehdplus.cam/peliculas/19678-babylon-5-ver-online-hd.html",
-    "title": "Babylon 5 2x3",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "Babylon 5 2x3",
+    },
     "url": "https://supervideo.tv/embed-1p0m1fi9mok8.html",
   },
   {
-    "countryCode": "es",
-    "referer": "https://cinehdplus.cam/peliculas/19678-babylon-5-ver-online-hd.html",
-    "title": "Babylon 5 2x3",
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "title": "Babylon 5 2x3",
+    },
     "url": "https://dropload.io/embed-957hny8mzrvh.html",
   },
 ]
@@ -20,15 +26,21 @@ exports[`CineHDPlus handle imdb babylon 5 s2e3 (es) 1`] = `
 exports[`CineHDPlus handle imdb black mirror s2e3 (mx) 1`] = `
 [
   {
-    "countryCode": "mx",
-    "referer": "https://cinehdplus.cam/peliculas/9582-black-mirror-ver-online-hd.html",
-    "title": "Black Mirror 2x3",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "Black Mirror 2x3",
+    },
     "url": "https://supervideo.tv/embed-avmgppo37sx1.html",
   },
   {
-    "countryCode": "mx",
-    "referer": "https://cinehdplus.cam/peliculas/9582-black-mirror-ver-online-hd.html",
-    "title": "Black Mirror 2x3",
+    "meta": {
+      "countryCodes": [
+        "mx",
+      ],
+      "title": "Black Mirror 2x3",
+    },
     "url": "https://dropload.io/embed-t058ulwwkwn6.html",
   },
 ]

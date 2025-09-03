@@ -51,16 +51,16 @@ export class HomeCine extends Source {
 
     return $('.les-content a')
       .map((_i, el) => {
-        let countryCode: CountryCode;
+        let countryCodes: CountryCode[];
         if ($(el).text().toLowerCase().includes('latino')) {
-          countryCode = CountryCode.mx;
+          countryCodes = [CountryCode.mx];
         } else if ($(el).text().toLowerCase().includes('castellano')) {
-          countryCode = CountryCode.es;
+          countryCodes = [CountryCode.es];
         } else {
           return [];
         }
 
-        return { countryCode, title, url: new URL($('iframe', $(el).attr('href')).attr('src') as string) };
+        return { url: new URL($('iframe', $(el).attr('href')).attr('src') as string), meta: { countryCodes, title } };
       }).toArray();
   };
 

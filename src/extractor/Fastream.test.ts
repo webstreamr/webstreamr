@@ -1,6 +1,5 @@
 import winston from 'winston';
 import { createTestContext } from '../test';
-import { CountryCode } from '../types';
 import { FetcherMock } from '../utils';
 import { ExtractorRegistry } from './ExtractorRegistry';
 import { Fastream } from './Fastream';
@@ -12,6 +11,6 @@ const ctx = createTestContext({ mediaFlowProxyUrl: 'https://mediaflow-proxy.test
 
 describe('Fastream', () => {
   test('fastream.to embed', async () => {
-    expect(await extractorRegistry.handle(ctx, new URL('https://fastream.to/embed-3aooif4ozt10.html'), CountryCode.es)).toMatchSnapshot();
+    expect(await extractorRegistry.handle(ctx, new URL('https://fastream.to/embed-3aooif4ozt10.html'))).toMatchSnapshot();
   });
 });

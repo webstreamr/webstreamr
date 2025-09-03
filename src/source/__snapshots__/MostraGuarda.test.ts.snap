@@ -3,23 +3,35 @@
 exports[`MostraGuarda handle imdb the devil's bath 1`] = `
 [
   {
-    "countryCode": "it",
-    "referer": "https://mostraguarda.stream/movie/tt29141112",
+    "meta": {
+      "countryCodes": [
+        "it",
+      ],
+    },
     "url": "https://supervideo.cc/e/6vri8jyhla3n",
   },
   {
-    "countryCode": "it",
-    "referer": "https://mostraguarda.stream/movie/tt29141112",
+    "meta": {
+      "countryCodes": [
+        "it",
+      ],
+    },
     "url": "https://dropload.io/embed-xsr90y2ltdyx.html",
   },
   {
-    "countryCode": "it",
-    "referer": "https://mostraguarda.stream/movie/tt29141112",
+    "meta": {
+      "countryCodes": [
+        "it",
+      ],
+    },
     "url": "https://mixdrop.ag/e/vk196d6xfzwwo1",
   },
   {
-    "countryCode": "it",
-    "referer": "https://mostraguarda.stream/movie/tt29141112",
+    "meta": {
+      "countryCodes": [
+        "it",
+      ],
+    },
     "url": "https://dood.to/e/37o04m33q3g5",
   },
 ]

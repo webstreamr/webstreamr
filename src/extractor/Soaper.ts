@@ -1,4 +1,4 @@
-import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Context, Format, Meta, UrlResult } from '../types';
 import { guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -18,7 +18,7 @@ export class Soaper extends Extractor {
     return null !== url.host.match(/soaper/) && null !== url.pathname.match(/^\/(episode|movie)_/);
   }
 
-  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode, title: string | undefined): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const movieOrEpisodeId = (url.pathname.match(/\/\w+_(\w+)/) as string[])[1] as string;
 
     const form = new URLSearchParams();
@@ -48,12 +48,11 @@ export class Soaper extends Extractor {
         url: m3u8Url,
         format: Format.hls,
         label: this.label,
-        sourceId: `${this.id}_${countryCode}`,
+        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
-          countryCodes: [countryCode],
+          ...meta,
           height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url),
-          title: `${title}`,
         },
       },
     ];

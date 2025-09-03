@@ -30,8 +30,8 @@ export class Einschalten extends Source {
   public async handleInternal(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
-    const { releaseName, streamUrl } = JSON.parse(await this.fetcher.text(ctx, new URL(`/api/movies/${tmdbId.id}/watch`, this.baseUrl))) as EinschaltenResponse;
+    const { releaseName: title, streamUrl } = JSON.parse(await this.fetcher.text(ctx, new URL(`/api/movies/${tmdbId.id}/watch`, this.baseUrl))) as EinschaltenResponse;
 
-    return [{ countryCode: CountryCode.de, title: releaseName, url: new URL(streamUrl) }];
+    return [{ url: new URL(streamUrl), meta: { countryCodes: [CountryCode.de], title } }];
   };
 }

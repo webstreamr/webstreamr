@@ -29,6 +29,6 @@ export class VixSrc extends Source {
       ? new URL(`/tv/${tmdbId.id}/${tmdbId.season}/${tmdbId.episode}`, this.baseUrl)
       : new URL(`/movie/${tmdbId.id}`, this.baseUrl);
 
-    return [{ countryCode: CountryCode.multi, url }];
+    return [{ url, meta: { countryCodes: [CountryCode.multi] } }];
   };
 }

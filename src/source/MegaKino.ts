@@ -41,7 +41,7 @@ export class MegaKino extends Source {
       $(`.video-inside iframe`)
         .map((_i, el) => new URL(($(el).attr('data-src') ?? $(el).attr('src')) as string))
         .toArray()
-        .map(url => ({ countryCode: CountryCode.de, referer: pageUrl, title, url })),
+        .map(url => ({ url, meta: { countryCodes: [CountryCode.de], title } })),
     );
   };
 

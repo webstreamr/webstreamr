@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
-import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Context, Format, Meta, UrlResult } from '../types';
 import { Extractor } from './Extractor';
 
 export class SaveFiles extends Extractor {
@@ -18,7 +18,7 @@ export class SaveFiles extends Extractor {
     return new URL(url.href.replace('/e/', '/').replace('/d/', '/'));
   }
 
-  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const html = await this.fetcher.text(ctx, url);
 
     if (/File was locked by administrator/.test(html)) {
@@ -36,10 +36,10 @@ export class SaveFiles extends Extractor {
         url: new URL(fileMatch[1] as string),
         format: Format.hls,
         label: this.label,
-        sourceId: `${this.id}_${countryCode}`,
+        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
-          countryCodes: [countryCode],
+          ...meta,
           title,
           height: parseInt(sizeMatch[1] as string),
         },

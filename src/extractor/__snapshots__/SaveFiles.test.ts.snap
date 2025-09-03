@@ -6,13 +6,11 @@ exports[`SafeFiles savefiles /d/ 1`] = `
     "format": "hls",
     "label": "SaveFiles",
     "meta": {
-      "countryCodes": [
-        "en",
-      ],
+      "countryCodes": [],
       "height": 532,
       "title": "dexter resurrection s01e01 1080p web h264-successfulcrab",
     },
-    "sourceId": "savefiles_en",
+    "sourceId": "savefiles_",
     "ttl": 21600000,
     "url": "https://s3.savefiles.com/hls2/01/00133/,c51qm3p0rhtm_n,.urlset/master.m3u8?t=ptFA7PhoGXdNqH2jfu3EVKT4Fn5laaqfHBW1MMOa74o&s=1755775635&e=43200&v=199331&srv=s1&i=0.0&sp=0",
   },
@@ -25,13 +23,11 @@ exports[`SafeFiles savefiles /e/ 1`] = `
     "format": "hls",
     "label": "SaveFiles",
     "meta": {
-      "countryCodes": [
-        "en",
-      ],
+      "countryCodes": [],
       "height": 720,
       "title": "dexter resurrection s01e01 1080p web h264-successfulcrab",
     },
-    "sourceId": "savefiles_en",
+    "sourceId": "savefiles_",
     "ttl": 21600000,
     "url": "https://s3.savefiles.com/hls2/01/00133/,j4orffalv89e_n,.urlset/master.m3u8?t=uwZgBnJBJ-wfgWvDwmLamHkR-vuqzrBFuLH7QoAH-QE&s=1755775635&e=43200&v=199330&srv=s1&i=0.0&sp=0",
   },
@@ -44,13 +40,11 @@ exports[`SafeFiles savefiles 1`] = `
     "format": "hls",
     "label": "SaveFiles",
     "meta": {
-      "countryCodes": [
-        "en",
-      ],
+      "countryCodes": [],
       "height": 720,
       "title": "King Of The Hill S14E01 1080p HEVC x265-MeGusta",
     },
-    "sourceId": "savefiles_en",
+    "sourceId": "savefiles_",
     "ttl": 21600000,
     "url": "https://s3.savefiles.com/hls2/01/00153/,ip0k0dj2g0i3_n,lang/eng/ip0k0dj2g0i3_eng,.urlset/master.m3u8?t=Emm2ipTW9Db4fBNcQqc8qNju3Yysg0GjGoYiC0FB-G4&s=1755078897&e=43200&v=406428&srv=s1&i=0.0&sp=0&fr=ip0k0dj2g0i3",
   },
@@ -65,13 +59,11 @@ exports[`SafeFiles streamhls /e/ 1`] = `
     "format": "hls",
     "label": "SaveFiles",
     "meta": {
-      "countryCodes": [
-        "en",
-      ],
+      "countryCodes": [],
       "height": 720,
       "title": "King Of The Hill S14E01 1080p HEVC x265-MeGusta",
     },
-    "sourceId": "savefiles_en",
+    "sourceId": "savefiles_",
     "ttl": 21600000,
     "url": "https://s3.savefiles.com/hls2/01/00153/,ip0k0dj2g0i3_n,lang/eng/ip0k0dj2g0i3_eng,.urlset/master.m3u8?t=Emm2ipTW9Db4fBNcQqc8qNju3Yysg0GjGoYiC0FB-G4&s=1755078897&e=43200&v=406428&srv=s1&i=0.0&sp=0&fr=ip0k0dj2g0i3",
   },

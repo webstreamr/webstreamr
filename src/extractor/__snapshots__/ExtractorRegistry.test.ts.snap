@@ -9,12 +9,9 @@ exports[`ExtractorRegistry returns external URLs if enabled by config 1`] = `
     "isExternal": true,
     "label": "mixdrop.ag",
     "meta": {
-      "countryCodes": [
-        "de",
-      ],
-      "title": undefined,
+      "countryCodes": [],
     },
-    "sourceId": "external_de",
+    "sourceId": "external_",
     "ttl": 21600000,
     "url": "https://mixdrop.ag/e/3nzwveprim63or6",
   },
@@ -24,38 +21,14 @@ exports[`ExtractorRegistry returns external URLs if enabled by config 1`] = `
 exports[`ExtractorRegistry returns external url for error 1`] = `
 [
   {
+    "countryCodes": [],
     "error": [Error: Fetcher error: 403: Forbidden
 ],
     "format": "unknown",
     "isExternal": true,
     "label": "Dropload",
-    "meta": {
-      "countryCodes": [
-        "de",
-      ],
-    },
     "sourceId": "dropload",
     "url": "https://dropload.io/mocked-blocked.html",
-  },
-]
-`;
-
-exports[`ExtractorRegistry returns external url for error with title 1`] = `
-[
-  {
-    "error": [Error: Fetcher error: 403: Forbidden
-],
-    "format": "unknown",
-    "isExternal": true,
-    "label": "Dropload",
-    "meta": {
-      "countryCodes": [
-        "de",
-      ],
-      "title": "a title!",
-    },
-    "sourceId": "dropload",
-    "url": "https://dropload.io/mocked-blocked-2.html",
   },
 ]
 `;

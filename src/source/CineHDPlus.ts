@@ -35,9 +35,9 @@ export class CineHDPlus extends Source {
 
     const $ = cheerio.load(html);
 
-    const countryCode: CountryCode = ($('.details__langs').html() as string).includes('Latino') ? CountryCode.mx : CountryCode.es;
+    const countryCodes = [($('.details__langs').html() as string).includes('Latino') ? CountryCode.mx : CountryCode.es];
 
-    const title = $('meta[property="og:title"]').attr('content') as string;
+    const title = `${($('meta[property="og:title"]').attr('content') as string).trim()} ${imdbId.season}x${imdbId.episode}`;
 
     return Promise.all(
       $(`[data-num="${imdbId.season}x${imdbId.episode}"]`)
@@ -46,7 +46,7 @@ export class CineHDPlus extends Source {
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
         .filter(url => !url.host.match(/cinehdplus/))
-        .map(url => ({ countryCode, referer: seriesPageUrl, title: `${title.trim()} ${imdbId.season}x${imdbId.episode}`, url })),
+        .map(url => ({ url, meta: { countryCodes, title } })),
     );
   };
 

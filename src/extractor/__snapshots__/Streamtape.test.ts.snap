@@ -7,12 +7,10 @@ exports[`Streamtape streamtape.com /e 1`] = `
     "label": "Streamtape (via MediaFlow Proxy)",
     "meta": {
       "bytes": 1187340184,
-      "countryCodes": [
-        "es",
-      ],
+      "countryCodes": [],
       "title": "mickey-17-2025-[latino].mp4",
     },
-    "sourceId": "streamtape_es",
+    "sourceId": "streamtape_",
     "ttl": 900000,
     "url": "https://mediaflow.test.org/extractor/video?host=Streamtape&api_password=test&d=https%3A%2F%2Fstreamtape.com%2Fe%2F84Kb3mkoYAiokmW&redirect_stream=true",
   },

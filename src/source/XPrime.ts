@@ -32,13 +32,13 @@ export class XPrime extends Source {
 
       const urlPrimebox = new URL(`/primebox?name=${encodeURIComponent(name)}&year=${year}&season=${tmdbId.season}&episode=${tmdbId.episode}`, this.baseUrl);
 
-      return [{ countryCode: CountryCode.en, title, url: urlPrimebox }];
+      return [{ url: urlPrimebox, meta: { countryCodes: [CountryCode.en], title } }];
     }
 
     const title = `${name} (${year})`;
 
     const urlPrimebox = new URL(`/primebox?name=${encodeURIComponent(name)}&year=${year}`, this.baseUrl);
 
-    return [{ countryCode: CountryCode.en, title, url: urlPrimebox }];
+    return [{ url: urlPrimebox, meta: { countryCodes: [CountryCode.en], title } }];
   };
 }

@@ -3,15 +3,21 @@
 exports[`MegaKino handle imdb baymax 1`] = `
 [
   {
-    "countryCode": "de",
-    "referer": "https://megakino.si/films/693-baymax-riesiges-robowabohu.html",
-    "title": "Baymax - Riesiges Robowabohu",
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+      "title": "Baymax - Riesiges Robowabohu",
+    },
     "url": "https://voe.sx/e/8doq7gwiwtig",
   },
   {
-    "countryCode": "de",
-    "referer": "https://megakino.si/films/693-baymax-riesiges-robowabohu.html",
-    "title": "Baymax - Riesiges Robowabohu",
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+      "title": "Baymax - Riesiges Robowabohu",
+    },
     "url": "https://watch.gxplayer.xyz/watch?v=MEKI92PU",
   },
 ]

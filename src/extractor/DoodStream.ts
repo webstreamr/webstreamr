@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import randomstring from 'randomstring';
 import { NotFoundError } from '../error';
-import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Context, Format, Meta, UrlResult } from '../types';
 import { guessSizeFromMp4 } from '../utils/size';
 import { Extractor } from './Extractor';
 
@@ -23,7 +23,7 @@ export class DoodStream extends Extractor {
     return new URL(`http://dood.to/e/${videoId}`);
   };
 
-  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const html = await this.fetcher.text(ctx, url);
 
     const passMd5Match = html.match(/\/pass_md5\/[\w-]+\/([\w-]+)/);
@@ -52,10 +52,10 @@ export class DoodStream extends Extractor {
         url: mp4Url,
         format: Format.mp4,
         label: this.label,
-        sourceId: `${this.id}_${countryCode}`,
+        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
-          countryCodes: [countryCode],
+          ...meta,
           title,
           ...(bytes && { bytes }),
         },

@@ -36,7 +36,7 @@ export class FrenchCloud extends Source {
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
         .filter(url => !url.host.match(/frenchcloud/))
-        .map(url => ({ countryCode: CountryCode.fr, referer: pageUrl, url })),
+        .map(url => ({ url, meta: { countryCodes: [CountryCode.fr] } })),
     );
   };
 }

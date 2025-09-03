@@ -3,18 +3,30 @@
 exports[`KinoGer handle imdb blood and sinners 1`] = `
 [
   {
-    "countryCode": "de",
-    "title": "Blood & Sinners (2025)",
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+      "title": "Blood & Sinners (2025)",
+    },
     "url": "https://fsst.online/embed/900576/",
   },
   {
-    "countryCode": "de",
-    "title": "Blood & Sinners (2025)",
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+      "title": "Blood & Sinners (2025)",
+    },
     "url": "https://kinoger.pw/e/6zeREaMlrqREZPa",
   },
   {
-    "countryCode": "de",
-    "title": "Blood & Sinners (2025)",
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+      "title": "Blood & Sinners (2025)",
+    },
     "url": "https://kinoger.re/#ge5fhb",
   },
 ]
@@ -23,13 +35,21 @@ exports[`KinoGer handle imdb blood and sinners 1`] = `
 exports[`KinoGer handle imdb dead city s2e5 1`] = `
 [
   {
-    "countryCode": "de",
-    "title": "The Walking Dead: Dead City 2x5",
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+      "title": "The Walking Dead: Dead City 2x5",
+    },
     "url": "https://supervideo.cc/e/bj6szat1pval",
   },
   {
-    "countryCode": "de",
-    "title": "The Walking Dead: Dead City 2x5",
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+      "title": "The Walking Dead: Dead City 2x5",
+    },
     "url": "https://kinoger.re/#x6tsx9",
   },
 ]
@@ -38,13 +58,21 @@ exports[`KinoGer handle imdb dead city s2e5 1`] = `
 exports[`KinoGer handle imdb dead city s2e6 1`] = `
 [
   {
-    "countryCode": "de",
-    "title": "The Walking Dead: Dead City 2x6",
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+      "title": "The Walking Dead: Dead City 2x6",
+    },
     "url": "https://fsst.online/embed/901994/",
   },
   {
-    "countryCode": "de",
-    "title": "The Walking Dead: Dead City 2x6",
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+      "title": "The Walking Dead: Dead City 2x6",
+    },
     "url": "https://kinoger.re/#ep1tcf",
   },
 ]
@@ -55,8 +83,12 @@ exports[`KinoGer handle missing episode imdb black mirror s3e4 1`] = `[]`;
 exports[`KinoGer handle no fsst via brokeback mountain 1`] = `
 [
   {
-    "countryCode": "de",
-    "title": "Brokeback Mountain (2005)",
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+      "title": "Brokeback Mountain (2005)",
+    },
     "url": "https://dooodster.com/e/1cfcevn6dg8shrfvht22odxw2lty18hr",
   },
 ]

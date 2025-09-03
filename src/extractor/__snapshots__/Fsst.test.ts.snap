@@ -6,39 +6,33 @@ exports[`Fsst Blood & Sinners 1`] = `
     "format": "mp4",
     "label": "Fsst",
     "meta": {
-      "countryCodes": [
-        "de",
-      ],
+      "countryCodes": [],
       "height": 360,
       "title": "Blood.and.Sinners.2025.mkv",
     },
-    "sourceId": "fsst_de_0",
+    "sourceId": "fsst_",
     "url": "https://www.secvideo1.online/get_file/16/a135ab46b1243e41c0282c16d7cdcbcdf0faf7ee79/900000/900576/900576_360p.mp4/",
   },
   {
     "format": "mp4",
     "label": "Fsst",
     "meta": {
-      "countryCodes": [
-        "de",
-      ],
+      "countryCodes": [],
       "height": 720,
       "title": "Blood.and.Sinners.2025.mkv",
     },
-    "sourceId": "fsst_de_1",
+    "sourceId": "fsst_",
     "url": "https://www.secvideo1.online/get_file/16/801a42b7ac11f7e08101fe8c3cb537045ddf5c9b19/900000/900576/900576_720p.mp4/",
   },
   {
     "format": "mp4",
     "label": "Fsst",
     "meta": {
-      "countryCodes": [
-        "de",
-      ],
+      "countryCodes": [],
       "height": 1080,
       "title": "Blood.and.Sinners.2025.mkv",
     },
-    "sourceId": "fsst_de_2",
+    "sourceId": "fsst_",
     "url": "https://www.secvideo1.online/get_file/16/fae180e05d8d7af50fff44c7a24232b5c58023d7f5/900000/900576/900576.mp4/",
   },
 ]
@@ -50,39 +44,33 @@ exports[`Fsst Dead City 1`] = `
     "format": "mp4",
     "label": "Fsst",
     "meta": {
-      "countryCodes": [
-        "de",
-      ],
+      "countryCodes": [],
       "height": 360,
       "title": "the.walking.dead.dead.city.s02e06.german.dl.1080p.web.x264-wvf.mkv",
     },
-    "sourceId": "fsst_de_0",
+    "sourceId": "fsst_",
     "url": "https://www.secvideo1.online/get_file/9/99510c9abde68b5e82b08cd2391724050c8e47cc86/901000/901994/901994_360p.mp4/",
   },
   {
     "format": "mp4",
     "label": "Fsst",
     "meta": {
-      "countryCodes": [
-        "de",
-      ],
+      "countryCodes": [],
       "height": 720,
       "title": "the.walking.dead.dead.city.s02e06.german.dl.1080p.web.x264-wvf.mkv",
     },
-    "sourceId": "fsst_de_1",
+    "sourceId": "fsst_",
     "url": "https://www.secvideo1.online/get_file/9/868ae0229e543e7a9a6f7cf4b3df88f45a49aa11fa/901000/901994/901994_720p.mp4/",
   },
   {
     "format": "mp4",
     "label": "Fsst",
     "meta": {
-      "countryCodes": [
-        "de",
-      ],
+      "countryCodes": [],
       "height": 1080,
       "title": "the.walking.dead.dead.city.s02e06.german.dl.1080p.web.x264-wvf.mkv",
     },
-    "sourceId": "fsst_de_2",
+    "sourceId": "fsst_",
     "url": "https://www.secvideo1.online/get_file/9/44ff1bf6024db32840054f00029afb1164408b3c1f/901000/901994/901994.mp4/",
   },
 ]
@@ -94,13 +82,11 @@ exports[`Fsst How to Train Your Dragon 1`] = `
     "format": "mp4",
     "label": "Fsst",
     "meta": {
-      "countryCodes": [
-        "de",
-      ],
+      "countryCodes": [],
       "height": 360,
       "title": "How To Train Your Dragon 2025.mp4",
     },
-    "sourceId": "fsst_de_0",
+    "sourceId": "fsst_",
     "url": "https://www.secvideo1.online/get_file/10/648fc9b266670e9ad6756a066a68a8db0b36868457/902000/902668/902668_360p.mp4/",
   },
 ]

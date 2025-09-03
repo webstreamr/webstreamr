@@ -1,5 +1,5 @@
 import bytes from 'bytes';
-import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Context, CountryCode, Format, Meta, UrlResult } from '../types';
 import {
   buildMediaFlowProxyExtractorStreamUrl,
   hasMultiEnabled,
@@ -19,7 +19,7 @@ export class VixSrc extends Extractor {
     return null !== url.host.match(/vixsrc/) && supportsMediaFlowProxy(ctx);
   }
 
-  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const html = await this.fetcher.text(ctx, url);
 
     const filenameMatch = html.match(/"filename":"(.*?)"/);
@@ -38,7 +38,7 @@ export class VixSrc extends Extractor {
         url: playlistUrl,
         format: Format.hls,
         label: this.label,
-        sourceId: `${this.id}_${countryCode}`,
+        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
           countryCodes,

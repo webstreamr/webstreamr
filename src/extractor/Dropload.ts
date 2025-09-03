@@ -1,7 +1,7 @@
 import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
-import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Context, Format, Meta, UrlResult } from '../types';
 import { extractUrlFromPacked } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -18,7 +18,7 @@ export class Dropload extends Extractor {
 
   public override readonly normalize = (url: URL): URL => new URL(url.href.replace('/d/', '/').replace('/e/', '/').replace('/embed-', '/'));
 
-  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const html = await this.fetcher.text(ctx, url);
 
     if (html.includes('File Not Found') || html.includes('Pending in queue')) {
@@ -37,11 +37,11 @@ export class Dropload extends Extractor {
         url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
         format: Format.hls,
         label: this.label,
-        sourceId: `${this.id}_${countryCode}`,
+        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
+          ...meta,
           bytes: bytes.parse(sizeMatch[1] as string) as number,
-          countryCodes: [countryCode],
           height: parseInt(heightMatch[1] as string),
           title,
         },

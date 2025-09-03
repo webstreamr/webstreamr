@@ -7,16 +7,14 @@ exports[`XPrime primebox Alien: Earth 1`] = `
     "label": "XPrime Primebox",
     "meta": {
       "bytes": 871281904,
-      "countryCodes": [
-        "en",
-      ],
+      "countryCodes": [],
       "height": 1080,
       "title": "Alien: Earth 1x1 (2025)",
     },
     "requestHeaders": {
       "Referer": "https://xprime.tv",
     },
-    "sourceId": "xprime_en_primebox",
+    "sourceId": "xprime_primebox_",
     "ttl": 21600000,
     "url": "https://oca.flutch09.workers.dev/?v=cenBDs9Hbnv6PuXYzNUtVR2ZZ2YtmVtQIt6JqHB1dsbz2Y%2BXC9UwPurnE%2BQNk27Yr1WeYeLOOazAnSL8cU0DvVfg4pwKsjHKWIJICiVlvv9ndXII0bR7eaIi%2B11NbAj72pFFryHZjO6MkMKEJJnF4G%2BH1BXIO1ALds7J1A7gj2vc7DbUWL8kPxwH1rMw7NAys20M5s3PsbhgSrMpguZSBm8X&headers=%7B%22origin%22%3A%22https%3A%2F%2Fmoviebox.ng%22%2C%22referer%22%3A%22https%3A%2F%2Fmoviebox.ng%22%7D&safe",
   },
@@ -25,16 +23,14 @@ exports[`XPrime primebox Alien: Earth 1`] = `
     "label": "XPrime Primebox",
     "meta": {
       "bytes": 420170402,
-      "countryCodes": [
-        "en",
-      ],
+      "countryCodes": [],
       "height": 480,
       "title": "Alien: Earth 1x1 (2025)",
     },
     "requestHeaders": {
       "Referer": "https://xprime.tv",
     },
-    "sourceId": "xprime_en_primebox",
+    "sourceId": "xprime_primebox_",
     "ttl": 21600000,
     "url": "https://oca.flutch09.workers.dev/?v=oS2n5QbXtpa%2BWXMpIIi0SqeqadEyYEAg6AmHvpTa3jzooh6zxINciUJrR%2B6b1xLZtxbnbAM3mrGGXOa5yckYkNSC%2BKGEFSdofXw298vq3ssHpI9LBN6XLvhtxnDfmub0QoMG%2Fkvgjhb8T%2FwiCHo9NeSX%2FetW6ANppW9jhZn0Hv3hsWdmES1jqj6nfIjQ1ur53htjr2vF7mZbZSsJ&headers=%7B%22origin%22%3A%22https%3A%2F%2Fmoviebox.ng%22%2C%22referer%22%3A%22https%3A%2F%2Fmoviebox.ng%22%7D&safe",
   },
@@ -48,16 +44,14 @@ exports[`XPrime primebox Superman 1`] = `
     "label": "XPrime Primebox",
     "meta": {
       "bytes": 401394599,
-      "countryCodes": [
-        "en",
-      ],
+      "countryCodes": [],
       "height": 480,
       "title": "Superman",
     },
     "requestHeaders": {
       "Referer": "https://xprime.tv",
     },
-    "sourceId": "xprime_en_primebox",
+    "sourceId": "xprime_primebox_",
     "ttl": 21600000,
     "url": "https://oca.flutch09.workers.dev/?v=3RVZDNxcKNs6%2BqcdL1bDCgq9Yp1iPYqb6a9yToLq66vlzu08R1Hz7jiKx4OBH6YzJBcK7skuiDGDwIpro78ReVjMLtMHCfa0fBo0aJ9RYULOUMkLrZxjzSTXvo5Jss1Jiss8e9Z8pFdlC1VqwAUm6G9mx0u41dFLJ0GTJrwCesPe4zflbL8I76WkWYKBMT2MwHvDTIO4r3V0nf8BsRswsNJZ&headers=%7B%22origin%22%3A%22https%3A%2F%2Fmoviebox.ng%22%2C%22referer%22%3A%22https%3A%2F%2Fmoviebox.ng%22%7D&safe",
   },
@@ -66,16 +60,14 @@ exports[`XPrime primebox Superman 1`] = `
     "label": "XPrime Primebox",
     "meta": {
       "bytes": 896638128,
-      "countryCodes": [
-        "en",
-      ],
+      "countryCodes": [],
       "height": 720,
       "title": "Superman",
     },
     "requestHeaders": {
       "Referer": "https://xprime.tv",
     },
-    "sourceId": "xprime_en_primebox",
+    "sourceId": "xprime_primebox_",
     "ttl": 21600000,
     "url": "https://oca.flutch09.workers.dev/?v=gUbhHOwpFIqajH6NnoH%2BYE9AWORUUogamkdYQedBfKi5eQtyniWtxmI1%2B5Swyl1ThC6vM0qHl53s0Q7j%2BDaWFhVRJQL%2BJRxbuOL1iCz1w5xVPLDU%2FTJ3zhf9EbULPGbbee14kdNYNc5%2FlF2sNe6RiUupsvhlj%2BjcgsT8uypX%2BudVyw1jVEUVogufPnc0lSrfoE98IZlOgdjBZKE3%2Fcw3erD2&headers=%7B%22origin%22%3A%22https%3A%2F%2Fmoviebox.ng%22%2C%22referer%22%3A%22https%3A%2F%2Fmoviebox.ng%22%7D&safe",
   },

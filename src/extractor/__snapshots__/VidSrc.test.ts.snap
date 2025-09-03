@@ -6,13 +6,11 @@ exports[`VidSrc Black Mirror 1`] = `
     "format": "hls",
     "label": "VidSrc (CloudStream Pro)",
     "meta": {
-      "countryCodes": [
-        "en",
-      ],
+      "countryCodes": [],
       "height": 1040,
       "title": "Black Mirror (2011) S04E02",
     },
-    "sourceId": "vidsrc_CloudStream-Pro_en",
+    "sourceId": "vidsrc_CloudStream-Pro_",
     "ttl": 10800000,
     "url": "https://tmstr5.shadowlandschronicles.com/pl/H4sIAAAAAAAAAxXK226DIAAA0F8CrGvd27oCq1UcyP1NQdtUaozptsyvX3aez9DBQxgjgBmAPeqK_Yh2eTeG4tAPMCDwysHNaeDbevKVMM.XgMWps2XtTWGkLR8M.feQ2KroeeXG_db4vCq82.T8lkerZ0OTlLLsWuA2lnwT1FK7e6r0B5nEHL_4pNAgme2sJj28_kT0f0kuya0Sj6W6wONRnkrpAHP9vZwEzRE3T8JOohmwtwMlTimNeiw2BQWRsM4CKZ3PFuUyT1usLy6LWb3F1s3p0hPRSpqqxibcPpaG3.Mq5qS4vn4bqm.NTp8KFzOfmBykWP4AirgCPSEBAAA-/master.m3u8",
   },
@@ -25,13 +23,11 @@ exports[`VidSrc Full Metal Jacket 1`] = `
     "format": "hls",
     "label": "VidSrc (CloudStream Pro)",
     "meta": {
-      "countryCodes": [
-        "en",
-      ],
+      "countryCodes": [],
       "height": 714,
       "title": "Full Metal Jacket (1987)",
     },
-    "sourceId": "vidsrc_CloudStream-Pro_en",
+    "sourceId": "vidsrc_CloudStream-Pro_",
     "ttl": 10800000,
     "url": "https://tmstr4.shadowlandschronicles.com/pl/H4sIAAAAAAAAAwXB7XqCIBgA0FtCsa_97IMcFSa.gPBPwc1H0Fm5Wl79zllVS4eRdZv10uJkuarrJF7Yr8at1lWyRvZDC7cFP3IT2YU4PHAmiGKB59C1Z41bbUQ7czDQ.AgpMv6csHtqNTFGzMMGessV_bOSvRkadab4riBhWx0nxuPxDtFnXMSjqAOdM5AtK3lyjjxiyD.LYAaRbqvC8_MF_L0Bsq8GeuGHxUlLU9rSZapvkSTyUfsNkcEJi8eb9jRpRPJkMTO6H4mV33cnaCqP_LeIpw46iVlHrxDp2c6G5ILtbeoC9I42itxy_3plqev50N5FLDHfTS94T1AQKXUZrmwOA1dtVIFFOaDNP7JZ1PhBAQAA/master.m3u8",
   },
@@ -47,12 +43,6 @@ exports[`VidSrc rate limit issues are retried and fail if no tlds are left 1`] =
     "format": "unknown",
     "isExternal": true,
     "label": "VidSrc",
-    "meta": {
-      "countryCodes": [
-        "en",
-      ],
-      "title": "Dexter: Resurrection 1x1",
-    },
     "sourceId": "vidsrc",
     "url": "https://vidsrc.xyz/embed/movie/tt33043892/1/1",
   },

@@ -3,59 +3,115 @@
 exports[`PrimeWire handle el camino 1`] = `
 [
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://filelions.to/f/bv4b7tl9u1ij",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://filelions.to/f/wayeo7l1cw7d",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://voe.sx/xwhvakkexuob",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://voe.sx/paqi7qqku3zi",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://voe.sx/ysimllytd3zo",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://streamtape.com/v/6QLoLq0O8DtObX",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://streamtape.com/v/qMVMPa49M1hz8BR/El.Camino.A.Breaking.Bad.Movie.2019.1080p.WEBRip.x264_YTS.LT.mp4",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://dood.watch/d/9lw62yyosxc0",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://dood.watch/d/05fm25orfeux",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://dood.watch/d/j2pa25q11pdu",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://streamwish.to/09q73jf6t6jw",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://mixdrop.ag/f/2bnmi",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://mixdrop.ag/f/4njk6691b1k60d",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://mixdrop.ag/f/ql0qrxnjb89nx8",
   },
 ]
@@ -64,59 +120,115 @@ exports[`PrimeWire handle el camino 1`] = `
 exports[`PrimeWire handle el camino 2`] = `
 [
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://filelions.to/f/bv4b7tl9u1ij",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://filelions.to/f/wayeo7l1cw7d",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://voe.sx/xwhvakkexuob",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://voe.sx/paqi7qqku3zi",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://voe.sx/ysimllytd3zo",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://streamtape.com/v/6QLoLq0O8DtObX",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://streamtape.com/v/qMVMPa49M1hz8BR/El.Camino.A.Breaking.Bad.Movie.2019.1080p.WEBRip.x264_YTS.LT.mp4",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://dood.watch/d/9lw62yyosxc0",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://dood.watch/d/05fm25orfeux",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://dood.watch/d/j2pa25q11pdu",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://streamwish.to/09q73jf6t6jw",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://mixdrop.ag/f/2bnmi",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://mixdrop.ag/f/4njk6691b1k60d",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://mixdrop.ag/f/ql0qrxnjb89nx8",
   },
 ]
@@ -125,139 +237,275 @@ exports[`PrimeWire handle el camino 2`] = `
 exports[`PrimeWire handle imdb dead city s2e5 1`] = `
 [
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://bigwarp.cc/u66q6mybilfa",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://bigwarp.cc/aazhpuex9ppj",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://bigwarp.cc/4tb37obzt6re",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://filelions.to/f/odssr9dyjx5n",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://filelions.to/f/0i0j0qz5o478",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://filelions.to/f/eqmzrkv5kf5s",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://filelions.to/f/fpru8wthtsf4",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://voe.sx/y8lrmf2t7jhp",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://voe.sx/te40pmzra8du",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://voe.sx/grsvpdbxvw3e",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://streamtape.com/v/D2e3jR83rKTkPJw/",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://streamtape.com/v/Ap0GJoXglaFbqK/The.Walking.Dead.Dead.City.S02E05.The.Bird.Always.Knows.720p.AMZN.WEB-DL.DDP5.1.H.264-NTb.mkv.mp4",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://savefiles.com/i0bj9gazequy",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://dood.watch/d/1qfuy5yiq4r6",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://dood.watch/d/sn87i3ru7plx",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://dood.watch/d/8odyvc9bre16",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://dood.watch/d/reslxv9siz41",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://streamwish.to/jult1lcvqjlt",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://streamwish.to/s986lkdy8mb5",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://streamwish.to/h9p9qqgpq2lw",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://mixdrop.ag/f/nlpj3q3ran17rv",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://mixdrop.ag/f/q1pz4k94uxxkgvo",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://mixdrop.ag/f/9wvz9gp3b3q1llk",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://filemoon.sx/d/ftowmfa7f0ge/The.Walking.Dead.Dead.City.S02E05.The.Bird.Always.Knows.720p.AMZN.WEB-DL.DDP5.1.H.264-NTb.mkv",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://filemoon.sx/d/8wllnog0cyl7",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://streamplay.to/yrkzvpayg27o",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "http://vidmoly.me/w/okcwblnaqw3t",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://vidmoly.me/w/g1ob8a8h5pc8",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "http://vidmoly.me/w/46bi0sec0966",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://vidmoly.me/w/awjd3z0t0i9l",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://luluvdoo.com/d/au00sj11vqku",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://filegram.to/erapbfgcdguq",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://filegram.to/6q8gctbf79gc",
   },
   {
-    "countryCode": "en",
+    "meta": {
+      "countryCodes": [
+        "en",
+      ],
+    },
     "url": "https://filegram.to/6yuyz0dgqu05",
   },
 ]

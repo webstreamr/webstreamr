@@ -3,13 +3,21 @@
 exports[`Eurostreaming game of thrones s1e1 1`] = `
 [
   {
-    "countryCode": "it",
-    "title": "Il Trono di Spade 1x1",
+    "meta": {
+      "countryCodes": [
+        "it",
+      ],
+      "title": "Il Trono di Spade 1x1",
+    },
     "url": "https://supervideo.cc/e/05jfivnr5hiw",
   },
   {
-    "countryCode": "it",
-    "title": "Il Trono di Spade 1x1",
+    "meta": {
+      "countryCodes": [
+        "it",
+      ],
+      "title": "Il Trono di Spade 1x1",
+    },
     "url": "https://dropload.io/embed-dub8oh3k3yk5.html",
   },
 ]
@@ -18,13 +26,21 @@ exports[`Eurostreaming game of thrones s1e1 1`] = `
 exports[`Eurostreaming handle imdb black mirror s2e4 1`] = `
 [
   {
-    "countryCode": "it",
-    "title": "Black Mirror 2x4",
+    "meta": {
+      "countryCodes": [
+        "it",
+      ],
+      "title": "Black Mirror 2x4",
+    },
     "url": "https://supervideo.cc/e/anf0clp2vb6y",
   },
   {
-    "countryCode": "it",
-    "title": "Black Mirror 2x4",
+    "meta": {
+      "countryCodes": [
+        "it",
+      ],
+      "title": "Black Mirror 2x4",
+    },
     "url": "https://dropload.io/embed-978xyyxi3ldq.html",
   },
 ]
@@ -33,13 +49,21 @@ exports[`Eurostreaming handle imdb black mirror s2e4 1`] = `
 exports[`Eurostreaming handle lost s1e1 1`] = `
 [
   {
-    "countryCode": "it",
-    "title": "Lost 1x1",
+    "meta": {
+      "countryCodes": [
+        "it",
+      ],
+      "title": "Lost 1x1",
+    },
     "url": "https://supervideo.cc/e/lgslt2lst4jv",
   },
   {
-    "countryCode": "it",
-    "title": "Lost 1x1",
+    "meta": {
+      "countryCodes": [
+        "it",
+      ],
+      "title": "Lost 1x1",
+    },
     "url": "https://dropload.io/embed-vabynwo8glxz.html",
   },
 ]
@@ -48,13 +72,21 @@ exports[`Eurostreaming handle lost s1e1 1`] = `
 exports[`Eurostreaming last of us s1e1 1`] = `
 [
   {
-    "countryCode": "it",
-    "title": "The Last of Us 1x1",
+    "meta": {
+      "countryCodes": [
+        "it",
+      ],
+      "title": "The Last of Us 1x1",
+    },
     "url": "https://supervideo.cc/e/ic1mmvrh5xv6",
   },
   {
-    "countryCode": "it",
-    "title": "The Last of Us 1x1",
+    "meta": {
+      "countryCodes": [
+        "it",
+      ],
+      "title": "The Last of Us 1x1",
+    },
     "url": "https://dropload.io/embed-uyzfrh62n31l.html",
   },
 ]

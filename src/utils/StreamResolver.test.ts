@@ -91,7 +91,7 @@ describe('resolve', () => {
       public readonly baseUrl = 'https://example.com';
 
       public readonly handleInternal = async (): Promise<SourceResult[]> => {
-        return [{ countryCode: CountryCode.de, url: new URL('https://example.com') }];
+        return [{ url: new URL('https://example.com'), meta: { countryCodes: [CountryCode.de] } }];
       };
     }
 

@@ -1,6 +1,5 @@
 import winston from 'winston';
 import { createTestContext } from '../test';
-import { CountryCode } from '../types';
 import { FetcherMock } from '../utils';
 import { ExtractorRegistry } from './ExtractorRegistry';
 import { Uqload } from './Uqload';
@@ -12,6 +11,6 @@ const ctx = createTestContext({ mediaFlowProxyUrl: 'https://mediaflow.test.org',
 
 describe('Uqload', () => {
   test('uqload.net /embed-', async () => {
-    expect(await extractorRegistry.handle(ctx, new URL('https://uqload.net/embed-z0xbr87oz637.html'), CountryCode.fr)).toMatchSnapshot();
+    expect(await extractorRegistry.handle(ctx, new URL('https://uqload.net/embed-z0xbr87oz637.html'))).toMatchSnapshot();
   });
 });

@@ -1,4 +1,4 @@
-import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Context, Format, Meta, UrlResult } from '../types';
 import { Extractor } from './Extractor';
 
 export class StreamEmbed extends Extractor {
@@ -10,7 +10,7 @@ export class StreamEmbed extends Extractor {
     return null !== url.host.match(/bullstream|mp4player|watch\.gxplayer/);
   }
 
-  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const html = await this.fetcher.text(ctx, url);
 
     const video = JSON.parse((html.match(/video ?= ?(.*);/) as string[])[1] as string);
@@ -20,10 +20,10 @@ export class StreamEmbed extends Extractor {
         url: new URL(`/m3u8/${video.uid}/${video.md5}/master.txt?s=1&id=${video.id}&cache=${video.status}`, url.origin),
         format: Format.hls,
         label: this.label,
-        sourceId: `${this.id}_${countryCode}`,
+        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
-          countryCodes: [countryCode],
+          ...meta,
           height: parseInt(JSON.parse(video.quality)[0]),
           title: decodeURIComponent(video.title),
         },

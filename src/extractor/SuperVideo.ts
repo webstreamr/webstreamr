@@ -1,7 +1,7 @@
 import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
-import { Context, CountryCode, Format, UrlResult } from '../types';
+import { Context, Format, Meta, UrlResult } from '../types';
 import { extractUrlFromPacked, guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -20,11 +20,11 @@ export class SuperVideo extends Extractor {
     return new URL(url.href.replace('/e/', '/').replace('/embed-', '/'));
   }
 
-  protected async extractInternal(ctx: Context, url: URL, countryCode: CountryCode): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const html = await this.fetcher.text(ctx, url);
 
     if (html.includes('This video can be watched as embed only')) {
-      return await this.extractInternal(ctx, new URL(`/e${url.pathname}`, url.origin), countryCode);
+      return await this.extractInternal(ctx, new URL(`/e${url.pathname}`, url.origin), meta);
     }
 
     if (/'The file was deleted|The file expired|Video is processing/.test(html)) {
@@ -47,10 +47,10 @@ export class SuperVideo extends Extractor {
         url: m3u8Url,
         format: Format.hls,
         label: this.label,
-        sourceId: `${this.id}_${countryCode}`,
+        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
-          countryCodes: [countryCode],
+          ...meta,
           title,
           ...(size && { bytes: size }),
           ...(height && { height }),

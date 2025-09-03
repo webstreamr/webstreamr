@@ -35,7 +35,7 @@ export class StreamKiste extends Source {
 
     const $ = cheerio.load(html);
 
-    const title = $('meta[property="og:title"]').attr('content') as string;
+    const title = `${($('meta[property="og:title"]').attr('content') as string).trim()} ${imdbId.season}x${imdbId.episode}`;
 
     return Promise.all(
       $(`[data-num="${imdbId.season}x${imdbId.episode}"]`)
@@ -44,7 +44,7 @@ export class StreamKiste extends Source {
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
         .filter(url => !url.host.match(/streamkiste/))
-        .map(url => ({ countryCode: CountryCode.de, referer: seriesPageUrl, title: `${title.trim()} ${imdbId.season}x${imdbId.episode}`, url })),
+        .map(url => ({ url, meta: { countryCodes: [CountryCode.de], title } })),
     );
   };
 
