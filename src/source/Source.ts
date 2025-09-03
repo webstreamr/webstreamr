@@ -25,21 +25,17 @@ export abstract class Source {
 
   public abstract readonly baseUrl: string;
 
-  private readonly sourceResultCache: Cacheable;
-
-  public constructor() {
-    this.sourceResultCache = new Cacheable({
-      primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024, ttl: this.ttl }) }),
-      secondary: new Keyv(new KeyvSqlite(`sqlite://${getCacheDir()}/webstreamr-source-cache.sqlite`)),
-    });
-  }
+  private static readonly sourceResultCache = new Cacheable({
+    primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }),
+    secondary: new Keyv(new KeyvSqlite(`sqlite://${getCacheDir()}/webstreamr-source-cache.sqlite`)),
+  });
 
   protected abstract handleInternal(ctx: Context, type: ContentType, id: Id): Promise<(SourceResult[])>;
 
   public async handle(ctx: Context, type: ContentType, id: Id): Promise<(SourceResult[])> {
     const cacheKey = `${this.id}_${id.toString()}`;
 
-    let sourceResults = (await this.sourceResultCache.get<SourceResult[]>(cacheKey))
+    let sourceResults = (await Source.sourceResultCache.get<SourceResult[]>(cacheKey))
       ?.map(sourceResult => ({ ...sourceResult, url: new URL(sourceResult.url) }));
 
     if (!sourceResults) {
@@ -53,7 +49,7 @@ export abstract class Source {
         }
       }
 
-      await this.sourceResultCache.set<SourceResult[]>(cacheKey, sourceResults);
+      await Source.sourceResultCache.set<SourceResult[]>(cacheKey, sourceResults, this.ttl);
     }
 
     return sourceResults.filter(sourceResult => sourceResult.countryCode in ctx.config);
