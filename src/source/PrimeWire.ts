@@ -1,9 +1,12 @@
 import crypto from 'crypto';
+// eslint-disable-next-line import/no-named-as-default
+import KeyvSqlite from '@keyv/sqlite';
+import { Cacheable, CacheableMemory, Keyv } from 'cacheable';
 import * as cheerio from 'cheerio';
 import { JSDOM } from 'jsdom';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
-import { Fetcher, getImdbId, Id, ImdbId } from '../utils';
+import { Fetcher, getCacheDir, getImdbId, Id, ImdbId } from '../utils';
 import { Source, SourceResult } from './Source';
 
 export class PrimeWire extends Source {
@@ -19,7 +22,10 @@ export class PrimeWire extends Source {
 
   private readonly fetcher: Fetcher;
 
-  private readonly redirectUrlCache = new Map<string, URL>();
+  private readonly redirectUrlCache = new Cacheable({
+    primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }),
+    secondary: new Keyv(new KeyvSqlite(`sqlite://${getCacheDir()}/webstreamr-primewire-redirect-url-cache.sqlite`)),
+  });
 
   public constructor(fetcher: Fetcher) {
     super();
@@ -68,18 +74,18 @@ export class PrimeWire extends Source {
         .map((_i, el) => new URL($(el).attr('href') as string, this.baseUrl))
         .toArray()
         .map(async (redirectUrl) => {
-          let targetUrl = this.redirectUrlCache.get(redirectUrl.href);
+          let targetUrlHref = await this.redirectUrlCache.get<string>(redirectUrl.href);
 
           /* istanbul ignore if */
-          if (!targetUrl) {
+          if (!targetUrlHref) {
             const linkFetchUrl = new URL(redirectUrl.href.replace('/gos/', '/go/'));
             linkFetchUrl.searchParams.set('token', linksToken);
-            targetUrl = new URL(JSON.parse(await this.fetcher.text(ctx, linkFetchUrl))['link']);
+            targetUrlHref = JSON.parse(await this.fetcher.text(ctx, linkFetchUrl))['link'] as string;
 
-            this.redirectUrlCache.set(redirectUrl.href, targetUrl);
+            await this.redirectUrlCache.set<string>(redirectUrl.href, targetUrlHref);
           }
 
-          return { countryCode: CountryCode.en, url: targetUrl };
+          return { countryCode: CountryCode.en, url: new URL(targetUrlHref) };
         }),
     );
   };
