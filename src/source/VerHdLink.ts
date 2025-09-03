@@ -34,9 +34,9 @@ export class VerHdLink extends Source {
     return $('._player-mirrors')
       .map((_i, el) => {
         let countryCode: CountryCode;
-        if ($(el).hasClass('latino') && 'mx' in ctx.config) {
+        if ($(el).hasClass('latino')) {
           countryCode = CountryCode.mx;
-        } else if ($(el).hasClass('castellano') && 'es' in ctx.config) {
+        } else if ($(el).hasClass('castellano')) {
           countryCode = CountryCode.es;
         } else {
           return [];

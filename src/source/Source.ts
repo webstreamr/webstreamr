@@ -39,23 +39,23 @@ export abstract class Source {
   public async handle(ctx: Context, type: ContentType, id: Id): Promise<(SourceResult[])> {
     const cacheKey = `${this.id}_${id.toString()}`;
 
-    let sourceResults = await this.sourceResultCache.get<SourceResult[]>(cacheKey);
-    if (sourceResults) {
-      return sourceResults.map(sourceResult => ({ ...sourceResult, url: new URL(sourceResult.url) }));
-    }
+    let sourceResults = (await this.sourceResultCache.get<SourceResult[]>(cacheKey))
+      ?.map(sourceResult => ({ ...sourceResult, url: new URL(sourceResult.url) }));
 
-    try {
-      sourceResults = await this.handleInternal(ctx, type, id);
-    } catch (error) {
-      if (error instanceof NotFoundError) {
-        sourceResults = [];
-      } else {
-        throw error;
+    if (!sourceResults) {
+      try {
+        sourceResults = await this.handleInternal(ctx, type, id);
+      } catch (error) {
+        if (error instanceof NotFoundError) {
+          sourceResults = [];
+        } else {
+          throw error;
+        }
       }
+
+      await this.sourceResultCache.set<SourceResult[]>(cacheKey, sourceResults);
     }
 
-    await this.sourceResultCache.set<SourceResult[]>(cacheKey, sourceResults);
-
-    return sourceResults;
+    return sourceResults.filter(sourceResult => sourceResult.countryCode in ctx.config);
   }
 }

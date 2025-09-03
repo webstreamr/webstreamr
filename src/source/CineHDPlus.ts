@@ -36,9 +36,6 @@ export class CineHDPlus extends Source {
     const $ = cheerio.load(html);
 
     const countryCode: CountryCode = ($('.details__langs').html() as string).includes('Latino') ? CountryCode.mx : CountryCode.es;
-    if (!(countryCode in ctx.config)) {
-      return [];
-    }
 
     const title = $('meta[property="og:title"]').attr('content') as string;
 

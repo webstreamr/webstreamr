@@ -58,19 +58,15 @@ export class Cuevana extends Source {
           return [];
         }
 
-        const isLatino = elText.includes('Latino');
-
-        if (isLatino && CountryCode.mx in ctx.config) {
+        if (elText.includes('Latino')) {
           return $('[data-tr], [data-video]', el)
             .map((_i, el) => ({ countryCode: CountryCode.mx, title, url: new URL($(el).attr('data-tr') ?? $(el).attr('data-video') as string) }))
             .toArray();
-        } else if (!isLatino && CountryCode.es in ctx.config) {
-          return $('[data-tr], [data-video]', el)
-            .map((_i, el) => ({ countryCode: CountryCode.es, title, url: new URL($(el).attr('data-tr') ?? $(el).attr('data-video') as string) }))
-            .toArray();
-        } else {
-          return [];
         }
+
+        return $('[data-tr], [data-video]', el)
+          .map((_i, el) => ({ countryCode: CountryCode.es, title, url: new URL($(el).attr('data-tr') ?? $(el).attr('data-video') as string) }))
+          .toArray();
       })
       .toArray();
 

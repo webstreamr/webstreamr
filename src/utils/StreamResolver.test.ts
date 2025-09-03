@@ -73,7 +73,7 @@ describe('resolve', () => {
   test('returns ytId instead of url for YouTube video', async () => {
     const streamResolver = new StreamResolver(logger, new ExtractorRegistry(logger, createExtractors(fetcher)));
 
-    const streams = await streamResolver.resolve(ctx, [primeWire], 'movie', new ImdbId('tt0069293', undefined, undefined));
+    const streams = await streamResolver.resolve({ ...ctx, config: { ...ctx.config, en: 'on' } }, [primeWire], 'movie', new ImdbId('tt0069293', undefined, undefined));
     expect(streams.ttl).not.toBeUndefined();
     expect(streams.streams).toMatchSnapshot();
   });

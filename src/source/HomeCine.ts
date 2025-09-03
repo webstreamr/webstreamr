@@ -52,9 +52,9 @@ export class HomeCine extends Source {
     return $('.les-content a')
       .map((_i, el) => {
         let countryCode: CountryCode;
-        if ($(el).text().toLowerCase().includes('latino') && CountryCode.mx in ctx.config) {
+        if ($(el).text().toLowerCase().includes('latino')) {
           countryCode = CountryCode.mx;
-        } else if ($(el).text().toLowerCase().includes('castellano') && CountryCode.es in ctx.config) {
+        } else if ($(el).text().toLowerCase().includes('castellano')) {
           countryCode = CountryCode.es;
         } else {
           return [];
