@@ -28,9 +28,16 @@ export abstract class Source {
   private static readonly sourceResultCache = new Cacheable({
     primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }),
     secondary: new Keyv(new KeyvSqlite(`sqlite://${getCacheDir()}/webstreamr-source-cache.sqlite`)),
+    stats: true,
   });
 
   protected abstract handleInternal(ctx: Context, type: ContentType, id: Id): Promise<(SourceResult[])>;
+
+  public static stats() {
+    return {
+      sourceResultCache: Source.sourceResultCache.stats,
+    };
+  };
 
   public async handle(ctx: Context, type: ContentType, id: Id): Promise<(SourceResult[])> {
     const cacheKey = `${this.id}_${id.toString()}`;

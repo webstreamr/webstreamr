@@ -258,4 +258,11 @@ describe('fetch', () => {
     await expect(fetcher.text(ctx, new URL('https://too-many-recent-timeouts-url.test/'), { timeout: 10, timeoutsCountThrow: 2 })).rejects.toBeInstanceOf(TimeoutError);
     await expect(fetcher.text(ctx, new URL('https://too-many-recent-timeouts-url.test/'), { timeout: 10, timeoutsCountThrow: 2 })).rejects.toBeInstanceOf(TooManyTimeoutsError);
   });
+
+  test('stats returns something', async () => {
+    const stats = fetcher.stats();
+
+    expect(stats).toHaveProperty('httpCache');
+    expect(stats.httpCache).toBeTruthy();
+  });
 });

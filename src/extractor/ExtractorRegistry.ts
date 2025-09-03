@@ -18,8 +18,15 @@ export class ExtractorRegistry {
     this.urlResultCache = new Cacheable({
       primary: new Keyv({ store: new CacheableMemory({ lruSize: 4096 }) }),
       secondary: new Keyv(new KeyvSqlite(`sqlite://${getCacheDir()}/webstreamr-extractor-cache.sqlite`)),
+      stats: true,
     });
   }
+
+  public stats() {
+    return {
+      urlResultCache: this.urlResultCache.stats,
+    };
+  };
 
   public async handle(ctx: Context, url: URL, countryCode: CountryCode, title?: string | undefined): Promise<UrlResult[]> {
     const extractor = this.extractors.find(extractor => !isExtractorDisabled(ctx.config, extractor) && extractor.supports(ctx, url));

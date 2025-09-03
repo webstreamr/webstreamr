@@ -139,6 +139,14 @@ addon.get('/live', async (req: Request, res: Response) => {
   }
 });
 
+addon.get('/stats', async (_req: Request, res: Response) => {
+  res.json({
+    extractorRegistry: extractorRegistry.stats(),
+    fetcher: fetcher.stats(),
+    sources: Source.stats(),
+  });
+});
+
 const port = parseInt(envGet('PORT') || '51546');
 addon.listen(port, () => {
   logger.info(`Add-on Repository URL: http://127.0.0.1:${port}/manifest.json`);

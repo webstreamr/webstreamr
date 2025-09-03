@@ -63,7 +63,11 @@ export class Fetcher {
 
   private readonly logger: winston.Logger;
 
-  private readonly httpCache = new Cacheable({ primary: new Keyv({ store: new CacheableMemory({ lruSize: 2048 }) }) });
+  private readonly httpCache = new Cacheable({
+    primary: new Keyv({ store: new CacheableMemory({ lruSize: 2048 }) }),
+    stats: true,
+  });
+
   private readonly rateLimitedCache = new Cacheable({ primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }) });
   private readonly semaphores = new Map<string, SemaphoreInterface>();
   private readonly hostUserAgentMap = new Map<string, string>();
@@ -75,6 +79,12 @@ export class Fetcher {
   public constructor(logger: winston.Logger) {
     this.logger = logger;
   }
+
+  public stats() {
+    return {
+      httpCache: this.httpCache.stats,
+    };
+  };
 
   public async text(ctx: Context, url: URL, init?: CustomRequestInit): Promise<string> {
     return (await this.cachedFetch(ctx, url, init)).body;

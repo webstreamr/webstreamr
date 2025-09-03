@@ -54,4 +54,11 @@ describe('ExtractorRegistry', () => {
     const urlResults = await extractorRegistry.handle(ctx, new URL('https://dropload.io/mocked-blocked-2.html'), CountryCode.de, 'a title!');
     expect(urlResults).toMatchSnapshot();
   });
+
+  test('stats returns something', async () => {
+    const stats = extractorRegistry.stats();
+
+    expect(stats).toHaveProperty('urlResultCache');
+    expect(stats.urlResultCache).toBeTruthy();
+  });
 });
