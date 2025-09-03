@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.46.1](https://github.com/webstreamr/webstreamr/compare/v0.46.0...v0.46.1) (2025-09-03)
+
+
+### Miscellaneous Chores
+
+* decrease fetcher and extractor memory cache sizes ([756cd01](https://github.com/webstreamr/webstreamr/commit/756cd01ab910cef167bc78c2bf895c2cf992677d))
+
 ## [0.46.0](https://github.com/webstreamr/webstreamr/compare/v0.45.3...v0.46.0) (2025-09-03)
 
 
