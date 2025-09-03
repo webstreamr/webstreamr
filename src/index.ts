@@ -131,12 +131,11 @@ addon.get('/live', async (req: Request, res: Response) => {
   if (blockedCount > 0) {
     // TODO: fail health check and try to get a clean IP if infra is ready
     logger.warn('IP might be not clean and leading to blocking.', ctx);
-  }
-
-  if (errorCount === sources.length) {
+    res.json({ status: 'ok', ipStatus: 'error' });
+  } else if (errorCount === sources.length) {
     res.status(503).json({ status: 'error' });
   } else {
-    res.json({ status: 'ok' });
+    res.json({ status: 'ok', ipStatus: 'ok' });
   }
 });
 
