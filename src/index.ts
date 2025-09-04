@@ -123,7 +123,7 @@ addon.get('/live', async (req: Request, res: Response) => {
     }
   });
 
-  if (Date.now() - lastLiveProbeRequestsTimestamp > 60000) { // every minute
+  if (Date.now() - lastLiveProbeRequestsTimestamp > 60000 || 'forceIpCheck' in req.query) { // every minute
     await Promise.all(fetchFactories.map(fn => fn()));
     lastLiveProbeRequestsTimestamp = Date.now();
   }
