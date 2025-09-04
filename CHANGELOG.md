@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.46.2](https://github.com/webstreamr/webstreamr/compare/v0.46.1...v0.46.2) (2025-09-04)
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/setup-node action to v5 ([#320](https://github.com/webstreamr/webstreamr/issues/320)) ([139cb64](https://github.com/webstreamr/webstreamr/commit/139cb64ca54911691eee95002a3ab1994bcb8c15))
+
+
+### Bug Fixes
+
+* **extractor:** remove non-working VidSrc pm TLD ([ad7e480](https://github.com/webstreamr/webstreamr/commit/ad7e4802132dd2e6a143a1a3137d7f4bd17150f2))
+* **source:** VixSrc is not an English source ([4002301](https://github.com/webstreamr/webstreamr/commit/4002301fa62e6b89d9f38015e06505ee59cf4abf))
+
+
+### Code Refactoring
+
+* simplify passing around meta ([cfcf81b](https://github.com/webstreamr/webstreamr/commit/cfcf81b665357afb559afe569ef719f943438d48))
+
 ## [0.46.1](https://github.com/webstreamr/webstreamr/compare/v0.46.0...v0.46.1) (2025-09-03)
 
 
