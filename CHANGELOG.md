@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.46.3](https://github.com/webstreamr/webstreamr/compare/v0.46.2...v0.46.3) (2025-09-04)
+
+
+### Miscellaneous Chores
+
+* allow forcing the IP check in the /live endpoint ([cf79473](https://github.com/webstreamr/webstreamr/commit/cf79473fad96dbac083522646dfcc1018fcc075c))
+
 ## [0.46.2](https://github.com/webstreamr/webstreamr/compare/v0.46.1...v0.46.2) (2025-09-04)
 
 
