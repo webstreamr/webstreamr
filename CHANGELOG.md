@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.46.4](https://github.com/webstreamr/webstreamr/compare/v0.46.3...v0.46.4) (2025-09-04)
+
+
+### Miscellaneous Chores
+
+* **source:** retry also blocking errors with different VidSrc TLD ([af4d001](https://github.com/webstreamr/webstreamr/commit/af4d0010fb47c983931003efcd80b4c115175bd9))
+
 ## [0.46.3](https://github.com/webstreamr/webstreamr/compare/v0.46.2...v0.46.3) (2025-09-04)
 
 
