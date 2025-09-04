@@ -38,4 +38,20 @@ describe('VidSrc', () => {
 
     expect(await vidSrc.extract(ctx, new URL('https://vidsrc.xyz/embed/movie/tt33043892/1/1'))).toMatchSnapshot();
   });
+
+  test('blocking issues are retried and fail if no tlds are left', async () => {
+    const mockAgent = new MockAgent({ enableCallHistory: true });
+    mockAgent.disableNetConnect();
+    setGlobalDispatcher(mockAgent);
+
+    mockAgent.get('https://vidsrc.xyz')
+      .intercept({ path: '/embed/movie/tt33043892/1/1' }).reply(403);
+    mockAgent.get('https://vidsrc.net')
+      .intercept({ path: '/embed/movie/tt33043892/1/1' }).reply(403);
+
+    const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
+    const vidSrc = new VidSrc(fetcher, ['net', 'xyz']);
+
+    expect(await vidSrc.extract(ctx, new URL('https://vidsrc.xyz/embed/movie/tt33043892/1/1'))).toMatchSnapshot();
+  });
 });

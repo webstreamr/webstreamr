@@ -34,6 +34,19 @@ exports[`VidSrc Full Metal Jacket 1`] = `
 ]
 `;
 
+exports[`VidSrc blocking issues are retried and fail if no tlds are left 1`] = `
+[
+  {
+    "error": [Error],
+    "format": "unknown",
+    "isExternal": true,
+    "label": "VidSrc",
+    "sourceId": "vidsrc",
+    "url": "https://vidsrc.xyz/embed/movie/tt33043892/1/1",
+  },
+]
+`;
+
 exports[`VidSrc not found 1`] = `[]`;
 
 exports[`VidSrc rate limit issues are retried and fail if no tlds are left 1`] = `

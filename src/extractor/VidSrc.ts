@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import slugify from 'slugify';
-import { NotFoundError, TooManyRequestsError } from '../error';
+import { BlockedError, NotFoundError, TooManyRequestsError } from '../error';
 import { Context, Format, Meta, NonEmptyArray, UrlResult } from '../types';
 import { Fetcher, guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
@@ -41,7 +41,7 @@ export class VidSrc extends Extractor {
     try {
       html = await this.fetcher.text(ctx, newUrl);
     } catch (error) {
-      if (error instanceof TooManyRequestsError && tlds.length) {
+      if (tlds.length && (error instanceof TooManyRequestsError || error instanceof BlockedError)) {
         return this.extractUsingRandomTld(ctx, url, meta, tlds);
       }
 
