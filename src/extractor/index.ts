@@ -32,7 +32,7 @@ export const createExtractors = (fetcher: Fetcher): Extractor[] => [
   new Streamtape(fetcher),
   new SuperVideo(fetcher),
   new Uqload(fetcher),
-  new VidSrc(fetcher, ['in', 'pm', 'net', 'xyz', 'io', 'vc']), // https://vidsrc.domains/
+  new VidSrc(fetcher, ['in', 'net', 'xyz', 'io', 'vc']), // https://vidsrc.domains/
   new VixSrc(fetcher),
   new XPrime(fetcher),
   new YouTube(fetcher),
