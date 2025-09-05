@@ -39,7 +39,7 @@ export class VidSrc extends Extractor {
 
     let html: string;
     try {
-      html = await this.fetcher.text(ctx, newUrl);
+      html = await this.fetcher.text(ctx, newUrl, { queueLimit: 1 });
     } catch (error) {
       if (tlds.length && (error instanceof TooManyRequestsError || error instanceof BlockedError)) {
         return this.extractUsingRandomTld(ctx, url, meta, tlds);
