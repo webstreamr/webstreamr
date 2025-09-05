@@ -60,6 +60,7 @@ export class Fetcher {
   private readonly DEFAULT_QUEUE_TIMEOUT = 5000;
   private readonly DEFAULT_TIMEOUTS_COUNT_THROW = 30;
   private readonly TIMEOUT_CACHE_TTL = 3600000; // 1h
+  private readonly MAX_WAIT_RETRY_AFTER = 10000;
 
   private readonly logger: winston.Logger;
 
@@ -262,7 +263,17 @@ export class Fetcher {
     this.logger.info(`Fetch ${init?.method ?? 'GET'} ${url}`, ctx);
 
     const isRateLimitedRaw = await this.rateLimitedCache.get<true>(url.host, { raw: true });
-    if (isRateLimitedRaw && isRateLimitedRaw.value) {
+    /* istanbul ignore if */
+    if (isRateLimitedRaw && isRateLimitedRaw.value && isRateLimitedRaw.expires) {
+      const ttl = isRateLimitedRaw.expires - Date.now();
+      if (ttl <= this.MAX_WAIT_RETRY_AFTER && tryCount < 1) {
+        this.logger.info('Wait out rate limit', ctx);
+
+        await this.sleep(ttl);
+
+        return await this.fetchWithTimeout(ctx, url, { ...init, queueLimit: 1 }, ++tryCount);
+      }
+
       throw new TooManyRequestsError((isRateLimitedRaw.expires as number - Date.now()) / 1000);
     }
 
@@ -284,7 +295,7 @@ export class Fetcher {
       if (error instanceof DOMException && error.name === 'TimeoutError') {
         if (tryCount < 1) {
           this.logger.warn(`Retrying fetch ${init?.method ?? 'GET'} ${url} because of timeout`, ctx);
-          await new Promise(sleep => setTimeout(sleep, 333));
+          await this.sleep(333);
 
           return await this.fetchWithTimeout(ctx, url, init, ++tryCount);
         }
@@ -298,9 +309,20 @@ export class Fetcher {
 
     await this.decreaseTimeoutsCount(url);
 
+    if (response.status === 429) {
+      const retryAfter = parseInt(`${response.headers.get('retry-after')}`) * 1000;
+      if (retryAfter <= this.MAX_WAIT_RETRY_AFTER && tryCount < 1) {
+        this.logger.info('Wait out rate limit', ctx);
+
+        await this.sleep(retryAfter);
+
+        return await this.fetchWithTimeout(ctx, url, { ...init, queueLimit: 1 }, ++tryCount);
+      }
+    }
+
     if (response.status >= 500 && tryCount < 3) {
       this.logger.warn(`Retrying fetch ${init?.method ?? 'GET'} ${url} because of error`, ctx);
-      await new Promise(sleep => setTimeout(sleep, 333));
+      await this.sleep(333);
 
       return await this.fetchWithTimeout(ctx, url, init, ++tryCount);
     }
@@ -348,5 +370,9 @@ export class Fetcher {
     } finally {
       release();
     }
+  }
+
+  private sleep(ms: number): Promise<void> {
+    return new Promise(sleep => setTimeout(sleep, ms));
   }
 }

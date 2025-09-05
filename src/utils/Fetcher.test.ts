@@ -190,14 +190,15 @@ describe('fetch', () => {
 
   test('converts 429 to custom TooManyRequestsError and blocks consecutive requests', async () => {
     const mockPool = mockAgent.get('https://some-rate-limited-retry-after-url.test');
-    mockPool.intercept({ path: '/' }).reply(429, undefined, { headers: { 'retry-after': '10' } });
+    mockPool.intercept({ path: '/' }).reply(429, undefined, { headers: { 'retry-after': '60' } });
+    mockPool.intercept({ path: '/' }).reply(200);
 
     try {
       await fetcher.text(ctx, new URL('https://some-rate-limited-retry-after-url.test/'));
       fail();
     } catch (error) {
       expect(error).toBeInstanceOf(TooManyRequestsError);
-      expect(error).toMatchObject({ retryAfter: 10 });
+      expect(error).toMatchObject({ retryAfter: 60 });
     }
 
     try {
@@ -206,6 +207,15 @@ describe('fetch', () => {
     } catch (error) {
       expect(error).toBeInstanceOf(TooManyRequestsError);
     }
+  });
+
+  test('retries rate limits with short ttl', async () => {
+    const mockPool = mockAgent.get('https://some-rate-limited-retry-after-short-url.test');
+    mockPool.intercept({ path: '/' }).reply(429, undefined, { headers: { 'retry-after': '1' } });
+    mockPool.intercept({ path: '/' }).reply(200);
+
+    const responseText = await fetcher.text(ctx, new URL('https://some-rate-limited-retry-after-short-url.test/'));
+    expect(responseText).toBe('');
   });
 
   test('passes through other error as HttpError after retrying 3 times', async () => {
