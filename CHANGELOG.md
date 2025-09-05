@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.46.5](https://github.com/webstreamr/webstreamr/compare/v0.46.4...v0.46.5) (2025-09-05)
+
+
+### Miscellaneous Chores
+
+* **extractor:** do only one VidSrc request per domain at a time ([b589c25](https://github.com/webstreamr/webstreamr/commit/b589c25bb543a59e84e2f89bc248b0ef7f5fbe0c))
+* **fetcher:** wait out short rate limits and retry ([211babe](https://github.com/webstreamr/webstreamr/commit/211babec3767543728f5a9ba5c75d61c57700167))
+
+
+### Bug Fixes
+
+* **fetcher:** fix TTL for rate limit cache ([e846900](https://github.com/webstreamr/webstreamr/commit/e8469003845b1af32236d480af72748fdd24fb72))
+
 ## [0.46.4](https://github.com/webstreamr/webstreamr/compare/v0.46.3...v0.46.4) (2025-09-04)
 
 
