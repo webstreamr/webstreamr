@@ -187,7 +187,7 @@ export class Fetcher {
     if (httpCacheItem.status === 429) {
       const retryAfter = parseInt(`${httpCacheItem.headers['retry-after']}`);
       if (!isNaN(retryAfter)) {
-        await this.rateLimitedCache.set<true>(url.host, true, retryAfter);
+        await this.rateLimitedCache.set<true>(url.host, true, retryAfter * 1000);
       }
 
       throw new TooManyRequestsError(retryAfter);
