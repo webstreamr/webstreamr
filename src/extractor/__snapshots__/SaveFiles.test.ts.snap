@@ -51,6 +51,8 @@ exports[`SafeFiles savefiles 1`] = `
 ]
 `;
 
+exports[`SafeFiles savefiles deleted file 1`] = `[]`;
+
 exports[`SafeFiles savefiles locked file 1`] = `[]`;
 
 exports[`SafeFiles streamhls /e/ 1`] = `

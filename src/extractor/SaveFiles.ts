@@ -21,7 +21,7 @@ export class SaveFiles extends Extractor {
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const html = await this.fetcher.text(ctx, url);
 
-    if (/File was locked by administrator/.test(html)) {
+    if (/file was locked|file was deleted/i.test(html)) {
       throw new NotFoundError();
     }
 
