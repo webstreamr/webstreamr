@@ -43,6 +43,7 @@ export enum CountryCode {
   lv = 'lv',
   mx = 'mx',
   nl = 'nl',
+  no = 'no',
   pl = 'pl',
   pt = 'pt',
   ro = 'ro',
