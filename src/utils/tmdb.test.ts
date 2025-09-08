@@ -8,33 +8,40 @@ const ctx = createTestContext();
 
 describe('getTmdbIdFromImdbId', () => {
   test('series', async () => {
-    const tmdbId1 = await getTmdbIdFromImdbId(ctx, fetcher, new ImdbId('tt2085059', 2, 4));
-    expect(tmdbId1).toBeInstanceOf(TmdbId);
-    expect(tmdbId1).toHaveProperty('id', 42009);
-    expect(tmdbId1).toHaveProperty('season', 2);
-    expect(tmdbId1).toHaveProperty('episode', 4);
+    const results = await Promise.all([
+      getTmdbIdFromImdbId(ctx, fetcher, new ImdbId('tt2085059', 2, 4)),
+      getTmdbIdFromImdbId(ctx, fetcher, new ImdbId('tt2085059', 2, 4)),
+    ]);
+    expect(results[0]).toBeInstanceOf(TmdbId);
+    expect(results[0]).toHaveProperty('id', 42009);
+    expect(results[0]).toHaveProperty('season', 2);
+    expect(results[0]).toHaveProperty('episode', 4);
 
     // from cache
-    const tmdbId2 = await getTmdbIdFromImdbId(ctx, fetcher, new ImdbId('tt2085059', 2, 4));
-    expect(tmdbId2).toBeInstanceOf(TmdbId);
-    expect(tmdbId2).toHaveProperty('id', 42009);
-    expect(tmdbId2).toHaveProperty('season', 2);
-    expect(tmdbId2).toHaveProperty('episode', 4);
+    const tmdbId = await getTmdbIdFromImdbId(ctx, fetcher, new ImdbId('tt2085059', 2, 4));
+    expect(tmdbId).toBeInstanceOf(TmdbId);
+    expect(tmdbId).toHaveProperty('id', 42009);
+    expect(tmdbId).toHaveProperty('season', 2);
+    expect(tmdbId).toHaveProperty('episode', 4);
   });
 
   test('movie', async () => {
-    const tmdbId1 = await getTmdbIdFromImdbId(ctx, fetcher, new ImdbId('tt29141112', undefined, undefined));
-    expect(tmdbId1).toBeInstanceOf(TmdbId);
-    expect(tmdbId1).toHaveProperty('id', 931944);
-    expect(tmdbId1).toHaveProperty('season', undefined);
-    expect(tmdbId1).toHaveProperty('episode', undefined);
+    const results = await Promise.all([
+      getTmdbIdFromImdbId(ctx, fetcher, new ImdbId('tt29141112', undefined, undefined)),
+      getTmdbIdFromImdbId(ctx, fetcher, new ImdbId('tt29141112', undefined, undefined)),
+    ]);
+
+    expect(results[0]).toBeInstanceOf(TmdbId);
+    expect(results[0]).toHaveProperty('id', 931944);
+    expect(results[0]).toHaveProperty('season', undefined);
+    expect(results[0]).toHaveProperty('episode', undefined);
 
     // from cache
-    const tmdbId2 = await getTmdbIdFromImdbId(ctx, fetcher, new ImdbId('tt29141112', undefined, undefined));
-    expect(tmdbId2).toBeInstanceOf(TmdbId);
-    expect(tmdbId2).toHaveProperty('id', 931944);
-    expect(tmdbId2).toHaveProperty('season', undefined);
-    expect(tmdbId2).toHaveProperty('episode', undefined);
+    const tmdbId = await getTmdbIdFromImdbId(ctx, fetcher, new ImdbId('tt29141112', undefined, undefined));
+    expect(tmdbId).toBeInstanceOf(TmdbId);
+    expect(tmdbId).toHaveProperty('id', 931944);
+    expect(tmdbId).toHaveProperty('season', undefined);
+    expect(tmdbId).toHaveProperty('episode', undefined);
   });
 
   test('throws with invalid imdb id', async () => {
@@ -44,33 +51,41 @@ describe('getTmdbIdFromImdbId', () => {
 
 describe('getImdbIdFromTmdbId', () => {
   test('series', async () => {
-    const imdbId1 = await getImdbIdFromTmdbId(ctx, fetcher, new TmdbId(42009, 2, 4));
-    expect(imdbId1).toBeInstanceOf(ImdbId);
-    expect(imdbId1).toHaveProperty('id', 'tt2085059');
-    expect(imdbId1).toHaveProperty('season', 2);
-    expect(imdbId1).toHaveProperty('episode', 4);
+    const results = await Promise.all([
+      getImdbIdFromTmdbId(ctx, fetcher, new TmdbId(42009, 2, 4)),
+      getImdbIdFromTmdbId(ctx, fetcher, new TmdbId(42009, 2, 4)),
+    ]);
+
+    expect(results[0]).toBeInstanceOf(ImdbId);
+    expect(results[0]).toHaveProperty('id', 'tt2085059');
+    expect(results[0]).toHaveProperty('season', 2);
+    expect(results[0]).toHaveProperty('episode', 4);
 
     // from cache
-    const imdbId2 = await getImdbIdFromTmdbId(ctx, fetcher, new TmdbId(42009, 2, 4));
-    expect(imdbId2).toBeInstanceOf(ImdbId);
-    expect(imdbId2).toHaveProperty('id', 'tt2085059');
-    expect(imdbId2).toHaveProperty('season', 2);
-    expect(imdbId2).toHaveProperty('episode', 4);
+    const imdbId = await getImdbIdFromTmdbId(ctx, fetcher, new TmdbId(42009, 2, 4));
+    expect(imdbId).toBeInstanceOf(ImdbId);
+    expect(imdbId).toHaveProperty('id', 'tt2085059');
+    expect(imdbId).toHaveProperty('season', 2);
+    expect(imdbId).toHaveProperty('episode', 4);
   });
 
   test('movie', async () => {
-    const imdbId1 = await getImdbIdFromTmdbId(ctx, fetcher, new TmdbId(931944, undefined, undefined));
-    expect(imdbId1).toBeInstanceOf(ImdbId);
-    expect(imdbId1).toHaveProperty('id', 'tt29141112');
-    expect(imdbId1).toHaveProperty('season', undefined);
-    expect(imdbId1).toHaveProperty('episode', undefined);
+    const results = await Promise.all([
+      getImdbIdFromTmdbId(ctx, fetcher, new TmdbId(931944, undefined, undefined)),
+      getImdbIdFromTmdbId(ctx, fetcher, new TmdbId(931944, undefined, undefined)),
+    ]);
+
+    expect(results[0]).toBeInstanceOf(ImdbId);
+    expect(results[0]).toHaveProperty('id', 'tt29141112');
+    expect(results[0]).toHaveProperty('season', undefined);
+    expect(results[0]).toHaveProperty('episode', undefined);
 
     // from cache
-    const imdbId2 = await getImdbIdFromTmdbId(ctx, fetcher, new TmdbId(931944, undefined, undefined));
-    expect(imdbId2).toBeInstanceOf(ImdbId);
-    expect(imdbId2).toHaveProperty('id', 'tt29141112');
-    expect(imdbId2).toHaveProperty('season', undefined);
-    expect(imdbId2).toHaveProperty('episode', undefined);
+    const imdbId = await getImdbIdFromTmdbId(ctx, fetcher, new TmdbId(931944, undefined, undefined));
+    expect(imdbId).toBeInstanceOf(ImdbId);
+    expect(imdbId).toHaveProperty('id', 'tt29141112');
+    expect(imdbId).toHaveProperty('season', undefined);
+    expect(imdbId).toHaveProperty('episode', undefined);
   });
 
   test('throws with invalid tmdb id', async () => {

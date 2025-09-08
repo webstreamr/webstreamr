@@ -1,3 +1,4 @@
+import { Mutex } from 'async-mutex';
 import { NotFoundError } from '../error';
 import { Context } from '../types';
 import { envGet } from './env';
@@ -27,6 +28,7 @@ interface TvDetailsResponsePartial {
   name: string;
 }
 
+const mutexes = new Map<string, Mutex>();
 const tmdbFetch = async (ctx: Context, fetcher: Fetcher, path: string, searchParams?: Record<string, string | undefined>): Promise<unknown> => {
   const config: CustomRequestInit = {
     headers: {
@@ -44,7 +46,21 @@ const tmdbFetch = async (ctx: Context, fetcher: Fetcher, path: string, searchPar
     }
   });
 
-  return JSON.parse(await fetcher.text(ctx, url, config));
+  let mutex = mutexes.get(url.href);
+  if (!mutex) {
+    mutex = new Mutex();
+    mutexes.set(url.href, mutex);
+  }
+
+  const data = await mutex.runExclusive(async () => {
+    return JSON.parse(await fetcher.text(ctx, url, config));
+  });
+
+  if (!mutex.isLocked()) {
+    mutexes.delete(url.href);
+  }
+
+  return data;
 };
 
 const imdbTmdbMap = new Map<string, number>();
