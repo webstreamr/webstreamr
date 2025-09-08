@@ -1,5 +1,30 @@
 # Changelog
 
+## [0.47.0](https://github.com/webstreamr/webstreamr/compare/v0.46.5...v0.47.0) (2025-09-08)
+
+
+### Miscellaneous Chores
+
+* add infos about sources and extractors to description ([3b8481e](https://github.com/webstreamr/webstreamr/commit/3b8481ed3fe11f64bc73e3a90bd6932da2cf6c96))
+* add more details to /live / ipcheck endpoint, add cloudnestra ([9f15a03](https://github.com/webstreamr/webstreamr/commit/9f15a03a5a5293a7d6dd14e7d86d4c7d119e63be))
+* configure a bunch of more language mappings ([b60f91a](https://github.com/webstreamr/webstreamr/commit/b60f91a96a1dcb83085372b3cc36cf50fb6b4f96))
+* **deps:** lock file maintenance ([#329](https://github.com/webstreamr/webstreamr/issues/329)) ([224b241](https://github.com/webstreamr/webstreamr/commit/224b241cd6874d95cec4923ff2add051ef582eaf))
+* **deps:** update dependency @types/node to v22.18.1 ([#328](https://github.com/webstreamr/webstreamr/issues/328)) ([907a150](https://github.com/webstreamr/webstreamr/commit/907a150574baa8d765ccede10c8b19eea0710755))
+* **deps:** update eslint monorepo to v9.35.0 ([#324](https://github.com/webstreamr/webstreamr/issues/324)) ([5598399](https://github.com/webstreamr/webstreamr/commit/55983990fb3c3f404545ba6d18ca23bb7f94ae31))
+* drop uuid in favor of node:crypto randomUUID ([3380185](https://github.com/webstreamr/webstreamr/commit/33801854495d9968847fc2a96f797866f5166967))
+* **tmdb:** use mutex to avoid double tmdb requests ([e1b5e7b](https://github.com/webstreamr/webstreamr/commit/e1b5e7bce169bd78d2883c0d8e004504845b08a6))
+
+
+### Features
+
+* **extractor:** add HubCloud with FSL ([1ecb088](https://github.com/webstreamr/webstreamr/commit/1ecb088b607f6b961bfb69889f02d7db8aee3a45))
+* **source:** add 4KHDHub ([8a1645f](https://github.com/webstreamr/webstreamr/commit/8a1645fb81afd314db724ead699aa98d7e211e65))
+
+
+### Bug Fixes
+
+* **extractor:** gracefully handle deleted files for SaveFiles ([48c7735](https://github.com/webstreamr/webstreamr/commit/48c773516521bac37ed8218df5544bdd9228a8f5))
+
 ## [0.46.5](https://github.com/webstreamr/webstreamr/compare/v0.46.4...v0.46.5) (2025-09-05)
 
 
