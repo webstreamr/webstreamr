@@ -103,39 +103,50 @@ addon.get('/live', async (req: Request, res: Response) => {
     new MostraGuarda(fetcher),
     new XPrime(fetcher),
   ];
+  const hrefs = [
+    ...sources.map(source => source.baseUrl),
+    'https://cloudnestra.com',
+  ];
+
+  const results = new Map<string, string>();
 
   let blockedCount = 0;
   let errorCount = 0;
 
-  const fetchFactories = sources.map(source => async () => {
-    const url = new URL(source.baseUrl);
+  const fetchFactories = hrefs.map(href => async () => {
+    const url = new URL(href);
 
     try {
       await fetcher.head(ctx, url, { noCache: true });
+      results.set(url.host, 'ok');
     } catch (error) {
       if (error instanceof BlockedError) {
+        results.set(url.host, 'blocked');
         blockedCount++;
       } else {
+        results.set(url.host, 'error');
         errorCount++;
       }
 
-      logErrorAndReturnNiceString(ctx, logger, url.href, error);
+      logErrorAndReturnNiceString(ctx, logger, href, error);
     }
   });
 
-  if (Date.now() - lastLiveProbeRequestsTimestamp > 60000 || 'forceIpCheck' in req.query) { // every minute
+  if (Date.now() - lastLiveProbeRequestsTimestamp > 60000 || 'force' in req.query) { // every minute
     await Promise.all(fetchFactories.map(fn => fn()));
     lastLiveProbeRequestsTimestamp = Date.now();
   }
 
+  const details = Object.fromEntries(results);
+
   if (blockedCount > 0) {
     // TODO: fail health check and try to get a clean IP if infra is ready
     logger.warn('IP might be not clean and leading to blocking.', ctx);
-    res.json({ status: 'ok', ipStatus: 'error' });
+    res.json({ status: 'ok', details });
   } else if (errorCount === sources.length) {
-    res.status(503).json({ status: 'error' });
+    res.status(503).json({ status: 'error', details });
   } else {
-    res.json({ status: 'ok', ipStatus: 'ok' });
+    res.json({ status: 'ok', ipStatus: 'ok', details });
   }
 });
 
