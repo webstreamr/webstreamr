@@ -1,0 +1,307 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`FourKHDHub handle crank 2006 1`] = `
+[
+  {
+    "meta": {
+      "bytes": 17255031111,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Crank (2006) Director's Cut 1080p BluRay REMUX VC-1 [Hindi AMZN DDP 5.1 ~ 640kbps + English DTS-HD HRA 5.1] ESubs ~ (Arrow) FraMeSToR.mkv",
+    },
+    "url": "https://hubcloud.one/drive/lqa8qw881tasohi",
+  },
+  {
+    "meta": {
+      "bytes": 10479720202,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Crank (2006) Director's Cut 1080p BluRay x264 [Hindi AMZN DDP 5.1 ~ 640kbps + English DTS] ESubs ~ (Arrow) CtrlHD.mkv",
+    },
+    "url": "https://hubcloud.one/drive/eijzmr9jiwy1r4z",
+  },
+  {
+    "meta": {
+      "bytes": 4176855695,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Crank (2006) Director's Cut 1080p 10bit BluRay x265 HEVC [Hindi AMZN DDP 5.1 ~ 640Kbps + English DD 5.1] ESubs ~ (Arrow) Chivaman.mkv",
+    },
+    "url": "https://hubcloud.one/drive/sc0yyca6hq11y0r",
+  },
+]
+`;
+
+exports[`FourKHDHub handle crayon shin-chan 1993 1`] = `
+[
+  {
+    "meta": {
+      "bytes": 28550795100,
+      "countryCodes": [
+        "hi",
+        "ja",
+      ],
+      "height": 1080,
+      "title": "Crayon Shinchan Action Kamen vs Demon (1993) 1080p BluRay REMUX AVC [Hindi DD 2.0 + Japanese FLAC 2.0] (PitiPati-Ionicboy) (4kHDHub.com).mkv",
+    },
+    "url": "https://hubcloud.one/drive/bffzqlpqfllfcld",
+  },
+  {
+    "meta": {
+      "bytes": 10383083438,
+      "countryCodes": [
+        "hi",
+        "ja",
+      ],
+      "height": 1080,
+      "title": "Crayon Shinchan Action Kamen vs Demon (1993) 1080p BluRay [Hindi DD 2.0 + Japanese DD 2.0] x264 (WiKi-Ionicboy) (4kHDHub.com).mkv",
+    },
+    "url": "https://hubcloud.one/drive/zsn5msss5usmasw",
+  },
+  {
+    "meta": {
+      "bytes": 5776731013,
+      "countryCodes": [
+        "hi",
+        "ja",
+      ],
+      "height": 1080,
+      "title": "Crayon Shinchan Action Kamen vs Demon (1993) 1080p 10bit BluRay HEVC [Hindi DD 2.0 + Japanese DD 2.0] H.265 (WiKi-Ionicboy) (4kHDHub.com).mkv",
+    },
+    "url": "https://hubcloud.one/drive/vlv5sssjtztvrsc",
+  },
+]
+`;
+
+exports[`FourKHDHub handle crayon shin-chan 1998 1`] = `
+[
+  {
+    "meta": {
+      "bytes": 31514322534,
+      "countryCodes": [
+        "hi",
+        "ja",
+      ],
+      "height": 1080,
+      "title": "Crayon Shinchan Blitzkrieg Pigs Hoofs Secret Mission (1998) 1080p  BluRay REMUX AVC [Hin-Tam-Tel DD 2.0 + Japanese DD 2.0]-Ionicboy (4kHDHub.com).mkv",
+    },
+    "url": "https://hubcloud.one/drive/ksnkh55ythyhohc",
+  },
+  {
+    "meta": {
+      "bytes": 10146860236,
+      "countryCodes": [
+        "hi",
+        "ja",
+      ],
+      "height": 1080,
+      "title": "Crayon Shinchan Blitzkrieg Pigs Hoofs Secret Mission (1998) 1080p BluRay [Hin-Tam-Tel DD 2.0 + Japanese DD 2.0] x264 (WiKi-Ionicboy).mkv",
+    },
+    "url": "https://hubcloud.one/drive/1sawyohyl2g1lpw",
+  },
+  {
+    "meta": {
+      "bytes": 5851892940,
+      "countryCodes": [
+        "hi",
+        "ja",
+      ],
+      "height": 1080,
+      "title": "Crayon Shinchan Blitzkrieg Pigs Hoofs Secret Mission (1998) 1080p 10bit BluRay HEVC [Hin-Tam-Tel DD 2.0 + Japanese DD 2.0] H.265 (WiKi-Ionicboy).mkv",
+    },
+    "url": "https://hubcloud.one/drive/dzo8jfjpmybfd3y",
+  },
+]
+`;
+
+exports[`FourKHDHub handle dark 2017 s01e02 1`] = `
+[
+  {
+    "meta": {
+      "bytes": 2126008811,
+      "countryCodes": [
+        "de",
+        "en",
+      ],
+      "height": 1080,
+      "title": "Dark.S01E02.Lies.1080p.NF.WEB-DL.English.DDP5.1-German.DDP5.1.Atmos.H.264-4kHdHub.Com.mkv",
+    },
+    "url": "https://hubcloud.one/drive/rq7tg4llqgks1tq",
+  },
+  {
+    "meta": {
+      "bytes": 4348654387,
+      "countryCodes": [
+        "de",
+        "en",
+      ],
+      "height": 2160,
+      "title": "Dark.S01E02.Lies.2160p.NF.WEB-DL.DUAL.DDP5.1.Atmos.H.265-4kHdHub.Com.mkv",
+    },
+    "url": "https://hubcloud.one/drive/p1uulgcc4g4k9cq",
+  },
+]
+`;
+
+exports[`FourKHDHub handle dexter original sin 2024 s01e01 1`] = `
+[
+  {
+    "meta": {
+      "bytes": 5733781340,
+      "countryCodes": [
+        "en",
+      ],
+      "height": 2160,
+      "title": "Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv",
+    },
+    "url": "https://hubcloud.one/drive/idt1evqfuviqiei",
+  },
+  {
+    "meta": {
+      "bytes": 5143223336,
+      "countryCodes": [
+        "en",
+      ],
+      "height": 2160,
+      "title": "Dexter.Original.Sin.S01E01.2160p.PMTP.WEB-DL.DDP5.1.DV.H.265-Tyrell.mkv",
+    },
+    "url": "https://hubcloud.one/drive/v6yd0pgnyteceev",
+  },
+  {
+    "meta": {
+      "bytes": 5046586572,
+      "countryCodes": [
+        "en",
+      ],
+      "height": 2160,
+      "title": "Dexter.Original.Sin.S01E01.2160p.PMTP.WEB-DL.DDP5.1.HDR.H.265-Tyrell.mkv",
+    },
+    "url": "https://hubcloud.one/drive/6f11sgo1qosl60k",
+  },
+  {
+    "meta": {
+      "bytes": 5057323991,
+      "countryCodes": [
+        "en",
+      ],
+      "height": 2160,
+      "title": "Dexter.Original.Sin.S01E01.2160p.PMTP.WEB-DL.DDP5.1.DV.HDR.H.265-Tyrell.mkv",
+    },
+    "url": "https://hubcloud.one/drive/ugrbggibuhb1ggd",
+  },
+]
+`;
+
+exports[`FourKHDHub handle dexter resurrection 2025 s01e01 1`] = `
+[
+  {
+    "meta": {
+      "bytes": 6012954214,
+      "countryCodes": [
+        "en",
+      ],
+      "height": 2160,
+      "title": "Dexter.Resurrection.S01E01.A.Beating.Heart.2160p.AMZN.WEB-DL.English.DDP5.1.H.265-4kHdHub.Com.mkv",
+    },
+    "url": "https://hubcloud.one/drive/sa0mjerabpraxas",
+  },
+  {
+    "meta": {
+      "bytes": 3285649981,
+      "countryCodes": [
+        "en",
+      ],
+      "height": 1080,
+      "title": "Dexter.Resurrection.S01E01.A.Beating.Heart.1080p.AMZN.WEB-DL.English.DDP5.1.H.264-4kHdHub.Com.mkv",
+    },
+    "url": "https://hubcloud.one/drive/xzdxd7iexxxxx2v",
+  },
+  {
+    "meta": {
+      "bytes": 935109591,
+      "countryCodes": [
+        "en",
+      ],
+      "height": 1080,
+      "title": "Dexter.Resurrection.S01E01.A.Beating.Heart.1080p.AMZN.WEB-DL.English.DDP5.1.H.265-4kHdHub.Com.mkv",
+    },
+    "url": "https://hubcloud.one/drive/2hs2gt33gcggocc",
+  },
+]
+`;
+
+exports[`FourKHDHub handle non-existent devil's bath 2024 gracefully 1`] = `[]`;
+
+exports[`FourKHDHub handle superman 2025 1`] = `
+[
+  {
+    "meta": {
+      "bytes": 26671746908,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 2160,
+      "title": "Superman (2025) IMAX 2160p MA WEB-DL DV HDR10+ 10bit HEVC [Hindi-Tamil-Telugu DDP 5.1 + English DDP Atmos 5.1] x265 (126811-LUMiX).mkv",
+    },
+    "url": "https://hubcloud.one/drive/vhcdcl3dyw0g00f",
+  },
+  {
+    "meta": {
+      "bytes": 26661009489,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 2160,
+      "title": "Superman (2025) IMAX 2160p MA WEB-DL SDR 10bit HEVC [Hindi-Tamil-Telugu DDP 5.1 + English DDP Atmos 5.1] x265 (HONE-LUMiX).mkv",
+    },
+    "url": "https://hubcloud.one/drive/rwit2wctpiuiw51",
+  },
+  {
+    "meta": {
+      "bytes": 23665269800,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Superman (2025) IMAX 1080p MA WEBRip [Hindi-Tamil-Telugu DDP 5.1 + English DDP Atmos 5.1] x264 (HiDt-LUMiX).mkv",
+    },
+    "url": "https://hubcloud.one/drive/2i1vnx0nnxxsnnz",
+  },
+  {
+    "meta": {
+      "bytes": 10307921510,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Superman (2025) IMAX 1080p MA WEB-DL [Hindi-Tamil-Telugu DDP 5.1 + English DDP Atmos 5.1] x264 (BYNDR-LUMiX).mkv",
+    },
+    "url": "https://hubcloud.one/drive/ntjnpq5qa5tqtna",
+  },
+  {
+    "meta": {
+      "bytes": 7451768258,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Superman (2025) IMAX 1080p DS4K MA WEBRip 10bit HEVC [Hindi-Tamil-Telugu DDP 5.1 + English DDP Atmos 5.1] x265 (StOiC-LUMiX).mkv",
+    },
+    "url": "https://hubcloud.one/drive/f8a1y8218xq1xl1",
+  },
+]
+`;

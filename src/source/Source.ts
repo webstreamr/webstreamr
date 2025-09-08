@@ -58,6 +58,10 @@ export abstract class Source {
       await Source.sourceResultCache.set<SourceResult[]>(cacheKey, sourceResults, this.ttl);
     }
 
+    if (this.countryCodes.includes(CountryCode.multi)) {
+      return sourceResults;
+    }
+
     return sourceResults.filter(sourceResult => sourceResult.meta.countryCodes?.some(countryCode => countryCode in ctx.config));
   }
 }

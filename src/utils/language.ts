@@ -6,6 +6,7 @@ const countryCodeMap: Record<CountryCode, { language: string; flag: string; iso6
   en: { language: 'English', flag: '🇺🇸', iso639: 'eng' },
   es: { language: 'Castilian Spanish', flag: '🇪🇸', iso639: 'spa' },
   fr: { language: 'French', flag: '🇫🇷', iso639: 'fra' },
+  hi: { language: 'Hindi', flag: '🇮🇳', iso639: 'hin' },
   it: { language: 'Italian', flag: '🇮🇹', iso639: 'ita' },
   ja: { language: 'Japanese', flag: '🇯🇵', iso639: 'jpn' },
   ko: { language: 'Korean', flag: '🇰🇷', iso639: 'kor' },
@@ -22,4 +23,16 @@ export const flagFromCountryCode = (countryCode: CountryCode) => {
 
 export const iso639FromCountryCode = (countryCode: CountryCode) => {
   return countryCodeMap[countryCode].iso639;
+};
+
+export const findCountryCodes = (value: string): CountryCode[] => {
+  const countryCodes: CountryCode[] = [];
+
+  for (const countryCode in countryCodeMap) {
+    if (value.includes(countryCodeMap[countryCode as CountryCode]['language'])) {
+      countryCodes.push(countryCode as CountryCode);
+    }
+  }
+
+  return countryCodes;
 };

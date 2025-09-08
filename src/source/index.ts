@@ -3,6 +3,7 @@ import { CineHDPlus } from './CineHDPlus';
 import { Cuevana } from './Cuevana';
 import { Einschalten } from './Einschalten';
 import { Eurostreaming } from './Eurostreaming';
+import { FourKHDHub } from './FourKHDHub';
 import { Frembed } from './Frembed';
 import { FrenchCloud } from './FrenchCloud';
 import { HomeCine } from './HomeCine';
@@ -24,6 +25,7 @@ export * from './Source';
 
 export const createSources = (fetcher: Fetcher): Source[] => [
   // multi
+  new FourKHDHub(fetcher),
   new VixSrc(fetcher),
   // EN
   new PrimeWire(fetcher),

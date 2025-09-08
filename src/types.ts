@@ -25,6 +25,7 @@ export enum CountryCode {
   en = 'en',
   es = 'es',
   fr = 'fr',
+  hi = 'hi',
   it = 'it',
   ja = 'ja',
   ko = 'ko',
