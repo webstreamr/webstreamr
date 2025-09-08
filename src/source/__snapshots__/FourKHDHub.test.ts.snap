@@ -239,6 +239,35 @@ exports[`FourKHDHub handle dexter resurrection 2025 s01e01 1`] = `
 ]
 `;
 
+exports[`FourKHDHub handle lovely runner 2024 s01e01 1`] = `
+[
+  {
+    "meta": {
+      "bytes": 3586297692,
+      "countryCodes": [
+        "hi",
+        "ko",
+      ],
+      "height": 1080,
+      "title": "Lovely.Runner.S01E01.1080p.AMZN.WEB-DL.Hindi.DDP2.0-Korean.DDP2.0.H.264-4kHdHub.Com.mkv",
+    },
+    "url": "https://hubcloud.one/drive/8t7i1lrytgz56eo",
+  },
+  {
+    "meta": {
+      "bytes": 10340133765,
+      "countryCodes": [
+        "hi",
+        "ko",
+      ],
+      "height": 1080,
+      "title": "Lovely Runner S01E01 1080p WEB-DL [Hindi DDP 2.0 + Korean DDP 5.1] x264 (PandaMoon-LUMiX).mkv",
+    },
+    "url": "https://hubcloud.one/drive/171fxx1xmbezm1r",
+  },
+]
+`;
+
 exports[`FourKHDHub handle non-existent devil's bath 2024 gracefully 1`] = `[]`;
 
 exports[`FourKHDHub handle superman 2025 1`] = `

@@ -42,13 +42,14 @@ export class FourKHDHub extends Source {
       return Promise.all(
         $(`.episode-item`)
           .filter((_i, el) => $('.episode-title', el).text().includes(`S${String(tmdbId.season).padStart(2, '0')}`))
-          .map(async (_i, el) => {
-            const downloadItemEl = $('.episode-download-item', el)
+          .map((_i, el) => ({
+            countryCodes: findCountryCodes($(el).html() as string),
+            downloadItem: $('.episode-download-item', el)
               .filter((_i, el) => $(el).text().includes(`Episode-${String(tmdbId.episode).padStart(2, '0')}`))
-              .get(0);
-
-            return await this.extractSourceResults(ctx, $, downloadItemEl as BasicAcceptedElems<AnyNode>, findCountryCodes($(el).html() as string));
-          }).toArray(),
+              .get(0),
+          })).filter((_i, { downloadItem }) => downloadItem !== undefined)
+          .map(async (_id, { countryCodes, downloadItem }) => await this.extractSourceResults(ctx, $, downloadItem as BasicAcceptedElems<AnyNode>, countryCodes))
+          .toArray(),
       );
     }
 

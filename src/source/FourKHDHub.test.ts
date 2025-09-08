@@ -50,4 +50,9 @@ describe('FourKHDHub', () => {
     const streams = await source.handle(ctx, 'movie', new TmdbId(1948, undefined, undefined));
     expect(streams).toMatchSnapshot();
   });
+
+  test('handle lovely runner 2024 s01e01', async () => {
+    const streams = await source.handle(ctx, 'series', new TmdbId(230923, 1, 1));
+    expect(streams).toMatchSnapshot();
+  });
 });
