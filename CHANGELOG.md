@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.48.0](https://github.com/webstreamr/webstreamr/compare/v0.47.2...v0.48.0) (2025-09-08)
+
+
+### Features
+
+* **extractor:** support PixelServer in HubCloud ([39850dc](https://github.com/webstreamr/webstreamr/commit/39850dccf70a2bae1355e6c3018931457cefd382))
+
 ## [0.47.2](https://github.com/webstreamr/webstreamr/compare/v0.47.1...v0.47.2) (2025-09-08)
 
 
