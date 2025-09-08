@@ -265,7 +265,7 @@ export function landingTemplate(manifest: CustomManifest) {
       </div>
       <h1 class="name">${manifest.name}</h1>
       <h2 class="version">v${manifest.version || '0.0.0'}</h2>
-      <h2 class="description">${manifest.description || ''}</h2>
+      <div class="description"><small>${manifest.description.replace(/\n/g, '<br>') || ''}</small></div>
 
       <div class="separator"></div>
 
