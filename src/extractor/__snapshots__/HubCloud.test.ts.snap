@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`HubCloud handle crayon shin-chan 1993 1`] = `
+[
+  {
+    "format": "unknown",
+    "label": "HubCloud (FSL)",
+    "meta": {
+      "bytes": 28550795100,
+      "countryCodes": [],
+      "title": "Crayon Shinchan Action Kamen vs Demon (1993) 1080p BluRay REMUX AVC [Hindi DD 2.0 + Japanese FLAC 2.0] (PitiPati-Ionicboy) (4kHDHub.com).mkv",
+    },
+    "sourceId": "hubcloud_fsl",
+    "ttl": 259200000,
+    "url": "https://pub-52f57cc1b81f4ecdac02802c1566c33d.r2.dev/Crayon%20Shinchan%20Action%20Kamen%20vs%20Demon%201993%201080p%20BluRay%20REMUX%20AVC%20[Hindi%20DD%202.0%20+%20Japanese%20FLAC%202.0]%20PitiPati-Ionicboy%204kHDHub.com.mkv?token=1757269247",
+  },
+]
+`;
+
+exports[`HubCloud handle dexter original sin 2024 s01e01 1`] = `
+[
+  {
+    "format": "unknown",
+    "label": "HubCloud (FSL)",
+    "meta": {
+      "bytes": 5733781340,
+      "countryCodes": [],
+      "title": "Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv",
+    },
+    "sourceId": "hubcloud_fsl",
+    "ttl": 259200000,
+    "url": "https://pub-52f57cc1b81f4ecdac02802c1566c33d.r2.dev/Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv?token=1757266673",
+  },
+]
+`;

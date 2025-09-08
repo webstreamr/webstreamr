@@ -4,6 +4,7 @@ import { Dropload } from './Dropload';
 import { ExternalUrl } from './ExternalUrl';
 import { Extractor } from './Extractor';
 import { Fastream } from './Fastream';
+import { HubCloud } from './HubCloud';
 import { KinoGer } from './KinoGer';
 import { Mixdrop } from './Mixdrop';
 import { SaveFiles } from './SaveFiles';
@@ -24,6 +25,7 @@ export const createExtractors = (fetcher: Fetcher): Extractor[] => [
   new DoodStream(fetcher),
   new Dropload(fetcher),
   new Fastream(fetcher),
+  new HubCloud(fetcher),
   new KinoGer(fetcher),
   new Mixdrop(fetcher),
   new SaveFiles(fetcher),
