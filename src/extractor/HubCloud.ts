@@ -22,7 +22,11 @@ export class HubCloud extends Extractor {
     const $ = cheerio.load(linksHtml);
 
     return $('a')
-      .filter((_i, el) => $(el).text().includes('FSL'))
+      .filter((_i, el) => {
+        const text = $(el).text();
+
+        return text.includes('FSL') || text.includes('Download File');
+      })
       .map((_i, el) => {
         const url = new URL($(el).attr('href') as string);
         return {

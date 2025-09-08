@@ -17,4 +17,8 @@ describe('HubCloud', () => {
   test('handle crayon shin-chan 1993', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://hubcloud.one/drive/bffzqlpqfllfcld'))).toMatchSnapshot();
   });
+
+  test('handle dark 2017 s03e08', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://hubcloud.one/drive/nknlofk8snfnknh'))).toMatchSnapshot();
+  });
 });
