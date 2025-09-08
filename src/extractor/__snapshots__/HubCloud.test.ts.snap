@@ -31,6 +31,18 @@ exports[`HubCloud handle dark 2017 s03e08 1`] = `
     "ttl": 259200000,
     "url": "https://pub-c0c400d353df4c68ae3a2d5e089ecf60.r2.dev/Dark.S03E08.The.Paradise.1080p.NF.WEB-DL.English.DDP5.1-German.DDP5.1.H.264-4kHdHub.Com.mkv",
   },
+  {
+    "format": "unknown",
+    "label": "HubCloud (PixelServer)",
+    "meta": {
+      "bytes": 3382286745,
+      "countryCodes": [],
+      "title": "Dark.S03E08.The.Paradise.1080p.NF.WEB-DL.English.DDP5.1-German.DDP5.1.H.264-4kHdHub.Com.mkv",
+    },
+    "sourceId": "hubcloud_pixelserver",
+    "ttl": 259200000,
+    "url": "https://pixeldrain.dev/api/file/2kFQBQio?download",
+  },
 ]
 `;
 
@@ -46,7 +58,19 @@ exports[`HubCloud handle dexter original sin 2024 s01e01 1`] = `
     },
     "sourceId": "hubcloud_fsl",
     "ttl": 259200000,
-    "url": "https://pub-52f57cc1b81f4ecdac02802c1566c33d.r2.dev/Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv?token=1757266673",
+    "url": "https://pub-52f57cc1b81f4ecdac02802c1566c33d.r2.dev/Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv?token=1757321957",
+  },
+  {
+    "format": "unknown",
+    "label": "HubCloud (PixelServer)",
+    "meta": {
+      "bytes": 5733781340,
+      "countryCodes": [],
+      "title": "Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv",
+    },
+    "sourceId": "hubcloud_pixelserver",
+    "ttl": 259200000,
+    "url": "https://pixeldrain.net/api/file/HqAiguQV",
   },
 ]
 `;

@@ -21,26 +21,45 @@ export class HubCloud extends Extractor {
     const linksHtml = await this.fetcher.text(ctx, new URL(redirectUrlMatch[1] as string));
     const $ = cheerio.load(linksHtml);
 
-    return $('a')
-      .filter((_i, el) => {
-        const text = $(el).text();
+    return [
+      ...$('a')
+        .filter((_i, el) => {
+          const text = $(el).text();
 
-        return text.includes('FSL') || text.includes('Download File');
-      })
-      .map((_i, el) => {
-        const url = new URL($(el).attr('href') as string);
-        return {
-          url,
-          format: Format.unknown,
-          label: `${this.label} (FSL)`,
-          sourceId: `${this.id}_fsl`,
-          ttl: this.ttl,
-          meta: {
-            ...meta,
-            bytes: bytes.parse($('#size').text()) as number,
-            title: $('title').text().trim(),
-          },
-        };
-      }).toArray();
+          return text.includes('FSL') || text.includes('Download File');
+        })
+        .map((_i, el) => {
+          const url = new URL($(el).attr('href') as string);
+          return {
+            url,
+            format: Format.unknown,
+            label: `${this.label} (FSL)`,
+            sourceId: `${this.id}_fsl`,
+            ttl: this.ttl,
+            meta: {
+              ...meta,
+              bytes: bytes.parse($('#size').text()) as number,
+              title: $('title').text().trim(),
+            },
+          };
+        }).toArray(),
+      ...$('a')
+        .filter((_i, el) => $(el).text().includes('PixelServer'))
+        .map((_i, el) => {
+          const url = new URL(($(el).attr('href') as string).replace('/u/', '/api/file/'));
+          return {
+            url,
+            format: Format.unknown,
+            label: `${this.label} (PixelServer)`,
+            sourceId: `${this.id}_pixelserver`,
+            ttl: this.ttl,
+            meta: {
+              ...meta,
+              bytes: bytes.parse($('#size').text()) as number,
+              title: $('title').text().trim(),
+            },
+          };
+        }).toArray(),
+    ];
   };
 }
