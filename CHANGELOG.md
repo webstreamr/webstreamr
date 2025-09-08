@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.47.2](https://github.com/webstreamr/webstreamr/compare/v0.47.1...v0.47.2) (2025-09-08)
+
+
+### Bug Fixes
+
+* **extractor:** find more FSL links ([6823236](https://github.com/webstreamr/webstreamr/commit/68232363ae0accc8f4920929ba02e7d1ee55fb83))
+
 ## [0.47.1](https://github.com/webstreamr/webstreamr/compare/v0.47.0...v0.47.1) (2025-09-08)
 
 
