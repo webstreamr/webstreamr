@@ -1,7 +1,7 @@
+import { randomUUID } from 'node:crypto';
 import express, { NextFunction, Request, Response } from 'express';
 import { socksDispatcher } from 'fetch-socks';
 import { Agent, Dispatcher, interceptors, ProxyAgent, setGlobalDispatcher } from 'undici';
-import { v4 as uuidv4 } from 'uuid';
 import winston from 'winston';
 import { ConfigureController, ManifestController, StreamController } from './controller';
 import { BlockedError, logErrorAndReturnNiceString } from './error';
@@ -62,7 +62,7 @@ const addon = express();
 addon.set('trust proxy', true);
 
 addon.use((_req: Request, res: Response, next: NextFunction) => {
-  res.setHeader('X-Request-ID', uuidv4());
+  res.setHeader('X-Request-ID', randomUUID());
 
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', '*');

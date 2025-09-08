@@ -47,7 +47,6 @@
     "tough-cookie": "^6.0.0",
     "undici": "^7.10.0",
     "unpacker": "^1.0.1",
-    "uuid": "^11.1.0",
     "winston": "^3.17.0"
   },
   "devDependencies": {
