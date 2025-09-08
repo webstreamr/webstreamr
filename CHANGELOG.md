@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.47.1](https://github.com/webstreamr/webstreamr/compare/v0.47.0...v0.47.1) (2025-09-08)
+
+
+### Miscellaneous Chores
+
+* add Norwegian, sort language list ([6577eda](https://github.com/webstreamr/webstreamr/commit/6577eda289770995b835de17fad3cbfd702af6e8))
+
+
+### Bug Fixes
+
+* **source:** handle missing 4KHDHub episodes more gracefully ([c2983f0](https://github.com/webstreamr/webstreamr/commit/c2983f0551faff525217fbd45f9791a86205cb43))
+
 ## [0.47.0](https://github.com/webstreamr/webstreamr/compare/v0.46.5...v0.47.0) (2025-09-08)
 
 
