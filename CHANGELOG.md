@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.49.0](https://github.com/webstreamr/webstreamr/compare/v0.48.0...v0.49.0) (2025-09-09)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency typescript-eslint to v8.43.0 ([#333](https://github.com/webstreamr/webstreamr/issues/333)) ([0bfced5](https://github.com/webstreamr/webstreamr/commit/0bfced503c9476dce739ee569978bf16baac2b33))
+
+
+### Features
+
+* **extractor:** add FileLions extractor ([8430e5d](https://github.com/webstreamr/webstreamr/commit/8430e5d0d1ceb30d267090cc3e1409b9e9773180))
+
 ## [0.48.0](https://github.com/webstreamr/webstreamr/compare/v0.47.2...v0.48.0) (2025-09-08)
 
 
