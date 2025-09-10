@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.49.3](https://github.com/webstreamr/webstreamr/compare/v0.49.2...v0.49.3) (2025-09-10)
+
+
+### Miscellaneous Chores
+
+* **extractor:** clean-up header/referer passing ([057b234](https://github.com/webstreamr/webstreamr/commit/057b2346dc480963f74836554fca2028329857c5))
+
+
+### Bug Fixes
+
+* **extractor:** improve messy meta type ([7f2cf10](https://github.com/webstreamr/webstreamr/commit/7f2cf10021b59dc621f12cf82a431c30afab1f76))
+
 ## [0.49.2](https://github.com/webstreamr/webstreamr/compare/v0.49.1...v0.49.2) (2025-09-10)
 
 
