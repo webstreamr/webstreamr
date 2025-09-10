@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.49.2](https://github.com/webstreamr/webstreamr/compare/v0.49.1...v0.49.2) (2025-09-10)
+
+
+### Miscellaneous Chores
+
+* **fetcher:** try to remove the proxy headers (again) ([00bd114](https://github.com/webstreamr/webstreamr/commit/00bd11495fbabcf383980c351ae802d64cfd8f19))
+
 ## [0.49.1](https://github.com/webstreamr/webstreamr/compare/v0.49.0...v0.49.1) (2025-09-10)
 
 
