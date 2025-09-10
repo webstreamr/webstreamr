@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.49.5](https://github.com/webstreamr/webstreamr/compare/v0.49.4...v0.49.5) (2025-09-10)
+
+
+### Miscellaneous Chores
+
+* include imdb and tmdb IDs in XPrime requests ([7f264b2](https://github.com/webstreamr/webstreamr/commit/7f264b250303db90565bf7a1dd65e363df07f43a))
+
 ## [0.49.4](https://github.com/webstreamr/webstreamr/compare/v0.49.3...v0.49.4) (2025-09-10)
 
 
