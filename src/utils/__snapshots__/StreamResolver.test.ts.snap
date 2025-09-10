@@ -208,25 +208,21 @@ exports[`resolve returns sorted results 1`] = `
   },
   {
     "behaviorHints": {
-      "bingeGroup": "webstreamr-supervideo_it",
+      "bingeGroup": "webstreamr-supervideo_de",
       "notWebReady": true,
-      "videoSize": 1181116006,
     },
-    "name": "WebStreamr 🇮🇹 720p",
-    "title": "the-devils-bath-2024-sd-sub-ita
-💾 1.1 GB 🔗 SuperVideo",
-    "url": "https://hfs311.serversicuro.cc/hls/,dnzpcjj427g4a3gyvbth53rxqgffbu4vol4o7gg7pskpzb6josghbkwhnisq,.urlset/master.m3u8",
+    "name": "WebStreamr 🇩🇪 720p",
+    "title": "🔗 SuperVideo",
+    "url": "https://hfs309.serversicuro.cc/hls/,dnzpfi3d27g4a3gyvbmh5klwtl65qh654hyjtgupd6p57tdcfdqtnows4zxa,.urlset/master.m3u8",
   },
   {
     "behaviorHints": {
-      "bingeGroup": "webstreamr-supervideo_de",
+      "bingeGroup": "webstreamr-supervideo_it",
       "notWebReady": true,
-      "videoSize": 1073741824,
     },
-    "name": "WebStreamr 🇩🇪 720p",
-    "title": "des-teufels-bad-2024
-💾 1 GB 🔗 SuperVideo",
-    "url": "https://hfs309.serversicuro.cc/hls/,dnzpfi3d27g4a3gyvbmh5klwtl65qh654hyjtgupd6p577fze64mz3bsmdyq,.urlset/master.m3u8",
+    "name": "WebStreamr 🇮🇹 720p",
+    "title": "🔗 SuperVideo",
+    "url": "https://hfs311.serversicuro.cc/hls/,dnzpcjj427g4a3gyvbth53rxqgffbu4vol4o7gg7pskpznysppkxbh6kuuxq,.urlset/master.m3u8",
   },
   {
     "behaviorHints": {
@@ -288,25 +284,21 @@ exports[`resolve returns sorted results 2`] = `
   },
   {
     "behaviorHints": {
-      "bingeGroup": "webstreamr-supervideo_it",
+      "bingeGroup": "webstreamr-supervideo_de",
       "notWebReady": true,
-      "videoSize": 1181116006,
     },
-    "name": "WebStreamr 🇮🇹 720p",
-    "title": "the-devils-bath-2024-sd-sub-ita
-💾 1.1 GB 🔗 SuperVideo",
-    "url": "https://hfs311.serversicuro.cc/hls/,dnzpcjj427g4a3gyvbth53rxqgffbu4vol4o7gg7pskpzb6josghbkwhnisq,.urlset/master.m3u8",
+    "name": "WebStreamr 🇩🇪 720p",
+    "title": "🔗 SuperVideo",
+    "url": "https://hfs309.serversicuro.cc/hls/,dnzpfi3d27g4a3gyvbmh5klwtl65qh654hyjtgupd6p57tdcfdqtnows4zxa,.urlset/master.m3u8",
   },
   {
     "behaviorHints": {
-      "bingeGroup": "webstreamr-supervideo_de",
+      "bingeGroup": "webstreamr-supervideo_it",
       "notWebReady": true,
-      "videoSize": 1073741824,
     },
-    "name": "WebStreamr 🇩🇪 720p",
-    "title": "des-teufels-bad-2024
-💾 1 GB 🔗 SuperVideo",
-    "url": "https://hfs309.serversicuro.cc/hls/,dnzpfi3d27g4a3gyvbmh5klwtl65qh654hyjtgupd6p577fze64mz3bsmdyq,.urlset/master.m3u8",
+    "name": "WebStreamr 🇮🇹 720p",
+    "title": "🔗 SuperVideo",
+    "url": "https://hfs311.serversicuro.cc/hls/,dnzpcjj427g4a3gyvbth53rxqgffbu4vol4o7gg7pskpznysppkxbh6kuuxq,.urlset/master.m3u8",
   },
   {
     "behaviorHints": {
