@@ -1,7 +1,6 @@
-import bytes from 'bytes';
 import { Context, CountryCode, Format, Meta, UrlResult } from '../types';
 import {
-  buildMediaFlowProxyExtractorStreamUrl,
+  buildMediaFlowProxyExtractorStreamUrl, guessHeightFromPlaylist,
   hasMultiEnabled,
   iso639FromCountryCode,
   supportsMediaFlowProxy,
@@ -20,12 +19,6 @@ export class VixSrc extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const html = await this.fetcher.text(ctx, url);
-
-    const filenameMatch = html.match(/"filename":"(.*?)"/);
-    const sizeMatch = html.match(/"size":(\d+)/);
-    const qualityMatch = html.match(/"quality":(\d+)/);
-
     const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'VixCloud', url);
     const countryCodes = await this.determineCountryCodesFromPlaylist(ctx, playlistUrl);
 
@@ -42,9 +35,7 @@ export class VixSrc extends Extractor {
         ttl: this.ttl,
         meta: {
           countryCodes,
-          ...(filenameMatch && { title: filenameMatch[1] }),
-          ...(sizeMatch && { bytes: bytes.parse(`${sizeMatch[1]} kb`) as number }),
-          ...(qualityMatch && { height: parseInt(qualityMatch[1] as string) }),
+          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl),
         },
       },
     ];
