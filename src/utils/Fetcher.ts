@@ -262,7 +262,7 @@ export class Fetcher {
   protected async fetchWithTimeout(ctx: Context, url: URL, init?: CustomRequestInit, tryCount = 0): Promise<Response> {
     this.logger.info(`Fetch ${init?.method ?? 'GET'} ${url}`, ctx);
 
-    const isRateLimitedRaw = await this.rateLimitedCache.get<true>(url.host, { raw: true });
+    const isRateLimitedRaw = await this.rateLimitedCache.getRaw<true>(url.host);
     /* istanbul ignore if */
     if (isRateLimitedRaw && isRateLimitedRaw.value && isRateLimitedRaw.expires) {
       const ttl = isRateLimitedRaw.expires - Date.now();
