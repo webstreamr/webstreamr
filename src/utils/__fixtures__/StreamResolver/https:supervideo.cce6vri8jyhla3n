@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://supervideo.cc/css/main.css">
+<link rel="icon" href="https://supervideo.cc/assets/images/favicon/favicon.ico">
+<script language="JavaScript" type="text/javascript" CHARSET="UTF-8" src="https://supervideo.cc/js/jquery.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://supervideo.cc/js/xupload.js"></script>
+<script language="JavaScript" type="text/javascript" CHARSET="UTF-8" src="https://supervideo.cc/js/jquery.cookie.js"></script>
+<script>
+$.cookie('file_id', '2081453', { expires: 10 });
+$.cookie('aff', '8397', { expires: 10 });
+
+</script>
+</HEAD>
+<BODY topmargin=0 leftmargin=0 style="background:transparent;">
+
+
+    
+        
+
+        <!--75% ads-->
+		<script src="/9271593.js"></script>
+		<script src="/9271609.js"></script>
+		<script data-cfasync="false" async type="text/javascript" src="//bu.stummelbeelbow.com/r5anaGaI7UQV/115547"></script>
+        
+
+        
+
+        
+
+        
+    
+
+
+    <div style="position:relative;">
+        <div id="adbd" class="overdiv"></div>
+        <div id="play_limit_box"></div>
+        <script type='text/javascript' src='https://supervideo.cc/player8/jwplayer.js'></script>
+                <script type="text/javascript">jwplayer.key="9dOyFG96QFb9AWbR+FhhislXHfV1gIhrkaxLYfLydfiYyC0s";</script>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46849459-36"></script>
+                <script>
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'UA-46849459-36');
+                </script>
+
+
+
+								<div id="resume-modal" style="color:#fff; font-family:Roboto, Arial; display:none; padding:2rem; justify-content:center; align-items:center; position:absolute; top:0; left:0; right:0; bottom:0; background-color: rgba(0,0,0,.1); font-size: 12px; z-index:200;">
+									<div style="max-width:420px; background-color: rgba(1, 1, 1, .5); -webkit-backdrop-filter: blur(20px); backdrop-filter:blur(20px); text-align:center;padding:1.5rem; border-radius:8px;border: 1px solid rgba(255,255,255,.18);">
+										<h5 style="margin-bottom:10px;font-weight:bold;color:#fff; font-size:15px;" id="resume-title"></h5>
+										<p style="margin-bottom:10px;opacity:.65" id="resume-text"></p>
+										<div style="display:flex;gap:.4rem; align-items-center;justify-content:center">
+											<button onclick="resumeVideo()" id="resume-btn" style="border:0;cursor:pointer;border-radius:5px; padding:.5rem .75rem; color:#fff;background: linear-gradient(90deg, #32A7FF 0%, #6E2FFF 100%);color:#fff"></button>
+											<button onclick="cancelResume()" id="cancel-btn" style="border:0;cursor:pointer;border-radius:5px;padding:.5rem .75rem; color:#fff;background:rgba(255,255,255,.15);color:#fff"></button>
+										</div>
+									</div>
+								</div>
+
+
+
+
+
+								<link rel="stylesheet" type="text/css" href="https://supervideo.cc/assets/player/myskinfile.css?v=11">
+                <script src="https://supervideo.cc/js/pop.js"></script>
+                <div id='vplayer' style="width:100%;height:100%;text-align:center;"><img src="/images/inv.png" style="width:100%;height:100%;"></div>
+    </div>
+
+
+<script type='text/javascript'>eval(function(p,a,c,k,e,d){while(c--)if(k[c])p=p.replace(new RegExp('\\b'+c.toString(a)+'\\b','g'),k[c]);return p}('m("4y").4x({4w:[{10:"c://4v.4u.b/4t/,4s,.4r/4q.4p"}],4o:"c://1s.g.b/4n.1r",4m:"1v%",4l:"1v%",4k:"4j",4i:"1u.1t",4h:\'4g\',4f:"z",4e:"z",4d:"4c",4b:"4a",49:[0.25,0.5,0.48,1,1.25,1.5,2],47:{46:"45"},44:[{10:"/43?1m=42&41=1u.1t&40=c://1s.g.b/3z.1r",3y:"3x"}],3w:{3v:\'#3u\',3t:12,3s:"3r",3q:0,3p:\'p\',3o:3n},3m:"3l",3k:"",3j:{10:"c://g.b/15/3i.14",3h:"c://g.b/l",a:"11-3g",3f:"5",1n:z},3e:{}});j t,y,w=0;j 3d=0,3c=0;j 4=m();4.d(\'9\',3(x){f(5>0&&x.a>=5&&y!=1){y=1;$(\'u.3b\').3a(\'39\')}f(w==0&&x.a>=1q&&x.a<=(1q+2)){w=x.a}});4.d(\'18\',3(x){1p(x)});4.d(\'38\',3(){$(\'u.1o\').37()});3 1p(x){$(\'u.1o\').1n();f(t)36;t=1;k=0;f(13.35===34){k=1}$.33(\'/32?1m=31&30=l&2z=2y-2-2x-2w-2v&2u=1&k=\'+k,3(1l){$(\'#2t\').2s(1l)})}4.d(\'9\',3(e){f(e.a>1){o.17(\'n\',e.a)}});j h=o.2r(\'n\');4.d(\'16\',3(){f(h>0){1g(h)}});3 1b(9){8.7("6-2q").i=\'2p 2o?\';8.7("6-2n").i=\'2m 2l! 2k 1j 1i 2j \'+9+\'. 2i 1k 2h 2g 6 2f 2e 1k 1j 1i?\';8.7("6-1h").i=\'2d, 2c\';8.7("2b-1h").i=\'2a, 29\'}3 1g(9){1f 1a=1e.1d(9/1c);1f 19=1e.1d(9%1c).28().27(2,\'0\');1b(1a+\':\'+19);8.7("6-s").r.q=\'26\'}3 24(){4.23(h);4.18();8.7("6-s").r.q=\'p\'}3 22(){8.7("6-s").r.q=\'p\';o.17(\'n\',\'\')}4.d(\'16\',3(){});m().21("c://g.b/15/20.14","1z",3(){13.11.1y.1x=\'/v/l\'},"1w");',36,179,'|||function|player||resume|getElementById|document|time|position|cc|https|on||if|supervideo|lastt|innerHTML|var|adb|6vri8jyhla3n|jwplayer|tt6vri8jyhla3n|localStorage|none|display|style|modal|vvplay|div||x2ok||vvad|true|file|top||window|png|images|ready|setItem|play|seconds|minutes|translateModal|60|floor|Math|const|showResumeModal|btn|off|left|you|data|op|hide|video_ad|doPlay|2177|jpg|img|63|7258|100|download11|href|location|Download|download2|addButton|cancelResume|seek|resumeVideo||flex|padStart|toString|thanks|No|cancel|please|Yes|where|watching|to|like|Would|at|You|back|Welcome|text|playing|Resume|title|getItem|html|fviews|embed|ab259fd78024bdfa5d3c19fec59f893d|1757498407|184|2081453|hash|file_code|view|dl|get|undefined|cRAds|return|show|complete|slow|fadeIn|video_ad_fadein|vastdone2|vastdone1|cast|margin|right|link|logo_p|logo|aboutlink|xvs|abouttext|90|fontOpacity|edgeStyle|backgroundOpacity|Verdana|fontFamily|fontSize|FFFFFF|color|captions|thumbnails|kind|6vri8jyhla3n0000|url|length|get_slides|dlf|tracks|myskin|name|skin|75|playbackRateControls|start|startparam|html5|primary|hlshtml|androidhls|metadata|preload|duration|uniform|stretching|height|width|6vri8jyhla3n_xt|image|m3u8|master|urlset|dnzpcjj427g4a3gyvbth53rxqgffbu4vol4o7gg7pskpznysppkxbh6kuuxq|hls|serversicuro|hfs311|sources|setup|vplayer'.split('|')))
+</script>
+
+
+
+
+<script>
+$(function() {
+ 
+});
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97ce13982ce34d26',t:'MTc1NzQ5ODQwOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></BODY></HTML>
