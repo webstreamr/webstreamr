@@ -39,7 +39,7 @@ export class ExtractorRegistry {
       ? `${extractor.id}_${normalizedUrl}_${ctx.config.mediaFlowProxyUrl}`
       : `${extractor.id}_${normalizedUrl}`;
 
-    const storedDataRaw = await this.urlResultCache.get<UrlResult[]>(cacheKey, { raw: true });
+    const storedDataRaw = await this.urlResultCache.getRaw<UrlResult[]>(cacheKey);
     const expires = storedDataRaw?.expires;
     if (storedDataRaw && expires) {
       // Ignore the cache randomly after at least 2/3 of the TTL passed to start refreshing results slowly
