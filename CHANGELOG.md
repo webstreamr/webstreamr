@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.49.4](https://github.com/webstreamr/webstreamr/compare/v0.49.3...v0.49.4) (2025-09-10)
+
+
+### Bug Fixes
+
+* **extractor:** use correct xprime referer ([531ad75](https://github.com/webstreamr/webstreamr/commit/531ad7562ae20eaa8b1c17e49498e1beebc4cc8c))
+
 ## [0.49.3](https://github.com/webstreamr/webstreamr/compare/v0.49.2...v0.49.3) (2025-09-10)
 
 
