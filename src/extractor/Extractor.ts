@@ -23,9 +23,9 @@ export abstract class Extractor {
     return url;
   };
 
-  protected abstract extractInternal(ctx: Context, url: URL, meta?: Meta): Promise<UrlResult[]>;
+  protected abstract extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]>;
 
-  public async extract(ctx: Context, url: URL, meta?: Meta): Promise<UrlResult[]> {
+  public async extract(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     try {
       return await this.extractInternal(ctx, url, meta);
     } catch (error) {
