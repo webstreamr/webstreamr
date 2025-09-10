@@ -27,7 +27,9 @@ export class XPrime extends Extractor {
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const urlResults: UrlResult[] = [];
 
-    const headers = { Referer: meta.referer ?? url.protocol + '//' + url.hostname.split('.').slice(-2).join('.') };
+    const headers = {
+      Referer: url.protocol + '//' + url.hostname.split('.').slice(-2).join('.'), // Strip subdomains
+    };
 
     if (url.href.includes('primebox')) {
       const jsonResponse = JSON.parse(await this.fetcher.text(ctx, url)) as XPrimePrimeboxResponsePartial;
