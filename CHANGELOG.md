@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.49.1](https://github.com/webstreamr/webstreamr/compare/v0.49.0...v0.49.1) (2025-09-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency cacheable to v2 ([#336](https://github.com/webstreamr/webstreamr/issues/336)) ([8b55889](https://github.com/webstreamr/webstreamr/commit/8b5588936e2316370b3615d0aaf0e4efd3357252))
+* **deps:** update dependency undici to v7.16.0 ([#335](https://github.com/webstreamr/webstreamr/issues/335)) ([78a83c5](https://github.com/webstreamr/webstreamr/commit/78a83c536e3423efd7349728f688bf39be73a723))
+* **extractor:** grab VixSrc height from playlist ([c5da7c1](https://github.com/webstreamr/webstreamr/commit/c5da7c19976c16505441c792554aee2f3d20ec39))
+* **extractor:** use SuperVideo embed URls which are not triggering CF challenges ([3a2178e](https://github.com/webstreamr/webstreamr/commit/3a2178eb55880ad254a691a5043012790b268c55))
+
 ## [0.49.0](https://github.com/webstreamr/webstreamr/compare/v0.48.0...v0.49.0) (2025-09-09)
 
 
