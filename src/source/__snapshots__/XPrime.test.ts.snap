@@ -9,7 +9,7 @@ exports[`XPrime handle alien: earth 1x1 1`] = `
       ],
       "title": "Alien: Earth 1x1",
     },
-    "url": "https://backend.xprime.tv/primebox?name=Alien%3A%20Earth&year=2025&season=1&episode=1",
+    "url": "https://backend.xprime.tv/primebox?name=Alien%3A+Earth&year=2025&id=157239&imdbId=tt13623632&season=1&episode=1",
   },
 ]
 `;
@@ -23,7 +23,7 @@ exports[`XPrime handle superman 1`] = `
       ],
       "title": "Superman (2025)",
     },
-    "url": "https://backend.xprime.tv/primebox?name=Superman&year=2025",
+    "url": "https://backend.xprime.tv/primebox?name=Superman&year=2025&id=1061474&imdbId=tt5950044",
   },
 ]
 `;

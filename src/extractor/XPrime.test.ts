@@ -11,15 +11,15 @@ const ctx = createTestContext();
 
 describe('XPrime', () => {
   test('unknown backend is ignored', async () => {
-    expect(await extractorRegistry.handle(ctx, new URL('https://backend.xprime.tv/unknown?name=Superman&year=2025'))).toMatchSnapshot();
+    expect(await extractorRegistry.handle(ctx, new URL('https://backend.xprime.tv/unknown?name=Superman&year=2025&id=1061474&imdbId=tt5950044'))).toMatchSnapshot();
   });
 
   test('primebox Superman', async () => {
-    expect(await extractorRegistry.handle(ctx, new URL('https://backend.xprime.tv/primebox?name=Superman&year=2025'))).toMatchSnapshot();
+    expect(await extractorRegistry.handle(ctx, new URL('https://backend.xprime.tv/primebox?name=Superman&year=2025&id=1061474&imdbId=tt5950044'))).toMatchSnapshot();
   });
 
   test('primebox Alien: Earth', async () => {
-    expect(await extractorRegistry.handle(ctx, new URL('https://backend.xprime.tv/primebox?name=Alien%3A%20Earth&year=2025&season=1&episode=1'))).toMatchSnapshot();
+    expect(await extractorRegistry.handle(ctx, new URL('https://backend.xprime.tv/primebox?name=Alien%3A%20Earth&year=2025&id=157239&imdb=tt13623632&season=1&episode=1'))).toMatchSnapshot();
   });
 
   test('primebox not found', async () => {

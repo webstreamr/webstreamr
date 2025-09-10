@@ -1,6 +1,6 @@
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
-import { Fetcher, getTmdbId, getTmdbNameAndYear, Id } from '../utils';
+import { Fetcher, getImdbId, getTmdbId, getTmdbNameAndYear, Id } from '../utils';
 import { Source, SourceResult } from './Source';
 
 export class XPrime extends Source {
@@ -23,22 +23,25 @@ export class XPrime extends Source {
   }
 
   public async handleInternal(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
+    const imdbId = await getImdbId(ctx, this.fetcher, id);
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
     const [name, year] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId);
 
-    if (tmdbId.season) {
-      const title = `${name} ${tmdbId.season}x${tmdbId.episode}`;
+    const servers = ['primebox'];
 
-      const urlPrimebox = new URL(`/primebox?name=${encodeURIComponent(name)}&year=${year}&season=${tmdbId.season}&episode=${tmdbId.episode}`, this.baseUrl);
+    return servers.map((server) => {
+      const url = new URL(`/${server}?name=${encodeURIComponent(name)}&year=${year}&id=${tmdbId.id}&imdbId=${imdbId.id}`, this.baseUrl);
+      if (tmdbId.season) {
+        url.searchParams.set('season', `${tmdbId.season}`);
+        url.searchParams.set('episode', `${tmdbId.episode}`);
+      }
 
-      return [{ url: urlPrimebox, meta: { countryCodes: [CountryCode.en], title } }];
-    }
+      const title = tmdbId.season
+        ? `${name} ${tmdbId.season}x${tmdbId.episode}`
+        : `${name} (${year})`;
 
-    const title = `${name} (${year})`;
-
-    const urlPrimebox = new URL(`/primebox?name=${encodeURIComponent(name)}&year=${year}`, this.baseUrl);
-
-    return [{ url: urlPrimebox, meta: { countryCodes: [CountryCode.en], title } }];
+      return { url, meta: { countryCodes: [CountryCode.en], title } };
+    });
   };
 }
