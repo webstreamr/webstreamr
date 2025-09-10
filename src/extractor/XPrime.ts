@@ -27,7 +27,7 @@ export class XPrime extends Extractor {
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const urlResults: UrlResult[] = [];
 
-    const referer = url.protocol + '//' + url.hostname.split('.').slice(-2).join('.'); // Strip subdomains
+    const headers = { Referer: meta.referer ?? url.protocol + '//' + url.hostname.split('.').slice(-2).join('.') };
 
     if (url.href.includes('primebox')) {
       const jsonResponse = JSON.parse(await this.fetcher.text(ctx, url)) as XPrimePrimeboxResponsePartial;
@@ -46,13 +46,11 @@ export class XPrime extends Extractor {
           ttl: this.ttl,
           meta: {
             ...meta,
-            bytes: await guessSizeFromMp4(ctx, this.fetcher, url, { headers: { Referer: referer }, minCacheTtl: this.ttl }),
+            bytes: await guessSizeFromMp4(ctx, this.fetcher, url, { headers, minCacheTtl: this.ttl }),
             height: parseInt(resolution),
             title,
           },
-          requestHeaders: {
-            Referer: referer,
-          },
+          requestHeaders: headers,
         });
       }
     }

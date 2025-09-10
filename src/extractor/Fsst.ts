@@ -12,7 +12,9 @@ export class Fsst extends Extractor {
   };
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const html = await this.fetcher.text(ctx, url);
+    const headers = { Referer: meta.referer ?? url.origin };
+
+    const html = await this.fetcher.text(ctx, url, { headers });
 
     const $ = cheerio.load(html);
     const title = $('title').text().trim();

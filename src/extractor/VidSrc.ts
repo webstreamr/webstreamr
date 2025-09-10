@@ -39,7 +39,7 @@ export class VidSrc extends Extractor {
 
     let html: string;
     try {
-      html = await this.fetcher.text(ctx, newUrl, { queueLimit: 1 });
+      html = await this.fetcher.text(ctx, newUrl, { headers: { Referer: meta.referer ?? newUrl.origin }, queueLimit: 1 });
     } catch (error) {
       if (tlds.length && (error instanceof TooManyRequestsError || error instanceof BlockedError)) {
         return this.extractUsingRandomTld(ctx, url, meta, tlds);
@@ -51,6 +51,7 @@ export class VidSrc extends Extractor {
     const $ = cheerio.load(html);
 
     const iframeUrl = new URL(($('#player_iframe').attr('src') as string).replace(/^\/\//, 'https://'));
+    const headers = { Referer: iframeUrl.origin };
     const title = $('title').text().trim();
 
     return Promise.all(
@@ -59,10 +60,10 @@ export class VidSrc extends Extractor {
         .toArray()
         .filter(({ serverName }) => serverName === 'CloudStream Pro')
         .map(async ({ serverName, dataHash }) => {
-          const iframeHtml = await this.fetcher.text(ctx, new URL(`/rcp/${dataHash}`, iframeUrl.origin), { headers: { Referer: iframeUrl.origin } });
+          const iframeHtml = await this.fetcher.text(ctx, new URL(`/rcp/${dataHash}`, iframeUrl.origin), { headers });
           const srcMatch = iframeHtml.match(`src:\\s?'(.*)'`) as string[];
 
-          const playerHtml = await this.fetcher.text(ctx, new URL(srcMatch[1] as string, iframeUrl.origin), { headers: { Referer: iframeUrl.origin } });
+          const playerHtml = await this.fetcher.text(ctx, new URL(srcMatch[1] as string, iframeUrl.origin), { headers });
           const fileMatch = playerHtml.match(`file:\\s?'(.*)'`);
           if (!fileMatch) {
             throw new NotFoundError();
@@ -78,7 +79,7 @@ export class VidSrc extends Extractor {
             ttl: this.ttl,
             meta: {
               ...meta,
-              height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url),
+              height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, { headers }),
               title,
             },
           };

@@ -15,13 +15,15 @@ export class SuperVideo extends Extractor {
   }
 
   public override normalize(url: URL): URL {
-    const fileUrl = new URL(url.href.replace('/e/', '/').replace('/embed-', '/').replace('.html', ''));
+    const fileUrl = new URL(url.href.replace('/e/', '/').replace('/k/', '/').replace('/embed-', '/').replace('.html', ''));
 
     return new URL(`/e${fileUrl.pathname}`, fileUrl.origin);
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const html = await this.fetcher.text(ctx, url);
+    const headers = { Referer: meta.referer ?? url.origin };
+
+    const html = await this.fetcher.text(ctx, url, { headers });
 
     if (/'The file was deleted|The file expired|Video is processing/.test(html) || !html.includes('p,a,c,k,e,d')) {
       throw new NotFoundError();
@@ -38,7 +40,7 @@ export class SuperVideo extends Extractor {
         ttl: this.ttl,
         meta: {
           ...meta,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url),
+          height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, { headers }),
         },
       },
     ];
