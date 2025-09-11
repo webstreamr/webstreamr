@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.49.7](https://github.com/webstreamr/webstreamr/compare/v0.49.6...v0.49.7) (2025-09-11)
+
+
+### Miscellaneous Chores
+
+* **fetcher:** switch back to native fetch 🤡 ([8789381](https://github.com/webstreamr/webstreamr/commit/87893819b08fa48a76a833638ff5ee909aef8bcb))
+
 ## [0.49.6](https://github.com/webstreamr/webstreamr/compare/v0.49.5...v0.49.6) (2025-09-11)
 
 
