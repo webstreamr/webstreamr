@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.49.6](https://github.com/webstreamr/webstreamr/compare/v0.49.5...v0.49.6) (2025-09-11)
+
+
+### Bug Fixes
+
+* **extractor:** do not pass Referer for cloudnestra requests ([98c53a1](https://github.com/webstreamr/webstreamr/commit/98c53a15f2aec54f88441369f50c1e27d14b0ce4))
+
 ## [0.49.5](https://github.com/webstreamr/webstreamr/compare/v0.49.4...v0.49.5) (2025-09-10)
 
 
