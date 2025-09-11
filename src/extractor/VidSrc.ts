@@ -79,7 +79,7 @@ export class VidSrc extends Extractor {
             ttl: this.ttl,
             meta: {
               ...meta,
-              height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, { headers }),
+              height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url),
               title,
             },
           };
