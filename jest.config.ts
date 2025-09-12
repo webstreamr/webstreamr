@@ -13,6 +13,7 @@ const config: Config = {
   coverageDirectory: '<rootDir>/coverage',
   coveragePathIgnorePatterns: [
     '/src/controller/',
+    '/src/utils/dispatcher.ts',
   ],
   coverageProvider: 'babel',
   coverageThreshold: {

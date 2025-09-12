@@ -1,7 +1,5 @@
 import { randomUUID } from 'node:crypto';
 import express, { NextFunction, Request, Response } from 'express';
-import { socksDispatcher } from 'fetch-socks';
-import { Agent, Dispatcher, interceptors, ProxyAgent, setGlobalDispatcher } from 'undici';
 import winston from 'winston';
 import { ConfigureController, ManifestController, StreamController } from './controller';
 import { BlockedError, logErrorAndReturnNiceString } from './error';
@@ -35,23 +33,6 @@ process.on('uncaughtException', (error) => {
 process.on('unhandledRejection', (reason) => {
   logger.error('Unhandled rejection: ', reason);
 });
-
-let dispatcher: Dispatcher;
-if (process.env['ALL_PROXY']) {
-  const proxyUrl = new URL(process.env['ALL_PROXY']);
-  if (proxyUrl.protocol === 'socks5:') {
-    dispatcher = socksDispatcher({ type: 5, host: proxyUrl.hostname, port: parseInt(proxyUrl.port) }, { allowH2: true });
-  } else {
-    dispatcher = new ProxyAgent({ uri: proxyUrl.href, allowH2: true });
-  }
-} else {
-  dispatcher = new Agent({ allowH2: true });
-}
-dispatcher.compose(
-  interceptors.dns(),
-  interceptors.retry({ maxRetries: 3 }),
-);
-setGlobalDispatcher(dispatcher);
 
 const fetcher = new Fetcher(logger);
 

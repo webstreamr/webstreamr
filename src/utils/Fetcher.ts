@@ -6,6 +6,7 @@ import { Cookie, CookieJar } from 'tough-cookie';
 import winston from 'winston';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
 import { BlockedReason, Context } from '../types';
+import { createDispatcher } from './dispatcher';
 import { envGet } from './env';
 
 interface HttpCacheItem {
@@ -282,7 +283,7 @@ export class Fetcher {
       finalUrl.username = '';
       finalUrl.password = '';
 
-      const finalInit = { ...init, keepalive: true, signal: controller.signal };
+      const finalInit = { ...init, keepalive: true, signal: controller.signal, dispatcher: createDispatcher() };
 
       response = await fetch(finalUrl, finalInit);
     } catch (error) {
