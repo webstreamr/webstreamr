@@ -195,11 +195,11 @@ export class Fetcher {
   }
 
   private determineCacheTtl(status: number, policy: CachePolicy, init?: CustomRequestInit): number {
-    if (status === 200 || status === 404) {
+    if ((status >= 200 && status <= 299) || status === 404) {
       return Math.max(policy.timeToLive(), init?.minCacheTtl ?? this.MIN_CACHE_TTL);
     }
 
-    return policy.timeToLive();
+    return 0;
   };
 
   private async cacheGet(key: string): Promise<HttpCacheItem | undefined> {
