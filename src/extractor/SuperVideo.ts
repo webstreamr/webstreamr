@@ -1,3 +1,5 @@
+import bytes from 'bytes';
+import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
 import { extractUrlFromPacked, guessHeightFromPlaylist } from '../utils';
@@ -15,9 +17,7 @@ export class SuperVideo extends Extractor {
   }
 
   public override normalize(url: URL): URL {
-    const fileUrl = new URL(url.href.replace('/e/', '/').replace('/k/', '/').replace('/embed-', '/').replace('.html', ''));
-
-    return new URL(`/e${fileUrl.pathname}`, fileUrl.origin);
+    return new URL(url.href.replace('/e/', '/').replace('/k/', '/').replace('/embed-', '/'));
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
@@ -25,11 +25,24 @@ export class SuperVideo extends Extractor {
 
     const html = await this.fetcher.text(ctx, url, { headers });
 
-    if (/'The file was deleted|The file expired|Video is processing/.test(html) || !html.includes('p,a,c,k,e,d')) {
+    if (html.includes('This video can be watched as embed only')) {
+      return await this.extractInternal(ctx, new URL(`/e${url.pathname}`, url.origin), meta);
+    }
+
+    if (/'The file was deleted|The file expired|Video is processing/.test(html)) {
       throw new NotFoundError();
     }
 
     const m3u8Url = extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]);
+
+    const heightAndSizeMatch = html.match(/\d{3,}x(\d{3,}), ([\d.]+ ?[GM]B)/);
+    const size = heightAndSizeMatch ? bytes.parse(heightAndSizeMatch[2] as string) as number : undefined;
+    const height = heightAndSizeMatch
+      ? parseInt(heightAndSizeMatch[1] as string)
+      : await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, { headers });
+
+    const $ = cheerio.load(html);
+    const title = $('.download__title').text().trim();
 
     return [
       {
@@ -40,7 +53,9 @@ export class SuperVideo extends Extractor {
         ttl: this.ttl,
         meta: {
           ...meta,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, { headers }),
+          title,
+          ...(size && { bytes: size }),
+          ...(height && { height }),
         },
       },
     ];

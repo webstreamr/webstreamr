@@ -1,5 +1,0 @@
-#EXTM3U
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=3056778,RESOLUTION=1920x1080,FRAME-RATE=25.000,CODECS="avc1.640828,mp4a.40.2"
-https://hfs308.serversicuro.cc/hls/dnzpe7rf5xg4a3gyva3h5orlyw23xosfzwunl5xbmjpz2lwk3cmu5azdcnsq/index-v1-a1.m3u8
-
-#EXT-X-I-FRAME-STREAM-INF:BANDWIDTH=215307,RESOLUTION=1920x1080,CODECS="avc1.640828",URI="https://hfs308.serversicuro.cc/hls/dnzpe7rf5xg4a3gyva3h5orlyw23xosfzwunl5xbmjpz2lwk3cmu5azdcnsq/iframes-v1-a1.m3u8"

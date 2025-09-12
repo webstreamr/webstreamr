@@ -3,10 +3,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="https://supervideo.cc/css/main.css">
 <link rel="icon" href="https://supervideo.cc/assets/images/favicon/favicon.ico">
-<script language="JavaScript" type="text/javascript" CHARSET="UTF-8" src="https://supervideo.cc/js/jquery.min.js"></script>
-<script language="JavaScript" type="text/javascript" src="https://supervideo.cc/js/xupload.js"></script>
-<script language="JavaScript" type="text/javascript" CHARSET="UTF-8" src="https://supervideo.cc/js/jquery.cookie.js"></script>
-<script>
+<script language="JavaScript" type="bd8624492673b17e8efd29d5-text/javascript" CHARSET="UTF-8" src="https://supervideo.cc/js/jquery.min.js"></script>
+<script language="JavaScript" type="bd8624492673b17e8efd29d5-text/javascript" src="https://supervideo.cc/js/xupload.js"></script>
+<script language="JavaScript" type="bd8624492673b17e8efd29d5-text/javascript" CHARSET="UTF-8" src="https://supervideo.cc/js/jquery.cookie.js"></script>
+<script type="bd8624492673b17e8efd29d5-text/javascript">
 $.cookie('file_id', '2481142', { expires: 10 });
 $.cookie('aff', '21776', { expires: 10 });
 
@@ -16,29 +16,33 @@ $.cookie('aff', '21776', { expires: 10 });
 
 
     
-        
-
-        
-
-        
-
-        
-
-        <!--0% ads-->
-		<script src="/9271593.js"></script>
-		<script src="/9271609.js"></script>
+        <!--100% ads-->
+		<script src="/9271593.js" type="bd8624492673b17e8efd29d5-text/javascript"></script>
+		<script src="/9271609.js" type="bd8624492673b17e8efd29d5-text/javascript"></script>
 		<script data-cfasync="false" async type="text/javascript" src="//bu.stummelbeelbow.com/r5anaGaI7UQV/115547"></script>
+        
+
+        
+
+        
+
+        
+
         
     
 
 
     <div style="position:relative;">
-        <div id="adbd" class="overdiv"></div>
-        <div id="play_limit_box"></div>
-        <script type='text/javascript' src='https://supervideo.cc/player8/jwplayer.js'></script>
-                <script type="text/javascript">jwplayer.key="9dOyFG96QFb9AWbR+FhhislXHfV1gIhrkaxLYfLydfiYyC0s";</script>
-                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46849459-36"></script>
-                <script>
+		<div id="adbd" class="overdiv">
+			<div>Disable ADBlock plugin and allow pop-ups in your browser to watch video</div>
+		</div>
+		<div id="play_limit_box">
+		<a href="/premium.html" target="_blank">Upgrade you account</a> to watch videos with no limits!
+		</div>
+    <script type="bd8624492673b17e8efd29d5-text/javascript" src='https://supervideo.cc/player8/jwplayer.js'></script>
+                <script type="bd8624492673b17e8efd29d5-text/javascript">jwplayer.key="9dOyFG96QFb9AWbR+FhhislXHfV1gIhrkaxLYfLydfiYyC0s";</script>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46849459-36" type="bd8624492673b17e8efd29d5-text/javascript"></script>
+                <script type="bd8624492673b17e8efd29d5-text/javascript">
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
@@ -52,8 +56,8 @@ $.cookie('aff', '21776', { expires: 10 });
 										<h5 style="margin-bottom:10px;font-weight:bold;color:#fff; font-size:15px;" id="resume-title"></h5>
 										<p style="margin-bottom:10px;opacity:.65" id="resume-text"></p>
 										<div style="display:flex;gap:.4rem; align-items-center;justify-content:center">
-											<button onclick="resumeVideo()" id="resume-btn" style="border:0;cursor:pointer;border-radius:5px; padding:.5rem .75rem; color:#fff;background: linear-gradient(90deg, #32A7FF 0%, #6E2FFF 100%);color:#fff"></button>
-											<button onclick="cancelResume()" id="cancel-btn" style="border:0;cursor:pointer;border-radius:5px;padding:.5rem .75rem; color:#fff;background:rgba(255,255,255,.15);color:#fff"></button>
+											<button onclick="if (!window.__cfRLUnblockHandlers) return false; resumeVideo()" id="resume-btn" style="border:0;cursor:pointer;border-radius:5px; padding:.5rem .75rem; color:#fff;background: linear-gradient(90deg, #32A7FF 0%, #6E2FFF 100%);color:#fff" data-cf-modified-bd8624492673b17e8efd29d5-=""></button>
+											<button onclick="if (!window.__cfRLUnblockHandlers) return false; cancelResume()" id="cancel-btn" style="border:0;cursor:pointer;border-radius:5px;padding:.5rem .75rem; color:#fff;background:rgba(255,255,255,.15);color:#fff" data-cf-modified-bd8624492673b17e8efd29d5-=""></button>
 										</div>
 									</div>
 								</div>
@@ -63,20 +67,19 @@ $.cookie('aff', '21776', { expires: 10 });
 
 
 								<link rel="stylesheet" type="text/css" href="https://supervideo.cc/assets/player/myskinfile.css?v=11">
-                <script src="https://supervideo.cc/js/pop.js"></script>
+                <script src="https://supervideo.cc/js/pop.js" type="bd8624492673b17e8efd29d5-text/javascript"></script>
                 <div id='vplayer' style="width:100%;height:100%;text-align:center;"><img src="/images/inv.png" style="width:100%;height:100%;"></div>
     </div>
 
 
-<script type='text/javascript'>eval(function(p,a,c,k,e,d){while(c--)if(k[c])p=p.replace(new RegExp('\\b'+c.toString(a)+'\\b','g'),k[c]);return p}('n("56").55({54:[{h:"c://53.52.b/51/,50,.4z/4y.4x"}],4w:"c://1y.g.b/4v.1x",4u:"21%",4t:"21%",4s:"4r",4q:"20.1z",4p:\'4o\',4n:"10",4m:"10",4l:"4k",4j:"4i",4h:[0.25,0.5,0.4g,1,1.25,1.5,2],4f:{4e:"4d"},4c:[{h:"/4b?1o=4a&49=20.1z&48=c://1y.g.b/47.1x",13:"46"},{h:"/1w/1v/45.1u",1t:"44",13:"11"},{h:"/1w/1v/43.1u",1t:"42",13:"11"}],11:{41:\'#40\',3z:12,3y:"3x",3w:0,3v:\'q\',3u:3t},3s:"3r",3q:"",3p:{h:"c://g.b/17/3o.16",3n:"c://g.b/m",a:"14-3m",3l:"5",1p:10},3k:{}});k u,z,y=0;k 3j=0,3i=0;k 4=n();4.d(\'9\',3(x){f(5>0&&x.a>=5&&z!=1){z=1;$(\'w.3h\').3g(\'3f\')}f(y==0&&x.a>=1s&&x.a<=(1s+2)){y=x.a}});4.d(\'1a\',3(x){1r(x)});4.d(\'3e\',3(){$(\'w.1q\').3d()});3 1r(x){$(\'w.1q\').1p();f(u)3c;u=1;l=0;f(15.3b===3a){l=1}$.39(\'/38?1o=37&36=m&35=34-2-33-32-31&30=1&l=\'+l,3(1n){$(\'#2z\').2y(1n)})}4.d(\'9\',3(e){f(e.a>1){p.19(\'o\',e.a)}});k i=p.2x(\'o\');4.d(\'18\',3(){f(i>0){1i(i)}});3 1d(9){8.7("6-2w").j=\'2v 2u?\';8.7("6-2t").j=\'2s 2r! 2q 1l 1k 2p \'+9+\'. 2o 1m 2n 2m 6 2l 2k 1m 1l 1k?\';8.7("6-1j").j=\'2j, 2i\';8.7("2h-1j").j=\'2g, 2f\'}3 1i(9){1h 1c=1g.1f(9/1e);1h 1b=1g.1f(9%1e).2e().2d(2,\'0\');1d(1c+\':\'+1b);8.7("6-t").s.r=\'2c\'}3 2b(){4.2a(i);4.1a();8.7("6-t").s.r=\'q\'}3 29(){8.7("6-t").s.r=\'q\';p.19(\'o\',\'\')}4.d(\'18\',3(){});n().28("c://g.b/17/27.16","26",3(){15.14.24.23=\'/v/m\'},"22");',36,187,'|||function|player||resume|getElementById|document|time|position|cc|https|on||if|supervideo|file|lastt|innerHTML|var|adb|bj6szat1pval|jwplayer|ttbj6szat1pval|localStorage|none|display|style|modal|vvplay||div||x2ok|vvad|true|captions||kind|top|window|png|images|ready|setItem|play|seconds|minutes|translateModal|60|floor|Math|const|showResumeModal|btn|off|left|you|data|op|hide|video_ad|doPlay|841|label|vtt|00496|srt|jpg|img|69|2804|100|download11|href|location||Download|download2|addButton|cancelResume|seek|resumeVideo|flex|padStart|toString|thanks|No|cancel|please|Yes|where|watching|to|like|Would|at|You|back|Welcome|text|playing|Resume|title|getItem|html|fviews|embed|ae4c07d971e9063e86b9804a784f766a|1757497681|184|2481142|hash|file_code|view|dl|get|undefined|cRAds|return|show|complete|slow|fadeIn|video_ad_fadein|vastdone2|vastdone1|cast|margin|right|link|logo_p|logo|aboutlink|xvs|abouttext|90|fontOpacity|edgeStyle|backgroundOpacity|Verdana|fontFamily|fontSize|FFFFFF|color|German|bj6szat1pval_German|English|bj6szat1pval_English|thumbnails|bj6szat1pval0000|url|length|get_slides|dlf|tracks|myskin|name|skin|75|playbackRateControls|start|startparam|html5|primary|hlshtml|androidhls|metadata|preload|duration|uniform|stretching|height|width|bj6szat1pval_xt|image|m3u8|master|urlset|dnzpe7rf5xg4a3gyva3h5orlyw23xosfzwunl5xbmjpz2lwk3cmu5azdcnsq|hls|serversicuro|hfs308|sources|setup|vplayer'.split('|')))
+<script type="bd8624492673b17e8efd29d5-text/javascript">eval(function(p,a,c,k,e,d){while(c--)if(k[c])p=p.replace(new RegExp('\\b'+c.toString(a)+'\\b','g'),k[c]);return p}('o("57").56({55:[{i:"d://54.53.c/52/,51,.50/4z.4y"}],4x:"d://1z.h.c/4w.1y",4v:"22%",4u:"22%",4t:"4s",4r:"21.20",4q:\'4p\',4o:"11",4n:"11",4m:"4l",4k:"4j",4i:[0.25,0.5,0.4h,1,1.25,1.5,2],4g:{4f:"4e"},4d:[{i:"/4c?1p=4b&4a=21.20&49=d://1z.h.c/48.1y",14:"47"},{i:"/1x/1w/46.1v",1u:"45",14:"13"},{i:"/1x/1w/44.1v",1u:"43",14:"13"}],13:{42:\'#41\',40:12,3z:"3y",3x:0,3w:\'r\',3v:3u},3t:"3s",3r:"",3q:{i:"d://h.c/18/3p.17",3o:"d://h.c/n",b:"15-3n",3m:"5",1q:11},3l:{}});l w,10,z=0;l 3k=0,3j=0;l 6=o();6.f(\'a\',4(x){g(5>0&&x.b>=5&&10!=1){10=1;$(\'y.3i\').3h(\'3g\')}g(z==0&&x.b>=1t&&x.b<=(1t+2)){z=x.b}});6.f(\'1b\',4(x){1s(x)});6.f(\'3f\',4(){$(\'y.1r\').3e()});4 1s(x){$(\'y.1r\').1q();g(w)3d;w=1;m=0;g(16.3c===3b){m=1}$.3a(\'/39?1p=38&37=n&36=35-3-34-33-32&31=1&m=\'+m,4(1o){$(\'#30\').2z(1o)})}6.f(\'a\',4(e){g(e.b>1){q.1a(\'p\',e.b)}});l j=q.2y(\'p\');6.f(\'19\',4(){g(j>0){1j(j)}});4 1e(a){9.8("7-2x").k=\'2w 2v?\';9.8("7-2u").k=\'2t 2s! 2r 1m 1l 2q \'+a+\'. 2p 1n 2o 2n 7 2m 2l 1n 1m 1l?\';9.8("7-1k").k=\'2k, 2j\';9.8("2i-1k").k=\'2h, 2g\'}4 1j(a){1i 1d=1h.1g(a/1f);1i 1c=1h.1g(a%1f).2f().2e(2,\'0\');1e(1d+\':\'+1c);9.8("7-u").t.s=\'2d\'}4 2c(){6.2b(j);6.1b();9.8("7-u").t.s=\'r\'}4 2a(){9.8("7-u").t.s=\'r\';q.1a(\'p\',\'\')}6.f(\'19\',4(){});o().29("d://h.c/18/28.17","27",4(){16.15.26.24=\'/v/n\'},"23");',36,188,'||||function||player|resume|getElementById|document|time|position|cc|https||on|if|supervideo|file|lastt|innerHTML|var|adb|bj6szat1pval|jwplayer|ttbj6szat1pval|localStorage|none|display|style|modal||vvplay||div|x2ok|vvad|true||captions|kind|top|window|png|images|ready|setItem|play|seconds|minutes|translateModal|60|floor|Math|const|showResumeModal|btn|off|left|you|data|op|hide|video_ad|doPlay|841|label|vtt|00496|srt|jpg|img|69|2804|100|download11|href||location|Download|download2|addButton|cancelResume|seek|resumeVideo|flex|padStart|toString|thanks|No|cancel|please|Yes|where|watching|to|like|Would|at|You|back|Welcome|text|playing|Resume|title|getItem|html|fviews|embed|2be1281b80ff2b787e1afc7f3fb86d72|1756406550|161|2481142|hash|file_code|view|dl|get|undefined|cRAds|return|show|complete|slow|fadeIn|video_ad_fadein|vastdone2|vastdone1|cast|margin|right|link|logo_p|logo|aboutlink|xvs|abouttext|90|fontOpacity|edgeStyle|backgroundOpacity|Verdana|fontFamily|fontSize|FFFFFF|color|German|bj6szat1pval_German|English|bj6szat1pval_English|thumbnails|bj6szat1pval0000|url|length|get_slides|dlf|tracks|myskin|name|skin|75|playbackRateControls|start|startparam|html5|primary|hlshtml|androidhls|metadata|preload|duration|uniform|stretching|height|width|bj6szat1pval_xt|image|m3u8|master|urlset|dnzpe7rf5xg4a3gyva3h5orlyw23xosfzwunl5xbmjpz2l6t3doh5zbwynna|hls|serversicuro|hfs308|sources|setup|vplayer'.split('|')))
 </script>
 
 
 
-
-<script>
+<script type="bd8624492673b17e8efd29d5-text/javascript">
 $(function() {
  
 });
 </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97ce01dcafbe4d26',t:'MTc1NzQ5NzY4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></BODY></HTML>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="bd8624492673b17e8efd29d5-|49" defer></script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9765f2e5fc71d376',t:'MTc1NjQwNjU1MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></BODY></HTML>

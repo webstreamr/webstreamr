@@ -10,10 +10,11 @@ exports[`SuperVideo embed only 1`] = `
     "meta": {
       "countryCodes": [],
       "height": 1080,
+      "title": "",
     },
     "sourceId": "supervideo_",
     "ttl": 10800000,
-    "url": "https://hfs308.serversicuro.cc/hls/,dnzpe7rf5xg4a3gyva3h5orlyw23xosfzwunl5xbmjpz2lwk3cmu5azdcnsq,.urlset/master.m3u8",
+    "url": "https://hfs308.serversicuro.cc/hls/,dnzpe7rf5xg4a3gyva3h5orlyw23xosfzwunl5xbmjpz2l6t3doh5zbwynna,.urlset/master.m3u8",
   },
 ]
 `;
@@ -26,12 +27,14 @@ exports[`SuperVideo supervideo.cc /e/ 1`] = `
     "format": "hls",
     "label": "SuperVideo",
     "meta": {
+      "bytes": 1073741824,
       "countryCodes": [],
       "height": 720,
+      "title": "des-teufels-bad-2024",
     },
     "sourceId": "supervideo_",
     "ttl": 10800000,
-    "url": "https://hfs309.serversicuro.cc/hls/,dnzpfi3d27g4a3gyvbmh5klwtl65qh654hyjtgupd6p57tdcfdq45p6s4zxa,.urlset/master.m3u8",
+    "url": "https://hfs309.serversicuro.cc/hls/,dnzpfi3d27g4a3gyvbmh5klwtl65qh654hyjtgupd6p577fze64cp3rsmdyq,.urlset/master.m3u8",
   },
 ]
 `;
@@ -42,12 +45,14 @@ exports[`SuperVideo supervideo.tv /embed-/ 1`] = `
     "format": "hls",
     "label": "SuperVideo",
     "meta": {
+      "bytes": 219571814,
       "countryCodes": [],
       "height": 344,
+      "title": "Babylon 5 2x3",
     },
     "sourceId": "supervideo_",
     "ttl": 10800000,
-    "url": "https://hfs307.serversicuro.cc/hls/,dnzpaalv5xg4a3gyvavh52jryoft7o5cd5nm7cwtnu74kaehp2e7ro7gd4pq,.urlset/master.m3u8",
+    "url": "https://hfs307.serversicuro.cc/hls/,dnzpaalv5xg4a3gyvavh52jryoft7o5cd5nm7cwtnu74kmc4ohiklh5qwq4q,.urlset/master.m3u8",
   },
 ]
 `;
