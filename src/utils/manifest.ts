@@ -89,6 +89,13 @@ export const buildManifest = (sources: Source[], extractors: Extractor[], config
     default: config['mediaFlowProxyPassword'] ?? '',
   });
 
+  manifest.config.push({
+    key: 'proxyConfig',
+    type: 'text',
+    title: 'Proxy Config',
+    default: config['proxyConfig'] ?? '',
+  });
+
   extractors.forEach((extractor) => {
     if (extractor.id === 'external') {
       return;

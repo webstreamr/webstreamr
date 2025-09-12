@@ -54,7 +54,7 @@ export type CustomRequestInit = RequestInit & {
 
 export class Fetcher {
   private readonly MIN_CACHE_TTL = 900000; // 15m
-  private readonly DEFAULT_TIMEOUT = 5000;
+  private readonly DEFAULT_TIMEOUT = 10000;
   private readonly DEFAULT_QUEUE_LIMIT = 5;
   private readonly DEFAULT_QUEUE_TIMEOUT = 5000;
   private readonly DEFAULT_TIMEOUTS_COUNT_THROW = 30;
@@ -283,7 +283,7 @@ export class Fetcher {
       finalUrl.username = '';
       finalUrl.password = '';
 
-      const finalInit = { ...init, keepalive: true, signal: controller.signal, dispatcher: createDispatcher() };
+      const finalInit = { ...init, keepalive: true, signal: controller.signal, dispatcher: createDispatcher(ctx, url) };
 
       response = await fetch(finalUrl, finalInit);
     } catch (error) {
