@@ -313,6 +313,13 @@ export class Fetcher {
       }
     }
 
+    if (response.status >= 500 && tryCount < 3) {
+      this.logger.warn(`Retrying fetch ${init?.method ?? 'GET'} ${url} because of error`, ctx);
+      await this.sleep(333);
+
+      return await this.fetchWithTimeout(ctx, url, init, ++tryCount);
+    }
+
     return response;
   };
 
