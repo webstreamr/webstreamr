@@ -288,13 +288,6 @@ export class Fetcher {
       response = await fetch(finalUrl, finalInit);
     } catch (error) {
       if (error instanceof DOMException && ['AbortError', 'TimeoutError'].includes(error.name)) {
-        if (tryCount < 1) {
-          this.logger.warn(`Retrying fetch ${init?.method ?? 'GET'} ${url} because of timeout`, ctx);
-          await this.sleep(333);
-
-          return await this.fetchWithTimeout(ctx, url, init, ++tryCount);
-        }
-
         await this.increaseTimeoutsCount(url);
         throw new TimeoutError();
       }
@@ -309,19 +302,12 @@ export class Fetcher {
     if (response.status === 429) {
       const retryAfter = parseInt(`${response.headers.get('retry-after')}`) * 1000;
       if (retryAfter <= this.MAX_WAIT_RETRY_AFTER && tryCount < 1) {
-        this.logger.info('Wait out rate limit', ctx);
+        this.logger.info(`Wait out rate limit for ${url.host}`, ctx);
 
         await this.sleep(retryAfter);
 
         return await this.fetchWithTimeout(ctx, url, { ...init, queueLimit: 1 }, ++tryCount);
       }
-    }
-
-    if (response.status >= 500 && tryCount < 3) {
-      this.logger.warn(`Retrying fetch ${init?.method ?? 'GET'} ${url} because of error`, ctx);
-      await this.sleep(333);
-
-      return await this.fetchWithTimeout(ctx, url, init, ++tryCount);
     }
 
     return response;
