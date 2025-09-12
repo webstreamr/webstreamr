@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.50.2](https://github.com/webstreamr/webstreamr/compare/v0.50.1...v0.50.2) (2025-09-12)
+
+
+### Miscellaneous Chores
+
+* **fetcher:** switch back to undici fetch 🤡 ([2a47d97](https://github.com/webstreamr/webstreamr/commit/2a47d97d5cda5526775ed2d60b99bfdfc76fd6d0))
+
 ## [0.50.1](https://github.com/webstreamr/webstreamr/compare/v0.50.0...v0.50.1) (2025-09-12)
 
 
