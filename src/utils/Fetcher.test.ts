@@ -1,29 +1,25 @@
-import fetchMock from 'fetch-mock';
+import { MockAgent, setGlobalDispatcher } from 'undici';
 import winston from 'winston';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
 import { createTestContext } from '../test';
 import { BlockedReason } from '../types';
 import { Fetcher } from './Fetcher';
 
+let mockAgent: MockAgent;
 const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
 
 describe('fetch', () => {
   const ctx = { ...createTestContext(), ip: '0.0.0.0' };
 
-  beforeAll(() => {
-    fetchMock.mockGlobal();
-  });
-
-  afterAll(() => {
-    fetchMock.unmockGlobal();
-  });
-
-  afterEach(() => {
-    fetchMock.clearHistory();
+  beforeEach(() => {
+    mockAgent = new MockAgent({ enableCallHistory: true });
+    mockAgent.disableNetConnect();
+    setGlobalDispatcher(mockAgent);
   });
 
   test('text passes successful response through setting headers', async () => {
-    fetchMock.get('https://some-url.test', 'some text');
+    const mockPool = mockAgent.get('https://some-url.test');
+    mockPool.intercept({ path: '/' }).reply(200, 'some text');
 
     const responseText1 = await fetcher.text(ctx, new URL('https://user:pass@some-url.test/'));
     const responseText2 = await fetcher.text(ctx, new URL('https://user:pass@some-url.test/'), { headers: { 'User-Agent': 'jest' } });
@@ -31,37 +27,39 @@ describe('fetch', () => {
     expect(responseText1).toBe('some text');
     expect(responseText2).toStrictEqual(responseText1);
 
-    expect(fetchMock.callHistory.callLogs[0]?.args[1]).toMatchObject({
-      headers: {
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'en',
-        'Authorization': 'Basic dXNlcjpwYXNz',
-        'Priority': 'u=0',
-        'User-Agent': 'node',
-      },
+    expect(mockAgent.getCallHistory()?.firstCall()?.headers).toMatchObject({
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      'Accept-Language': 'en',
+      'Authorization': 'Basic dXNlcjpwYXNz',
+      'Priority': 'u=0',
+      'User-Agent': 'node',
     });
   });
 
   test('textPost ', async () => {
-    fetchMock.post('https://some-post-url.test', 'some text');
+    const mockPool = mockAgent.get('https://some-post-url.test');
+    mockPool.intercept({ path: '/', method: 'POST' }).reply(200, 'some text');
 
     expect(await fetcher.textPost(ctx, new URL('https://some-post-url.test/'), JSON.stringify({ foo: 'bar' }))).toBe('some text');
   });
 
   test('head', async () => {
-    fetchMock.head('https://some-head-url.test', { status: 200, headers: { 'X-Fake-Response': 'foo' } });
+    const mockPool = mockAgent.get('https://some-head-url.test');
+    mockPool.intercept({ path: '/', method: 'HEAD' }).reply(200, 'some text', { headers: { 'X-Fake-Response': 'foo' } });
 
     expect(await fetcher.head(ctx, new URL('https://some-head-url.test/'))).toMatchObject({ 'x-fake-response': 'foo' });
   });
 
   test('converts 404 to custom NotFoundError', async () => {
-    fetchMock.get('https://some-404-url.test', 404);
+    const mockPool = mockAgent.get('https://some-404-url.test');
+    mockPool.intercept({ path: '/' }).reply(404);
 
     await expect(fetcher.text(ctx, new URL('https://some-404-url.test/'))).rejects.toBeInstanceOf(NotFoundError);
   });
 
   test('converts Cloudflare challenge block to custom BlockedError', async () => {
-    fetchMock.get('https://some-cloudflare-url.test/', { status: 403, headers: { 'cf-mitigated': 'challenge' } });
+    const mockPool = mockAgent.get('https://some-cloudflare-url.test');
+    mockPool.intercept({ path: '/' }).reply(403, undefined, { headers: { 'cf-mitigated': 'challenge' } });
 
     try {
       await fetcher.text(ctx, new URL('https://some-cloudflare-url.test/'));
@@ -74,21 +72,30 @@ describe('fetch', () => {
 
   test('uses FlareSolverr to solve Cloudflare challenge if configured and succeeds', async () => {
     process.env['FLARESOLVERR_ENDPOINT'] = 'http://localhost:8191/v1/x';
-    fetchMock.get('https://some-cloudflare-flaresolverr-success-url.test/', { status: 403, headers: { 'cf-mitigated': 'challenge' } });
-
-    fetchMock.post(
-      'http://localhost:8191/v1/x',
+    const mockPool = mockAgent.get('https://some-cloudflare-flaresolverr-success-url.test');
+    mockPool.intercept({ path: '/' }).reply(403, undefined, { headers: { 'cf-mitigated': 'challenge' } });
+    const mockPool2 = mockAgent.get('http://localhost:8191');
+    mockPool2.intercept({ path: '/v1/x', method: 'POST' }).reply(
+      200,
       {
-        body: {
-          status: 'ok',
-          solution: {
-            response: 'some response',
-            cookies: [
-              { name: 'cf_clearance', value: 'some_value', expires: Date.now() / 1000 + 12345, domain: 'some-cloudflare-flaresolverr-success-url.test' },
-              { name: 'irrelevant', value: 'some_other_value', expires: Date.now() / 1000 + 12345, domain: 'some-other.domain' },
-            ],
-            userAgent: 'user agent that works',
-          },
+        status: 'ok',
+        solution: {
+          response: 'some response',
+          cookies: [
+            {
+              name: 'cf_clearance',
+              value: 'some_value',
+              expires: Date.now() / 1000 + 12345,
+              domain: 'some-cloudflare-flaresolverr-success-url.test',
+            },
+            {
+              name: 'irrelevant',
+              value: 'some_other_value',
+              expires: Date.now() / 1000 + 12345,
+              domain: 'some-other.domain',
+            },
+          ],
+          userAgent: 'user agent that works',
         },
       },
     );
@@ -97,12 +104,11 @@ describe('fetch', () => {
     expect(response).toBe('some response');
 
     // The next request has to use the cookie and user agent we got
+    mockPool.intercept({ path: '/' }).reply(200, 'some response');
     await fetcher.text(ctx, new URL('https://some-cloudflare-flaresolverr-success-url.test/'));
-    expect(fetchMock.callHistory.callLogs[2]?.args[1]).toMatchObject({
-      headers: {
-        'Cookie': 'cf_clearance=some_value',
-        'User-Agent': 'user agent that works',
-      },
+    expect(mockAgent.getCallHistory()?.calls()[2]?.headers).toMatchObject({
+      'Cookie': 'cf_clearance=some_value',
+      'User-Agent': 'user agent that works',
     });
 
     delete process.env['FLARESOLVERR_ENDPOINT'];
@@ -110,8 +116,10 @@ describe('fetch', () => {
 
   test('uses FlareSolverr to solve Cloudflare challenge if configured and fails with custom BlockedError', async () => {
     process.env['FLARESOLVERR_ENDPOINT'] = 'http://localhost:8191/v1/y';
-    fetchMock.get('https://some-cloudflare-flaresolverr-fail-url.test/', { status: 403, headers: { 'cf-mitigated': 'challenge' } });
-    fetchMock.post('http://localhost:8191/v1/y', { body: { status: 'nok' } });
+    const mockPool = mockAgent.get('https://some-cloudflare-flaresolverr-fail-url.test');
+    mockPool.intercept({ path: '/' }).reply(403, undefined, { headers: { 'cf-mitigated': 'challenge' } });
+    const mockPool2 = mockAgent.get('http://localhost:8191');
+    mockPool2.intercept({ path: '/v1/y', method: 'POST' }).reply(200, { status: 'nok' });
 
     try {
       await fetcher.text(ctx, new URL('https://some-cloudflare-flaresolverr-fail-url.test/'));
@@ -125,7 +133,8 @@ describe('fetch', () => {
   });
 
   test('converts generic forbidden to custom BlockedError', async () => {
-    fetchMock.get('https://some-forbidden-url.test/', { status: 403 });
+    const mockPool = mockAgent.get('https://some-forbidden-url.test');
+    mockPool.intercept({ path: '/' }).reply(403);
 
     try {
       await fetcher.text(ctx, new URL('https://some-forbidden-url.test/'));
@@ -137,7 +146,8 @@ describe('fetch', () => {
   });
 
   test('converts cloudflare 451 to custom BlockedError', async () => {
-    fetchMock.get('https://some-cloudflare-forbidden-url.test/', { status: 451 });
+    const mockPool = mockAgent.get('https://some-cloudflare-forbidden-url.test');
+    mockPool.intercept({ path: '/' }).reply(451);
 
     try {
       await fetcher.text(ctx, new URL('https://some-cloudflare-forbidden-url.test/'));
@@ -149,7 +159,8 @@ describe('fetch', () => {
   });
 
   test('converts MediaFlow Proxy forbidden to custom BlockedError', async () => {
-    fetchMock.get('https://media-flow-proxy-forbidden-url.test/', { status: 403 });
+    const mockPool = mockAgent.get('https://media-flow-proxy-forbidden-url.test');
+    mockPool.intercept({ path: '/' }).reply(403);
 
     try {
       await fetcher.text(createTestContext({ mediaFlowProxyUrl: 'https://media-flow-proxy-forbidden-url.test/' }), new URL('https://media-flow-proxy-forbidden-url.test/'));
@@ -161,7 +172,8 @@ describe('fetch', () => {
   });
 
   test('converts 429 to custom TooManyRequestsError', async () => {
-    fetchMock.get('https://some-rate-limited-url.test/', { status: 429 });
+    const mockPool = mockAgent.get('https://some-rate-limited-url.test');
+    mockPool.intercept({ path: '/' }).reply(429);
 
     try {
       await fetcher.text(ctx, new URL('https://some-rate-limited-url.test/'));
@@ -173,7 +185,9 @@ describe('fetch', () => {
   });
 
   test('converts 429 to custom TooManyRequestsError and blocks consecutive requests', async () => {
-    fetchMock.get('https://some-rate-limited-retry-after-url.test/', { status: 429, headers: { 'retry-after': '60' } });
+    const mockPool = mockAgent.get('https://some-rate-limited-retry-after-url.test');
+    mockPool.intercept({ path: '/' }).reply(429, undefined, { headers: { 'retry-after': '60' } });
+    mockPool.intercept({ path: '/' }).reply(200);
 
     try {
       await fetcher.text(ctx, new URL('https://some-rate-limited-retry-after-url.test/'));
@@ -192,16 +206,17 @@ describe('fetch', () => {
   });
 
   test('retries rate limits with short ttl', async () => {
-    fetchMock
-      .getOnce('https://some-rate-limited-retry-after-short-url.test/', { status: 429, headers: { 'retry-after': '1' } })
-      .getOnce('https://some-rate-limited-retry-after-short-url.test/', 'success');
+    const mockPool = mockAgent.get('https://some-rate-limited-retry-after-short-url.test');
+    mockPool.intercept({ path: '/' }).reply(429, undefined, { headers: { 'retry-after': '1' } });
+    mockPool.intercept({ path: '/' }).reply(200);
 
     const responseText = await fetcher.text(ctx, new URL('https://some-rate-limited-retry-after-short-url.test/'));
-    expect(responseText).toBe('success');
+    expect(responseText).toBe('');
   });
 
   test('passes through other error as HttpError after retrying 3 times', async () => {
-    fetchMock.get('https://some-error-url.test', { status: 500, headers: { 'x-foo': 'bar' } });
+    const mockPool = mockAgent.get('https://some-error-url.test');
+    mockPool.intercept({ path: '/' }).reply(500, undefined, { headers: { 'x-foo': 'bar' } }).times(4);
 
     try {
       await fetcher.text(ctx, new URL('https://some-error-url.test/'));
@@ -213,19 +228,22 @@ describe('fetch', () => {
   });
 
   test('passes through exceptions', async () => {
-    fetchMock.get('https://some-exception-url.test/', { throws: new TypeError('Failed to fetch') });
+    const mockPool = mockAgent.get('https://some-error-url.test');
+    mockPool.intercept({ path: '/' }).replyWithError((new TypeError('Failed to fetch')));
 
     await expect(fetcher.text(ctx, new URL('https://some-exception-url.test/'))).rejects.toBeInstanceOf(TypeError);
   });
 
   test('times out, retries and times out again', async () => {
-    fetchMock.get('https://some-timeout-url.test/', 200, { delay: 20 });
+    const mockPool = mockAgent.get('https://some-timeout-url.test');
+    mockPool.intercept({ path: '/' }).reply(200).delay(20).persist();
 
     await expect(fetcher.text(ctx, new URL('https://some-timeout-url.test/'), { timeout: 10 })).rejects.toBeInstanceOf(TimeoutError);
   });
 
   test('queues requests and throws if queue is full', async () => {
-    fetchMock.get('https://some-full-queue-url.test/', 200, { delay: 20 });
+    const mockPool = mockAgent.get('https://some-full-queue-url.test');
+    mockPool.intercept({ path: '/' }).reply(200).delay(20).persist();
 
     const allPromises = Promise.all([
       fetcher.text(ctx, new URL('https://some-full-queue-url.test/'), { queueLimit: 1, queueTimeout: 10 }),
@@ -239,7 +257,8 @@ describe('fetch', () => {
   });
 
   test('throws if too many recent requests timed-out', async () => {
-    fetchMock.get('https://too-many-recent-timeouts-url.test/', 200, { delay: 20 });
+    const mockPool = mockAgent.get('https://too-many-recent-timeouts-url.test');
+    mockPool.intercept({ path: '/' }).reply(200).delay(20).persist();
 
     await expect(fetcher.text(ctx, new URL('https://too-many-recent-timeouts-url.test/'), { timeout: 10, timeoutsCountThrow: 2 })).rejects.toBeInstanceOf(TimeoutError);
     await expect(fetcher.text(ctx, new URL('https://too-many-recent-timeouts-url.test/'), { timeout: 10, timeoutsCountThrow: 2 })).rejects.toBeInstanceOf(TimeoutError);

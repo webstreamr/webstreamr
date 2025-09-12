@@ -3,6 +3,7 @@ import crypto from 'crypto';
 import fs from 'node:fs';
 import CachePolicy from 'http-cache-semantics';
 import slugify from 'slugify';
+import { RequestInit } from 'undici';
 import winston from 'winston';
 import { Context } from '../types';
 import { envGet } from './env';

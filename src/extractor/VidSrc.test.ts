@@ -1,4 +1,4 @@
-import fetchMock from 'fetch-mock';
+import { MockAgent, setGlobalDispatcher } from 'undici';
 import winston from 'winston';
 import { createTestContext } from '../test';
 import { Fetcher, FetcherMock } from '../utils';
@@ -11,18 +11,6 @@ const extractorRegistry = new ExtractorRegistry(logger, [new VidSrc(new FetcherM
 const ctx = createTestContext();
 
 describe('VidSrc', () => {
-  beforeAll(() => {
-    fetchMock.mockGlobal();
-  });
-
-  afterAll(() => {
-    fetchMock.unmockGlobal();
-  });
-
-  afterEach(() => {
-    fetchMock.clearHistory();
-  });
-
   test('Full Metal Jacket', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://vidsrc.xyz/embed/movie/tt0093058'))).toMatchSnapshot();
   });
@@ -36,9 +24,14 @@ describe('VidSrc', () => {
   });
 
   test('rate limit issues are retried and fail if no tlds are left', async () => {
-    fetchMock
-      .getOnce('https://vidsrc.xyz/embed/movie/tt33043892/1/1', 429)
-      .getOnce('https://vidsrc.net/embed/movie/tt33043892/1/1', 429);
+    const mockAgent = new MockAgent({ enableCallHistory: true });
+    mockAgent.disableNetConnect();
+    setGlobalDispatcher(mockAgent);
+
+    mockAgent.get('https://vidsrc.xyz')
+      .intercept({ path: '/embed/movie/tt33043892/1/1' }).reply(429);
+    mockAgent.get('https://vidsrc.net')
+      .intercept({ path: '/embed/movie/tt33043892/1/1' }).reply(429);
 
     const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
     const vidSrc = new VidSrc(fetcher, ['net', 'xyz']);
@@ -47,13 +40,18 @@ describe('VidSrc', () => {
   });
 
   test('blocking issues are retried and fail if no tlds are left', async () => {
-    fetchMock
-      .getOnce('https://vidsrc.xyz/embed/movie/tt33043892/1/2', 403)
-      .getOnce('https://vidsrc.net/embed/movie/tt33043892/1/2', 403);
+    const mockAgent = new MockAgent({ enableCallHistory: true });
+    mockAgent.disableNetConnect();
+    setGlobalDispatcher(mockAgent);
+
+    mockAgent.get('https://vidsrc.xyz')
+      .intercept({ path: '/embed/movie/tt33043892/1/1' }).reply(403);
+    mockAgent.get('https://vidsrc.net')
+      .intercept({ path: '/embed/movie/tt33043892/1/1' }).reply(403);
 
     const fetcher = new Fetcher(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
     const vidSrc = new VidSrc(fetcher, ['net', 'xyz']);
 
-    expect(await vidSrc.extract(ctx, new URL('https://vidsrc.xyz/embed/movie/tt33043892/1/2'), {})).toMatchSnapshot();
+    expect(await vidSrc.extract(ctx, new URL('https://vidsrc.xyz/embed/movie/tt33043892/1/1'), {})).toMatchSnapshot();
   });
 });

@@ -3,6 +3,7 @@ import { Mutex, Semaphore, SemaphoreInterface, withTimeout } from 'async-mutex';
 import { Cacheable, CacheableMemory, Keyv } from 'cacheable';
 import CachePolicy from 'http-cache-semantics';
 import { Cookie, CookieJar } from 'tough-cookie';
+import { fetch, Headers, RequestInit, Response } from 'undici';
 import winston from 'winston';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
 import { BlockedReason, Context } from '../types';
@@ -274,16 +275,20 @@ export class Fetcher {
       throw new TooManyTimeoutsError();
     }
 
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), init?.timeout ?? this.DEFAULT_TIMEOUT);
-
     let response;
     try {
       const finalUrl = new URL(url.href);
       finalUrl.username = '';
       finalUrl.password = '';
 
-      const finalInit = { ...init, keepalive: true, signal: controller.signal, dispatcher: createDispatcher(ctx, url) };
+      const dispatcher = createDispatcher(ctx, url);
+
+      const finalInit = {
+        ...init,
+        keepalive: true,
+        signal: AbortSignal.timeout(init?.timeout ?? this.DEFAULT_TIMEOUT),
+        ...(/* istanbul ignore next */ dispatcher && { dispatcher }),
+      };
 
       response = await fetch(finalUrl, finalInit);
     } catch (error) {
@@ -293,8 +298,6 @@ export class Fetcher {
       }
 
       throw error;
-    } finally {
-      clearTimeout(timer);
     }
 
     await this.decreaseTimeoutsCount(url);
