@@ -51,7 +51,6 @@ export class VidSrc extends Extractor {
     const $ = cheerio.load(html);
 
     const iframeUrl = new URL(($('#player_iframe').attr('src') as string).replace(/^\/\//, 'https://'));
-    const headers = { Referer: iframeUrl.origin };
     const title = $('title').text().trim();
 
     return Promise.all(
@@ -60,10 +59,10 @@ export class VidSrc extends Extractor {
         .toArray()
         .filter(({ serverName }) => serverName === 'CloudStream Pro')
         .map(async ({ serverName, dataHash }) => {
-          const iframeHtml = await this.fetcher.text(ctx, new URL(`/rcp/${dataHash}`, iframeUrl.origin), { headers });
+          const iframeHtml = await this.fetcher.text(ctx, new URL(`/rcp/${dataHash}`, iframeUrl.origin));
           const srcMatch = iframeHtml.match(`src:\\s?'(.*)'`) as string[];
 
-          const playerHtml = await this.fetcher.text(ctx, new URL(srcMatch[1] as string, iframeUrl.origin), { headers });
+          const playerHtml = await this.fetcher.text(ctx, new URL(srcMatch[1] as string, iframeUrl.origin));
           const fileMatch = playerHtml.match(`file:\\s?'(.*)'`);
           if (!fileMatch) {
             throw new NotFoundError();
