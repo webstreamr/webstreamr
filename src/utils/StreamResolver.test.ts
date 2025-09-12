@@ -110,7 +110,7 @@ describe('resolve', () => {
             url: new URL('https://example.com'),
             format: Format.unknown,
             isExternal: true,
-            error: new BlockedError(BlockedReason.cloudflare_challenge, {}),
+            error: new BlockedError(new URL('https://example.com'), BlockedReason.cloudflare_challenge, {}),
             label: 'hoster.com',
             sourceId: '',
             meta: {
@@ -121,7 +121,7 @@ describe('resolve', () => {
             url: new URL('https://example.com'),
             format: Format.unknown,
             isExternal: true,
-            error: new BlockedError(BlockedReason.cloudflare_censor, {}),
+            error: new BlockedError(new URL('https://example.com'), BlockedReason.cloudflare_censor, {}),
             label: 'hoster.com',
             sourceId: '',
             meta: {
@@ -132,7 +132,7 @@ describe('resolve', () => {
             url: new URL('https://example.com'),
             format: Format.unknown,
             isExternal: true,
-            error: new BlockedError(BlockedReason.media_flow_proxy_auth, {}),
+            error: new BlockedError(new URL('https://example.com'), BlockedReason.media_flow_proxy_auth, {}),
             label: 'hoster.com',
             sourceId: '',
             meta: {
@@ -143,7 +143,7 @@ describe('resolve', () => {
             url: new URL('https://example.com'),
             format: Format.unknown,
             isExternal: true,
-            error: new BlockedError(BlockedReason.unknown, {}),
+            error: new BlockedError(new URL('https://example.com'), BlockedReason.unknown, {}),
             label: 'hoster.com',
             sourceId: '',
             meta: {

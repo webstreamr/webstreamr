@@ -131,7 +131,7 @@ export class Fetcher {
       const noFlareSolverr = init?.noFlareSolverr ?? false;
       const flareSolverrEndpoint = envGet('FLARESOLVERR_ENDPOINT');
       if (noFlareSolverr || !flareSolverrEndpoint) {
-        throw new BlockedError(BlockedReason.cloudflare_challenge, httpCacheItem.headers);
+        throw new BlockedError(url, BlockedReason.cloudflare_challenge, httpCacheItem.headers);
       }
 
       this.logger.info(`Query FlareSolverr for ${url.href}`, ctx);
@@ -140,7 +140,7 @@ export class Fetcher {
       const challengeResult = await (await this.queuedFetch(ctx, new URL(flareSolverrEndpoint), { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' }, queueLimit: 1, timeout: 15000 })).json() as FlareSolverrResult;
       if (challengeResult.status !== 'ok') {
         this.logger.warn(`FlareSolverr issue: ${JSON.stringify(challengeResult)}`, ctx);
-        throw new BlockedError(BlockedReason.flaresolverr_failed, {});
+        throw new BlockedError(url, BlockedReason.flaresolverr_failed, {});
       }
 
       challengeResult.solution.cookies.forEach((cookie) => {
@@ -168,14 +168,14 @@ export class Fetcher {
 
     if (httpCacheItem.status === 403) {
       if (ctx.config.mediaFlowProxyUrl && url.href.startsWith(ctx.config.mediaFlowProxyUrl)) {
-        throw new BlockedError(BlockedReason.media_flow_proxy_auth, httpCacheItem.headers);
+        throw new BlockedError(url, BlockedReason.media_flow_proxy_auth, httpCacheItem.headers);
       }
 
-      throw new BlockedError(BlockedReason.unknown, httpCacheItem.headers);
+      throw new BlockedError(url, BlockedReason.unknown, httpCacheItem.headers);
     }
 
     if (httpCacheItem.status === 451) {
-      throw new BlockedError(BlockedReason.cloudflare_censor, httpCacheItem.headers);
+      throw new BlockedError(url, BlockedReason.cloudflare_censor, httpCacheItem.headers);
     }
 
     if (httpCacheItem.status === 429) {

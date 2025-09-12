@@ -17,15 +17,11 @@ export * from './TooManyTimeoutsError';
 
 export const logErrorAndReturnNiceString = (ctx: Context, logger: winston.Logger, source: string, error: unknown): string => {
   if (error instanceof BlockedError) {
-    if (error.reason === BlockedReason.cloudflare_challenge) {
-      logger.warn(`${source}: Request was blocked via Cloudflare challenge.`, ctx);
-    } else if (error.reason === BlockedReason.cloudflare_censor) {
-      logger.warn(`${source}: Request was censored by Cloudflare.`, ctx);
-    } else if (error.reason === BlockedReason.media_flow_proxy_auth) {
+    if (error.reason === BlockedReason.media_flow_proxy_auth) {
       return '⚠️ MediaFlow Proxy authentication failed. Please set the correct password.';
-    } else {
-      logger.warn(`${source}: Request was blocked, headers: ${JSON.stringify(error.headers)}.`, ctx);
     }
+
+    logger.warn(`${source}: Request to ${error.url.href} was blocked, reason: ${error.reason}, headers: ${JSON.stringify(error.headers)}.`, ctx);
 
     return `⚠️ Request was blocked. Reason: ${error.reason}`;
   }
