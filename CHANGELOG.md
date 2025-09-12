@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.50.1](https://github.com/webstreamr/webstreamr/compare/v0.50.0...v0.50.1) (2025-09-12)
+
+
+### Miscellaneous Chores
+
+* **fetcher:** remove interceptors and retries ([7ee87ce](https://github.com/webstreamr/webstreamr/commit/7ee87ceb9ea38876bed7e3ea034c6f60bfdd9a27))
+
 ## [0.50.0](https://github.com/webstreamr/webstreamr/compare/v0.49.7...v0.50.0) (2025-09-12)
 
 
