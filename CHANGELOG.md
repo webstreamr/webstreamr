@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.50.3](https://github.com/webstreamr/webstreamr/compare/v0.50.2...v0.50.3) (2025-09-12)
+
+
+### Miscellaneous Chores
+
+* **extractor:** set VidSrc referer again ([5429b0c](https://github.com/webstreamr/webstreamr/commit/5429b0cb7a2e2bb419158bc0df659cb9002ac345))
+* **fetcher:** bring back error retry ([69da82b](https://github.com/webstreamr/webstreamr/commit/69da82b139d952f09aa5e1b1a51c887223fd20db))
+* **fetcher:** cache only 2xx and 404 responses ([d087318](https://github.com/webstreamr/webstreamr/commit/d087318286a32a82eb5bb211fad8aba0eeba257e))
+* slightly clean-up extractor and source logging ([fdb9bff](https://github.com/webstreamr/webstreamr/commit/fdb9bff86bfb9869e8b2bdbff10d994667e1bb85))
+* **source:** disable Soaper ([cb256de](https://github.com/webstreamr/webstreamr/commit/cb256de9f8f9d7e40f76c86af1c2c21efec7dc70))
+
+
+### Bug Fixes
+
+* **extractor:** cache FileLions ([b27126f](https://github.com/webstreamr/webstreamr/commit/b27126fd8e41bfdc344fb4e448c1f87844837a9e))
+
 ## [0.50.2](https://github.com/webstreamr/webstreamr/compare/v0.50.1...v0.50.2) (2025-09-12)
 
 
