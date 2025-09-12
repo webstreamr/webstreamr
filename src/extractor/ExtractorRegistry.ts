@@ -52,7 +52,7 @@ export class ExtractorRegistry {
       }
     }
 
-    this.logger.info(`Extract stream URL using ${extractor.id} extractor from ${url}`, ctx);
+    this.logger.info(`Extract ${url} using ${extractor.id} extractor`, ctx);
 
     const urlResults = await extractor.extract(ctx, normalizedUrl, { ...meta, countryCodes: meta?.countryCodes ?? [] });
 
