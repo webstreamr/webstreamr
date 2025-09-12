@@ -12,7 +12,7 @@ exports[`FileLions filelions f 1`] = `
       "title": "dexter resurrection s01e01 1080p web h264 successfulcrab",
     },
     "sourceId": "filelions_",
-    "ttl": 0,
+    "ttl": 900000,
     "url": "https://mediaflow.test.org/proxy/hls/manifest.m3u8?api_password=test&h_user-agent=Mozilla%2F5.0+%28Windows+NT+10.0%3B+Win64%3B+x64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F136.0.0.0+Safari%2F537.36&h_referer=https%3A%2F%2Ffilelions.to%2Fv%2Ftyn45apubte2&d=https%3A%2F%2FRNzT2t4XVKU08.acek-cdn.com%2Fhls2%2F01%2F05594%2Ftyn45apubte2_n%2Fmaster.m3u8%3Ft%3D8y6hK40boUynXnkyW5s63kFaWpt6_A5UcG5LBUX3j_4%26s%3D1756131487%26e%3D129600%26f%3D27974684%26srv%3DF6vE2P5Wjncn%26i%3D0.4%26sp%3D500%26p1%3DF6vE2P5Wjncn%26p2%3DF6vE2P5Wjncn%26asn%3D31898",
   },
 ]
@@ -30,7 +30,7 @@ exports[`FileLions mivalyo v referer lock 1`] = `
       "title": "Versailles S01E01 German AC3 1080p BDRip x265 FuN",
     },
     "sourceId": "filelions_",
-    "ttl": 0,
+    "ttl": 900000,
     "url": "https://mediaflow.test.org/proxy/hls/manifest.m3u8?api_password=test&h_user-agent=Mozilla%2F5.0+%28Windows+NT+10.0%3B+Win64%3B+x64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F136.0.0.0+Safari%2F537.36&h_referer=https%3A%2F%2Fkinoger.com&d=https%3A%2F%2F6dkDxt1udLQhbho.ovaltinecdn.com%2Fhls2%2F01%2F01552%2Ftah5znapz3e5_n%2Fmaster.m3u8%3Ft%3DMnSHt6lZx3bdKvTdoU1JsTLWp56dlRDLwze5Prnefew%26s%3D1756131487%26e%3D129600%26f%3D7760835%26srv%3DGOweneve6B0I%26i%3D0.4%26sp%3D500%26p1%3DGOweneve6B0I%26p2%3DGOweneve6B0I%26asn%3D31898",
   },
 ]
