@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.50.0](https://github.com/webstreamr/webstreamr/compare/v0.49.7...v0.50.0) (2025-09-12)
+
+
+### Miscellaneous Chores
+
+* **extractor:** remove Referer from follow-up VidSrc requests completely ([ffd62a5](https://github.com/webstreamr/webstreamr/commit/ffd62a5d160266f168422bf5d3f66e374f8ac140))
+
+
+### Features
+
+* add support for proxy per host using minimatch ([b513a89](https://github.com/webstreamr/webstreamr/commit/b513a8926bec22ea47053551445ebbad5ab6ecd9))
+
+
+### Code Refactoring
+
+* create dispatcher per request ([2f370d1](https://github.com/webstreamr/webstreamr/commit/2f370d1b9c20aa3cc51a9c59852a0768949a3afa))
+
 ## [0.49.7](https://github.com/webstreamr/webstreamr/compare/v0.49.6...v0.49.7) (2025-09-11)
 
 
