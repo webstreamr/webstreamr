@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.50.4](https://github.com/webstreamr/webstreamr/compare/v0.50.3...v0.50.4) (2025-09-12)
+
+
+### Miscellaneous Chores
+
+* add url info to blocked error ([a729dc8](https://github.com/webstreamr/webstreamr/commit/a729dc85e0231a15dac2c28c3c198ec4e3269ea8))
+
 ## [0.50.3](https://github.com/webstreamr/webstreamr/compare/v0.50.2...v0.50.3) (2025-09-12)
 
 
