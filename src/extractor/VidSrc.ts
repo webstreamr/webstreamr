@@ -39,7 +39,7 @@ export class VidSrc extends Extractor {
 
     let html: string;
     try {
-      html = await this.fetcher.text(ctx, newUrl, { headers: { Referer: meta.referer ?? newUrl.origin }, queueLimit: 1 });
+      html = await this.fetcher.text(ctx, newUrl, { queueLimit: 1 });
     } catch (error) {
       if (tlds.length && (error instanceof TooManyRequestsError || error instanceof BlockedError)) {
         return this.extractUsingRandomTld(ctx, url, meta, tlds);
@@ -59,10 +59,11 @@ export class VidSrc extends Extractor {
         .toArray()
         .filter(({ serverName }) => serverName === 'CloudStream Pro')
         .map(async ({ serverName, dataHash }) => {
-          const iframeHtml = await this.fetcher.text(ctx, new URL(`/rcp/${dataHash}`, iframeUrl.origin));
+          const rcpUrl = new URL(`/rcp/${dataHash}`, iframeUrl.origin);
+          const iframeHtml = await this.fetcher.text(ctx, rcpUrl, { headers: { Referer: newUrl.origin } });
           const srcMatch = iframeHtml.match(`src:\\s?'(.*)'`) as string[];
 
-          const playerHtml = await this.fetcher.text(ctx, new URL(srcMatch[1] as string, iframeUrl.origin));
+          const playerHtml = await this.fetcher.text(ctx, new URL(srcMatch[1] as string, iframeUrl.origin), { headers: { Referer: rcpUrl.href } });
           const fileMatch = playerHtml.match(`file:\\s?'(.*)'`);
           if (!fileMatch) {
             throw new NotFoundError();
