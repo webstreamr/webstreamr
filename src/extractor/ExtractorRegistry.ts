@@ -3,7 +3,7 @@ import KeyvSqlite from '@keyv/sqlite';
 import { Cacheable, CacheableMemory, Keyv } from 'cacheable';
 import winston from 'winston';
 import { Context, Meta, UrlResult } from '../types';
-import { getCacheDir, isExtractorDisabled } from '../utils';
+import { getCacheDir, isExtractorDisabled, noCache } from '../utils';
 import { Extractor } from './Extractor';
 
 export class ExtractorRegistry {
@@ -41,7 +41,7 @@ export class ExtractorRegistry {
 
     const storedDataRaw = await this.urlResultCache.getRaw<UrlResult[]>(cacheKey);
     const expires = storedDataRaw?.expires;
-    if (storedDataRaw && expires) {
+    if (storedDataRaw && expires && !noCache(ctx.config)) {
       // Ignore the cache randomly after at least 2/3 of the TTL passed to start refreshing results slowly
       const refreshTimestamp = this.randomInteger(expires - extractor.ttl * (2 / 3), expires);
       const now = Date.now();

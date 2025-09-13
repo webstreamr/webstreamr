@@ -7,7 +7,8 @@ import { fetch, Headers, RequestInit, Response } from 'undici';
 import winston from 'winston';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
 import { BlockedReason, Context } from '../types';
-import { createDispatcher } from './dispatcher';
+import { noCache } from './config';
+import { createProxyAgent, getProxyForUrl } from './dispatcher';
 import { envGet } from './env';
 
 interface HttpCacheItem {
@@ -233,9 +234,9 @@ export class Fetcher {
 
     const cacheKey = this.determineCacheKey(url, init);
     let httpCacheItem = await this.cacheGet(cacheKey);
-    const noCache = init?.noCache ?? false;
-    if (httpCacheItem && !noCache) {
-      this.logger.info(`Cached fetch ${request.method} ${url}`, ctx);
+    const disableCache = init?.noCache ?? noCache(ctx.config);
+    if (httpCacheItem && !disableCache) {
+      this.logger.info(`Cached fetch ${request.method} ${url}: ${httpCacheItem.status} (${httpCacheItem.statusText})`, ctx);
       return this.handleHttpCacheItem(ctx, httpCacheItem, url, init);
     }
 
@@ -253,14 +254,16 @@ export class Fetcher {
   };
 
   protected async fetchWithTimeout(ctx: Context, url: URL, init?: CustomRequestInit, tryCount = 0): Promise<Response> {
-    this.logger.info(`Fetch ${init?.method ?? 'GET'} ${url}`, ctx);
+    const proxyUrl = getProxyForUrl(ctx, url);
+
+    this.logger.info(`Fetch ${init?.method ?? 'GET'} ${url} via proxy ${proxyUrl}`, ctx);
 
     const isRateLimitedRaw = await this.rateLimitedCache.getRaw<true>(url.host);
     /* istanbul ignore if */
     if (isRateLimitedRaw && isRateLimitedRaw.value && isRateLimitedRaw.expires) {
       const ttl = isRateLimitedRaw.expires - Date.now();
       if (ttl <= this.MAX_WAIT_RETRY_AFTER && tryCount < 1) {
-        this.logger.info('Wait out rate limit', ctx);
+        this.logger.info(`Wait out rate limit for ${url}`, ctx);
 
         await this.sleep(ttl);
 
@@ -281,17 +284,17 @@ export class Fetcher {
       finalUrl.username = '';
       finalUrl.password = '';
 
-      const dispatcher = createDispatcher(ctx, url);
-
       const finalInit = {
         ...init,
         keepalive: true,
         signal: AbortSignal.timeout(init?.timeout ?? this.DEFAULT_TIMEOUT),
-        ...(/* istanbul ignore next */ dispatcher && { dispatcher }),
+        ...(/* istanbul ignore next */ proxyUrl && { dispatcher: createProxyAgent(proxyUrl) }),
       };
 
       response = await fetch(finalUrl, finalInit);
     } catch (error) {
+      this.logger.info(`Got error ${error} for ${url}`, ctx);
+
       if (error instanceof DOMException && ['AbortError', 'TimeoutError'].includes(error.name)) {
         await this.increaseTimeoutsCount(url);
         throw new TimeoutError();
@@ -299,6 +302,8 @@ export class Fetcher {
 
       throw error;
     }
+
+    this.logger.info(`Got ${response.status} (${response.statusText}) for ${url}`, ctx);
 
     await this.decreaseTimeoutsCount(url);
 
