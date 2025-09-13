@@ -8,7 +8,7 @@ import winston from 'winston';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
 import { BlockedReason, Context } from '../types';
 import { noCache } from './config';
-import { createDispatcher } from './dispatcher';
+import { createProxyAgent, getProxyForUrl } from './dispatcher';
 import { envGet } from './env';
 
 interface HttpCacheItem {
@@ -254,7 +254,9 @@ export class Fetcher {
   };
 
   protected async fetchWithTimeout(ctx: Context, url: URL, init?: CustomRequestInit, tryCount = 0): Promise<Response> {
-    this.logger.info(`Fetch ${init?.method ?? 'GET'} ${url}`, ctx);
+    const proxyUrl = getProxyForUrl(ctx, url);
+
+    this.logger.info(`Fetch ${init?.method ?? 'GET'} ${url} via proxy ${proxyUrl}`, ctx);
 
     const isRateLimitedRaw = await this.rateLimitedCache.getRaw<true>(url.host);
     /* istanbul ignore if */
@@ -282,13 +284,11 @@ export class Fetcher {
       finalUrl.username = '';
       finalUrl.password = '';
 
-      const dispatcher = createDispatcher(ctx, url);
-
       const finalInit = {
         ...init,
         keepalive: true,
         signal: AbortSignal.timeout(init?.timeout ?? this.DEFAULT_TIMEOUT),
-        ...(/* istanbul ignore next */ dispatcher && { dispatcher }),
+        ...(/* istanbul ignore next */ proxyUrl && { dispatcher: createProxyAgent(proxyUrl) }),
       };
 
       response = await fetch(finalUrl, finalInit);

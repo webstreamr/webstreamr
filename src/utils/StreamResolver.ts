@@ -39,7 +39,7 @@ export class StreamResolver {
 
     const streams: Stream[] = [];
 
-    let sourceErrorOccurred = false;
+    let sourceErrorCount = 0;
     const urlResults: UrlResult[] = [];
     const sourcePromises = sources.map(async (source) => {
       if (!source.contentTypes.includes(type)) {
@@ -55,7 +55,7 @@ export class StreamResolver {
 
         urlResults.push(...sourceUrlResults.flat());
       } catch (error) {
-        sourceErrorOccurred = true;
+        sourceErrorCount++;
 
         if (showErrors(ctx.config)) {
           streams.push({
@@ -86,7 +86,7 @@ export class StreamResolver {
       return a.label.localeCompare(b.label);
     });
 
-    const errorCount = urlResults.reduce((count, urlResult) => urlResult.error ? count + 1 : count, 0);
+    const errorCount = urlResults.reduce((count, urlResult) => urlResult.error ? count + 1 : count, sourceErrorCount);
     this.logger.info(`Got ${urlResults.length} url results, including ${errorCount} errors`, ctx);
 
     streams.push(
@@ -107,7 +107,7 @@ export class StreamResolver {
         })),
     );
 
-    const ttl = !sourceErrorOccurred ? this.determineTtl(urlResults) : undefined;
+    const ttl = sourceErrorCount === 0 ? this.determineTtl(urlResults) : undefined;
 
     return {
       streams,
