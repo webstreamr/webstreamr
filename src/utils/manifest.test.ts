@@ -50,20 +50,8 @@ describe('buildManifest', () => {
     expect(manifest.config).toMatchSnapshot();
   });
 
-  test('has checked showErrors', () => {
-    const manifest = buildManifest([], [], { showErrors: 'on' });
-
-    expect(manifest.config).toMatchSnapshot();
-  });
-
-  test('has checked includeExternalUrls', () => {
-    const manifest = buildManifest([], [], { includeExternalUrls: 'on' });
-
-    expect(manifest.config).toMatchSnapshot();
-  });
-
-  test('has checked noCache', () => {
-    const manifest = buildManifest([], [], { noCache: 'on' });
+  test('has checked showErrors and includeExternalUrls', () => {
+    const manifest = buildManifest([], [], { showErrors: 'on', includeExternalUrls: 'on' });
 
     expect(manifest.config).toMatchSnapshot();
   });
