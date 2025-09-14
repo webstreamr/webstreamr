@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://supervideo.cc/css/main.css">
+<link rel="icon" href="https://supervideo.cc/assets/images/favicon/favicon.ico">
+<script language="JavaScript" type="text/javascript" CHARSET="UTF-8" src="https://supervideo.cc/js/jquery.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://supervideo.cc/js/xupload.js"></script>
+<script language="JavaScript" type="text/javascript" CHARSET="UTF-8" src="https://supervideo.cc/js/jquery.cookie.js"></script>
+<script>
+$.cookie('file_id', '1284502', { expires: 10 });
+$.cookie('aff', '11057', { expires: 10 });
+
+</script>
+</HEAD>
+<BODY topmargin=0 leftmargin=0 style="background:transparent;">
+
+
+    
+        <!--100% ads-->
+		<script src="/9271593.js"></script>
+		<script src="/9271609.js"></script>
+		<script data-cfasync="false" async type="text/javascript" src="//bu.stummelbeelbow.com/r5anaGaI7UQV/115547"></script>
+        
+
+        
+
+        
+
+        
+
+        
+    
+
+
+
+     <div style="width:1280px;height:696px;position:relative;">
+         <img src="https://img.supervideo.cc/3h1qqoqtldo8.jpg" style="border:2px solid #c3c3c3;width:1280px;height:696px;">
+         
+             <div id="over_player_msg">Video is processing now.<br>Conversion stage: <span id='enc_pp'>...</span></div>
+         
+     </div>
+
+
+
+
+
+<script type="text/javascript" language="JavaScript">
+encStatus('1284502',1);
+</script>
+
+
+<script>
+$(function() {
+ 
+});
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97ce01e2ebca4d26',t:'MTc1NzQ5NzY4Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></BODY></HTML>
