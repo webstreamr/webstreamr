@@ -8,7 +8,7 @@ import winston from 'winston';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
 import { BlockedReason, Context } from '../types';
 import { noCache } from './config';
-import { createProxyAgent, getProxyForUrl } from './dispatcher';
+import { getProxyAgent, getProxyForUrl } from './dispatcher';
 import { envGet } from './env';
 
 interface HttpCacheItem {
@@ -288,7 +288,7 @@ export class Fetcher {
         ...init,
         keepalive: true,
         signal: AbortSignal.timeout(init?.timeout ?? this.DEFAULT_TIMEOUT),
-        ...(/* istanbul ignore next */ proxyUrl && { dispatcher: createProxyAgent(proxyUrl) }),
+        ...(/* istanbul ignore next */ proxyUrl && { dispatcher: getProxyAgent(proxyUrl) }),
       };
 
       response = await fetch(finalUrl, finalInit);

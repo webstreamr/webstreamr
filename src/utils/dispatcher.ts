@@ -24,10 +24,17 @@ export const getProxyForUrl = (ctx: Context, url: URL): URL | undefined => {
   return undefined;
 };
 
-export const createProxyAgent = (proxyUrl: URL): Dispatcher => {
-  if (proxyUrl.protocol === 'socks5:') {
-    return socksDispatcher({ type: 5, host: proxyUrl.hostname, port: parseInt(proxyUrl.port) });
+const proxyAgents = new Map<string, Dispatcher>();
+export const getProxyAgent = (proxyUrl: URL): Dispatcher => {
+  let proxyAgent = proxyAgents.get(proxyUrl.href);
+
+  if (!proxyAgent) {
+    proxyAgent = proxyUrl.protocol === 'socks5:'
+      ? socksDispatcher({ type: 5, host: proxyUrl.hostname, port: parseInt(proxyUrl.port) })
+      : new ProxyAgent({ uri: proxyUrl.href });
+
+    proxyAgents.set(proxyUrl.href, proxyAgent);
   }
 
-  return new ProxyAgent({ uri: proxyUrl.href });
+  return proxyAgent;
 };
