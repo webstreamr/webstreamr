@@ -7,7 +7,6 @@ import { fetch, Headers, RequestInit, Response } from 'undici';
 import winston from 'winston';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
 import { BlockedReason, Context } from '../types';
-import { noCache } from './config';
 import { createDispatcher } from './dispatcher';
 import { envGet } from './env';
 
@@ -234,8 +233,8 @@ export class Fetcher {
 
     const cacheKey = this.determineCacheKey(url, init);
     let httpCacheItem = await this.cacheGet(cacheKey);
-    const disableCache = init?.noCache ?? noCache(ctx.config);
-    if (httpCacheItem && !disableCache) {
+    const noCache = init?.noCache ?? false;
+    if (httpCacheItem && !noCache) {
       this.logger.info(`Cached fetch ${request.method} ${url}: ${httpCacheItem.status} (${httpCacheItem.statusText})`, ctx);
       return this.handleHttpCacheItem(ctx, httpCacheItem, url, init);
     }

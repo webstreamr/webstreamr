@@ -72,11 +72,6 @@ exports[`buildManifest default manifest 1`] = `
       "title": "Proxy Config",
       "type": "text",
     },
-    {
-      "key": "noCache",
-      "title": "Disable cache",
-      "type": "checkbox",
-    },
   ],
   "description": "Provides HTTP URLs from streaming websites. Configure add-on for additional languages. Add MediaFlow proxy for more URLs.
 
@@ -137,11 +132,6 @@ exports[`buildManifest disable extractors 1`] = `
     "type": "text",
   },
   {
-    "key": "noCache",
-    "title": "Disable cache",
-    "type": "checkbox",
-  },
-  {
     "default": "checked",
     "key": "disableExtractor_doodstream",
     "title": "Disable extractor DoodStream",
@@ -155,9 +145,10 @@ exports[`buildManifest disable extractors 1`] = `
 ]
 `;
 
-exports[`buildManifest has checked includeExternalUrls 1`] = `
+exports[`buildManifest has checked showErrors and includeExternalUrls 1`] = `
 [
   {
+    "default": "checked",
     "key": "showErrors",
     "title": "Show errors",
     "type": "checkbox",
@@ -185,89 +176,6 @@ exports[`buildManifest has checked includeExternalUrls 1`] = `
     "key": "proxyConfig",
     "title": "Proxy Config",
     "type": "text",
-  },
-  {
-    "key": "noCache",
-    "title": "Disable cache",
-    "type": "checkbox",
-  },
-]
-`;
-
-exports[`buildManifest has checked noCache 1`] = `
-[
-  {
-    "key": "showErrors",
-    "title": "Show errors",
-    "type": "checkbox",
-  },
-  {
-    "key": "includeExternalUrls",
-    "title": "Include external URLs in results",
-    "type": "checkbox",
-  },
-  {
-    "default": "",
-    "key": "mediaFlowProxyUrl",
-    "title": "MediaFlow Proxy URL",
-    "type": "text",
-  },
-  {
-    "default": "",
-    "key": "mediaFlowProxyPassword",
-    "title": "MediaFlow Proxy Password",
-    "type": "password",
-  },
-  {
-    "default": "",
-    "key": "proxyConfig",
-    "title": "Proxy Config",
-    "type": "text",
-  },
-  {
-    "default": "checked",
-    "key": "noCache",
-    "title": "Disable cache",
-    "type": "checkbox",
-  },
-]
-`;
-
-exports[`buildManifest has checked showErrors 1`] = `
-[
-  {
-    "default": "checked",
-    "key": "showErrors",
-    "title": "Show errors",
-    "type": "checkbox",
-  },
-  {
-    "key": "includeExternalUrls",
-    "title": "Include external URLs in results",
-    "type": "checkbox",
-  },
-  {
-    "default": "",
-    "key": "mediaFlowProxyUrl",
-    "title": "MediaFlow Proxy URL",
-    "type": "text",
-  },
-  {
-    "default": "",
-    "key": "mediaFlowProxyPassword",
-    "title": "MediaFlow Proxy Password",
-    "type": "password",
-  },
-  {
-    "default": "",
-    "key": "proxyConfig",
-    "title": "Proxy Config",
-    "type": "text",
-  },
-  {
-    "key": "noCache",
-    "title": "Disable cache",
-    "type": "checkbox",
   },
 ]
 `;
@@ -318,11 +226,6 @@ exports[`buildManifest has checked source with appropriate config 1`] = `
     "key": "proxyConfig",
     "title": "Proxy Config",
     "type": "text",
-  },
-  {
-    "key": "noCache",
-    "title": "Disable cache",
-    "type": "checkbox",
   },
 ]
 `;
@@ -382,11 +285,6 @@ exports[`buildManifest has unchecked source without a config 1`] = `
     "title": "Proxy Config",
     "type": "text",
   },
-  {
-    "key": "noCache",
-    "title": "Disable cache",
-    "type": "checkbox",
-  },
 ]
 `;
 
@@ -419,11 +317,6 @@ exports[`buildManifest showErrors and includeExternalUrls are unchecked by defau
     "key": "proxyConfig",
     "title": "Proxy Config",
     "type": "text",
-  },
-  {
-    "key": "noCache",
-    "title": "Disable cache",
-    "type": "checkbox",
   },
 ]
 `;
