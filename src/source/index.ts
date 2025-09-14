@@ -1,4 +1,4 @@
-import { Fetcher } from '../utils';
+import { envGet, Fetcher } from '../utils';
 import { CineHDPlus } from './CineHDPlus';
 import { Cuevana } from './Cuevana';
 import { Einschalten } from './Einschalten';
@@ -22,31 +22,35 @@ import { XPrime } from './XPrime';
 
 export * from './Source';
 
-export const createSources = (fetcher: Fetcher): Source[] => [
-  // multi
-  new FourKHDHub(fetcher),
-  new VixSrc(fetcher),
-  // EN
-  new PrimeWire(fetcher),
-  // new Soaper(fetcher), // "temporarily" rate-limited for over a week
-  new VidSrc(fetcher),
-  new XPrime(fetcher),
-  // ES / MX
-  new CineHDPlus(fetcher),
-  new Cuevana(fetcher),
-  new HomeCine(fetcher),
-  new VerHdLink(fetcher),
-  // DE
-  new Einschalten(fetcher),
-  new KinoGer(fetcher),
-  new MegaKino(fetcher),
-  new MeineCloud(fetcher),
-  new StreamKiste(fetcher),
-  // FR
-  new Frembed(fetcher),
-  new FrenchCloud(fetcher),
-  new Movix(fetcher),
-  // IT
-  new Eurostreaming(fetcher),
-  new MostraGuarda(fetcher),
-];
+export const createSources = (fetcher: Fetcher): Source[] => {
+  const disabledSources = envGet('DISABLED_SOURCES')?.split(',') ?? [];
+
+  return [
+    // multi
+    new FourKHDHub(fetcher),
+    new VixSrc(fetcher),
+    // EN
+    new PrimeWire(fetcher),
+    // new Soaper(fetcher), // "temporarily" rate-limited for over a week
+    new VidSrc(fetcher),
+    new XPrime(fetcher),
+    // ES / MX
+    new CineHDPlus(fetcher),
+    new Cuevana(fetcher),
+    new HomeCine(fetcher),
+    new VerHdLink(fetcher),
+    // DE
+    new Einschalten(fetcher),
+    new KinoGer(fetcher),
+    new MegaKino(fetcher),
+    new MeineCloud(fetcher),
+    new StreamKiste(fetcher),
+    // FR
+    new Frembed(fetcher),
+    new FrenchCloud(fetcher),
+    new Movix(fetcher),
+    // IT
+    new Eurostreaming(fetcher),
+    new MostraGuarda(fetcher),
+  ].filter(source => !disabledSources.includes(source.id));
+};
