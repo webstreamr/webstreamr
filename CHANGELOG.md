@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.51.1](https://github.com/webstreamr/webstreamr/compare/v0.51.0...v0.51.1) (2025-09-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency jsdom to v27 ([#350](https://github.com/webstreamr/webstreamr/issues/350)) ([58b50b4](https://github.com/webstreamr/webstreamr/commit/58b50b49de7ca0aa74e507c0b8c840b578c354ab))
+
+
+### Reverts
+
+* Revert "chore: log error count in final result log" ([2aa9ad2](https://github.com/webstreamr/webstreamr/commit/2aa9ad270eec65ab275a076e8c009d78cc16ac00))
+* Revert "chore(fetcher): log more infos about responses" ([78db179](https://github.com/webstreamr/webstreamr/commit/78db17995752ba286d69782b9014d61ef51f2740))
+* Revert "chore(fetcher): log proxy usage, allow to disable proxy via config" ([4ca87f0](https://github.com/webstreamr/webstreamr/commit/4ca87f0ff1789755e412f6bb3151a2c2d76d5121))
+* Revert "feat: allow to disable cache" ([9a279b5](https://github.com/webstreamr/webstreamr/commit/9a279b53a4b8d7275a54e32e5151fa85a13d0530))
+* Revert "fix(deps): update dependency jsdom to v27 ([#350](https://github.com/webstreamr/webstreamr/issues/350))" ([dc610bf](https://github.com/webstreamr/webstreamr/commit/dc610bfa64428e9231c112e16669ef9572589474))
+
 ## [0.51.0](https://github.com/webstreamr/webstreamr/compare/v0.50.4...v0.51.0) (2025-09-13)
 
 
