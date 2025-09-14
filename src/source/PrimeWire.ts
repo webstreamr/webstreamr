@@ -66,6 +66,8 @@ export class PrimeWire extends Source {
 
     const $ = cheerio.load(jsdom.window.document.documentElement.outerHTML);
 
+    jsdom.window.close();
+
     const linksTokenMatch = appJs.match(/t="(0\.x.*?)"/) as string[];
     const linksToken = linksTokenMatch[1] as string;
 
