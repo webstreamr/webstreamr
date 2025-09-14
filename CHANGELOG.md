@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.52.1](https://github.com/webstreamr/webstreamr/compare/v0.52.0...v0.52.1) (2025-09-14)
+
+
+### Bug Fixes
+
+* **source:** re-implement PrimeWire in safer and more efficient way ([f4d9058](https://github.com/webstreamr/webstreamr/commit/f4d905833f102372bcb7b2f91531aa247ffc47d9))
+
 ## [0.52.0](https://github.com/webstreamr/webstreamr/compare/v0.51.2...v0.52.0) (2025-09-14)
 
 
