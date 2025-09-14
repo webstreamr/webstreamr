@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.51.2](https://github.com/webstreamr/webstreamr/compare/v0.51.1...v0.51.2) (2025-09-14)
+
+
+### Bug Fixes
+
+* **fetcher:** re-use proxy agents ([ae32376](https://github.com/webstreamr/webstreamr/commit/ae323767582a41f5a0b9d6f1c5b14211dbfc83f2))
+* log more infos for uncaught errors ([8b479be](https://github.com/webstreamr/webstreamr/commit/8b479be6c5e2530e445d9b9c71d02078a5600feb))
+* **source:** close jsdom window immediately after getting HTML ([aded562](https://github.com/webstreamr/webstreamr/commit/aded5623042d06510245b846c58f6ac939d0e76b))
+
+
+### Reverts
+
+* Revert recent reverts again ([8acbd37](https://github.com/webstreamr/webstreamr/commit/8acbd37df30eb61ea6c5df186b6e8752cbf7b836))
+
 ## [0.51.1](https://github.com/webstreamr/webstreamr/compare/v0.51.0...v0.51.1) (2025-09-14)
 
 
