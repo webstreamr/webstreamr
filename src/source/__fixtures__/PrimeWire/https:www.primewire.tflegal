@@ -7,7 +7,7 @@
   window.appTrigger = document.createEvent("Event");
   window.appTrigger.initEvent("appTrigger", true, true);
 </script>
-<script async type="text/javascript" src="/js/app-28c2d56eea85cbacb6b45a5d0da6fb62.js?vsn=d"></script>
+<script async type="text/javascript" src="/js/app-2dec7320ca90cd70f913d51050d73c10.js?vsn=d"></script>
 
 <title>
 
@@ -43,19 +43,19 @@ document.querySelector('meta[name=viewport]').setAttribute('content', 'width=670
 <meta property="og:image:height" content="300">
 <meta property="og:image:type" content="image/jpg">
 
+<meta name="referrer" content="no-referrer-when-downgrade" />
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="/css/app-d9a4ac98a016dee0bfe32443cfb9e57e.css?vsn=d" type="text/css">
+<link rel="stylesheet" href="/css/app-3d1ad52122303f34d671a8e13b69704b.css?vsn=d" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 
 <script>
 window.series = {}
 </script>
 
-<script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="358633"></script>
 </head>
 <body class="">
 
@@ -147,7 +147,7 @@ window.series = {}
     <div class="sidebar">
 
 <div class="loginform" style="width: 280px;">
-<form action="/sessions" class="secure" method="post"><input name="_csrf_token" type="hidden" value="Hw0GEw9HBycvNyRDMVURDSdbLEAOESlDrTkYJuAEYAl7_-eZThV18he-">
+<form action="/sessions" class="secure" method="post"><input name="_csrf_token" type="hidden" value="KxslGmYCCjsPPngtCiRuEEZWCgoNHRoutQz_6GLokk9NUiXf72xLTVlz">
   <div class="form-group">
 <label for="session_email">Email</label>
 <input id="session_email" name="session[email]" type="text">
@@ -198,31 +198,20 @@ window.series = {}
 
 
 
-  <script async data-cfasync="false" src="https://platform.pubadx.one/pubadx-ad.js" type="text/javascript"></script>
-  <div id="bg-ssp-6816">
-  <script data-cfasync="false" data-no-optimize="1">
-  var adx_id_6816 = document.getElementById('bg-ssp-6816');
-  adx_id_6816.id = 'bg-ssp-6816-' + Math.floor(Math.random() * Date.now());
-  window.pubadxtag = window.pubadxtag || [];
-  window.pubadxtag.push({zoneid: 6816, id: adx_id_6816.id, wu: window.location.href})
-  </script>
-  </div>
-
 
 <h2>Latest Comments</h2>
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
+    <a href="/tv/368639/foundation-season-3-episode-10">Foundation S3 E10</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/Balthasar">Balthasar</a> : 
+    <a href="/user/dd3dd">dd3dd</a> : 
 
     </span> 
 
-Dude! TMI!!!
-I fell asleep:) 🥱💤
+I think Demerzel knows that&#39;s why all the other Dusks have their lives ended around this t...
 
     </p>
     </div>
@@ -230,31 +219,15 @@ I fell asleep:) 🥱💤
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/1342735/star-trek-strange-new-worlds-season-3-episode-5">Star Trek: Strange New Worlds S3 E5</a>
+    <a href="/tv/1516834/the-rainmaker-season-1-episode-5">The Rainmaker S1 E5</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/Balthasar">Balthasar</a> : 
+    <a href="/user/dd3dd">dd3dd</a> : 
 
     </span> 
 
-On it! 🔪🔪💣💥💀
-
-    </p>
-    </div>
-
-
-
-    <div class="latest_comments  com_class_tv">
-    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
-    <p>
-    <span class="latest_comments_poster">
-
-    <a href="/user/Xsile">Xsile</a> : 
-
-    </span> 
-
-Isaac Asimov&#39;s &quot;I, Robot&quot; and &quot;Foundation&quot; series are connected through his broader &quot;Robot...
+Ep5: Absolute poop of an episode compared to the previous ones. Lazy standard writing of m...
 
     </p>
     </div>
@@ -262,15 +235,31 @@ Isaac Asimov&#39;s &quot;I, Robot&quot; and &quot;Foundation&quot; series are co
 
 
     <div class="latest_comments  com_class_mov">
-    <a href="/movie/1514833-eddington">Eddington</a>
+    <a href="/movie/1409057-the-long-walk">The Long Walk</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/deimos737">deimos737</a> : 
+    <a href="/user/Neoblade">Neoblade</a> : 
 
     </span> 
 
-Yikes.... I&#39;m all for creative free speech, or whatever you like to call it, but this is r...
+OK YES SKIP TO THE ENDING WTF.
+
+    </p>
+    </div>
+
+
+
+    <div class="latest_comments  com_class_mov">
+    <a href="/movie/1409057-the-long-walk">The Long Walk</a>
+    <p>
+    <span class="latest_comments_poster">
+
+    <a href="/user/Neoblade">Neoblade</a> : 
+
+    </span> 
+
+WARNING WARNING: This film was absolute shit. Skipped through it, got the point but man, w...
 
     </p>
     </div>
@@ -278,15 +267,15 @@ Yikes.... I&#39;m all for creative free speech, or whatever you like to call it,
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/1563210/survival-mode-season-1-episode-4">Survival Mode S1 E4</a>
+    <a href="/tv/1331004-star-trek-picard">Star Trek: Picard</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/FeltMountain">FeltMountain</a> : 
+    <a href="/user/Twixtid">Twixtid</a> : 
 
     </span> 
 
-I lived nearby when this happened.  There were train cars on the side of the freeway for w...
+Although I haven&#39;t been a Trek fan for long, I started my binge with DS9 coming from Babyl...
 
     </p>
     </div>
@@ -297,14 +286,14 @@ I lived nearby when this happened.  There were train cars on the side of the fre
 <h2>Top Comments</h2>
 
 
-    <div class="latest_comments  com_class_tv">
-    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
+    <div class="latest_comments  com_class_mov">
+    <a href="/movie/874438-playboys-erotic-fantasies-iii">Playboy&#39;s Erotic Fantasies III</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/dd3dd">dd3dd</a> : 
+    <a href="/user/snazzydetritus">snazzydetritus</a> : 
     </span> 
 
-This is Seaseon 3 .. I am confused... what do you mean?
+Full disclosure - I haven&#39;t seen a moment of this video, and don&#39;t intend to; but I saw Li...
 
     </p>
     </div>
@@ -312,13 +301,13 @@ This is Seaseon 3 .. I am confused... what do you mean?
 
 
     <div class="latest_comments  com_class_mov">
-    <a href="/movie/250153-biodome">Bio-Dome</a>
+    <a href="/movie/874438-playboys-erotic-fantasies-iii">Playboy&#39;s Erotic Fantasies III</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/Davidleefl43">Davidleefl43</a> : 
+    <a href="/user/snazzydetritus">snazzydetritus</a> : 
     </span> 
 
-awesome ! 
+my favorite comment of the day
 
     </p>
     </div>
@@ -326,13 +315,34 @@ awesome !
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/10153/star-trek-voyager-season-2-episode-16">Star Trek: Voyager S2 E16</a>
+    <a href="/tv/368639/foundation-season-3-episode-10">Foundation S3 E10</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/Twixtid">Twixtid</a> : 
+    <a href="/user/Bryant315">Bryant315</a> : 
     </span> 
 
-The acting in this series is seriously good. I did love DS9 but the acting on DS9 is nowhe...
+
+    <span class="toggler hide" togglee-id="y-AQt">Contains spoilers.  Click to show.</span>
+    <span class="togglee" id="y-AQt">
+dusk really wanted to live!
+poor dermazel! poor harry!
+sorry mule :(
+    </span>
+
+    </p>
+    </div>
+
+
+
+    <div class="latest_comments  com_class_mov">
+    <a href="/movie/874438-playboys-erotic-fantasies-iii">Playboy&#39;s Erotic Fantasies III</a>
+    <p>
+    <span class="latest_comments_poster">
+    <a href="/user/%2528%25E2%258C%2590%25E2%2596%25A0_%25E2%2596%25A0%2529">(⌐■_■)</a> : 
+    </span> 
+
+NS, ryte?!?!! ... wait &#39;till ya see the wardrobe(s)... 0.0
+Comment: straight up +10 
 
     </p>
     </div>
@@ -340,27 +350,13 @@ The acting in this series is seriously good. I did love DS9 but the acting on DS
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/10153/star-trek-voyager-season-2-episode-15">Star Trek: Voyager S2 E15</a>
+    <a href="/tv/1585109-the-sunshine-murders">The Sunshine Murders</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/Twixtid">Twixtid</a> : 
+    <a href="/user/AmieWarren">AmieWarren</a> : 
     </span> 
 
-Welp, that just happened, I was wondering if anyone was gonna get some action from Janeway...
-
-    </p>
-    </div>
-
-
-
-    <div class="latest_comments  com_class_tv">
-    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
-    <p>
-    <span class="latest_comments_poster">
-    <a href="/user/Xsile">Xsile</a> : 
-    </span> 
-
-I really like this show but wished they had started at the beginning. This series is the t...
+This show is just bad. The characters are annoying, especially the Kiwi sister, half of th...
 
     </p>
     </div>
@@ -371,12 +367,12 @@ I really like this show but wished they had started at the beginning. This serie
     </div>
 
     <div class="footer footer_right">
-      <a href="#" title=" unregistered">581 users online</a> -
+      <a href="#" title=" unregistered">760 users online</a> -
       <a href="/contact">Contacts</a> -
       <a href="/faq">FAQ</a> -
       <a href="/dmca">DMCA</a> -
       <a href="/api">API</a> -
-      <a href="/embed">Embed</a>
+      <a href="https://primesrc.me" target="_blank">Embed</a>
     </div>
 
   </div>
@@ -385,7 +381,7 @@ I really like this show but wished they had started at the beginning. This serie
 
 <script>
 
-window.csrf_token = "Hw0GEw9HBycvNyRDMVURDSdbLEAOESlDrTkYJuAEYAl7_-eZThV18he-";
+window.csrf_token = "KxslGmYCCjsPPngtCiRuEEZWCgoNHRoutQz_6GLokk9NUiXf72xLTVlz";
 window.subs = false
 window.tsr = false
 document.dispatchEvent(window.appTrigger);
@@ -394,14 +390,5 @@ window.appTriggered = true;
 
 <div id="previewer-el"></div>
 
-  <script async data-cfasync="false" src="https://platform.pubadx.one/pubadx-ad.js" type="text/javascript"></script>
-  <div id="bg-ssp-7358">
-  <script data-cfasync="false" data-no-optimize="1">
-  var adx_id_7358 = document.getElementById('bg-ssp-7358');
-  adx_id_7358.id = 'bg-ssp-7358-' + Math.floor(Math.random() * Date.now());
-  window.pubadxtag = window.pubadxtag || [];
-  window.pubadxtag.push({zoneid: 7358, id: adx_id_7358.id, wu: window.location.href})
-  </script>
-  </div>
 
 </body></html>

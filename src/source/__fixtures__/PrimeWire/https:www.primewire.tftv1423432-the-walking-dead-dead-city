@@ -7,7 +7,7 @@
   window.appTrigger = document.createEvent("Event");
   window.appTrigger.initEvent("appTrigger", true, true);
 </script>
-<script async type="text/javascript" src="/js/app-28c2d56eea85cbacb6b45a5d0da6fb62.js?vsn=d"></script>
+<script async type="text/javascript" src="/js/app-2dec7320ca90cd70f913d51050d73c10.js?vsn=d"></script>
 
 <title>
 
@@ -37,19 +37,19 @@ document.querySelector('meta[name=viewport]').setAttribute('content', 'width=670
 <meta name="distribution" content="Global">
 <meta name="rating" content="General">
 
+<meta name="referrer" content="no-referrer-when-downgrade" />
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="/css/app-d9a4ac98a016dee0bfe32443cfb9e57e.css?vsn=d" type="text/css">
+<link rel="stylesheet" href="/css/app-3d1ad52122303f34d671a8e13b69704b.css?vsn=d" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 
 <script>
 window.series = {}
 </script>
 
-<script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="358633"></script>
 </head>
 <body class="">
 
@@ -121,14 +121,14 @@ window.series = {}
                <div class="movie_ratings">
                      <ul class="unit-rating" style="width:100px;">
 
-                        <li class="current-rating" style="width: 79.23076923076923px;">Currently 79.23076923076923/5</li>
+                        <li class="current-rating" style="width: 77.35849056603773px;">Currently 77.35849056603773/5</li>
                         <li><a href="javascript:void(0)" title="1 out of 5" rel="nofollow" class="r1-unit rater" show-id="1423432" rating="1"></a></li>
                         <li><a href="javascript:void(0)" title="2 out of 5" rel="nofollow" class="r2-unit rater" show-id="1423432" rating="2"></a></li>
                         <li><a href="javascript:void(0)" title="3 out of 5" rel="nofollow" class="r3-unit rater" show-id="1423432" rating="3"></a></li>
                         <li><a href="javascript:void(0)" title="4 out of 5" rel="nofollow" class="r4-unit rater" show-id="1423432" rating="4"></a></li>
                         <li><a href="javascript:void(0)" title="5 out of 5" rel="nofollow" class="r5-unit rater" show-id="1423432" rating="5"></a></li>
                      </ul>
-                     <div class="not_voted">(52 votes)</div>
+                     <div class="not_voted">(53 votes)</div>
 <div class="library-widget">
   <span class="title">
     <label>
@@ -265,11 +265,11 @@ June 15, 2023
 
 
 
-               <span class="movie_info_actors"><a href="/filter?cast=Dascha Polanco">Dascha Polanco</a> </span>
-
-
-
                <span class="movie_info_actors"><a href="/filter?cast=Lisa Emery">Lisa Emery</a> </span>
+
+
+
+               <span class="movie_info_actors"><a href="/filter?cast=Dascha Polanco">Dascha Polanco</a> </span>
 
 
 
@@ -292,11 +292,11 @@ June 15, 2023
             <td>
 
 
-               <span class="movie_info_actors"><a href="/filter?crew=Robert Kirkman">Robert Kirkman</a> </span>
-
-
-
                <span class="movie_info_actors"><a href="/filter?crew=Gale Anne Hurd">Gale Anne Hurd</a> </span>
+
+
+
+               <span class="movie_info_actors"><a href="/filter?crew=Robert Kirkman">Robert Kirkman</a> </span>
 
 
 
@@ -431,13 +431,6 @@ June 15, 2023
          <tr>
             <td colspan="2">
 
-<div class="service-banner">
-    <a href="https://click.picvenxs.com/LnAAgYeu" target="_blank">
-        <img src="/images/service/disney-728x90.jpg"  style="width: 100%"/>
-    </a>
-</div>
-
-
             </td>
          </tr>
          <tr>
@@ -481,12 +474,12 @@ June 15, 2023
 
    <div class="choose_tabs">
 
-<h1 class="titles" id="trailer-title"><span><i class="fas fa-chevron-right"></i> Trailers (6)</span></h1>
+<h1 class="titles" id="trailer-title"><span><i class="fas fa-chevron-right"></i> Trailers (4)</span></h1>
 
 <div id="trailer-container" style="display: none">
 </div>
 <script>
-window.trailers = [{"id":146266,"key":"s1xjv2iCQUc","title":"Trailer","type":"Trailer"},{"id":141987,"key":"Zu2z-SY3hCk","title":"Official Teaser Trailer","type":"Teaser"},{"id":137509,"key":"GK_PMZfKS6w","title":"Walkers Are Falling From The Sky | TWD: Dead City Tease","type":"Teaser"},{"id":137510,"key":"d53b06l8y0E","title":"Dead City In Production ft. Jeffrey Dean Morgan & Maggie Greene","type":"Behind the Scenes"},{"id":184123,"key":"Hcs3VPNWp1g","title":"The Walking Dead: Dead City | Behind-The-Scenes Look at Season 2 | Premieres May 4 on AMC & AMC+","type":"Behind the Scenes"},{"id":184122,"key":"GmQU6rBmISY","title":"The Walking Dead: Dead City Season 2 Featurette | 'Behind the Scenes Look at Season 2'","type":"Featurette"}]
+window.trailers = [{"id":146266,"key":"s1xjv2iCQUc","title":"Trailer","type":"Trailer"},{"id":141987,"key":"Zu2z-SY3hCk","title":"Official Teaser Trailer","type":"Teaser"},{"id":137509,"key":"GK_PMZfKS6w","title":"Walkers Are Falling From The Sky | TWD: Dead City Tease","type":"Teaser"},{"id":137510,"key":"d53b06l8y0E","title":"Dead City In Production ft. Jeffrey Dean Morgan & Maggie Greene","type":"Behind the Scenes"}]
 window.show_id = 1423432
 </script>
 
@@ -513,7 +506,7 @@ E1
                   <span class="tv_num_versions">
 
 
-                     [ 16 Links ]
+                     [ 14 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="2422207" data-season="1" >
@@ -527,7 +520,7 @@ E2
                   <span class="tv_num_versions">
 
 
-                     [ 14 Links ]
+                     [ 13 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="2422208" data-season="1" >
@@ -541,7 +534,7 @@ E3
                   <span class="tv_num_versions">
 
 
-                     [ 14 Links ]
+                     [ 15 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="2422209" data-season="1" >
@@ -569,7 +562,7 @@ E5
                   <span class="tv_num_versions">
 
 
-                     [ 12 Links ]
+                     [ 13 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="2422211" data-season="1" >
@@ -621,7 +614,7 @@ E2
                   <span class="tv_num_versions">
 
 
-                     [ 29 Links ]
+                     [ 28 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="3063851" data-season="2" >
@@ -635,7 +628,7 @@ E3
                   <span class="tv_num_versions">
 
 
-                     [ 29 Links ]
+                     [ 28 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="3063852" data-season="2" >
@@ -649,7 +642,7 @@ E4
                   <span class="tv_num_versions">
 
 
-                     [ 34 Links ]
+                     [ 28 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="3063853" data-season="2" >
@@ -663,7 +656,7 @@ E5
                   <span class="tv_num_versions">
 
 
-                     [ 40 Links ]
+                     [ 35 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="3063854" data-season="2" >
@@ -677,7 +670,7 @@ E6
                   <span class="tv_num_versions">
 
 
-                     [ 34 Links ]
+                     [ 30 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="3063855" data-season="2" >
@@ -691,7 +684,7 @@ E7
                   <span class="tv_num_versions">
 
 
-                     [ 39 Links ]
+                     [ 32 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="3063856" data-season="2" >
@@ -705,7 +698,7 @@ E8
                   <span class="tv_num_versions">
 
 
-                     [ 40 Links ]
+                     [ 34 Links ]
                   </span>
                   </a>
                   <input type="checkbox" title="Mark Watched" class="episode-checkbox" value="3063857" data-season="2" >
@@ -886,14 +879,6 @@ E8
   </div>
   </a>
 
-  <a href="https://www.google.com/search?q=AMC+The+Walking+Dead%3A+Dead+City+%282023%29" target="_blank">
-  <div class="provider" title="AMC">
-    <div class="provider-img">
-    <img src="https://www.themoviedb.org/t/p/original//92Kx25Od0habmgRBTqT6XWgwgKt.jpg" alt="AMC">
-    </div>
-  </div>
-  </a>
-
   <a href="https://www.google.com/search?q=Philo+The+Walking+Dead%3A+Dead+City+%282023%29" target="_blank">
   <div class="provider" title="Philo">
     <div class="provider-img">
@@ -902,10 +887,10 @@ E8
   </div>
   </a>
 
-  <a href="https://www.google.com/search?q=Youtube+TV+The+Walking+Dead%3A+Dead+City+%282023%29" target="_blank">
-  <div class="provider" title="Youtube TV">
+  <a href="https://www.google.com/search?q=YouTube+TV+The+Walking+Dead%3A+Dead+City+%282023%29" target="_blank">
+  <div class="provider" title="YouTube TV">
     <div class="provider-img">
-    <img src="https://www.themoviedb.org/t/p/original//x9zOHTUkQzt3PgPVKbMH9CKBwLK.jpg" alt="Youtube TV">
+    <img src="https://www.themoviedb.org/t/p/original//x9zOHTUkQzt3PgPVKbMH9CKBwLK.jpg" alt="YouTube TV">
     </div>
   </div>
   </a>
@@ -982,14 +967,14 @@ E8
       <div class="index_item index_item_ie">
          <a href="/playlist/1832-dystopian-future-cyberpunk-films-and-tv-shows" title="🤖 Dystopian future &amp; cyberpunk films and TV shows">
             <img src="/poster/small/1114124-chappie-AxCZM.jpg" border="0" width="150" height="225" alt="Watch 🤖 Dystopian future &amp; cyberpunk films and TV shows">
-            <h2><div class="title-cutoff">🤖 Dystopian future &amp; cyberpunk films and TV shows</div> 1176 items</h2>
+            <h2><div class="title-cutoff">🤖 Dystopian future &amp; cyberpunk films and TV shows</div> 1178 items</h2>
          </a>
       </div>
 
       <div class="index_item index_item_ie">
          <a href="/playlist/589-something-completely-different-on-tv" title="Something Completely Different on TV">
-            <img src="/poster/small/210250-maniac-tnhDe.jpg" border="0" width="150" height="225" alt="Watch Something Completely Different on TV">
-            <h2><div class="title-cutoff">Something Completely Different on TV</div> 126 items</h2>
+            <img src="/poster/small/219-utopia-5v0sE.jpg" border="0" width="150" height="225" alt="Watch Something Completely Different on TV">
+            <h2><div class="title-cutoff">Something Completely Different on TV</div> 127 items</h2>
          </a>
       </div>
 
@@ -1003,7 +988,7 @@ E8
       <div class="index_item index_item_ie">
          <a href="/playlist/5995-horror-supernatural-fantasy-tv-series-movies" title="HORROR/SUPERNATURAL/FANTASY TV SERIES &amp; MOVIES">
             <img src="/poster/small/23-supernatural-Q_bt5.jpg" border="0" width="150" height="225" alt="Watch HORROR/SUPERNATURAL/FANTASY TV SERIES &amp; MOVIES">
-            <h2><div class="title-cutoff">HORROR/SUPERNATURAL/FANTASY TV SERIES &amp; MOVIES</div> 356 items</h2>
+            <h2><div class="title-cutoff">HORROR/SUPERNATURAL/FANTASY TV SERIES &amp; MOVIES</div> 358 items</h2>
          </a>
       </div>
 
@@ -1029,23 +1014,23 @@ E8
       </div>
 
       <div class="index_item index_item_ie">
-         <a href="/playlist/6984-go-back-and-do-it-all-agains" title="go back and do it all agains ">
-            <img src="/poster/small/10954-prison-break-RS4yx.jpg" border="0" width="150" height="225" alt="Watch go back and do it all agains ">
-            <h2><div class="title-cutoff">go back and do it all agains </div> 50 items</h2>
+         <a href="/playlist/5835-rebooted" title="Rebooted ">
+            <img src="/poster/small/1328775-perry-mason-aVKID.jpg" border="0" width="150" height="225" alt="Watch Rebooted ">
+            <h2><div class="title-cutoff">Rebooted </div> 37 items</h2>
          </a>
       </div>
 
       <div class="index_item index_item_ie">
          <a href="/playlist/7245-interesting-tv-shows" title="interesting tv shows">
             <img src="/poster/small/1506362-doctor-odyssey-y8p7R.jpg" border="0" width="150" height="225" alt="Watch interesting tv shows">
-            <h2><div class="title-cutoff">interesting tv shows</div> 77 items</h2>
+            <h2><div class="title-cutoff">interesting tv shows</div> 80 items</h2>
          </a>
       </div>
 
       <div class="index_item index_item_ie">
-         <a href="/playlist/6449-apocalyptic-shows" title="apocalyptic shows">
-            <img src="/poster/small/1353484-fallout-WmUyF.jpg" border="0" width="150" height="225" alt="Watch apocalyptic shows">
-            <h2><div class="title-cutoff">apocalyptic shows</div> 23 items</h2>
+         <a href="/playlist/6984-go-back-and-do-it-all-agains" title="go back and do it all agains ">
+            <img src="/poster/small/10954-prison-break-RS4yx.jpg" border="0" width="150" height="225" alt="Watch go back and do it all agains ">
+            <h2><div class="title-cutoff">go back and do it all agains </div> 50 items</h2>
          </a>
       </div>
 
@@ -1099,7 +1084,7 @@ E8
     <div class="sidebar">
 
 <div class="loginform" style="width: 280px;">
-<form action="/sessions" class="secure" method="post"><input name="_csrf_token" type="hidden" value="KAMvXmEufxM9FhA5Xn4YYRBwQAV3VH0tFoFlTh3ybyDs9MT0wH2NDl3i">
+<form action="/sessions" class="secure" method="post"><input name="_csrf_token" type="hidden" value="ACNDSmIwCABAGF87PyMSdXwXYEs0FgJgON3x4cDd8u4lHnAGOoQzMxU2">
   <div class="form-group">
 <label for="session_email">Email</label>
 <input id="session_email" name="session[email]" type="text">
@@ -1150,31 +1135,20 @@ E8
 
 
 
-  <script async data-cfasync="false" src="https://platform.pubadx.one/pubadx-ad.js" type="text/javascript"></script>
-  <div id="bg-ssp-6816">
-  <script data-cfasync="false" data-no-optimize="1">
-  var adx_id_6816 = document.getElementById('bg-ssp-6816');
-  adx_id_6816.id = 'bg-ssp-6816-' + Math.floor(Math.random() * Date.now());
-  window.pubadxtag = window.pubadxtag || [];
-  window.pubadxtag.push({zoneid: 6816, id: adx_id_6816.id, wu: window.location.href})
-  </script>
-  </div>
-
 
 <h2>Latest Comments</h2>
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
+    <a href="/tv/368639/foundation-season-3-episode-10">Foundation S3 E10</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/Balthasar">Balthasar</a> : 
+    <a href="/user/dd3dd">dd3dd</a> : 
 
     </span> 
 
-Dude! TMI!!!
-I fell asleep:) 🥱💤
+I think Demerzel knows that&#39;s why all the other Dusks have their lives ended around this t...
 
     </p>
     </div>
@@ -1182,31 +1156,15 @@ I fell asleep:) 🥱💤
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/1342735/star-trek-strange-new-worlds-season-3-episode-5">Star Trek: Strange New Worlds S3 E5</a>
+    <a href="/tv/1516834/the-rainmaker-season-1-episode-5">The Rainmaker S1 E5</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/Balthasar">Balthasar</a> : 
+    <a href="/user/dd3dd">dd3dd</a> : 
 
     </span> 
 
-On it! 🔪🔪💣💥💀
-
-    </p>
-    </div>
-
-
-
-    <div class="latest_comments  com_class_tv">
-    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
-    <p>
-    <span class="latest_comments_poster">
-
-    <a href="/user/Xsile">Xsile</a> : 
-
-    </span> 
-
-Isaac Asimov&#39;s &quot;I, Robot&quot; and &quot;Foundation&quot; series are connected through his broader &quot;Robot...
+Ep5: Absolute poop of an episode compared to the previous ones. Lazy standard writing of m...
 
     </p>
     </div>
@@ -1214,15 +1172,31 @@ Isaac Asimov&#39;s &quot;I, Robot&quot; and &quot;Foundation&quot; series are co
 
 
     <div class="latest_comments  com_class_mov">
-    <a href="/movie/1514833-eddington">Eddington</a>
+    <a href="/movie/1409057-the-long-walk">The Long Walk</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/deimos737">deimos737</a> : 
+    <a href="/user/Neoblade">Neoblade</a> : 
 
     </span> 
 
-Yikes.... I&#39;m all for creative free speech, or whatever you like to call it, but this is r...
+OK YES SKIP TO THE ENDING WTF.
+
+    </p>
+    </div>
+
+
+
+    <div class="latest_comments  com_class_mov">
+    <a href="/movie/1409057-the-long-walk">The Long Walk</a>
+    <p>
+    <span class="latest_comments_poster">
+
+    <a href="/user/Neoblade">Neoblade</a> : 
+
+    </span> 
+
+WARNING WARNING: This film was absolute shit. Skipped through it, got the point but man, w...
 
     </p>
     </div>
@@ -1230,15 +1204,15 @@ Yikes.... I&#39;m all for creative free speech, or whatever you like to call it,
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/1563210/survival-mode-season-1-episode-4">Survival Mode S1 E4</a>
+    <a href="/tv/1331004-star-trek-picard">Star Trek: Picard</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/FeltMountain">FeltMountain</a> : 
+    <a href="/user/Twixtid">Twixtid</a> : 
 
     </span> 
 
-I lived nearby when this happened.  There were train cars on the side of the freeway for w...
+Although I haven&#39;t been a Trek fan for long, I started my binge with DS9 coming from Babyl...
 
     </p>
     </div>
@@ -1249,14 +1223,14 @@ I lived nearby when this happened.  There were train cars on the side of the fre
 <h2>Top Comments</h2>
 
 
-    <div class="latest_comments  com_class_tv">
-    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
+    <div class="latest_comments  com_class_mov">
+    <a href="/movie/874438-playboys-erotic-fantasies-iii">Playboy&#39;s Erotic Fantasies III</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/dd3dd">dd3dd</a> : 
+    <a href="/user/snazzydetritus">snazzydetritus</a> : 
     </span> 
 
-This is Seaseon 3 .. I am confused... what do you mean?
+Full disclosure - I haven&#39;t seen a moment of this video, and don&#39;t intend to; but I saw Li...
 
     </p>
     </div>
@@ -1264,13 +1238,13 @@ This is Seaseon 3 .. I am confused... what do you mean?
 
 
     <div class="latest_comments  com_class_mov">
-    <a href="/movie/250153-biodome">Bio-Dome</a>
+    <a href="/movie/874438-playboys-erotic-fantasies-iii">Playboy&#39;s Erotic Fantasies III</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/Davidleefl43">Davidleefl43</a> : 
+    <a href="/user/snazzydetritus">snazzydetritus</a> : 
     </span> 
 
-awesome ! 
+my favorite comment of the day
 
     </p>
     </div>
@@ -1278,13 +1252,34 @@ awesome !
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/10153/star-trek-voyager-season-2-episode-16">Star Trek: Voyager S2 E16</a>
+    <a href="/tv/368639/foundation-season-3-episode-10">Foundation S3 E10</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/Twixtid">Twixtid</a> : 
+    <a href="/user/Bryant315">Bryant315</a> : 
     </span> 
 
-The acting in this series is seriously good. I did love DS9 but the acting on DS9 is nowhe...
+
+    <span class="toggler hide" togglee-id="hcso2">Contains spoilers.  Click to show.</span>
+    <span class="togglee" id="hcso2">
+dusk really wanted to live!
+poor dermazel! poor harry!
+sorry mule :(
+    </span>
+
+    </p>
+    </div>
+
+
+
+    <div class="latest_comments  com_class_mov">
+    <a href="/movie/874438-playboys-erotic-fantasies-iii">Playboy&#39;s Erotic Fantasies III</a>
+    <p>
+    <span class="latest_comments_poster">
+    <a href="/user/%2528%25E2%258C%2590%25E2%2596%25A0_%25E2%2596%25A0%2529">(⌐■_■)</a> : 
+    </span> 
+
+NS, ryte?!?!! ... wait &#39;till ya see the wardrobe(s)... 0.0
+Comment: straight up +10 
 
     </p>
     </div>
@@ -1292,27 +1287,13 @@ The acting in this series is seriously good. I did love DS9 but the acting on DS
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/10153/star-trek-voyager-season-2-episode-15">Star Trek: Voyager S2 E15</a>
+    <a href="/tv/1585109-the-sunshine-murders">The Sunshine Murders</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/Twixtid">Twixtid</a> : 
+    <a href="/user/AmieWarren">AmieWarren</a> : 
     </span> 
 
-Welp, that just happened, I was wondering if anyone was gonna get some action from Janeway...
-
-    </p>
-    </div>
-
-
-
-    <div class="latest_comments  com_class_tv">
-    <a href="/tv/368639/foundation-season-3-episode-5">Foundation S3 E5</a>
-    <p>
-    <span class="latest_comments_poster">
-    <a href="/user/Xsile">Xsile</a> : 
-    </span> 
-
-I really like this show but wished they had started at the beginning. This series is the t...
+This show is just bad. The characters are annoying, especially the Kiwi sister, half of th...
 
     </p>
     </div>
@@ -1323,12 +1304,12 @@ I really like this show but wished they had started at the beginning. This serie
     </div>
 
     <div class="footer footer_right">
-      <a href="#" title=" unregistered">577 users online</a> -
+      <a href="#" title=" unregistered">760 users online</a> -
       <a href="/contact">Contacts</a> -
       <a href="/faq">FAQ</a> -
       <a href="/dmca">DMCA</a> -
       <a href="/api">API</a> -
-      <a href="/embed">Embed</a>
+      <a href="https://primesrc.me" target="_blank">Embed</a>
     </div>
 
   </div>
@@ -1337,7 +1318,7 @@ I really like this show but wished they had started at the beginning. This serie
 
 <script>
 
-window.csrf_token = "KAMvXmEufxM9FhA5Xn4YYRBwQAV3VH0tFoFlTh3ybyDs9MT0wH2NDl3i";
+window.csrf_token = "ACNDSmIwCABAGF87PyMSdXwXYEs0FgJgON3x4cDd8u4lHnAGOoQzMxU2";
 window.subs = false
 window.tsr = false
 document.dispatchEvent(window.appTrigger);
@@ -1346,14 +1327,5 @@ window.appTriggered = true;
 
 <div id="previewer-el"></div>
 
-  <script async data-cfasync="false" src="https://platform.pubadx.one/pubadx-ad.js" type="text/javascript"></script>
-  <div id="bg-ssp-7358">
-  <script data-cfasync="false" data-no-optimize="1">
-  var adx_id_7358 = document.getElementById('bg-ssp-7358');
-  adx_id_7358.id = 'bg-ssp-7358-' + Math.floor(Math.random() * Date.now());
-  window.pubadxtag = window.pubadxtag || [];
-  window.pubadxtag.push({zoneid: 7358, id: adx_id_7358.id, wu: window.location.href})
-  </script>
-  </div>
 
 </body></html>

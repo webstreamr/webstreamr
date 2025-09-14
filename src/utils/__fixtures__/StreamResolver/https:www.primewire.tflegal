@@ -7,7 +7,7 @@
   window.appTrigger = document.createEvent("Event");
   window.appTrigger.initEvent("appTrigger", true, true);
 </script>
-<script async type="text/javascript" src="/js/app-21ed8068b7ca664627b94721e1176d90.js?vsn=d"></script>
+<script async type="text/javascript" src="/js/app-2dec7320ca90cd70f913d51050d73c10.js?vsn=d"></script>
 
 <title>
 
@@ -43,12 +43,13 @@ document.querySelector('meta[name=viewport]').setAttribute('content', 'width=670
 <meta property="og:image:height" content="300">
 <meta property="og:image:type" content="image/jpg">
 
+<meta name="referrer" content="no-referrer-when-downgrade" />
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="/css/app-d9a4ac98a016dee0bfe32443cfb9e57e.css?vsn=d" type="text/css">
+<link rel="stylesheet" href="/css/app-3d1ad52122303f34d671a8e13b69704b.css?vsn=d" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 
 <script>
@@ -146,7 +147,7 @@ window.series = {}
     <div class="sidebar">
 
 <div class="loginform" style="width: 280px;">
-<form action="/sessions" class="secure" method="post"><input name="_csrf_token" type="hidden" value="djYpIGszXQIwXCAeG0Y-NQIGPjsBYHhD9qGMZdnduqvFA1SaHtaujMLu">
+<form action="/sessions" class="secure" method="post"><input name="_csrf_token" type="hidden" value="OjgsVClZBXQlKBUMaAFrKgQMAQRyNGg3WVNbl1a9fFs__MSyaXmeJF-B">
   <div class="form-group">
 <label for="session_email">Email</label>
 <input id="session_email" name="session[email]" type="text">
@@ -197,30 +198,20 @@ window.series = {}
 
 
 
-  <script async data-cfasync="false" src="https://platform.pubadx.one/pubadx-ad.js" type="text/javascript"></script>
-  <div id="bg-ssp-6816">
-  <script data-cfasync="false" data-no-optimize="1">
-  var adx_id_6816 = document.getElementById('bg-ssp-6816');
-  adx_id_6816.id = 'bg-ssp-6816-' + Math.floor(Math.random() * Date.now());
-  window.pubadxtag = window.pubadxtag || [];
-  window.pubadxtag.push({zoneid: 6816, id: adx_id_6816.id, wu: window.location.href})
-  </script>
-  </div>
-
 
 <h2>Latest Comments</h2>
 
 
-    <div class="latest_comments  com_class_tv">
-    <a href="/tv/25971/ufc-ppv-events-season-2025-episode-9">UFC PPV Events S2025 E9</a>
+    <div class="latest_comments  com_class_mov">
+    <a href="/movie/1481490-the-passenger">The Passenger</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/Wilsson02">Wilsson02</a> : 
+    <a href="/user/darthdirk">darthdirk</a> : 
 
     </span> 
 
-Slimy hug fest
+This movie rocks. I just watched it for the second time and still had the same fun. That f...
 
     </p>
     </div>
@@ -228,15 +219,31 @@ Slimy hug fest
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/1365175/peacemaker-season-2-episode-1">Peacemaker S2 E1</a>
+    <a href="/tv/368639/foundation-season-3-episode-10">Foundation S3 E10</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/Farmboy41">Farmboy41</a> : 
+    <a href="/user/dd3dd">dd3dd</a> : 
 
     </span> 
 
-Glad to see this returned. I could use some laughs.
+I think Demerzel knows that&#39;s why all the other Dusks have their lives ended around this t...
+
+    </p>
+    </div>
+
+
+
+    <div class="latest_comments  com_class_tv">
+    <a href="/tv/1516834/the-rainmaker-season-1-episode-5">The Rainmaker S1 E5</a>
+    <p>
+    <span class="latest_comments_poster">
+
+    <a href="/user/dd3dd">dd3dd</a> : 
+
+    </span> 
+
+Ep5: Absolute poop of an episode compared to the previous ones. Lazy standard writing of m...
 
     </p>
     </div>
@@ -244,47 +251,31 @@ Glad to see this returned. I could use some laughs.
 
 
     <div class="latest_comments  com_class_mov">
-    <a href="/movie/515712-metamorphosis">Metamorphosis</a>
+    <a href="/movie/1409057-the-long-walk">The Long Walk</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/Marsh-mellow65">Marsh-mellow65</a> : 
+    <a href="/user/Neoblade">Neoblade</a> : 
 
     </span> 
 
-This link keeps saying technical error and I can&#39;t request any links once a link is added.
+OK YES SKIP TO THE ENDING WTF.
 
     </p>
     </div>
 
 
 
-    <div class="latest_comments  com_class_tv">
-    <a href="/tv/93424/australian-survivor-season-13-episode-1">Australian Survivor S13 E1</a>
+    <div class="latest_comments  com_class_mov">
+    <a href="/movie/1409057-the-long-walk">The Long Walk</a>
     <p>
     <span class="latest_comments_poster">
 
-    <a href="/user/dampyiel2200">dampyiel2200</a> : 
+    <a href="/user/Neoblade">Neoblade</a> : 
 
     </span> 
 
-So many great players and a quick season. Let&#39;s all hope for exciting game play! 
-
-    </p>
-    </div>
-
-
-
-    <div class="latest_comments  com_class_tv">
-    <a href="/tv/1376712-the-summer-i-turned-pretty">The Summer I Turned Pretty</a>
-    <p>
-    <span class="latest_comments_poster">
-
-    <a href="/user/chugga">chugga</a> : 
-
-    </span> 
-
-is this show basically we were liars if not for the ghoulish reveal?
+WARNING WARNING: This film was absolute shit. Skipped through it, got the point but man, w...
 
     </p>
     </div>
@@ -295,17 +286,33 @@ is this show basically we were liars if not for the ghoulish reveal?
 <h2>Top Comments</h2>
 
 
-    <div class="latest_comments  com_class_tv">
-    <a href="/tv/1516925/the-institute-season-1-episode-7">The Institute S1 E7</a>
+    <div class="latest_comments  com_class_mov">
+    <a href="/movie/874438-playboys-erotic-fantasies-iii">Playboy&#39;s Erotic Fantasies III</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/mkmikas">mkmikas</a> : 
+    <a href="/user/snazzydetritus">snazzydetritus</a> : 
+    </span> 
+
+Full disclosure - I haven&#39;t seen a moment of this video, and don&#39;t intend to; but I saw Li...
+
+    </p>
+    </div>
+
+
+
+    <div class="latest_comments  com_class_tv">
+    <a href="/tv/368639/foundation-season-3-episode-10">Foundation S3 E10</a>
+    <p>
+    <span class="latest_comments_poster">
+    <a href="/user/Bryant315">Bryant315</a> : 
     </span> 
 
 
-    <span class="toggler hide" togglee-id="-NH9A">Contains spoilers.  Click to show.</span>
-    <span class="togglee" id="-NH9A">
-mm lets throw in a little time crises from 12 monkeys series... ooh and the weird smoking ...
+    <span class="toggler hide" togglee-id="wP1Ox">Contains spoilers.  Click to show.</span>
+    <span class="togglee" id="wP1Ox">
+dusk really wanted to live!
+poor dermazel! poor harry!
+sorry mule :(
     </span>
 
     </p>
@@ -313,21 +320,15 @@ mm lets throw in a little time crises from 12 monkeys series... ooh and the weir
 
 
 
-    <div class="latest_comments  com_class_tv">
-    <a href="/tv/6386/the-librarians-season-1-episode-6">The Librarians S1 E6</a>
+    <div class="latest_comments  com_class_mov">
+    <a href="/movie/874438-playboys-erotic-fantasies-iii">Playboy&#39;s Erotic Fantasies III</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/chonkychunk">chonkychunk</a> : 
+    <a href="/user/%2528%25E2%258C%2590%25E2%2596%25A0_%25E2%2596%25A0%2529">(⌐■_■)</a> : 
     </span> 
 
-
-    <span class="toggler hide" togglee-id="75eZ4">Contains spoilers.  Click to show.</span>
-    <span class="togglee" id="75eZ4">
-&quot;There&#39;s a bird on you&quot;
-&quot;Mhmhm, yeah&quot;
-
-Love this episode and the subtle foreshadowing for ...
-    </span>
+NS, ryte?!?!! ... wait &#39;till ya see the wardrobe(s)... 0.0
+Comment: straight up +10 
 
     </p>
     </div>
@@ -335,41 +336,27 @@ Love this episode and the subtle foreshadowing for ...
 
 
     <div class="latest_comments  com_class_tv">
-    <a href="/tv/1363/south-park-season-27-episode-3">South Park S27 E3</a>
+    <a href="/tv/1585109-the-sunshine-murders">The Sunshine Murders</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/Jirido">Jirido</a> : 
+    <a href="/user/AmieWarren">AmieWarren</a> : 
     </span> 
 
-I bet it is Patel and Gambiano that is gonna get it this time.. Patel looks like his dad h...
+This show is just bad. The characters are annoying, especially the Kiwi sister, half of th...
 
     </p>
     </div>
 
 
 
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/1513114-caught-stealing">Caught Stealing</a>
+    <div class="latest_comments  com_class_tv">
+    <a href="/tv/1585109-the-sunshine-murders">The Sunshine Murders</a>
     <p>
     <span class="latest_comments_poster">
-    <a href="/user/simones">simones</a> : 
+    <a href="/user/prole">prole</a> : 
     </span> 
 
-Darren Aronfsky.Wild ride.&quot;Mother&quot; was one messed up movie from a crazy imagination.
-
-    </p>
-    </div>
-
-
-
-    <div class="latest_comments  com_class_mov">
-    <a href="/movie/579676-blood-the-last-vampire">Blood: The Last Vampire</a>
-    <p>
-    <span class="latest_comments_poster">
-    <a href="/user/ackman83">ackman83</a> : 
-    </span> 
-
-great animation 
+same. i got about 20 minutes in before pulling the plug 
 
     </p>
     </div>
@@ -380,12 +367,12 @@ great animation
     </div>
 
     <div class="footer footer_right">
-      <a href="#" title=" unregistered">740 users online</a> -
+      <a href="#" title=" unregistered">757 users online</a> -
       <a href="/contact">Contacts</a> -
       <a href="/faq">FAQ</a> -
       <a href="/dmca">DMCA</a> -
       <a href="/api">API</a> -
-      <a href="/embed">Embed</a>
+      <a href="https://primesrc.me" target="_blank">Embed</a>
     </div>
 
   </div>
@@ -394,7 +381,7 @@ great animation
 
 <script>
 
-window.csrf_token = "djYpIGszXQIwXCAeG0Y-NQIGPjsBYHhD9qGMZdnduqvFA1SaHtaujMLu";
+window.csrf_token = "OjgsVClZBXQlKBUMaAFrKgQMAQRyNGg3WVNbl1a9fFs__MSyaXmeJF-B";
 window.subs = false
 window.tsr = false
 document.dispatchEvent(window.appTrigger);
@@ -403,9 +390,5 @@ window.appTriggered = true;
 
 <div id="previewer-el"></div>
 
-<script type="text/javascript" src="/a/aclib.js"></script>
-<script>
-    aclib.runPop({zoneId: '10289334'});
-</script>
 
 </body></html>

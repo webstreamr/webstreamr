@@ -1,13 +1,22 @@
 import crypto from 'crypto';
 // eslint-disable-next-line import/no-named-as-default
 import KeyvSqlite from '@keyv/sqlite';
+import bytes from 'bytes';
 import { Cacheable, CacheableMemory, Keyv } from 'cacheable';
 import * as cheerio from 'cheerio';
-import { JSDOM } from 'jsdom';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
 import { Fetcher, getCacheDir, getImdbId, Id, ImdbId } from '../utils';
 import { Source, SourceResult } from './Source';
+
+interface PrimeSrcResponsePartial {
+  servers: {
+    name: string;
+    key: string;
+    file_size: string | null;
+    file_name: string | null;
+  }[];
+}
 
 export class PrimeWire extends Source {
   public readonly id = 'primewire';
@@ -46,49 +55,50 @@ export class PrimeWire extends Source {
       return [];
     }
 
-    const pageHtml = await this.fetcher.text(ctx, pageUrl);
+    const pageIdMatch = pageUrl.pathname.match(/\/([0-9]{2,})/) as string[];
+    const pageId = pageIdMatch[1];
 
-    let linksHtml = pageHtml;
+    const primeSrcUrl = new URL(`https://primesrc.me/api/v1/s?s_id=${pageId}&type=movie`);
+
     if (imdbId.season) {
-      const episodeUrl = await this.fetchEpisodeUrl(pageHtml, imdbId);
-      if (!episodeUrl) {
+      const episodeId = await this.fetchEpisodeId(ctx, pageUrl, imdbId);
+      if (!episodeId) {
         return [];
       }
 
-      linksHtml = await this.fetcher.text(ctx, episodeUrl);
+      primeSrcUrl.searchParams.set('e_id', `${episodeId}`);
+      primeSrcUrl.searchParams.set('type', 'tv');
     }
 
-    // Yes, we are aware of the risks.. 😰
-    const jsdom = new JSDOM(linksHtml, { runScripts: 'dangerously' });
-    const scriptElement = jsdom.window.document.createElement('script');
-    scriptElement.textContent = appJs;
-    jsdom.window.document.body.appendChild(scriptElement);
-
-    const $ = cheerio.load(jsdom.window.document.documentElement.outerHTML);
-
-    jsdom.window.close();
+    const primeSrcResponse = JSON.parse(await this.fetcher.text(ctx, primeSrcUrl, { headers: { Referer: pageUrl.origin } })) as PrimeSrcResponsePartial;
 
     const linksTokenMatch = appJs.match(/t="(0\.x.*?)"/) as string[];
     const linksToken = linksTokenMatch[1] as string;
 
     return Promise.all(
-      $(`a.go-link`)
-        .map((_i, el) => new URL($(el).attr('href') as string, this.baseUrl))
-        .toArray()
-        .map(async (redirectUrl) => {
-          let targetUrlHref = await this.redirectUrlCache.get<string>(redirectUrl.href);
+      primeSrcResponse.servers.map(async ({ key, file_name, file_size }) => {
+        const redirectUrl = new URL(`/links/gos/${key}`, this.baseUrl);
 
-          /* istanbul ignore if */
-          if (!targetUrlHref) {
-            const linkFetchUrl = new URL(redirectUrl.href.replace('/gos/', '/go/'));
-            linkFetchUrl.searchParams.set('token', linksToken);
-            targetUrlHref = JSON.parse(await this.fetcher.text(ctx, linkFetchUrl))['link'] as string;
+        let targetUrlHref = await this.redirectUrlCache.get<string>(redirectUrl.href);
 
-            await this.redirectUrlCache.set<string>(redirectUrl.href, targetUrlHref);
-          }
+        /* istanbul ignore if */
+        if (!targetUrlHref) {
+          const linkFetchUrl = new URL(redirectUrl.href.replace('/gos/', '/go/'));
+          linkFetchUrl.searchParams.set('token', linksToken);
+          targetUrlHref = JSON.parse(await this.fetcher.text(ctx, linkFetchUrl))['link'] as string;
 
-          return { url: new URL(targetUrlHref), meta: { countryCodes: [CountryCode.en] } };
-        }),
+          await this.redirectUrlCache.set<string>(redirectUrl.href, targetUrlHref);
+        }
+
+        return {
+          url: new URL(targetUrlHref),
+          meta: {
+            countryCodes: [CountryCode.en],
+            ...(file_name && { title: file_name }),
+            ...(file_size && { bytes: bytes.parse(file_size) as number }),
+          },
+        };
+      }),
     );
   };
 
@@ -109,13 +119,15 @@ export class PrimeWire extends Source {
       .get(0);
   };
 
-  private readonly fetchEpisodeUrl = async (pageHtml: string, imdbId: ImdbId): Promise<URL | undefined> => {
+  private readonly fetchEpisodeId = async (ctx: Context, pageUrl: URL, imdbId: ImdbId): Promise<number | undefined> => {
+    const pageHtml = await this.fetcher.text(ctx, pageUrl);
+
     const $ = cheerio.load(pageHtml);
 
     return $(`div[data-id="${imdbId.season}"]`)
       .children(`.tv_episode_item:nth-child(${imdbId.episode})`)
-      .children('a[href]')
-      .map((_i, el) => new URL($(el).attr('href') as string, this.baseUrl))
+      .children('.episode-checkbox')
+      .map((_i, el) => parseInt($(el).val() as string))
       .get(0);
   };
 }
