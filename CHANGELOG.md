@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.52.0](https://github.com/webstreamr/webstreamr/compare/v0.51.2...v0.52.0) (2025-09-14)
+
+
+### Features
+
+* allow to disable extractors via env var ([737bf6a](https://github.com/webstreamr/webstreamr/commit/737bf6aa94fabeac0d33c39fc0e4a9ceabbcdcc9))
+* allow to disable sources via env var ([f89d906](https://github.com/webstreamr/webstreamr/commit/f89d90619ad2d7ce64e0bba2d1278e221956fa25))
+
 ## [0.51.2](https://github.com/webstreamr/webstreamr/compare/v0.51.1...v0.51.2) (2025-09-14)
 
 
