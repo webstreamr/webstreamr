@@ -86,8 +86,7 @@ export class StreamResolver {
       return a.label.localeCompare(b.label);
     });
 
-    const errorCount = urlResults.reduce((count, urlResult) => urlResult.error ? count + 1 : count, 0);
-    this.logger.info(`Got ${urlResults.length} url results, including ${errorCount} errors`, ctx);
+    this.logger.info(`Return ${urlResults.length} streams`, ctx);
 
     streams.push(
       ...urlResults.filter(urlResult => !urlResult.error || showErrors(ctx.config))
