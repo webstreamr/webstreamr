@@ -235,7 +235,7 @@ export class Fetcher {
     let httpCacheItem = await this.cacheGet(cacheKey);
     const noCache = init?.noCache ?? false;
     if (httpCacheItem && !noCache) {
-      this.logger.info(`Cached fetch ${request.method} ${url}: ${httpCacheItem.status} (${httpCacheItem.statusText})`, ctx);
+      this.logger.info(`Cached fetch ${request.method} ${url}`, ctx);
       return this.handleHttpCacheItem(ctx, httpCacheItem, url, init);
     }
 
@@ -260,7 +260,7 @@ export class Fetcher {
     if (isRateLimitedRaw && isRateLimitedRaw.value && isRateLimitedRaw.expires) {
       const ttl = isRateLimitedRaw.expires - Date.now();
       if (ttl <= this.MAX_WAIT_RETRY_AFTER && tryCount < 1) {
-        this.logger.info(`Wait out rate limit for ${url}`, ctx);
+        this.logger.info('Wait out rate limit', ctx);
 
         await this.sleep(ttl);
 
@@ -292,8 +292,6 @@ export class Fetcher {
 
       response = await fetch(finalUrl, finalInit);
     } catch (error) {
-      this.logger.info(`Got error ${error} for ${url}`, ctx);
-
       if (error instanceof DOMException && ['AbortError', 'TimeoutError'].includes(error.name)) {
         await this.increaseTimeoutsCount(url);
         throw new TimeoutError();
@@ -301,8 +299,6 @@ export class Fetcher {
 
       throw error;
     }
-
-    this.logger.info(`Got ${response.status} (${response.statusText}) for ${url}`, ctx);
 
     await this.decreaseTimeoutsCount(url);
 
