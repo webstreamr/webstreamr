@@ -26,12 +26,12 @@ const logger = winston.createLogger({
   ],
 });
 
-process.on('uncaughtException', (error) => {
-  logger.error('Uncaught exception caught:', error);
+process.on('uncaughtException', (error: Error) => {
+  logger.error(`Uncaught exception caught: ${error}, cause: ${error.cause}, stack: ${error.stack}`);
 });
 
-process.on('unhandledRejection', (reason) => {
-  logger.error('Unhandled rejection: ', reason);
+process.on('unhandledRejection', (error: Error) => {
+  logger.error(`Unhandled rejection: ${error}, cause: ${error.cause}, stack: ${error.stack}`);
 });
 
 const fetcher = new Fetcher(logger);
