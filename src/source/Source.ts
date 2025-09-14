@@ -4,7 +4,7 @@ import { Cacheable, CacheableMemory, Keyv } from 'cacheable';
 import { ContentType } from 'stremio-addon-sdk';
 import { NotFoundError } from '../error';
 import { Context, CountryCode, Meta } from '../types';
-import { getCacheDir, Id } from '../utils';
+import { getCacheDir, Id, noCache } from '../utils';
 
 export interface SourceResult {
   url: URL;
@@ -44,7 +44,7 @@ export abstract class Source {
     let sourceResults = (await Source.sourceResultCache.get<SourceResult[]>(cacheKey))
       ?.map(sourceResult => ({ ...sourceResult, url: new URL(sourceResult.url) }));
 
-    if (!sourceResults) {
+    if (!sourceResults || noCache(ctx.config)) {
       try {
         sourceResults = await this.handleInternal(ctx, type, id);
       } catch (error) {

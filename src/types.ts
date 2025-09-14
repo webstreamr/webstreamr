@@ -17,7 +17,7 @@ export type CustomManifest = Manifest & {
   };
 };
 
-export type Config = Partial<Record<CountryCode | 'showErrors' | 'includeExternalUrls' | 'mediaFlowProxyUrl' | 'mediaFlowProxyPassword' | 'proxyConfig', string> & Record<`disableExtractor_${string}`, string>>;
+export type Config = Partial<Record<CountryCode | 'showErrors' | 'includeExternalUrls' | 'mediaFlowProxyUrl' | 'mediaFlowProxyPassword' | 'proxyConfig' | 'noCache', string> & Record<`disableExtractor_${string}`, string>>;
 
 export enum CountryCode {
   multi = 'multi',

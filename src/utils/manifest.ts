@@ -96,6 +96,13 @@ export const buildManifest = (sources: Source[], extractors: Extractor[], config
     default: config['proxyConfig'] ?? '',
   });
 
+  manifest.config.push({
+    key: 'noCache',
+    type: 'checkbox',
+    title: 'Disable cache',
+    ...('noCache' in config && { default: 'checked' }),
+  });
+
   extractors.forEach((extractor) => {
     if (extractor.id === 'external') {
       return;
