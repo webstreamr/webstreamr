@@ -1,24 +1,5 @@
 # Changelog
 
-## [0.51.0](https://github.com/webstreamr/webstreamr/compare/v0.50.4...v0.51.0) (2025-09-13)
-
-
-### Miscellaneous Chores
-
-* **fetcher:** log more infos about responses ([731bd33](https://github.com/webstreamr/webstreamr/commit/731bd334703f0592f083d4264c382c28acf68eb1))
-* **fetcher:** log proxy usage, allow to disable proxy via config ([b67e1b8](https://github.com/webstreamr/webstreamr/commit/b67e1b85d634be413e004625b13403acc445ce72))
-* log error count in final result log ([2421913](https://github.com/webstreamr/webstreamr/commit/24219135874be6cdecdb95cabfed86ad60d6c451))
-
-
-### Features
-
-* allow to disable cache ([4078f0c](https://github.com/webstreamr/webstreamr/commit/4078f0c404a76f4c5a3c12ec74108d3d03840e34))
-
-
-### Reverts
-
-* Revert "fix(extractor): use SuperVideo embed URls which are not triggering CF challenges" ([4351ddc](https://github.com/webstreamr/webstreamr/commit/4351ddc00dc349bde60968dc1490359e4720f924))
-
 ## [0.50.4](https://github.com/webstreamr/webstreamr/compare/v0.50.3...v0.50.4) (2025-09-12)
 
 
