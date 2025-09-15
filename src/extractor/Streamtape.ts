@@ -16,6 +16,10 @@ export class Streamtape extends Extractor {
     return null !== url.host.match(/streamtape/) && supportsMediaFlowProxy(ctx);
   }
 
+  public override normalize(url: URL): URL {
+    return new URL(url.href.replace('/v/', '/e/'));
+  }
+
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const html = await this.fetcher.text(ctx, url);
 
