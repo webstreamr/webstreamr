@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.52.2](https://github.com/webstreamr/webstreamr/compare/v0.52.1...v0.52.2) (2025-09-16)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#359](https://github.com/webstreamr/webstreamr/issues/359)) ([1028c66](https://github.com/webstreamr/webstreamr/commit/1028c663ebcbbff64d114efc654f5f817cbce40d))
+* **deps:** update dependency @types/node to v22.18.3 ([#358](https://github.com/webstreamr/webstreamr/issues/358)) ([e33aa42](https://github.com/webstreamr/webstreamr/commit/e33aa42b1954d4a4f79f0d779a168af46c15c3e8))
+* **deps:** update dependency ts-jest to v29.4.2 ([#361](https://github.com/webstreamr/webstreamr/issues/361)) ([6ef80d3](https://github.com/webstreamr/webstreamr/commit/6ef80d3166d6f01462b03f2a830e4956cbef1661))
+* **deps:** update dependency typescript-eslint to v8.44.0 ([#362](https://github.com/webstreamr/webstreamr/issues/362)) ([261897c](https://github.com/webstreamr/webstreamr/commit/261897c6990ba7a8799637bc5a525dc6fac7e7c3))
+
+
+### Bug Fixes
+
+* do not return cache headers when noCache is set ([d06c293](https://github.com/webstreamr/webstreamr/commit/d06c2934a8114bf3c8b186604f8988288671fce9))
+* **extractor:** filter out non-accessible HubCloud streams ([c819dd6](https://github.com/webstreamr/webstreamr/commit/c819dd6bb7bca4da7ec40df10ba666fa7735df1c))
+* **extractor:** normalize Streamtape URLs ([aeb7ce5](https://github.com/webstreamr/webstreamr/commit/aeb7ce5f541e6d051b0eb945ccfb7f1675dbf469))
+* **fetcher:** only retry 503 and 504 ([d90cd8f](https://github.com/webstreamr/webstreamr/commit/d90cd8f98454318b77003cecaf3101ae42d1a569))
+* remove turnstyle detection to check if it causes false-positives ([c10ca29](https://github.com/webstreamr/webstreamr/commit/c10ca29fda84aafc34914889b198e5ae6fca4063))
+
 ## [0.52.1](https://github.com/webstreamr/webstreamr/compare/v0.52.0...v0.52.1) (2025-09-14)
 
 
