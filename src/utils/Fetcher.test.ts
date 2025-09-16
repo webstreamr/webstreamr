@@ -216,14 +216,14 @@ describe('fetch', () => {
 
   test('passes through other error as HttpError after retrying 3 times', async () => {
     const mockPool = mockAgent.get('https://some-error-url.test');
-    mockPool.intercept({ path: '/' }).reply(500, undefined, { headers: { 'x-foo': 'bar' } }).times(4);
+    mockPool.intercept({ path: '/' }).reply(503, undefined, { headers: { 'x-foo': 'bar' } }).times(4);
 
     try {
       await fetcher.text(ctx, new URL('https://some-error-url.test/'));
       fail();
     } catch (error) {
       expect(error).toBeInstanceOf(HttpError);
-      expect(error).toMatchObject({ status: 500, headers: { 'x-foo': 'bar' } });
+      expect(error).toMatchObject({ status: 503, headers: { 'x-foo': 'bar' } });
     }
   });
 
