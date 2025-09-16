@@ -217,7 +217,7 @@ HubCloud | <a href="https://hubcloud.fans/">Create An Account</a> |<a href="http
 	
 
 	
-<a id="download" href="https://stockbhoomi.com/hubcloud.php?host=hubcloud&id=idt1evqfuviqiei&token=RUhXL2kvWnI3MmtFTTlyc1VGY2JSR2FsTnZCdkd0NFN5aUpPN1V0NHRSaz0=" rel="noopener noreferrer nofollow" class="btn btn-primary h6 p-2"><i class="fas fa-file-download fa-lg"></i> Generate Direct Download Link</a>
+<a id="download" href="https://gamerxyt.com/hubcloud.php?host=hubcloud&id=idt1evqfuviqiei&token=RUhXL2kvWnI3MmtFTTlyc1VGY2JSUHJiRlcvSTBwOG9HNWFOa2tiMWVxMD0=" rel="noopener noreferrer nofollow" class="btn btn-primary h6 p-2"><i class="fas fa-file-download fa-lg"></i> Generate Direct Download Link</a>
 
 
 <center>
@@ -248,7 +248,7 @@ HubCloud | <a href="https://hubcloud.fans/">Create An Account</a> |<a href="http
 <p><b>Note:</b> <i> Always Use Updated Chrome Browser With Cookies Enabled .</i>| Refresh this Page & click Download again if you get any error.</i> ! Resume is Supported-Enjoy :)</p>
 </div>
 <div class="alert alert-info" role="alert">
-<p>If you're getting any error please report at <a href="https://t.me/sumitbotreport">@Telegram Group</a> with Share Link And Screenshot (:</p>
+<p>If you're getting any error please report at <a href="https://t.me/hubcloudreport">@Telegram Group</a> with Share Link And Screenshot (:</p>
 </div>
 <hr>
 
@@ -280,7 +280,7 @@ setTimeout(function(){
 document.querySelector(".loading").classList.add("d-none");
 document.querySelector(".vd").classList.remove("d-none");
 }, 2000);  
-var url = 'https://stockbhoomi.com/hubcloud.php?host=hubcloud&id=idt1evqfuviqiei&token=RUhXL2kvWnI3MmtFTTlyc1VGY2JSR2FsTnZCdkd0NFN5aUpPN1V0NHRSaz0=';
+var url = 'https://gamerxyt.com/hubcloud.php?host=hubcloud&id=idt1evqfuviqiei&token=RUhXL2kvWnI3MmtFTTlyc1VGY2JSUHJiRlcvSTBwOG9HNWFOa2tiMWVxMD0=';
 
 var download = document.getElementById('download');
 download.onclick = function() {

