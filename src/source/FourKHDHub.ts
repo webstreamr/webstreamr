@@ -2,6 +2,7 @@ import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { BasicAcceptedElems, CheerioAPI } from 'cheerio';
 import { AnyNode } from 'domhandler';
+import levenshtein from 'fast-levenshtein';
 import rot13Cipher from 'rot13-cipher';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode, Meta } from '../types';
@@ -68,13 +69,20 @@ export class FourKHDHub extends Source {
 
     const $ = cheerio.load(html);
 
-    const yearMatches = $(`.movie-card`)
-      .slice(0, 2)
-      .filter((_i, el) => parseInt($('.movie-card-meta', el).text()) === year);
-    const exactTitleMatches = yearMatches
-      .filter((_i, el) => $('.movie-card-title', el).text().includes(name));
+    return $(`.movie-card:has(.movie-card-format:contains("${tmdbId.season ? 'Series' : 'Movies'}"))`)
+      .filter((_i, el) => {
+        const movieCardYear = parseInt($('.movie-card-meta', el).text());
 
-    return (exactTitleMatches.length ? exactTitleMatches : yearMatches)
+        return Math.abs(movieCardYear - year) <= 1;
+      })
+      .filter((_i, el) => {
+        const movieCardTitle = $('.movie-card-title', el)
+          .text()
+          .replace(/\[.*?]/, '')
+          .trim();
+
+        return levenshtein.get(movieCardTitle, name, { useCollator: true }) < 5;
+      })
       .map((_i, el) => new URL($(el).attr('href') as string, this.baseUrl))
       .get(0);
   };

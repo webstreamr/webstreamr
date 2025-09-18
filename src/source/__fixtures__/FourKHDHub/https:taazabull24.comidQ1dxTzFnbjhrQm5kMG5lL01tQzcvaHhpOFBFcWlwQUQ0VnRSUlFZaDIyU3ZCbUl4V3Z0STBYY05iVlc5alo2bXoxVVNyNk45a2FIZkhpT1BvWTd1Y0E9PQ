@@ -13,7 +13,7 @@
 Redirecting ..
 <script type="text/javascript">
 function stck(e,t,i){let n="";if(i){let o=new Date;o.setTime(o.getTime()+6e4*i),n="; expires="+o.toUTCString()}document.cookie=`${e}=${t}; path=/; SameSite=None; Secure${n}`}
-function s(e,t,i){let n=new Date,m={value:t,expiry:n.getTime()+i};window.localStorage.setItem(e,JSON.stringify(m));stck('xla',"s4t",4);}s('o','Y214WE0xWjNZbXRhVUdwMmIxQldObFo2ZFRCeFZVOXRRbmxxYVV0UU9UQk1TbE0yVEVwWE1XOVVhbXhCVURWM2J6SXhjRmt5ZFdsdlNrbG1URW8xZUUxTFYzQlpiRlptVm5vNGRrSjJWM1ZHVTFacVREQjFRVUY0YXpWQ1NqbDRTVEJqWkV4NGNEVmFTV05SUVV0TmRtOUpTVEpLZUhWWWNGUkZaMGxMVFc1R1ZVOHlSekJ4YW05S1UyaEVZVVY1U1RCalowcDRSVUpCUmxjNQ==',180*1000);setTimeout(()=>window.location.href='https://taazabull24.com/homelander/', 2000);
+function s(e,t,i){let n=new Date,m={value:t,expiry:n.getTime()+i};window.localStorage.setItem(e,JSON.stringify(m));stck('xla',"s4t",4);}s('o','Y214WE0xWjNZbXRhVUdwMmIxQldObFo2ZFRCeFZVOXRRbmxxYVV0UU9UQk1TbE0yVEVwWE1XOVVhbXhCVURWM2J6SXhjRmt5ZFdsdlNrbG1URW8xZUUxTFYzQlpiRlptVm5vNGRrSjJWM1ZHVTFacVREQjFRVUY0YXpWQ1NqbDRTVEJqWkV4NGNEVmFTV05SUVV0TmRtOUpTVEpLZUhWWWNGUkZaMGxMVFVGdlIwZ3dSMGwxV0VGNlJVeHdWRGw0UlcxNWJFd3djV0p3UmxjNQ==',180*1000);setTimeout(()=>window.location.href='https://taazabull24.com/homelander/', 2000);
 </script>
 
 

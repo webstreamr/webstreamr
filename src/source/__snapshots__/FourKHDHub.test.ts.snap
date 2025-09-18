@@ -82,46 +82,7 @@ exports[`FourKHDHub handle crayon shin-chan 1993 1`] = `
 ]
 `;
 
-exports[`FourKHDHub handle crayon shin-chan 1998 1`] = `
-[
-  {
-    "meta": {
-      "bytes": 31514322534,
-      "countryCodes": [
-        "hi",
-        "ja",
-      ],
-      "height": 1080,
-      "title": "Crayon Shinchan Blitzkrieg Pigs Hoofs Secret Mission (1998) 1080p  BluRay REMUX AVC [Hin-Tam-Tel DD 2.0 + Japanese DD 2.0]-Ionicboy (4kHDHub.com).mkv",
-    },
-    "url": "https://hubcloud.one/drive/ksnkh55ythyhohc",
-  },
-  {
-    "meta": {
-      "bytes": 10146860236,
-      "countryCodes": [
-        "hi",
-        "ja",
-      ],
-      "height": 1080,
-      "title": "Crayon Shinchan Blitzkrieg Pigs Hoofs Secret Mission (1998) 1080p BluRay [Hin-Tam-Tel DD 2.0 + Japanese DD 2.0] x264 (WiKi-Ionicboy).mkv",
-    },
-    "url": "https://hubcloud.one/drive/1sawyohyl2g1lpw",
-  },
-  {
-    "meta": {
-      "bytes": 5851892940,
-      "countryCodes": [
-        "hi",
-        "ja",
-      ],
-      "height": 1080,
-      "title": "Crayon Shinchan Blitzkrieg Pigs Hoofs Secret Mission (1998) 1080p 10bit BluRay HEVC [Hin-Tam-Tel DD 2.0 + Japanese DD 2.0] H.265 (WiKi-Ionicboy).mkv",
-    },
-    "url": "https://hubcloud.one/drive/dzo8jfjpmybfd3y",
-  },
-]
-`;
+exports[`FourKHDHub handle crayon shin-chan 1998 1`] = `[]`;
 
 exports[`FourKHDHub handle dark 2017 s01e02 1`] = `
 [
@@ -274,6 +235,30 @@ exports[`FourKHDHub handle superman 2025 1`] = `
 [
   {
     "meta": {
+      "bytes": 65326452572,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 2160,
+      "title": "Superman (2025) 2160p UHD BluRay REMUX DoVi HDR HEVC [Hin-Tam-Tel DDP 5.1 + English TrueHD.Atmos 7.1] (CiNEPHiLES-Ionicboy).mkv",
+    },
+    "url": "https://hubcloud.one/drive/pxpz19pzzzgi99y",
+  },
+  {
+    "meta": {
+      "bytes": 26940182364,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Superman (2025) 1080p BluRay REMUX AVC [Hin-Tam-Tel DDP 5.1 + English TrueHD.Atmos 7.1] (FraMeSToR-Ionicboy).mkv",
+    },
+    "url": "https://hubcloud.one/drive/2nx1rzuzhtokphj",
+  },
+  {
+    "meta": {
       "bytes": 26671746908,
       "countryCodes": [
         "en",
@@ -307,6 +292,18 @@ exports[`FourKHDHub handle superman 2025 1`] = `
       "title": "Superman (2025) IMAX 1080p MA WEBRip [Hindi-Tamil-Telugu DDP 5.1 + English DDP Atmos 5.1] x264 (HiDt-LUMiX).mkv",
     },
     "url": "https://hubcloud.one/drive/2i1vnx0nnxxsnnz",
+  },
+  {
+    "meta": {
+      "bytes": 21775484190,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Superman (2025) 1080p 10bit UHD BluRay DoVi HDR HEVC [Hin-Tam-Tel DDP 5.1 + English DDP 7.1] H.265 (ATELiER-Ionicboy).mkv",
+    },
+    "url": "https://hubcloud.one/drive/oi7nukpci9igocg",
   },
   {
     "meta": {
