@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.52.3](https://github.com/webstreamr/webstreamr/compare/v0.52.2...v0.52.3) (2025-09-18)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency ts-jest to v29.4.3 ([#365](https://github.com/webstreamr/webstreamr/issues/365)) ([833c487](https://github.com/webstreamr/webstreamr/commit/833c4870f8b729f8ff099b0aa8238915d612ab07))
+
+
+### Bug Fixes
+
+* **deps:** update dependency cacheable to v2.0.1 ([#364](https://github.com/webstreamr/webstreamr/issues/364)) ([f9d8dc0](https://github.com/webstreamr/webstreamr/commit/f9d8dc0b8620d5c9825164b7a404642ff23ba991))
+* **source:** improve 4KHDHub year and title matching ([a30b271](https://github.com/webstreamr/webstreamr/commit/a30b271a578ff85cf31b3911bfc6aea2da0773a0))
+
+
+### Reverts
+
+* Revert "fix: remove turnstyle detection to check if it causes false-positives" ([60f44c9](https://github.com/webstreamr/webstreamr/commit/60f44c9603cba4266f9ea33e8558da4c101d01f1))
+
 ## [0.52.2](https://github.com/webstreamr/webstreamr/compare/v0.52.1...v0.52.2) (2025-09-16)
 
 
