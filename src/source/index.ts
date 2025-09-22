@@ -18,7 +18,6 @@ import { StreamKiste } from './StreamKiste';
 import { VerHdLink } from './VerHdLink';
 import { VidSrc } from './VidSrc';
 import { VixSrc } from './VixSrc';
-import { XPrime } from './XPrime';
 
 export * from './Source';
 
@@ -33,7 +32,6 @@ export const createSources = (fetcher: Fetcher): Source[] => {
     new PrimeWire(fetcher),
     // new Soaper(fetcher), // "temporarily" rate-limited for over a week
     new VidSrc(fetcher),
-    new XPrime(fetcher),
     // ES / MX
     new CineHDPlus(fetcher),
     new Cuevana(fetcher),

@@ -21,7 +21,7 @@ exports[`buildManifest default manifest 1`] = `
     },
     {
       "key": "en",
-      "title": "English 🇺🇸 (PrimeWire, VidSrc, XPrime)",
+      "title": "English 🇺🇸 (PrimeWire, VidSrc)",
       "type": "checkbox",
     },
     {
@@ -82,7 +82,7 @@ exports[`buildManifest default manifest 1`] = `
 
 Supported languages: German, English, Castilian Spanish, French, Italian, Latin American Spanish
 
-Supported sources: 4KHDHub, VixSrc, PrimeWire, VidSrc, XPrime, CineHDPlus, Cuevana, HomeCine, VerHdLink, Einschalten, KinoGer, MegaKino, MeineCloud, StreamKiste, Frembed, FrenchCloud, Movix, Eurostreaming, MostraGuarda
+Supported sources: 4KHDHub, VixSrc, PrimeWire, VidSrc, CineHDPlus, Cuevana, HomeCine, VerHdLink, Einschalten, KinoGer, MegaKino, MeineCloud, StreamKiste, Frembed, FrenchCloud, Movix, Eurostreaming, MostraGuarda
 
 Supported extractors: ",
   "id": "webstreamr",

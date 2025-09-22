@@ -8,7 +8,6 @@ import { createSources, Source } from './source';
 import { HomeCine } from './source/HomeCine';
 import { MeineCloud } from './source/MeineCloud';
 import { MostraGuarda } from './source/MostraGuarda';
-import { XPrime } from './source/XPrime';
 import { contextFromRequestAndResponse, envGet, envIsProd, Fetcher, StreamResolver } from './utils';
 
 if (envIsProd()) {
@@ -82,7 +81,6 @@ addon.get('/live', async (req: Request, res: Response) => {
     new HomeCine(fetcher),
     new MeineCloud(fetcher),
     new MostraGuarda(fetcher),
-    new XPrime(fetcher),
   ];
   const hrefs = [
     ...sources.map(source => source.baseUrl),
