@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.52.4](https://github.com/webstreamr/webstreamr/compare/v0.52.3...v0.52.4) (2025-09-23)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#374](https://github.com/webstreamr/webstreamr/issues/374)) ([1a2b40d](https://github.com/webstreamr/webstreamr/commit/1a2b40d6f27a5c16dd5c4f9f6a1632d5ae4d5bc3))
+* **deps:** update dependency @stylistic/eslint-plugin to v5.4.0 ([#371](https://github.com/webstreamr/webstreamr/issues/371)) ([953a791](https://github.com/webstreamr/webstreamr/commit/953a7914c92c60124cd629d28de08787696a1273))
+* **deps:** update dependency @types/node to v22.18.6 ([#373](https://github.com/webstreamr/webstreamr/issues/373)) ([b7714d7](https://github.com/webstreamr/webstreamr/commit/b7714d7d604d427c3d6088ea245c4728bfa5b5ea))
+* **deps:** update dependency ts-jest to v29.4.4 ([#368](https://github.com/webstreamr/webstreamr/issues/368)) ([48b0924](https://github.com/webstreamr/webstreamr/commit/48b0924bd8cd0ebbe47a52aaaa9bef6b931b110b))
+* **deps:** update dependency typescript-eslint to v8.44.1 ([#376](https://github.com/webstreamr/webstreamr/issues/376)) ([9709c31](https://github.com/webstreamr/webstreamr/commit/9709c31bcdd140e5fd638dfee5e3a595b8b800be))
+* **deps:** update eslint monorepo to v9.36.0 ([#369](https://github.com/webstreamr/webstreamr/issues/369)) ([092d53e](https://github.com/webstreamr/webstreamr/commit/092d53ef9dffb9f1db2e2f90666b8439daf19321))
+* **fetcher:** complete proxy headers ([0a0beda](https://github.com/webstreamr/webstreamr/commit/0a0bedacb485d1524abeb870dda78cf4cde01341))
+* remove XPrime ([6d5a511](https://github.com/webstreamr/webstreamr/commit/6d5a511cb4d2e778debcfcba3bc4de7b30913663))
+
+
+### Bug Fixes
+
+* **deps:** update dependency cacheable to v2.0.2 ([#377](https://github.com/webstreamr/webstreamr/issues/377)) ([2e3b660](https://github.com/webstreamr/webstreamr/commit/2e3b6602af0d671fc1124a3b5cc2f4e41b47f176))
+
+
+### Reverts
+
+* Revert "chore(fetcher): try to remove the proxy headers (again)" ([7e771c2](https://github.com/webstreamr/webstreamr/commit/7e771c2644dc2016e8d4b632a3436f6b24d2f126))
+
 ## [0.52.3](https://github.com/webstreamr/webstreamr/compare/v0.52.2...v0.52.3) (2025-09-18)
 
 
