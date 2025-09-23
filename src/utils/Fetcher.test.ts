@@ -31,10 +31,11 @@ describe('fetch', () => {
       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
       'Accept-Language': 'en',
       'Authorization': 'Basic dXNlcjpwYXNz',
-      'Forwarded': 'for=0.0.0.0',
+      'Forwarded': 'by=unknown;for=0.0.0.0;host=some-url.test;proto=https',
       'Priority': 'u=0',
       'User-Agent': 'node',
       'X-Forwarded-For': '0.0.0.0',
+      'X-Forwarded-Host': 'some-url.test',
       'X-Forwarded-Proto': 'https',
       'X-Real-IP': '0.0.0.0',
     });

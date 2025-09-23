@@ -105,6 +105,8 @@ export class Fetcher {
     const cookieString = this.cookieJar.getCookieStringSync(url.href);
     const noProxyHeaders = init?.noProxyHeaders ?? false;
 
+    const forwardedProto = url.protocol.slice(0, -1);
+
     return {
       ...init,
       headers: {
@@ -115,9 +117,10 @@ export class Fetcher {
         'User-Agent': this.hostUserAgentMap.get(url.host) ?? 'node',
         ...(cookieString && { Cookie: cookieString }),
         ...(ctx.ip && !noProxyHeaders && {
-          'Forwarded': `for=${ctx.ip}`,
+          'Forwarded': `by=unknown;for=${ctx.ip};host=${url.host};proto=${forwardedProto}`,
           'X-Forwarded-For': ctx.ip,
-          'X-Forwarded-Proto': url.protocol.slice(0, -1),
+          'X-Forwarded-Host': url.host,
+          'X-Forwarded-Proto': forwardedProto,
           'X-Real-IP': ctx.ip,
         }),
         ...init?.headers,
