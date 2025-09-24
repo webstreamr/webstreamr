@@ -18,6 +18,8 @@ export class Movix extends Source {
 
   public readonly baseUrl = 'https://api.movix.site';
 
+  private readonly baseWebsiteUrl = 'https://movix.website';
+
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
@@ -46,6 +48,6 @@ export class Movix extends Source {
       ? `${json['tmdb_details']['title']} ${tmdbId.season}x${tmdbId.episode}`
       : json['tmdb_details']['title'];
 
-    return urls.map(url => ({ url, meta: { countryCodes: [CountryCode.fr], title } }));
+    return urls.map(url => ({ url, meta: { countryCodes: [CountryCode.fr], referer: this.baseWebsiteUrl, title } }));
   };
 }
