@@ -50,7 +50,7 @@ export class StreamResolver {
         const sourceResults = await source.handle(ctx, type, id);
 
         const sourceUrlResults = await Promise.all(
-          sourceResults.map(({ url, meta }) => this.extractorRegistry.handle(ctx, url, { ...meta, referer: source.baseUrl })),
+          sourceResults.map(({ url, meta }) => this.extractorRegistry.handle(ctx, url, { ...meta, referer: meta.referer ?? source.baseUrl })),
         );
 
         urlResults.push(...sourceUrlResults.flat());
