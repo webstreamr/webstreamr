@@ -20,6 +20,7 @@ export class FileLions extends Extractor {
         'alhayabambi.sbs',
         'anime7u.com',
         'azipcdn.com',
+        'bingezove.com',
         'coolciima.online',
         'dhtpre.com',
         'e4xb5c2xnz.sbs',
