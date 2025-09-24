@@ -101,6 +101,18 @@ export class Fetcher {
     return (await this.cachedFetch(ctx, url, { ...init, method: 'HEAD' })).headers;
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  public async json(ctx: Context, url: URL, init?: CustomRequestInit): Promise<any> {
+    const jsonInit = {
+      headers: {
+        Accept: 'application/json,text/plain,*/*',
+      },
+      ...init,
+    };
+
+    return JSON.parse(await this.text(ctx, url, jsonInit));
+  }
+
   private getInit(ctx: Context, url: URL, init?: CustomRequestInit): CustomRequestInit {
     const cookieString = this.cookieJar.getCookieStringSync(url.href);
     const noProxyHeaders = init?.noProxyHeaders ?? false;

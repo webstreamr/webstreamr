@@ -53,7 +53,7 @@ const tmdbFetch = async (ctx: Context, fetcher: Fetcher, path: string, searchPar
   }
 
   const data = await mutex.runExclusive(async () => {
-    return JSON.parse(await fetcher.text(ctx, url, config));
+    return await fetcher.json(ctx, url, config);
   });
 
   if (!mutex.isLocked()) {

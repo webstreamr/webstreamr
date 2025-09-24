@@ -70,7 +70,7 @@ export class PrimeWire extends Source {
       primeSrcUrl.searchParams.set('type', 'tv');
     }
 
-    const primeSrcResponse = JSON.parse(await this.fetcher.text(ctx, primeSrcUrl, { headers: { Referer: pageUrl.origin } })) as PrimeSrcResponsePartial;
+    const primeSrcResponse = await this.fetcher.json(ctx, primeSrcUrl, { headers: { Referer: pageUrl.origin } }) as PrimeSrcResponsePartial;
 
     const linksTokenMatch = appJs.match(/t="(0\.x.*?)"/) as string[];
     const linksToken = linksTokenMatch[1] as string;
@@ -85,7 +85,7 @@ export class PrimeWire extends Source {
         if (!targetUrlHref) {
           const linkFetchUrl = new URL(redirectUrl.href.replace('/gos/', '/go/'));
           linkFetchUrl.searchParams.set('token', linksToken);
-          targetUrlHref = JSON.parse(await this.fetcher.text(ctx, linkFetchUrl))['link'] as string;
+          targetUrlHref = (await this.fetcher.json(ctx, linkFetchUrl))['link'] as string;
 
           await this.redirectUrlCache.set<string>(redirectUrl.href, targetUrlHref);
         }

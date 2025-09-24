@@ -34,7 +34,7 @@ export const buildMediaFlowProxyExtractorStreamUrl = async (ctx: Context, fetche
     mediaFlowProxyUrl.searchParams.set('h_' + headerKey.toLowerCase(), headers[headerKey] as string);
   }
 
-  const extractResult: ExtractResult = JSON.parse(await fetcher.text(ctx, mediaFlowProxyUrl));
+  const extractResult: ExtractResult = await fetcher.json(ctx, mediaFlowProxyUrl);
 
   const streamUrl = new URL(extractResult.mediaflow_proxy_url);
 
