@@ -69,6 +69,14 @@ export class StreamResolver {
     await Promise.all(sourcePromises);
 
     urlResults.sort((a, b) => {
+      if (a.error || b.error) {
+        return a.isExternal ? -1 : 1;
+      }
+
+      if (a.isExternal || b.isExternal) {
+        return a.isExternal ? 1 : -1;
+      }
+
       const heightComparison = (b.meta?.height ?? 0) - (a.meta?.height ?? 0);
       if (heightComparison !== 0) {
         return heightComparison;
@@ -77,10 +85,6 @@ export class StreamResolver {
       const bytesComparison = (b.meta?.bytes ?? 0) - (a.meta?.bytes ?? 0);
       if (bytesComparison !== 0) {
         return bytesComparison;
-      }
-
-      if (a.isExternal || b.isExternal) {
-        return a.isExternal ? 1 : -1;
       }
 
       return a.label.localeCompare(b.label);
