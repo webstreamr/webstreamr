@@ -90,6 +90,7 @@ Supported extractors: ",
     "tmdb:",
     "tt",
   ],
+  "logo": "https://emojiapi.dev/api/v1/spider_web/256.png",
   "name": "WebStreamr",
   "resources": [
     "stream",

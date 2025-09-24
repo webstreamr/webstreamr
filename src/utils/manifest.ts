@@ -22,6 +22,7 @@ export const buildManifest = (sources: Source[], extractors: Extractor[], config
     ],
     catalogs: [],
     idPrefixes: ['tmdb:', 'tt'],
+    logo: 'https://emojiapi.dev/api/v1/spider_web/256.png',
     behaviorHints: {
       p2p: false,
       configurable: true,
