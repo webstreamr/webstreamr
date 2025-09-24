@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.52.5](https://github.com/webstreamr/webstreamr/compare/v0.52.4...v0.52.5) (2025-09-24)
+
+
+### Miscellaneous Chores
+
+* add web emoji as icon ([b124408](https://github.com/webstreamr/webstreamr/commit/b1244086cddf28995f2724b15b4aed2d3d5f5087))
+* **extractor:** add DoodStream host ([da556d3](https://github.com/webstreamr/webstreamr/commit/da556d3523ff475ba37071a86638672e14503732))
+* **extractor:** add FileLions domain ([6f412d7](https://github.com/webstreamr/webstreamr/commit/6f412d736b94f2f2fa458e4e7df9c0916495dd37))
+* **fetcher:** double queue limit and timeouts ([4697d15](https://github.com/webstreamr/webstreamr/commit/4697d150cf1cf541895e7a1bd5e3c233fd8c9401))
+
+
+### Bug Fixes
+
+* always move errors up and external urls down ([ddc8133](https://github.com/webstreamr/webstreamr/commit/ddc8133c5b923c8caac327f2e68cfeb2bd087cc6))
+* prefer using source referer for extractors if it exists ([42d46ac](https://github.com/webstreamr/webstreamr/commit/42d46accb6be3e7995e4d60cb3ec39ff13e07e14))
+* **source:** set correct referer for Movix ([6214df7](https://github.com/webstreamr/webstreamr/commit/6214df7e8ff6119079bf54f4e51df69e21bf6575))
+
+
+### Code Refactoring
+
+* **fetcher:** introduce json method ([a96d015](https://github.com/webstreamr/webstreamr/commit/a96d015a0c6ceb57812ebf3293e6a3cdf44edb0a))
+
 ## [0.52.4](https://github.com/webstreamr/webstreamr/compare/v0.52.3...v0.52.4) (2025-09-23)
 
 
