@@ -74,7 +74,7 @@ export class VidSrc extends Extractor {
           return {
             url: m3u8Url,
             format: Format.hls,
-            label: `${this.label} (${serverName})`,
+            label: serverName,
             sourceId: `${this.id}_${slugify(serverName)}_${meta.countryCodes?.join('_')}`,
             ttl: this.ttl,
             meta: {

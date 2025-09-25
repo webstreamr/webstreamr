@@ -72,6 +72,7 @@ export interface Meta {
   height?: number | undefined;
   referer?: string | undefined;
   title?: string | undefined;
+  sourceLabel?: string | undefined;
 }
 
 export enum Format {

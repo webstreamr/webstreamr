@@ -50,7 +50,7 @@ export class StreamResolver {
         const sourceResults = await source.handle(ctx, type, id);
 
         const sourceUrlResults = await Promise.all(
-          sourceResults.map(({ url, meta }) => this.extractorRegistry.handle(ctx, url, { ...meta, referer: meta.referer ?? source.baseUrl })),
+          sourceResults.map(({ url, meta }) => this.extractorRegistry.handle(ctx, url, { ...meta, referer: meta.referer ?? source.baseUrl, sourceLabel: source.label })),
         );
 
         urlResults.push(...sourceUrlResults.flat());
@@ -172,7 +172,12 @@ export class StreamResolver {
     if (urlResult.meta?.bytes) {
       titleDetailsLine.push(`💾 ${bytes.format(urlResult.meta.bytes, { unitSeparator: ' ' })}`);
     }
-    titleDetailsLine.push(`🔗 ${urlResult.label}`);
+    const sourceLabel = urlResult.meta?.sourceLabel;
+    if (sourceLabel) {
+      titleDetailsLine.push(`🔗 ${urlResult.label} from ${urlResult.meta?.sourceLabel}`);
+    } else {
+      titleDetailsLine.push(`🔗 ${urlResult.label}`);
+    }
     titleLines.push(titleDetailsLine.join(' '));
 
     if (urlResult.error) {
