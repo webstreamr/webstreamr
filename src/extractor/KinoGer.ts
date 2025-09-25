@@ -36,7 +36,7 @@ export class KinoGer extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const headers = { 'Referer': meta.referer ?? url.origin, 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36' };
+    const headers = { 'Referer': meta.referer ?? url.href, 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36' };
 
     const hexData = await this.fetcher.text(ctx, url, { headers });
 
@@ -59,7 +59,7 @@ export class KinoGer extends Extractor {
         ttl: this.ttl,
         meta: {
           ...meta,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, { headers }),
+          height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, { headers: { Referer: url.href } }),
           title,
         },
         requestHeaders: {

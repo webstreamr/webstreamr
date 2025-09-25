@@ -13,7 +13,9 @@ export class YouTube extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const html = await this.fetcher.text(ctx, url);
+    const headers = { Referer: meta.referer ?? url.href };
+
+    const html = await this.fetcher.text(ctx, url, { headers });
 
     const titleMatch = html.match(/"title":{"runs":\[{"text":"(.*?)"/) as string[];
 

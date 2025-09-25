@@ -15,9 +15,11 @@ export class ExternalUrl extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+    const headers = { Referer: meta.referer ?? url.href };
+
     try {
       // Make sure the URL is accessible, but avoid causing noise and delays doing this
-      await this.fetcher.head(ctx, url, { noFlareSolverr: true, timeout: 1000, headers: { Referer: url.origin } });
+      await this.fetcher.head(ctx, url, { noFlareSolverr: true, timeout: 1000, headers });
     } catch (error) {
       /* istanbul ignore if */
       if (!(error instanceof BlockedError)) {

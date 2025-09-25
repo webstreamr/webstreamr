@@ -21,12 +21,14 @@ exports[`ExtractorRegistry returns external URLs if enabled by config 1`] = `
 exports[`ExtractorRegistry returns external url for error 1`] = `
 [
   {
-    "countryCodes": [],
     "error": [Error: Fetcher error: 403: Forbidden
 ],
     "format": "unknown",
     "isExternal": true,
     "label": "Dropload",
+    "meta": {
+      "countryCodes": [],
+    },
     "sourceId": "dropload",
     "url": "https://dropload.io/mocked-blocked.html",
   },

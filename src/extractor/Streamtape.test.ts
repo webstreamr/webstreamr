@@ -11,6 +11,6 @@ const ctx = createTestContext({ mediaFlowProxyUrl: 'https://mediaflow.test.org',
 
 describe('Streamtape', () => {
   test('streamtape.com /e', async () => {
-    expect(await extractorRegistry.handle(ctx, new URL('https://streamtape.com/e/84Kb3mkoYAiokmW'))).toMatchSnapshot();
+    expect(await extractorRegistry.handle(ctx, new URL('https://streamtape.com/e/DjmZBG0K9gHkJ7z/WALL-E.2008.1080p.BrRip.x264.YIFY.mp4'))).toMatchSnapshot();
   });
 });

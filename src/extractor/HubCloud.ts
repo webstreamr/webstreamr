@@ -15,10 +15,12 @@ export class HubCloud extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const redirectHtml = await this.fetcher.text(ctx, url);
+    const headers = { Referer: meta.referer ?? url.href };
+
+    const redirectHtml = await this.fetcher.text(ctx, url, { headers });
     const redirectUrlMatch = redirectHtml.match(/var url ?= ?'(.*?)'/) as string[];
 
-    const linksHtml = await this.fetcher.text(ctx, new URL(redirectUrlMatch[1] as string));
+    const linksHtml = await this.fetcher.text(ctx, new URL(redirectUrlMatch[1] as string), { headers: { Referer: url.href } });
     const $ = cheerio.load(linksHtml);
 
     const urlResults = [

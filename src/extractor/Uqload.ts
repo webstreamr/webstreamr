@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import { Context, Format, Meta, UrlResult } from '../types';
-import { buildMediaFlowProxyExtractorRedirectUrl, supportsMediaFlowProxy } from '../utils';
+import { buildMediaFlowProxyExtractorStreamUrl, supportsMediaFlowProxy } from '../utils';
 import { guessSizeFromMp4 } from '../utils/size';
 import { Extractor } from './Extractor';
 
@@ -20,14 +20,16 @@ export class Uqload extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const html = await this.fetcher.text(ctx, url);
+    const headers = { Referer: meta.referer ?? url.href };
+
+    const html = await this.fetcher.text(ctx, url, { headers });
 
     const heightMatch = html.match(/\d{3,}x(\d{3,})/);
 
     const $ = cheerio.load(html);
     const title = $('h1').text().trim();
 
-    const mp4Url = buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Uqload', url);
+    const mp4Url = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'Uqload', url, headers);
 
     return [
       {
@@ -39,7 +41,7 @@ export class Uqload extends Extractor {
         meta: {
           ...meta,
           title,
-          bytes: await guessSizeFromMp4(ctx, this.fetcher, mp4Url),
+          bytes: await guessSizeFromMp4(ctx, this.fetcher, mp4Url, { headers: { Referer: url.href } }),
           ...(heightMatch && {
             height: parseInt(heightMatch[1] as string),
           }),

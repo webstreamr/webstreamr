@@ -19,10 +19,12 @@ export class Fastream extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'Fastream', url);
+    const headers = { Referer: meta.referer ?? url.href };
+
+    const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'Fastream', url, headers);
 
     const downloadUrl = new URL(url.href.replace('/embed-', '/d/'));
-    const html = await this.fetcher.text(ctx, downloadUrl);
+    const html = await this.fetcher.text(ctx, downloadUrl, { headers });
 
     const heightAndSizeMatch = html.match(/\d{3,}x(\d{3,}), ([\d.]+ ?[GM]B)/) as string[];
     const titleMatch = html.match(/>Download (.*?)</) as string[];

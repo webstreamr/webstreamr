@@ -41,7 +41,7 @@ export abstract class Extractor {
           error,
           label: this.label,
           sourceId: `${this.id}`,
-          ...(meta && meta),
+          meta,
         },
       ];
     }

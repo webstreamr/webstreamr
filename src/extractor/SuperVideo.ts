@@ -21,7 +21,7 @@ export class SuperVideo extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const headers = { Referer: meta.referer ?? url.origin };
+    const headers = { Referer: meta.referer ?? url.href };
 
     const html = await this.fetcher.text(ctx, url, { headers });
 
@@ -39,7 +39,7 @@ export class SuperVideo extends Extractor {
     const size = heightAndSizeMatch ? bytes.parse(heightAndSizeMatch[2] as string) as number : undefined;
     const height = heightAndSizeMatch
       ? parseInt(heightAndSizeMatch[1] as string)
-      : await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, { headers });
+      : await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, { headers: { Referer: url.href } });
 
     const $ = cheerio.load(html);
     const title = $('.download__title').text().trim();

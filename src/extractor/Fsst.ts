@@ -12,7 +12,7 @@ export class Fsst extends Extractor {
   };
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const headers = { Referer: meta.referer ?? url.origin };
+    const headers = { Referer: meta.referer ?? url.href };
 
     const html = await this.fetcher.text(ctx, url, { headers });
 

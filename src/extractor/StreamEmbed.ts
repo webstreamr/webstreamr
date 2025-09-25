@@ -11,7 +11,9 @@ export class StreamEmbed extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const html = await this.fetcher.text(ctx, url);
+    const headers = { Referer: meta.referer ?? url.href };
+
+    const html = await this.fetcher.text(ctx, url, { headers });
 
     const video = JSON.parse((html.match(/video ?= ?(.*);/) as string[])[1] as string);
 

@@ -24,7 +24,9 @@ export class DoodStream extends Extractor {
   };
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const html = await this.fetcher.text(ctx, url);
+    const headers = { Referer: meta.referer ?? url.href };
+
+    const html = await this.fetcher.text(ctx, url, { headers });
 
     const passMd5Match = html.match(/\/pass_md5\/[\w-]+\/([\w-]+)/);
     if (!passMd5Match) {
@@ -33,7 +35,7 @@ export class DoodStream extends Extractor {
 
     const token = passMd5Match[1] as string;
 
-    const baseUrl = await this.fetcher.text(ctx, new URL(passMd5Match[0], url.origin));
+    const baseUrl = await this.fetcher.text(ctx, new URL(passMd5Match[0], url.origin), { headers: { Referer: url.href } });
 
     const $ = cheerio.load(html);
     const title = $('title').text().trim().replace(/ - DoodStream$/, '').trim();
@@ -44,7 +46,7 @@ export class DoodStream extends Extractor {
       mp4Url = new URL(baseUrl);
     } else {
       mp4Url = new URL(`${baseUrl}${randomstring.generate(10)}?token=${token}&expiry=${Date.now()}`);
-      bytes = await guessSizeFromMp4(ctx, this.fetcher, mp4Url, { headers: { Referer: url.origin } });
+      bytes = await guessSizeFromMp4(ctx, this.fetcher, mp4Url, { headers: { Referer: url.href } });
     }
 
     return [

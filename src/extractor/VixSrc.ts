@@ -1,6 +1,6 @@
 import { Context, CountryCode, Format, Meta, UrlResult } from '../types';
 import {
-  buildMediaFlowProxyExtractorStreamUrl, guessHeightFromPlaylist,
+  buildMediaFlowProxyExtractorStreamUrl, CustomRequestInit, guessHeightFromPlaylist,
   hasMultiEnabled,
   iso639FromCountryCode,
   supportsMediaFlowProxy,
@@ -20,7 +20,7 @@ export class VixSrc extends Extractor {
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'VixCloud', url);
-    const countryCodes = await this.determineCountryCodesFromPlaylist(ctx, playlistUrl);
+    const countryCodes = await this.determineCountryCodesFromPlaylist(ctx, playlistUrl, { headers: { Referer: url.href } });
 
     if (!hasMultiEnabled(ctx.config) && !countryCodes.some(countryCode => countryCode in ctx.config)) {
       return [];
@@ -35,14 +35,14 @@ export class VixSrc extends Extractor {
         ttl: this.ttl,
         meta: {
           countryCodes,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl),
+          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, { headers: { Referer: url.href } }),
         },
       },
     ];
   };
 
-  private async determineCountryCodesFromPlaylist(ctx: Context, playlistUrl: URL): Promise<CountryCode[]> {
-    const playlist = await this.fetcher.text(ctx, playlistUrl);
+  private async determineCountryCodesFromPlaylist(ctx: Context, playlistUrl: URL, init?: CustomRequestInit): Promise<CountryCode[]> {
+    const playlist = await this.fetcher.text(ctx, playlistUrl, init);
 
     const countryCodes: CountryCode[] = [CountryCode.it];
 

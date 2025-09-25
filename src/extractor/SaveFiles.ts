@@ -19,7 +19,9 @@ export class SaveFiles extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const html = await this.fetcher.text(ctx, url);
+    const headers = { Referer: meta.referer ?? url.href };
+
+    const html = await this.fetcher.text(ctx, url, { headers });
 
     if (/file was locked|file was deleted/i.test(html)) {
       throw new NotFoundError();

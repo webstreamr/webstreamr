@@ -59,7 +59,7 @@ export class FileLions extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const headers = { ...(meta.referer && { Referer: meta.referer }) };
+    const headers = { Referer: meta.referer ?? url.href };
 
     const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'FileLions', url, headers);
 
@@ -80,7 +80,7 @@ export class FileLions extends Extractor {
         ttl: this.ttl,
         meta: {
           ...meta,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl),
+          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, { headers: { Referer: url.href } }),
           ...(sizeMatch && {
             bytes: bytes.parse(sizeMatch[1] as string) as number,
           }),

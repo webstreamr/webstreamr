@@ -52,7 +52,7 @@ export class Soaper extends Extractor {
         ttl: this.ttl,
         meta: {
           ...meta,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url),
+          height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, { headers: { Referer: url.href } }),
         },
       },
     ];

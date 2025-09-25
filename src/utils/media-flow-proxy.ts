@@ -10,29 +10,22 @@ interface ExtractResult {
 
 export const supportsMediaFlowProxy = (ctx: Context): boolean => !!ctx.config['mediaFlowProxyUrl'];
 
-const buildMediaFlowProxyExtractorUrl = (ctx: Context, host: string, url: URL): URL => {
+const buildMediaFlowProxyExtractorUrl = (ctx: Context, host: string, url: URL, headers: Record<string, string>): URL => {
   const mediaFlowProxyUrl = new URL('/extractor/video', ctx.config.mediaFlowProxyUrl);
 
   mediaFlowProxyUrl.searchParams.append('host', host);
   mediaFlowProxyUrl.searchParams.append('api_password', `${ctx.config.mediaFlowProxyPassword}`);
   mediaFlowProxyUrl.searchParams.append('d', url.href);
 
-  return mediaFlowProxyUrl;
-};
-
-export const buildMediaFlowProxyExtractorRedirectUrl = (ctx: Context, host: string, url: URL): URL => {
-  const mediaFlowProxyUrl = buildMediaFlowProxyExtractorUrl(ctx, host, url);
-
-  mediaFlowProxyUrl.searchParams.append('redirect_stream', 'true');
+  for (const headerKey in headers) {
+    mediaFlowProxyUrl.searchParams.set('h_' + headerKey.toLowerCase(), headers[headerKey] as string);
+  }
 
   return mediaFlowProxyUrl;
 };
 
 export const buildMediaFlowProxyExtractorStreamUrl = async (ctx: Context, fetcher: Fetcher, host: string, url: URL, headers: Record<string, string> = {}): Promise<URL> => {
-  const mediaFlowProxyUrl = buildMediaFlowProxyExtractorUrl(ctx, host, url);
-  for (const headerKey in headers) {
-    mediaFlowProxyUrl.searchParams.set('h_' + headerKey.toLowerCase(), headers[headerKey] as string);
-  }
+  const mediaFlowProxyUrl = buildMediaFlowProxyExtractorUrl(ctx, host, url, headers);
 
   const extractResult: ExtractResult = await fetcher.json(ctx, mediaFlowProxyUrl);
 
@@ -43,9 +36,6 @@ export const buildMediaFlowProxyExtractorStreamUrl = async (ctx: Context, fetche
   }
   for (const requestHeadersKey in extractResult.request_headers) {
     streamUrl.searchParams.append(`h_${requestHeadersKey}`, extractResult.request_headers[requestHeadersKey] as string);
-  }
-  for (const headerKey in headers) {
-    streamUrl.searchParams.set('h_' + headerKey.toLowerCase(), headers[headerKey] as string);
   }
   streamUrl.searchParams.append('d', extractResult.destination_url);
 
