@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.53.1](https://github.com/webstreamr/webstreamr/compare/v0.53.0...v0.53.1) (2025-09-25)
+
+
+### Miscellaneous Chores
+
+* rework referer header passing and mediaflow proxy URL creation ([25b326e](https://github.com/webstreamr/webstreamr/commit/25b326ee480a41d60c2430ad820036c6313cb4f3))
+
 ## [0.53.0](https://github.com/webstreamr/webstreamr/compare/v0.52.5...v0.53.0) (2025-09-25)
 
 
