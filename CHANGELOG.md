@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.53.0](https://github.com/webstreamr/webstreamr/compare/v0.52.5...v0.53.0) (2025-09-25)
+
+
+### Miscellaneous Chores
+
+* **deps:** update node.js to v22.20.0 ([#380](https://github.com/webstreamr/webstreamr/issues/380)) ([7760c13](https://github.com/webstreamr/webstreamr/commit/7760c13ea9ba12932ae7d8b58503f1509bf3b0c1))
+* lock to latest node major only ([#382](https://github.com/webstreamr/webstreamr/issues/382)) ([0ff0758](https://github.com/webstreamr/webstreamr/commit/0ff0758b74772179e92852fae995314a17a50bb1))
+
+
+### Features
+
+* add source info ([1fb7d0c](https://github.com/webstreamr/webstreamr/commit/1fb7d0c66bef74f63560ac5b0d468afda17134e1))
+
+
+### Bug Fixes
+
+* **source:** use iframe src from API as referer for Movix ([ae34284](https://github.com/webstreamr/webstreamr/commit/ae342845f8934e7bb99cd035122cb3636e321e88))
+
 ## [0.52.5](https://github.com/webstreamr/webstreamr/compare/v0.52.4...v0.52.5) (2025-09-24)
 
 
