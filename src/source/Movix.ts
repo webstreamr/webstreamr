@@ -4,6 +4,7 @@ import { Fetcher, getTmdbId, Id } from '../utils';
 import { Source, SourceResult } from './Source';
 
 interface MovixApiData {
+  iframe_src: string;
   player_links?: { decoded_url: string }[];
 }
 
@@ -17,8 +18,6 @@ export class Movix extends Source {
   public readonly countryCodes: CountryCode[] = [CountryCode.fr];
 
   public readonly baseUrl = 'https://api.movix.site';
-
-  private readonly baseWebsiteUrl = 'https://movix.website';
 
   private readonly fetcher: Fetcher;
 
@@ -48,6 +47,6 @@ export class Movix extends Source {
       ? `${json['tmdb_details']['title']} ${tmdbId.season}x${tmdbId.episode}`
       : json['tmdb_details']['title'];
 
-    return urls.map(url => ({ url, meta: { countryCodes: [CountryCode.fr], referer: this.baseWebsiteUrl, title } }));
+    return urls.map(url => ({ url, meta: { countryCodes: [CountryCode.fr], referer: data.iframe_src, title } }));
   };
 }
