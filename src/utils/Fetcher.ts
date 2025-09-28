@@ -279,7 +279,17 @@ export class Fetcher {
   protected async fetchWithTimeout(ctx: Context, url: URL, init?: CustomRequestInit, tryCount = 0): Promise<Response> {
     const proxyUrl = getProxyForUrl(ctx, url);
 
-    this.logger.info(`Fetch ${init?.method ?? 'GET'} ${url} via proxy ${proxyUrl}`, ctx);
+    const headers = init?.headers as Record<string, string> | undefined;
+    let message = `Fetch ${init?.method ?? 'GET'} ${url}`;
+    /* istanbul ignore if */
+    if (headers && headers['Referer']) {
+      message += ' with referer ' + headers['Referer'];
+    }
+    /* istanbul ignore if */
+    if (proxyUrl) {
+      message += ' via proxy ' + proxyUrl;
+    }
+    this.logger.info(message, ctx);
 
     const isRateLimitedRaw = await this.rateLimitedCache.getRaw<true>(url.host);
     /* istanbul ignore if */
