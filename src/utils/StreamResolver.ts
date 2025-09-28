@@ -173,7 +173,7 @@ export class StreamResolver {
       titleDetailsLine.push(`💾 ${bytes.format(urlResult.meta.bytes, { unitSeparator: ' ' })}`);
     }
     const sourceLabel = urlResult.meta?.sourceLabel;
-    if (sourceLabel) {
+    if (sourceLabel && sourceLabel !== urlResult.label) {
       titleDetailsLine.push(`🔗 ${urlResult.label} from ${urlResult.meta?.sourceLabel}`);
     } else {
       titleDetailsLine.push(`🔗 ${urlResult.label}`);
