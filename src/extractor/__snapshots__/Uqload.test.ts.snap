@@ -13,7 +13,7 @@ exports[`Uqload uqload.net /embed- 1`] = `
     },
     "sourceId": "uqload_",
     "ttl": 900000,
-    "url": "https://mediaflow.test.org/proxy/stream?api_password=test&h_user-agent=Mozilla%2F5.0+%28Windows+NT+10.0%3B+Win64%3B+x64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F136.0.0.0+Safari%2F537.36&h_referer=https%3A%2F%2Fuqload.net%2F&d=https%3A%2F%2Fm60.uqload.cx%2F3rfkr3ep2fw2q4drdinp7ppqco2xtt5ele76uwwvy24rwjscvdv3lq62jd3a%2Fv.mp4",
+    "url": "https://mediaflow.test.org/extractor/video?host=Uqload&api_password=test&d=https%3A%2F%2Fuqload.net%2Fz0xbr87oz637.html&h_referer=https%3A%2F%2Fuqload.net%2Fz0xbr87oz637.html&redirect_stream=true",
   },
 ]
 `;

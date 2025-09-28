@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import { Context, Format, Meta, UrlResult } from '../types';
-import { buildMediaFlowProxyExtractorStreamUrl, supportsMediaFlowProxy } from '../utils';
+import { buildMediaFlowProxyExtractorRedirectUrl, supportsMediaFlowProxy } from '../utils';
 import { guessSizeFromMp4 } from '../utils/size';
 import { Extractor } from './Extractor';
 
@@ -29,7 +29,7 @@ export class Uqload extends Extractor {
     const $ = cheerio.load(html);
     const title = $('h1').text().trim();
 
-    const mp4Url = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'Uqload', url, headers);
+    const mp4Url = buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Uqload', url, headers);
 
     return [
       {

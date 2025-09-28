@@ -24,6 +24,14 @@ const buildMediaFlowProxyExtractorUrl = (ctx: Context, host: string, url: URL, h
   return mediaFlowProxyUrl;
 };
 
+export const buildMediaFlowProxyExtractorRedirectUrl = (ctx: Context, host: string, url: URL, headers: Record<string, string>): URL => {
+  const mediaFlowProxyUrl = buildMediaFlowProxyExtractorUrl(ctx, host, url, headers);
+
+  mediaFlowProxyUrl.searchParams.append('redirect_stream', 'true');
+
+  return mediaFlowProxyUrl;
+};
+
 export const buildMediaFlowProxyExtractorStreamUrl = async (ctx: Context, fetcher: Fetcher, host: string, url: URL, headers: Record<string, string> = {}): Promise<URL> => {
   const mediaFlowProxyUrl = buildMediaFlowProxyExtractorUrl(ctx, host, url, headers);
 

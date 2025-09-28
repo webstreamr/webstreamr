@@ -2,7 +2,7 @@ import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
-import { buildMediaFlowProxyExtractorStreamUrl, supportsMediaFlowProxy } from '../utils';
+import { buildMediaFlowProxyExtractorRedirectUrl, supportsMediaFlowProxy } from '../utils';
 import { Extractor } from './Extractor';
 
 export class Mixdrop extends Extractor {
@@ -35,7 +35,7 @@ export class Mixdrop extends Extractor {
 
     return [
       {
-        url: await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'Mixdrop', url, headers),
+        url: buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Mixdrop', url, headers),
         format: Format.mp4,
         label: this.label,
         sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
