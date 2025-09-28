@@ -70,12 +70,14 @@ export class Eurostreaming extends Source {
 
     const $ = cheerio.load(html);
 
-    const keywordWords = keyword.trim().split(/\s+/).filter(word => word.length > 0);
-
-    const url = (keywordWords.length > 1 ? $(`.post-thumb a[href][title*="${keyword}"]:first`) : $(`.post-thumb a[href][title="${keyword}"]:first`))
-      .map((_i, el) => $(el).attr('href'))
+    const exactKeyWordMatchUrl = $(`.post-thumb a[href][title="${keyword}"]:first`)
+      .map((_i, el) => new URL($(el).attr('href') as string))
       .get(0);
 
-    return url !== undefined ? new URL(url) : url;
+    const partialKeyWordMatchUrl = $(`.post-thumb a[href][title*="${keyword}"]:first`)
+      .map((_i, el) => new URL($(el).attr('href') as string))
+      .get(0);
+
+    return exactKeyWordMatchUrl ?? partialKeyWordMatchUrl;
   };
 }

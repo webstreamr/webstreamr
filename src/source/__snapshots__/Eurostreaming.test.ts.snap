@@ -99,3 +99,28 @@ exports[`Eurostreaming last of us s1e1 1`] = `
   },
 ]
 `;
+
+exports[`Eurostreaming wednesday s1e1 1`] = `
+[
+  {
+    "meta": {
+      "countryCodes": [
+        "it",
+      ],
+      "referer": "https://eurostreaming.luxe/stream/2529-mercoledi-wednesday-streaming.html",
+      "title": "Mercoledì 1x1",
+    },
+    "url": "https://supervideo.cc/e/n6i7qyxpkw2e",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "it",
+      ],
+      "referer": "https://eurostreaming.luxe/stream/2529-mercoledi-wednesday-streaming.html",
+      "title": "Mercoledì 1x1",
+    },
+    "url": "https://dropload.tv/e/fkbw1uszc0nh",
+  },
+]
+`;
