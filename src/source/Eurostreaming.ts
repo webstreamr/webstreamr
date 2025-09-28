@@ -45,7 +45,7 @@ export class Eurostreaming extends Source {
         .map((_i, el) => new URL($(el).attr('data-link') as string))
         .toArray()
         .filter(url => !url.host.match(/eurostreaming/))
-        .map(url => ({ url, meta: { countryCodes: [CountryCode.it], title } })),
+        .map(url => ({ url, meta: { countryCodes: [CountryCode.it], referer: seriesPageUrl.href, title } })),
     );
   };
 

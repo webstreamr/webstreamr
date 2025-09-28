@@ -29,6 +29,8 @@ export class PrimeWire extends Source {
 
   public readonly baseUrl = 'https://www.primewire.tf';
 
+  private readonly primeSrcBaseUrl = 'https://primesrc.me';
+
   private readonly fetcher: Fetcher;
 
   private readonly redirectUrlCache = new Cacheable({
@@ -58,7 +60,7 @@ export class PrimeWire extends Source {
     const pageIdMatch = pageUrl.pathname.match(/\/([0-9]{2,})/) as string[];
     const pageId = pageIdMatch[1];
 
-    const primeSrcUrl = new URL(`https://primesrc.me/api/v1/s?s_id=${pageId}&type=movie`);
+    const primeSrcUrl = new URL(`/api/v1/s?s_id=${pageId}&type=movie`, this.primeSrcBaseUrl);
 
     if (imdbId.season) {
       const episodeId = await this.fetchEpisodeId(ctx, pageUrl, imdbId);
@@ -94,6 +96,7 @@ export class PrimeWire extends Source {
           url: new URL(targetUrlHref),
           meta: {
             countryCodes: [CountryCode.en],
+            referer: this.primeSrcBaseUrl,
             ...(file_name && { title: file_name }),
             ...(file_size && { bytes: bytes.parse(file_size) as number }),
           },

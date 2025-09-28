@@ -46,7 +46,7 @@ export class CineHDPlus extends Source {
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
         .filter(url => !url.host.match(/cinehdplus/))
-        .map(url => ({ url, meta: { countryCodes, title } })),
+        .map(url => ({ url, meta: { countryCodes, referer: seriesPageUrl.href, title } })),
     );
   };
 

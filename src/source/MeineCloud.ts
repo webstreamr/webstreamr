@@ -36,7 +36,7 @@ export class MeineCloud extends Source {
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
         .toArray()
         .filter(url => !url.host.match(/meinecloud/))
-        .map(url => ({ url, meta: { countryCodes: [CountryCode.de] } })),
+        .map(url => ({ url, meta: { countryCodes: [CountryCode.de], referer: this.baseUrl } })),
     );
   };
 }

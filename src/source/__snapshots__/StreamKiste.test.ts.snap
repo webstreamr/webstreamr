@@ -7,6 +7,7 @@ exports[`StreamKiste handle imdb black mirror s2e4 1`] = `
       "countryCodes": [
         "de",
       ],
+      "referer": "https://streamkiste.taxi/movie/29992-black-mirror-stream-kostenlos.html",
       "title": "Black Mirror 2x4",
     },
     "url": "https://supervideo.cc/embed-22go50mon0ke.html",
@@ -16,6 +17,7 @@ exports[`StreamKiste handle imdb black mirror s2e4 1`] = `
       "countryCodes": [
         "de",
       ],
+      "referer": "https://streamkiste.taxi/movie/29992-black-mirror-stream-kostenlos.html",
       "title": "Black Mirror 2x4",
     },
     "url": "https://dropload.io/embed-jvjwrkpijr0f.html",

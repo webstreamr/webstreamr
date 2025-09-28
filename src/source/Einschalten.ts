@@ -32,6 +32,6 @@ export class Einschalten extends Source {
 
     const { releaseName: title, streamUrl } = await this.fetcher.json(ctx, new URL(`/api/movies/${tmdbId.id}/watch`, this.baseUrl)) as EinschaltenResponse;
 
-    return [{ url: new URL(streamUrl), meta: { countryCodes: [CountryCode.de], title } }];
+    return [{ url: new URL(streamUrl), meta: { countryCodes: [CountryCode.de], referer: (new URL(`/movies/${tmdbId.id}`, this.baseUrl)).href, title } }];
   };
 }

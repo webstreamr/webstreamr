@@ -7,6 +7,7 @@ exports[`MostraGuarda handle imdb the devil's bath 1`] = `
       "countryCodes": [
         "it",
       ],
+      "referer": "https://mostraguarda.stream",
     },
     "url": "https://supervideo.cc/e/6vri8jyhla3n",
   },
@@ -15,6 +16,7 @@ exports[`MostraGuarda handle imdb the devil's bath 1`] = `
       "countryCodes": [
         "it",
       ],
+      "referer": "https://mostraguarda.stream",
     },
     "url": "https://dropload.io/embed-xsr90y2ltdyx.html",
   },
@@ -23,6 +25,7 @@ exports[`MostraGuarda handle imdb the devil's bath 1`] = `
       "countryCodes": [
         "it",
       ],
+      "referer": "https://mostraguarda.stream",
     },
     "url": "https://mixdrop.ag/e/vk196d6xfzwwo1",
   },
@@ -31,6 +34,7 @@ exports[`MostraGuarda handle imdb the devil's bath 1`] = `
       "countryCodes": [
         "it",
       ],
+      "referer": "https://mostraguarda.stream",
     },
     "url": "https://dood.to/e/37o04m33q3g5",
   },

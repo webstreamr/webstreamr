@@ -7,6 +7,7 @@ exports[`HomeCine does not return es content for mx 1`] = `
       "countryCodes": [
         "mx",
       ],
+      "referer": "https://www3.homecine.to/el-camino-una-pelicula-de-breaking-bad",
       "title": "El Camino: Una película de Breaking Bad (2019)",
     },
     "url": "https://fastream.to/embed-kc5dvcy34x8p.html",
@@ -21,6 +22,7 @@ exports[`HomeCine does not return mx content for es 1`] = `
       "countryCodes": [
         "es",
       ],
+      "referer": "https://www3.homecine.to/el-camino-una-pelicula-de-breaking-bad",
       "title": "El Camino: Una película de Breaking Bad (2019)",
     },
     "url": "https://fastream.to/embed-c9tmfzsbfj0z.html",
@@ -35,6 +37,7 @@ exports[`HomeCine handle el camino 1`] = `
       "countryCodes": [
         "mx",
       ],
+      "referer": "https://www3.homecine.to/el-camino-una-pelicula-de-breaking-bad",
       "title": "El Camino: Una película de Breaking Bad (2019)",
     },
     "url": "https://fastream.to/embed-kc5dvcy34x8p.html",
@@ -44,6 +47,7 @@ exports[`HomeCine handle el camino 1`] = `
       "countryCodes": [
         "es",
       ],
+      "referer": "https://www3.homecine.to/el-camino-una-pelicula-de-breaking-bad",
       "title": "El Camino: Una película de Breaking Bad (2019)",
     },
     "url": "https://fastream.to/embed-c9tmfzsbfj0z.html",
@@ -58,6 +62,7 @@ exports[`HomeCine handle marvel - the punisher 1`] = `
       "countryCodes": [
         "es",
       ],
+      "referer": "https://www3.homecine.to/series/marvel-the-punisher",
       "title": "Marvel - The Punisher 1x1",
     },
     "url": "https://fastream.to/embed-ujq9uojoftog.html",
@@ -72,6 +77,7 @@ exports[`HomeCine handle walking dead s1e1 1`] = `
       "countryCodes": [
         "mx",
       ],
+      "referer": "https://www3.homecine.to/series/serie-the-walking-dead-cualquier-idioma",
       "title": "The Walking Dead 1x1",
     },
     "url": "https://fastream.to/embed-nkztf1memuca.html",
@@ -81,6 +87,7 @@ exports[`HomeCine handle walking dead s1e1 1`] = `
       "countryCodes": [
         "es",
       ],
+      "referer": "https://www3.homecine.to/series/serie-the-walking-dead-cualquier-idioma",
       "title": "The Walking Dead 1x1",
     },
     "url": "https://fastream.to/embed-5bv96pdifz0b.html",

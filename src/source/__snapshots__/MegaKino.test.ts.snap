@@ -7,6 +7,7 @@ exports[`MegaKino handle imdb baymax 1`] = `
       "countryCodes": [
         "de",
       ],
+      "referer": "https://megakino.si/films/693-baymax-riesiges-robowabohu.html",
       "title": "Baymax - Riesiges Robowabohu",
     },
     "url": "https://voe.sx/e/8doq7gwiwtig",
@@ -16,6 +17,7 @@ exports[`MegaKino handle imdb baymax 1`] = `
       "countryCodes": [
         "de",
       ],
+      "referer": "https://megakino.si/films/693-baymax-riesiges-robowabohu.html",
       "title": "Baymax - Riesiges Robowabohu",
     },
     "url": "https://watch.gxplayer.xyz/watch?v=MEKI92PU",

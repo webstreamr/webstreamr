@@ -33,21 +33,20 @@ export class HomeCine extends Source {
       return [];
     }
 
-    const pageHtml = await this.fetcher.text(ctx, pageUrl);
+    let pageHtml = await this.fetcher.text(ctx, pageUrl);
 
-    let linksHtml = pageHtml;
     if (tmdbId.season) {
-      const episodeUrl = await this.fetchEpisodeUrl(pageHtml, tmdbId);
-      if (!episodeUrl) {
+      const pageUrl = await this.fetchEpisodeUrl(pageHtml, tmdbId);
+      if (!pageUrl) {
         return [];
       }
 
-      linksHtml = await this.fetcher.text(ctx, episodeUrl);
+      pageHtml = await this.fetcher.text(ctx, pageUrl);
     }
 
     const title = tmdbId.season ? `${name} ${tmdbId.season}x${tmdbId.episode}` : `${name} (${year})`;
 
-    const $ = cheerio.load(linksHtml);
+    const $ = cheerio.load(pageHtml);
 
     return $('.les-content a')
       .map((_i, el) => {
@@ -60,7 +59,7 @@ export class HomeCine extends Source {
           return [];
         }
 
-        return { url: new URL($('iframe', $(el).attr('href')).attr('src') as string), meta: { countryCodes, title } };
+        return { url: new URL($('iframe', $(el).attr('href')).attr('src') as string), meta: { countryCodes, referer: pageUrl.href, title } };
       }).toArray();
   };
 

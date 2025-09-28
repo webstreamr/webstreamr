@@ -28,27 +28,23 @@ export class Cuevana extends Source {
 
     const [name] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId, 'es');
 
-    const pageUrl = await this.fetchPageUrl(ctx, name);
+    let pageUrl = await this.fetchPageUrl(ctx, name);
     if (!pageUrl) {
       return [];
     }
 
     let title: string = name;
-    let html: string;
 
     if (tmdbId.season) {
       title += ` ${tmdbId.season}x${tmdbId.episode}`;
 
-      const episodeUrl = await this.fetchEpisodeUrl(ctx, pageUrl, tmdbId);
-      if (!episodeUrl) {
+      pageUrl = await this.fetchEpisodeUrl(ctx, pageUrl, tmdbId);
+      if (!pageUrl) {
         return [];
       }
-
-      html = await this.fetcher.text(ctx, episodeUrl);
-    } else {
-      html = await this.fetcher.text(ctx, pageUrl);
     }
 
+    const html = await this.fetcher.text(ctx, pageUrl);
     const $ = cheerio.load(html);
 
     const urlResults = $('.open_submenu')
@@ -60,12 +56,18 @@ export class Cuevana extends Source {
 
         if (elText.includes('Latino')) {
           return $('[data-tr], [data-video]', el)
-            .map((_i, el) => ({ url: new URL($(el).attr('data-tr') ?? $(el).attr('data-video') as string), meta: { countryCodes: [CountryCode.mx], title } }))
+            .map((_i, el) => ({
+              url: new URL($(el).attr('data-tr') ?? $(el).attr('data-video') as string),
+              meta: { countryCodes: [CountryCode.mx], referer: pageUrl.href, title },
+            }))
             .toArray();
         }
 
         return $('[data-tr], [data-video]', el)
-          .map((_i, el) => ({ url: new URL($(el).attr('data-tr') ?? $(el).attr('data-video') as string), meta: { countryCodes: [CountryCode.es], title } }))
+          .map((_i, el) => ({
+            url: new URL($(el).attr('data-tr') ?? $(el).attr('data-video') as string),
+            meta: { countryCodes: [CountryCode.es], referer: pageUrl.href, title },
+          }))
           .toArray();
       })
       .toArray();

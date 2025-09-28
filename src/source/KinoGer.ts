@@ -42,7 +42,7 @@ export class KinoGer extends Source {
     return Array.from(html.matchAll(/\.show\(.*/g))
       .map(showJsMatch => this.findEpisodeUrlInShowJs(showJsMatch[0], seasonIndex, episodeIndex))
       .filter((url): url is URL => url !== undefined && !['kinoger.be', 'kinoger.ru'].includes(url.host))
-      .map(url => ({ url, meta: { countryCodes: [CountryCode.de], title } }));
+      .map(url => ({ url, meta: { countryCodes: [CountryCode.de], referer: pageUrl.href, title } }));
   };
 
   private readonly findEpisodeUrlInShowJs = (showJs: string, seasonIndex: number, episodeIndex: number): URL | undefined => {
