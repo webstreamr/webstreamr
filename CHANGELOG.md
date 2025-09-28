@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.53.1](https://github.com/webstreamr/webstreamr/compare/v0.53.0...v0.53.1) (2025-09-28)
+
+
+### Miscellaneous Chores
+
+* add referer explicitly to sources ([be7c19a](https://github.com/webstreamr/webstreamr/commit/be7c19a54f5df15966a4214b63611eff4753788e))
+* bring back mediaflow proxy redirect url generation ([d8a4375](https://github.com/webstreamr/webstreamr/commit/d8a4375783a9ccd52b964c43e323c9b438575bca))
+* **deps:** update jest monorepo to v30.2.0 ([#384](https://github.com/webstreamr/webstreamr/issues/384)) ([708d3d7](https://github.com/webstreamr/webstreamr/commit/708d3d785d0003e4c9cd0b6c4025215db558ab41))
+* **fetcher:** add referer to fetch logging ([fcced2e](https://github.com/webstreamr/webstreamr/commit/fcced2e12274beeea498b8a42cda1c6a0952f6b1))
+* rework referer header passing and mediaflow proxy URL creation ([25b326e](https://github.com/webstreamr/webstreamr/commit/25b326ee480a41d60c2430ad820036c6313cb4f3))
+
+
+### Bug Fixes
+
+* do not write out label twice if the same for source and extractor ([6053034](https://github.com/webstreamr/webstreamr/commit/60530343b4bd7cbaf8aa3c7812dee352691b4c82))
+* **source:** improve Eurostream partial keyword matching ([af5c3f2](https://github.com/webstreamr/webstreamr/commit/af5c3f2ae62fe68daa1eed2ab97d799e056187bf))
+
 ## [0.53.0](https://github.com/webstreamr/webstreamr/compare/v0.52.5...v0.53.0) (2025-09-25)
 
 
