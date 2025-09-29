@@ -1,5 +1,30 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`Eurostreaming alien earth s1e1 1`] = `
+[
+  {
+    "meta": {
+      "countryCodes": [
+        "it",
+      ],
+      "referer": "https://eurostreaming.luxe/stream/4331-alien-pianeta-terra-streaming-streaming.html",
+      "title": "Alien - Pianeta Terra 1x1",
+    },
+    "url": "https://supervideo.cc/e/lsz10iyul3ot",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "it",
+      ],
+      "referer": "https://eurostreaming.luxe/stream/4331-alien-pianeta-terra-streaming-streaming.html",
+      "title": "Alien - Pianeta Terra 1x1",
+    },
+    "url": "https://dropload.tv/e/xjbjskdi9tuj",
+  },
+]
+`;
+
 exports[`Eurostreaming game of thrones s1e1 1`] = `
 [
   {

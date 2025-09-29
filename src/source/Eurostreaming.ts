@@ -1,4 +1,5 @@
 import * as cheerio from 'cheerio';
+import levenshtein from 'fast-levenshtein';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
 import { Fetcher, getTmdbId, getTmdbNameAndYear, Id } from '../utils';
@@ -27,7 +28,7 @@ export class Eurostreaming extends Source {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
     const [name] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId, 'it');
 
-    const seriesPageUrl = await this.fetchSeriesPageUrl(ctx, name);
+    const seriesPageUrl = await this.fetchSeriesPageUrl(ctx, name.replace(':', '').replace('-', ''));
     if (!seriesPageUrl) {
       return [];
     }
@@ -74,10 +75,15 @@ export class Eurostreaming extends Source {
       .map((_i, el) => new URL($(el).attr('href') as string))
       .get(0);
 
+    const similarKeyWordMatchUrl = $(`.post-thumb a[href]:first`)
+      .filter((_i, el) => levenshtein.get(($(el).attr('title') as string).trim(), keyword, { useCollator: true }) < 5)
+      .map((_i, el) => new URL($(el).attr('href') as string))
+      .get(0);
+
     const partialKeyWordMatchUrl = $(`.post-thumb a[href][title*="${keyword}"]:first`)
       .map((_i, el) => new URL($(el).attr('href') as string))
       .get(0);
 
-    return exactKeyWordMatchUrl ?? partialKeyWordMatchUrl;
+    return exactKeyWordMatchUrl ?? similarKeyWordMatchUrl ?? partialKeyWordMatchUrl;
   };
 }

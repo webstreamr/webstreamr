@@ -40,4 +40,9 @@ describe('Eurostreaming', () => {
     const streams = await source.handle(ctx, 'series', new TmdbId(119051, 1, 1));
     expect(streams).toMatchSnapshot();
   });
+
+  test('alien earth s1e1', async () => {
+    const streams = await source.handle(ctx, 'series', new TmdbId(157239, 1, 1));
+    expect(streams).toMatchSnapshot();
+  });
 });
