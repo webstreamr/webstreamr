@@ -94,11 +94,7 @@ img.litespeed-loaded{
 <div class="mobile-search"><i class="fa fa-search"></i></div>
 <div id="menu">
 <ul id="menu-menu-oficial-2k19" class="top-menu"><li id="menu-item-24256" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24256"><a href="https://homecine.to">Inicio</a></li>
-<li id="menu-item-127696" class="menu-item menu-item-type-taxonomy menu-item-object-release-year menu-item-has-children menu-item-127696"><a href="https://www3.homecine.to/release-year/2021">Estrenos</a>
-<div class='sub-container' style='display: none;'><ul class='sub-menu'>
-	<li id="menu-item-90064" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90064"><a href="https://www3.homecine.to/sugerir-pelicula-serie">Sugerir Pelicula/Serie</a></li>
-</ul></div>
-</li>
+<li id="menu-item-267297" class="menu-item menu-item-type-taxonomy menu-item-object-release-year menu-item-267297"><a href="https://www3.homecine.to/release-year/2025">Estrenos 2025</a></li>
 <li id="menu-item-24258" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-24258"><a href="#">Géneros</a>
 <div class='sub-container' style='display: none;'><ul class='sub-menu'>
 	<li id="menu-item-24259" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24259"><a href="https://www3.homecine.to/genre/accion">Acción</a></li>
@@ -131,7 +127,6 @@ img.litespeed-loaded{
 </li>
 <li id="menu-item-24290" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24290"><a href="https://www3.homecine.to/peliculas-nuevas">Peliculas</a></li>
 <li id="menu-item-24291" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24291"><a href="https://homecine.to/series">Series</a></li>
-<li id="menu-item-180013" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-180013"><a target="_blank" href="https://www3.homecine.to/desbloquear-videos-enlaces">✅ DESBLOQUEAR VIDEOS/ENLACES</a></li>
 </ul><div class="clearfix"></div>
 </div>
 <div id="top-user">
@@ -174,7 +169,7 @@ img.litespeed-loaded{
 	
 <div id="mv-info">
  	<div id="content-embed">
-		
+		<!--
 <div id="playx" style="background-color: #232323; padding: 50px 0px; opacity: 0.9; border-radius: 10px;  margin: 10px 0 10px; color: #fff; margin-top: 20px; border: 1px solid #DC5B05;">
                    
                     <center>  <h2 style="font-size: 30px;    font-weight: 700;    padding: 25px 5px 5px">Ver The Walking Dead Temporada 1 Capitulo 1</h2>
@@ -186,11 +181,11 @@ img.litespeed-loaded{
 
   </center>
   <br/><br/>
-</div>
+</div>-->
 		
 </div>
 <div id="content-embed" style="">
- <div id="plays"> 
+<!-- <div id="plays"> -->
 <div id="player2">
 <div id="tab1"  >
 <div class="movieplay">
@@ -220,7 +215,7 @@ img.litespeed-loaded{
 <a href="https://www3.homecine.to/episode/the-walking-dead-temporada-1-capitulo-1#mv-info" class="btn bp-btn-light" ><i class="fa fa-lightbulb-o" ></i> <span>Turn off light</span></a>
 
 	                    <span id="button-favorite">
-										<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-11252" data-nonce="82efb0f60b" data-post-id="11252" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span>					    
+										<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-11252" data-nonce="824de0873f" data-post-id="11252" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span>					    
                     </span>
 					
 <a class="btn bp-btn-next" href="https://www3.homecine.to/episode/the-walking-dead-season-1-episode-2/"><i class="fa fa-forward"></i><span>Siguiente</span></a>
@@ -263,10 +258,10 @@ img.litespeed-loaded{
 </ul>
 </div>
 
- </div> 
+<!-- </div> -->
 	</div> 
 		
-	
+	<!--
 <script>
 var base ="https://unlock.uberxviral.com/";
 var links = document.querySelectorAll('a[class~="test"]');
@@ -278,7 +273,7 @@ var links = document.querySelectorAll('a[class~="test"]');
 var ref = "unlock.uberxviral.com";
 
 var _0xf6ee=["\x3B\x20","\x63\x6F\x6F\x6B\x69\x65","\x3D","\x73\x70\x6C\x69\x74","\x6C\x65\x6E\x67\x74\x68","\x73\x68\x69\x66\x74","\x3B","\x70\x6F\x70","\x67\x65\x74\x54\x69\x6D\x65","\x73\x65\x74\x54\x69\x6D\x65","\x65\x78\x70\x69\x72\x65\x73\x3D","\x74\x6F\x55\x54\x43\x53\x74\x72\x69\x6E\x67","\x3B\x70\x61\x74\x68\x3D\x2F","\x70\x6C\x61\x79\x65\x72","\x64\x69\x73\x70\x6C\x61\x79","\x73\x74\x79\x6C\x65","\x70\x6C\x61\x79\x73","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x6E\x6F\x6E\x65","\x62\x6C\x6F\x63\x6B","\x70\x6C\x61\x79\x78","\x72\x65\x66\x65\x72\x72\x65\x72","\x69\x6E\x64\x65\x78\x4F\x66"];function getCookie(_0xe528x2){var _0xe528x3=_0xf6ee[0]+ document[_0xf6ee[1]];var _0xe528x4=_0xe528x3[_0xf6ee[3]](_0xf6ee[0]+ _0xe528x2+ _0xf6ee[2]);if(_0xe528x4[_0xf6ee[4]]== 2){return _0xe528x4[_0xf6ee[7]]()[_0xf6ee[3]](_0xf6ee[6])[_0xf6ee[5]]()}}function setCookie(_0xe528x6,_0xe528x7,_0xe528x8){var _0xe528x9= new Date();_0xe528x9[_0xf6ee[9]](_0xe528x9[_0xf6ee[8]]()+ (24* 60* 60* 1000));var _0xe528xa=_0xf6ee[10]+ _0xe528x9[_0xf6ee[11]]();document[_0xf6ee[1]]= _0xe528x6+ _0xf6ee[2]+ _0xe528x7+ _0xf6ee[6]+ _0xe528xa+ _0xf6ee[12]}function checkCookie(){let _0xe528xc=getCookie(_0xf6ee[13]);if(!_0xe528xc){document[_0xf6ee[17]](_0xf6ee[16])[_0xf6ee[15]][_0xf6ee[14]]= _0xf6ee[18]}else {if(_0xe528xc){document[_0xf6ee[17]](_0xf6ee[16])[_0xf6ee[15]][_0xf6ee[14]]= _0xf6ee[19];document[_0xf6ee[17]](_0xf6ee[20])[_0xf6ee[15]][_0xf6ee[14]]= _0xf6ee[18]}}}let prevUrl=document[_0xf6ee[21]];if(prevUrl[_0xf6ee[22]](ref)!==  -1){setCookie(_0xf6ee[13],1,1)};checkCookie()
-</script>
+</script> -->
 
 	
 
@@ -307,7 +302,7 @@ var _0xf6ee=["\x3B\x20","\x63\x6F\x6F\x6B\x69\x65","\x3D","\x73\x70\x6C\x69\x74"
 </div>
 <div class="mvic-info">
 <div class="mvici-left">
-<p><strong>Views:</strong> 209</p><p><strong>Serie: </strong> <a href="https://www3.homecine.to/series/the-walking-dead"><span itemprop="partOfSeries">The Walking Dead</span></a></p>
+<p><strong>Serie: </strong> <a href="https://www3.homecine.to/series/the-walking-dead"><span itemprop="partOfSeries">The Walking Dead</span></a></p>
 	
 <p><strong>Director: </strong> <a href="https://www3.homecine.to/director/frank-darabont" rel="tag">Frank Darabont</a></p>
 			
@@ -403,216 +398,59 @@ $(document).ready(function(){
 <span>Series Relacionadas</span>
 </div>
 <div class="movies-list movies-list-full">
-<div data-movie-id="132557" class="ml-item">
-<a href="https://www3.homecine.to/series/intuicion-criminal" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Intuicion criminal" title="">
- 
-<span class="mli-quality">HD 1080p</span>
-
-
-<img data-original="https://image.tmdb.org/t/p/w185/AkNxLMzTl2yadSHbT9f0AX3bkRa.jpg"class="lazy thumb mli-thumb" alt="Intuicion criminal">
-<span class="mli-info"><h2>Intuicion criminal</h2></span>
-</a>
-			
-<div id="hidden_tip">
-<div id="" class="qtip-title">Intuicion criminal</div>
-<div class="jtip-quality">HD 1080p</div>
-
-
-<div class="jtip-top">
-<div class="jt-info jt-imdb">TMDb: 7</div>
-   
-   
-<div class="jt-info"><a href="https://www3.homecine.to/release-year/2009" rel="tag">2009</a></div>
-
-
-<div class="jt-info">90,45 min</div>
-<div class="clearfix"></div>
-</div>
-
- <p class="f-desc"><p>Schnell Ermittelt Serie de TV (209-207). 6 temporadas. 60 episodios. Angelika Schnell es una policía de Viena, caótica y decidida, que confía absolutamente en su instinto, más incluso que en&#8230;</p>
-</p>
-
-<div class="block">Status: Returning Series</div>
-
-    <div class="block">Genre: <a href="https://www3.homecine.to/genre/crimen" rel="category tag">Crimen</a> </div>
-
-<div class="jtip-bottom">
-<a href="https://www3.homecine.to/series/intuicion-criminal" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
-Watch Series</a>
-
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-132557" data-nonce="82efb0f60b" data-post-id="132557" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
-
-</div>
-</div><div data-movie-id="27625" class="ml-item">
-<a href="https://www3.homecine.to/series/la-magia-de-motown-serie-online-gratis" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Motown Magic" title="">
+<div data-movie-id="41061" class="ml-item">
+<a href="https://www3.homecine.to/series/the-society" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="The Society" title="">
  
 <span class="mli-quality">720p</span>
 
 
-<img data-original="https://www3.homecine.to/wp-content/uploads/2018/11/uSr3kraYtuyTGRZ4tVcVCmGHQ5t.jpg"class="lazy thumb mli-thumb" alt="Motown Magic">
-<span class="mli-info"><h2>Motown Magic</h2></span>
+<img data-original="https://www3.homecine.to/wp-content/uploads/2019/05/mxOlnFEQMpxjIltr9Ox06iyjjvK.jpg"class="lazy thumb mli-thumb" alt="The Society">
+<span class="mli-info"><h2>The Society</h2></span>
 </a>
 			
 <div id="hidden_tip">
-<div id="" class="qtip-title">Motown Magic</div>
+<div id="" class="qtip-title">The Society</div>
 <div class="jtip-quality">720p</div>
 
 
 <div class="jtip-top">
-<div class="jt-info jt-imdb">TMDb: 7.5</div>
-   
-   
-<div class="jt-info"><a href="https://www3.homecine.to/release-year/2018" rel="tag">2018</a></div>
-
-
-<div class="jt-info">15 min</div>
-<div class="clearfix"></div>
-</div>
-
- <p class="f-desc"><p>La magia de Motown El niño imaginativo Ben transforma su ciudad al dar vida al colorido arte callejero, armado con un pincel mágico, y los sonidos clásicos de Motown.</p>
-</p>
-
-<div class="block">Status: Returning Series</div>
-
-    <div class="block">Genre: <a href="https://www3.homecine.to/genre/kids" rel="category tag">Kids</a> </div>
-
-<div class="jtip-bottom">
-<a href="https://www3.homecine.to/series/la-magia-de-motown-serie-online-gratis" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
-Watch Series</a>
-
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-27625" data-nonce="82efb0f60b" data-post-id="27625" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
-
-</div>
-</div><div data-movie-id="51852" class="ml-item">
-<a href="https://www3.homecine.to/series/the-boys" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="The Boys" title="">
- 
-<span class="mli-quality">1080p | 🇲🇽 🇪🇸 🇺🇸</span>
-
-
-<img data-original="https://www3.homecine.to/wp-content/uploads/2019/07/dzOxNbbz1liFzHU1IPvdgUR647b.jpg"class="lazy thumb mli-thumb" alt="The Boys">
-<span class="mli-info"><h2>The Boys</h2></span>
-</a>
-			
-<div id="hidden_tip">
-<div id="" class="qtip-title">The Boys</div>
-<div class="jtip-quality">1080p | 🇲🇽 🇪🇸 🇺🇸</div>
-
-
-<div class="jtip-top">
-<div class="jt-info jt-imdb">TMDb: 8.5</div>
+<div class="jt-info jt-imdb">TMDb: 7.586</div>
    
    
 <div class="jt-info"><a href="https://www3.homecine.to/release-year/2019" rel="tag">2019</a></div>
 
 
-<div class="jt-info">60 min</div>
+<div class="jt-info">50 min</div>
 <div class="clearfix"></div>
 </div>
 
- <p class="f-desc"><p>La serie tiene lugar en un mundo en el que los superhéroes representan el lado oscuro de la celebridad y la fama. Un grupo de vigilantes que se hacen llamar&#8230;</p>
+ <p class="f-desc"><p>Los habitantes del acaudalado pueblo de West Ham desaparecen misteriosamente. Solo se salvan los adolescentes, que deben crear su propia sociedad para sobrevivir.</p>
 </p>
 
-<div class="block">Status: Returning Series</div>
+<div class="block">Status: Canceled</div>
 
-    <div class="block">Genre: <a href="https://www3.homecine.to/genre/action-adventure" rel="category tag">Action &amp; Adventure</a>, <a href="https://www3.homecine.to/genre/sci-fi-fantasy" rel="category tag">Sci-Fi &amp; Fantasy</a> </div>
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a>, <a href="https://www3.homecine.to/genre/sci-fi-fantasy" rel="category tag">Sci-Fi &amp; Fantasy</a> </div>
 
 <div class="jtip-bottom">
-<a href="https://www3.homecine.to/series/the-boys" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+<a href="https://www3.homecine.to/series/the-society" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
 Watch Series</a>
 
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-51852" data-nonce="82efb0f60b" data-post-id="51852" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-41061" data-nonce="824de0873f" data-post-id="41061" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
 
 </div>
-</div><div data-movie-id="165253" class="ml-item">
-<a href="https://www3.homecine.to/series/the-premise" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="The Premise" title="">
+</div><div data-movie-id="169634" class="ml-item">
+<a href="https://www3.homecine.to/series/jellystone" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Jellystone!" title="">
  
-<span class="mli-quality">HD 1080p</span>
+<span class="mli-quality">HD 720p</span>
 
 
-<img data-original="https://image.tmdb.org/t/p/w185/cJZatTCCcaHkrSJHOVF9xLOFmni.jpg"class="lazy thumb mli-thumb" alt="The Premise">
-<span class="mli-info"><h2>The Premise</h2></span>
+<img data-original="https://image.tmdb.org/t/p/w185/smfSBRiIYwC7zF7erKXaIPUJbNv.jpg"class="lazy thumb mli-thumb" alt="Jellystone!">
+<span class="mli-info"><h2>Jellystone!</h2></span>
 </a>
 			
 <div id="hidden_tip">
-<div id="" class="qtip-title">The Premise</div>
-<div class="jtip-quality">HD 1080p</div>
-
-
-<div class="jtip-top">
-<div class="jt-info jt-imdb">TMDb: 9.5</div>
-   
-   
-<div class="jt-info"><a href="https://www3.homecine.to/release-year/2021" rel="tag">2021</a></div>
-
-
-<div class="jt-info">30 min</div>
-<div class="clearfix"></div>
-</div>
-
- <p class="f-desc"><p>Esta serie de antología sobre cuestiones morales atemporales en tiempos sin precedentes, toma conceptos provocativos y los expone abiertamente, entregando historias tridimensionales impulsadas por personajes con humor y corazón.</p>
-</p>
-
-<div class="block">Status: Returning Series</div>
-
-    <div class="block">Genre: <a href="https://www3.homecine.to/genre/peliculas-de-comedia" rel="category tag">Comedia</a>, <a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a> </div>
-
-<div class="jtip-bottom">
-<a href="https://www3.homecine.to/series/the-premise" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
-Watch Series</a>
-
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-165253" data-nonce="82efb0f60b" data-post-id="165253" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
-
-</div>
-</div><div data-movie-id="46062" class="ml-item">
-<a href="https://www3.homecine.to/series/samantha" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Samantha!" title="">
-
-
-<img data-original="https://image.tmdb.org/t/p/w185/rN6q72HuwHeJn9PV9FQETgb5olf.jpg"class="lazy thumb mli-thumb" alt="Samantha!">
-<span class="mli-info"><h2>Samantha!</h2></span>
-</a>
-			
-<div id="hidden_tip">
-<div id="" class="qtip-title">Samantha!</div>
-
-
-<div class="jtip-top">
-<div class="jt-info jt-imdb">TMDb: 4.7</div>
-   
-   
-<div class="jt-info"><a href="https://www3.homecine.to/release-year/2018" rel="tag">2018</a></div>
-
-
-<div class="jt-info">28 min</div>
-<div class="clearfix"></div>
-</div>
-
- <p class="f-desc"><p>Una estrella infantil en los 80, Samantha se aferra a los márgenes de la celebridad con alocados planes para lanzarse de nuevo al estrellato.</p>
-</p>
-
-<div class="block">Status: Returning Series</div>
-
-    <div class="block">Genre: <a href="https://www3.homecine.to/genre/peliculas-de-comedia" rel="category tag">Comedia</a> </div>
-
-<div class="jtip-bottom">
-<a href="https://www3.homecine.to/series/samantha" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
-Watch Series</a>
-
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-46062" data-nonce="82efb0f60b" data-post-id="46062" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
-
-</div>
-</div><div data-movie-id="134684" class="ml-item">
-<a href="https://www3.homecine.to/series/el-mister" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="El míster" title="">
- 
-<span class="mli-quality">HD 1080p</span>
-
-
-<img data-original="https://image.tmdb.org/t/p/w185/fINynHDdBNtDXamaCsIqOPNROm2.jpg"class="lazy thumb mli-thumb" alt="El míster">
-<span class="mli-info"><h2>El míster</h2></span>
-</a>
-			
-<div id="hidden_tip">
-<div id="" class="qtip-title">El míster</div>
-<div class="jtip-quality">HD 1080p</div>
+<div id="" class="qtip-title">Jellystone!</div>
+<div class="jtip-quality">HD 720p</div>
 
 
 <div class="jtip-top">
@@ -622,22 +460,179 @@ Watch Series</a>
 <div class="jt-info"><a href="https://www3.homecine.to/release-year/2021" rel="tag">2021</a></div>
 
 
-<div class="jt-info">45 min</div>
+<div class="jt-info">11 min</div>
 <div class="clearfix"></div>
 </div>
 
- <p class="f-desc"><p>El Mister &#8211; The Mister &#8211; Big Shot: Entrenador de Elite Tras su expulsión de la NCAA por lanzarle una silla a un árbitro, Marvyn Korn, un entrenador de baloncesto,&#8230;</p>
+ <p class="f-desc"><p>¡Bienvenido a Jellystone! Viaja a un pueblo mágico donde conocerás a nuevos y viejos amigos, incluidos Yogi Bear, Cindy Bear, Boo Boo y Huckleberry Hound &#8230; y Jabberjaw y Top&#8230;</p>
 </p>
 
 <div class="block">Status: Returning Series</div>
 
-    <div class="block">Genre: <a href="https://www3.homecine.to/genre/peliculas-de-comedia" rel="category tag">Comedia</a>, <a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a>, <a href="https://www3.homecine.to/genre/familia" rel="category tag">Familia</a> </div>
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/animacion" rel="category tag">Animación</a>, <a href="https://www3.homecine.to/genre/peliculas-de-comedia" rel="category tag">Comedia</a>, <a href="https://www3.homecine.to/genre/familia" rel="category tag">Familia</a> </div>
 
 <div class="jtip-bottom">
-<a href="https://www3.homecine.to/series/el-mister" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+<a href="https://www3.homecine.to/series/jellystone" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
 Watch Series</a>
 
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-134684" data-nonce="82efb0f60b" data-post-id="134684" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-169634" data-nonce="824de0873f" data-post-id="169634" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+
+</div>
+</div><div data-movie-id="233676" class="ml-item">
+<a href="https://www3.homecine.to/series/el-musical-de-tu-vida" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="El musical de tu vida" title="">
+ 
+<span class="mli-quality">1080p</span>
+
+
+<img data-original="https://image.tmdb.org/t/p/w185/uqQFMPaLnKwCMi9zWEOyFWG7HT1.jpg"class="lazy thumb mli-thumb" alt="El musical de tu vida">
+<span class="mli-info"><h2>El musical de tu vida</h2></span>
+</a>
+			
+<div id="hidden_tip">
+<div id="" class="qtip-title">El musical de tu vida</div>
+<div class="jtip-quality">1080p</div>
+
+
+<div class="jtip-top">
+<div class="jt-info jt-imdb"> IMDb: N/A</div>
+   
+   
+<div class="jt-info"><a href="https://www3.homecine.to/release-year/2023" rel="tag">2023</a></div>
+
+
+<div class="jt-info">N/A</div>
+<div class="clearfix"></div>
+</div>
+
+ <p class="f-desc"><p>Toda vida merecería un musical. El conjunto de experiencias, emociones, amores y desamores, éxitos y fracasos, alegrías y tristezas de una persona a lo largo de su existencia bien podría&#8230;</p>
+</p>
+
+<div class="block">Status: Returning Series</div>
+
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/talk" rel="category tag">Talk</a> </div>
+
+<div class="jtip-bottom">
+<a href="https://www3.homecine.to/series/el-musical-de-tu-vida" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Movie</a>
+
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-233676" data-nonce="824de0873f" data-post-id="233676" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+
+</div>
+</div><div data-movie-id="245066" class="ml-item">
+<a href="https://www3.homecine.to/series/belgravia-the-next-chapter" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Belgravia: The Next Chapter" title="">
+
+
+<img data-original="https://image.tmdb.org/t/p/w185/aWXqzX8ZJ7KDLn2FjYAiem8DRy9.jpg"class="lazy thumb mli-thumb" alt="Belgravia: The Next Chapter">
+<span class="mli-info"><h2>Belgravia: The Next Chapter</h2></span>
+</a>
+			
+<div id="hidden_tip">
+<div id="" class="qtip-title">Belgravia: The Next Chapter</div>
+
+
+<div class="jtip-top">
+<div class="jt-info jt-imdb">TMDb: 8</div>
+   
+   
+<div class="jt-info"><a href="https://www3.homecine.to/release-year/2024" rel="tag">2024</a></div>
+
+
+<div class="jt-info">50 min</div>
+<div class="clearfix"></div>
+</div>
+
+ <p class="f-desc"><p>Cuenta la historia de amor entre Frederick Trenchard, el que ha crecido como el tercer Lord de Glanville, y su nuevo interés amoroso, Clara Dunn, una recién llegada a la&#8230;</p>
+</p>
+
+<div class="block">Status: Returning Series</div>
+
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a> </div>
+
+<div class="jtip-bottom">
+<a href="https://www3.homecine.to/series/belgravia-the-next-chapter" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Series</a>
+
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-245066" data-nonce="824de0873f" data-post-id="245066" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+
+</div>
+</div><div data-movie-id="82369" class="ml-item">
+<a href="https://www3.homecine.to/series/kuutei-dragons" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Kuutei Dragons" title="">
+ 
+<span class="mli-quality">HD 1080p</span>
+
+
+<img data-original="https://www3.homecine.to/wp-content/uploads/2020/01/rDP72OPhHbzdMW6K8cuuzO8Yi4T.jpg"class="lazy thumb mli-thumb" alt="Kuutei Dragons">
+<span class="mli-info"><h2>Kuutei Dragons</h2></span>
+</a>
+			
+<div id="hidden_tip">
+<div id="" class="qtip-title">Kuutei Dragons</div>
+<div class="jtip-quality">HD 1080p</div>
+
+
+<div class="jtip-top">
+<div class="jt-info jt-imdb"> IMDb: N/A</div>
+   
+   
+<div class="jt-info"><a href="https://www3.homecine.to/release-year/2020" rel="tag">2020</a></div>
+
+
+<div class="jt-info">20 min</div>
+<div class="clearfix"></div>
+</div>
+
+ <p class="f-desc"><p>Llevan aproximadamente medio siglo recorriendo los cielos de todas las naciones en busca de alguno de los escasos dragones. El buque volador Quin Zaza es uno de los pocos barcos&#8230;</p>
+</p>
+
+<div class="block">Status: Returning Series</div>
+
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/action-adventure" rel="category tag">Action &amp; Adventure</a>, <a href="https://www3.homecine.to/genre/animacion" rel="category tag">Animación</a>, <a href="https://www3.homecine.to/genre/sci-fi-fantasy" rel="category tag">Sci-Fi &amp; Fantasy</a> </div>
+
+<div class="jtip-bottom">
+<a href="https://www3.homecine.to/series/kuutei-dragons" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Movie</a>
+
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-82369" data-nonce="824de0873f" data-post-id="82369" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+
+</div>
+</div><div data-movie-id="59986" class="ml-item">
+<a href="https://www3.homecine.to/series/gypsy" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Gypsy" title="">
+ 
+<span class="mli-quality">HD 720p</span>
+
+
+<img data-original="https://image.tmdb.org/t/p/w185/dNiI4TdbTb9Mc8ACKQnW9gHCxGZ.jpg"class="lazy thumb mli-thumb" alt="Gypsy">
+<span class="mli-info"><h2>Gypsy</h2></span>
+</a>
+			
+<div id="hidden_tip">
+<div id="" class="qtip-title">Gypsy</div>
+<div class="jtip-quality">HD 720p</div>
+
+
+<div class="jtip-top">
+<div class="jt-info jt-imdb">TMDb: 6.1</div>
+   
+   
+<div class="jt-info"><a href="https://www3.homecine.to/release-year/2017" rel="tag">2017</a></div>
+
+
+<div class="jt-info">51 min</div>
+<div class="clearfix"></div>
+</div>
+
+ <p class="f-desc"><p>Jean Holloway (Naomi Watts) es una terapeuta que se ve involucrada en relaciones íntimas y peligrosas con personas relacionadas con la vida de sus pacientes.</p>
+</p>
+
+<div class="block">Status: Canceled</div>
+
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a> </div>
+
+<div class="jtip-bottom">
+<a href="https://www3.homecine.to/series/gypsy" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Series</a>
+
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-59986" data-nonce="824de0873f" data-post-id="59986" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
 
 </div>
 </div> </div>
@@ -678,7 +673,7 @@ Watch Series</a>
 			
 <div class="reportform">
 <p>Please help us to describe the issue so we can fix it asap.</p>
-<form method="post" action="https://www3.homecine.to/episode/the-walking-dead-temporada-1-capitulo-1?report=VGLE2CTHVB#uwee"> 
+<form method="post" action="https://www3.homecine.to/episode/the-walking-dead-temporada-1-capitulo-1?report=2Y6N5OYY0B#uwee"> 
 <div class="aff">
 
 <div class="rep_cont">
@@ -729,7 +724,7 @@ Watch Series</a>
 <input type="hidden" name="titulo" value="The Walking Dead Temporada 1 Capitulo 1">
 <input type="hidden" name="enlace" value="https://www3.homecine.to/episode/the-walking-dead-temporada-1-capitulo-1">
 <input type="hidden" name="id" value="11252">
-<input type="hidden" name="ip" value="130.61.236.204">
+<input type="hidden" name="ip" value="2a09:bac5:27b9:2482::3a3:23">
 <input type="hidden" name="link" value="https://www3.homecine.to">
 <input type="hidden" name="action" value="send" />
 </form>
@@ -847,7 +842,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 											
 										</div>
 										<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Register</button>
-										<input type="hidden" id="register-security" name="register-security" value="e7c0c672df" /><input type="hidden" name="_wp_http_referer" value="/episode/the-walking-dead-temporada-1-capitulo-1" />									</form>
+										<input type="hidden" id="register-security" name="register-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/episode/the-walking-dead-temporada-1-capitulo-1" />									</form>
 									<div class="pt-errors"></div>
 								</div>
 
@@ -876,7 +871,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 											<a id="open-forgot" class="alignright" href="#pt-reset-password" style="font-size: 85%;">Forgot Password?</a>
 										</div>
 										<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Login</button> 
-										<input type="hidden" id="login-security" name="login-security" value="e7c0c672df" /><input type="hidden" name="_wp_http_referer" value="/episode/the-walking-dead-temporada-1-capitulo-1" />									</form>
+										<input type="hidden" id="login-security" name="login-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/episode/the-walking-dead-temporada-1-capitulo-1" />									</form>
 									<div class="pt-errors"></div>
 								</div>
 
@@ -897,7 +892,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 											<input type="hidden" name="action" value="pt_reset_password"/>
 											<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Submit</button>
 										</div>
-										<input type="hidden" id="password-security" name="password-security" value="e7c0c672df" /><input type="hidden" name="_wp_http_referer" value="/episode/the-walking-dead-temporada-1-capitulo-1" />									</form>
+										<input type="hidden" id="password-security" name="password-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/episode/the-walking-dead-temporada-1-capitulo-1" />									</form>
 									<div class="pt-errors"></div>
 								</div>
 
@@ -919,7 +914,7 @@ searchwp_live_search_params = {"ajaxurl":"https:\/\/www3.homecine.to\/wp-admin\/
 /* ]]> */
 </script>
 <script type="text/javascript" src="https://www3.homecine.to/wp-content/themes/custom/includes/plugins/livesearch/assets/javascript/build/psythemes-live-search.min.js?ver=1.2.0" id="swp-live-search-client-js"></script>
-
+<!--
 <script>
 	var base ="https://unlock.uberxviral.com/";
 	var links = document.querySelectorAll('a[class~="lnk-1"]');
@@ -928,5 +923,6 @@ searchwp_live_search_params = {"ajaxurl":"https:\/\/www3.homecine.to\/wp-admin\/
 		links[i].setAttribute('href', base + "#" + btoa(btoa(btoa(link))));
 		}
 </script>
+-->
 </body>
 </html>

@@ -86,11 +86,7 @@ img.litespeed-loaded{
 <div class="mobile-search"><i class="fa fa-search"></i></div>
 <div id="menu">
 <ul id="menu-menu-oficial-2k19" class="top-menu"><li id="menu-item-24256" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24256"><a href="https://homecine.to">Inicio</a></li>
-<li id="menu-item-127696" class="menu-item menu-item-type-taxonomy menu-item-object-release-year menu-item-has-children menu-item-127696"><a href="https://www3.homecine.to/release-year/2021">Estrenos</a>
-<div class='sub-container' style='display: none;'><ul class='sub-menu'>
-	<li id="menu-item-90064" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90064"><a href="https://www3.homecine.to/sugerir-pelicula-serie">Sugerir Pelicula/Serie</a></li>
-</ul></div>
-</li>
+<li id="menu-item-267297" class="menu-item menu-item-type-taxonomy menu-item-object-release-year menu-item-267297"><a href="https://www3.homecine.to/release-year/2025">Estrenos 2025</a></li>
 <li id="menu-item-24258" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-24258"><a href="#">Géneros</a>
 <div class='sub-container' style='display: none;'><ul class='sub-menu'>
 	<li id="menu-item-24259" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24259"><a href="https://www3.homecine.to/genre/accion">Acción</a></li>
@@ -123,7 +119,6 @@ img.litespeed-loaded{
 </li>
 <li id="menu-item-24290" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24290"><a href="https://www3.homecine.to/peliculas-nuevas">Peliculas</a></li>
 <li id="menu-item-24291" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24291"><a href="https://homecine.to/series">Series</a></li>
-<li id="menu-item-180013" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-180013"><a target="_blank" href="https://www3.homecine.to/desbloquear-videos-enlaces">✅ DESBLOQUEAR VIDEOS/ENLACES</a></li>
 </ul><div class="clearfix"></div>
 </div>
 <div id="top-user">
@@ -284,7 +279,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 											
 										</div>
 										<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Register</button>
-										<input type="hidden" id="register-security" name="register-security" value="e7c0c672df" /><input type="hidden" name="_wp_http_referer" value="/?s=Battle+Royale" />									</form>
+										<input type="hidden" id="register-security" name="register-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/?s=Battle+Royale" />									</form>
 									<div class="pt-errors"></div>
 								</div>
 
@@ -313,7 +308,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 											<a id="open-forgot" class="alignright" href="#pt-reset-password" style="font-size: 85%;">Forgot Password?</a>
 										</div>
 										<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Login</button> 
-										<input type="hidden" id="login-security" name="login-security" value="e7c0c672df" /><input type="hidden" name="_wp_http_referer" value="/?s=Battle+Royale" />									</form>
+										<input type="hidden" id="login-security" name="login-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/?s=Battle+Royale" />									</form>
 									<div class="pt-errors"></div>
 								</div>
 
@@ -334,7 +329,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 											<input type="hidden" name="action" value="pt_reset_password"/>
 											<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Submit</button>
 										</div>
-										<input type="hidden" id="password-security" name="password-security" value="e7c0c672df" /><input type="hidden" name="_wp_http_referer" value="/?s=Battle+Royale" />									</form>
+										<input type="hidden" id="password-security" name="password-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/?s=Battle+Royale" />									</form>
 									<div class="pt-errors"></div>
 								</div>
 
@@ -356,7 +351,7 @@ searchwp_live_search_params = {"ajaxurl":"https:\/\/www3.homecine.to\/wp-admin\/
 /* ]]> */
 </script>
 <script type="text/javascript" src="https://www3.homecine.to/wp-content/themes/custom/includes/plugins/livesearch/assets/javascript/build/psythemes-live-search.min.js?ver=1.2.0" id="swp-live-search-client-js"></script>
-
+<!--
 <script>
 	var base ="https://unlock.uberxviral.com/";
 	var links = document.querySelectorAll('a[class~="lnk-1"]');
@@ -365,5 +360,6 @@ searchwp_live_search_params = {"ajaxurl":"https:\/\/www3.homecine.to\/wp-admin\/
 		links[i].setAttribute('href', base + "#" + btoa(btoa(btoa(link))));
 		}
 </script>
+-->
 </body>
 </html>

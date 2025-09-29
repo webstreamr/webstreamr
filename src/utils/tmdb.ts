@@ -19,6 +19,7 @@ interface ExternalIdsResponsePartial {
 }
 
 interface MovieDetailsResponsePartial {
+  original_title: string;
   release_date: string;
   title: string;
 }
@@ -26,6 +27,7 @@ interface MovieDetailsResponsePartial {
 interface TvDetailsResponsePartial {
   first_air_date: string;
   name: string;
+  original_name: string;
 }
 
 const mutexes = new Map<string, Mutex>();
@@ -103,14 +105,14 @@ const getTmdbTvDetails = async (ctx: Context, fetcher: Fetcher, tmdbId: TmdbId, 
   return await tmdbFetch(ctx, fetcher, `/tv/${tmdbId.id}`, { language }) as TvDetailsResponsePartial;
 };
 
-export const getTmdbNameAndYear = async (ctx: Context, fetcher: Fetcher, tmdbId: TmdbId, language?: string): Promise<[string, number]> => {
+export const getTmdbNameAndYear = async (ctx: Context, fetcher: Fetcher, tmdbId: TmdbId, language?: string): Promise<[string, number, string]> => {
   if (tmdbId.season) {
     const tmdbDetails = await getTmdbTvDetails(ctx, fetcher, tmdbId, language);
 
-    return [tmdbDetails.name, (new Date(tmdbDetails.first_air_date)).getFullYear()];
+    return [tmdbDetails.name, (new Date(tmdbDetails.first_air_date)).getFullYear(), tmdbDetails.original_name];
   }
 
   const tmdbDetails = await getTmdbMovieDetails(ctx, fetcher, tmdbId, language);
 
-  return [tmdbDetails.title, (new Date(tmdbDetails.release_date)).getFullYear()];
+  return [tmdbDetails.title, (new Date(tmdbDetails.release_date)).getFullYear(), tmdbDetails.original_title];
 };

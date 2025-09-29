@@ -45,4 +45,9 @@ describe('HomeCine', () => {
     const streams = await source.handle(createTestContext({ mx: 'on' }), 'movie', new TmdbId(559969, undefined, undefined));
     expect(streams).toMatchSnapshot();
   });
+
+  test('handle here today', async () => {
+    const streams = await source.handle(ctx, 'movie', new TmdbId(711475, undefined, undefined));
+    expect(streams).toMatchSnapshot();
+  });
 });

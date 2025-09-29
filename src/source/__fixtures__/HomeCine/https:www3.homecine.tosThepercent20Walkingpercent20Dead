@@ -86,11 +86,7 @@ img.litespeed-loaded{
 <div class="mobile-search"><i class="fa fa-search"></i></div>
 <div id="menu">
 <ul id="menu-menu-oficial-2k19" class="top-menu"><li id="menu-item-24256" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24256"><a href="https://homecine.to">Inicio</a></li>
-<li id="menu-item-127696" class="menu-item menu-item-type-taxonomy menu-item-object-release-year menu-item-has-children menu-item-127696"><a href="https://www3.homecine.to/release-year/2021">Estrenos</a>
-<div class='sub-container' style='display: none;'><ul class='sub-menu'>
-	<li id="menu-item-90064" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90064"><a href="https://www3.homecine.to/sugerir-pelicula-serie">Sugerir Pelicula/Serie</a></li>
-</ul></div>
-</li>
+<li id="menu-item-267297" class="menu-item menu-item-type-taxonomy menu-item-object-release-year menu-item-267297"><a href="https://www3.homecine.to/release-year/2025">Estrenos 2025</a></li>
 <li id="menu-item-24258" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-24258"><a href="#">Géneros</a>
 <div class='sub-container' style='display: none;'><ul class='sub-menu'>
 	<li id="menu-item-24259" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24259"><a href="https://www3.homecine.to/genre/accion">Acción</a></li>
@@ -123,7 +119,6 @@ img.litespeed-loaded{
 </li>
 <li id="menu-item-24290" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24290"><a href="https://www3.homecine.to/peliculas-nuevas">Peliculas</a></li>
 <li id="menu-item-24291" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24291"><a href="https://homecine.to/series">Series</a></li>
-<li id="menu-item-180013" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-180013"><a target="_blank" href="https://www3.homecine.to/desbloquear-videos-enlaces">✅ DESBLOQUEAR VIDEOS/ENLACES</a></li>
 </ul><div class="clearfix"></div>
 </div>
 <div id="top-user">
@@ -198,7 +193,7 @@ img.litespeed-loaded{
 <a href="https://www3.homecine.to/series/the-walking-dead-the-ones-who-live" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
 Watch Series</a>
 
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-245313" data-nonce="82efb0f60b" data-post-id="245313" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-245313" data-nonce="824de0873f" data-post-id="245313" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
 
 </div>
 </div><div data-movie-id="232219" class="ml-item">
@@ -235,7 +230,7 @@ Watch Series</a>
 <a href="https://www3.homecine.to/series/the-walking-dead-daryl-dixon" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
 Watch Series</a>
 
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-232219" data-nonce="82efb0f60b" data-post-id="232219" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-232219" data-nonce="824de0873f" data-post-id="232219" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
 
 </div>
 </div><div data-movie-id="223371" class="ml-item">
@@ -272,7 +267,7 @@ Watch Series</a>
 <a href="https://www3.homecine.to/series/the-walking-dead-dead-city" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
 Watch Series</a>
 
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-223371" data-nonce="82efb0f60b" data-post-id="223371" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-223371" data-nonce="824de0873f" data-post-id="223371" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
 
 </div>
 </div><div data-movie-id="190263" class="ml-item">
@@ -309,7 +304,7 @@ Watch Series</a>
 <a href="https://www3.homecine.to/series/tales-of-the-walking-dead" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
 Watch Series</a>
 
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-190263" data-nonce="82efb0f60b" data-post-id="190263" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-190263" data-nonce="824de0873f" data-post-id="190263" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
 
 </div>
 </div><div data-movie-id="43287" class="ml-item">
@@ -349,7 +344,7 @@ Watch Series</a>
 <a href="https://www3.homecine.to/series/fear-the-walking-dead" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
 Watch Series</a>
 
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-43287" data-nonce="82efb0f60b" data-post-id="43287" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-43287" data-nonce="824de0873f" data-post-id="43287" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
 
 </div>
 </div><div data-movie-id="104965" class="ml-item">
@@ -389,7 +384,7 @@ Watch Series</a>
 <a href="https://www3.homecine.to/series/the-walking-dead-world-beyond" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
 Watch Series</a>
 
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-104965" data-nonce="82efb0f60b" data-post-id="104965" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-104965" data-nonce="824de0873f" data-post-id="104965" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
 
 </div>
 </div><div data-movie-id="11244" class="ml-item">
@@ -429,7 +424,7 @@ Watch Series</a>
 <a href="https://www3.homecine.to/series/serie-the-walking-dead-cualquier-idioma" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
 Watch Series</a>
 
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-11244" data-nonce="82efb0f60b" data-post-id="11244" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-11244" data-nonce="824de0873f" data-post-id="11244" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
 
 </div>
 </div><div data-movie-id="88109" class="ml-item">
@@ -469,7 +464,7 @@ Watch Series</a>
 <a href="https://www3.homecine.to/series/ride-with-norman-reedus" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
 Watch Series</a>
 
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-88109" data-nonce="82efb0f60b" data-post-id="88109" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-88109" data-nonce="824de0873f" data-post-id="88109" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
 
 </div>
 </div><div data-movie-id="11226" class="ml-item">
@@ -509,7 +504,7 @@ Watch Series</a>
 <a href="https://www3.homecine.to/se-armo-el-belen" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
 Watch Movie</a>
 
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-11226" data-nonce="82efb0f60b" data-post-id="11226" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-11226" data-nonce="824de0873f" data-post-id="11226" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
 
 </div>
 </div><div data-movie-id="7977" class="ml-item">
@@ -549,7 +544,7 @@ Watch Movie</a>
 <a href="https://www3.homecine.to/en-la-mira-del-francotirador" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
 Watch Movie</a>
 
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-7977" data-nonce="82efb0f60b" data-post-id="7977" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-7977" data-nonce="824de0873f" data-post-id="7977" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
 
 </div>
 </div>						
@@ -672,7 +667,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 											
 										</div>
 										<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Register</button>
-										<input type="hidden" id="register-security" name="register-security" value="e7c0c672df" /><input type="hidden" name="_wp_http_referer" value="/?s=The+Walking+Dead" />									</form>
+										<input type="hidden" id="register-security" name="register-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/?s=The+Walking+Dead" />									</form>
 									<div class="pt-errors"></div>
 								</div>
 
@@ -701,7 +696,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 											<a id="open-forgot" class="alignright" href="#pt-reset-password" style="font-size: 85%;">Forgot Password?</a>
 										</div>
 										<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Login</button> 
-										<input type="hidden" id="login-security" name="login-security" value="e7c0c672df" /><input type="hidden" name="_wp_http_referer" value="/?s=The+Walking+Dead" />									</form>
+										<input type="hidden" id="login-security" name="login-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/?s=The+Walking+Dead" />									</form>
 									<div class="pt-errors"></div>
 								</div>
 
@@ -722,7 +717,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 											<input type="hidden" name="action" value="pt_reset_password"/>
 											<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Submit</button>
 										</div>
-										<input type="hidden" id="password-security" name="password-security" value="e7c0c672df" /><input type="hidden" name="_wp_http_referer" value="/?s=The+Walking+Dead" />									</form>
+										<input type="hidden" id="password-security" name="password-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/?s=The+Walking+Dead" />									</form>
 									<div class="pt-errors"></div>
 								</div>
 
@@ -744,7 +739,7 @@ searchwp_live_search_params = {"ajaxurl":"https:\/\/www3.homecine.to\/wp-admin\/
 /* ]]> */
 </script>
 <script type="text/javascript" src="https://www3.homecine.to/wp-content/themes/custom/includes/plugins/livesearch/assets/javascript/build/psythemes-live-search.min.js?ver=1.2.0" id="swp-live-search-client-js"></script>
-
+<!--
 <script>
 	var base ="https://unlock.uberxviral.com/";
 	var links = document.querySelectorAll('a[class~="lnk-1"]');
@@ -753,5 +748,6 @@ searchwp_live_search_params = {"ajaxurl":"https:\/\/www3.homecine.to\/wp-admin\/
 		links[i].setAttribute('href', base + "#" + btoa(btoa(btoa(link))));
 		}
 </script>
+-->
 </body>
 </html>

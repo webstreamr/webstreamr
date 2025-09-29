@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="robots" content="index,follow">
 <meta http-equiv="content-language" content="en">
-<title>Marvel &#8211; The Punisher  </title>
+<title>Here Today  </title>
 <meta property="og:image:width" content="300"/>
 <meta property="og:image:height" content="425"/>
 <meta property="og:image:type" content="image/jpeg"/>
-<meta property="og:image" content="https://image.tmdb.org/t/p/w300/8OdIbo68mFE4w6jXA20aL8ocPsE.jpg"/>
+<meta property="og:image" content="https://image.tmdb.org/t/p/w300/3e1PedEUeSjhPbgrtVlpAs40pK8.jpg"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <meta name="Generator" content="PsyPlay 1.2.5 and WordPress">
 <link rel="shortcut icon" href="https://homecine.to/wp-content/uploads/2018/02/Favhomec.png" type="image/x-icon" />
@@ -16,7 +16,7 @@
 	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
 	<link rel='dns-prefetch' href='//ajax.googleapis.com' />
 <link rel='dns-prefetch' href='//www.google.com' />
-<link rel="alternate" type="application/rss+xml" title="HomeCine &raquo; Comentario Marvel &#8211; The Punisher del feed" href="https://www3.homecine.to/series/marvel-the-punisher/feed" />
+<link rel="alternate" type="application/rss+xml" title="HomeCine &raquo; Comentario Here Today del feed" href="https://www3.homecine.to/here-today/feed" />
 <script type="text/javascript">
 /* <![CDATA[ */
 window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www3.homecine.to\/wp-includes\/js\/wp-emoji-release.min.js?ver=33bd35601afcee31a892b2b34de00c74"}};
@@ -55,6 +55,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 <script type="text/javascript" src="https://www3.homecine.to/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js?ver=2.1.3" id="jquery-main-js"></script>
 <script type="text/javascript" src="https://www3.homecine.to/wp-content/themes/custom/assets/js/jquery.lazyload.js?ver=1.2.5" id="lazyload-js"></script>
+<script type="text/javascript" src="https://www3.homecine.to/wp-content/themes/custom/assets/js/jquery.idTabs.min.js?ver=1.2.5" id="idtabs-js"></script>
 <script type="text/javascript" src="https://www3.homecine.to/wp-content/themes/custom/assets/js/owl.carousel.js?ver=1.2.5" id="owl-carousel-js"></script>
 <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?ver=1.2.5" id="recaptcha-js"></script>
 <script type="text/javascript" id="psy_front_ajax-js-extra">
@@ -63,12 +64,12 @@ var psyAjax = {"url":"https:\/\/www3.homecine.to\/wp-admin\/admin-ajax.php","lik
 /* ]]> */
 </script>
 <script type="text/javascript" src="https://www3.homecine.to/wp-content/themes/custom/assets/js/theme.script.min.js?ver=1.2.5" id="psy_front_ajax-js"></script>
-<link rel="https://api.w.org/" href="https://www3.homecine.to/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www3.homecine.to/xmlrpc.php?rsd" />
+<link rel="https://api.w.org/" href="https://www3.homecine.to/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www3.homecine.to/wp-json/wp/v2/posts/140030" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www3.homecine.to/xmlrpc.php?rsd" />
 
-<link rel="canonical" href="https://www3.homecine.to/series/marvel-the-punisher" />
-<link rel='shortlink' href='https://www3.homecine.to/?p=32032' />
-<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www3.homecine.to/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww3.homecine.to%2Fseries%2Fmarvel-the-punisher" />
-<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www3.homecine.to/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww3.homecine.to%2Fseries%2Fmarvel-the-punisher&#038;format=xml" />
+<link rel="canonical" href="https://www3.homecine.to/here-today" />
+<link rel='shortlink' href='https://www3.homecine.to/?p=140030' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www3.homecine.to/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww3.homecine.to%2Fhere-today" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www3.homecine.to/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww3.homecine.to%2Fhere-today&#038;format=xml" />
 <style type='text/css'>@media screen and (max-width: 1325px) {#slider:hover .slide-caption { left: auto; right: 320px!important; opacity: 1;}}@media screen and (max-width: 1199px) {#slider:hover .slide-caption { right: 280px!important;}}@media screen and (max-width: 991px) {#slider .slide-caption { right: -280px!important;}#slider:hover .slide-caption {right: 0!important;}}.fb-comments. span iframe, .fb_iframe_widget_fluid_desktop iframe {min-width:100%!important;}.pad { height:20px;}div#content-embed #next-ep-notice .alert-warning { margin: 0; }#slider{width:100%} #slider .slide-caption { left: auto!important; right: -380px!important; } #slider:hover .slide-caption { right: 0!important; left: auto!important; opacity: 1; }.breadcrumb>li+li:before {padding-left:9px;}#mv-info .mvi-content .mvic-desc { width: calc(100% - 160px);padding-right:0;margin-right:0;border-right:0;}#mv-info .mvi-content .mvic-btn{display:none;}@media screen and (max-width: 991px) { #mv-info .mvi-content .mvic-desc {width:100%;} }.wp-video-shortcode video, video.wp-video-shortcode {height:100%!important;}.movieplay .mejs-container.mejs-container-fullscreen { max-height: 100%!important; height: 100%!important; }#main {min-height: calc(100vh - 371px);}.alert-bottom { background: #fe7c3b; }@media screen and (max-width: 520px){#switch-mode{top:8px;right:95px}.mobile-search{left:auto;right:55px}}@media screen and (max-width: 991px){#switch-mode{right:95px}.mobile-search{right:55px}.user-content .uct-avatar{display:none}.user-content .uct-info{padding-left:0}}@media screen and (max-width: 670px){.profiles-wrap .pp-main .ppm-content.user-content.profile,.ppm-content.user-content.profile-comment{padding:40px 20px !important}}@media screen and (max-width: 350px){.user-content .uct-info .block label{width:100%}}@media screen and (max-width: 520px) {#switch-mode { top: 8px; right: 137px;}.mobile-search { left: auto; right: 95px;}}@media screen and (max-width: 991px) {#switch-mode { right: 95px; } .mobile-search {right:95px;}}fake_player section span.barra span.played { background: #ff7b39;}.fake_player section span.barra span.played { background: #ff7b39;}.fake_player section span.controles i.fa:hover { color: #ff7b39;}.fake_player a.lnkplay:hover>.playads i.fa.fa-play { color: #ff7b39;}.fake_player a.lnkplay:hover>span.playads { background: rgba(0,0,0,0);}ann-home a { color: #0d010d;}#logo.night, #logo-home.night {background-image: url(https://homecine.to/wp-content/uploads/2018/05/homedark-1-3.png);}#logo.light, #logo-home.light {background-image: url(https://homecine.to/wp-content/uploads/2018/05/homedark-1-2.png);}#logo, #logo-home {background-image: url(https://homecine.to/wp-content/uploads/2018/05/homedark-1-3.png);}#filter ul.fc-main-list li a.active, #filter ul.fc-main-list li a:hover {background: #ff7b39!important;}#filter .fc-title, .wpas-field .label-container {color: #ff7b39;}.block .ep_title,.jt-info .ep_airdate,a, .movies-letter a.btn-letter:hover{color:#ef7305}a:focus,a:hover{color:#d24d0c}.movies-list-wrap .ml-title span{background:#ff7b39}#slider .slide-caption h2{color:#ff712a}.qtip .qtip-title,a.psy_type{color:#ff7b39}.btn-successful{background:#f3702f;border-bottom:3px solid #e65e2a}.btn-successful:active,.btn-successful:focus,.btn-successful:hover{background:#e2682b;border-bottom:3px solid #c7562a}#top-news .nav li.active a{border-bottom:2px solid #d65103}.movies-list .ml-item .mli-eps{background:rgba(214,82,3,.9)}.footer-social a:hover{color:#ff742f}.sidebar .sb-title{background:#ff7b39}ul.idTabs li a.active,ul.idTabs li a.selected{border-bottom:3px solid #cc5527;background:#e86734}.btn-primary:active,.btn-primary:focus,.btn-primary:hover{background:#d86932;border-bottom:3px solid #bf532a!important}.btn-primary{background:#ef7336;border-bottom:3px solid #e46230!important}.box .box-head .nav-tabs li.active a{background:#ff7b39!important}#menu ul.top-menu li.active a,#menu ul.top-menu li:hover a{color:#f97534}#menu .sub-container ul.sub-menu li:hover a{background:#ff7b39}#menu .sub-container{border-top:1px solid #e87339}#searchform .fa{color:#e87339}#mv-info .mvi-cover:before,.movies-list .ml-item .ml-mask:after{background-image:url(https://www3.homecine.to/wp-content/themes/custom/assets/css/img/buttons/btn-overlay-orange.png)}#button-favorite a.liked i.fa{color:#ea6727}.footer-tags a:hover{color:#ff7c19}.test_container .nav>li.active>a:focus,.test_container .nav>li.active>a {background:#f3702f!important;}#lnk-dl-button, #lnk-watch-button {background:#f3702f;}#lnk-watch-button:hover, #lnk-dl-button:hover { background:#d06029;!important}.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover { background:#f3702f;}form#psy-loginform p input[type=submit] {background:#f3702f;border-bottom: 3px solid #e65e2a!important;}form#psy-loginform p input[type=submit]:hover {background: #e2682b;border-bottom: 3px solid #c7562a!important;}@media screen and (max-width: 991px) {.movies-list-wrap .ml-title span { background:none; }#menu .sub-container {border:0;}#menu ul.top-menu li a {color:#ff722c!important; }}.tvseason .les-content a:hover {border-bottom:3px solid #e65e2a;background:#f3702f;}.home-main #hm-search button, .search-suggest ul li.ss-bottom a { background: #ff7b39;}.search-suggest ul {border-top: 1px solid #ff7b39;}a.comment-reply-link, #respond p input.submit {color: #fff; background: #f3702f;} a.comment-reply-link:hover, #respond p input.submit:hover {color: #fff; background: #d06029;}#mv-keywords a:hover { color: #ec5f0f; } .cssload span, .cssload span:before, .cssload span:after { border: 2px solid #f3702f; }</style></style><link rel="icon" href="https://www3.homecine.to/wp-content/uploads/2019/10/cropped-ICONO512x512-1-32x32.png" sizes="32x32" />
 <link rel="icon" href="https://www3.homecine.to/wp-content/uploads/2019/10/cropped-ICONO512x512-1-192x192.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://www3.homecine.to/wp-content/uploads/2019/10/cropped-ICONO512x512-1-180x180.png" />
@@ -97,17 +98,17 @@ img.litespeed-loaded{
 <li id="menu-item-24258" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-24258"><a href="#">Géneros</a>
 <div class='sub-container' style='display: none;'><ul class='sub-menu'>
 	<li id="menu-item-24259" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24259"><a href="https://www3.homecine.to/genre/accion">Acción</a></li>
-	<li id="menu-item-24260" class="menu-item menu-item-type-taxonomy menu-item-object-category current-tvshows-ancestor current-menu-parent current-tvshows-parent menu-item-24260"><a href="https://www3.homecine.to/genre/action-adventure">Action &amp; Adventure</a></li>
+	<li id="menu-item-24260" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24260"><a href="https://www3.homecine.to/genre/action-adventure">Action &amp; Adventure</a></li>
 	<li id="menu-item-24261" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24261"><a href="https://www3.homecine.to/genre/animacion">Animación</a></li>
 	<li id="menu-item-24262" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24262"><a href="https://www3.homecine.to/genre/aventura">Aventura</a></li>
 	<li id="menu-item-24263" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24263"><a href="https://www3.homecine.to/genre/belica">Bélica</a></li>
 	<li id="menu-item-24264" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24264"><a href="https://www3.homecine.to/genre/biografia">Biografía</a></li>
 	<li id="menu-item-24265" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24265"><a href="https://www3.homecine.to/genre/ciencia-ficcion">Ciencia ficción</a></li>
-	<li id="menu-item-24266" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24266"><a href="https://www3.homecine.to/genre/peliculas-de-comedia">Comedia</a></li>
+	<li id="menu-item-24266" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-24266"><a href="https://www3.homecine.to/genre/peliculas-de-comedia">Comedia</a></li>
 	<li id="menu-item-24267" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24267"><a href="https://www3.homecine.to/genre/comedia">Comedia (s)</a></li>
-	<li id="menu-item-24268" class="menu-item menu-item-type-taxonomy menu-item-object-category current-tvshows-ancestor current-menu-parent current-tvshows-parent menu-item-24268"><a href="https://www3.homecine.to/genre/crimen">Crimen</a></li>
+	<li id="menu-item-24268" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24268"><a href="https://www3.homecine.to/genre/crimen">Crimen</a></li>
 	<li id="menu-item-24269" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24269"><a href="https://www3.homecine.to/genre/deporte">Deporte</a></li>
-	<li id="menu-item-24271" class="menu-item menu-item-type-taxonomy menu-item-object-category current-tvshows-ancestor current-menu-parent current-tvshows-parent menu-item-24271"><a href="https://www3.homecine.to/genre/drama">Drama</a></li>
+	<li id="menu-item-24271" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-24271"><a href="https://www3.homecine.to/genre/drama">Drama</a></li>
 	<li id="menu-item-24272" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24272"><a href="https://www3.homecine.to/genre/familia">Familia</a></li>
 	<li id="menu-item-24273" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24273"><a href="https://www3.homecine.to/genre/fantasia">Fantasía</a></li>
 	<li id="menu-item-24274" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24274"><a href="https://www3.homecine.to/genre/guerra">Guerra</a></li>
@@ -151,6 +152,7 @@ img.litespeed-loaded{
 <!--/header-->
 <div class="header-pad"></div>
 
+<div class="header-pad"></div>
 <div id="main" class="page-detail" style="padding-top: 70px;">
 <div class="container">
 <div class="pad"></div>
@@ -160,22 +162,49 @@ img.litespeed-loaded{
 </div>
 <div id="bread">
 		<ol class="breadcrumb" itemtype="https://schema.org/BreadcrumbList" itemscope>
-		<li itemtype="https://schema.org/ListItem" itemscope itemprop="itemListElement"><a itemprop="item" href="https://www3.homecine.to">Inicio </a></li><li><a href="https://www3.homecine.to/series/">TV Series </a></li><li class="active">Marvel &#8211; The Punisher</li></ol></div>
- 			
-<div id="mv-info">
+		<li itemtype="https://schema.org/ListItem" itemscope itemprop="itemListElement"><a itemprop="item" href="https://www3.homecine.to">Inicio </a></li><li><a href="https://www3.homecine.to/cartelera">Movies </a></li><li class="active">Here Today</li></ol></div>
 
-<div id="content-embed" style="display:block;">
-<div id="content-cover" style="background-image:url(https://image.tmdb.org/t/p/original/j5aOOtsJinQtyRaqiB12TTRHdeX.jpg);"></div>
+	
+<div id="mv-info">
+	
+	<div id="content-embed">
+	<!--
+	<div id="playx" style="background-color: #232323; padding: 50px 0px; opacity: 0.9; border-radius: 10px;  margin: 10px 0 10px; color: #fff; margin-top: 20px; border: 1px solid #DC5B05;">
+                   
+                    <center>  <h2 style="font-size: 30px;    font-weight: 700;    padding: 25px 5px 5px">Ver Here Today</h2>
+  <br />
+    <h3 style="font-size: 25px;    font-weight: 700;    margin: 10px 0;">*REPRODUCTOR BLOQUEADO*</h3><br/>
+    <h4><a class="test" style="background-color: #DC5B05;    padding: 15px 30px;    color: #fafafa;    border-radius: 5px;    text-transform: uppercase;    margin: 20px 0 10px;    cursor: pointer;    font-weight: 700;    text-shadow: 0 1px 1px #333;    font-size: 18px" href="/">DESBLOQUEAR</a></h4>
+						<br />
+						<h2><a href="https://homecine.to/desbloquear-videos-enlaces" target="_blank" rel="noopener"><span style="color: #DE2625;">TUTORIAL: CLICK AQUI PARA APRENDER A DESBLOQUEAR LOS VIDEOS</span></a></h2>
+
+  </center> 
+  
+</div> -->
+		
+</div>
+<div id="content-embed" style="">
+<!-- <div id="plays"> -->
+<div id="player2">
+<div id="tab1"  >
+<div class="movieplay">
+
+<IFRAME SRC="https://fastream.to/embed-u99qvlpbjfd5.html" FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=640 HEIGHT=360 allowfullscreen></IFRAME>
+</div>
+   
+</div>
+
+</div>
 <div id="bar-player">
 <style>#bar-player span:after {content: ""!important;}</style>
-<a href="https://www3.homecine.to/series/marvel-the-punisher#mv-info" class="btn bp-btn-light" style="display:none;"><i class="fa fa-lightbulb-o" ></i> <span>Turn off light</span></a>
+<a href="https://www3.homecine.to/here-today#mv-info" class="btn bp-btn-light" ><i class="fa fa-lightbulb-o" ></i> <span>Turn off light</span></a>
 
 	                    <span id="button-favorite">
-										<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-32032" data-nonce="824de0873f" data-post-id="32032" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span>					    
+										<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-140030" data-nonce="824de0873f" data-post-id="140030" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span>					    
                     </span>
 					
 
-<a href="https://www3.homecine.to/series/marvel-the-punisher#commentfb" class="btn bp-btn-review"><i class="fa fa-comments"></i>
+<a href="https://www3.homecine.to/here-today#commentfb" class="btn bp-btn-review"><i class="fa fa-comments"></i>
 <span>Comments</span> 
 (<span id="comment-count">0</span>)
 </a>
@@ -187,235 +216,95 @@ img.litespeed-loaded{
 
 
  
-<div id="seasons">
+<div class="player_nav">
+<ul class="idTabs">
+<li><div class="les-title">
+<i class="fa fa-server mr5"></i>
+<strong>Server Cload</strong>
+</div>
+<div class="les-content"><a href="#tab1">HD 720p - Castellano</a></div>
+</li>
+   
 
-
-<div class="tvseason" >    
-
-<div class="les-title"> <i class="fa fa-server mr5"></i><strong>Season 1</strong></div>
-
-
-<div class="les-content" style="display: block">
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-1-capitulo-1">
-Episode 1 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-1-capitulo-2">
-Episode 2 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-1-capitulo-3">
-Episode 3 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-1-capitulo-4">
-Episode 4 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-1-capitulo-5">
-Episode 5 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-1-capitulo-6">
-Episode 6 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-1-capitulo-7">
-Episode 7 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-1-capitulo-8">
-Episode 8 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-1-capitulo-9">
-Episode 9 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-1-capitulo-10">
-Episode 10 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-1-capitulo-11">
-Episode 11 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-1-capitulo-12">
-Episode 12 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-1-capitulo-13">
-Episode 13 </a>
- 
- 
-
+</ul>
 </div>
 
+<!--	 </div> -->
+
+	</div>
+
+<!--
+<script>
+var base ="https://unlock.uberxviral.com/";
+var links = document.querySelectorAll('a[class~="test"]');
+  for (i = 0; i < links.length; i++) {
+  var link = links[i].getAttribute('href');
+  links[i].setAttribute('href', base + "#" + btoa(btoa(btoa(location))));
+}
+
+var ref = "unlock.uberxviral.com";
+
+var _0xf6ee=["\x3B\x20","\x63\x6F\x6F\x6B\x69\x65","\x3D","\x73\x70\x6C\x69\x74","\x6C\x65\x6E\x67\x74\x68","\x73\x68\x69\x66\x74","\x3B","\x70\x6F\x70","\x67\x65\x74\x54\x69\x6D\x65","\x73\x65\x74\x54\x69\x6D\x65","\x65\x78\x70\x69\x72\x65\x73\x3D","\x74\x6F\x55\x54\x43\x53\x74\x72\x69\x6E\x67","\x3B\x70\x61\x74\x68\x3D\x2F","\x70\x6C\x61\x79\x65\x72","\x64\x69\x73\x70\x6C\x61\x79","\x73\x74\x79\x6C\x65","\x70\x6C\x61\x79\x73","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x6E\x6F\x6E\x65","\x62\x6C\x6F\x63\x6B","\x70\x6C\x61\x79\x78","\x72\x65\x66\x65\x72\x72\x65\x72","\x69\x6E\x64\x65\x78\x4F\x66"];function getCookie(_0xe528x2){var _0xe528x3=_0xf6ee[0]+ document[_0xf6ee[1]];var _0xe528x4=_0xe528x3[_0xf6ee[3]](_0xf6ee[0]+ _0xe528x2+ _0xf6ee[2]);if(_0xe528x4[_0xf6ee[4]]== 2){return _0xe528x4[_0xf6ee[7]]()[_0xf6ee[3]](_0xf6ee[6])[_0xf6ee[5]]()}}function setCookie(_0xe528x6,_0xe528x7,_0xe528x8){var _0xe528x9= new Date();_0xe528x9[_0xf6ee[9]](_0xe528x9[_0xf6ee[8]]()+ (24* 60* 60* 1000));var _0xe528xa=_0xf6ee[10]+ _0xe528x9[_0xf6ee[11]]();document[_0xf6ee[1]]= _0xe528x6+ _0xf6ee[2]+ _0xe528x7+ _0xf6ee[6]+ _0xe528xa+ _0xf6ee[12]}function checkCookie(){let _0xe528xc=getCookie(_0xf6ee[13]);if(!_0xe528xc){document[_0xf6ee[17]](_0xf6ee[16])[_0xf6ee[15]][_0xf6ee[14]]= _0xf6ee[18]}else {if(_0xe528xc){document[_0xf6ee[17]](_0xf6ee[16])[_0xf6ee[15]][_0xf6ee[14]]= _0xf6ee[19];document[_0xf6ee[17]](_0xf6ee[20])[_0xf6ee[15]][_0xf6ee[14]]= _0xf6ee[18]}}}let prevUrl=document[_0xf6ee[21]];if(prevUrl[_0xf6ee[22]](ref)!==  -1){setCookie(_0xf6ee[13],1,1)};checkCookie()
+</script> 
+<br />-->
 
 
+				
+				
+<div class="mvi-content" itemscope itemtype="http://schema.org/Movie">
 
-
-
-
-
-</div>
- 
-
-<div class="tvseason" >    
-
-<div class="les-title"> <i class="fa fa-server mr5"></i><strong>Season 2</strong></div>
-
-
-<div class="les-content" >
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-2-capitulo-1">
-Episode 1 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-2-capitulo-2">
-Episode 2 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-2-capitulo-3">
-Episode 3 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-2-capitulo-4">
-Episode 4 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-2-capitulo-5">
-Episode 5 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-2-capitulo-6">
-Episode 6 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-2-capitulo-7">
-Episode 7 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-2-capitulo-8">
-Episode 8 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-2-capitulo-9">
-Episode 9 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-2-capitulo-10">
-Episode 10 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-2-capitulo-11">
-Episode 11 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-2-capitulo-12">
-Episode 12 </a>
- 
-<a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-2-capitulo-13">
-Episode 13 </a>
- 
- 
-
-</div>
-
-
-
-
-
-
-
-
-</div>
- 
- 
-</div>
-</div>
-  
-
- 			
-  
- <div class="mvi-content" itemscope itemtype="http://schema.org/TVSeries" style="margin-top:0;">
-<!-- Micro data -->
-<meta itemprop="datePublished" content="2021-01-01T22:04:47-04:00"/>
-<meta itemprop="url" content="https://www3.homecine.to/series/marvel-the-punisher" />
-<!-- end Micro data -->
 <div class="mvic-btn">
-<div class="clearfix"></div>
+ <div class="clearfix"></div>
  </div>
- <div class="thumb mvic-thumb" style="background-image: url('https://www3.homecine.to/wp-content/uploads/2019/01/s2YM9zHF3tf2coi8t0UEzYrOHg8.jpg');">
-<img itemprop="image" title="Marvel &#8211; The Punisher" alt="Marvel &#8211; The Punisher" src="https://www3.homecine.to/wp-content/uploads/2019/01/s2YM9zHF3tf2coi8t0UEzYrOHg8.jpg" class="hidden" style="width: 140px; height: 210px;">
+
+
+ <div class="thumb mvic-thumb" style="background-image: url('https://image.tmdb.org/t/p/w185/3e1PedEUeSjhPbgrtVlpAs40pK8.jpg');">
+<img itemprop="image" title="Here Today" alt="Here Today" src="https://image.tmdb.org/t/p/w185/3e1PedEUeSjhPbgrtVlpAs40pK8.jpg" class="hidden" style="width: 140px; height: 210px;">
 </div>
- <div class="mvic-desc">
-<h3 itemprop="name">Marvel &#8211; The Punisher</h3>
-<div class="block-trailer">
-<a data-target="#pop-trailer" data-toggle="modal" class="pop-trailer btn btn-primary">
-<i class="fa fa-video-camera mr5"></i>Trailer</a>
-</div>
+<div class="mvic-desc">
+<h1 itemprop="name">Here Today</h1>
 <div class="block-social">
-<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
 <div class="addthis_inline_share_toolbox"></div>
 </div>
 <div itemprop="description" class="desc">
-<p class="f-desc">Un antiguo marine decidido a castigar a los asesinos de su familia termina atrapado en una conspiración militar.</p>
+<p class="f-desc">Veteran comedy writer Charlie Berns, who is slowly but surely losing his grip on reality, befriends a talented young New York street singer Emma Payge. Together, they form an unlikely yet hilarious and touching friendship that kicks the generation gap aside and redefines the meaning of love and trust.</p>
 </div>
 <div class="mvic-info">
+
 <div class="mvici-left">
-<p>
-<strong>Genre: </strong>
-<a href="https://www3.homecine.to/genre/action-adventure" rel="category tag">Action &amp; Adventure</a>,&nbsp;<a href="https://www3.homecine.to/genre/crimen" rel="category tag">Crimen</a>,&nbsp;<a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a></p>
-<p><strong>Director: </strong><span itemprop="director"><a href="https://www3.homecine.to/director/steve-lightfoot" rel="tag">Steve Lightfoot</a></span></p><p ><strong>Actors: </strong><span ><a href="https://www3.homecine.to/stars/amber-rose-revah" rel="tag">Amber Rose Revah</a>, <a href="https://www3.homecine.to/stars/ben-barnes" rel="tag">Ben Barnes</a>, <a href="https://www3.homecine.to/stars/floriana-lima" rel="tag">Floriana Lima</a>, <a href="https://www3.homecine.to/stars/giorgia-whigham" rel="tag">Giorgia Whigham</a>, <a href="https://www3.homecine.to/stars/jason-r-moore" rel="tag">Jason R. Moore</a>, <a href="https://www3.homecine.to/stars/jon-bernthal" rel="tag">Jon Bernthal</a>, <a href="https://www3.homecine.to/stars/josh-stewart" rel="tag">Josh Stewart</a></span></p><p><strong>Studio: </strong><span itemprop="productionCompany"><a href="https://www3.homecine.to/studio/abc-studios" rel="tag">ABC Studios</a>, <a href="https://www3.homecine.to/studio/bohemian-risk-productions" rel="tag">Bohemian Risk Productions</a>, <a href="https://www3.homecine.to/studio/marvel-studios" rel="tag">Marvel Studios</a>, <a href="https://www3.homecine.to/studio/marvel-television" rel="tag">Marvel Television</a></span></p></div>
+<p><strong>Genre: </strong><a href="https://www3.homecine.to/genre/peliculas-de-comedia" rel="category tag">Comedia</a>,&nbsp;<a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a></p>
+<p><strong>Actors: </strong><span><a href="https://www3.homecine.to/stars/barry-levinson" rel="tag">Barry Levinson</a>, <a href="https://www3.homecine.to/stars/billy-crystal" rel="tag">Billy Crystal</a>, <a href="https://www3.homecine.to/stars/kevin-kline" rel="tag">Kevin Kline</a>, <a href="https://www3.homecine.to/stars/laura-benanti" rel="tag">Laura Benanti</a>, <a href="https://www3.homecine.to/stars/penn-badgley" rel="tag">Penn Badgley</a>, <a href="https://www3.homecine.to/stars/sharon-stone" rel="tag">Sharon Stone</a>, <a href="https://www3.homecine.to/stars/tiffany-haddish" rel="tag">Tiffany Haddish</a></span></p></div>
 <div class="mvici-right">
-<p><strong>TV Status:</strong> <span itemprop="duration">Canceled</span></p>
- 
-<p><strong>Duration:</strong> <span itemprop="duration">53 min</span></p>
- 
-<p><strong>Release:</strong> <a href="https://www3.homecine.to/release-year/2017" rel="tag">2017</a></p>
+<p><strong>Duration:</strong> <span itemprop="duration"></span></p> 
  <div itemscope itemtype="http://schema.org/VideoObject">       
-<meta itemprop="embedUrl" content="https://www.youtube.com/embed/s4QV6OZdmWY"><meta itemprop="name" content="Marvel &#8211; The Punisher">
-<meta itemprop="thumbnailUrl" conTent="https://image.tmdb.org/t/p/original/j5aOOtsJinQtyRaqiB12TTRHdeX.jpg"><meta itemprop="uploadDate" content="">
+<meta itemprop="name" content="Here Today">
+<meta itemprop="description" conTent=""><meta itemprop="thumbnailUrl" conTent="https://image.tmdb.org/t/p/w780/a8Bbbpqi6sd58Nr4BzbMQa8VFPp.jpg"><meta itemprop="uploadDate" content="2021-05-29T16:40:48-04:00">
 </div>
 <!-- Micro data -->
-<meta itemprop="url" content="https://www3.homecine.to/series/marvel-the-punisher" />
+<meta itemprop="url" content="https://www3.homecine.to/here-today" />
 <meta itemprop="datePublished" content=""/>
-
-<!-- Micro data -->				
-
-<div class="imdb_r" itemtype="http://schema.org/AggregateRating" itemscope="" itemprop="aggregateRating">
- 
-<p><strong>TMDb:</strong> <span itemprop="ratingValue" class="imdb-r">8.11</span></p>
-<p><strong>Networks: </strong><a href="https://www3.homecine.to/networks/netflix" rel="tag">Netflix</a></p></div>
+ <meta itemprop="genre" content="Comedia"> <meta itemprop="genre" content="Drama"><!-- Micro data -->				
+<div class="imdb_r" >
+</div>
+</div>
+<div class="clearfix"></div>
+<!--<p ><strong>Complete Cast: </strong><span class="complete-casts"><a class="read-more-show">Show More</a></span></p>-->
 </div>
 <div class="clearfix"></div>
 </div>
 <div class="clearfix"></div>
 </div>
-<div class="clearfix"></div>
+  <!-- keywords --> 
 </div>
-  
-
-
-</div>
-
+	
 <!-- keywords -->
-<!-- /keywords -->
-
+<!-- /keywords -->   
+	
 <!-- movie images -->
 <div class="mvi-images">
 <div id="backdrops" class="galeria">
-  <div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/bWuXk1MtLAeYJrR3UdqnJhMwhXP.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/j5aOOtsJinQtyRaqiB12TTRHdeX.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/2yfmJudf695JBUJRW7QJjVN1rg5.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/sRr5NdPic882T24dNwkiw2VMst6.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/jair88gtlTT2LKBiIqBo0Qqtdd4.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/dJet4rR4UKcOnTGQa1c9PnLJ3bJ.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/e73PYdpffKRwvk5JOC8boYmwcHC.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/AhwZjgM8QdrFWp2bxbJdYU8wzVu.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/9czVEnJemvP6gcJlMEjUeuISL1c.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/q9L1VXNMcSnfAUTTzGQR5pDUewK.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/AeSIUkkmuVA43fpXXqpNUpQgkG9.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/xGyw1qGBB2p9tQQ0fMA3VTMKa1G.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/3Dm6C7BQwzkwb1o5JKKkZzgWjz5.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/vMcoMrYLN24o85inBdHyhbjPLDx.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/uFrM0Y3lokEdT09yWVYm0o9J3s3.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/lmFdsyJ2Fs3Hvj5Yq9srPXDBIx7.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/dMV00u2MH70TS2JPJpwPCuYfJsO.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/v1Tfgk0RMCeMmyluA287TtA1ZHz.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/tTNkAbbqpB3MN9e6kzvYhqtuttd.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/3i3hCUzRR7hUSoSEK9LJAQpYyJa.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/lcl9XS0LI88ZkQxid1zvrNPyfqY.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/jaUfDoaK00qATo1kB0ENSF2toJo.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/yXsFgB5BxacddBH86AJ7EPvBSyU.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/vNY0wgCbzXBtaN2EOPL3jkl8xYq.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/9yvvDEkIv7jyAqcej2yXpyRzUql.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/xo7sFYjcH7vUu2txcTtUouRtoug.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/4ovzHULGd6tZhHjGuffblsrtDny.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/l82MMfgNBeLPkrT1tePJtX2gI6K.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/Aq1w6UErRe8P4AQCcxbQJG0A3Vr.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/xlvxyjvYujousoR6gbd9IKGPCmo.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/BpC1roaUxzHUgz0iuIgqgwrVvr.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/qr4BSP6GdRJUjJ5ibETf4i7GXPp.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/ykxJv7znCPNNFX93LXMPOdB8sFX.jpg" alt="Marvel &#8211; The Punisher" /></div>
-<div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/jBGjbSDRxOEudW9rmQbWDzJUKq9.jpg" alt="Marvel &#8211; The Punisher" /></div>
+  <div class="galeria_img"><img itemprop="image" src="https://image.tmdb.org/t/p/w300/a8Bbbpqi6sd58Nr4BzbMQa8VFPp.jpg" alt="Here Today" /></div>
 <div class="clearfix"></div>
 </div>
 <div class="clearfix"></div>
@@ -423,16 +312,300 @@ Episode 13 </a>
 <!-- / movie images -->
 
 
- 			
+<div class="test_container">
+<ul class="nav nav-tabs" id="rowTab">
+    <li><a data-toggle="tab" href="#list-dl">Download</a></li>
+			  </ul>
+
+ <div id="list-dl" class="tab-pane">
+<div id="lnk list-downloads">       	           
+<div class="btn-group btn-group-justified embed-selector" style="margin-bottom:1px;">
+ <span style="" class="lnk lnk-title">Server</span>
+<span class="lnk lnk-title">Language</span>
+<span class="lnk lnk-title">Quality</span>
+<span class="lnk lnk-title" role="" target="_blank">Links</span>
+</div>
+<div class="btn-group btn-group-justified embed-selector" >
+<a href="https://pastea.me/?v=lFU" class="lnk-lnk lnk-1" target="_blank">
+<span style="" class="lnk lnk-dl"><img style="" src="https://www.google.com/s2/favicons?domain=Mega / 1Fichier / Uptobox" alt="Mega / 1Fichier / Uptobox"> <span class="serv_tit">Mega / 1Fichier / Uptobox</span></span>
+<span class="lnk lnk-dl" ><img src="https://www3.homecine.to/wp-content/themes/custom/assets/css/img/blank.png" class="flag flag-Lat / Cast / Sub"> <span class="lang_tit">Lat / Cast / Sub</span></span>
+<span class="lnk lnk-dl" >HD 1080p</span>
+<span class="lnk lnk-dl" id="lnk-dl-button" target="_blank"><i class="fa fa-download" aria-hidden="true"></i> <span class="dl_tit">Download</span></span>
+</a>	
+</div>
+
+</div>
+</div>
 
 
+
+  
+  
+ 
+ 
+ <script>
+$(document).ready(function(){
+	$('#rowTab a:first').tab('show');
+});
+</script>
+ </div>
+
+
+	
+<!--related-->
+<div class="movies-list-wrap mlw-related">
+<div class="ml-title ml-title-page">
+<span>Películas Relacionadas</span>
+</div>
+<div class="movies-list movies-list-full">	
+<div data-movie-id="13847" class="ml-item">
+<a href="https://www3.homecine.to/supercon" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Supercon" title="">
+ 
+<span class="mli-quality">HD 720p</span>
+
+
+<img data-original="https://image.tmdb.org/t/p/w185/xK2JTaoKmabEjDccv0yYIkgP5Qu.jpg"class="lazy thumb mli-thumb" alt="Supercon">
+<span class="mli-info"><h2>Supercon</h2></span>
+</a>
+			
+<div id="hidden_tip">
+<div id="" class="qtip-title">Supercon</div>
+<div class="jtip-quality">HD 720p</div>
+
+
+<div class="jtip-top">
+<div class="jt-info jt-imdb"> IMDb: 3.7</div>
+   
+   
+<div class="jt-info"><a href="https://www3.homecine.to/release-year/2017" rel="tag">2017</a><a href="https://www3.homecine.to/release-year/2018" rel="tag">2018</a></div>
+
+
+<div class="jt-info">100 min</div>
+<div class="clearfix"></div>
+</div>
+
+ <p class="f-desc"><p>Un grupo de estrellas de la televisión y artistas del cómic, que se ganan la vida trabajando en convenciones, deciden robar el botín de un promotor corrupto y un ex&#8230;</p>
+</p>
+
+ <div class="block">Country:&nbsp;<a href="https://www3.homecine.to/country/united-states" rel="tag">United States</a>,&nbsp;<a href="https://www3.homecine.to/country/usa" rel="tag">USA</a></div>
+
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/peliculas-de-comedia" rel="category tag">Comedia</a> </div>
+
+<div class="jtip-bottom">
+<a href="https://www3.homecine.to/supercon" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Movie</a>
+
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-13847" data-nonce="824de0873f" data-post-id="13847" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+
+</div>
+</div><div data-movie-id="24994" class="ml-item">
+<a href="https://www3.homecine.to/infiltrados-en-la-universidad" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Infiltrados en la universidad" title="">
+ 
+<span class="mli-quality">HD 1080p</span>
+
+
+<img data-original="https://www3.homecine.to/wp-content/uploads/2018/10/kwrVeBwMNqZsLw82fo0iuUzPQPz.jpg"class="lazy thumb mli-thumb" alt="Infiltrados en la universidad">
+<span class="mli-info"><h2>Infiltrados en la universidad</h2></span>
+</a>
+			
+<div id="hidden_tip">
+<div id="" class="qtip-title">Infiltrados en la universidad</div>
+<div class="jtip-quality">HD 1080p</div>
+
+
+<div class="jtip-top">
+<div class="jt-info jt-imdb"> IMDb: 7.0</div>
+   
+   
+<div class="jt-info"><a href="https://www3.homecine.to/release-year/2014" rel="tag">2014</a></div>
+
+
+<div class="jt-info">112 min</div>
+<div class="clearfix"></div>
+</div>
+
+ <p class="f-desc"><p>22 Jump Street &#8211; Infiltrados en clase 2 La pareja de policías formada por Schmidt y Jenko vuelve a la carga después del éxito de la operación contra la red&#8230;</p>
+</p>
+
+ <div class="block">Country:&nbsp;<a href="https://www3.homecine.to/country/usa" rel="tag">USA</a></div>
+
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/accion" rel="category tag">Acción</a>, <a href="https://www3.homecine.to/genre/peliculas-de-comedia" rel="category tag">Comedia</a>, <a href="https://www3.homecine.to/genre/crimen" rel="category tag">Crimen</a> </div>
+
+<div class="jtip-bottom">
+<a href="https://www3.homecine.to/infiltrados-en-la-universidad" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Movie</a>
+
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-24994" data-nonce="824de0873f" data-post-id="24994" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+
+</div>
+</div><div data-movie-id="29564" class="ml-item">
+<a href="https://www3.homecine.to/waterboys" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Waterboys" title="">
+ 
+<span class="mli-quality">HD 720p</span>
+
+
+<img data-original="https://www3.homecine.to/wp-content/uploads/2018/12/2AvJFdzgus05qZNLHDEw5ZcppyK.jpg"class="lazy thumb mli-thumb" alt="Waterboys">
+<span class="mli-info"><h2>Waterboys</h2></span>
+</a>
+			
+<div id="hidden_tip">
+<div id="" class="qtip-title">Waterboys</div>
+<div class="jtip-quality">HD 720p</div>
+
+
+<div class="jtip-top">
+<div class="jt-info jt-imdb"> IMDb: 7.1</div>
+   
+   
+<div class="jt-info"><a href="https://www3.homecine.to/release-year/2016" rel="tag">2016</a></div>
+
+
+<div class="jt-info">89 min</div>
+<div class="clearfix"></div>
+</div>
+
+ <p class="f-desc"><p>Esta película cuenta la historia de un novelista llamado Victor que tiene un hijo de 20 años que toca el violonccelo. Ambos personajes se encuentran solteros, pero deciden emprender un&#8230;</p>
+</p>
+
+ <div class="block">Country:&nbsp;<a href="https://www3.homecine.to/country/netherlands" rel="tag">Netherlands</a>,&nbsp;<a href="https://www3.homecine.to/country/uk" rel="tag">UK</a></div>
+
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/peliculas-de-comedia" rel="category tag">Comedia</a>, <a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a>, <a href="https://www3.homecine.to/genre/musica" rel="category tag">Música</a> </div>
+
+<div class="jtip-bottom">
+<a href="https://www3.homecine.to/waterboys" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Movie</a>
+
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-29564" data-nonce="824de0873f" data-post-id="29564" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+
+</div>
+</div><div data-movie-id="184993" class="ml-item">
+<a href="https://www3.homecine.to/cana-al-extraterrestre" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="¡Caña al extraterrestre!" title="">
+ 
+<span class="mli-quality">1080p | Cast</span>
+
+
+<img data-original="https://image.tmdb.org/t/p/w185/6up0kNHwEcbcyT56YYIEOlKejRS.jpg"class="lazy thumb mli-thumb" alt="¡Caña al extraterrestre!">
+<span class="mli-info"><h2>¡Caña al extraterrestre!</h2></span>
+</a>
+			
+<div id="hidden_tip">
+<div id="" class="qtip-title">¡Caña al extraterrestre!</div>
+<div class="jtip-quality">1080p | Cast</div>
+
+
+<div class="jtip-top">
+<div class="jt-info jt-imdb"> IMDb: N/A</div>
+   
+   
+<div class="jt-info">N/A</div>
+
+
+<div class="jt-info">N/A</div>
+<div class="clearfix"></div>
+</div>
+
+ <p class="f-desc"><p>Blasted &#8211; Gutta vs. Aliens When a former childhood friend crashes Sebastian&#8217;s bachelor party and makes it all about himself, only an alien invasion can make them put aside their&#8230;</p>
+</p>
+
+
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/ciencia-ficcion" rel="category tag">Ciencia ficción</a>, <a href="https://www3.homecine.to/genre/peliculas-de-comedia" rel="category tag">Comedia</a> </div>
+
+<div class="jtip-bottom">
+<a href="https://www3.homecine.to/cana-al-extraterrestre" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Movie</a>
+
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-184993" data-nonce="824de0873f" data-post-id="184993" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+
+</div>
+</div><div data-movie-id="196778" class="ml-item">
+<a href="https://www3.homecine.to/30-noches-con-mi-ex" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="30 noches con mi ex" title="">
+ 
+<span class="mli-quality">1080p</span>
+
+
+<img data-original="https://image.tmdb.org/t/p/w185/nXbhchOec3MKtAcKPO82Qu8r5AW.jpg"class="lazy thumb mli-thumb" alt="30 noches con mi ex">
+<span class="mli-info"><h2>30 noches con mi ex</h2></span>
+</a>
+			
+<div id="hidden_tip">
+<div id="" class="qtip-title">30 noches con mi ex</div>
+<div class="jtip-quality">1080p</div>
+
+
+<div class="jtip-top">
+<div class="jt-info jt-imdb"> IMDb: N/A</div>
+   
+   
+<div class="jt-info"><a href="https://www3.homecine.to/release-year/2022" rel="tag">2022</a></div>
+
+
+<div class="jt-info">N/A</div>
+<div class="clearfix"></div>
+</div>
+
+ <p class="f-desc"><p>30 Nights with My Ex A pedido de su hija, Turbo se ve obligado a abrir sus puertas a regañadientes durante 30 días a su exesposa emocionalmente frágil y excéntrica,&#8230;</p>
+</p>
+
+
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/peliculas-de-comedia" rel="category tag">Comedia</a>, <a href="https://www3.homecine.to/genre/romance" rel="category tag">Romance</a> </div>
+
+<div class="jtip-bottom">
+<a href="https://www3.homecine.to/30-noches-con-mi-ex" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Movie</a>
+
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-196778" data-nonce="824de0873f" data-post-id="196778" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+
+</div>
+</div><div data-movie-id="253647" class="ml-item">
+<a href="https://www3.homecine.to/arena-wars" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Arena Wars" title="">
+ 
+<span class="mli-quality">TS</span>
+
+
+<img data-original="https://image.tmdb.org/t/p/w185/4dRtXjk1rcsZlaMJpBn6Nh9cTfO.jpg"class="lazy thumb mli-thumb" alt="Arena Wars">
+<span class="mli-info"><h2>Arena Wars</h2></span>
+</a>
+			
+<div id="hidden_tip">
+<div id="" class="qtip-title">Arena Wars</div>
+<div class="jtip-quality">TS</div>
+
+
+<div class="jtip-top">
+<div class="jt-info jt-imdb"> IMDb: N/A</div>
+   
+   
+<div class="jt-info">N/A</div>
+
+
+<div class="jt-info">N/A</div>
+<div class="clearfix"></div>
+</div>
+
+ <p class="f-desc"><p>En 2045, los criminales convictos tendrán la oportunidad de competir en el evento deportivo televisado # 1 del mundo, Arena Wars. Deben sobrevivir a 7 habitaciones y a 7 de&#8230;</p>
+</p>
+
+
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/accion" rel="category tag">Acción</a>, <a href="https://www3.homecine.to/genre/ciencia-ficcion" rel="category tag">Ciencia ficción</a>, <a href="https://www3.homecine.to/genre/peliculas-de-comedia" rel="category tag">Comedia</a>, <a href="https://www3.homecine.to/genre/suspense" rel="category tag">Suspense</a>, <a href="https://www3.homecine.to/genre/terror" rel="category tag">Terror</a> </div>
+
+<div class="jtip-bottom">
+<a href="https://www3.homecine.to/arena-wars" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Movie</a>
+
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-253647" data-nonce="824de0873f" data-post-id="253647" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+
+</div>
+</div> </div>
+</div>
+<!--/related-->
+	
 <div id="commentfb">
 <div class="comentarios">
  
 <h3 class="title">Comments </h3>	<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Deja una respuesta <small><a rel="nofollow" id="cancel-comment-reply-link" href="/series/marvel-the-punisher#respond" style="display:none;">Cancelar la respuesta</a></small></h3><form action="https://www3.homecine.to/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Tu dirección de correo electrónico no será publicada.</span> <span class="required-field-message">Los campos obligatorios están marcados con <span class="required">*</span></span></p><p class="comment-form-comment"><label for="comment">Comentario <span class="required">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Nombre <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required" /></p>
+		<h3 id="reply-title" class="comment-reply-title">Deja una respuesta <small><a rel="nofollow" id="cancel-comment-reply-link" href="/here-today#respond" style="display:none;">Cancelar la respuesta</a></small></h3><form action="https://www3.homecine.to/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Tu dirección de correo electrónico no será publicada.</span> <span class="required-field-message">Los campos obligatorios están marcados con <span class="required">*</span></span></p><p class="comment-form-comment"><label for="comment">Comentario <span class="required">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Nombre <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required" /></p>
 <p class="comment-form-email"><label for="email">Correo electrónico <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required="required" /></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Publicar el comentario" /> <input type='hidden' name='comment_post_ID' value='32032' id='comment_post_ID' />
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Publicar el comentario" /> <input type='hidden' name='comment_post_ID' value='140030' id='comment_post_ID' />
 <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
 </p></form>	</div><!-- #respond -->
 	<section id="comments" class="themeform">
@@ -441,283 +614,18 @@ Episode 13 </a>
 
 </div>
 
-<!--related-->
-<div class="movies-list-wrap mlw-related">
-<div class="ml-title ml-title-page">
-<span>Series Relacionadas</span>
-</div>
-<div class="movies-list movies-list-full">
-<div data-movie-id="264176" class="ml-item">
-<a href="https://www3.homecine.to/series/monster-high" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Monster High" title="">
- 
-<span class="mli-quality">720p</span>
 
-
-<img data-original="https://image.tmdb.org/t/p/w185/t6M7K3YnUcbEeYHNIGeTjWo3LWz.jpg"class="lazy thumb mli-thumb" alt="Monster High">
-<span class="mli-info"><h2>Monster High</h2></span>
-</a>
-			
-<div id="hidden_tip">
-<div id="" class="qtip-title">Monster High</div>
-<div class="jtip-quality">720p</div>
-
-
-<div class="jtip-top">
-<div class="jt-info jt-imdb">TMDb: 7.6</div>
-   
-   
-<div class="jt-info"><a href="https://www3.homecine.to/release-year/2022" rel="tag">2022</a></div>
-
-
-<div class="jt-info">23 min</div>
-<div class="clearfix"></div>
-</div>
-
- <p class="f-desc"><p>Nueva serie que sigue a los hijos adolescentes de monstruos famosos como Clawdeen Wolf, Draculaura, Frankie Stein y Deuce Gorgon mientras descubren quiénes son, aceptan sus diferencias y aprenden a&#8230;</p>
-</p>
-
-<div class="block">Status: Ended</div>
-
-    <div class="block">Genre: <a href="https://www3.homecine.to/genre/animacion" rel="category tag">Animación</a>, <a href="https://www3.homecine.to/genre/peliculas-de-comedia" rel="category tag">Comedia</a>, <a href="https://www3.homecine.to/genre/familia" rel="category tag">Familia</a>, <a href="https://www3.homecine.to/genre/kids" rel="category tag">Kids</a> </div>
-
-<div class="jtip-bottom">
-<a href="https://www3.homecine.to/series/monster-high" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
-Watch Series</a>
-
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-264176" data-nonce="824de0873f" data-post-id="264176" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
-
-</div>
-</div><div data-movie-id="63373" class="ml-item">
-<a href="https://www3.homecine.to/series/wu-tang-an-american-saga" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Wu-Tang: An American Saga" title="">
- 
-<span class="mli-quality">HD 1080p</span>
-
-
-<img data-original="https://image.tmdb.org/t/p/w185/kbZFfquhFg2EOUnKbZedWCs1kWO.jpg"class="lazy thumb mli-thumb" alt="Wu-Tang: An American Saga">
-<span class="mli-info"><h2>Wu-Tang: An American Saga</h2></span>
-</a>
-			
-<div id="hidden_tip">
-<div id="" class="qtip-title">Wu-Tang: An American Saga</div>
-<div class="jtip-quality">HD 1080p</div>
-
-
-<div class="jtip-top">
-<div class="jt-info jt-imdb">TMDb: 8.4</div>
-   
-   
-<div class="jt-info"><a href="https://www3.homecine.to/release-year/2019" rel="tag">2019</a></div>
-
-
-<div class="jt-info">60 min</div>
-<div class="clearfix"></div>
-</div>
-
- <p class="f-desc"><p>A principios de la década de 1990 en Nueva York, durante el apogeo de la epidemia de crack, un músico visionario llamado Bobby Diggs, también conocido como The RZA, comienza&#8230;</p>
-</p>
-
-<div class="block">Status: Returning Series</div>
-
-    <div class="block">Genre: <a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a> </div>
-
-<div class="jtip-bottom">
-<a href="https://www3.homecine.to/series/wu-tang-an-american-saga" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
-Watch Series</a>
-
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-63373" data-nonce="824de0873f" data-post-id="63373" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
-
-</div>
-</div><div data-movie-id="268788" class="ml-item">
-<a href="https://www3.homecine.to/series/las-munecas-de-la-mafia-2" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Las Muñecas de la Mafia 2" title="">
- 
-<span class="mli-quality">720p</span>
-
-
-<img data-original="https://image.tmdb.org/t/p/w185/dGLXlNO72CNY2GRPHiWT50pj09D.jpg"class="lazy thumb mli-thumb" alt="Las Muñecas de la Mafia 2">
-<span class="mli-info"><h2>Las Muñecas de la Mafia 2</h2></span>
-</a>
-			
-<div id="hidden_tip">
-<div id="" class="qtip-title">Las Muñecas de la Mafia 2</div>
-<div class="jtip-quality">720p</div>
-
-
-<div class="jtip-top">
-<div class="jt-info jt-imdb">TMDb: 6</div>
-   
-   
-<div class="jt-info"><a href="https://www3.homecine.to/release-year/2018" rel="tag">2018</a></div>
-
-
-<div class="jt-info">N/A</div>
-<div class="clearfix"></div>
-</div>
-
- <p class="f-desc"><p>Presenta la vida de cinco mujeres jóvenes en Colombia y cada una de sus relaciones con los narcotraficantes y el tráfico de drogas. Presenta la vida de cinco mujeres jóvenes&#8230;</p>
-</p>
-
-<div class="block">Status: Ended</div>
-
-    <div class="block">Genre: <a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a> </div>
-
-<div class="jtip-bottom">
-<a href="https://www3.homecine.to/series/las-munecas-de-la-mafia-2" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
-Watch Series</a>
-
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-268788" data-nonce="824de0873f" data-post-id="268788" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
-
-</div>
-</div><div data-movie-id="111400" class="ml-item">
-<a href="https://www3.homecine.to/series/a-teacher" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="A Teacher" title="">
- 
-<span class="mli-quality">HD 1080p</span>
-
-
-<img data-original="https://image.tmdb.org/t/p/w185/8ASlc9OKkca4yaaDvZfB6Gkzl6y.jpg"class="lazy thumb mli-thumb" alt="A Teacher">
-<span class="mli-info"><h2>A Teacher</h2></span>
-</a>
-			
-<div id="hidden_tip">
-<div id="" class="qtip-title">A Teacher</div>
-<div class="jtip-quality">HD 1080p</div>
-
-
-<div class="jtip-top">
-<div class="jt-info jt-imdb">TMDb: 8.8</div>
-   
-   
-<div class="jt-info"><a href="https://www3.homecine.to/release-year/2020" rel="tag">2020</a></div>
-
-
-<div class="jt-info">30 min</div>
-<div class="clearfix"></div>
-</div>
-
- <p class="f-desc"><p>Claire Wilson, una joven maestra en una escuela secundaria suburbana de Texas, comienza una aventura con su alumno, Eric Walker. Pero su relación se acelera más rápido de lo previsto&#8230;</p>
-</p>
-
-<div class="block">Status: Returning Series</div>
-
-    <div class="block">Genre: <a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a> </div>
-
-<div class="jtip-bottom">
-<a href="https://www3.homecine.to/series/a-teacher" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
-Watch Series</a>
-
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-111400" data-nonce="824de0873f" data-post-id="111400" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
-
-</div>
-</div><div data-movie-id="70760" class="ml-item">
-<a href="https://www3.homecine.to/series/la-vida-secreta-de-las-parejas" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="La vida secreta de las parejas" title="">
- 
-<span class="mli-quality">HD 1080p</span>
-
-
-<img data-original="https://image.tmdb.org/t/p/w185/u86P5gS312p6bCa74AsM1ZQMJIs.jpg"class="lazy thumb mli-thumb" alt="La vida secreta de las parejas">
-<span class="mli-info"><h2>La vida secreta de las parejas</h2></span>
-</a>
-			
-<div id="hidden_tip">
-<div id="" class="qtip-title">La vida secreta de las parejas</div>
-<div class="jtip-quality">HD 1080p</div>
-
-
-<div class="jtip-top">
-<div class="jt-info jt-imdb">TMDb: 8</div>
-   
-   
-<div class="jt-info"><a href="https://www3.homecine.to/release-year/2017" rel="tag">2017</a></div>
-
-
-<div class="jt-info">55 min</div>
-<div class="clearfix"></div>
-</div>
-
- <p class="f-desc"><p>La ficción brasileña narra la vida de Sofía Prado, una sexóloga y terapeuta directora de un centro de terapia para parejas. La mujer esconde diversos traumas que le acompañan día&#8230;</p>
-</p>
-
-<div class="block">Status: Returning Series</div>
-
-    <div class="block">Genre: <a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a> </div>
-
-<div class="jtip-bottom">
-<a href="https://www3.homecine.to/series/la-vida-secreta-de-las-parejas" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
-Watch Series</a>
-
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-70760" data-nonce="824de0873f" data-post-id="70760" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
-
-</div>
-</div><div data-movie-id="70545" class="ml-item">
-<a href="https://www3.homecine.to/series/amor-ocasional" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Amor ocasional" title="">
- 
-<span class="mli-quality">HD 1080p</span>
-
-
-<img data-original="https://www3.homecine.to/wp-content/uploads/2019/10/lR9tzXmThW9Q6gnYaXoM0gMZ52N.jpg"class="lazy thumb mli-thumb" alt="Amor ocasional">
-<span class="mli-info"><h2>Amor ocasional</h2></span>
-</a>
-			
-<div id="hidden_tip">
-<div id="" class="qtip-title">Amor ocasional</div>
-<div class="jtip-quality">HD 1080p</div>
-
-
-<div class="jtip-top">
-<div class="jt-info jt-imdb">TMDb: 8.1</div>
-   
-   
-<div class="jt-info"><a href="https://www3.homecine.to/release-year/2018" rel="tag">2018</a></div>
-
-
-<div class="jt-info">30 min</div>
-<div class="clearfix"></div>
-</div>
-
- <p class="f-desc"><p>The Hook Up Plan | Plan Cœur | Plan Corazón Narra las peripecias sentimentales de un grupo de amigas de París. Charlotte y Emilie contratan a un acompañante masculino con&#8230;</p>
-</p>
-
-<div class="block">Status: Ended</div>
-
-    <div class="block">Genre: <a href="https://www3.homecine.to/genre/peliculas-de-comedia" rel="category tag">Comedia</a> </div>
-
-<div class="jtip-bottom">
-<a href="https://www3.homecine.to/series/amor-ocasional" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
-Watch Series</a>
-
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-70545" data-nonce="824de0873f" data-post-id="70545" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
-
-</div>
-</div> </div>
-</div>
-<!--/related-->
 
 
  			
 </div>
-</div>
 
+</div>
+</div>
 <div id="overlay"></div>
 
 <!-- Modal -->
-<div class="modal fade modal-cuz modal-trailer" id="pop-trailer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-<div class="modal-content">
-<div class="modal-header">
-<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-close"></i>
-</button>
-<h4 class="modal-title" id="myModalLabel">Trailer: Marvel &#8211; The Punisher</h4>
-</div>
-<div class="modal-body">
-<div class="modal-body-trailer">
-<iframe id="iframe-trailer" width="600" height="450" src="//www.youtube.com/embed/s4QV6OZdmWY" frameborder="0" allowfullscreen></iframe><div itemscope itemtype="http://schema.org/VideoObject">       
-<meta itemprop="embedUrl" content="https://www.youtube.com/embed/s4QV6OZdmWY"><meta itemprop="name" content="Marvel &#8211; The Punisher">
-<meta itemprop="description" conTent="Marvel &#8211; The Punisher Trailer">
-<meta itemprop="thumbnailUrl" conTent="https://image.tmdb.org/t/p/original/j5aOOtsJinQtyRaqiB12TTRHdeX.jpg"><meta itemprop="uploadDate" conTent="2017-11-17"></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="modal fade modal-report" id="pop-report" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade modal-report" id="pop-report" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -729,25 +637,44 @@ Watch Series</a>
 			
 <div class="reportform">
 <p>Please help us to describe the issue so we can fix it asap.</p>
-<form method="post" action="https://www3.homecine.to/series/marvel-the-punisher?report=WD96WU6584#uwee"> 
+<form method="post" action="https://www3.homecine.to/here-today?report=LR07ME1CVV#uwee"> 
 <div class="aff">
 
 <div class="rep_cont">
-<label>Episodes</label>
+<label>Video</label>
 <select name="videos" style="margin-bottom: 5px;">
-<option value="n/a" disabled selected>-----</option>
-<option value="Incorrect episode">Incorrect episode</option>
-<option value="Broken link">Broken link</option>
+<option value="n/a" selected>-----</option>
+<option value="Wrong video">Wrong video</option>
+<option value="Broken video">Broken video</option>
 <option value="Others">Others</option>
 </select>
 </div>
 <div class="rep_cont">
-<label>Contents</label>
+<label>Audio</label>
 <select name="audio" style="margin-bottom: 5px;">
 <option value="n/a" disabled selected>-----</option>
-<option value="Incorrect details">Incorrect details</option>
-<option value="Wrong images">Wrong images</option>
+<option value="Not Synced">Not Synced</option>
+<option value="There's no Audio">There's no Audio</option>
 <option value="Others">Others</option>
+</select>
+</div>
+<div class="rep_cont">
+<label>Subtitle</label>
+<select name="subtitle" style="margin-bottom: 5px;">
+<option value="n/a" disabled selected>-----</option>
+<option value="Not Synced">Not Synced</option>
+<option value="Wrong subtitle">Wrong subtitle</option>
+<option value="Missing subtitle">Missing subtitle</option>
+</select>
+</div>
+<div class="rep_cont">
+<label>Downloads</label>
+<select name="dloads" style="margin-bottom: 5px;">
+<option value="n/a" disabled selected>-----</option>
+<option value="Wrong links">Wrong links</option>
+<option value="Broken links">Broken links</option>
+<option value="Missing download">Missing download</option>
+<option value="Add new mirror links">Add new mirror links</option>
 </select>
 </div>
 <div class="rep_cont2">
@@ -758,9 +685,9 @@ Watch Series</a>
 </div>
    <div class="clearfix"></div>
 </div>
-<input type="hidden" name="titulo" value="Marvel &#8211; The Punisher">
-<input type="hidden" name="enlace" value="https://www3.homecine.to/series/marvel-the-punisher">
-<input type="hidden" name="id" value="32032">
+<input type="hidden" name="titulo" value="Here Today">
+<input type="hidden" name="enlace" value="https://www3.homecine.to/here-today">
+<input type="hidden" name="id" value="140030">
 <input type="hidden" name="ip" value="2a09:bac5:27b9:2482::3a3:23">
 <input type="hidden" name="link" value="https://www3.homecine.to">
 <input type="hidden" name="action" value="send" />
@@ -847,7 +774,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 <script type="speculationrules">
 {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/custom\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
 </script>
-<script type='text/javascript'>jQuery(document).ready(function() {(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-84269634-19','auto');ga('send','pageview');$('img.lazy').lazyload({effect:'fadeIn'});function a(){$(this).find(".sub-container").css("display","block")}function b(){$(this).find(".sub-container").css("display","none")}$("#search a.box-title").click(function(){$("#search .box").toggleClass("active")}),$(".mobile-menu").click(function(){$("#menu,.mobile-menu").toggleClass("active"),$("#search, .mobile-search").removeClass("active")}),$(".mobile-search").click(function(){$("#search,.mobile-search").toggleClass("active"),$("#menu, .mobile-menu").removeClass("active")}),$(".filter-toggle").click(function(){$("#filter").toggleClass("active"),$(".filter-toggle").toggleClass("active")}),$(".bp-btn-light").click(function(){$(".bp-btn-light, #overlay, #media-player, #content-embed, #comment-area").toggleClass("active")}),$("#overlay").click(function(){$(".bp-btn-light, #overlay, #media-player, #content-embed, #comment-area").removeClass("active")}),$(".bp-btn-auto").click(function(){$(".bp-btn-auto").toggleClass("active")}),$("#toggle, .cac-close").click(function(){$("#comment").toggleClass("active")}),$(".top-menu> li").bind("mouseover",a),$(".top-menu> li").bind("mouseout",b);var c=0;$(window).on("scroll",function(){$(window).scrollTop()<c?"fixed"!=$("header").css("position")&&($("header").css({position:"fixed",top:-$("header").outerHeight(),backgroundColor:"#fff"}),$("header").animate({top:"0px"},500),$("#main").css("padding-top",$("header").outerHeight())):($("header").css({position:"relative",top:"0px"}),$("#main").css("padding-top","0px")),c=$(window).scrollTop()});$('.averagerate').each(function(t){len=$(this).text().length,len>3&&$(this).text($(this).text().substr(0,3))});$('#backdrops').owlCarousel({items:4, lazyLoad:!0, autoPlay:!0, pagination:!1, navigation:!0, navigationText:['',''], itemsDesktop:[800,3], itemsDesktopSmall:[600,2], itemsTablet:[500,2], itemsMobile:[400,2], autoHeight:!0}); $('.mvi-images').addClass('show');$(function() { $('a.pop-trailer').on('click', function(e) { $('#iframe-trailer').attr('src', '//www.youtube.com/embed/s4QV6OZdmWY/');});var container = $('.modal-content');$(document).mouseup(function(e) {if (!container.is(e.target) && container.has(e.target).length === 0){ $('#iframe-trailer').attr('src', '');}});});});</script><div class="modal fade modal-cuz" id="pt-user-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<script type='text/javascript'>jQuery(document).ready(function() {(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-84269634-19','auto');ga('send','pageview');$('img.lazy').lazyload({effect:'fadeIn'});function a(){$(this).find(".sub-container").css("display","block")}function b(){$(this).find(".sub-container").css("display","none")}$("#search a.box-title").click(function(){$("#search .box").toggleClass("active")}),$(".mobile-menu").click(function(){$("#menu,.mobile-menu").toggleClass("active"),$("#search, .mobile-search").removeClass("active")}),$(".mobile-search").click(function(){$("#search,.mobile-search").toggleClass("active"),$("#menu, .mobile-menu").removeClass("active")}),$(".filter-toggle").click(function(){$("#filter").toggleClass("active"),$(".filter-toggle").toggleClass("active")}),$(".bp-btn-light").click(function(){$(".bp-btn-light, #overlay, #media-player, #content-embed, #comment-area").toggleClass("active")}),$("#overlay").click(function(){$(".bp-btn-light, #overlay, #media-player, #content-embed, #comment-area").removeClass("active")}),$(".bp-btn-auto").click(function(){$(".bp-btn-auto").toggleClass("active")}),$("#toggle, .cac-close").click(function(){$("#comment").toggleClass("active")}),$(".top-menu> li").bind("mouseover",a),$(".top-menu> li").bind("mouseout",b);var c=0;$(window).on("scroll",function(){$(window).scrollTop()<c?"fixed"!=$("header").css("position")&&($("header").css({position:"fixed",top:-$("header").outerHeight(),backgroundColor:"#fff"}),$("header").animate({top:"0px"},500),$("#main").css("padding-top",$("header").outerHeight())):($("header").css({position:"relative",top:"0px"}),$("#main").css("padding-top","0px")),c=$(window).scrollTop()});$('.averagerate').each(function(t){len=$(this).text().length,len>3&&$(this).text($(this).text().substr(0,3))});$('#backdrops').owlCarousel({items:4, lazyLoad:!0, autoPlay:!0, pagination:!1, navigation:!0, navigationText:['',''], itemsDesktop:[800,3], itemsDesktopSmall:[600,2], itemsTablet:[500,2], itemsMobile:[400,2], autoHeight:!0}); $('.mvi-images').addClass('show');});</script><div class="modal fade modal-cuz" id="pt-user-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" data-active-tab="">
         <div class="modal-content">
 					<div class="modal-body">
@@ -878,7 +805,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 											
 										</div>
 										<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Register</button>
-										<input type="hidden" id="register-security" name="register-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/series/marvel-the-punisher" />									</form>
+										<input type="hidden" id="register-security" name="register-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/here-today" />									</form>
 									<div class="pt-errors"></div>
 								</div>
 
@@ -907,7 +834,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 											<a id="open-forgot" class="alignright" href="#pt-reset-password" style="font-size: 85%;">Forgot Password?</a>
 										</div>
 										<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Login</button> 
-										<input type="hidden" id="login-security" name="login-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/series/marvel-the-punisher" />									</form>
+										<input type="hidden" id="login-security" name="login-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/here-today" />									</form>
 									<div class="pt-errors"></div>
 								</div>
 
@@ -928,7 +855,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 											<input type="hidden" name="action" value="pt_reset_password"/>
 											<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Submit</button>
 										</div>
-										<input type="hidden" id="password-security" name="password-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/series/marvel-the-punisher" />									</form>
+										<input type="hidden" id="password-security" name="password-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/here-today" />									</form>
 									<div class="pt-errors"></div>
 								</div>
 

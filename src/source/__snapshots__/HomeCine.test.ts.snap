@@ -55,6 +55,21 @@ exports[`HomeCine handle el camino 1`] = `
 ]
 `;
 
+exports[`HomeCine handle here today 1`] = `
+[
+  {
+    "meta": {
+      "countryCodes": [
+        "es",
+      ],
+      "referer": "https://www3.homecine.to/here-today",
+      "title": "Aquí y ahora (2021)",
+    },
+    "url": "https://fastream.to/embed-u99qvlpbjfd5.html",
+  },
+]
+`;
+
 exports[`HomeCine handle marvel - the punisher 1`] = `
 [
   {

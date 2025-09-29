@@ -119,7 +119,6 @@ img.litespeed-loaded{
 </li>
 <li id="menu-item-24290" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24290"><a href="https://www3.homecine.to/peliculas-nuevas">Peliculas</a></li>
 <li id="menu-item-24291" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24291"><a href="https://homecine.to/series">Series</a></li>
-<li id="menu-item-180013" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-180013"><a target="_blank" href="https://www3.homecine.to/desbloquear-videos-enlaces">✅ DESBLOQUEAR VIDEOS/ENLACES</a></li>
 </ul><div class="clearfix"></div>
 </div>
 <div id="top-user">
@@ -197,7 +196,7 @@ img.litespeed-loaded{
 <a href="https://www3.homecine.to/series/marvel-the-punisher" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
 Watch Series</a>
 
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-32032" data-nonce="d371f4226d" data-post-id="32032" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-32032" data-nonce="824de0873f" data-post-id="32032" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
 
 </div>
 </div>						
@@ -320,7 +319,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 											
 										</div>
 										<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Register</button>
-										<input type="hidden" id="register-security" name="register-security" value="b860f6596f" /><input type="hidden" name="_wp_http_referer" value="/?s=Marvel+-+The+Punisher" />									</form>
+										<input type="hidden" id="register-security" name="register-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/?s=Marvel+-+The+Punisher" />									</form>
 									<div class="pt-errors"></div>
 								</div>
 
@@ -349,7 +348,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 											<a id="open-forgot" class="alignright" href="#pt-reset-password" style="font-size: 85%;">Forgot Password?</a>
 										</div>
 										<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Login</button> 
-										<input type="hidden" id="login-security" name="login-security" value="b860f6596f" /><input type="hidden" name="_wp_http_referer" value="/?s=Marvel+-+The+Punisher" />									</form>
+										<input type="hidden" id="login-security" name="login-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/?s=Marvel+-+The+Punisher" />									</form>
 									<div class="pt-errors"></div>
 								</div>
 
@@ -370,7 +369,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 											<input type="hidden" name="action" value="pt_reset_password"/>
 											<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Submit</button>
 										</div>
-										<input type="hidden" id="password-security" name="password-security" value="b860f6596f" /><input type="hidden" name="_wp_http_referer" value="/?s=Marvel+-+The+Punisher" />									</form>
+										<input type="hidden" id="password-security" name="password-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/?s=Marvel+-+The+Punisher" />									</form>
 									<div class="pt-errors"></div>
 								</div>
 
@@ -392,7 +391,7 @@ searchwp_live_search_params = {"ajaxurl":"https:\/\/www3.homecine.to\/wp-admin\/
 /* ]]> */
 </script>
 <script type="text/javascript" src="https://www3.homecine.to/wp-content/themes/custom/includes/plugins/livesearch/assets/javascript/build/psythemes-live-search.min.js?ver=1.2.0" id="swp-live-search-client-js"></script>
-
+<!--
 <script>
 	var base ="https://unlock.uberxviral.com/";
 	var links = document.querySelectorAll('a[class~="lnk-1"]');
@@ -401,5 +400,6 @@ searchwp_live_search_params = {"ajaxurl":"https:\/\/www3.homecine.to\/wp-admin\/
 		links[i].setAttribute('href', base + "#" + btoa(btoa(btoa(link))));
 		}
 </script>
+-->
 </body>
 </html>

@@ -26,11 +26,14 @@ export class HomeCine extends Source {
   public async handleInternal(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
-    const [name, year] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId, 'es');
+    const [name, year, originalName] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId, 'es');
 
-    const pageUrl = await this.fetchPageUrl(ctx, name, year, tmdbId);
+    let pageUrl = await this.fetchPageUrl(ctx, name, year, tmdbId);
     if (!pageUrl) {
-      return [];
+      pageUrl = await this.fetchPageUrl(ctx, originalName, year, tmdbId);
+      if (!pageUrl) {
+        return [];
+      }
     }
 
     let pageHtml = await this.fetcher.text(ctx, pageUrl);
@@ -79,7 +82,6 @@ export class HomeCine extends Source {
     keywords.map((keyword) => {
       urls.push(
         ...$(`a[oldtitle="${keyword} (${year})"], a[oldtitle="${keyword}"]`)
-          .filter((_i, el) => $(el).siblings('#hidden_tip').find(`a[href$="release-year/${year}"]`).length !== 0)
           .map((_i, el) => new URL($(el).attr('href') as string))
           .toArray()
           .filter(url => tmdbId.season ? url.href.includes('/series/') : !url.href.includes('/series/')),

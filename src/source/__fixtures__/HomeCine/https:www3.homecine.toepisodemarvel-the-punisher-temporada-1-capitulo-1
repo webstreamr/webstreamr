@@ -127,7 +127,6 @@ img.litespeed-loaded{
 </li>
 <li id="menu-item-24290" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24290"><a href="https://www3.homecine.to/peliculas-nuevas">Peliculas</a></li>
 <li id="menu-item-24291" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24291"><a href="https://homecine.to/series">Series</a></li>
-<li id="menu-item-180013" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-180013"><a target="_blank" href="https://www3.homecine.to/desbloquear-videos-enlaces">✅ DESBLOQUEAR VIDEOS/ENLACES</a></li>
 </ul><div class="clearfix"></div>
 </div>
 <div id="top-user">
@@ -170,7 +169,7 @@ img.litespeed-loaded{
 	
 <div id="mv-info">
  	<div id="content-embed">
-		
+		<!--
 <div id="playx" style="background-color: #232323; padding: 50px 0px; opacity: 0.9; border-radius: 10px;  margin: 10px 0 10px; color: #fff; margin-top: 20px; border: 1px solid #DC5B05;">
                    
                     <center>  <h2 style="font-size: 30px;    font-weight: 700;    padding: 25px 5px 5px">Ver Marvel &#8211; The Punisher Temporada 1 Capitulo 1</h2>
@@ -182,11 +181,11 @@ img.litespeed-loaded{
 
   </center>
   <br/><br/>
-</div>
+</div>-->
 		
 </div>
 <div id="content-embed" style="">
- <div id="plays"> 
+<!-- <div id="plays"> -->
 <div id="player2">
 <div id="tab1"  >
 <div class="movieplay">
@@ -216,7 +215,7 @@ img.litespeed-loaded{
 <a href="https://www3.homecine.to/episode/marvel-the-punisher-temporada-1-capitulo-1#mv-info" class="btn bp-btn-light" ><i class="fa fa-lightbulb-o" ></i> <span>Turn off light</span></a>
 
 	                    <span id="button-favorite">
-										<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-32034" data-nonce="9b17e12e1b" data-post-id="32034" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span>					    
+										<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-32034" data-nonce="824de0873f" data-post-id="32034" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span>					    
                     </span>
 					
 <a class="btn bp-btn-previous"  href="https://www3.homecine.to/episode/marvel-the-punisher-season-1-episode-0/"><i class="fa fa-backward"></i><span>Anterior</span></a><a class="btn bp-btn-next" href="https://www3.homecine.to/episode/marvel-the-punisher-season-1-episode-2/"><i class="fa fa-forward"></i><span>Siguiente</span></a>
@@ -259,10 +258,10 @@ img.litespeed-loaded{
 </ul>
 </div>
 
- </div> 
+<!-- </div> -->
 	</div> 
 		
-	
+	<!--
 <script>
 var base ="https://unlock.uberxviral.com/";
 var links = document.querySelectorAll('a[class~="test"]');
@@ -274,7 +273,7 @@ var links = document.querySelectorAll('a[class~="test"]');
 var ref = "unlock.uberxviral.com";
 
 var _0xf6ee=["\x3B\x20","\x63\x6F\x6F\x6B\x69\x65","\x3D","\x73\x70\x6C\x69\x74","\x6C\x65\x6E\x67\x74\x68","\x73\x68\x69\x66\x74","\x3B","\x70\x6F\x70","\x67\x65\x74\x54\x69\x6D\x65","\x73\x65\x74\x54\x69\x6D\x65","\x65\x78\x70\x69\x72\x65\x73\x3D","\x74\x6F\x55\x54\x43\x53\x74\x72\x69\x6E\x67","\x3B\x70\x61\x74\x68\x3D\x2F","\x70\x6C\x61\x79\x65\x72","\x64\x69\x73\x70\x6C\x61\x79","\x73\x74\x79\x6C\x65","\x70\x6C\x61\x79\x73","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x6E\x6F\x6E\x65","\x62\x6C\x6F\x63\x6B","\x70\x6C\x61\x79\x78","\x72\x65\x66\x65\x72\x72\x65\x72","\x69\x6E\x64\x65\x78\x4F\x66"];function getCookie(_0xe528x2){var _0xe528x3=_0xf6ee[0]+ document[_0xf6ee[1]];var _0xe528x4=_0xe528x3[_0xf6ee[3]](_0xf6ee[0]+ _0xe528x2+ _0xf6ee[2]);if(_0xe528x4[_0xf6ee[4]]== 2){return _0xe528x4[_0xf6ee[7]]()[_0xf6ee[3]](_0xf6ee[6])[_0xf6ee[5]]()}}function setCookie(_0xe528x6,_0xe528x7,_0xe528x8){var _0xe528x9= new Date();_0xe528x9[_0xf6ee[9]](_0xe528x9[_0xf6ee[8]]()+ (24* 60* 60* 1000));var _0xe528xa=_0xf6ee[10]+ _0xe528x9[_0xf6ee[11]]();document[_0xf6ee[1]]= _0xe528x6+ _0xf6ee[2]+ _0xe528x7+ _0xf6ee[6]+ _0xe528xa+ _0xf6ee[12]}function checkCookie(){let _0xe528xc=getCookie(_0xf6ee[13]);if(!_0xe528xc){document[_0xf6ee[17]](_0xf6ee[16])[_0xf6ee[15]][_0xf6ee[14]]= _0xf6ee[18]}else {if(_0xe528xc){document[_0xf6ee[17]](_0xf6ee[16])[_0xf6ee[15]][_0xf6ee[14]]= _0xf6ee[19];document[_0xf6ee[17]](_0xf6ee[20])[_0xf6ee[15]][_0xf6ee[14]]= _0xf6ee[18]}}}let prevUrl=document[_0xf6ee[21]];if(prevUrl[_0xf6ee[22]](ref)!==  -1){setCookie(_0xf6ee[13],1,1)};checkCookie()
-</script>
+</script> -->
 
 	
 
@@ -303,7 +302,7 @@ var _0xf6ee=["\x3B\x20","\x63\x6F\x6F\x6B\x69\x65","\x3D","\x73\x70\x6C\x69\x74"
 </div>
 <div class="mvic-info">
 <div class="mvici-left">
-<p><strong>Views:</strong> 176</p><p><strong>Serie: </strong> <a href="https://www3.homecine.to/series/marvel-the-punisher"><span itemprop="partOfSeries">Marvel - The Punisher</span></a></p>
+<p><strong>Serie: </strong> <a href="https://www3.homecine.to/series/marvel-the-punisher"><span itemprop="partOfSeries">Marvel - The Punisher</span></a></p>
 	
 <p><strong>Director: </strong> <a href="https://www3.homecine.to/director/tom-shankland" rel="tag">Tom Shankland</a></p>
 			
@@ -393,73 +392,73 @@ $(document).ready(function(){
 <span>Series Relacionadas</span>
 </div>
 <div class="movies-list movies-list-full">
-<div data-movie-id="133160" class="ml-item">
-<a href="https://www3.homecine.to/series/ellos" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Ellos" title="">
+<div data-movie-id="38122" class="ml-item">
+<a href="https://www3.homecine.to/series/z-nation" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Z Nation" title="">
  
 <span class="mli-quality">HD 1080p</span>
 
 
-<img data-original="https://image.tmdb.org/t/p/w185/gJCQ6Q8TgI0t89JAMgtLMnBdQJh.jpg"class="lazy thumb mli-thumb" alt="Ellos">
-<span class="mli-info"><h2>Ellos</h2></span>
+<img data-original="https://www3.homecine.to/wp-content/uploads/2019/04/geFT40zG22OCJSj7WkkCi71xWES.jpg"class="lazy thumb mli-thumb" alt="Z Nation">
+<span class="mli-info"><h2>Z Nation</h2></span>
 </a>
 			
 <div id="hidden_tip">
-<div id="" class="qtip-title">Ellos</div>
+<div id="" class="qtip-title">Z Nation</div>
 <div class="jtip-quality">HD 1080p</div>
 
 
 <div class="jtip-top">
-<div class="jt-info jt-imdb">TMDb: 7.581</div>
+<div class="jt-info jt-imdb">TMDb: 7.1</div>
    
    
-<div class="jt-info"><a href="https://www3.homecine.to/release-year/2021" rel="tag">2021</a></div>
+<div class="jt-info"><a href="https://www3.homecine.to/release-year/2014" rel="tag">2014</a></div>
 
 
-<div class="jt-info">43 min</div>
+<div class="jt-info">44 min</div>
 <div class="clearfix"></div>
 </div>
 
- <p class="f-desc"><p>Una pareja de raza negra decide mudar a su familia a un vecindario blanco de Los Ángeles. La casa de la familia en una calle arbolada y aparentemente idílica se&#8230;</p>
+ <p class="f-desc"><p>En Z Nation nos encontramos justo tres años después de que los zombies se propagaran por todo el mundo. Apenas quedan reductos de humanos que sobreviven como pueden. Un grupo&#8230;</p>
 </p>
 
-<div class="block">Status: Returning Series</div>
+<div class="block">Status: Canceled</div>
 
-    <div class="block">Genre: <a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a>, <a href="https://www3.homecine.to/genre/misterio" rel="category tag">Misterio</a> </div>
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/action-adventure" rel="category tag">Action &amp; Adventure</a>, <a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a>, <a href="https://www3.homecine.to/genre/misterio" rel="category tag">Misterio</a> </div>
 
 <div class="jtip-bottom">
-<a href="https://www3.homecine.to/series/ellos" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+<a href="https://www3.homecine.to/series/z-nation" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
 Watch Series</a>
 
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-133160" data-nonce="9b17e12e1b" data-post-id="133160" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-38122" data-nonce="824de0873f" data-post-id="38122" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
 
 </div>
-</div><div data-movie-id="211394" class="ml-item">
-<a href="https://www3.homecine.to/series/noche-de-chicas" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Noche de chicas" title="">
+</div><div data-movie-id="84428" class="ml-item">
+<a href="https://www3.homecine.to/series/knightfall" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Knightfall" title="">
  
-<span class="mli-quality">1080p</span>
+<span class="mli-quality">HD 1080p</span>
 
 
-<img data-original="https://image.tmdb.org/t/p/w185/xsZDxwiZEHZMIQYv0HcDAuAUUf8.jpg"class="lazy thumb mli-thumb" alt="Noche de chicas">
-<span class="mli-info"><h2>Noche de chicas</h2></span>
+<img data-original="https://www3.homecine.to/wp-content/uploads/2020/02/5T3VJOF4ti3ep6JXqSgyzSGdv0h.jpg"class="lazy thumb mli-thumb" alt="Knightfall">
+<span class="mli-info"><h2>Knightfall</h2></span>
 </a>
 			
 <div id="hidden_tip">
-<div id="" class="qtip-title">Noche de chicas</div>
-<div class="jtip-quality">1080p</div>
+<div id="" class="qtip-title">Knightfall</div>
+<div class="jtip-quality">HD 1080p</div>
 
 
 <div class="jtip-top">
-<div class="jt-info jt-imdb">TMDb: 7</div>
+<div class="jt-info jt-imdb">TMDb: 6.5</div>
    
    
-<div class="jt-info"><a href="https://www3.homecine.to/release-year/2023" rel="tag">2023</a></div>
+<div class="jt-info"><a href="https://www3.homecine.to/release-year/2017" rel="tag">2017</a></div>
 
 
-<div class="jt-info">N/A</div>
+<div class="jt-info">45 min</div>
 <div class="clearfix"></div>
 </div>
 
- <p class="f-desc"><p>Es una historia de amistad de cinco amigos que en 1992 sufrieron un desencuentro. Lola reaparece en sus vidas, especialmente en la de Tess.</p>
+ <p class="f-desc"><p>Los Templarios dedicaron su vida a cuidar del Santo Grial. Knightfall es un drama histórico que recrea las cruzadas y la vida de esta hermandad, una mirada a los últimos&#8230;</p>
 </p>
 
 <div class="block">Status: Returning Series</div>
@@ -467,145 +466,62 @@ Watch Series</a>
     <div class="block">Genre: <a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a> </div>
 
 <div class="jtip-bottom">
-<a href="https://www3.homecine.to/series/noche-de-chicas" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+<a href="https://www3.homecine.to/series/knightfall" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
 Watch Series</a>
 
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-211394" data-nonce="9b17e12e1b" data-post-id="211394" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-84428" data-nonce="824de0873f" data-post-id="84428" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
 
 </div>
-</div><div data-movie-id="111679" class="ml-item">
-<a href="https://www3.homecine.to/series/valley-of-tears" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Valley of Tears" title="">
+</div><div data-movie-id="95438" class="ml-item">
+<a href="https://www3.homecine.to/series/vaya-historia" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="¡Vaya historia!" title="">
  
 <span class="mli-quality">HD 1080p</span>
 
 
-<img data-original="https://image.tmdb.org/t/p/w185/bscqaJmja9SWTpr9Zo3UaKve0s4.jpg"class="lazy thumb mli-thumb" alt="Valley of Tears">
-<span class="mli-info"><h2>Valley of Tears</h2></span>
+<img data-original="https://image.tmdb.org/t/p/w185/4jwUhBWsO1FSSMnrdM2iWJXzPfe.jpg"class="lazy thumb mli-thumb" alt="¡Vaya historia!">
+<span class="mli-info"><h2>¡Vaya historia!</h2></span>
 </a>
 			
 <div id="hidden_tip">
-<div id="" class="qtip-title">Valley of Tears</div>
+<div id="" class="qtip-title">¡Vaya historia!</div>
 <div class="jtip-quality">HD 1080p</div>
 
 
 <div class="jtip-top">
-<div class="jt-info jt-imdb">TMDb: 10</div>
+<div class="jt-info jt-imdb"> IMDb: N/A</div>
    
    
 <div class="jt-info"><a href="https://www3.homecine.to/release-year/2020" rel="tag">2020</a></div>
 
 
-<div class="jt-info">45 min</div>
+<div class="jt-info">22 min</div>
 <div class="clearfix"></div>
 </div>
 
- <p class="f-desc"><p>6 de octubre de 1973. Los estados árabes liderados por Egipto y Siria lanzaron una invasión sorpresa y casi invadieron Israel durante el día más sagrado del calendario judío: Yom&#8230;</p>
+ <p class="f-desc"><p>History 101 A través de ilustraciones e imágenes de archivo, esta serie instruye sobre avances científicos, movimientos sociales y descubrimientos que han cambiado el mundo.</p>
 </p>
 
 <div class="block">Status: Returning Series</div>
 
-    <div class="block">Genre: <a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a>, <a href="https://www3.homecine.to/genre/war-politics" rel="category tag">War &amp; Politics</a> </div>
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/documentales" rel="category tag">Documental</a> </div>
 
 <div class="jtip-bottom">
-<a href="https://www3.homecine.to/series/valley-of-tears" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
-Watch Series</a>
+<a href="https://www3.homecine.to/series/vaya-historia" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Movie</a>
 
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-111679" data-nonce="9b17e12e1b" data-post-id="111679" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-95438" data-nonce="824de0873f" data-post-id="95438" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
 
 </div>
-</div><div data-movie-id="160271" class="ml-item">
-<a href="https://www3.homecine.to/series/el-caso-hartung" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="El caso Hartung" title="">
- 
-<span class="mli-quality">HD 720p</span>
+</div><div data-movie-id="255379" class="ml-item">
+<a href="https://www3.homecine.to/series/blue-ribbon-baking-championship" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Blue Ribbon Baking Championship" title="">
 
 
-<img data-original="https://image.tmdb.org/t/p/w185/wLZTY1apb8895dmj9QLHYRT51UZ.jpg"class="lazy thumb mli-thumb" alt="El caso Hartung">
-<span class="mli-info"><h2>El caso Hartung</h2></span>
+<img data-original="https://image.tmdb.org/t/p/w185/mU6fJPXm3jD4vpShx4k64AyPr7W.jpg"class="lazy thumb mli-thumb" alt="Blue Ribbon Baking Championship">
+<span class="mli-info"><h2>Blue Ribbon Baking Championship</h2></span>
 </a>
 			
 <div id="hidden_tip">
-<div id="" class="qtip-title">El caso Hartung</div>
-<div class="jtip-quality">HD 720p</div>
-
-
-<div class="jtip-top">
-<div class="jt-info jt-imdb">TMDb: 8</div>
-   
-   
-<div class="jt-info"><a href="https://www3.homecine.to/release-year/2021" rel="tag">2021</a></div>
-
-
-<div class="jt-info">55,57,56,52,59,51 min</div>
-<div class="clearfix"></div>
-</div>
-
- <p class="f-desc"><p>En la espeluznante escena de un crimen se encuentra una estatuilla hecha de castañas. A partir de esta pista espeluznante, dos detectives cazan a un asesino vinculado al hijo desaparecido&#8230;</p>
-</p>
-
-<div class="block">Status: Returning Series</div>
-
-    <div class="block">Genre: <a href="https://www3.homecine.to/genre/crimen" rel="category tag">Crimen</a>, <a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a> </div>
-
-<div class="jtip-bottom">
-<a href="https://www3.homecine.to/series/el-caso-hartung" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
-Watch Series</a>
-
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-160271" data-nonce="9b17e12e1b" data-post-id="160271" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
-
-</div>
-</div><div data-movie-id="52710" class="ml-item">
-<a href="https://www3.homecine.to/series/como-conoci-a-tu-madre" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Cómo conocí a tu madre" title="">
- 
-<span class="mli-quality">360p</span>
-
-
-<img data-original="https://image.tmdb.org/t/p/w185/6bBgRoW5HniYbjIylWKLCJ5bVL6.jpg"class="lazy thumb mli-thumb" alt="Cómo conocí a tu madre">
-<span class="mli-info"><h2>Cómo conocí a tu madre</h2></span>
-</a>
-			
-<div id="hidden_tip">
-<div id="" class="qtip-title">Cómo conocí a tu madre</div>
-<div class="jtip-quality">360p</div>
-
-
-<div class="jtip-top">
-<div class="jt-info jt-imdb">TMDb: 8.157</div>
-   
-   
-<div class="jt-info"><a href="https://www3.homecine.to/release-year/2005" rel="tag">2005</a></div>
-
-
-<div class="jt-info">22,25 min</div>
-<div class="clearfix"></div>
-</div>
-
- <p class="f-desc"><p>How I Met Your Mother Cómo Conocí a Vuestra Madre How I Met Your Mother. Exitosa serie de la CBS que, en su primera temporada, obtuvo excelentes índices de audiencia&#8230;</p>
-</p>
-
-<div class="block">Status: Ended</div>
-
-    <div class="block">Genre: <a href="https://www3.homecine.to/genre/peliculas-de-comedia" rel="category tag">Comedia</a> </div>
-
-<div class="jtip-bottom">
-<a href="https://www3.homecine.to/series/como-conoci-a-tu-madre" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
-Watch Series</a>
-
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-52710" data-nonce="9b17e12e1b" data-post-id="52710" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
-
-</div>
-</div><div data-movie-id="249844" class="ml-item">
-<a href="https://www3.homecine.to/series/going-home-with-tyler-cameron" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Going Home with Tyler Cameron" title="">
- 
-<span class="mli-quality">720p</span>
-
-
-<img data-original="https://image.tmdb.org/t/p/w185/eELdweyLkJum983fiSSR3DgCzQF.jpg"class="lazy thumb mli-thumb" alt="Going Home with Tyler Cameron">
-<span class="mli-info"><h2>Going Home with Tyler Cameron</h2></span>
-</a>
-			
-<div id="hidden_tip">
-<div id="" class="qtip-title">Going Home with Tyler Cameron</div>
-<div class="jtip-quality">720p</div>
+<div id="" class="qtip-title">Blue Ribbon Baking Championship</div>
 
 
 <div class="jtip-top">
@@ -619,7 +535,7 @@ Watch Series</a>
 <div class="clearfix"></div>
 </div>
 
- <p class="f-desc"><p>“Going Home with Tyler Cameron” es una serie de telerrealidad que sigue la trayectoria de Tyler Cameron, una antigua estrella de The Bachelorette, mientras persigue su sueño de establecer su&#8230;</p>
+ <p class="f-desc"><p>Los ganadores de la cinta azul de todas las ferias de EE. UU. se enfrentan por primera vez en una muestra épica de repostería para llegar a la cima y&#8230;</p>
 </p>
 
 <div class="block">Status: Returning Series</div>
@@ -627,10 +543,90 @@ Watch Series</a>
     <div class="block">Genre: <a href="https://www3.homecine.to/genre/reality" rel="category tag">Reality</a> </div>
 
 <div class="jtip-bottom">
-<a href="https://www3.homecine.to/series/going-home-with-tyler-cameron" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+<a href="https://www3.homecine.to/series/blue-ribbon-baking-championship" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
 Watch Movie</a>
 
-<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-249844" data-nonce="9b17e12e1b" data-post-id="249844" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-255379" data-nonce="824de0873f" data-post-id="255379" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+
+</div>
+</div><div data-movie-id="132355" class="ml-item">
+<a href="https://www3.homecine.to/series/magic-for-humans-spain" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Magic for Humans Spain" title="">
+ 
+<span class="mli-quality">HD 1080p</span>
+
+
+<img data-original="https://image.tmdb.org/t/p/w185/gLmICUXqxLyeOgwjgqPX96SfByV.jpg"class="lazy thumb mli-thumb" alt="Magic for Humans Spain">
+<span class="mli-info"><h2>Magic for Humans Spain</h2></span>
+</a>
+			
+<div id="hidden_tip">
+<div id="" class="qtip-title">Magic for Humans Spain</div>
+<div class="jtip-quality">HD 1080p</div>
+
+
+<div class="jtip-top">
+<div class="jt-info jt-imdb">TMDb: 5</div>
+   
+   
+<div class="jt-info"><a href="https://www3.homecine.to/release-year/2021" rel="tag">2021</a></div>
+
+
+<div class="jt-info">N/A</div>
+<div class="clearfix"></div>
+</div>
+
+ <p class="f-desc"><p>En esta adaptación española de «Magia para humanos», la gente de todas las edades en las calles de Barcelona se sorprende con trucos que inspiran deleite y asombro.</p>
+</p>
+
+<div class="block">Status: Returning Series</div>
+
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/peliculas-de-comedia" rel="category tag">Comedia</a>, <a href="https://www3.homecine.to/genre/reality" rel="category tag">Reality</a> </div>
+
+<div class="jtip-bottom">
+<a href="https://www3.homecine.to/series/magic-for-humans-spain" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Series</a>
+
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-132355" data-nonce="824de0873f" data-post-id="132355" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
+
+</div>
+</div><div data-movie-id="68831" class="ml-item">
+<a href="https://www3.homecine.to/series/emergence" data-url="" class="ml-mask jt" data-hasqtip="112" oldtitle="Emergence" title="">
+ 
+<span class="mli-quality">HD 1080p</span>
+
+
+<img data-original="https://image.tmdb.org/t/p/w185/r9nmcmP6IOIJV9K61dXIUuNWxdV.jpg"class="lazy thumb mli-thumb" alt="Emergence">
+<span class="mli-info"><h2>Emergence</h2></span>
+</a>
+			
+<div id="hidden_tip">
+<div id="" class="qtip-title">Emergence</div>
+<div class="jtip-quality">HD 1080p</div>
+
+
+<div class="jtip-top">
+<div class="jt-info jt-imdb">TMDb: 7.7</div>
+   
+   
+<div class="jt-info"><a href="https://www3.homecine.to/release-year/2019" rel="tag">2019</a></div>
+
+
+<div class="jt-info">43 min</div>
+<div class="clearfix"></div>
+</div>
+
+ <p class="f-desc"><p>La jefa de policía de Long Island rescata a una niña que encuentra cerca del lugar en el que se ha producido un terrible accidente. Pronto descubre que la pequeña&#8230;</p>
+</p>
+
+<div class="block">Status: Returning Series</div>
+
+    <div class="block">Genre: <a href="https://www3.homecine.to/genre/drama" rel="category tag">Drama</a> </div>
+
+<div class="jtip-bottom">
+<a href="https://www3.homecine.to/series/emergence" class="btn btn-block btn-successful"><i class="fa fa-play-circle mr10"></i>
+Watch Series</a>
+
+<a href="javascript:void(0)" class="sl-button btn bp-btn-like sl-button-68831" data-nonce="824de0873f" data-post-id="68831" data-iscomment="0" title="Favorite"><i class="fa fa-heart"></i>Favorite</a><span id="sl-loader"></span></div>
 
 </div>
 </div> </div>
@@ -671,7 +667,7 @@ Watch Movie</a>
 			
 <div class="reportform">
 <p>Please help us to describe the issue so we can fix it asap.</p>
-<form method="post" action="https://www3.homecine.to/episode/marvel-the-punisher-temporada-1-capitulo-1?report=DM6CQ2SI#uwee"> 
+<form method="post" action="https://www3.homecine.to/episode/marvel-the-punisher-temporada-1-capitulo-1?report=98P4OMU8XA#uwee"> 
 <div class="aff">
 
 <div class="rep_cont">
@@ -722,7 +718,7 @@ Watch Movie</a>
 <input type="hidden" name="titulo" value="Marvel &#8211; The Punisher Temporada 1 Capitulo 1">
 <input type="hidden" name="enlace" value="https://www3.homecine.to/episode/marvel-the-punisher-temporada-1-capitulo-1">
 <input type="hidden" name="id" value="32034">
-<input type="hidden" name="ip" value="2a09:bac1:1e00:8::27d:ec">
+<input type="hidden" name="ip" value="2a09:bac5:27b9:2482::3a3:23">
 <input type="hidden" name="link" value="https://www3.homecine.to">
 <input type="hidden" name="action" value="send" />
 </form>
@@ -840,7 +836,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 											
 										</div>
 										<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Register</button>
-										<input type="hidden" id="register-security" name="register-security" value="90bb89f3f8" /><input type="hidden" name="_wp_http_referer" value="/episode/marvel-the-punisher-temporada-1-capitulo-1" />									</form>
+										<input type="hidden" id="register-security" name="register-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/episode/marvel-the-punisher-temporada-1-capitulo-1" />									</form>
 									<div class="pt-errors"></div>
 								</div>
 
@@ -869,7 +865,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 											<a id="open-forgot" class="alignright" href="#pt-reset-password" style="font-size: 85%;">Forgot Password?</a>
 										</div>
 										<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Login</button> 
-										<input type="hidden" id="login-security" name="login-security" value="90bb89f3f8" /><input type="hidden" name="_wp_http_referer" value="/episode/marvel-the-punisher-temporada-1-capitulo-1" />									</form>
+										<input type="hidden" id="login-security" name="login-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/episode/marvel-the-punisher-temporada-1-capitulo-1" />									</form>
 									<div class="pt-errors"></div>
 								</div>
 
@@ -890,7 +886,7 @@ Copyright HomeCine.Net © 2016-2025. All rights reserved. </span>
 											<input type="hidden" name="action" value="pt_reset_password"/>
 											<button class="btn btn-theme btn-lg btn btn-block btn-successful btn-approve mt10" data-loading-text="Loading..." type="submit">Submit</button>
 										</div>
-										<input type="hidden" id="password-security" name="password-security" value="90bb89f3f8" /><input type="hidden" name="_wp_http_referer" value="/episode/marvel-the-punisher-temporada-1-capitulo-1" />									</form>
+										<input type="hidden" id="password-security" name="password-security" value="896184dec8" /><input type="hidden" name="_wp_http_referer" value="/episode/marvel-the-punisher-temporada-1-capitulo-1" />									</form>
 									<div class="pt-errors"></div>
 								</div>
 
@@ -912,7 +908,7 @@ searchwp_live_search_params = {"ajaxurl":"https:\/\/www3.homecine.to\/wp-admin\/
 /* ]]> */
 </script>
 <script type="text/javascript" src="https://www3.homecine.to/wp-content/themes/custom/includes/plugins/livesearch/assets/javascript/build/psythemes-live-search.min.js?ver=1.2.0" id="swp-live-search-client-js"></script>
-
+<!--
 <script>
 	var base ="https://unlock.uberxviral.com/";
 	var links = document.querySelectorAll('a[class~="lnk-1"]');
@@ -921,5 +917,6 @@ searchwp_live_search_params = {"ajaxurl":"https:\/\/www3.homecine.to\/wp-admin\/
 		links[i].setAttribute('href', base + "#" + btoa(btoa(btoa(link))));
 		}
 </script>
+-->
 </body>
 </html>
