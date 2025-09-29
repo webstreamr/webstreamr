@@ -1,4 +1,5 @@
 import * as cheerio from 'cheerio';
+import levenshtein from 'fast-levenshtein';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
 import { Fetcher, getTmdbId, getTmdbNameAndYear, Id, TmdbId } from '../utils';
@@ -28,9 +29,9 @@ export class HomeCine extends Source {
 
     const [name, year, originalName] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId, 'es');
 
-    let pageUrl = await this.fetchPageUrl(ctx, name, year, tmdbId);
+    let pageUrl = await this.fetchPageUrl(ctx, name, tmdbId);
     if (!pageUrl) {
-      pageUrl = await this.fetchPageUrl(ctx, originalName, year, tmdbId);
+      pageUrl = await this.fetchPageUrl(ctx, originalName, tmdbId);
       if (!pageUrl) {
         return [];
       }
@@ -66,22 +67,35 @@ export class HomeCine extends Source {
       }).toArray();
   };
 
-  private readonly fetchPageUrl = async (ctx: Context, name: string, year: number, tmdbId: TmdbId): Promise<URL | undefined> => {
+  private readonly fetchPageUrl = async (ctx: Context, name: string, tmdbId: TmdbId): Promise<URL | undefined> => {
     const searchUrl = new URL(`/?s=${encodeURIComponent(name)}`, this.baseUrl);
 
     const html = await this.fetcher.text(ctx, searchUrl);
 
     const $ = cheerio.load(html);
 
-    const keywords = [
+    const keywords = [...new Set([
       name,
       name.replace('-', '–'),
-    ];
+    ])];
 
     const urls: URL[] = [];
+
+    // exact match
     keywords.map((keyword) => {
       urls.push(
-        ...$(`a[oldtitle="${keyword} (${year})"], a[oldtitle="${keyword}"]`)
+        ...$(`a[oldtitle="${keyword}"]`)
+          .map((_i, el) => new URL($(el).attr('href') as string))
+          .toArray()
+          .filter(url => tmdbId.season ? url.href.includes('/series/') : !url.href.includes('/series/')),
+      );
+    });
+
+    // similar match
+    keywords.map((keyword) => {
+      urls.push(
+        ...$(`a[oldtitle]`)
+          .filter((_i, el) => levenshtein.get(($(el).attr('oldtitle') as string).trim(), keyword, { useCollator: true }) < 5)
           .map((_i, el) => new URL($(el).attr('href') as string))
           .toArray()
           .filter(url => tmdbId.season ? url.href.includes('/series/') : !url.href.includes('/series/')),
