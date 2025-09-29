@@ -20,4 +20,14 @@ describe('MegaKino', () => {
     const streams = await source.handle(ctx, 'movie', new ImdbId('tt2245084', undefined, undefined));
     expect(streams).toMatchSnapshot();
   });
+
+  test('lego movie 2014', async () => {
+    const streams = await source.handle(ctx, 'movie', new ImdbId('tt1490017', undefined, undefined));
+    expect(streams).toMatchSnapshot();
+  });
+
+  test('lego movie 2 2019', async () => {
+    const streams = await source.handle(ctx, 'movie', new ImdbId('tt3513498', undefined, undefined));
+    expect(streams).toMatchSnapshot();
+  });
 });
