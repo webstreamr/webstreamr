@@ -37,11 +37,13 @@ export class FetcherMock extends Fetcher {
   };
 
   private readonly slugifyUrl = (url: URL): string => {
-    if (url.href.length > 240) {
+    const slugifiedUrl = slugify(url.href);
+
+    if (slugifiedUrl.length > 249) {
       return slugify(`${url.origin}-${crypto.createHash('md5').update(url.href).digest('hex')}`);
     }
 
-    return slugify(url.href);
+    return slugifiedUrl;
   };
 
   private readonly fetch = async (path: string, ctx: Context, url: URL, init?: RequestInit): Promise<string> => {
