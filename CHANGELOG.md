@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.53.3](https://github.com/webstreamr/webstreamr/compare/v0.53.2...v0.53.3) (2025-09-29)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency typescript-eslint to v8.45.0 ([#389](https://github.com/webstreamr/webstreamr/issues/389)) ([4bf2cf6](https://github.com/webstreamr/webstreamr/commit/4bf2cf632b9606bcb927e73a014da3bf993917ab))
+* **source:** use original title as search fallback in HomeCine and don't enforce year check ([20648ae](https://github.com/webstreamr/webstreamr/commit/20648ae4cdb5e1618268c579c34c51f7aa22bc1b))
+
+
+### Tests
+
+* fix slugger length check in FetcherMock ([0879531](https://github.com/webstreamr/webstreamr/commit/0879531478efbcff3eefaa14c362fabd0b905e36))
+
 ## [0.53.2](https://github.com/webstreamr/webstreamr/compare/v0.53.1...v0.53.2) (2025-09-29)
 
 
