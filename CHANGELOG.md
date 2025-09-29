@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.53.2](https://github.com/webstreamr/webstreamr/compare/v0.53.1...v0.53.2) (2025-09-29)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#385](https://github.com/webstreamr/webstreamr/issues/385)) ([6c44fcc](https://github.com/webstreamr/webstreamr/commit/6c44fccf665ed03190307102c13079d639bd64c0))
+
+
+### Bug Fixes
+
+* **source:** adapt MegaKino for new search ([fb689bf](https://github.com/webstreamr/webstreamr/commit/fb689bf7da89ca26127675bcb64c2a044d04d4e5))
+
 ## [0.53.1](https://github.com/webstreamr/webstreamr/compare/v0.53.0...v0.53.1) (2025-09-28)
 
 
