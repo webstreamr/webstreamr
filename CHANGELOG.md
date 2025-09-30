@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.53.5](https://github.com/webstreamr/webstreamr/compare/v0.53.4...v0.53.5) (2025-09-30)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency winston to v3.18.2 ([#394](https://github.com/webstreamr/webstreamr/issues/394)) ([9f46b7f](https://github.com/webstreamr/webstreamr/commit/9f46b7fffa0b8ae82f117583c8485ec9ffc66aca))
+* **extractor:** make VixSrc work without MediaFlow proxy ([012b164](https://github.com/webstreamr/webstreamr/commit/012b1648e1da1d8bf22a45d1787b0ca760f5260c))
+* use concurrency of 4 for mediaflow proxy requests ([04b8987](https://github.com/webstreamr/webstreamr/commit/04b8987c3020138a00afddc99df8021626f188a2))
+
 ## [0.53.4](https://github.com/webstreamr/webstreamr/compare/v0.53.3...v0.53.4) (2025-09-30)
 
 
