@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.53.4](https://github.com/webstreamr/webstreamr/compare/v0.53.3...v0.53.4) (2025-09-30)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency winston to v3.18.1 ([#392](https://github.com/webstreamr/webstreamr/issues/392)) ([c3721c4](https://github.com/webstreamr/webstreamr/commit/c3721c428e7fc6f4c15516bbfcafff29b754f026))
+* **fetcher:** add generic fetch also returning response url ([5466472](https://github.com/webstreamr/webstreamr/commit/5466472b211b56e813c12577152f090378fbcd16))
+
+
+### Bug Fixes
+
+* **extractor:** handle Uqload File Not Found ([f0a66e1](https://github.com/webstreamr/webstreamr/commit/f0a66e19845a9b994f1f44cb3825e043f1697a51))
+* **source:** dynamically determine MegaKino base URL ([d6fb4c9](https://github.com/webstreamr/webstreamr/commit/d6fb4c971b7b79f41e09ec2205831d5ac3ce7afc))
+
 ## [0.53.3](https://github.com/webstreamr/webstreamr/compare/v0.53.2...v0.53.3) (2025-09-29)
 
 
