@@ -7,7 +7,7 @@ import { VixSrc } from './VixSrc';
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 const extractorRegistry = new ExtractorRegistry(logger, [new VixSrc(new FetcherMock(`${__dirname}/__fixtures__/VixSrc`))]);
 
-const ctx = createTestContext({ mediaFlowProxyUrl: 'https://mediaflow-proxy.test', mediaFlowProxyPassword: 'asdfg', de: 'on', en: 'on', it: 'on' });
+const ctx = createTestContext({ de: 'on', en: 'on', it: 'on' });
 
 describe('VixSrc', () => {
   test('Full Metal Jacket', async () => {
@@ -19,7 +19,7 @@ describe('VixSrc', () => {
   });
 
   test('Black Mirror is excluded if no matching language was found', async () => {
-    const ctx = createTestContext({ mediaFlowProxyUrl: 'https://mediaflow-proxy2.test', mediaFlowProxyPassword: 'asdfg', de: 'on' });
+    const ctx = createTestContext({ de: 'on' });
 
     expect(await extractorRegistry.handle(ctx, new URL('https://vixsrc.to/tv/42009/4/2'))).toMatchSnapshot();
   });

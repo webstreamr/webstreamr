@@ -32,7 +32,7 @@ export const buildMediaFlowProxyExtractorRedirectUrl = (ctx: Context, host: stri
   return mediaFlowProxyUrl;
 };
 
-export const buildMediaFlowProxyExtractorStreamUrl = async (ctx: Context, fetcher: Fetcher, host: string, url: URL, headers: Record<string, string> = {}): Promise<URL> => {
+export const buildMediaFlowProxyExtractorStreamUrl = async (ctx: Context, fetcher: Fetcher, host: string, url: URL, headers: Record<string, string>): Promise<URL> => {
   const mediaFlowProxyUrl = buildMediaFlowProxyExtractorUrl(ctx, host, url, headers);
 
   const extractResult: ExtractResult = await fetcher.json(ctx, mediaFlowProxyUrl, { queueLimit: 4 });

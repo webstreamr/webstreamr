@@ -1,30 +1,38 @@
 import { Context, CountryCode, Format, Meta, UrlResult } from '../types';
 import {
-  buildMediaFlowProxyExtractorStreamUrl, CustomRequestInit, guessHeightFromPlaylist,
-  hasMultiEnabled,
+  CustomRequestInit,
+  guessHeightFromPlaylist,
   iso639FromCountryCode,
-  supportsMediaFlowProxy,
 } from '../utils';
 import { Extractor } from './Extractor';
 
 export class VixSrc extends Extractor {
   public readonly id = 'vixsrc';
 
-  public readonly label = 'VixSrc (via MediaFlow Proxy)';
+  public readonly label = 'VixSrc';
 
-  public override viaMediaFlowProxy = true;
+  public override readonly ttl: number = 21600000; // 6h
 
-  public supports(ctx: Context, url: URL): boolean {
-    return null !== url.host.match(/vixsrc/) && supportsMediaFlowProxy(ctx);
+  public supports(_ctx: Context, url: URL): boolean {
+    return null !== url.host.match(/vixsrc/);
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'VixCloud', url);
-    const countryCodes = await this.determineCountryCodesFromPlaylist(ctx, playlistUrl, { headers: { Referer: url.href }, queueLimit: 4 });
+    const headers = { Referer: url.href };
 
-    if (!hasMultiEnabled(ctx.config) && !countryCodes.some(countryCode => countryCode in ctx.config)) {
-      return [];
-    }
+    const html = await this.fetcher.text(ctx, url);
+
+    const tokenMatch = html.match(/['"]token['"]: ?['"](.*?)['"]/) as string[];
+    const expiresMatch = html.match(/['"]expires['"]: ?['"](.*?)['"]/) as string[];
+    const urlMatch = html.match(/url: ?['"](.*?)['"]/) as string[];
+
+    const baseUrl = new URL(`${urlMatch[1]}`);
+    const playlistUrl = new URL(`${baseUrl.origin}${baseUrl.pathname}.m3u8?${baseUrl.searchParams}`);
+    playlistUrl.searchParams.append('token', tokenMatch[1] as string);
+    playlistUrl.searchParams.append('expires', expiresMatch[1] as string);
+    playlistUrl.searchParams.append('h', '1');
+
+    const countryCodes = await this.determineCountryCodesFromPlaylist(ctx, playlistUrl, { headers });
 
     return [
       {
@@ -35,7 +43,7 @@ export class VixSrc extends Extractor {
         ttl: this.ttl,
         meta: {
           countryCodes,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, { headers: { Referer: url.href }, queueLimit: 4 }),
+          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, { headers }),
         },
       },
     ];
