@@ -46,7 +46,7 @@ export class Uqload extends Extractor {
         meta: {
           ...meta,
           title,
-          bytes: await guessSizeFromMp4(ctx, this.fetcher, mp4Url, { headers: { Referer: url.href } }),
+          bytes: await guessSizeFromMp4(ctx, this.fetcher, mp4Url, { headers: { Referer: url.href }, queueLimit: 4 }),
           ...(heightMatch && {
             height: parseInt(heightMatch[1] as string),
           }),

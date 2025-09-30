@@ -20,7 +20,7 @@ export class VixSrc extends Extractor {
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'VixCloud', url);
-    const countryCodes = await this.determineCountryCodesFromPlaylist(ctx, playlistUrl, { headers: { Referer: url.href } });
+    const countryCodes = await this.determineCountryCodesFromPlaylist(ctx, playlistUrl, { headers: { Referer: url.href }, queueLimit: 4 });
 
     if (!hasMultiEnabled(ctx.config) && !countryCodes.some(countryCode => countryCode in ctx.config)) {
       return [];
@@ -35,7 +35,7 @@ export class VixSrc extends Extractor {
         ttl: this.ttl,
         meta: {
           countryCodes,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, { headers: { Referer: url.href } }),
+          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, { headers: { Referer: url.href }, queueLimit: 4 }),
         },
       },
     ];

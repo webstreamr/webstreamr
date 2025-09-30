@@ -40,7 +40,7 @@ export class Streamtape extends Extractor {
         meta: {
           ...meta,
           title,
-          bytes: await guessSizeFromMp4(ctx, this.fetcher, mp4Url),
+          bytes: await guessSizeFromMp4(ctx, this.fetcher, mp4Url, { queueLimit: 4 }),
         },
       },
     ];

@@ -80,7 +80,7 @@ export class FileLions extends Extractor {
         ttl: this.ttl,
         meta: {
           ...meta,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, { headers: { Referer: url.href } }),
+          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, { headers: { Referer: url.href }, queueLimit: 4 }),
           ...(sizeMatch && {
             bytes: bytes.parse(sizeMatch[1] as string) as number,
           }),
