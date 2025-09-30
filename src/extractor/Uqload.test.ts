@@ -13,4 +13,8 @@ describe('Uqload', () => {
   test('uqload.net /embed-', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://uqload.net/embed-z0xbr87oz637.html'))).toMatchSnapshot();
   });
+
+  test('file not found', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://uqload.cx/2ua47fdfkjgd.html'))).toMatchSnapshot();
+  });
 });

@@ -1,4 +1,5 @@
 import * as cheerio from 'cheerio';
+import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
 import { buildMediaFlowProxyExtractorRedirectUrl, supportsMediaFlowProxy } from '../utils';
 import { guessSizeFromMp4 } from '../utils/size';
@@ -23,6 +24,10 @@ export class Uqload extends Extractor {
     const headers = { Referer: meta.referer ?? url.href };
 
     const html = await this.fetcher.text(ctx, url, { headers });
+
+    if (/File Not Found/.test(html)) {
+      throw new NotFoundError();
+    }
 
     const heightMatch = html.match(/\d{3,}x(\d{3,})/);
 
