@@ -11,12 +11,13 @@ import { noCache } from './config';
 import { getProxyAgent, getProxyForUrl } from './dispatcher';
 import { envGet } from './env';
 
-interface HttpCacheItem {
+export interface HttpCacheItem {
+  body: string;
   headers: CachePolicy.Headers;
   status: number;
   statusText: string;
-  body: string;
   ttl: number;
+  url: string;
 }
 
 interface FlareSolverrResult {
@@ -87,6 +88,10 @@ export class Fetcher {
     return {
       httpCache: this.httpCache.stats,
     };
+  };
+
+  public async fetch(ctx: Context, url: URL, init?: CustomRequestInit): Promise<HttpCacheItem> {
+    return await this.cachedFetch(ctx, url, init);
   };
 
   public async text(ctx: Context, url: URL, init?: CustomRequestInit): Promise<string> {
@@ -269,7 +274,7 @@ export class Fetcher {
     const policy = new CachePolicy(request, { status: response.status, headers: this.headersToObject(response.headers) }, { shared: false });
     const ttl = this.determineCacheTtl(response.status, policy, init);
 
-    httpCacheItem = { headers: policy.responseHeaders(), status: response.status, statusText: response.statusText, body, ttl };
+    httpCacheItem = { headers: policy.responseHeaders(), status: response.status, statusText: response.statusText, body, ttl, url: response.url };
 
     await this.cacheSet(cacheKey, httpCacheItem);
 

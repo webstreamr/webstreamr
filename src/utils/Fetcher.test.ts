@@ -17,6 +17,20 @@ describe('fetch', () => {
     setGlobalDispatcher(mockAgent);
   });
 
+  test('fetch', async () => {
+    const mockPool = mockAgent.get('https://some-fetch-url.test');
+    mockPool.intercept({ path: '/' }).reply(200, 'some text');
+
+    expect(await fetcher.fetch(ctx, new URL('https://some-fetch-url.test/'))).toStrictEqual({
+      body: 'some text',
+      headers: { age: '0', date: 'Wed, 11 Apr 1990 12:34:56 GMT' },
+      status: 200,
+      statusText: 'OK',
+      ttl: 900000,
+      url: 'https://some-fetch-url.test/',
+    });
+  });
+
   test('text passes successful response through setting headers', async () => {
     const mockPool = mockAgent.get('https://some-url.test');
     mockPool.intercept({ path: '/' }).reply(200, 'some text');

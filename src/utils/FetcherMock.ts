@@ -7,7 +7,7 @@ import { RequestInit } from 'undici';
 import winston from 'winston';
 import { Context } from '../types';
 import { envGet } from './env';
-import { Fetcher } from './Fetcher';
+import { Fetcher, HttpCacheItem } from './Fetcher';
 
 export class FetcherMock extends Fetcher {
   private readonly fixturePath: string;
@@ -18,22 +18,37 @@ export class FetcherMock extends Fetcher {
     this.fixturePath = fixturePath;
   }
 
+  public override async fetch(ctx: Context, url: URL, init?: RequestInit): Promise<HttpCacheItem> {
+    let path: string;
+
+    if (init?.method === 'POST') {
+      const body = init.body as string;
+      path = `${this.fixturePath}/post-${this.slugifyUrl(url)}-${slugify(body)}`;
+    } else if (init?.method === 'HEAD') {
+      path = `${this.fixturePath}/head-${this.slugifyUrl(url)}`;
+    } else {
+      path = `${this.fixturePath}/${this.slugifyUrl(url)}`;
+    }
+
+    return this.fetchInternal(path, ctx, url, init);
+  };
+
   public override async text(ctx: Context, url: URL, init?: RequestInit): Promise<string> {
     const path = `${this.fixturePath}/${this.slugifyUrl(url)}`;
 
-    return this.fetch(path, ctx, url, init);
+    return (await this.fetchInternal(path, ctx, url, init)).body;
   };
 
   public override async textPost(ctx: Context, url: URL, body: string, init?: RequestInit): Promise<string> {
     const path = `${this.fixturePath}/post-${this.slugifyUrl(url)}-${slugify(body)}`;
 
-    return this.fetch(path, ctx, url, { ...init, method: 'POST', body });
+    return (await this.fetchInternal(path, ctx, url, { ...init, method: 'POST', body })).body;
   };
 
   public override async head(ctx: Context, url: URL, init?: RequestInit): Promise<CachePolicy.Headers> {
     const path = `${this.fixturePath}/head-${this.slugifyUrl(url)}`;
 
-    return JSON.parse(await this.fetch(path, ctx, url, { ...init, method: 'HEAD' }));
+    return (await this.fetchInternal(path, ctx, url, { ...init, method: 'HEAD' })).headers;
   };
 
   private readonly slugifyUrl = (url: URL): string => {
@@ -46,13 +61,24 @@ export class FetcherMock extends Fetcher {
     return slugifiedUrl;
   };
 
-  private readonly fetch = async (path: string, ctx: Context, url: URL, init?: RequestInit): Promise<string> => {
+  private readonly fetchInternal = async (path: string, ctx: Context, url: URL, init?: RequestInit): Promise<HttpCacheItem> => {
     const errorPath = `${path}.error`;
+
+    const isHead = init?.method === 'HEAD';
 
     if (fs.existsSync(errorPath)) {
       throw new Error(fs.readFileSync(errorPath).toString());
     } else if (fs.existsSync(path)) {
-      return fs.readFileSync(path).toString();
+      const data = fs.readFileSync(path).toString();
+
+      return {
+        body: isHead ? '' : data,
+        headers: isHead ? JSON.parse(data) : {},
+        status: 200,
+        statusText: 'OK',
+        ttl: 0,
+        url: url.href,
+      };
     } else {
       let response;
       try {
@@ -74,7 +100,7 @@ export class FetcherMock extends Fetcher {
       }
 
       let result;
-      if (init?.method === 'HEAD') {
+      if (isHead) {
         const headers: Record<string, string> = {};
 
         response.headers.forEach((value, key) => {
@@ -88,7 +114,14 @@ export class FetcherMock extends Fetcher {
 
       fs.writeFileSync(path, result);
 
-      return result;
+      return {
+        body: isHead ? '' : result,
+        headers: isHead ? JSON.parse(result) : {},
+        status: 200,
+        statusText: 'OK',
+        ttl: 0,
+        url: url.href,
+      };
     }
   };
 }
