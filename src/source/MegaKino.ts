@@ -27,9 +27,12 @@ export class MegaKino extends Source {
   public async handleInternal(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const imdbId = await getImdbId(ctx, this.fetcher, id);
 
-    const cookie = await this.getCookie(ctx);
+    const tokenResponse = await this.fetcher.fetch(ctx, new URL('/?yg=token', this.baseUrl), { method: 'HEAD' });
 
-    const pageUrl = await this.fetchPageUrl(ctx, imdbId, cookie);
+    const cookie = Cookie.parse(tokenResponse.headers['set-cookie'] as string) as Cookie;
+    const baseUrl = new URL('/', tokenResponse.url);
+
+    const pageUrl = await this.fetchPageUrl(ctx, baseUrl, imdbId, cookie);
     if (!pageUrl) {
       return [];
     }
@@ -48,9 +51,7 @@ export class MegaKino extends Source {
     );
   };
 
-  private fetchPageUrl = async (ctx: Context, imdbId: ImdbId, cookie: Cookie): Promise<URL | undefined> => {
-    const postUrl = new URL(this.baseUrl);
-
+  private fetchPageUrl = async (ctx: Context, postUrl: URL, imdbId: ImdbId, cookie: Cookie): Promise<URL | undefined> => {
     const form = new URLSearchParams();
     form.append('do', 'search');
     form.append('subaction', 'search');
@@ -74,11 +75,5 @@ export class MegaKino extends Source {
     return $('#dle-content a[href].poster:first')
       .map((_i, el) => new URL($(el).attr('href') as string))
       .get(0);
-  };
-
-  private getCookie = async (ctx: Context): Promise<Cookie> => {
-    const headers = await this.fetcher.head(ctx, new URL('/?yg=token', this.baseUrl)) as Record<string, string>;
-
-    return Cookie.parse(headers['set-cookie'] as string) as Cookie;
   };
 }
