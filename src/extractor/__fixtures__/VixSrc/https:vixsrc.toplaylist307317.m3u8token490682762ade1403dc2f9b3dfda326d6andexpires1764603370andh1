@@ -1,0 +1,17 @@
+#EXTM3U
+#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="audio",NAME="Italian",DEFAULT=YES,AUTOSELECT=YES,FORCED=NO,LANGUAGE="ita",URI="https://vixsrc.to/playlist/307317?type=audio&rendition=ita&token=sLMeTlpX42bE_-gRKOl5Yg&expires=1764603370&edge=sc-u14-01"
+#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="audio",NAME="English",DEFAULT=NO,AUTOSELECT=NO,FORCED=NO,LANGUAGE="eng",URI="https://vixsrc.to/playlist/307317?type=audio&rendition=eng&token=sLMeTlpX42bE_-gRKOl5Yg&expires=1764603370&edge=sc-u14-01"
+#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="English [CC]",DEFAULT=NO,AUTOSELECT=NO,FORCED=NO,LANGUAGE="eng",URI="https://vixsrc.to/playlist/307317?type=subtitle&rendition=3-eng&token=sLMeTlpX42bE_-gRKOl5Yg&expires=1764603370&edge=sc-u14-01"
+#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="German",DEFAULT=NO,AUTOSELECT=NO,FORCED=NO,LANGUAGE="ger",URI="https://vixsrc.to/playlist/307317?type=subtitle&rendition=4-ger&token=sLMeTlpX42bE_-gRKOl5Yg&expires=1764603370&edge=sc-u14-01"
+#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="French [CC]",DEFAULT=NO,AUTOSELECT=NO,FORCED=NO,LANGUAGE="fre",URI="https://vixsrc.to/playlist/307317?type=subtitle&rendition=5-fre&token=sLMeTlpX42bE_-gRKOl5Yg&expires=1764603370&edge=sc-u14-01"
+#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="French",DEFAULT=NO,AUTOSELECT=NO,FORCED=NO,LANGUAGE="fre",URI="https://vixsrc.to/playlist/307317?type=subtitle&rendition=6-fre&token=sLMeTlpX42bE_-gRKOl5Yg&expires=1764603370&edge=sc-u14-01"
+#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="Italian [Forced]",DEFAULT=YES,AUTOSELECT=YES,FORCED=NO,LANGUAGE="forced-ita",URI="https://vixsrc.to/playlist/307317?type=subtitle&rendition=7-forced-ita&token=sLMeTlpX42bE_-gRKOl5Yg&expires=1764603370&edge=sc-u14-01"
+#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="Italian",DEFAULT=NO,AUTOSELECT=NO,FORCED=NO,LANGUAGE="ita",URI="https://vixsrc.to/playlist/307317?type=subtitle&rendition=8-ita&token=sLMeTlpX42bE_-gRKOl5Yg&expires=1764603370&edge=sc-u14-01"
+#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="Japanese",DEFAULT=NO,AUTOSELECT=NO,FORCED=NO,LANGUAGE="jpn",URI="https://vixsrc.to/playlist/307317?type=subtitle&rendition=9-jpn&token=sLMeTlpX42bE_-gRKOl5Yg&expires=1764603370&edge=sc-u14-01"
+#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="Ukrainian",DEFAULT=NO,AUTOSELECT=NO,FORCED=NO,LANGUAGE="ukr",URI="https://vixsrc.to/playlist/307317?type=subtitle&rendition=10-ukr&token=sLMeTlpX42bE_-gRKOl5Yg&expires=1764603370&edge=sc-u14-01"
+#EXT-X-STREAM-INF:BANDWIDTH=1200000,CODECS="avc1.640028,mp4a.40.2",RESOLUTION=854x480,AUDIO="audio",SUBTITLES="subs"
+https://vixsrc.to/playlist/307317?type=video&rendition=480p&token=gQSTIJXRfTS9VJgJivZCsA&expires=1764603370&edge=sc-u14-01
+#EXT-X-STREAM-INF:BANDWIDTH=2150000,CODECS="avc1.640028,mp4a.40.2",RESOLUTION=1280x720,AUDIO="audio",SUBTITLES="subs"
+https://vixsrc.to/playlist/307317?type=video&rendition=720p&token=vSeyIFZy-RAkQUF899pHAQ&expires=1764603370&edge=sc-u14-01
+#EXT-X-STREAM-INF:BANDWIDTH=4500000,CODECS="avc1.640028,mp4a.40.2",RESOLUTION=1920x1080,AUDIO="audio",SUBTITLES="subs"
+https://vixsrc.to/playlist/307317?type=video&rendition=1080p&token=Kkh_YHe465c_f-8YPn5UxA&expires=1764603370&edge=sc-u14-01

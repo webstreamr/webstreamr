@@ -1,7 +1,7 @@
 import { Context, CountryCode, Format, Meta, UrlResult } from '../types';
 import {
   CustomRequestInit,
-  guessHeightFromPlaylist,
+  guessHeightFromPlaylist, hasMultiEnabled,
   iso639FromCountryCode,
 } from '../utils';
 import { Extractor } from './Extractor';
@@ -33,6 +33,10 @@ export class VixSrc extends Extractor {
     playlistUrl.searchParams.append('h', '1');
 
     const countryCodes = await this.determineCountryCodesFromPlaylist(ctx, playlistUrl, { headers });
+
+    if (!hasMultiEnabled(ctx.config) && !countryCodes.some(countryCode => countryCode in ctx.config)) {
+      return [];
+    }
 
     return [
       {

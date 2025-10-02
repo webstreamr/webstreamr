@@ -19,24 +19,7 @@ exports[`VixSrc Black Mirror 1`] = `
 ]
 `;
 
-exports[`VixSrc Black Mirror is excluded if no matching language was found 1`] = `
-[
-  {
-    "format": "hls",
-    "label": "VixSrc",
-    "meta": {
-      "countryCodes": [
-        "it",
-        "en",
-      ],
-      "height": 1080,
-    },
-    "sourceId": "vixsrc_",
-    "ttl": 21600000,
-    "url": "https://vixsrc.to/playlist/307316.m3u8?token=5e3c2b315b1eee966c5261902e02d3b4&expires=1764445261&h=1",
-  },
-]
-`;
+exports[`VixSrc Black Mirror is excluded if no matching language was found 1`] = `[]`;
 
 exports[`VixSrc Full Metal Jacket 1`] = `
 [

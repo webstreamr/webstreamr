@@ -11,6 +11,8 @@ export const showExternalUrls = (config: Config): boolean => 'includeExternalUrl
 
 export const noCache = (config: Config): boolean => 'noCache' in config;
 
+export const hasMultiEnabled = (config: Config): boolean => 'multi' in config;
+
 export const disableExtractorConfigKey = (extractor: Extractor): string => `disableExtractor_${extractor.id}`;
 
 export const isExtractorDisabled = (config: Config, extractor: Extractor): boolean => disableExtractorConfigKey(extractor) in config;

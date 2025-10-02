@@ -21,6 +21,6 @@ describe('VixSrc', () => {
   test('Black Mirror is excluded if no matching language was found', async () => {
     const ctx = createTestContext({ de: 'on' });
 
-    expect(await extractorRegistry.handle(ctx, new URL('https://vixsrc.to/tv/42009/4/2'))).toMatchSnapshot();
+    expect(await extractorRegistry.handle(ctx, new URL('https://vixsrc.to/tv/42009/4/3'))).toMatchSnapshot();
   });
 });
