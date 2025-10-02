@@ -338,6 +338,13 @@ export class Fetcher {
         throw new TimeoutError();
       }
 
+      if (tryCount < 3) {
+        this.logger.warn(`Retrying fetch ${init?.method ?? 'GET'} ${url} because of an unexpected error`, ctx);
+        await this.sleep(333);
+
+        return await this.fetchWithTimeout(ctx, url, init, ++tryCount);
+      }
+
       throw error;
     }
 
