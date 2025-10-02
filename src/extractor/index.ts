@@ -38,7 +38,19 @@ export const createExtractors = (fetcher: Fetcher): Extractor[] => {
     new Streamtape(fetcher),
     new SuperVideo(fetcher),
     new Uqload(fetcher),
-    new VidSrc(fetcher, ['in', 'net', 'xyz', 'io', 'vc']), // https://vidsrc.domains/
+    new VidSrc(fetcher, [ // https://vidsrc.domains/
+      'bz',
+      'do',
+      'gd',
+      'in',
+      'io',
+      // 'me', // redirects to .net
+      'mn',
+      'net',
+      'tw',
+      // 'vc', // 500 internal server error
+      'xyz',
+    ]),
     new VixSrc(fetcher),
     new YouTube(fetcher),
     new ExternalUrl(fetcher), // fallback extractor which must come last
