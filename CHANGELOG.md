@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.53.7](https://github.com/webstreamr/webstreamr/compare/v0.53.6...v0.53.7) (2025-10-02)
+
+
+### Bug Fixes
+
+* **extractor:** bring back VixSrc language exclusion ([ac7d248](https://github.com/webstreamr/webstreamr/commit/ac7d2480eaaf2def02870e614f3854ce25af0889))
+
 ## [0.53.6](https://github.com/webstreamr/webstreamr/compare/v0.53.5...v0.53.6) (2025-10-02)
 
 
