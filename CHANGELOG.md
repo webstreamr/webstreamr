@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.53.6](https://github.com/webstreamr/webstreamr/compare/v0.53.5...v0.53.6) (2025-10-02)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency cacheable to v2.0.3 ([#400](https://github.com/webstreamr/webstreamr/issues/400)) ([390adea](https://github.com/webstreamr/webstreamr/commit/390adea9d4ed879bfdafdc61022249ccafcf8c60))
+* **deps:** update dependency typescript to v5.9.3 ([#396](https://github.com/webstreamr/webstreamr/issues/396)) ([04069d8](https://github.com/webstreamr/webstreamr/commit/04069d83ea67a9f398ec1b50841ba462b07ed0d1))
+* **deps:** update dependency winston to v3.18.3 ([#397](https://github.com/webstreamr/webstreamr/issues/397)) ([7e4657c](https://github.com/webstreamr/webstreamr/commit/7e4657c6adff9d4408de4c14604a636edb7f7c14))
+* **extractor:** configure new VidSrc TLDs ([34b7fdd](https://github.com/webstreamr/webstreamr/commit/34b7fddfc733aed27626577f5edccef72fa9e934))
+* **fetcher:** retry unexpected exceptions ([5ac359f](https://github.com/webstreamr/webstreamr/commit/5ac359f1ebbfa9489fa8e42720a9dda1e8fcd4a7))
+
 ## [0.53.5](https://github.com/webstreamr/webstreamr/compare/v0.53.4...v0.53.5) (2025-09-30)
 
 
