@@ -35,7 +35,7 @@ export class LuluStream extends Extractor {
     const fileUrl = new URL(url.href.replace('/e/', '/d/'));
     const html = await this.fetcher.text(ctx, fileUrl, { headers });
 
-    if (/No such file/.test(html)) {
+    if (/No such file|File Not Found/.test(html)) {
       throw new NotFoundError();
     }
 
