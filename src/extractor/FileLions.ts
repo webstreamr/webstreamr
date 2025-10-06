@@ -28,6 +28,7 @@ export class FileLions extends Extractor {
         'bingezove.com',
         'coolciima.online',
         'dhtpre.com',
+        'dingtezuni.com',
         'e4xb5c2xnz.sbs',
         'egsyxutd.sbs',
         'fdewsdc.sbs',
