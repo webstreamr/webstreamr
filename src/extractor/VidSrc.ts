@@ -25,7 +25,11 @@ export class VidSrc extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    return this.extractUsingRandomTld(ctx, url, meta, [...this.tlds]);
+    // While this is a crappy thing to do, they seem to be blocking overly strict IMO
+    const randomIp = `${Math.floor(Math.random() * 223) + 1}.${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}`;
+    const newCtx = { ...ctx, ip: randomIp };
+
+    return this.extractUsingRandomTld(newCtx, url, meta, [...this.tlds]);
   };
 
   private async extractUsingRandomTld(ctx: Context, url: URL, meta: Meta, tlds: string[]): Promise<UrlResult[]> {
