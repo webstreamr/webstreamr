@@ -96,7 +96,7 @@ export class PrimeWire extends Source {
           url: new URL(targetUrlHref),
           meta: {
             countryCodes: [CountryCode.en],
-            referer: this.primeSrcBaseUrl,
+            referer: pageUrl.origin,
             ...(file_name && { title: file_name }),
             ...(file_size && { bytes: bytes.parse(file_size) as number }),
           },
