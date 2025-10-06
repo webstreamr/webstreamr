@@ -19,10 +19,8 @@ export class Mixdrop extends Extractor {
   public override readonly normalize = (url: URL): URL => new URL(url.href.replace('/f/', '/e/'));
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const headers = { Referer: meta.referer ?? url.href };
-
     const fileUrl = new URL(url.href.replace('/e/', '/f/'));
-    const html = await this.fetcher.text(ctx, fileUrl, { headers });
+    const html = await this.fetcher.text(ctx, fileUrl);
 
     if (/can't find the (file|video)/.test(html)) {
       throw new NotFoundError();
@@ -35,7 +33,7 @@ export class Mixdrop extends Extractor {
 
     return [
       {
-        url: buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Mixdrop', url, headers),
+        url: buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Mixdrop', url),
         format: Format.mp4,
         label: this.label,
         sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
