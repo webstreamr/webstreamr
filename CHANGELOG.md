@@ -1,5 +1,30 @@
 # Changelog
 
+## [0.54.0](https://github.com/webstreamr/webstreamr/compare/v0.53.7...v0.54.0) (2025-10-06)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#408](https://github.com/webstreamr/webstreamr/issues/408)) ([5a4f28e](https://github.com/webstreamr/webstreamr/commit/5a4f28e50a31d4bda361fb9f1aca0580dd803a26))
+* **deps:** update dependency @types/node to v22.18.8 ([#407](https://github.com/webstreamr/webstreamr/issues/407)) ([f7bb497](https://github.com/webstreamr/webstreamr/commit/f7bb4974327a3fc91a51dd5d622b46bc4614af1c))
+* **deps:** update eslint monorepo to v9.37.0 ([#404](https://github.com/webstreamr/webstreamr/issues/404)) ([b836040](https://github.com/webstreamr/webstreamr/commit/b8360405dd250bbc3682a3d7ab6defb53d07f27f))
+* **extractor:** add FileLions domain ([78125c7](https://github.com/webstreamr/webstreamr/commit/78125c7f375b4a8ed69ea962cd9c9e2d6c6b4a11))
+* **extractor:** re-use and optimise mediaflow default fetch init slightly ([7191c59](https://github.com/webstreamr/webstreamr/commit/7191c59b8a9624e565a0b9e813d4a3833fa306ab))
+* **extractor:** work around VidSrc blocking by generating random IPs ([c610a99](https://github.com/webstreamr/webstreamr/commit/c610a995c2e4b8f397f5b6af05b46695c3305453))
+
+
+### Features
+
+* **extractor:** add new MediaFlow Proxy extractors FileMoon, LuluStream and Voe ([bb21bbc](https://github.com/webstreamr/webstreamr/commit/bb21bbc7fa042b1dd2ebcceffe389dc28aa5753d))
+
+
+### Bug Fixes
+
+* **extractor:** handle FileLions Not Found case ([d1493cb](https://github.com/webstreamr/webstreamr/commit/d1493cbb579a6d02399b9bd28003f2aee6467844))
+* **extractor:** handle StreamEmbed video is not ready ([424c2fd](https://github.com/webstreamr/webstreamr/commit/424c2fd1e0cf63438f5726de281cdf08a1aab46d))
+* **extractor:** remove referer header from Mixdrop ([eea8cac](https://github.com/webstreamr/webstreamr/commit/eea8cac018aa99cc870ae4665d81e43c30af8904))
+* **source:** use PrimeWire page instead of API as Referer ([30a709d](https://github.com/webstreamr/webstreamr/commit/30a709d6198f96e8d781fdab58421ca968931640))
+
 ## [0.53.7](https://github.com/webstreamr/webstreamr/compare/v0.53.6...v0.53.7) (2025-10-02)
 
 
