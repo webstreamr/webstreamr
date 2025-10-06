@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>LuluStream</title>
+  
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--<meta name="robots" content="noindex, nofollow, nosnippet, noarchive, noimageindex" />-->
+  <meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" href="/static/images/favicon/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="/static/images/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" href="/static/images/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/static/images/favicon/manifest.json">
+  <link rel="icon" href="/static/images/favicon/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="/static/css/style.css?10" rel="stylesheet">
+
+  <script src="/static/js/jquery-3.2.1.min.js"></script>
+  <script src="/static/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/app.js"></script>
+  <script src="/static/js/xupload.js?10"></script>
+</head>
+<body class="">
+  
+  <header class="header">
+    <div class="container">
+      <div class="row align-items-center flex-nowrap">
+        <div class="col-auto flex-grow-1 flex-shrink-1">
+          <div class="row align-items-center">
+            <div class="col-auto d-lg-none">
+              <div class="dropdown">
+                <button class="btn icon-btn" data-bs-toggle="dropdown" data-bs-offset="0, 16">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14">
+                    <path fill-rule="evenodd" fill="currentcolor" d="M17 8H1a1 1 0 1 1 0-2h16a1 1 0 1 1 0 2Zm0-6H1a1 1 0 0 1 0-2h16a1 1 0 1 1 0 2ZM1 12h16a1 1 0 1 1 0 2H1a1 1 0 1 1 0-2Z" />
+                  </svg>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <a href="/?op=upload" class="dropdown-item">Upload</a>
+                  <a href="/premium" class="dropdown-item">Premium</a>
+                  <a href="/make_money" class="dropdown-item">Earn Money</a>
+                  <a href="/api.html" class="dropdown-item">Service API</a>
+                  <a href="/tos" class="dropdown-item">Terms of Service</a>
+                  <a href="/faq" class="dropdown-item">About us</a>
+                  <a href="/contact" class="dropdown-item">Contacts</a>
+                </ul>
+              </div>
+            </div>
+            <div class="col-auto">
+              <a href="/" class="logo">
+                <img src="/static/images/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <nav class="nav">
+                <a href="/make_money" class="nav-link">Earn Money</a>
+                <a href="/premium" class="nav-link">Premium</a>
+                <a href="/api.html" class="nav-link">Api Docs</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-auto d-none d-lg-block">
+          <a href="/login.html" class="btn login-btn me-1">Login</a>
+          <a href="/?op=registration" class="btn btn-gradient reg-btn">Register</a>
+        </div>
+        <div class="col-auto d-lg-none">
+          <div class="dropdown">
+            <button class="btn icon-btn" data-bs-toggle="dropdown" data-bs-offset="0, 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                <path fill-rule="evenodd" fill="currentcolor" d="M16.525 17.561c-.032.032-.062.063-.099.09A9.953 9.953 0 0 1 10 20a9.947 9.947 0 0 1-6.448-2.369c-.018-.014-.032-.029-.048-.043A9.976 9.976 0 0 1 0 10C0 4.486 4.486 0 10 0s10 4.486 10 10c0 3.02-1.351 5.726-3.475 7.561Zm-1.92-1.03A3.013 3.013 0 0 0 12.002 15H7.998a2.972 2.972 0 0 0-2.606 1.529 7.952 7.952 0 0 0 9.213.002ZM10 2c-4.411 0-8 3.589-8 8a7.96 7.96 0 0 0 1.889 5.151A4.962 4.962 0 0 1 7.998 13h4.005c1.657 0 3.184.84 4.103 2.157A7.962 7.962 0 0 0 18 10c0-4.411-3.589-8-8-8Zm0 10c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4Zm0-6c-1.103 0-2 .897-2 2s.897 2 2 2 2-.897 2-2-.897-2-2-2Z"
+                />
+              </svg>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a class="dropdown-item" href="/login.html">Login</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/?op=registration">Register</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+
+
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+  <section class="section">
+    <div class="container">
+    
+      <div class="alert alert-danger">
+        No such file=uthq0o0sljnx
+      </div>
+    
+    
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 d-flex flex-column justify-content-between">
+        <div class="mb-3">
+
+        </div>
+        <p class="text-muted">© 2023 LuluStream. <br> All rights reserved.</p>
+      </div>
+      <div class="col-lg-3">
+        <div class="nav flex-column mb-2">
+          <a href="/tos" class="nav-link">Terms of service</a>
+          <a href="/api.html" class="nav-link">API Documentation</a>
+          <a href="/contact" class="nav-link">Contact Us</a>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="nav flex-column mb-2">
+          <a href="/premium" class="nav-link">Premium</a>
+          <a href="/make_money" class="nav-link">Earn money</a>
+          <a href="/check_files" class="nav-link">Link Checker</a>   
+        </div>
+      </div>
+      <div class="col-lg-2 align-self-end text-end">
+        <div class="mb-4">
+          <a href="#" class="logo">
+            <img src="/static/images/logo.svg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98a528aa0a1c9754',t:'MTc1OTc1MzcwOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>

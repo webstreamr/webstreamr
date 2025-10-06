@@ -5,8 +5,10 @@ import { ExternalUrl } from './ExternalUrl';
 import { Extractor } from './Extractor';
 import { Fastream } from './Fastream';
 import { FileLions } from './FileLions';
+import { FileMoon } from './FileMoon';
 import { HubCloud } from './HubCloud';
 import { KinoGer } from './KinoGer';
+import { LuluStream } from './LuluStream';
 import { Mixdrop } from './Mixdrop';
 import { SaveFiles } from './SaveFiles';
 import { Soaper } from './Soaper';
@@ -16,6 +18,7 @@ import { SuperVideo } from './SuperVideo';
 import { Uqload } from './Uqload';
 import { VidSrc } from './VidSrc';
 import { VixSrc } from './VixSrc';
+import { Voe } from './Voe';
 import { YouTube } from './YouTube';
 
 export * from './Extractor';
@@ -29,8 +32,10 @@ export const createExtractors = (fetcher: Fetcher): Extractor[] => {
     new Dropload(fetcher),
     new Fastream(fetcher),
     new FileLions(fetcher),
+    new FileMoon(fetcher),
     new HubCloud(fetcher),
     new KinoGer(fetcher),
+    new LuluStream(fetcher),
     new Mixdrop(fetcher),
     new SaveFiles(fetcher),
     new Soaper(fetcher),
@@ -52,6 +57,7 @@ export const createExtractors = (fetcher: Fetcher): Extractor[] => {
       'xyz',
     ]),
     new VixSrc(fetcher),
+    new Voe(fetcher),
     new YouTube(fetcher),
     new ExternalUrl(fetcher), // fallback extractor which must come last
   ].filter(extractor => !disabledExtractors.includes(extractor.id));

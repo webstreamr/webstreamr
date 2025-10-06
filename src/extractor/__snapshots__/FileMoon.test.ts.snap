@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`FileMoon page not found 1`] = `[]`;
+
+exports[`FileMoon z1ekv717 d 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "FileMoon (via MediaFlow Proxy)",
+    "meta": {
+      "countryCodes": [],
+      "height": 720,
+      "title": "alien earth s01e01 1080p web h264-successfulcrab",
+    },
+    "sourceId": "filemoon_",
+    "ttl": 900000,
+    "url": "https://mediaflow.test.org/proxy/hls/manifest.m3u8?api_password=test&h_user-agent=Mozilla%2F5.0+%28Windows+NT+10.0%3B+Win64%3B+x64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F136.0.0.0+Safari%2F537.36&h_referer=https%3A%2F%2Fz1ekv717.fun%2Fd%2Fwkhcbggdxf1d&d=https%3A%2F%2Fbe7713.rcr82.waw05.i8yz83pn.com%2Fhls2%2F01%2F09665%2Fwkhcbggdxf1d_h%2Fmaster.m3u8%3Ft%3D359izbQ_L-sOHaIjj275YKdBDyiPzUi3ETfbNoN9bzU%26s%3D1759754698%26e%3D10800%26f%3D48329866%26srv%3D1075%26asn%3D13335%26sp%3D4000%26p%3D",
+  },
+]
+`;

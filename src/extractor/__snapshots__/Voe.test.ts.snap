@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Voe encoding error 1`] = `[]`;
+
+exports[`Voe jilliandescribecompany 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "VOE (via MediaFlow Proxy)",
+    "meta": {
+      "countryCodes": [],
+      "height": 720,
+      "title": "Superman.2025.2160p.WEB-DL.DV.HDR10Plus.X265.DDP5.1.Atmos-YIN.mp4",
+    },
+    "sourceId": "voe_",
+    "ttl": 900000,
+    "url": "https://mediaflow.test.org/proxy/hls/manifest.m3u8?api_password=test&h_user-agent=Mozilla%2F5.0+%28Windows+NT+10.0%3B+Win64%3B+x64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F136.0.0.0+Safari%2F537.36&h_referer=https%3A%2F%2Fjilliandescribecompany.com%2Fe%2Fea21l02gcygw&d=https%3A%2F%2Fcdn-kuc3ehpz4wnczfyz.orbitcache.com%2Fengine%2Fhls2-c%2F01%2F15242%2Fea21l02gcygw_%2Cn%2C.urlset%2Fmaster.m3u8%3Ft%3D3iMAKoJqij6nC4HDamYxtDB75a_-AlG_wD1demRBo0I%26s%3D1759754183%26e%3D14400%26f%3D76213694%26node%3DFPYruvgfgORaUYuYfpByMgjFbC8X%2FHWKW1utbUQQRyQ%3D%26i%3D104.28%26sp%3D2500%26asn%3D13335%26q%3Dn%26rq%3DzKNpONzQJHzTeXTzr0V2M9V4DUnzwX9C8hTNxrUW",
+  },
+]
+`;
