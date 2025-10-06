@@ -21,6 +21,7 @@ export class KinoGer extends Extractor {
       'moflix.rpmplay.xyz',
       'moflix.upns.xyz',
       'player.upn.one',
+      'securecdn.shop',
       'shiid4u.upn.one',
       'tuktuk.rpmvid.com',
       'ultrastream.online',
