@@ -1,5 +1,6 @@
 import bytes from 'bytes';
 import * as cheerio from 'cheerio';
+import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
 import {
   buildMediaFlowProxyExtractorStreamUrl,
@@ -67,12 +68,16 @@ export class FileLions extends Extractor {
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
-    const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'FileLions', url, headers);
-
     const fileUrl = new URL(url.href.replace('/v/', '/f/'));
     const html = await this.fetcher.text(ctx, fileUrl, { headers });
 
+    if (/File Not Found/.test(html)) {
+      throw new NotFoundError();
+    }
+
     const sizeMatch = html.match(/([\d.]+ ?[GM]B)/);
+
+    const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'FileLions', url, headers);
 
     const $ = cheerio.load(html);
     const title = $('title').text().trim().replace(/^Watch /, '').trim();

@@ -17,4 +17,8 @@ describe('FileLions', () => {
   test('mivalyo v referer lock', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://mivalyo.com/v/tah5znapz3e5'), { referer: 'https://kinoger.com' })).toMatchSnapshot();
   });
+
+  test('file not found', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://filelions.to/v/ylcp2cu5qanb'))).toMatchSnapshot();
+  });
 });
