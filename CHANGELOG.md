@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.54.1](https://github.com/webstreamr/webstreamr/compare/v0.54.0...v0.54.1) (2025-10-06)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency cacheable to v2.1.0 ([#413](https://github.com/webstreamr/webstreamr/issues/413)) ([c19d46f](https://github.com/webstreamr/webstreamr/commit/c19d46f406b8f8b920da4ec1b3929f5e9d9a848b))
+* **deps:** update dependency typescript-eslint to v8.46.0 ([#414](https://github.com/webstreamr/webstreamr/issues/414)) ([8b4aef9](https://github.com/webstreamr/webstreamr/commit/8b4aef94be8710e835503dc103979eee8dc1eb51))
+
+
+### Bug Fixes
+
+* **extractor:** handle another LuluStream file not found case ([d0958e8](https://github.com/webstreamr/webstreamr/commit/d0958e87714e3577f6e47cca2086806567ffaf8c))
+
 ## [0.54.0](https://github.com/webstreamr/webstreamr/compare/v0.53.7...v0.54.0) (2025-10-06)
 
 
