@@ -13,4 +13,8 @@ describe('StreamEmbed', () => {
   test('watch.gxplayer.xyz', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://watch.gxplayer.xyz/watch?v=MEKI92PU'))).toMatchSnapshot();
   });
+
+  test('video is not ready', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://watch.gxplayer.xyz/watch?v=PBO90WAS'))).toMatchSnapshot();
+  });
 });

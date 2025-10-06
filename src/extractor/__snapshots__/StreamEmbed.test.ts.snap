@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`StreamEmbed video is not ready 1`] = `[]`;
+
 exports[`StreamEmbed watch.gxplayer.xyz 1`] = `
 [
   {

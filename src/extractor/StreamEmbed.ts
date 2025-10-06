@@ -1,3 +1,4 @@
+import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
 import { Extractor } from './Extractor';
 
@@ -14,6 +15,10 @@ export class StreamEmbed extends Extractor {
     const headers = { Referer: meta.referer ?? url.href };
 
     const html = await this.fetcher.text(ctx, url, { headers });
+
+    if (/Video is not ready/.test(html)) {
+      throw new NotFoundError();
+    }
 
     const video = JSON.parse((html.match(/video ?= ?(.*);/) as string[])[1] as string);
 
