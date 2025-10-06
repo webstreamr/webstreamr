@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
-import { buildMediaFlowProxyExtractorRedirectUrl, supportsMediaFlowProxy } from '../utils';
+import { buildMediaFlowProxyExtractorRedirectUrl, MEDIAFLOW_DEFAULT_INIT, supportsMediaFlowProxy } from '../utils';
 import { guessSizeFromMp4 } from '../utils/size';
 import { Extractor } from './Extractor';
 
@@ -46,7 +46,7 @@ export class Uqload extends Extractor {
         meta: {
           ...meta,
           title,
-          bytes: await guessSizeFromMp4(ctx, this.fetcher, mp4Url, { headers: { Referer: url.href }, queueLimit: 4 }),
+          bytes: await guessSizeFromMp4(ctx, this.fetcher, mp4Url, { ...MEDIAFLOW_DEFAULT_INIT, headers: { Referer: url.href } }),
           ...(heightMatch && {
             height: parseInt(heightMatch[1] as string),
           }),

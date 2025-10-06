@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import { Context, Format, Meta, UrlResult } from '../types';
 import {
-  buildMediaFlowProxyExtractorRedirectUrl,
+  buildMediaFlowProxyExtractorRedirectUrl, MEDIAFLOW_DEFAULT_INIT,
   supportsMediaFlowProxy,
 } from '../utils';
 import { guessSizeFromMp4 } from '../utils/size';
@@ -40,7 +40,7 @@ export class Streamtape extends Extractor {
         meta: {
           ...meta,
           title,
-          bytes: await guessSizeFromMp4(ctx, this.fetcher, mp4Url, { queueLimit: 4 }),
+          bytes: await guessSizeFromMp4(ctx, this.fetcher, mp4Url, MEDIAFLOW_DEFAULT_INIT),
         },
       },
     ];

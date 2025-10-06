@@ -1,7 +1,12 @@
 import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { Context, Format, Meta, UrlResult } from '../types';
-import { buildMediaFlowProxyExtractorStreamUrl, guessHeightFromPlaylist, supportsMediaFlowProxy } from '../utils';
+import {
+  buildMediaFlowProxyExtractorStreamUrl,
+  guessHeightFromPlaylist,
+  MEDIAFLOW_DEFAULT_INIT,
+  supportsMediaFlowProxy,
+} from '../utils';
 import { Extractor } from './Extractor';
 
 /** @see https://github.com/Gujal00/ResolveURL/commits/master/script.module.resolveurl/lib/resolveurl/plugins/filelions.py */
@@ -80,7 +85,7 @@ export class FileLions extends Extractor {
         ttl: this.ttl,
         meta: {
           ...meta,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, { headers: { Referer: url.href }, queueLimit: 4 }),
+          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, { ...MEDIAFLOW_DEFAULT_INIT, headers: { Referer: url.href } }),
           ...(sizeMatch && {
             bytes: bytes.parse(sizeMatch[1] as string) as number,
           }),
