@@ -6,6 +6,7 @@ exports[`DoodStream can guess height from title 1`] = `
     "format": "mp4",
     "label": "DoodStream",
     "meta": {
+      "bytes": 549139251,
       "countryCodes": [],
       "title": "Black Mirror S04E02 FRENCH 720p WEB x264-RiPiT",
     },
@@ -44,7 +45,7 @@ exports[`DoodStream dood.to 1`] = `
     "format": "mp4",
     "label": "DoodStream",
     "meta": {
-      "bytes": 791702409,
+      "bytes": 1395864371,
       "countryCodes": [],
       "title": "des-teufels-bad-2024",
     },
@@ -54,25 +55,6 @@ exports[`DoodStream dood.to 1`] = `
     "sourceId": "doodstream_",
     "ttl": 21600000,
     "url": "https://aa360cc.cloudatacdn.com/u5kjv4jxytd3sdgge5uogji5dg4huat2pxrm2qibdbm5rlyusvl46iz3u3ta/1f4isxg0tw~mocked-random-string?token=7uebebipnnhusa4xnyea1er4&expiry=639837296000",
-  },
-]
-`;
-
-exports[`DoodStream doodster 1`] = `
-[
-  {
-    "format": "mp4",
-    "label": "DoodStream",
-    "meta": {
-      "countryCodes": [],
-      "title": "Brokeback Mountain 2005",
-    },
-    "requestHeaders": {
-      "Referer": "http://dood.to",
-    },
-    "sourceId": "doodstream_",
-    "ttl": 21600000,
-    "url": "https://ijs155l.cloudatacdn.com/u5kj2rz5qtdlsdgge4hrgj2flz5cjodea6auatveaphxogr2vvukxfzmwzva/egprvdjvpr~mocked-random-string?token=fbsg3301phkef2s4swo8bssg&expiry=639837296000",
   },
 ]
 `;

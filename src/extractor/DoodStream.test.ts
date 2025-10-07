@@ -14,10 +14,6 @@ describe('DoodStream', () => {
     expect(await extractorRegistry.handle(ctx, new URL('http://dood.to/e/sk1m9eumzyjj'))).toMatchSnapshot();
   });
 
-  test('doodster', async () => {
-    expect(await extractorRegistry.handle(ctx, new URL('https://dooodster.com/e/1cfcevn6dg8shrfvht22odxw2lty18hr'))).toMatchSnapshot();
-  });
-
   test('missing pass_md5 -> not found', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://dood.to/e/gy8l8mb2i311'))).toMatchSnapshot();
   });

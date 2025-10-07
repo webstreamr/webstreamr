@@ -237,12 +237,12 @@ exports[`resolve returns sorted results 1`] = `
           "Referer": "http://dood.to",
         },
       },
-      "videoSize": 791702409,
+      "videoSize": 1395864371,
     },
     "name": "WebStreamr 🇩🇪",
     "title": "des-teufels-bad-2024
-💾 755.03 MB 🔗 DoodStream from MeineCloud",
-    "url": "https://aa360cc.cloudatacdn.com/u5kjv4jxytd3sdgge5uogji5dg4huat2pxrm2qibdbm5rlyusvlvslr3u3ta/bibyo6w0dm~mocked-random-string?token=7uebebipnnhusa4xnyea1er4&expiry=639837296000",
+💾 1.3 GB 🔗 DoodStream from MeineCloud",
+    "url": "https://aa360cc.cloudatacdn.com/u5kjv4jxytd3sdgge5uogji5dg4huat2pxrm2qibdbm5rmcr6fv2tcniineq/6aqs1w2xla~mocked-random-string?token=7uebebipnnhusa4xnyea1er4&expiry=639837296000",
   },
   {
     "behaviorHints": {
@@ -253,11 +253,12 @@ exports[`resolve returns sorted results 1`] = `
           "Referer": "http://dood.to",
         },
       },
+      "videoSize": 1181116006,
     },
     "name": "WebStreamr 🇮🇹",
     "title": "the-devils-bath-2024-sd-sub-ita
-🔗 DoodStream from MostraGuarda",
-    "url": "https://kk892as.cloudatacdn.com/u5kj7j7s27d3sdgge5woezkbi4pu672wktq3aqujw47rbx4declm2mk2k2gq/4msi5kvncy~mocked-random-string?token=aw2v2d8uhbrj2ky54d573ujk&expiry=639837296000",
+💾 1.1 GB 🔗 DoodStream from MostraGuarda",
+    "url": "https://et1095c.cloudatacdn.com/u5kjxj7s27d3sdgge5woezkbi7milmjrckehcrwuw63gsvytfwxlfmjzvu3a/jli1t787d1~mocked-random-string?token=aw2v2d8uhbrj2ky54d573ujk&expiry=639837296000",
   },
 ]
 `;
@@ -317,12 +318,12 @@ exports[`resolve returns sorted results 2`] = `
           "Referer": "http://dood.to",
         },
       },
-      "videoSize": 791702409,
+      "videoSize": 1395864371,
     },
     "name": "WebStreamr 🇩🇪",
     "title": "des-teufels-bad-2024
-💾 755.03 MB 🔗 DoodStream from MeineCloud",
-    "url": "https://aa360cc.cloudatacdn.com/u5kjv4jxytd3sdgge5uogji5dg4huat2pxrm2qibdbm5rlyusvlvslr3u3ta/bibyo6w0dm~mocked-random-string?token=7uebebipnnhusa4xnyea1er4&expiry=639837296000",
+💾 1.3 GB 🔗 DoodStream from MeineCloud",
+    "url": "https://aa360cc.cloudatacdn.com/u5kjv4jxytd3sdgge5uogji5dg4huat2pxrm2qibdbm5rmcr6fv2tcniineq/6aqs1w2xla~mocked-random-string?token=7uebebipnnhusa4xnyea1er4&expiry=639837296000",
   },
   {
     "behaviorHints": {
@@ -333,11 +334,12 @@ exports[`resolve returns sorted results 2`] = `
           "Referer": "http://dood.to",
         },
       },
+      "videoSize": 1181116006,
     },
     "name": "WebStreamr 🇮🇹",
     "title": "the-devils-bath-2024-sd-sub-ita
-🔗 DoodStream from MostraGuarda",
-    "url": "https://kk892as.cloudatacdn.com/u5kj7j7s27d3sdgge5woezkbi4pu672wktq3aqujw47rbx4declm2mk2k2gq/4msi5kvncy~mocked-random-string?token=aw2v2d8uhbrj2ky54d573ujk&expiry=639837296000",
+💾 1.1 GB 🔗 DoodStream from MostraGuarda",
+    "url": "https://et1095c.cloudatacdn.com/u5kjxj7s27d3sdgge5woezkbi7milmjrckehcrwuw63gsvytfwxlfmjzvu3a/jli1t787d1~mocked-random-string?token=aw2v2d8uhbrj2ky54d573ujk&expiry=639837296000",
   },
   {
     "behaviorHints": {
@@ -381,6 +383,22 @@ exports[`resolve returns source errors as stream 2`] = `
 
 exports[`resolve returns ytId instead of url for YouTube video 1`] = `
 [
+  {
+    "behaviorHints": {
+      "bingeGroup": "webstreamr-doodstream_en",
+      "notWebReady": true,
+      "proxyHeaders": {
+        "request": {
+          "Referer": "http://dood.to",
+        },
+      },
+      "videoSize": 1932735283,
+    },
+    "name": "WebStreamr 🇺🇸",
+    "title": "Solaris 1972 PROPER 1080p BluRay x264-SADPANDA - ENG SUBS - tt0069293
+💾 1.8 GB 🔗 DoodStream from PrimeWire",
+    "url": "https://do365ki.cloudatacdn.com/u5kjzcovmpd3sdgge7tc4jacdzaikwer6ff4qd463b6qj6lodlgpnsbkffvq/xy59ygfkku~mocked-random-string?token=aej8q7ajug1gt0nd4lbs8zgd&expiry=639837296000",
+  },
   {
     "behaviorHints": {
       "bingeGroup": "webstreamr-youtube_en",

@@ -1,8 +1,8 @@
+import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import randomstring from 'randomstring';
 import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
-import { guessSizeFromMp4 } from '../utils/size';
 import { Extractor } from './Extractor';
 
 export class DoodStream extends Extractor {
@@ -40,13 +40,14 @@ export class DoodStream extends Extractor {
     const $ = cheerio.load(html);
     const title = $('title').text().trim().replace(/ - DoodStream$/, '').trim();
 
+    const downloadHtml = await this.fetcher.text(ctx, new URL(url.href.replace('/e/', '/d/')));
+    const sizeMatch = downloadHtml.match(/([\d.]+ ?[GM]B)/);
+
     let mp4Url: URL;
-    let bytes: number | undefined;
     if (baseUrl.includes('cloudflarestorage')) {
       mp4Url = new URL(baseUrl);
     } else {
       mp4Url = new URL(`${baseUrl}${randomstring.generate(10)}?token=${token}&expiry=${Date.now()}`);
-      bytes = await guessSizeFromMp4(ctx, this.fetcher, mp4Url, { headers: { Referer: url.href } });
     }
 
     return [
@@ -59,7 +60,7 @@ export class DoodStream extends Extractor {
         meta: {
           ...meta,
           title,
-          ...(bytes && { bytes }),
+          ...(sizeMatch && { bytes: bytes.parse(sizeMatch[1] as string) as number }),
         },
         requestHeaders: {
           Referer: url.origin,
