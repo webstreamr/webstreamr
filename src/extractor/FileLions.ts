@@ -2,12 +2,7 @@ import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
-import {
-  buildMediaFlowProxyExtractorStreamUrl,
-  guessHeightFromPlaylist,
-  MEDIAFLOW_DEFAULT_INIT,
-  supportsMediaFlowProxy,
-} from '../utils';
+import { buildMediaFlowProxyExtractorStreamUrl, supportsMediaFlowProxy, unpackEval } from '../utils';
 import { Extractor } from './Extractor';
 
 /** @see https://github.com/Gujal00/ResolveURL/commits/master/script.module.resolveurl/lib/resolveurl/plugins/filelions.py */
@@ -62,39 +57,41 @@ export class FileLions extends Extractor {
   }
 
   public override normalize(url: URL): URL {
-    return new URL(url.href.replace('/f/', '/v/').replace('/download/', '/v/').replace('/file/', '/v/'));
+    return new URL(url.href.replace('/v/', '/f/').replace('/download/', '/f/').replace('/file/', '/f/'));
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
-    const fileUrl = new URL(url.href.replace('/v/', '/f/'));
-    const html = await this.fetcher.text(ctx, fileUrl, { headers });
+    const html = await this.fetcher.text(ctx, url, { headers });
+
+    if (html.includes('This video can be watched as embed only')) {
+      return await this.extractInternal(ctx, new URL(url.href.replace('/f/', '/v/')), meta);
+    }
 
     if (/File Not Found/.test(html)) {
       throw new NotFoundError();
     }
 
+    const unpacked = unpackEval(html);
+    const heightMatch = unpacked.match(/(\d{3,})p/) as string[];
+
     const sizeMatch = html.match(/([\d.]+ ?[GM]B)/);
 
-    const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'FileLions', url, headers);
-
     const $ = cheerio.load(html);
-    const title = $('title').text().trim().replace(/^Watch /, '').trim();
+    const title = $('meta[name="description"]').attr('content') as string;
 
     return [
       {
-        url: playlistUrl,
+        url: await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'FileLions', url, headers),
         format: Format.hls,
         label: this.label,
         sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
           ...meta,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, { ...MEDIAFLOW_DEFAULT_INIT, headers: { Referer: url.href } }),
-          ...(sizeMatch && {
-            bytes: bytes.parse(sizeMatch[1] as string) as number,
-          }),
+          height: parseInt(heightMatch[1] as string),
+          ...(sizeMatch && { bytes: bytes.parse(sizeMatch[1] as string) as number }),
           ...(title && { title }),
         },
       },
