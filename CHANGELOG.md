@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.54.2](https://github.com/webstreamr/webstreamr/compare/v0.54.1...v0.54.2) (2025-10-07)
+
+
+### Bug Fixes
+
+* **extractor:** do not pass referer for Uqload MFP requests ([298ac96](https://github.com/webstreamr/webstreamr/commit/298ac965588e7a1fbc830586309cdb60c5b9efdc))
+
 ## [0.54.1](https://github.com/webstreamr/webstreamr/compare/v0.54.0...v0.54.1) (2025-10-06)
 
 
