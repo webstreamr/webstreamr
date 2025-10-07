@@ -14,6 +14,10 @@ describe('Voe', () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://jilliandescribecompany.com/e/ea21l02gcygw'))).toMatchSnapshot();
   });
 
+  test('premium only without resolution', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://jilliandescribecompany.com/qqfyi04w52mj'))).toMatchSnapshot();
+  });
+
   test('encoding error', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://voe.sx/e/c2yxvit4f6bz'))).toMatchSnapshot();
   });

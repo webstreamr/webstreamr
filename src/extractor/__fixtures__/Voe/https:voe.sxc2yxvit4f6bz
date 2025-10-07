@@ -13,10 +13,10 @@
                 currentUrl.searchParams.set('permanentToken', permanentToken);
                 window.location.href = currentUrl.toString();
             } else {
-                window.location.href = 'https://jilliandescribecompany.com/e/c2yxvit4f6bz';
+                window.location.href = 'https://jilliandescribecompany.com/c2yxvit4f6bz';
             }
         } else {
-            window.location.href = 'https://jilliandescribecompany.com/e/c2yxvit4f6bz';
+            window.location.href = 'https://jilliandescribecompany.com/c2yxvit4f6bz';
         }
     </script>
 </body>

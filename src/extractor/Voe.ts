@@ -1,10 +1,9 @@
+import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
 import {
   buildMediaFlowProxyExtractorStreamUrl,
-  guessHeightFromPlaylist,
-  MEDIAFLOW_DEFAULT_INIT,
   supportsMediaFlowProxy,
 } from '../utils';
 import { Extractor } from './Extractor';
@@ -114,9 +113,7 @@ export class Voe extends Extractor {
   }
 
   public override normalize(url: URL): URL {
-    const videoId = url.pathname.split('/').slice(-1)[0] as string;
-
-    return new URL(`/e/${videoId}`, url);
+    return new URL(`/${url.pathname.split('/').slice(-1)[0]}`, url);
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
@@ -136,6 +133,9 @@ export class Voe extends Extractor {
     const $ = cheerio.load(html);
     const title = $('meta[name="description"]').attr('content')?.trim().replace(/^Watch /, '').replace(/ at VOE$/, '').trim();
 
+    const sizeMatch = html.matchAll(/[\d.]+ ?[GM]B/g).toArray().at(-1);
+    const heightMatch = html.match(/<b>(\d{3,})p<\/b>/);
+
     const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'Voe', url, headers);
 
     return [
@@ -147,8 +147,9 @@ export class Voe extends Extractor {
         ttl: this.ttl,
         meta: {
           ...meta,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, MEDIAFLOW_DEFAULT_INIT),
           title,
+          ...(sizeMatch && { bytes: bytes.parse(sizeMatch[0] as string) as number }),
+          ...(heightMatch && { height: parseInt(heightMatch[1] as string) }),
         },
       },
     ];
