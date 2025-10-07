@@ -4,8 +4,6 @@ import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
 import {
   buildMediaFlowProxyExtractorStreamUrl,
-  guessHeightFromPlaylist,
-  MEDIAFLOW_DEFAULT_INIT,
   supportsMediaFlowProxy,
 } from '../utils';
 import { Extractor } from './Extractor';
@@ -31,7 +29,9 @@ export class LuluStream extends Extractor {
   }
 
   public override normalize(url: URL): URL {
-    return new URL(url.href.replace('/d/', '/e/'));
+    const videoId = url.pathname.split('/').slice(-1)[0] as string;
+
+    return new URL(`/e/${videoId}`, url);
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
@@ -47,7 +47,7 @@ export class LuluStream extends Extractor {
     const $ = cheerio.load(html);
     const title = $('h1').text().trim();
 
-    const sizeMatch = html.match(/([\d.]+ ?[GM]B)/) as string[];
+    const heightAndSizeMatch = html.match(/\d{3,}x(\d{3,}), ([\d.]+ ?[GM]B)/) as string[];
 
     const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'LuluStream', url, headers);
 
@@ -60,9 +60,9 @@ export class LuluStream extends Extractor {
         ttl: this.ttl,
         meta: {
           ...meta,
-          bytes: bytes.parse(sizeMatch[1] as string) as number,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, MEDIAFLOW_DEFAULT_INIT),
           title,
+          bytes: bytes.parse(heightAndSizeMatch[2] as string) as number,
+          height: parseInt(heightAndSizeMatch[1] as string),
         },
       },
     ];

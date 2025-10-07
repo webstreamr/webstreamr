@@ -14,6 +14,10 @@ describe('LuluStream', () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://streamhihi.com/d/mk9m58lz8ts6'))).toMatchSnapshot();
   });
 
+  test('streamhihi', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://streamhihi.com/mk9m58lz8ts6'))).toMatchSnapshot();
+  });
+
   test('no such file', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://lulustream.com/e/uthq0o0sljnx'))).toMatchSnapshot();
   });
