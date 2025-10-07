@@ -8,7 +8,7 @@ interface ExtractResult {
   query_params: Record<string, string>;
 }
 
-export const MEDIAFLOW_DEFAULT_INIT: CustomRequestInit = {
+const MEDIAFLOW_DEFAULT_INIT: CustomRequestInit = {
   queueLimit: 4,
   queueTimeout: 10000,
 };
