@@ -1,5 +1,34 @@
 # Changelog
 
+## [0.54.3](https://github.com/webstreamr/webstreamr/compare/v0.54.2...v0.54.3) (2025-10-07)
+
+
+### Miscellaneous Chores
+
+* **extractor:** use MEDIAFLOW_DEFAULT_INIT where it was forgotten ([bab0da2](https://github.com/webstreamr/webstreamr/commit/bab0da2a8f141c530fdfe24f5ef872660cbe032c))
+* increase MFP related timeouts ([a3b90bf](https://github.com/webstreamr/webstreamr/commit/a3b90bf19a008c6cce2b0a04029c99ef42692148))
+
+
+### Bug Fixes
+
+* **extractor:** support Dropload with missing height/size info ([06e0ba2](https://github.com/webstreamr/webstreamr/commit/06e0ba23d7a83ec981c227fe02357d6c040b1100))
+
+
+### Performance Improvements
+
+* **extractor:** do not guess resolution via MFP playlist for FileLions ([a7360b6](https://github.com/webstreamr/webstreamr/commit/a7360b68f0ff2c2794964b4b43999ddf27fbbcc3))
+* **extractor:** do not guess resolution via MFP playlist for FileMoon ([312f606](https://github.com/webstreamr/webstreamr/commit/312f60660af4239cd837e64a3e8a05678aa1a964))
+* **extractor:** do not guess resolution via MFP playlist for LuluStream ([b3db546](https://github.com/webstreamr/webstreamr/commit/b3db546e00413f68d04ee53851b8b5cff6db9152))
+* **extractor:** do not guess resolution via MFP playlist for Voe ([8fb3320](https://github.com/webstreamr/webstreamr/commit/8fb33208687208534b3ce5783299cc278883ba50))
+* **extractor:** do not guess size from mp4 for DoodStream ([b8c5c1a](https://github.com/webstreamr/webstreamr/commit/b8c5c1a4f39579c8bd95e35783e58b3ba6e24a35))
+* **extractor:** do not guess size from mp4 for Streamtape ([e11cf89](https://github.com/webstreamr/webstreamr/commit/e11cf8986ed0e33d2032624ccee9b15539ed3317))
+* **extractor:** do not guess size from mp4 for Uqload ([5e1c3ee](https://github.com/webstreamr/webstreamr/commit/5e1c3eea24cf361f1fae63794338c54dda327dd4))
+
+
+### Code Refactoring
+
+* use .at() instead of .slice() construct ([22c6754](https://github.com/webstreamr/webstreamr/commit/22c6754efcccf97f478b45b35c053e9e85c17340))
+
 ## [0.54.2](https://github.com/webstreamr/webstreamr/compare/v0.54.1...v0.54.2) (2025-10-07)
 
 
