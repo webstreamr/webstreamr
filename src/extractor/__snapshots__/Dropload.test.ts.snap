@@ -18,6 +18,23 @@ exports[`Dropload download URL 1`] = `
 ]
 `;
 
+exports[`Dropload dropload unknown height and size 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "Dropload",
+    "meta": {
+      "countryCodes": [],
+      "height": 800,
+      "title": "The Lost Bus 2025 1080p WEBRip x265",
+    },
+    "sourceId": "dropload_",
+    "ttl": 10800000,
+    "url": "https://ds16.dropcdn.io/hls2/02/00314/gf2apij3ql37_h/master.m3u8?t=jq0VCV2dOyLIIH07IGIpzruCXvbfdVqzGLWfMeo00AM&s=1759845990&e=14400&f=1571895&srv=ds3&i=0.0&sp=0&ii=2.184.0.222&p1=ds3&p2=ds3",
+  },
+]
+`;
+
 exports[`Dropload dropload.io 1`] = `
 [
   {

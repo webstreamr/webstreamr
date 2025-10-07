@@ -14,6 +14,10 @@ describe('Dropload', () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://dropload.io/embed-lyo2h1snpe5c.html'))).toMatchSnapshot();
   });
 
+  test('dropload unknown height and size', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://dropload.io/gf2apij3ql37'))).toMatchSnapshot();
+  });
+
   test('file not found', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://dropload.io/asdfghijklmn.html'))).toMatchSnapshot();
   });

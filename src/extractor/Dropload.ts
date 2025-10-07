@@ -2,7 +2,7 @@ import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
-import { extractUrlFromPacked } from '../utils';
+import { extractUrlFromPacked, guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
 
 export class Dropload extends Extractor {
@@ -27,25 +27,31 @@ export class Dropload extends Extractor {
       throw new NotFoundError();
     }
 
-    const heightMatch = html.match(/\d{3,}x(\d{3,}),/) as string[];
+    const playlistUrl = extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]);
 
-    const sizeMatch = html.match(/([\d.]+ ?[GM]B)/) as string[];
+    const heightMatch = html.match(/\d{3,}x(\d{3,}),/);
+    const height = heightMatch
+      ? parseInt(heightMatch[1] as string)
+      : await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl);
+
+    const sizeMatch = html.match(/([\d.]+ ?[GM]B)/);
+    const size = sizeMatch ? bytes.parse(sizeMatch[1] as string) as number : undefined;
 
     const $ = cheerio.load(html);
     const title = $('.videoplayer h1').text().trim();
 
     return [
       {
-        url: extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]),
+        url: playlistUrl,
         format: Format.hls,
         label: this.label,
         sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
           ...meta,
-          bytes: bytes.parse(sizeMatch[1] as string) as number,
-          height: parseInt(heightMatch[1] as string),
           title,
+          ...(size && { bytes: size }),
+          ...(height && { height }),
         },
       },
     ];
