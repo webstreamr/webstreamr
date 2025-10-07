@@ -1,5 +1,5 @@
 import { Context } from '../types';
-import { CustomRequestInit, Fetcher } from './Fetcher';
+import { Fetcher } from './Fetcher';
 
 interface ExtractResult {
   destination_url: string;
@@ -7,11 +7,6 @@ interface ExtractResult {
   mediaflow_proxy_url: string;
   query_params: Record<string, string>;
 }
-
-const MEDIAFLOW_DEFAULT_INIT: CustomRequestInit = {
-  queueLimit: 4,
-  queueTimeout: 10000,
-};
 
 export const supportsMediaFlowProxy = (ctx: Context): boolean => !!ctx.config['mediaFlowProxyUrl'];
 
@@ -40,7 +35,7 @@ export const buildMediaFlowProxyExtractorRedirectUrl = (ctx: Context, host: stri
 export const buildMediaFlowProxyExtractorStreamUrl = async (ctx: Context, fetcher: Fetcher, host: string, url: URL, headers: Record<string, string>): Promise<URL> => {
   const mediaFlowProxyUrl = buildMediaFlowProxyExtractorUrl(ctx, host, url, headers);
 
-  const extractResult: ExtractResult = await fetcher.json(ctx, mediaFlowProxyUrl, MEDIAFLOW_DEFAULT_INIT);
+  const extractResult: ExtractResult = await fetcher.json(ctx, mediaFlowProxyUrl, { queueLimit: 4, queueTimeout: 10000, timeout: 20000 });
 
   const streamUrl = new URL(extractResult.mediaflow_proxy_url);
 
