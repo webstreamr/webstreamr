@@ -3,9 +3,8 @@ import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
 import {
   buildMediaFlowProxyExtractorStreamUrl,
-  guessHeightFromPlaylist,
-  MEDIAFLOW_DEFAULT_INIT,
   supportsMediaFlowProxy,
+  unpackEval,
 } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -46,7 +45,7 @@ export class FileMoon extends Extractor {
     return new URL(url.href.replace('/e/', '/d/'));
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta, originalUrl?: URL): Promise<UrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
     const html = await this.fetcher.text(ctx, url, { headers });
@@ -55,10 +54,18 @@ export class FileMoon extends Extractor {
       throw new NotFoundError();
     }
 
-    const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'FileMoon', url, headers);
-
     const $ = cheerio.load(html);
     const title = $('h3').text().trim();
+
+    const iframeUrlMatch = html.match(/iframe.*?src=["'](.*?)["']/);
+    if (iframeUrlMatch && iframeUrlMatch[1]) {
+      return await this.extractInternal(ctx, new URL(iframeUrlMatch[1]), { title, ...meta }, url);
+    }
+
+    const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'FileMoon', originalUrl as URL, headers);
+
+    const unpacked = unpackEval(html);
+    const heightMatch = unpacked.match(/(\d{3,})p/) as string[];
 
     return [
       {
@@ -69,8 +76,7 @@ export class FileMoon extends Extractor {
         ttl: this.ttl,
         meta: {
           ...meta,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, MEDIAFLOW_DEFAULT_INIT),
-          title,
+          height: parseInt(heightMatch[1] as string),
         },
       },
     ];
