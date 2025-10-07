@@ -2,7 +2,12 @@ import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
-import { buildMediaFlowProxyExtractorStreamUrl, guessHeightFromPlaylist, supportsMediaFlowProxy } from '../utils';
+import {
+  buildMediaFlowProxyExtractorStreamUrl,
+  guessHeightFromPlaylist,
+  MEDIAFLOW_DEFAULT_INIT,
+  supportsMediaFlowProxy,
+} from '../utils';
 import { Extractor } from './Extractor';
 
 /** @see https://github.com/Gujal00/ResolveURL/blob/master/script.module.resolveurl/lib/resolveurl/plugins/lulustream.py */
@@ -56,7 +61,7 @@ export class LuluStream extends Extractor {
         meta: {
           ...meta,
           bytes: bytes.parse(sizeMatch[1] as string) as number,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, { queueLimit: 4 }),
+          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, MEDIAFLOW_DEFAULT_INIT),
           title,
         },
       },
