@@ -15,7 +15,7 @@ exports[`Uqload uqload.net /embed- 1`] = `
     },
     "sourceId": "uqload_",
     "ttl": 900000,
-    "url": "https://mediaflow.test.org/extractor/video?host=Uqload&api_password=test&d=https%3A%2F%2Fuqload.net%2Fz0xbr87oz637.html&h_referer=https%3A%2F%2Fuqload.net%2Fz0xbr87oz637.html&redirect_stream=true",
+    "url": "https://mediaflow.test.org/extractor/video?host=Uqload&api_password=test&d=https%3A%2F%2Fuqload.net%2Fz0xbr87oz637.html&redirect_stream=true",
   },
 ]
 `;

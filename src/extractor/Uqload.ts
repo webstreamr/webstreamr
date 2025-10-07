@@ -21,9 +21,7 @@ export class Uqload extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const headers = { Referer: meta.referer ?? url.href };
-
-    const html = await this.fetcher.text(ctx, url, { headers });
+    const html = await this.fetcher.text(ctx, url);
 
     if (/File Not Found/.test(html)) {
       throw new NotFoundError();
@@ -34,7 +32,7 @@ export class Uqload extends Extractor {
     const $ = cheerio.load(html);
     const title = $('h1').text().trim();
 
-    const mp4Url = buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Uqload', url, headers);
+    const mp4Url = buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Uqload', url);
 
     return [
       {
