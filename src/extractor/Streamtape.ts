@@ -1,10 +1,10 @@
+import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { Context, Format, Meta, UrlResult } from '../types';
 import {
-  buildMediaFlowProxyExtractorRedirectUrl, MEDIAFLOW_DEFAULT_INIT,
+  buildMediaFlowProxyExtractorRedirectUrl,
   supportsMediaFlowProxy,
 } from '../utils';
-import { guessSizeFromMp4 } from '../utils/size';
 import { Extractor } from './Extractor';
 
 export class Streamtape extends Extractor {
@@ -17,22 +17,25 @@ export class Streamtape extends Extractor {
   }
 
   public override normalize(url: URL): URL {
-    return new URL(url.href.replace('/v/', '/e/'));
+    return new URL(url.href.replace('/e/', '/v/'));
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
+    // Only needed to properly find non-existing files via 404 response
+    await this.fetcher.text(ctx, new URL(url.href.replace('/v/', '/e/')), { headers });
+
     const html = await this.fetcher.text(ctx, url, { headers });
+
+    const sizeMatch = html.match(/([\d.]+ ?[GM]B)/) as string[];
 
     const $ = cheerio.load(html);
     const title = $('meta[name="og:title"]').attr('content') as string;
 
-    const mp4Url = buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Streamtape', url, headers);
-
     return [
       {
-        url: mp4Url,
+        url: buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Streamtape', url, headers),
         format: Format.mp4,
         label: this.label,
         sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
@@ -40,7 +43,7 @@ export class Streamtape extends Extractor {
         meta: {
           ...meta,
           title,
-          bytes: await guessSizeFromMp4(ctx, this.fetcher, mp4Url, MEDIAFLOW_DEFAULT_INIT),
+          bytes: bytes.parse(sizeMatch[1] as string) as number,
         },
       },
     ];

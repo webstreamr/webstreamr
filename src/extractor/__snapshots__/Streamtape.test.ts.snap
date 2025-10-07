@@ -6,13 +6,13 @@ exports[`Streamtape streamtape.com /e 1`] = `
     "format": "mp4",
     "label": "Streamtape (via MediaFlow Proxy)",
     "meta": {
-      "bytes": 1293552945,
+      "bytes": 1288490188,
       "countryCodes": [],
       "title": "WALL-E.2008.1080p.BrRip.x264.YIFY.mp4",
     },
     "sourceId": "streamtape_",
     "ttl": 900000,
-    "url": "https://mediaflow.test.org/extractor/video?host=Streamtape&api_password=test&d=https%3A%2F%2Fstreamtape.com%2Fe%2FDjmZBG0K9gHkJ7z%2FWALL-E.2008.1080p.BrRip.x264.YIFY.mp4&h_referer=https%3A%2F%2Fstreamtape.com%2Fe%2FDjmZBG0K9gHkJ7z%2FWALL-E.2008.1080p.BrRip.x264.YIFY.mp4&redirect_stream=true",
+    "url": "https://mediaflow.test.org/extractor/video?host=Streamtape&api_password=test&d=https%3A%2F%2Fstreamtape.com%2Fv%2FDjmZBG0K9gHkJ7z%2FWALL-E.2008.1080p.BrRip.x264.YIFY.mp4&h_referer=https%3A%2F%2Fstreamtape.com%2Fv%2FDjmZBG0K9gHkJ7z%2FWALL-E.2008.1080p.BrRip.x264.YIFY.mp4&redirect_stream=true",
   },
 ]
 `;
