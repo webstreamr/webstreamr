@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.54.4](https://github.com/webstreamr/webstreamr/compare/v0.54.3...v0.54.4) (2025-10-10)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @keyv/sqlite to v4.0.6 ([#420](https://github.com/webstreamr/webstreamr/issues/420)) ([8761eee](https://github.com/webstreamr/webstreamr/commit/8761eee22fb9bf72271c9a82ae18d5116a283f8c))
+* **deps:** update dependency ts-jest to v29.4.5 ([#422](https://github.com/webstreamr/webstreamr/issues/422)) ([fbffe3a](https://github.com/webstreamr/webstreamr/commit/fbffe3aa67e98361500364c40477cfc53951e109))
+
 ## [0.54.3](https://github.com/webstreamr/webstreamr/compare/v0.54.2...v0.54.3) (2025-10-07)
 
 
