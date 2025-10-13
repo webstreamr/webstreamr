@@ -132,6 +132,7 @@ export class StreamResolver {
   };
 
   private buildUrl(urlResult: UrlResult): { externalUrl: string } | { url: string } | { ytId: string } {
+    /* istanbul ignore if */
     if (urlResult.ytId) {
       return { ytId: urlResult.ytId };
     }

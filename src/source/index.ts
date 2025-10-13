@@ -12,7 +12,6 @@ import { MegaKino } from './MegaKino';
 import { MeineCloud } from './MeineCloud';
 import { MostraGuarda } from './MostraGuarda';
 import { Movix } from './Movix';
-import { PrimeWire } from './PrimeWire';
 import { Source } from './Source';
 import { StreamKiste } from './StreamKiste';
 import { VerHdLink } from './VerHdLink';
@@ -29,7 +28,6 @@ export const createSources = (fetcher: Fetcher): Source[] => {
     new FourKHDHub(fetcher),
     new VixSrc(fetcher),
     // EN
-    new PrimeWire(fetcher),
     // new Soaper(fetcher), // "temporarily" rate-limited for over a week
     new VidSrc(fetcher),
     // ES / MX

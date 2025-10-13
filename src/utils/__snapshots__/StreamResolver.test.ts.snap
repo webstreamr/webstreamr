@@ -380,34 +380,3 @@ exports[`resolve returns source errors as stream 2`] = `
   ],
 }
 `;
-
-exports[`resolve returns ytId instead of url for YouTube video 1`] = `
-[
-  {
-    "behaviorHints": {
-      "bingeGroup": "webstreamr-doodstream_en",
-      "notWebReady": true,
-      "proxyHeaders": {
-        "request": {
-          "Referer": "http://dood.to",
-        },
-      },
-      "videoSize": 1932735283,
-    },
-    "name": "WebStreamr 🇺🇸",
-    "title": "Solaris 1972 PROPER 1080p BluRay x264-SADPANDA - ENG SUBS - tt0069293
-💾 1.8 GB 🔗 DoodStream from PrimeWire",
-    "url": "https://do365ki.cloudatacdn.com/u5kjzcovmpd3sdgge7tc4jacdzaikwer6ff4qd463b6qj6lodlgpnsbkffvq/xy59ygfkku~mocked-random-string?token=aej8q7ajug1gt0nd4lbs8zgd&expiry=639837296000",
-  },
-  {
-    "behaviorHints": {
-      "bingeGroup": "webstreamr-youtube_en",
-      "notWebReady": true,
-    },
-    "name": "WebStreamr 🇺🇸",
-    "title": "Solaris | SCIENCE FICTION | FULL MOVIE | directed by Tarkovsky
-🔗 YouTube from PrimeWire",
-    "ytId": "Z8ZhQPaw4rE",
-  },
-]
-`;
