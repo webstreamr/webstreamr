@@ -9,5 +9,5 @@ export const guessHeightFromPlaylist = async (ctx: Context, fetcher: Fetcher, ur
     .filter(height => height !== undefined)
     .map(height => parseInt(height));
 
-  return heights.length ? Math.max(...heights) : undefined;
+  return heights.length ? Math.max(...heights) : /* istanbul ignore next */ undefined;
 };

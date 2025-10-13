@@ -28,7 +28,6 @@ export const createSources = (fetcher: Fetcher): Source[] => {
     new FourKHDHub(fetcher),
     new VixSrc(fetcher),
     // EN
-    // new Soaper(fetcher), // "temporarily" rate-limited for over a week
     new VidSrc(fetcher),
     // ES / MX
     new CineHDPlus(fetcher),

@@ -11,7 +11,6 @@ import { KinoGer } from './KinoGer';
 import { LuluStream } from './LuluStream';
 import { Mixdrop } from './Mixdrop';
 import { SaveFiles } from './SaveFiles';
-import { Soaper } from './Soaper';
 import { StreamEmbed } from './StreamEmbed';
 import { Streamtape } from './Streamtape';
 import { SuperVideo } from './SuperVideo';
@@ -38,7 +37,6 @@ export const createExtractors = (fetcher: Fetcher): Extractor[] => {
     new LuluStream(fetcher),
     new Mixdrop(fetcher),
     new SaveFiles(fetcher),
-    new Soaper(fetcher),
     new StreamEmbed(fetcher),
     new Streamtape(fetcher),
     new SuperVideo(fetcher),
