@@ -2,6 +2,7 @@ import { CountryCode } from '../types';
 
 const countryCodeMap: Record<CountryCode, { language: string; flag: string; iso639: string | undefined }> = {
   multi: { language: 'Multi', flag: '🌐', iso639: undefined },
+  al: { language: 'Albanian', flag: '🇦🇱', iso639: 'sq' },
   ar: { language: 'Arabic', flag: '🇸🇦', iso639: 'ara' },
   bg: { language: 'Bulgarian', flag: '🇧🇬', iso639: 'bul' },
   cs: { language: 'Czech', flag: '🇨🇿', iso639: 'ces' },
