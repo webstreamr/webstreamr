@@ -30,6 +30,16 @@
   "engines": {
     "node": "^22.0.0"
   },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "onFail": "error"
+    },
+    "packageManager": {
+      "name": "npm",
+      "onFail": "error"
+    }
+  },
   "dependencies": {
     "@keyv/sqlite": "^4.0.5",
     "async-mutex": "^0.5.0",
