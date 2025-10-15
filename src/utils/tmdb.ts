@@ -67,6 +67,12 @@ const tmdbFetch = async (ctx: Context, fetcher: Fetcher, path: string, searchPar
 
 const imdbTmdbMap = new Map<string, number>();
 export const getTmdbIdFromImdbId = async (ctx: Context, fetcher: Fetcher, imdbId: ImdbId): Promise<TmdbId> => {
+  // Manual mismatch fixes
+  if (imdbId.id === 'tt13207736' && imdbId.season === 3) {
+    // Monster: The Ed Gein Story (2025)
+    return new TmdbId(286801, imdbId.season - 2, imdbId.episode);
+  }
+
   if (imdbTmdbMap.has(imdbId.id)) {
     return new TmdbId(imdbTmdbMap.get(imdbId.id) as number, imdbId.season, imdbId.episode);
   }

@@ -47,6 +47,10 @@ describe('getTmdbIdFromImdbId', () => {
   test('throws with invalid imdb id', async () => {
     await expect(getTmdbIdFromImdbId(ctx, fetcher, new ImdbId('tt12345678', 1, 1))).rejects.toThrow('Could not get TMDB ID of IMDb ID "tt12345678"');
   });
+
+  test('Monster: The Ed Gein Story (2025)', async () => {
+    expect(await getTmdbIdFromImdbId(ctx, fetcher, new ImdbId('tt13207736', 3, 2))).toStrictEqual(new TmdbId(286801, 1, 2));
+  });
 });
 
 describe('getImdbIdFromTmdbId', () => {
