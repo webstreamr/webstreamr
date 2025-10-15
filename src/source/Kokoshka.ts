@@ -49,50 +49,71 @@ export class Kokoshka extends Source {
         }
       };
 
-      if (type === 'series') {
-        const cleanTitle = title
-          .toLowerCase()
-          .replace(/[:]/g, '')
-          .replace(/\s+/g, '-')
-          .replace(/[^\w-]/g, '');
+       if (type === 'series') {
+  // Try to find the correct series link via search
+  const cleanTitle = title.replace(/[:]/g, '');
+  const query = encodeURIComponent(`${cleanTitle} ${year}`); // include year in search
+  const searchUrl = new URL(`/?s=${query}`, this.baseUrl);
+  const searchHtml = await this.fetcher.text(ctx, searchUrl);
 
-        const episodeUrl = new URL(
-          `/episodi/${cleanTitle}-${tmdbId.season}x${tmdbId.episode}-me-titra-shqip/`,
-          this.baseUrl
-        );
+  // Find the first search result link
+  const linkMatch = searchHtml.match(/class=["']title["'][^>]*><a href=["']([^"']+)["']/);
+  if (!linkMatch?.[1]) return [];
 
-        const episodeHtml = await this.fetcher.text(ctx, episodeUrl);
-        const postIdMatch = episodeHtml.match(/<li[^>]+data-post=['"](\d+)['"]/);
-        if (!postIdMatch) return [];
-        const postId = postIdMatch[1];
+  const serieUrl = new URL(linkMatch[1], this.baseUrl);
 
-        // Try both tv servers
-        for (const server of [1, 2]) {
-          const ajaxUrl = new URL(`/wp-json/dooplayer/v2/${postId}/tv/${server}`, this.baseUrl);
-          const json = await this.fetcher.json(ctx, ajaxUrl) as { embed_url?: string };
-          if (!json?.embed_url) continue;
+  // Only continue if the URL contains "seriale"
+  if (!/seriale/i.test(serieUrl.pathname)) return [];
 
-          const embedId = json.embed_url.replace(/\\/g, '').split('/').pop();
-          if (!embedId) continue;
+  // Extract the slug part for the series
+  const serieSlugMatch = serieUrl.pathname.match(/\/seriale\/([^/]+)/);
+  if (!serieSlugMatch?.[1]) return [];
 
-          const finalUrl = new URL(`https://jilliandescribecompany.com/e/${embedId}`);
+  let serieSlug = serieSlugMatch[1]
+    .replace(/-me-titra-shqip\/?$/, '') // remove suffix
+    .replace(/\/$/, '');
 
-          if (await testUrl(ctx, finalUrl)) {
-            return [
-              {
-                url: finalUrl,
-                meta: {
-                  countryCodes: [CountryCode.al],
-                  referer: this.baseUrl,
-                  title: `${title} S${tmdbId.season}E${tmdbId.episode}`,
-                },
-              },
-            ];
-          }
-        }
+  // Remove trailing year (e.g., -2025, -2019, etc.)
+  serieSlug = serieSlug.replace(/-\d{4}$/, '');
 
-        return [];
-      } else {
+  // Build episode URL using the found series slug (without year)
+  const episodeUrl = new URL(
+    `/episodi/${serieSlug}-${tmdbId.season}x${tmdbId.episode}-me-titra-shqip/`,
+    this.baseUrl
+  );
+
+  const episodeHtml = await this.fetcher.text(ctx, episodeUrl);
+  const postIdMatch = episodeHtml.match(/<li[^>]+data-post=['"](\d+)['"]/);
+  if (!postIdMatch) return [];
+  const postId = postIdMatch[1];
+
+  // Try both TV servers
+  for (const server of [1, 2]) {
+    const ajaxUrl = new URL(`/wp-json/dooplayer/v2/${postId}/tv/${server}`, this.baseUrl);
+    const json = (await this.fetcher.json(ctx, ajaxUrl)) as { embed_url?: string };
+    if (!json?.embed_url) continue;
+
+    const embedId = json.embed_url.replace(/\\/g, '').split('/').pop();
+    if (!embedId) continue;
+
+    const finalUrl = new URL(`https://jilliandescribecompany.com/e/${embedId}`);
+
+    if (await testUrl(ctx, finalUrl)) {
+      return [
+        {
+          url: finalUrl,
+          meta: {
+            countryCodes: [CountryCode.al],
+            referer: this.baseUrl,
+            title: `${title} S${tmdbId.season}E${tmdbId.episode}`,
+          },
+        },
+      ];
+    }
+  }
+
+  return [];
+} else {
         // Movie
         const cleanTitle = title.replace(/[:]/g, '');
         const query = encodeURIComponent(`${cleanTitle} ${year}`);
