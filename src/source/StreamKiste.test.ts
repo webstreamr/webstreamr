@@ -1,5 +1,5 @@
 import { createTestContext } from '../test';
-import { FetcherMock, ImdbId } from '../utils';
+import { FetcherMock, TmdbId } from '../utils';
 import { StreamKiste } from './StreamKiste';
 
 const ctx = createTestContext({ de: 'on' });
@@ -12,12 +12,17 @@ describe('StreamKiste', () => {
   });
 
   test('handles non-existent series gracefully', async () => {
-    const streams = await source.handle(ctx, 'series', new ImdbId('tt12345678', 1, 1));
+    const streams = await source.handle(ctx, 'series', new TmdbId(12345678, 1, 1));
     expect(streams).toHaveLength(0);
   });
 
-  test('handle imdb black mirror s2e4', async () => {
-    const streams = await source.handle(ctx, 'series', new ImdbId('tt2085059', 2, 4));
+  test('handle black mirror s2e4', async () => {
+    const streams = await source.handle(ctx, 'series', new TmdbId(42009, 2, 4));
+    expect(streams).toMatchSnapshot();
+  });
+
+  test('handle monster: the ed gein story s1e2', async () => {
+    const streams = await source.handle(ctx, 'series', new TmdbId(286801, 1, 2));
     expect(streams).toMatchSnapshot();
   });
 });

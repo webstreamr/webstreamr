@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
-import { Fetcher, getImdbId, Id, ImdbId } from '../utils';
+import { Fetcher, getTmdbId, Id, TmdbId } from '../utils';
 import { Source, SourceResult } from './Source';
 
 export class StreamKiste extends Source {
@@ -24,9 +24,9 @@ export class StreamKiste extends Source {
   }
 
   public async handleInternal(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
-    const imdbId = await getImdbId(ctx, this.fetcher, id);
+    const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
-    const seriesPageUrl = await this.fetchSeriesPageUrl(ctx, imdbId);
+    const seriesPageUrl = await this.fetchSeriesPageUrl(ctx, tmdbId);
     if (!seriesPageUrl) {
       return [];
     }
@@ -35,10 +35,10 @@ export class StreamKiste extends Source {
 
     const $ = cheerio.load(html);
 
-    const title = `${($('meta[property="og:title"]').attr('content') as string).trim()} ${imdbId.season}x${imdbId.episode}`;
+    const title = `${($('meta[property="og:title"]').attr('content') as string).trim()} ${tmdbId.season}x${tmdbId.episode}`;
 
     return Promise.all(
-      $(`[data-num="${imdbId.season}x${imdbId.episode}"]`)
+      $(`[data-num="${tmdbId.season}x${tmdbId.episode}"]`)
         .siblings('.mirrors')
         .children('[data-link]')
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
@@ -48,15 +48,13 @@ export class StreamKiste extends Source {
     );
   };
 
-  private fetchSeriesPageUrl = async (ctx: Context, imdbId: ImdbId): Promise<URL | undefined> => {
-    const html = await this.fetcher.text(ctx, new URL(`/?story=${imdbId.id}&do=search&subaction=search`, this.baseUrl));
+  private fetchSeriesPageUrl = async (ctx: Context, tmdbId: TmdbId): Promise<URL | undefined> => {
+    const html = await this.fetcher.text(ctx, new URL(`/?story=${tmdbId.id}&do=search&subaction=search`, this.baseUrl));
 
     const $ = cheerio.load(html);
 
-    const url = $('.res_item a[href]:first')
-      .map((_i, el) => $(el).attr('href'))
+    return $('.res_item a[href]:first')
+      .map((_i, el) => new URL($(el).attr('href') as string))
       .get(0);
-
-    return url !== undefined ? new URL(url) : url;
   };
 }

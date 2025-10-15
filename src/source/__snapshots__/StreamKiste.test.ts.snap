@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`StreamKiste handle imdb black mirror s2e4 1`] = `
+exports[`StreamKiste handle black mirror s2e4 1`] = `
 [
   {
     "meta": {
@@ -21,6 +21,21 @@ exports[`StreamKiste handle imdb black mirror s2e4 1`] = `
       "title": "Black Mirror 2x4",
     },
     "url": "https://dropload.io/embed-jvjwrkpijr0f.html",
+  },
+]
+`;
+
+exports[`StreamKiste handle monster: the ed gein story s1e2 1`] = `
+[
+  {
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+      "referer": "https://streamkiste.taxi/movie/40087-monster-die-geschichte-von-ed-gein-stream-kostenlos.html",
+      "title": "Monster: Die Geschichte von Ed Gein 1x2",
+    },
+    "url": "https://supervideo.cc/embed-lfwd3ytzsyry.html",
   },
 ]
 `;
