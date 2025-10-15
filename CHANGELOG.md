@@ -1,5 +1,33 @@
 # Changelog
 
+## [0.54.4](https://github.com/webstreamr/webstreamr/compare/v0.54.3...v0.54.4) (2025-10-15)
+
+
+### Miscellaneous Chores
+
+* configure devEngines in package.json ([0830635](https://github.com/webstreamr/webstreamr/commit/0830635947c7b6b10017c265077a5a2e6b79ef29))
+* **deps:** lock file maintenance ([#424](https://github.com/webstreamr/webstreamr/issues/424)) ([cf1f3e9](https://github.com/webstreamr/webstreamr/commit/cf1f3e9eed89c3dff264126788aedd8f0aabecf0))
+* **deps:** update actions/setup-node action to v6 ([#426](https://github.com/webstreamr/webstreamr/issues/426)) ([3007698](https://github.com/webstreamr/webstreamr/commit/3007698b1ba96bbf747130d3f636e40ab29f4e4b))
+* **deps:** update dependency @keyv/sqlite to v4.0.6 ([#420](https://github.com/webstreamr/webstreamr/issues/420)) ([8761eee](https://github.com/webstreamr/webstreamr/commit/8761eee22fb9bf72271c9a82ae18d5116a283f8c))
+* **deps:** update dependency @types/node to v22.18.10 ([#423](https://github.com/webstreamr/webstreamr/issues/423)) ([c5c4c1a](https://github.com/webstreamr/webstreamr/commit/c5c4c1a41c3b025764fe751a91ed7b1b4c56ef65))
+* **deps:** update dependency ts-jest to v29.4.5 ([#422](https://github.com/webstreamr/webstreamr/issues/422)) ([fbffe3a](https://github.com/webstreamr/webstreamr/commit/fbffe3aa67e98361500364c40477cfc53951e109))
+* **deps:** update dependency typescript-eslint to v8.46.1 ([#425](https://github.com/webstreamr/webstreamr/issues/425)) ([c7040e9](https://github.com/webstreamr/webstreamr/commit/c7040e9936ae476a1a9cb40bef6ea99b88361cd3))
+* fully remove soaper ([da24e96](https://github.com/webstreamr/webstreamr/commit/da24e96fb486160aecffaa9532aa02e76c9d87bb))
+
+
+### Continuous Integration
+
+* remove explicit caching of node modules ([6f3233e](https://github.com/webstreamr/webstreamr/commit/6f3233eefde5e471d7083602e531aaa730217f50))
+
+
+### Bug Fixes
+
+* add manual imdb -&gt; tmdb mapping for "Monster: The Ed Gein Story(2025)" ([405a8ef](https://github.com/webstreamr/webstreamr/commit/405a8efad349a287744d0a584a2ff813a8b2d030))
+* add manual imdb -&gt; tmdb mapping for "Monsters: The Lyle and Erik Menendez Story (2024)" ([1a56d7e](https://github.com/webstreamr/webstreamr/commit/1a56d7ef91cbaa337d52514fc2467b83da46cf9e))
+* **source:** remove PrimeWire ([a42edcd](https://github.com/webstreamr/webstreamr/commit/a42edcd438c6577c93170c4178fef2f878a78f19))
+* **source:** switch from imdb to tmdb search for CineHDPlus ([c88b379](https://github.com/webstreamr/webstreamr/commit/c88b3798f03974183666e7b0e6c3806aae477925))
+* **source:** switch from imdb to tmdb search for StreamKiste ([076f853](https://github.com/webstreamr/webstreamr/commit/076f853a5bf804537ec019564ce0ab50fd152f2a))
+
 ## [0.54.3](https://github.com/webstreamr/webstreamr/compare/v0.54.2...v0.54.3) (2025-10-07)
 
 
