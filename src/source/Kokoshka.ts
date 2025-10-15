@@ -11,17 +11,16 @@ export class Kokoshka extends Source {
   public readonly contentTypes: ContentType[] = ['movie', 'series'];
   public readonly countryCodes: CountryCode[] = [CountryCode.al];
   public readonly baseUrl = 'https://kokoshka.digital';
-
   private readonly fetcher: Fetcher;
 
-  public constructor(fetcher: Fetcher) {
+  constructor(fetcher: Fetcher) {
     super();
     this.fetcher = fetcher;
   }
 
   public async handleInternal(ctx: Context, type: string, imdbId: Id): Promise<SourceResult[]> {
     try {
-      // 1. IMDb → TMDb
+      // --- 1. IMDb → TMDb ---
       let tmdbId: TmdbId;
       if (type === 'series') {
         const imdbBaseId = String(imdbId.id).split(':')[0];
@@ -35,126 +34,100 @@ export class Kokoshka extends Source {
         tmdbId = await getTmdbIdFromImdbId(ctx, this.fetcher, { id: imdbId } as any);
       }
 
-      // 2. Title + year
+      // --- 2. Title + Year ---
       const [title, year] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId);
+      const cleanTitle = title.replace(/[:]/g, '');
+      const query = encodeURIComponent(`${cleanTitle} ${year}`);
+      const searchUrl = new URL(`/?s=${query}`, this.baseUrl);
+      const searchHtml = await this.fetcher.text(ctx, searchUrl);
 
-      // Helper: check if a URL returns a valid page (not 404)
-      const testUrl = async (ctx: Context, url: URL): Promise<boolean> => {
+      const linkMatch = searchHtml.match(/class=["']title["'][^>]*><a href=["']([^"']+)["']/);
+      if (!linkMatch?.[1]) return [];
+      const pageUrl = new URL(linkMatch[1], this.baseUrl);
+      const pageHtml = await this.fetcher.text(ctx, pageUrl);
+
+      // --- Helper: check if a URL returns valid page ---
+      const testUrl = async (url: URL) => {
         try {
           const html = await this.fetcher.text(ctx, url);
-          // crude but effective check for a dead embed page
           return !/not\s+found/i.test(html) && html.length > 100;
-        } catch {
-          return false;
-        }
+        } catch { return false; }
       };
 
-       if (type === 'series') {
-  // Try to find the correct series link via search
-  const cleanTitle = title.replace(/[:]/g, '');
-  const query = encodeURIComponent(`${cleanTitle} ${year}`); // include year in search
-  const searchUrl = new URL(`/?s=${query}`, this.baseUrl);
-  const searchHtml = await this.fetcher.text(ctx, searchUrl);
+      // --- SERIES ---
+      if (type === 'series') {
+        if (!/seriale/i.test(pageUrl.pathname)) return [];
 
-  // Find the first search result link
-  const linkMatch = searchHtml.match(/class=["']title["'][^>]*><a href=["']([^"']+)["']/);
-  if (!linkMatch?.[1]) return [];
+        const serieSlugMatch = pageUrl.pathname.match(/\/seriale\/([^/]+)/);
+        if (!serieSlugMatch?.[1]) return [];
+        let serieSlug = serieSlugMatch[1].replace(/-me-titra-shqip\/?$/, '').replace(/\/$/, '');
+        serieSlug = serieSlug.replace(/-\d{4}$/, '');
 
-  const serieUrl = new URL(linkMatch[1], this.baseUrl);
+        const episodeUrl = new URL(`/episodi/${serieSlug}-${tmdbId.season}x${tmdbId.episode}-me-titra-shqip/`, this.baseUrl);
+        const episodeHtml = await this.fetcher.text(ctx, episodeUrl);
 
-  // Only continue if the URL contains "seriale"
-  if (!/seriale/i.test(serieUrl.pathname)) return [];
-
-  // Extract the slug part for the series
-  const serieSlugMatch = serieUrl.pathname.match(/\/seriale\/([^/]+)/);
-  if (!serieSlugMatch?.[1]) return [];
-
-  let serieSlug = serieSlugMatch[1]
-    .replace(/-me-titra-shqip\/?$/, '') // remove suffix
-    .replace(/\/$/, '');
-
-  // Remove trailing year (e.g., -2025, -2019, etc.)
-  serieSlug = serieSlug.replace(/-\d{4}$/, '');
-
-  // Build episode URL using the found series slug (without year)
-  const episodeUrl = new URL(
-    `/episodi/${serieSlug}-${tmdbId.season}x${tmdbId.episode}-me-titra-shqip/`,
-    this.baseUrl
-  );
-
-  const episodeHtml = await this.fetcher.text(ctx, episodeUrl);
-  const postIdMatch = episodeHtml.match(/<li[^>]+data-post=['"](\d+)['"]/);
-  if (!postIdMatch) return [];
-  const postId = postIdMatch[1];
-
-  // Try both TV servers
-  for (const server of [1, 2]) {
-    const ajaxUrl = new URL(`/wp-json/dooplayer/v2/${postId}/tv/${server}`, this.baseUrl);
-    const json = (await this.fetcher.json(ctx, ajaxUrl)) as { embed_url?: string };
-    if (!json?.embed_url) continue;
-
-    const embedId = json.embed_url.replace(/\\/g, '').split('/').pop();
-    if (!embedId) continue;
-
-    const finalUrl = new URL(`https://jilliandescribecompany.com/e/${embedId}`);
-
-    if (await testUrl(ctx, finalUrl)) {
-      return [
-        {
-          url: finalUrl,
-          meta: {
-            countryCodes: [CountryCode.al],
-            referer: this.baseUrl,
-            title: `${title} S${tmdbId.season}E${tmdbId.episode}`,
-          },
-        },
-      ];
-    }
-  }
-
-  return [];
-} else {
-        // Movie
-        const cleanTitle = title.replace(/[:]/g, '');
-        const query = encodeURIComponent(`${cleanTitle} ${year}`);
-        const searchUrl = new URL(`/?s=${query}`, this.baseUrl);
-        const searchHtml = await this.fetcher.text(ctx, searchUrl);
-
-        const linkMatch = searchHtml.match(/class=["']title["'][^>]*><a href=["']([^"']+)["']/);
-        if (!linkMatch?.[1]) return [];
-
-        const movieUrl = new URL(linkMatch[1], this.baseUrl);
-        const movieHtml = await this.fetcher.text(ctx, movieUrl);
-        const postIdMatch = movieHtml.match(/<li[^>]+data-post=['"](\d+)['"]/);
-        if (!postIdMatch) return [];
+        const postIdMatch = episodeHtml.match(/<li[^>]+data-post=['"](\d+)['"]/);
+        if (!postIdMatch?.[1]) return [];
         const postId = postIdMatch[1];
 
-        // Try both movie servers
+        const results: SourceResult[] = [];
         for (const server of [1, 2]) {
-          const ajaxUrl = new URL(`/wp-json/dooplayer/v2/${postId}/movie/${server}`, this.baseUrl);
-          const json = await this.fetcher.json(ctx, ajaxUrl) as { embed_url?: string };
-          if (!json?.embed_url) continue;
+          const ajaxUrl = new URL(`/wp-json/dooplayer/v2/${postId}/tv/${server}`, this.baseUrl);
+          const json = await this.fetcher.json(ctx, ajaxUrl) as any;
 
-          const embedId = json.embed_url.replace(/\\/g, '').split('/').pop();
-          if (!embedId) continue;
+          const urls: string[] = [];
+          if (json.embed_url) urls.push(json.embed_url);
+          if (Array.isArray(json.sources)) urls.push(...json.sources.map((s: any) => s.file));
 
-          const finalUrl = new URL(`https://jilliandescribecompany.com/e/${embedId}`);
-          if (await testUrl(ctx, finalUrl)) {
-            return [
-              {
-                url: finalUrl,
+          for (const embed of urls) {
+            const cleaned = embed.replace(/\\/g, '').replace(/^http:/, 'https:');
+            const url = new URL(cleaned);
+            if (await testUrl(url)) {
+              results.push({
+                url,
                 meta: {
                   countryCodes: [CountryCode.al],
                   referer: this.baseUrl,
-                  title,
-                },
-              },
-            ];
+                  title: `${title} S${tmdbId.season}E${tmdbId.episode}`
+                }
+              });
+            }
           }
         }
-
-        return [];
+        return results;
       }
+
+      // --- MOVIE ---
+      const postIdMatch = pageHtml.match(/<li[^>]+data-post=['"](\d+)['"]/);
+      if (!postIdMatch?.[1]) return [];
+      const postId = postIdMatch[1];
+
+      const results: SourceResult[] = [];
+      for (const server of [1, 2]) {
+        const ajaxUrl = new URL(`/wp-json/dooplayer/v2/${postId}/movie/${server}`, this.baseUrl);
+        const json = await this.fetcher.json(ctx, ajaxUrl) as any;
+
+        const urls: string[] = [];
+        if (json.embed_url) urls.push(json.embed_url);
+        if (Array.isArray(json.sources)) urls.push(...json.sources.map((s: any) => s.file));
+
+        for (const embed of urls) {
+          const cleaned = embed.replace(/\\/g, '').replace(/^http:/, 'https:');
+          const url = new URL(cleaned);
+          if (await testUrl(url)) {
+            results.push({
+              url,
+              meta: {
+                countryCodes: [CountryCode.al],
+                referer: this.baseUrl,
+                title,
+              }
+            });
+          }
+        }
+      }
+      return results;
+
     } catch (err) {
       console.error('Kokoshka handleInternal error:', err);
       return [];
