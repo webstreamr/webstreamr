@@ -79,9 +79,15 @@ export class Kokoshka extends Source {
           if (json.embed_url) urls.push(json.embed_url);
           if (Array.isArray(json.sources)) urls.push(...json.sources.map((s: any) => s.file));
 
-          for (const embed of urls) {
-            const cleaned = embed.replace(/\\/g, '').replace(/^http:/, 'https:');
-            const url = new URL(cleaned);
+          for (let embed of urls) {
+            embed = embed.replace(/\\/g, '').replace(/^http:/, 'https:');
+
+            // --- Replace Dodo domain ---
+            if (embed.startsWith('https://d-s.io/')) {
+              embed = embed.replace('https://d-s.io/e/', 'https://dsvplay.com/e/');
+            }
+
+            const url = new URL(embed);
             if (await testUrl(url)) {
               results.push({
                 url,
@@ -111,9 +117,15 @@ export class Kokoshka extends Source {
         if (json.embed_url) urls.push(json.embed_url);
         if (Array.isArray(json.sources)) urls.push(...json.sources.map((s: any) => s.file));
 
-        for (const embed of urls) {
-          const cleaned = embed.replace(/\\/g, '').replace(/^http:/, 'https:');
-          const url = new URL(cleaned);
+        for (let embed of urls) {
+          embed = embed.replace(/\\/g, '').replace(/^http:/, 'https:');
+
+          // --- Replace Dodo domain ---
+          if (embed.startsWith('https://d-s.io/')) {
+            embed = embed.replace('https://d-s.io/e/', 'https://dsvplay.com/e/');
+          }
+
+          const url = new URL(embed);
           if (await testUrl(url)) {
             results.push({
               url,
