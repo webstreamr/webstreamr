@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
-import { Fetcher, getImdbId, Id, ImdbId } from '../utils';
+import { Fetcher, getTmdbId, Id, TmdbId } from '../utils';
 import { Source, SourceResult } from './Source';
 
 export class CineHDPlus extends Source {
@@ -13,7 +13,7 @@ export class CineHDPlus extends Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.es, CountryCode.mx];
 
-  public readonly baseUrl = 'https://cinehdplus.cam';
+  public readonly baseUrl = 'https://cinehdplus.gratis';
 
   private readonly fetcher: Fetcher;
 
@@ -24,9 +24,9 @@ export class CineHDPlus extends Source {
   }
 
   public async handleInternal(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
-    const imdbId = await getImdbId(ctx, this.fetcher, id);
+    const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
-    const seriesPageUrl = await this.fetchSeriesPageUrl(ctx, imdbId);
+    const seriesPageUrl = await this.fetchSeriesPageUrl(ctx, tmdbId);
     if (!seriesPageUrl) {
       return [];
     }
@@ -37,10 +37,10 @@ export class CineHDPlus extends Source {
 
     const countryCodes = [($('.details__langs').html() as string).includes('Latino') ? CountryCode.mx : CountryCode.es];
 
-    const title = `${($('meta[property="og:title"]').attr('content') as string).trim()} ${imdbId.season}x${imdbId.episode}`;
+    const title = `${($('meta[property="og:title"]').attr('content') as string).trim()} ${tmdbId.season}x${tmdbId.episode}`;
 
     return Promise.all(
-      $(`[data-num="${imdbId.season}x${imdbId.episode}"]`)
+      $(`[data-num="${tmdbId.season}x${tmdbId.episode}"]`)
         .siblings('.mirrors')
         .children('[data-link]')
         .map((_i, el) => new URL(($(el).attr('data-link') as string).replace(/^(https:)?\/\//, 'https://')))
@@ -50,8 +50,8 @@ export class CineHDPlus extends Source {
     );
   };
 
-  private fetchSeriesPageUrl = async (ctx: Context, imdbId: ImdbId): Promise<URL | undefined> => {
-    const html = await this.fetcher.text(ctx, new URL(`/series/?story=${imdbId.id}&do=search&subaction=search`, this.baseUrl));
+  private fetchSeriesPageUrl = async (ctx: Context, tmdbId: TmdbId): Promise<URL | undefined> => {
+    const html = await this.fetcher.text(ctx, new URL(`/series/?story=${tmdbId.id}&do=search&subaction=search`, this.baseUrl));
 
     const $ = cheerio.load(html);
 
