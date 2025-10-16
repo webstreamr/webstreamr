@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.55.0](https://github.com/webstreamr/webstreamr/compare/v0.54.4...v0.55.0) (2025-10-16)
+
+
+### Features
+
+* add Albanian source Kokoshka ([#430](https://github.com/webstreamr/webstreamr/issues/430)) ([a4fb495](https://github.com/webstreamr/webstreamr/commit/a4fb495e28752ea9f646c0fb8d24d66373a979e9))
+
 ## [0.54.4](https://github.com/webstreamr/webstreamr/compare/v0.54.3...v0.54.4) (2025-10-15)
 
 
