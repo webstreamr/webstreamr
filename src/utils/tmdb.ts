@@ -76,7 +76,10 @@ export const getTmdbIdFromImdbId = async (ctx: Context, fetcher: Fetcher, imdbId
     // Monster: The Ed Gein Story (2025)
     return new TmdbId(286801, imdbId.season - 2, imdbId.episode);
   }
-
+if (imdbId.id === 'tt38073022' && imdbId.season === 3) {
+    // Golden Brothers (2024)
+    return new TmdbId(1383870, imdbId.season - 2, imdbId.episode);
+  }
   if (imdbTmdbMap.has(imdbId.id)) {
     return new TmdbId(imdbTmdbMap.get(imdbId.id) as number, imdbId.season, imdbId.episode);
   }
