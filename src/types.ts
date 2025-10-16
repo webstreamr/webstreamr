@@ -21,6 +21,7 @@ export type Config = Partial<Record<CountryCode | 'showErrors' | 'includeExterna
 
 export enum CountryCode {
   multi = 'multi',
+  al = 'al',
   ar = 'ar',
   bg = 'bg',
   cs = 'cs',

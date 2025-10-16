@@ -8,6 +8,7 @@ import { Frembed } from './Frembed';
 import { FrenchCloud } from './FrenchCloud';
 import { HomeCine } from './HomeCine';
 import { KinoGer } from './KinoGer';
+import { Kokoshka } from './Kokoshka';
 import { MegaKino } from './MegaKino';
 import { MeineCloud } from './MeineCloud';
 import { MostraGuarda } from './MostraGuarda';
@@ -27,6 +28,8 @@ export const createSources = (fetcher: Fetcher): Source[] => {
     // multi
     new FourKHDHub(fetcher),
     new VixSrc(fetcher),
+    // AL
+    new Kokoshka(fetcher),
     // EN
     new VidSrc(fetcher),
     // ES / MX

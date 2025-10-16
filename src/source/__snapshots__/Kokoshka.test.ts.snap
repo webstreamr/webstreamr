@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Kokoshka handle Monster: The Ed Gein Story 2025 1`] = `
+[
+  {
+    "meta": {
+      "countryCodes": [
+        "al",
+      ],
+      "referer": "https://kokoshka.digital/episodi/monster-the-ed-gein-story-1x3-me-titra-shqip/",
+      "title": "Monster: The Ed Gein Story: 1x3 me Titra Shqip - Kokoshka.Digital | Filma Me Titra Shqip",
+    },
+    "url": "https://chuckle-tube.com/e/iji4pltez4eq",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "al",
+      ],
+      "referer": "https://kokoshka.digital/episodi/monster-the-ed-gein-story-1x3-me-titra-shqip/",
+      "title": "Monster: The Ed Gein Story: 1x3 me Titra Shqip - Kokoshka.Digital | Filma Me Titra Shqip",
+    },
+    "url": "https://dsvplay.com/e/kle8q5fb816s",
+  },
+]
+`;
+
+exports[`Kokoshka handle Weapons 2025 1`] = `
+[
+  {
+    "meta": {
+      "countryCodes": [
+        "al",
+      ],
+      "referer": "https://kokoshka.digital/filma/weapons-2025-me-titra-shqip/",
+      "title": "Weapons (2025) me Titra Shqip - Kokoshka.Digital | Filma Me Titra Shqip",
+    },
+    "url": "https://chuckle-tube.com/e/bfqvmxliwiaj",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "al",
+      ],
+      "referer": "https://kokoshka.digital/filma/weapons-2025-me-titra-shqip/",
+      "title": "Weapons (2025) me Titra Shqip - Kokoshka.Digital | Filma Me Titra Shqip",
+    },
+    "url": "https://d-s.io/e/qjoay72ylazr",
+  },
+]
+`;
+
+exports[`Kokoshka handle non-existent content gracefully 1`] = `[]`;
+
+exports[`Kokoshka handle non-existent episode gracefully 1`] = `[]`;
