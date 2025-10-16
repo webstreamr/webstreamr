@@ -11,44 +11,45 @@ interface DooplayerResponse {
 
 export class Kokoshka extends Source {
   public readonly id = 'kokoshka';
-
   public readonly label = 'Kokoshka';
-
   public readonly contentTypes: ContentType[] = ['movie', 'series'];
-
   public readonly countryCodes: CountryCode[] = [CountryCode.al];
-
   public readonly baseUrl = 'https://kokoshka.digital';
-
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {
     super();
-
     this.fetcher = fetcher;
   }
 
   public async handleInternal(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
-    let pageUrl = await this.fetchPageUrl(ctx, tmdbId);
-    if (!pageUrl) {
-      return [];
-    }
+    // --- Get titles in different languages ---
+    const [name, year, originalName] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId, 'en'); // English
+    const [alName] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId, 'sq'); // Albanian
 
+    let pageUrl: URL | undefined;
+
+    // Try titles in order: English → original → Albanian
+    const titlesToTry = [name, originalName, alName].filter(Boolean) as string[];
+    for (const title of titlesToTry) {
+      pageUrl = await this.fetchPageUrl(ctx, title, tmdbId, year);
+      if (pageUrl) break;
+    }
+    if (!pageUrl) return [];
+
+    // --- If series, fetch episode page ---
     if (tmdbId.season) {
       pageUrl = await this.fetchEpisodeUrl(ctx, pageUrl, tmdbId);
-      if (!pageUrl) {
-        return [];
-      }
+      if (!pageUrl) return [];
     }
 
     const pageHtml = await this.fetcher.text(ctx, pageUrl);
-
     const $ = cheerio.load(pageHtml);
-
     const title = $('title').first().text().trim();
 
+    // --- Extract Dooplayer embeds ---
     return Promise.all(
       $('.dooplay_player_option:not(#player-option-trailer)')
         .map(async (_i, el) => {
@@ -57,13 +58,13 @@ export class Kokoshka extends Source {
           const nume = parseInt($(el).attr('data-nume') as string);
 
           const dooplayerUrl = new URL(`/wp-json/dooplayer/v2/${post}/${type}/${nume}`, this.baseUrl);
-          const dooplayerResponse = await this.fetcher.json(ctx, dooplayerUrl, { headers: { Referer: pageUrl.href } }) as DooplayerResponse;
+          const dooplayerResponse = await this.fetcher.json(ctx, dooplayerUrl, { headers: { Referer: pageUrl!.href } }) as DooplayerResponse;
 
           return {
             url: new URL(dooplayerResponse.embed_url as string),
             meta: {
               countryCodes: [CountryCode.al],
-              referer: pageUrl.href,
+              referer: pageUrl!.href,
               title,
             },
           };
@@ -72,12 +73,9 @@ export class Kokoshka extends Source {
     );
   }
 
-  private readonly fetchPageUrl = async (ctx: Context, tmdbId: TmdbId): Promise<URL | undefined> => {
-    const [name, year] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId);
-
-    const searchUrl = new URL(`/?s=${encodeURIComponent(`${name.replace(':', '')} ${year}`)}`, this.baseUrl);
+  private readonly fetchPageUrl = async (ctx: Context, title: string, tmdbId: TmdbId, year: number): Promise<URL | undefined> => {
+    const searchUrl = new URL(`/?s=${encodeURIComponent(`${title.replace(':', '')} ${year}`)}`, this.baseUrl);
     const html = await this.fetcher.text(ctx, searchUrl);
-
     const $ = cheerio.load(html);
 
     return $(`.result-item:has(${tmdbId.season ? '.tvshows' : '.movies'}) a`)
@@ -87,7 +85,6 @@ export class Kokoshka extends Source {
 
   private async fetchEpisodeUrl(ctx: Context, pageUrl: URL, tmdbId: TmdbId): Promise<URL | undefined> {
     const html = await this.fetcher.text(ctx, pageUrl);
-
     const $ = cheerio.load(html);
 
     return $(`.episodiotitle a[href*="${tmdbId.season}x${tmdbId.episode}"]`)
