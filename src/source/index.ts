@@ -8,6 +8,7 @@ import { Frembed } from './Frembed';
 import { FrenchCloud } from './FrenchCloud';
 import { HomeCine } from './HomeCine';
 import { KinoGer } from './KinoGer';
+import { Kokoshka } from './Kokoshka';
 import { MegaKino } from './MegaKino';
 import { MeineCloud } from './MeineCloud';
 import { MostraGuarda } from './MostraGuarda';
@@ -17,7 +18,6 @@ import { StreamKiste } from './StreamKiste';
 import { VerHdLink } from './VerHdLink';
 import { VidSrc } from './VidSrc';
 import { VixSrc } from './VixSrc';
-import { Kokoshka } from './Kokoshka';
 
 export * from './Source';
 
@@ -28,6 +28,8 @@ export const createSources = (fetcher: Fetcher): Source[] => {
     // multi
     new FourKHDHub(fetcher),
     new VixSrc(fetcher),
+    // AL
+    new Kokoshka(fetcher),
     // EN
     new VidSrc(fetcher),
     // ES / MX
@@ -48,8 +50,5 @@ export const createSources = (fetcher: Fetcher): Source[] => {
     // IT
     new Eurostreaming(fetcher),
     new MostraGuarda(fetcher),
-
-    // AL
-    new Kokoshka(fetcher),
   ].filter(source => !disabledSources.includes(source.id));
 };
