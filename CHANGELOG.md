@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.55.1](https://github.com/webstreamr/webstreamr/compare/v0.55.0...v0.55.1) (2025-10-16)
+
+
+### Bug Fixes
+
+* **source:** query TMDB for Albanian info for Kokoshka ([066424e](https://github.com/webstreamr/webstreamr/commit/066424e0871f8a2497122e45695a7afd3dbfd8f0))
+
 ## [0.55.0](https://github.com/webstreamr/webstreamr/compare/v0.54.4...v0.55.0) (2025-10-16)
 
 
