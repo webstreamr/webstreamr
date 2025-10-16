@@ -1,5 +1,40 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`Kokoshka handle 5 Herë Jo 1`] = `
+[
+  {
+    "meta": {
+      "countryCodes": [
+        "al",
+      ],
+      "referer": "https://kokoshka.digital/filma/5-here-jo-2023-filmi-i-plote-shiko-online-falas-film-shqiptar/",
+      "title": "5 Herë Jo (2023) Film Shqiptar - Kokoshka.Digital | Filma Me Titra Shqip",
+    },
+    "url": "https://chuckle-tube.com/e/hild8qjsle0n",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "al",
+      ],
+      "referer": "https://kokoshka.digital/filma/5-here-jo-2023-filmi-i-plote-shiko-online-falas-film-shqiptar/",
+      "title": "5 Herë Jo (2023) Film Shqiptar - Kokoshka.Digital | Filma Me Titra Shqip",
+    },
+    "url": "https://vide0.net/e/7xawzi0jedc9",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "al",
+      ],
+      "referer": "https://kokoshka.digital/filma/5-here-jo-2023-filmi-i-plote-shiko-online-falas-film-shqiptar/",
+      "title": "5 Herë Jo (2023) Film Shqiptar - Kokoshka.Digital | Filma Me Titra Shqip",
+    },
+    "url": "https://listeamed.net/e/0DogOGgdGYOKjM6",
+  },
+]
+`;
+
 exports[`Kokoshka handle Monster: The Ed Gein Story 2025 1`] = `
 [
   {

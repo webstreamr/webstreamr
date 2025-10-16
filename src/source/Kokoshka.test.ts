@@ -30,4 +30,9 @@ describe('Kokoshka', () => {
     const streams = await source.handle(ctx, 'series', new TmdbId(286801, 1, 3));
     expect(streams).toMatchSnapshot();
   });
+
+  test('handle 5 Herë Jo', async () => {
+    const streams = await source.handle(ctx, 'movie', new TmdbId(1213327, undefined, undefined));
+    expect(streams).toMatchSnapshot();
+  });
 });

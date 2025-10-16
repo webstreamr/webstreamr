@@ -73,7 +73,7 @@ export class Kokoshka extends Source {
   }
 
   private readonly fetchPageUrl = async (ctx: Context, tmdbId: TmdbId): Promise<URL | undefined> => {
-    const [name, year] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId);
+    const [name, year] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId, 'sq');
 
     const searchUrl = new URL(`/?s=${encodeURIComponent(`${name.replace(':', '')} ${year}`)}`, this.baseUrl);
     const html = await this.fetcher.text(ctx, searchUrl);
