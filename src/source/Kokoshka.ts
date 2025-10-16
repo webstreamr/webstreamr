@@ -1,7 +1,13 @@
+import * as cheerio from 'cheerio';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
-import { Fetcher, getTmdbId, getTmdbNameAndYear, Id } from '../utils';
+import { Fetcher, getTmdbId, getTmdbNameAndYear, Id, TmdbId } from '../utils';
 import { Source, SourceResult } from './Source';
+
+interface DooplayerResponse {
+  embed_url: string | null;
+  type: string | false;
+}
 
 export class Kokoshka extends Source {
   public readonly id = 'kokoshka';
@@ -25,97 +31,67 @@ export class Kokoshka extends Source {
   public async handleInternal(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
-    const [title, year] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId);
-    const cleanTitle = title.replace(/[:]/g, '');
-    const query = encodeURIComponent(`${cleanTitle} ${year}`);
-    const searchUrl = new URL(`/?s=${query}`, this.baseUrl);
-    const searchHtml = await this.fetcher.text(ctx, searchUrl);
-
-    const linkMatch = searchHtml.match(/class=["']title["'][^>]*><a href=["']([^"']+)["']/);
-    if (!linkMatch?.[1]) return [];
-    const pageUrl = new URL(linkMatch[1], this.baseUrl);
-    const pageHtml = await this.fetcher.text(ctx, pageUrl);
-
-    // --- Helper: check if a URL returns valid page ---
-    const testUrl = async (url: URL) => {
-      try {
-        const html = await this.fetcher.text(ctx, url);
-        return !/not\s+found/i.test(html) && html.length > 100;
-      } catch { return false; }
-    };
+    let pageUrl = await this.fetchPageUrl(ctx, tmdbId);
+    if (!pageUrl) {
+      return [];
+    }
 
     if (tmdbId.season) {
-      if (!/seriale/i.test(pageUrl.pathname)) return [];
-
-      const serieSlugMatch = pageUrl.pathname.match(/\/seriale\/([^/]+)/);
-      if (!serieSlugMatch?.[1]) return [];
-      let serieSlug = serieSlugMatch[1].replace(/-me-titra-shqip\/?$/, '').replace(/\/$/, '');
-      serieSlug = serieSlug.replace(/-\d{4}$/, '');
-
-      const episodeUrl = new URL(`/episodi/${serieSlug}-${tmdbId.season}x${tmdbId.episode}-me-titra-shqip/`, this.baseUrl);
-      const episodeHtml = await this.fetcher.text(ctx, episodeUrl);
-
-      const postIdMatch = episodeHtml.match(/<li[^>]+data-post=['"](\d+)['"]/);
-      if (!postIdMatch?.[1]) return [];
-      const postId = postIdMatch[1];
-
-      const results: SourceResult[] = [];
-      for (const server of [1, 2]) {
-        const ajaxUrl = new URL(`/wp-json/dooplayer/v2/${postId}/tv/${server}`, this.baseUrl);
-        const json = await this.fetcher.json(ctx, ajaxUrl) as any;
-
-        const urls: string[] = [];
-        if (json.embed_url) urls.push(json.embed_url);
-        if (Array.isArray(json.sources)) urls.push(...json.sources.map((s: any) => s.file));
-
-        for (let embed of urls) {
-          embed = embed.replace(/\\/g, '').replace(/^http:/, 'https:');
-
-          const url = new URL(embed);
-          if (await testUrl(url)) {
-            results.push({
-              url,
-              meta: {
-                countryCodes: [CountryCode.al],
-                referer: this.baseUrl,
-                title: `${title} S${tmdbId.season}E${tmdbId.episode}`,
-              },
-            });
-          }
-        }
+      pageUrl = await this.fetchEpisodeUrl(ctx, pageUrl, tmdbId);
+      if (!pageUrl) {
+        return [];
       }
-      return results;
     }
 
-    const postIdMatch = pageHtml.match(/<li[^>]+data-post=['"](\d+)['"]/);
-    if (!postIdMatch?.[1]) return [];
-    const postId = postIdMatch[1];
+    const pageHtml = await this.fetcher.text(ctx, pageUrl);
 
-    const results: SourceResult[] = [];
-    for (const server of [1, 2]) {
-      const ajaxUrl = new URL(`/wp-json/dooplayer/v2/${postId}/movie/${server}`, this.baseUrl);
-      const json = await this.fetcher.json(ctx, ajaxUrl) as any;
+    const $ = cheerio.load(pageHtml);
 
-      const urls: string[] = [];
-      if (json.embed_url) urls.push(json.embed_url);
-      if (Array.isArray(json.sources)) urls.push(...json.sources.map((s: any) => s.file));
+    const title = $('title').first().text().trim();
 
-      for (let embed of urls) {
-        embed = embed.replace(/\\/g, '').replace(/^http:/, 'https:');
+    return Promise.all(
+      $('.dooplay_player_option:not(#player-option-trailer)')
+        .map(async (_i, el) => {
+          const post = parseInt($(el).attr('data-post') as string);
+          const type = $(el).attr('data-type') as string;
+          const nume = parseInt($(el).attr('data-nume') as string);
 
-        const url = new URL(embed);
-        if (await testUrl(url)) {
-          results.push({
-            url,
+          const dooplayerUrl = new URL(`/wp-json/dooplayer/v2/${post}/${type}/${nume}`, this.baseUrl);
+          const dooplayerResponse = await this.fetcher.json(ctx, dooplayerUrl, { headers: { Referer: pageUrl.href } }) as DooplayerResponse;
+
+          return {
+            url: new URL(dooplayerResponse.embed_url as string),
             meta: {
               countryCodes: [CountryCode.al],
-              referer: this.baseUrl,
+              referer: pageUrl.href,
               title,
             },
-          });
-        }
-      }
-    }
-    return results;
+          };
+        })
+        .toArray(),
+    );
+  }
+
+  private readonly fetchPageUrl = async (ctx: Context, tmdbId: TmdbId): Promise<URL | undefined> => {
+    const [name, year] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId);
+
+    const searchUrl = new URL(`/?s=${encodeURIComponent(`${name.replace(':', '')} ${year}`)}`, this.baseUrl);
+    const html = await this.fetcher.text(ctx, searchUrl);
+
+    const $ = cheerio.load(html);
+
+    return $(`.result-item:has(${tmdbId.season ? '.tvshows' : '.movies'}) a`)
+      .map((_i, el) => new URL($(el).attr('href') as string, this.baseUrl))
+      .get(0);
+  };
+
+  private async fetchEpisodeUrl(ctx: Context, pageUrl: URL, tmdbId: TmdbId): Promise<URL | undefined> {
+    const html = await this.fetcher.text(ctx, pageUrl);
+
+    const $ = cheerio.load(html);
+
+    return $(`.episodiotitle a[href*="${tmdbId.season}x${tmdbId.episode}"]`)
+      .map((_i, el) => new URL($(el).attr('href') as string, this.baseUrl))
+      .get(0);
   }
 }
