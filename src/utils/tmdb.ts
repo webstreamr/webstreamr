@@ -1,7 +1,7 @@
 import { Mutex } from 'async-mutex';
 import { NotFoundError } from '../error';
 import { Context } from '../types';
-import { envGet } from './env';
+import { envGetRequired } from './env';
 import { CustomRequestInit, Fetcher } from './Fetcher';
 import { ImdbId, TmdbId } from './id';
 
@@ -34,7 +34,7 @@ const mutexes = new Map<string, Mutex>();
 const tmdbFetch = async (ctx: Context, fetcher: Fetcher, path: string, searchParams?: Record<string, string | undefined>): Promise<unknown> => {
   const config: CustomRequestInit = {
     headers: {
-      'Authorization': 'Bearer ' + envGet('TMDB_ACCESS_TOKEN'),
+      'Authorization': 'Bearer ' + envGetRequired('TMDB_ACCESS_TOKEN'),
       'Content-Type': 'application/json',
     },
     queueLimit: 50,

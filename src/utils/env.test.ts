@@ -1,10 +1,18 @@
 import * as os from 'node:os';
 import { Request } from 'express';
-import { envGet, envGetAppId, envGetAppName, envIsProd, getCacheDir, isElfHostedInstance } from './env';
+import { envGet, envGetAppId, envGetAppName, envGetRequired, envIsProd, getCacheDir, isElfHostedInstance } from './env';
 
 describe('env', () => {
   test('envGet', () => {
     expect(envGet('NODE_ENV')).toBe('test');
+  });
+
+  test('envGetRequired set', () => {
+    expect(envGetRequired('NODE_ENV')).toBe('test');
+  });
+
+  test('envGetRequired not set', () => {
+    expect(() => envGetRequired('NOT_SET')).toThrow('Environment variable "NOT_SET" is not configured.');
   });
 
   test('envGetAppId', () => {

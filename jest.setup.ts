@@ -1,5 +1,9 @@
 process.env['CACHE_DIR'] = '/dev/null';
 
+if (!process.env['TMDB_ACCESS_TOKEN']) {
+  process.env['TMDB_ACCESS_TOKEN'] = 'some access token';
+}
+
 jest.mock('randomstring', () => ({
   generate: jest.fn(() => 'mocked-random-string'),
 }));
