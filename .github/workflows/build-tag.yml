@@ -22,5 +22,5 @@ jobs:
         with:
           push: true
           tags: |
-            webstreamr/webstreamr:${{ github.sha }}
             webstreamr/webstreamr:${{ github.ref_name }}
+            webstreamr/webstreamr:latest
