@@ -16,7 +16,7 @@ export class FourKHDHub extends Source {
 
   public readonly contentTypes: ContentType[] = ['movie', 'series'];
 
-  public readonly countryCodes: CountryCode[] = [CountryCode.multi];
+  public readonly countryCodes: CountryCode[] = [CountryCode.multi, CountryCode.hi];
 
   public readonly baseUrl = 'https://4khdhub.fans';
 
