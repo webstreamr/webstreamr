@@ -22,14 +22,17 @@ Self-hosting to stressful? ElfHosted offer [ready-to-go, turn-key WebStreamr ins
 
 ### Self-Hosting
 
-You can build an image using the [Dockerfile](./Dockerfile) and run it.
-
-Alternatively, you can also start WebStreamr directly via
+You can run the latest WebStreamr via Docker. E.g.
 
 ```shell
-npm install
-npm run build
-npm start
+ docker run \
+    --detach=true \
+    --name webstreamr \
+    --rm \
+    --pull always \
+    --publish 51546:51546 \
+    --env TMDB_ACCESS_TOKEN="YOUR_TOKEN" \
+    webstreamr/webstreamr
 ```
 
 ### Environment variables
