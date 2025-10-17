@@ -21,6 +21,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: |
-            webstreamr/webstreamr:${{ github.ref_name }}
-            webstreamr/webstreamr:latest
+          tags: webstreamr/webstreamr:latest
