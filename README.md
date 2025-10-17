@@ -10,6 +10,25 @@
 
 A public instance is available at https://webstreamr.hayd.uk. Hosting infrastructure for this instance is donated by [ElfHosted](https://elfhosted.com), and independently maintained by [Hayduk](https://hayd.uk).
 
+## MediaFlow Proxy
+
+[MediaFlow Proxy](https://github.com/mhdzumair/mediaflow-proxy/) can be added when configuration the add-on to gain access to a couple of more file hosters.
+It depends highly on the language / source used if that unlocks more streams or not.
+
+MediaFlow proxy is needed because some hosters ip-lock streams and the add-on does not run on the same device that will stream the video.
+
+The following hosters can be used only with MediaFlow Proxy:
+
+- Fastream
+- FileLions
+- FileMoon
+- LuluStream
+- Mixdrop
+- Streamtape
+- VOE
+
+MediaFlow proxy can either be self-hosted or acquired via bundle from [ElfHosted](https://docs.elfhosted.com/app/mediaflow-proxy/).
+
 ## Hosting
 
 Don't want to use the public instance, or concerned about reliability during periods of high use? It's open-source, you can host it yourself!
