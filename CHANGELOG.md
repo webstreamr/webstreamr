@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.56.2](https://github.com/webstreamr/webstreamr/compare/v0.56.1...v0.56.2) (2025-10-17)
+
+
+### Bug Fixes
+
+* only push lates tag, no need for invalid version tags ([e989fc0](https://github.com/webstreamr/webstreamr/commit/e989fc05d5873665626fbb94427904796e6fe2d4))
+
 ## [0.56.1](https://github.com/webstreamr/webstreamr/compare/v0.56.0...v0.56.1) (2025-10-17)
 
 
