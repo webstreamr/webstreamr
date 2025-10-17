@@ -88,6 +88,11 @@ Optional. Port of the node web server. Default: `51546`
 
 Optional. Proxies which should be used based on domain. Supports minimatch. E.g. `dood.to:http://USERNAME:PASSWORD@IP:PORT,*:socks5://172.17.0.1:1080` would use an http proxy for dood.to and a socks5 proxy for all other domains.
 
+Some hosters are a bit picky when it comes to IPs. Best case is if you use a residential IP.
+If you can't do that, then I suggest to use a VPN / proxy like Cloudflare WARP.
+DoodStream is not working with WARP.
+Free Webshare proxies seem to work with it.
+
 #### `TMDB_ACCESS_TOKEN`
 
 **Required**. TMDB access token to get information like title and year for content. Use the [API Read Access Token](https://www.themoviedb.org/settings/api).
