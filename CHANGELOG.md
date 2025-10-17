@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.56.1](https://github.com/webstreamr/webstreamr/compare/v0.56.0...v0.56.1) (2025-10-17)
+
+
+### Bug Fixes
+
+* push latest for release tags ([a937990](https://github.com/webstreamr/webstreamr/commit/a93799036d51178263fec8fc60ab25e45b1458a3))
+
 ## [0.56.0](https://github.com/webstreamr/webstreamr/compare/v0.55.1...v0.56.0) (2025-10-17)
 
 
