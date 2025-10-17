@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.56.0](https://github.com/webstreamr/webstreamr/compare/v0.55.1...v0.56.0) (2025-10-17)
+
+
+### Miscellaneous Chores
+
+* full remove Fsst ([bcd8688](https://github.com/webstreamr/webstreamr/commit/bcd868850d2f2bd242d100c42c96dac9f6dbf709))
+* tag 4KHDHub with Indian flag ([177739e](https://github.com/webstreamr/webstreamr/commit/177739e7cdd91f22bf3f7c131092ddc710505727))
+* throw explicit error if required TMDB_ACCESS_TOKEN env var is not set ([6f60c49](https://github.com/webstreamr/webstreamr/commit/6f60c49bd1fb6c14915734418ac1b245451c839e))
+
+
+### Documentation
+
+* add info about MediaFlow Proxy ([a76e725](https://github.com/webstreamr/webstreamr/commit/a76e7254ff13ff1ea4fb074249a59c2a01213b51))
+* add more infos about proxy config ([eaa95e8](https://github.com/webstreamr/webstreamr/commit/eaa95e8cd9bf53650ddf47c040dc50af29aa09c0))
+* default self hosting docs to official Docker image ([14da572](https://github.com/webstreamr/webstreamr/commit/14da572830384d71e38603a4c4f566a55fa61c52))
+* document environment variables ([c7b507c](https://github.com/webstreamr/webstreamr/commit/c7b507ca6b7776aa450e467075543847e983aace))
+
+
+### Features
+
+* push docker latest build for tags ([0018ccc](https://github.com/webstreamr/webstreamr/commit/0018ccc9299da174e108829409c56ec34c39a569))
+
 ## [0.55.1](https://github.com/webstreamr/webstreamr/compare/v0.55.0...v0.55.1) (2025-10-16)
 
 
