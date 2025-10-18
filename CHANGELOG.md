@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.56.4](https://github.com/webstreamr/webstreamr/compare/v0.56.3...v0.56.4) (2025-10-18)
+
+
+### Miscellaneous Chores
+
+* mark VidSrc as being multi instead of English ([ae7b784](https://github.com/webstreamr/webstreamr/commit/ae7b784783a00dc529bd3330087389de16c01acc))
+* switch to new VidSrc domains, pass-through TMDB IDs if given ([d59658f](https://github.com/webstreamr/webstreamr/commit/d59658fb7b42e509df19fc6b154c22c8a01db9b0))
+
 ## [0.56.3](https://github.com/webstreamr/webstreamr/compare/v0.56.2...v0.56.3) (2025-10-18)
 
 
