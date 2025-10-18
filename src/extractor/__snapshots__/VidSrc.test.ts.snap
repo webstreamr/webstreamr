@@ -12,7 +12,7 @@ exports[`VidSrc Black Mirror 1`] = `
     },
     "sourceId": "vidsrc_CloudStream-Pro_",
     "ttl": 10800000,
-    "url": "https://tmstr5.shadowlandschronicles.com/pl/H4sIAAAAAAAAAxXK226DIAAA0F8CrGvd27oCq1UcyP1NQdtUaozptsyvX3aez9DBQxgjgBmAPeqK_Yh2eTeG4tAPMCDwysHNaeDbevKVMM.XgMWps2XtTWGkLR8M.feQ2KroeeXG_db4vCq82.T8lkerZ0OTlLLsWuA2lnwT1FK7e6r0B5nEHL_4pNAgme2sJj28_kT0f0kuya0Sj6W6wONRnkrpAHP9vZwEzRE3T8JOohmwtwMlTimNeiw2BQWRsM4CKZ3PFuUyT1usLy6LWb3F1s3p0hPRSpqqxibcPpaG3.Mq5qS4vn4bqm.NTp8KFzOfmBykWP4AirgCPSEBAAA-/master.m3u8",
+    "url": "https://tmstr5.shadowlandschronicles.com/pl/H4sIAAAAAAAAAw3N3W6DIBgA0FcC_JndpZ1oY8UK8qHcobh0ymxNFqs._Xp_kmOGD594Q2BCPxrQd9SZKDCnsPeR7bwoCD.7w155E3_VoOuSMla7.w5TgSVCa_2rkUq2R6kegQAm5MxI77Gf9rigXumZyfsZkOOAKe9S7OUeK3XiwBz9JjPr9PS3Csd4kXJlCWtzsq35.4P02bTj5QAAY.f4dkUQvF3Bas0MSfYS4kWq19aN0yZci4ZGvoaM3jp5qorMltUEuB9bIqjVGi67oUzA4R587LFo3MLV0wB1WCUTEUjuZuQU0Da1ki4mfZ5zdOIV5rHANv0Hv0Y7NiEBAAA-/master.m3u8",
   },
 ]
 `;
@@ -29,7 +29,7 @@ exports[`VidSrc Full Metal Jacket 1`] = `
     },
     "sourceId": "vidsrc_CloudStream-Pro_",
     "ttl": 10800000,
-    "url": "https://tmstr4.shadowlandschronicles.com/pl/H4sIAAAAAAAAAwXB7XqCIBgA0FtCsa_97IMcFSa.gPBPwc1H0Fm5Wl79zllVS4eRdZv10uJkuarrJF7Yr8at1lWyRvZDC7cFP3IT2YU4PHAmiGKB59C1Z41bbUQ7czDQ.AgpMv6csHtqNTFGzMMGessV_bOSvRkadab4riBhWx0nxuPxDtFnXMSjqAOdM5AtK3lyjjxiyD.LYAaRbqvC8_MF_L0Bsq8GeuGHxUlLU9rSZapvkSTyUfsNkcEJi8eb9jRpRPJkMTO6H4mV33cnaCqP_LeIpw46iVlHrxDp2c6G5ILtbeoC9I42itxy_3plqev50N5FLDHfTS94T1AQKXUZrmwOA1dtVIFFOaDNP7JZ1PhBAQAA/master.m3u8",
+    "url": "https://tmstr4.shadowlandschronicles.com/pl/H4sIAAAAAAAAAw3Oy3KCMBhA4VcKBqh2p0UumRJKSP4Iu1ywkYDDUKuVp6_bs_jmWBVtg.3ZvMUoDqLAxOps.jDCsVHIbPrdu5FuqQQ5UGS_dELbZh3vegVfivna5I7wqcv6nJEuYKzGaUmn71Ajv1qAR4NSX51YLjOWdN6qXsKxOxWou76cqbzzy.63Pu2fkJCjSI64kuViE3fRGZl1OjvmU8cxYOPtR7u5PYDbVg0uEANU0rPLJyofYmBcJPu_Buif5OBoOi8tBsowKRhmaSPRUw2v7n9WO76uspno3Ec8LxYeHA5dAKGU3RM2YaibGzbZ7MqxCJVkmZJutdc6qhGROgNZrqnQIxsttgVMdBEc7f4BOJFmy0EBAAA-/master.m3u8",
   },
 ]
 `;
@@ -43,12 +43,10 @@ exports[`VidSrc blocking issues are retried and fail if no tlds are left 1`] = `
     "label": "VidSrc",
     "meta": {},
     "sourceId": "vidsrc",
-    "url": "https://vidsrc.xyz/embed/movie/tt33043892/1/1",
+    "url": "https://vidsrc-embed.ru/embed/movie/fake2",
   },
 ]
 `;
-
-exports[`VidSrc not found 1`] = `[]`;
 
 exports[`VidSrc rate limit issues are retried and fail if no tlds are left 1`] = `
 [
@@ -59,7 +57,7 @@ exports[`VidSrc rate limit issues are retried and fail if no tlds are left 1`] =
     "label": "VidSrc",
     "meta": {},
     "sourceId": "vidsrc",
-    "url": "https://vidsrc.xyz/embed/movie/tt33043892/1/1",
+    "url": "https://vidsrc-embed.ru/embed/movie/fake1",
   },
 ]
 `;

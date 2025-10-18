@@ -1,5 +1,5 @@
 import { createTestContext } from '../test';
-import { FetcherMock, ImdbId } from '../utils';
+import { ImdbId } from '../utils';
 import { VidSrc } from './VidSrc';
 
 const ctx = createTestContext();
@@ -8,7 +8,7 @@ describe('VidSrc', () => {
   let source: VidSrc;
 
   beforeEach(() => {
-    source = new VidSrc(new FetcherMock('/dev/null'));
+    source = new VidSrc();
   });
 
   test('handle imdb black mirror s4e2', async () => {

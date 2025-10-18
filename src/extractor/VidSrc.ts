@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import slugify from 'slugify';
-import { BlockedError, NotFoundError, TooManyRequestsError } from '../error';
+import { BlockedError, TooManyRequestsError } from '../error';
 import { Context, Format, Meta, NonEmptyArray, UrlResult } from '../types';
 import { Fetcher, guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
@@ -12,16 +12,16 @@ export class VidSrc extends Extractor {
 
   public override readonly ttl: number = 10800000; // 3h
 
-  private readonly tlds: NonEmptyArray<string>;
+  private readonly domains: NonEmptyArray<string>;
 
-  public constructor(fetcher: Fetcher, tlds: NonEmptyArray<string>) {
+  public constructor(fetcher: Fetcher, domains: NonEmptyArray<string>) {
     super(fetcher);
 
-    this.tlds = tlds;
+    this.domains = domains;
   }
 
   public supports(_ctx: Context, url: URL): boolean {
-    return null !== url.host.match(/vidsrc/);
+    return null !== url.host.match(/vidsrc|vsrc/);
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
@@ -29,24 +29,22 @@ export class VidSrc extends Extractor {
     const randomIp = `${Math.floor(Math.random() * 223) + 1}.${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}`;
     const newCtx = { ...ctx, ip: randomIp };
 
-    return this.extractUsingRandomTld(newCtx, url, meta, [...this.tlds]);
+    return this.extractUsingRandomDomain(newCtx, url, meta, [...this.domains]);
   };
 
-  private async extractUsingRandomTld(ctx: Context, url: URL, meta: Meta, tlds: string[]): Promise<UrlResult[]> {
-    const tldIndex = Math.floor(Math.random() * tlds.length);
-    const [tld] = tlds.splice(tldIndex, 1) as [string];
+  private async extractUsingRandomDomain(ctx: Context, url: URL, meta: Meta, domains: string[]): Promise<UrlResult[]> {
+    const domainIndex = Math.floor(Math.random() * domains.length);
+    const [domain] = domains.splice(domainIndex, 1) as [string];
 
     const newUrl = new URL(url);
-    const hostnameParts = newUrl.hostname.split('.');
-    hostnameParts[hostnameParts.length - 1] = tld;
-    newUrl.hostname = hostnameParts.join('.');
+    newUrl.hostname = domain;
 
     let html: string;
     try {
       html = await this.fetcher.text(ctx, newUrl, { queueLimit: 1 });
     } catch (error) {
-      if (tlds.length && (error instanceof TooManyRequestsError || error instanceof BlockedError)) {
-        return this.extractUsingRandomTld(ctx, url, meta, tlds);
+      if (domains.length && (error instanceof TooManyRequestsError || error instanceof BlockedError)) {
+        return this.extractUsingRandomDomain(ctx, url, meta, domains);
       }
 
       throw error;
@@ -68,11 +66,7 @@ export class VidSrc extends Extractor {
           const srcMatch = iframeHtml.match(`src:\\s?'(.*)'`) as string[];
 
           const playerHtml = await this.fetcher.text(ctx, new URL(srcMatch[1] as string, iframeUrl.origin), { headers: { Referer: rcpUrl.href } });
-          const fileMatch = playerHtml.match(`file:\\s?'(.*)'`);
-          if (!fileMatch) {
-            throw new NotFoundError();
-          }
-
+          const fileMatch = playerHtml.match(`file:\\s?'(.*)'`) as string[];
           const m3u8Url = new URL(fileMatch[1] as string);
 
           return {

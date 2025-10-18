@@ -31,7 +31,7 @@ export const createSources = (fetcher: Fetcher): Source[] => {
     // AL
     new Kokoshka(fetcher),
     // EN
-    new VidSrc(fetcher),
+    new VidSrc(),
     // ES / MX
     new CineHDPlus(fetcher),
     new Cuevana(fetcher),

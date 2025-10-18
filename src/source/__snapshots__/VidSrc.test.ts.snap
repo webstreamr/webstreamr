@@ -8,7 +8,7 @@ exports[`VidSrc handle imdb black mirror s4e2 1`] = `
         "en",
       ],
     },
-    "url": "https://vidsrc.xyz/embed/tv/tt2085059/4/2",
+    "url": "https://vidsrc-embed.ru/embed/tv/tt2085059/4-2",
   },
 ]
 `;
@@ -21,7 +21,7 @@ exports[`VidSrc handle imdb full metal jacket 1`] = `
         "en",
       ],
     },
-    "url": "https://vidsrc.xyz/embed/movie/tt0093058",
+    "url": "https://vidsrc-embed.ru/embed/movie/tt0093058",
   },
 ]
 `;
