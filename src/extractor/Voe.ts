@@ -52,6 +52,7 @@ export class Voe extends Extractor {
         'fraudclatterflyingcar.com',
         'gamoneinterrupted.com',
         'generatesnitrosate.com',
+        'goofy-banana.com',
         'graceaddresscommunity.com',
         'greaseball6eventual20.com',
         'guidon40hyporadius9.com',
