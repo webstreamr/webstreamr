@@ -11,7 +11,7 @@ exports[`buildManifest default manifest 1`] = `
   "config": [
     {
       "key": "multi",
-      "title": "Multi 🌐 (4KHDHub, VixSrc)",
+      "title": "Multi 🌐 (4KHDHub, VidSrc, VixSrc)",
       "type": "checkbox",
     },
     {
