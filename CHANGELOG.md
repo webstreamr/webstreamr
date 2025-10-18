@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.56.3](https://github.com/webstreamr/webstreamr/compare/v0.56.2...v0.56.3) (2025-10-18)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @stylistic/eslint-plugin to v5.5.0 ([#441](https://github.com/webstreamr/webstreamr/issues/441)) ([209ec26](https://github.com/webstreamr/webstreamr/commit/209ec2673f639892208bf824875b5b6bc8796da6))
+* **deps:** update dependency cacheable to v2.1.1 ([#438](https://github.com/webstreamr/webstreamr/issues/438)) ([6fffb57](https://github.com/webstreamr/webstreamr/commit/6fffb57a8dc3c245afa460308001ce5f7b6afdc6))
+* **deps:** update eslint monorepo to v9.38.0 ([#439](https://github.com/webstreamr/webstreamr/issues/439)) ([5d6a814](https://github.com/webstreamr/webstreamr/commit/5d6a8145c37a17cc3ef9b71963bf4a398ddf3f36))
+* **extractor:** add goofy-banana.com to Voe ([ad61be8](https://github.com/webstreamr/webstreamr/commit/ad61be862616e10f04a9eb7bdf48c875874ae13f))
+
 ## [0.56.2](https://github.com/webstreamr/webstreamr/compare/v0.56.1...v0.56.2) (2025-10-17)
 
 
