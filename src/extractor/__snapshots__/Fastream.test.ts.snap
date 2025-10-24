@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`Fastream expired or deleted 1`] = `[]`;
+
 exports[`Fastream fastream.to embed 1`] = `
 [
   {

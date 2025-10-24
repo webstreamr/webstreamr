@@ -1,4 +1,5 @@
 import bytes from 'bytes';
+import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
 import { buildMediaFlowProxyExtractorStreamUrl, supportsMediaFlowProxy } from '../utils';
 import { Extractor } from './Extractor';
@@ -21,10 +22,14 @@ export class Fastream extends Extractor {
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
-    const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'Fastream', url, headers);
-
     const downloadUrl = new URL(url.href.replace('/embed-', '/d/'));
     const html = await this.fetcher.text(ctx, downloadUrl, { headers });
+
+    if (/No such file/.test(html)) {
+      throw new NotFoundError();
+    }
+
+    const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'Fastream', url, headers);
 
     const heightAndSizeMatch = html.match(/\d{3,}x(\d{3,}), ([\d.]+ ?[GM]B)/) as string[];
     const titleMatch = html.match(/>Download (.*?)</) as string[];

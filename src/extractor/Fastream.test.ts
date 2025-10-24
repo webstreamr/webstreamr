@@ -13,4 +13,8 @@ describe('Fastream', () => {
   test('fastream.to embed', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://fastream.to/embed-3aooif4ozt10.html'))).toMatchSnapshot();
   });
+
+  test('expired or deleted', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://fastream.to/embed-a9rp1d1pqom7.html'))).toMatchSnapshot();
+  });
 });
