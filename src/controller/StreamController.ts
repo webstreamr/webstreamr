@@ -3,7 +3,7 @@ import { Request, Response, Router } from 'express';
 import { ContentType } from 'stremio-addon-sdk';
 import winston from 'winston';
 import { Source } from '../source';
-import { contextFromRequestAndResponse, envIsProd, Id, ImdbId, noCache, StreamResolver, TmdbId } from '../utils';
+import { contextFromRequestAndResponse, envIsProd, Id, ImdbId, StreamResolver, TmdbId } from '../utils';
 
 export class StreamController {
   public readonly router: Router;
@@ -53,9 +53,7 @@ export class StreamController {
     await mutex.runExclusive(async () => {
       const { streams, ttl } = await this.streamResolver.resolve(ctx, sources, type, id);
 
-      if (noCache(ctx.config)) {
-        res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
-      } else if (ttl && envIsProd()) {
+      if (ttl && envIsProd()) {
         res.setHeader('Cache-Control', `max-age=${Math.floor(ttl / 1000)}, public`);
       }
 

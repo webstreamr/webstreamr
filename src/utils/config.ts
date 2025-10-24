@@ -9,8 +9,6 @@ export const showErrors = (config: Config): boolean => 'showErrors' in config;
 
 export const showExternalUrls = (config: Config): boolean => 'includeExternalUrls' in config;
 
-export const noCache = (config: Config): boolean => 'noCache' in config;
-
 export const hasMultiEnabled = (config: Config): boolean => 'multi' in config;
 
 export const disableExtractorConfigKey = (extractor: Extractor): string => `disableExtractor_${extractor.id}`;

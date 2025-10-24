@@ -62,12 +62,6 @@ describe('buildManifest', () => {
     expect(manifest.config).toMatchSnapshot();
   });
 
-  test('has checked noCache', () => {
-    const manifest = buildManifest([], [], { noCache: 'on' });
-
-    expect(manifest.config).toMatchSnapshot();
-  });
-
   test('disable extractors', () => {
     const extractors = [
       new DoodStream(fetcher),
