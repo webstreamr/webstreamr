@@ -1,4 +1,3 @@
-import { BlockedError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
 import { showExternalUrls } from '../utils';
 import { Extractor } from './Extractor';
@@ -14,19 +13,7 @@ export class ExternalUrl extends Extractor {
     return showExternalUrls(ctx.config) && null !== url.host.match(/.*/);
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const headers = { Referer: meta.referer ?? url.href };
-
-    try {
-      // Make sure the URL is accessible, but avoid causing noise and delays doing this
-      await this.fetcher.head(ctx, url, { noFlareSolverr: true, timeout: 1000, headers });
-    } catch (error) {
-      /* istanbul ignore if */
-      if (!(error instanceof BlockedError)) {
-        return [];
-      }
-    }
-
+  protected async extractInternal(_ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     return [
       {
         url: url,

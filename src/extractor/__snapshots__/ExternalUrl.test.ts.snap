@@ -1,6 +1,20 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`ExternalUrl 404 - not found 1`] = `[]`;
+exports[`ExternalUrl 404 - not found 1`] = `
+[
+  {
+    "format": "unknown",
+    "isExternal": true,
+    "label": "streamtape.com",
+    "meta": {
+      "countryCodes": [],
+    },
+    "sourceId": "external_",
+    "ttl": 21600000,
+    "url": "https://streamtape.com/e/gjA1OQ4klyHxgJ",
+  },
+]
+`;
 
 exports[`ExternalUrl netu.fanstream.us 1`] = `
 [
