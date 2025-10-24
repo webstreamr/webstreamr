@@ -281,7 +281,7 @@ export class Fetcher {
   };
 
   protected async fetchWithTimeout(ctx: Context, url: URL, init?: CustomRequestInit, tryCount = 0): Promise<Response> {
-    const proxyUrl = getProxyForUrl(ctx, url);
+    const proxyUrl = getProxyForUrl(url);
 
     const headers = init?.headers as Record<string, string> | undefined;
     let message = `Fetch ${init?.method ?? 'GET'} ${url}`;

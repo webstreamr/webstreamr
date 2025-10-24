@@ -76,12 +76,6 @@ exports[`buildManifest default manifest 1`] = `
       "title": "MediaFlow Proxy Password",
       "type": "password",
     },
-    {
-      "default": "",
-      "key": "proxyConfig",
-      "title": "Proxy Config",
-      "type": "text",
-    },
   ],
   "description": "Provides HTTP URLs from streaming websites. Configure add-on for additional languages. Add MediaFlow proxy for more URLs.
 
@@ -137,12 +131,6 @@ exports[`buildManifest disable extractors 1`] = `
     "type": "password",
   },
   {
-    "default": "",
-    "key": "proxyConfig",
-    "title": "Proxy Config",
-    "type": "text",
-  },
-  {
     "default": "checked",
     "key": "disableExtractor_doodstream",
     "title": "Disable extractor DoodStream",
@@ -181,12 +169,6 @@ exports[`buildManifest has checked includeExternalUrls 1`] = `
     "title": "MediaFlow Proxy Password",
     "type": "password",
   },
-  {
-    "default": "",
-    "key": "proxyConfig",
-    "title": "Proxy Config",
-    "type": "text",
-  },
 ]
 `;
 
@@ -214,12 +196,6 @@ exports[`buildManifest has checked showErrors 1`] = `
     "key": "mediaFlowProxyPassword",
     "title": "MediaFlow Proxy Password",
     "type": "password",
-  },
-  {
-    "default": "",
-    "key": "proxyConfig",
-    "title": "Proxy Config",
-    "type": "text",
   },
 ]
 `;
@@ -264,12 +240,6 @@ exports[`buildManifest has checked source with appropriate config 1`] = `
     "key": "mediaFlowProxyPassword",
     "title": "MediaFlow Proxy Password",
     "type": "password",
-  },
-  {
-    "default": "",
-    "key": "proxyConfig",
-    "title": "Proxy Config",
-    "type": "text",
   },
 ]
 `;
@@ -323,12 +293,6 @@ exports[`buildManifest has unchecked source without a config 1`] = `
     "title": "MediaFlow Proxy Password",
     "type": "password",
   },
-  {
-    "default": "",
-    "key": "proxyConfig",
-    "title": "Proxy Config",
-    "type": "text",
-  },
 ]
 `;
 
@@ -355,12 +319,6 @@ exports[`buildManifest showErrors and includeExternalUrls are unchecked by defau
     "key": "mediaFlowProxyPassword",
     "title": "MediaFlow Proxy Password",
     "type": "password",
-  },
-  {
-    "default": "",
-    "key": "proxyConfig",
-    "title": "Proxy Config",
-    "type": "text",
   },
 ]
 `;

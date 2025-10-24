@@ -1,10 +1,9 @@
 import { socksDispatcher } from 'fetch-socks';
 import { minimatch } from 'minimatch';
 import { Dispatcher, ProxyAgent } from 'undici';
-import { Context } from '../types';
 
-export const getProxyForUrl = (ctx: Context, url: URL): URL | undefined => {
-  const proxyConfig = ctx.config['proxyConfig'] || process.env['PROXY_CONFIG'];
+export const getProxyForUrl = (url: URL): URL | undefined => {
+  const proxyConfig = process.env['PROXY_CONFIG'];
 
   if (proxyConfig) {
     for (const rule of proxyConfig.split(',')) {
