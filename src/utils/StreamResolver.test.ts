@@ -153,7 +153,7 @@ describe('resolve', () => {
             url: new URL('https://example.com'),
             format: Format.unknown,
             isExternal: true,
-            error: new TooManyRequestsError(10),
+            error: new TooManyRequestsError(new URL('https://example.com'), 10),
             label: 'hoster.com',
             sourceId: '',
             meta: {
@@ -164,7 +164,7 @@ describe('resolve', () => {
             url: new URL('https://example.com'),
             format: Format.unknown,
             isExternal: true,
-            error: new TooManyTimeoutsError(),
+            error: new TooManyTimeoutsError(new URL('https://example.com')),
             label: 'hoster.com',
             sourceId: '',
             meta: {
@@ -195,7 +195,7 @@ describe('resolve', () => {
             url: new URL('https://example2.com'),
             format: Format.unknown,
             isExternal: true,
-            error: new TimeoutError(),
+            error: new TimeoutError(new URL('https://example2.com')),
             label: 'hoster.com',
             sourceId: '',
             meta: {
@@ -206,7 +206,7 @@ describe('resolve', () => {
             url: new URL('https://example3.com'),
             format: Format.unknown,
             isExternal: true,
-            error: new QueueIsFullError(),
+            error: new QueueIsFullError(new URL('https://example3.com')),
             label: 'hoster.com',
             sourceId: '',
             meta: {
@@ -217,7 +217,7 @@ describe('resolve', () => {
             url: new URL('https://example4.com'),
             format: Format.unknown,
             isExternal: true,
-            error: new HttpError(500, 'Internal Server Error', { 'x-foo': 'bar' }),
+            error: new HttpError(new URL('https://example4.com'), 500, 'Internal Server Error', { 'x-foo': 'bar' }),
             label: 'hoster.com',
             sourceId: '',
             meta: {
@@ -228,7 +228,7 @@ describe('resolve', () => {
             url: new URL('https://example5.com'),
             format: Format.unknown,
             isExternal: true,
-            error: new HttpError(418, 'I\'m a tea pot', { 'x-foo': 'bar' }),
+            error: new HttpError(new URL('https://example5.com'), 418, 'I\'m a tea pot', { 'x-foo': 'bar' }),
             label: 'hoster.com',
             sourceId: '',
             meta: {

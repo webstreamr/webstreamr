@@ -21,46 +21,50 @@ export const logErrorAndReturnNiceString = (ctx: Context, logger: winston.Logger
       return '⚠️ MediaFlow Proxy authentication failed. Please set the correct password.';
     }
 
-    logger.warn(`${source}: Request to ${error.url.href} was blocked, reason: ${error.reason}, headers: ${JSON.stringify(error.headers)}.`, ctx);
+    logger.warn(`${source}: Request to ${error.url} was blocked, reason: ${error.reason}, headers: ${JSON.stringify(error.headers)}.`, ctx);
 
-    return `⚠️ Request was blocked. Reason: ${error.reason}`;
+    return `⚠️ Request to ${error.url.host} was blocked. Reason: ${error.reason}`;
   }
 
   if (error instanceof TooManyRequestsError) {
-    logger.warn(`${source}: Rate limited for ${error.retryAfter} seconds.`, ctx);
+    logger.warn(`${source}: Request to ${error.url} was rate limited for ${error.retryAfter} seconds.`, ctx);
 
-    return '🚦 Request was rate-limited. Please try again later or consider self-hosting.';
+    return `🚦 Request to ${error.url.host} was rate-limited. Please try again later or consider self-hosting.`;
   }
 
   if (error instanceof TooManyTimeoutsError) {
-    logger.warn(`${source}: Too many timeouts.`, ctx);
+    logger.warn(`${source}: Too many timeouts when requesting ${error.url}.`, ctx);
 
-    return '🚦 Too many recent timeouts. Please try again later.';
+    return `🚦 Too many recent timeouts when requesting ${error.url.host}. Please try again later.`;
   }
 
-  if (
-    error instanceof TimeoutError
-    || (error instanceof DOMException && ['AbortError', 'TimeoutError'].includes(error.name)) // sometimes this gets through, no idea why..
-  ) {
+  if (error instanceof TimeoutError) {
+    logger.warn(`${source}: Request to ${error.url} timed out.`, ctx);
+
+    return `🐢 Request to ${error.url.host} timed out.`;
+  }
+
+  if (error instanceof DOMException && ['AbortError', 'TimeoutError'].includes(error.name)) {
+    // sometimes this gets through, no idea why..
     logger.warn(`${source}: Request timed out.`, ctx);
 
     return '🐢 Request timed out.';
   }
 
   if (error instanceof QueueIsFullError) {
-    logger.warn(`${source}: Request queue is full.`, ctx);
+    logger.warn(`${source}: Request queue for ${error.url.host} is full.`, ctx);
 
-    return '⏳ Request queue is full. Please try again later or consider self-hosting.';
+    return `⏳ Request queue for ${error.url.host} is full. Please try again later or consider self-hosting.`;
   }
 
   if (error instanceof HttpError) {
-    logger.error(`${source}: HTTP status ${error.status} (${error.statusText}), headers: ${JSON.stringify(error.headers)}, stack: ${error.stack}.`, ctx);
+    logger.error(`${source}: Error when requesting url ${error.url}, HTTP status ${error.status} (${error.statusText}), headers: ${JSON.stringify(error.headers)}, stack: ${error.stack}.`, ctx);
 
     if (error.status >= 500) {
-      return `❌ Remote server has issues. We can't fix this, please try later again.`;
+      return `❌ Remote server ${error.url.host} has issues. We can't fix this, please try later again.`;
     }
 
-    return `❌ Request failed with status ${error.status} (${error.statusText}). Request-id: ${ctx.id}.`;
+    return `❌ Request to ${error.url.host} failed with status ${error.status} (${error.statusText}). Request-id: ${ctx.id}.`;
   }
 
   const cause = (error as Error & { cause?: unknown }).cause;

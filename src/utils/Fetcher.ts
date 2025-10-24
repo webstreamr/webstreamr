@@ -213,10 +213,10 @@ export class Fetcher {
         await this.rateLimitedCache.set<true>(url.host, true, retryAfter * 1000);
       }
 
-      throw new TooManyRequestsError(retryAfter);
+      throw new TooManyRequestsError(url, retryAfter);
     }
 
-    throw new HttpError(httpCacheItem.status, httpCacheItem.statusText, httpCacheItem.headers);
+    throw new HttpError(url, httpCacheItem.status, httpCacheItem.statusText, httpCacheItem.headers);
   };
 
   private determineCacheKey(url: URL, init?: CustomRequestInit): string {
@@ -308,12 +308,12 @@ export class Fetcher {
         return await this.fetchWithTimeout(ctx, url, { ...init, queueLimit: 1 }, ++tryCount);
       }
 
-      throw new TooManyRequestsError((isRateLimitedRaw.expires as number - Date.now()) / 1000);
+      throw new TooManyRequestsError(url, (isRateLimitedRaw.expires as number - Date.now()) / 1000);
     }
 
     const timeouts = (await this.timeoutsCountCache.get<number>(url.host)) ?? 0;
     if (timeouts >= (init?.timeoutsCountThrow ?? this.DEFAULT_TIMEOUTS_COUNT_THROW)) {
-      throw new TooManyTimeoutsError();
+      throw new TooManyTimeoutsError(url);
     }
 
     let response;
@@ -335,7 +335,7 @@ export class Fetcher {
 
       if (error instanceof DOMException && ['AbortError', 'TimeoutError'].includes(error.name)) {
         await this.increaseTimeoutsCount(url);
-        throw new TimeoutError();
+        throw new TimeoutError(url);
       }
 
       if (tryCount < 3) {
@@ -393,7 +393,7 @@ export class Fetcher {
     let sem = this.semaphores.get(url.host);
 
     if (!sem) {
-      sem = withTimeout(new Semaphore(queueLimit), queueTimeout, new QueueIsFullError());
+      sem = withTimeout(new Semaphore(queueLimit), queueTimeout, new QueueIsFullError(url));
       this.semaphores.set(url.host, sem);
     }
 

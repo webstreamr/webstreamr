@@ -35,7 +35,7 @@ exports[`resolve adds error info 2`] = `
       "externalUrl": "https://example5.com/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
-❌ Request failed with status 418 (I'm a tea pot). Request-id: test.",
+❌ Request to example5.com failed with status 418 (I'm a tea pot). Request-id: test.",
     },
     {
       "behaviorHints": {
@@ -44,7 +44,7 @@ exports[`resolve adds error info 2`] = `
       "externalUrl": "https://example4.com/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
-❌ Remote server has issues. We can't fix this, please try later again.",
+❌ Remote server example4.com has issues. We can't fix this, please try later again.",
     },
     {
       "behaviorHints": {
@@ -53,7 +53,7 @@ exports[`resolve adds error info 2`] = `
       "externalUrl": "https://example3.com/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
-⏳ Request queue is full. Please try again later or consider self-hosting.",
+⏳ Request queue for example3.com is full. Please try again later or consider self-hosting.",
     },
     {
       "behaviorHints": {
@@ -62,7 +62,7 @@ exports[`resolve adds error info 2`] = `
       "externalUrl": "https://example2.com/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
-🐢 Request timed out.",
+🐢 Request to example2.com timed out.",
     },
     {
       "behaviorHints": {
@@ -80,7 +80,7 @@ exports[`resolve adds error info 2`] = `
       "externalUrl": "https://example.com/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
-🚦 Too many recent timeouts. Please try again later.",
+🚦 Too many recent timeouts when requesting example.com. Please try again later.",
     },
     {
       "behaviorHints": {
@@ -89,7 +89,7 @@ exports[`resolve adds error info 2`] = `
       "externalUrl": "https://example.com/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
-🚦 Request was rate-limited. Please try again later or consider self-hosting.",
+🚦 Request to example.com was rate-limited. Please try again later or consider self-hosting.",
     },
     {
       "behaviorHints": {
@@ -98,7 +98,7 @@ exports[`resolve adds error info 2`] = `
       "externalUrl": "https://example.com/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
-⚠️ Request was blocked. Reason: unknown",
+⚠️ Request to example.com was blocked. Reason: unknown",
     },
     {
       "behaviorHints": {
@@ -116,7 +116,7 @@ exports[`resolve adds error info 2`] = `
       "externalUrl": "https://example.com/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
-⚠️ Request was blocked. Reason: cloudflare_censor",
+⚠️ Request to example.com was blocked. Reason: cloudflare_censor",
     },
     {
       "behaviorHints": {
@@ -125,7 +125,7 @@ exports[`resolve adds error info 2`] = `
       "externalUrl": "https://example.com/",
       "name": "WebStreamr 🇩🇪",
       "title": "🔗 hoster.com
-⚠️ Request was blocked. Reason: cloudflare_challenge",
+⚠️ Request to example.com was blocked. Reason: cloudflare_challenge",
     },
     {
       "behaviorHints": {
