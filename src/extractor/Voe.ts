@@ -75,6 +75,7 @@ export class Voe extends Extractor {
         'lisatrialidea.com',
         'loriwithinfamily.com',
         'lukecomparetwo.com',
+        'lukesitturn.com',
         'mariatheserepublican.com',
         'matriculant401merited.com',
         'maxfinishseveral.com',
