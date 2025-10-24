@@ -77,7 +77,7 @@ export class VidSrc extends Extractor {
             ttl: this.ttl,
             meta: {
               ...meta,
-              height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, { headers: { Referer: iframeUrl.href } }),
+              height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, url, { headers: { Referer: iframeUrl.href } }),
               title,
             },
           };

@@ -32,7 +32,7 @@ export class Dropload extends Extractor {
     const heightMatch = html.match(/\d{3,}x(\d{3,}),/);
     const height = heightMatch
       ? parseInt(heightMatch[1] as string)
-      : await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl);
+      : await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, url);
 
     const sizeMatch = html.match(/([\d.]+ ?[GM]B)/);
     const size = sizeMatch ? bytes.parse(sizeMatch[1] as string) as number : undefined;
