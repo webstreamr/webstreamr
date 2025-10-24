@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.56.6](https://github.com/webstreamr/webstreamr/compare/v0.56.5...v0.56.6) (2025-10-24)
+
+
+### Bug Fixes
+
+* **extractor:** handle Fastream deleted or expired file ([bd1e184](https://github.com/webstreamr/webstreamr/commit/bd1e184023003b4128ee4d0eaf7d0b673719a92a))
+
 ## [0.56.5](https://github.com/webstreamr/webstreamr/compare/v0.56.4...v0.56.5) (2025-10-24)
 
 
