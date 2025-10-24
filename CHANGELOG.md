@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.56.5](https://github.com/webstreamr/webstreamr/compare/v0.56.4...v0.56.5) (2025-10-24)
+
+
+### Miscellaneous Chores
+
+* add host info of relevant URL to all errors ([cc3d30b](https://github.com/webstreamr/webstreamr/commit/cc3d30be2fbd234597b1019ce3fe7313b39cf314))
+* cache playlist heights for a month ([56e72b7](https://github.com/webstreamr/webstreamr/commit/56e72b73fe26dd37bf9b58e3281f0b9fb6d2eff8))
+* **deps:** lock file maintenance ([#449](https://github.com/webstreamr/webstreamr/issues/449)) ([a9b81d0](https://github.com/webstreamr/webstreamr/commit/a9b81d00c064e566671316edbb0e251704112ecc))
+* **deps:** update dependency @types/node to v22.18.11 ([#448](https://github.com/webstreamr/webstreamr/issues/448)) ([03bb9fe](https://github.com/webstreamr/webstreamr/commit/03bb9fea798b02c56379a0a6accdfb08f8badb01))
+* **deps:** update dependency typescript-eslint to v8.46.2 ([#451](https://github.com/webstreamr/webstreamr/issues/451)) ([c8b6cf2](https://github.com/webstreamr/webstreamr/commit/c8b6cf27328044d249963750011c7f41aa0c2694))
+* **extractor:** add KinoGer domains ([23da8dc](https://github.com/webstreamr/webstreamr/commit/23da8dc637452c08cabe46c0c6c608f030d19a14))
+* **extractor:** add VOE domain ([e2eaa91](https://github.com/webstreamr/webstreamr/commit/e2eaa9143bbf793884ca3559c1b9a98f70e518eb))
+* **extractor:** do not make any requests for external URLs ([77164df](https://github.com/webstreamr/webstreamr/commit/77164dfaa7e42688901da87242fbc04cf8a792d0))
+* remove noCache option ([e6d8d50](https://github.com/webstreamr/webstreamr/commit/e6d8d5076c956398540a5d2afbc94633fedb172c))
+* remove proxyConfig option ([6203863](https://github.com/webstreamr/webstreamr/commit/6203863523a495331e64582960b609a63ea0df32))
+
 ## [0.56.4](https://github.com/webstreamr/webstreamr/compare/v0.56.3...v0.56.4) (2025-10-18)
 
 
