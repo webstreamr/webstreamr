@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.56.7](https://github.com/webstreamr/webstreamr/compare/v0.56.6...v0.56.7) (2025-10-28)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @types/express to v5.0.4 ([#455](https://github.com/webstreamr/webstreamr/issues/455)) ([7cabb4d](https://github.com/webstreamr/webstreamr/commit/7cabb4d4abe895283b41f92d9ef9311000a937f3))
+* **deps:** update dependency @types/node to v22.18.12 ([#456](https://github.com/webstreamr/webstreamr/issues/456)) ([365c2de](https://github.com/webstreamr/webstreamr/commit/365c2de4e59e00841ec689a6525a52bf3f5e9cac))
+
+
+### Continuous Integration
+
+* add workflow_dispatch trigger for build and tests ([79c16d5](https://github.com/webstreamr/webstreamr/commit/79c16d530db1658d92f069cfad899a2b86f8b0db))
+* build also for arm64 ([68dcab3](https://github.com/webstreamr/webstreamr/commit/68dcab39fbf545c24f411da2af383ddcf51cb8ea))
+
 ## [0.56.6](https://github.com/webstreamr/webstreamr/compare/v0.56.5...v0.56.6) (2025-10-24)
 
 
