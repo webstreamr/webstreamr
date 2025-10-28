@@ -1,5 +1,4 @@
 import * as cheerio from 'cheerio';
-import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
 import { Extractor } from './Extractor';
 import { guessHeightFromPlaylist } from '../utils/height';
@@ -27,60 +26,55 @@ export class TurboVIPlay extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const headers = { Referer: 'https://turbovidhls.com' };
+  // Fetch HTML page
+  const html = await this.fetcher.text(ctx, url);
 
-    // Fetch HTML page
-    const html = await this.fetcher.text(ctx, url, { headers });
-    if (!html || html.includes('File Not Found') || html.includes('Pending in queue')) {
-      throw new NotFoundError();
-    }
-
-    // Extract media URL from page
-    const match = html.match(/(?:urlPlay|data-hash)\s*=\s*['"](?<url>[^"']+)/);
-    const mediaUrl = match?.groups?.['url'];
-    if (!mediaUrl) {
-      throw new NotFoundError('Video link not found');
-    }
-
-    // Normalize URL
-    let finalUrl = mediaUrl;
-    if (finalUrl.startsWith('//')) finalUrl = 'https:' + finalUrl;
-    else if (finalUrl.startsWith('/')) finalUrl = url.origin + finalUrl;
-
-    // Try to resolve redirect inline
-    try {
-      const resp = await this.fetcher.fetch(ctx, new URL(finalUrl), { headers, redirect: 'follow' });
-      if (resp?.url) finalUrl = resp.url;
-    } catch {
-      // fallback to original finalUrl
-    }
-
-    // Optionally guess height from playlist
-    let height: number | undefined;
-    try {
-      height = await guessHeightFromPlaylist(ctx, this.fetcher, new URL(finalUrl), { headers });
-    } catch {
-      height = undefined;
-    }
-
-    // Extract title
-    const $ = cheerio.load(html);
-    const title = $('title').text().trim() || this.label;
-
-    return [
-      {
-        url: new URL(finalUrl),
-        format: Format.hls,
-        label: this.label,
-        sourceId: `${this.id}_${meta.countryCodes?.join('_') ?? 'all'}`,
-        ttl: this.ttl,
-        requestHeaders: headers,
-        meta: {
-          ...meta,
-          title,
-          height,
-        },
-      },
-    ];
+  // Extract media URL from page
+  const match = html.match(/(?:urlPlay|data-hash)\s*=\s*['"](?<url>[^"']+)/);
+  const mediaUrl = match?.groups?.['url'];
+  if (!mediaUrl) {
+    throw new Error('Video link not found');
   }
+
+  // Normalize URL
+  let finalUrl = mediaUrl;
+  if (finalUrl.startsWith('//')) finalUrl = 'https:' + finalUrl;
+  else if (finalUrl.startsWith('/')) finalUrl = url.origin + finalUrl;
+
+  // Try to resolve redirect inline
+  try {
+    const resp = await this.fetcher.fetch(ctx, new URL(finalUrl));
+    if (resp?.url) finalUrl = resp.url;
+  } catch {
+    // fallback to original finalUrl
+  }
+
+  // Optionally guess height from playlist
+  let height: number | undefined;
+  try {
+    height = await guessHeightFromPlaylist(ctx, this.fetcher, new URL(finalUrl));
+  } catch {
+    height = undefined;
+  }
+
+  // Extract title
+  const $ = cheerio.load(html);
+  const title = $('title').text().trim() || this.label;
+
+  return [
+    {
+      url: new URL(finalUrl),
+      format: Format.hls,
+      label: this.label,
+      sourceId: `${this.id}_${meta.countryCodes?.join('_') ?? 'all'}`,
+      ttl: this.ttl,
+      requestHeaders: { Referer: url.origin },
+      meta: {
+        ...meta,
+        title,
+        height,
+      },
+    },
+  ];
+}
 }
