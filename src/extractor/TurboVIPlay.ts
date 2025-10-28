@@ -29,46 +29,52 @@ export class TurboVIPlay extends Extractor {
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const headers = { Referer: 'https://turbovidhls.com' };
 
+    // Fetch HTML page
     const html = await this.fetcher.text(ctx, url, { headers });
-
     if (!html || html.includes('File Not Found') || html.includes('Pending in queue')) {
       throw new NotFoundError();
     }
 
+    // Extract media URL from page
     const match = html.match(/(?:urlPlay|data-hash)\s*=\s*['"](?<url>[^"']+)/);
     const mediaUrl = match?.groups?.['url'];
     if (!mediaUrl) {
       throw new NotFoundError('Video link not found');
     }
 
+    // Normalize URL
     let finalUrl = mediaUrl;
     if (finalUrl.startsWith('//')) finalUrl = 'https:' + finalUrl;
     else if (finalUrl.startsWith('/')) finalUrl = url.origin + finalUrl;
 
-    const resolvedUrl = await this.followRedirect(ctx, finalUrl, headers);
+    // Try to resolve redirect inline
+    try {
+      const resp = await this.fetcher.fetch(ctx, new URL(finalUrl), { headers, redirect: 'follow' });
+      if (resp?.url) finalUrl = resp.url;
+    } catch {
+      // fallback to original finalUrl
+    }
 
-    const playableUrl = await this.resolveHlsMaster(ctx, resolvedUrl, headers);
-
-    console.log(`[TurboVIPlay] Final playable URL: ${playableUrl}`);
-
+    // Optionally guess height from playlist
     let height: number | undefined;
     try {
-      height = await guessHeightFromPlaylist(ctx, this.fetcher, new URL(playableUrl), { headers });
+      height = await guessHeightFromPlaylist(ctx, this.fetcher, new URL(finalUrl), { headers });
     } catch {
       height = undefined;
     }
 
+    // Extract title
     const $ = cheerio.load(html);
     const title = $('title').text().trim() || this.label;
 
     return [
       {
-        url: new URL(playableUrl),
+        url: new URL(finalUrl),
         format: Format.hls,
         label: this.label,
         sourceId: `${this.id}_${meta.countryCodes?.join('_') ?? 'all'}`,
         ttl: this.ttl,
-       requestHeaders: headers,
+        requestHeaders: headers,
         meta: {
           ...meta,
           title,
@@ -76,41 +82,5 @@ export class TurboVIPlay extends Extractor {
         },
       },
     ];
-  }
-
-  private async followRedirect(ctx: Context, link: string, headers: Record<string, string>): Promise<string> {
-    try {
-      const resp = await this.fetcher.head(ctx, new URL(link), { headers, redirect: 'follow' });
-      if (resp && typeof resp['url'] === 'string') return String(resp['url']);
-    } catch {
-      try {
-        const resp = await this.fetcher.fetch(ctx, new URL(link), { headers, redirect: 'follow' });
-        if (resp && typeof resp['url'] === 'string') return String(resp['url']);
-      } catch {
-        // ignore
-      }
-    }
-    return link;
-  }
-
-  private async resolveHlsMaster(ctx: Context, url: string, headers: Record<string, string>): Promise<string> {
-    const text = await this.fetcher.text(ctx, new URL(url), { headers });
-    if (!text || !text.includes('#EXT-X-STREAM-INF')) return url;
-
-    const matches = Array.from(
-      text.matchAll(/#EXT-X-STREAM-INF:.*RESOLUTION=(\d+)x(\d+)[^\n]*\n([^\n]+)/g)
-    );
-
-    if (matches.length === 0) return url;
-
-    matches.sort((a, b) => parseInt(b[2] ?? '0', 10) - parseInt(a[2] ?? '0', 10));
-
-    const best = matches[0]?.[3];
-    if (!best) return url;
-
-    const base = new URL(url);
-    if (best.startsWith('http')) return best;
-    if (best.startsWith('/')) return new URL(best, base.origin).href;
-    return new URL(best, base.href).href;
   }
 }
