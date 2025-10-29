@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.56.8](https://github.com/webstreamr/webstreamr/compare/v0.56.7...v0.56.8) (2025-10-29)
+
+
+### Miscellaneous Chores
+
+* allow Node 22 still ([c4bf32f](https://github.com/webstreamr/webstreamr/commit/c4bf32f9914e71d04dc85ecb07d625fd435c8f03))
+* **deps:** update dependency minimatch to v10.1.1 ([#461](https://github.com/webstreamr/webstreamr/issues/461)) ([5078609](https://github.com/webstreamr/webstreamr/commit/5078609c86f1aa12a1388f643591aa23ef68be64))
+* **deps:** update node.js to v24 ([20c43a3](https://github.com/webstreamr/webstreamr/commit/20c43a3ea17460b6105e4f8ec3d013c21dea23e3))
+* **extractor:** cache not found results for 12 hours ([4bc5e42](https://github.com/webstreamr/webstreamr/commit/4bc5e42e509cb212250543c9054587e014356aae))
+
+
+### Bug Fixes
+
+* **source:** add fallback search for english title to Kokoshka ([331e5bd](https://github.com/webstreamr/webstreamr/commit/331e5bd5d16ddaac18fdc7e6cc2e4f2ee8c0051c))
+* **source:** fine-tune Kokoshka result matching ([172edaf](https://github.com/webstreamr/webstreamr/commit/172edaf0fc7ac0a3059ccce8e9bb765e22a079d8))
+* **source:** switch to working MegaKino domain ([88b6a5e](https://github.com/webstreamr/webstreamr/commit/88b6a5ef454f50f23f2711859b9923170ad3dd50))
+
 ## [0.56.7](https://github.com/webstreamr/webstreamr/compare/v0.56.6...v0.56.7) (2025-10-28)
 
 
