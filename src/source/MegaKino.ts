@@ -14,7 +14,7 @@ export class MegaKino extends Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.de];
 
-  public readonly baseUrl = 'https://megakino.haus';
+  public readonly baseUrl = 'https://megakino.ms';
 
   private readonly fetcher: Fetcher;
 
