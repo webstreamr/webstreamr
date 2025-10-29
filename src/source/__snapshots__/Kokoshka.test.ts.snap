@@ -85,6 +85,8 @@ exports[`Kokoshka handle Weapons 2025 1`] = `
 ]
 `;
 
+exports[`Kokoshka handle non-existent Steve 2025 1`] = `[]`;
+
 exports[`Kokoshka handle non-existent content gracefully 1`] = `[]`;
 
 exports[`Kokoshka handle non-existent episode gracefully 1`] = `[]`;

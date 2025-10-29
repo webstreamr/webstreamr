@@ -1,4 +1,5 @@
 import * as cheerio from 'cheerio';
+import levenshtein from 'fast-levenshtein';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
 import { Fetcher, getTmdbId, getTmdbNameAndYear, Id, TmdbId } from '../utils';
@@ -80,8 +81,21 @@ export class Kokoshka extends Source {
 
     const $ = cheerio.load(html);
 
-    return $(`.result-item:has(${tmdbId.season ? '.tvshows' : '.movies'}) a`)
-      .map((_i, el) => new URL($(el).attr('href') as string, this.baseUrl))
+    return $(`.result-item:has(${tmdbId.season ? '.tvshows' : '.movies'})`)
+      .filter((_i, el) => {
+        const resultItemYear = parseInt($('.year', el).text());
+
+        return Math.abs(resultItemYear - year) <= 1;
+      })
+      .filter((_i, el) => {
+        const resultItemTitle = $('.title', el)
+          .text()
+          .replace(/\(\d+\).*/, '') // Strip away suffixes like "(2021) me Titra Shqip"
+          .trim();
+
+        return levenshtein.get(resultItemTitle, name, { useCollator: true }) < 3;
+      })
+      .map((_i, el) => new URL($('a', el).attr('href') as string, this.baseUrl))
       .get(0);
   };
 

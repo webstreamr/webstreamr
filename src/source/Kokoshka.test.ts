@@ -35,4 +35,9 @@ describe('Kokoshka', () => {
     const streams = await source.handle(ctx, 'movie', new TmdbId(1213327, undefined, undefined));
     expect(streams).toMatchSnapshot();
   });
+
+  test('handle non-existent Steve 2025', async () => {
+    const streams = await source.handle(ctx, 'movie', new TmdbId(1242404, undefined, undefined));
+    expect(streams).toMatchSnapshot();
+  });
 });
