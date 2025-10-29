@@ -1,4 +1,5 @@
 import * as cheerio from 'cheerio';
+import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
 import { Extractor } from './Extractor';
 import { guessHeightFromPlaylist } from '../utils/height';
@@ -6,7 +7,7 @@ import { guessHeightFromPlaylist } from '../utils/height';
 export class TurboVIPlay extends Extractor {
   public readonly id = 'turboviplay';
   public readonly label = 'TurboVIPlay';
-  public override readonly ttl: number = 10800000; // 3h
+  public override readonly ttl = 10800000; // 3h
 
   private domains = [
     'turboviplay.com',
@@ -26,55 +27,66 @@ export class TurboVIPlay extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-  // Fetch HTML page
-  const html = await this.fetcher.text(ctx, url);
+    const headers = { Referer: url.origin };
 
-  // Extract media URL from page
-  const match = html.match(/(?:urlPlay|data-hash)\s*=\s*['"](?<url>[^"']+)/);
-  const mediaUrl = match?.groups?.['url'];
-  if (!mediaUrl) {
-    throw new Error('Video link not found');
-  }
+    // Fetch HTML page
+    const html = await this.fetcher.text(ctx, url, { headers });
+    if (!html || html.includes('File Not Found') || html.includes('Pending in queue')) {
+      throw new NotFoundError();
+    }
 
-  // Normalize URL
-  let finalUrl = mediaUrl;
-  if (finalUrl.startsWith('//')) finalUrl = 'https:' + finalUrl;
-  else if (finalUrl.startsWith('/')) finalUrl = url.origin + finalUrl;
+    // Extract media URL
+    const match = html.match(/(?:urlPlay|data-hash)\s*=\s*['"](?<url>[^"']+)/);
+    const mediaUrl = match?.groups?.['url'];
+    if (!mediaUrl) throw new NotFoundError('Video link not found');
 
-  // Try to resolve redirect inline
-  try {
-    const resp = await this.fetcher.fetch(ctx, new URL(finalUrl));
-    if (resp?.url) finalUrl = resp.url;
-  } catch {
-    // fallback to original finalUrl
-  }
+    // Normalize URL
+    const masterUrl = mediaUrl.startsWith('//') ? 'https:' + mediaUrl :
+                      mediaUrl.startsWith('/') ? url.origin + mediaUrl :
+                      mediaUrl;
 
-  // Optionally guess height from playlist
-  let height: number | undefined;
-  try {
-    height = await guessHeightFromPlaylist(ctx, this.fetcher, new URL(finalUrl));
-  } catch {
-    height = undefined;
-  }
+    let hlsUrl = masterUrl;
 
-  // Extract title
-  const $ = cheerio.load(html);
-  const title = $('title').text().trim() || this.label;
+    // Parse master playlist to pick highest resolution variant
+    try {
+      const playlistText = await this.fetcher.text(ctx, new URL(masterUrl), { headers });
+      if (playlistText.includes('#EXT-X-STREAM-INF')) {
+        const variants = Array.from(
+          playlistText.matchAll(/#EXT-X-STREAM-INF:.*RESOLUTION=(\d+)x(\d+)[^\n]*\n([^\n]+)/g)
+        );
+        if (variants.length) {
+          variants.sort((a, b) => parseInt(b[2] ?? '0', 10) - parseInt(a[2] ?? '0', 10));
+          const best = variants[0]?.[3];
+          if (best) {
+            const base = new URL(masterUrl);
+            hlsUrl = best.startsWith('http') ? best :
+                     best.startsWith('/') ? new URL(best, base.origin).href :
+                     new URL(best, base.href).href;
+          }
+        }
+      }
+    } catch {
+      // fallback to masterUrl
+    }
 
-  return [
-    {
-      url: new URL(finalUrl),
+    // Guess height from master playlist
+    let height: number | undefined;
+    try {
+      height = await guessHeightFromPlaylist(ctx, this.fetcher, new URL(masterUrl), { headers });
+    } catch {}
+
+    // Extract title
+    const $ = cheerio.load(html);
+    const title = $('title').text().trim() || this.label;
+
+    return [{
+      url: new URL(hlsUrl),
       format: Format.hls,
       label: this.label,
       sourceId: `${this.id}_${meta.countryCodes?.join('_') ?? 'all'}`,
       ttl: this.ttl,
-      requestHeaders: { Referer: url.origin },
-      meta: {
-        ...meta,
-        title,
-        height,
-      },
-    },
-  ];
-}
+      requestHeaders: headers,
+      meta: { ...meta, title, height },
+    }];
+  }
 }
