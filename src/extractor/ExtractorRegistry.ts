@@ -56,7 +56,9 @@ export class ExtractorRegistry {
 
     const urlResults = await extractor.extract(ctx, normalizedUrl, { ...meta, countryCodes: meta?.countryCodes ?? [] });
 
-    if (!urlResults.some(urlResult => urlResult.error) && extractor.ttl) {
+    if (!urlResults.length) {
+      await this.urlResultCache.set<UrlResult[]>(cacheKey, urlResults, 43200000); // 12h
+    } else if (!urlResults.some(urlResult => urlResult.error) && extractor.ttl) {
       await this.urlResultCache.set<UrlResult[]>(cacheKey, urlResults, extractor.ttl);
     }
 
