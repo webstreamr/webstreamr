@@ -90,3 +90,28 @@ exports[`Kokoshka handle non-existent Steve 2025 1`] = `[]`;
 exports[`Kokoshka handle non-existent content gracefully 1`] = `[]`;
 
 exports[`Kokoshka handle non-existent episode gracefully 1`] = `[]`;
+
+exports[`Kokoshka handle our fault 2025 1`] = `
+[
+  {
+    "meta": {
+      "countryCodes": [
+        "al",
+      ],
+      "referer": "https://kokoshka.digital/filma/our-fault-2025-me-titra-shqip/",
+      "title": "Our Fault (2025) me Titra Shqip - Kokoshka.Digital | Filma Me Titra Shqip",
+    },
+    "url": "https://chuckle-tube.com/e/ysnreh6xejac",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "al",
+      ],
+      "referer": "https://kokoshka.digital/filma/our-fault-2025-me-titra-shqip/",
+      "title": "Our Fault (2025) me Titra Shqip - Kokoshka.Digital | Filma Me Titra Shqip",
+    },
+    "url": "https://dsvplay.com/e/3o4cg2dr81nn",
+  },
+]
+`;

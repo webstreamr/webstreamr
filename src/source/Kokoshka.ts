@@ -32,9 +32,12 @@ export class Kokoshka extends Source {
   public async handleInternal(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
-    let pageUrl = await this.fetchPageUrl(ctx, tmdbId);
+    let pageUrl = await this.fetchPageUrl(ctx, tmdbId, 'sq');
     if (!pageUrl) {
-      return [];
+      pageUrl = await this.fetchPageUrl(ctx, tmdbId, 'en');
+      if (!pageUrl) {
+        return [];
+      }
     }
 
     if (tmdbId.season) {
@@ -73,8 +76,8 @@ export class Kokoshka extends Source {
     );
   }
 
-  private readonly fetchPageUrl = async (ctx: Context, tmdbId: TmdbId): Promise<URL | undefined> => {
-    const [name, year] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId, 'sq');
+  private readonly fetchPageUrl = async (ctx: Context, tmdbId: TmdbId, language: string): Promise<URL | undefined> => {
+    const [name, year] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId, language);
 
     const searchUrl = new URL(`/?s=${encodeURIComponent(`${name.replace(':', '')} ${year}`)}`, this.baseUrl);
     const html = await this.fetcher.text(ctx, searchUrl);
