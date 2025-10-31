@@ -19,14 +19,13 @@ export class Vidora extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const headers = { Origin: new URL(meta.referer ?? url.href).origin };
-
-    const html = await this.fetcher.text(ctx, url, { headers });
+    const html = await this.fetcher.text(ctx, url);
 
     const $ = cheerio.load(html);
     const title = $('title').text().trim().replace(/^Watch /, '').trim();
 
     const m3u8Url = extractUrlFromPacked(html, [/file: ?"(.*?)"/]);
+    const headers = { Origin: url.origin };
 
     return [
       {
