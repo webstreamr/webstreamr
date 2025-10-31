@@ -8,7 +8,7 @@ export class Vidora extends Extractor {
 
   public readonly label = 'Vidora';
 
-  public override readonly ttl: number = 10800000; // 3h TODO: verify how long we can cache
+  public override readonly ttl: number = 43200000; // 12h
 
   public supports(_ctx: Context, url: URL): boolean {
     return null !== url.host.match(/vidora/);
