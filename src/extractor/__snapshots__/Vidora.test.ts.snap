@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Vidora vidora.stream /embed/ 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "Vidora",
+    "meta": {
+      "countryCodes": [],
+      "height": 800,
+      "title": "Highest Lowest 2025 1080p ATVP WEB DDP5 Atmos 264 BYNDR",
+    },
+    "requestHeaders": {
+      "Origin": "https://vidora.stream",
+    },
+    "sourceId": "vidora_",
+    "ttl": 10800000,
+    "url": "https://cdn.dmovies.top/hls2/03/00000/5iz6c1elaqgq_,h,x,.urlset/master.m3u8?t=59WQnICkdOsWf2RrsiNPQmXTU1CUk7gGqBgLvh-MaIU&s=1761923136&e=43200&v=22226828&srv=maxcdn&i=0.3&sp=5000&fr=5iz6c1elaqgq",
+  },
+]
+`;
+
+exports[`Vidora vidora.stream 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "Vidora",
+    "meta": {
+      "countryCodes": [],
+      "height": 800,
+      "title": "Highest Lowest 2025 1080p ATVP WEB DDP5 Atmos 264 BYNDR",
+    },
+    "requestHeaders": {
+      "Origin": "https://vidora.stream",
+    },
+    "sourceId": "vidora_",
+    "ttl": 10800000,
+    "url": "https://cdn.dmovies.top/hls2/03/00000/5iz6c1elaqgq_,h,x,.urlset/master.m3u8?t=59WQnICkdOsWf2RrsiNPQmXTU1CUk7gGqBgLvh-MaIU&s=1761923136&e=43200&v=22226828&srv=maxcdn&i=0.3&sp=5000&fr=5iz6c1elaqgq",
+  },
+]
+`;
