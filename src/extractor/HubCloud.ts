@@ -23,7 +23,7 @@ export class HubCloud extends Extractor {
     const linksHtml = await this.fetcher.text(ctx, new URL(redirectUrlMatch[1] as string), { headers: { Referer: url.href } });
     const $ = cheerio.load(linksHtml);
 
-    const urlResults = [
+    return Promise.all([
       ...$('a')
         .filter((_i, el) => {
           const text = $(el).text();
@@ -62,22 +62,6 @@ export class HubCloud extends Extractor {
             },
           };
         }).toArray(),
-    ];
-
-    return this.asyncFilter(urlResults, async ({ url }) => {
-      try {
-        await this.fetcher.head(ctx, url);
-      } catch {
-        return false;
-      }
-
-      return true;
-    });
+    ]);
   };
-
-  private async asyncFilter<T>(array: T[], asyncCallback: (item: T) => Promise<boolean>): Promise<T[]> {
-    const results = await Promise.all(array.map(asyncCallback));
-
-    return array.filter((_, index) => results[index]);
-  }
 }
