@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.57.0](https://github.com/webstreamr/webstreamr/compare/v0.56.8...v0.57.0) (2025-11-01)
+
+
+### Features
+
+* **extractor:** add Vidora extractor ([#466](https://github.com/webstreamr/webstreamr/issues/466)) ([db25f98](https://github.com/webstreamr/webstreamr/commit/db25f98251257133ead68187e3aa97333cbab302))
+
+
+### Bug Fixes
+
+* **extractor:** remove flaky HubCloud head requests ([053dce0](https://github.com/webstreamr/webstreamr/commit/053dce07297a62b1cae0dcfcf7c753c333b8538e))
+* **extractor:** support embed-only VOE urls ([a36d152](https://github.com/webstreamr/webstreamr/commit/a36d152b61e08c8e29500e3912d3b1c2da63fdc5))
+* **source:** remove KinoGer ([e5a5c62](https://github.com/webstreamr/webstreamr/commit/e5a5c621065de4849a3c7edfd4b893c80df47f61))
+
 ## [0.56.8](https://github.com/webstreamr/webstreamr/compare/v0.56.7...v0.56.8) (2025-10-29)
 
 
