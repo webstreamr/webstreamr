@@ -5,6 +5,7 @@ import CachePolicy from 'http-cache-semantics';
 import slugify from 'slugify';
 import { RequestInit } from 'undici';
 import winston from 'winston';
+import { NotFoundError } from '../error';
 import { Context } from '../types';
 import { envGet } from './env';
 import { Fetcher, HttpCacheItem } from './Fetcher';
@@ -67,7 +68,12 @@ export class FetcherMock extends Fetcher {
     const isHead = init?.method === 'HEAD';
 
     if (fs.existsSync(errorPath)) {
-      throw new Error(fs.readFileSync(errorPath).toString());
+      const message = fs.readFileSync(errorPath).toString();
+      if (message.includes('404: Not Found')) {
+        throw new NotFoundError(message);
+      }
+
+      throw new Error(message);
     } else if (fs.existsSync(path)) {
       const data = fs.readFileSync(path).toString();
 

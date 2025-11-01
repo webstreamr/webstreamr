@@ -21,4 +21,8 @@ describe('Voe', () => {
   test('encoding error', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://voe.sx/e/c2yxvit4f6bz'))).toMatchSnapshot();
   });
+
+  test('embed only urls which otherwise lead to 404', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://mikaylaarealike.com/e/gqlhm9hbobwu'))).toMatchSnapshot();
+  });
 });

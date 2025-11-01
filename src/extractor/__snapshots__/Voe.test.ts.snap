@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`Voe embed only urls which otherwise lead to 404 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "VOE (via MediaFlow Proxy)",
+    "meta": {
+      "countryCodes": [],
+      "height": 800,
+      "title": "Weapons.2025.German.DL.1080p.WEB.H264-ZeroTwo_encoded.mp4",
+    },
+    "sourceId": "voe_",
+    "ttl": 900000,
+    "url": "https://mediaflow.test.org/proxy/hls/manifest.m3u8?api_password=test&h_user-agent=Mozilla%2F5.0+%28Windows+NT+10.0%3B+Win64%3B+x64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F136.0.0.0+Safari%2F537.36&h_referer=https%3A%2F%2Fjilliandescribecompany.com%2Fqqfyi04w52mj&d=https%3A%2F%2Fcdn-thhhlmzuxvpehc9r.orbitcache.com%2Fengine%2Fhls2-c%2F01%2F11526%2Fqqfyi04w52mj_%2Cl%2C.urlset%2Fmaster.m3u8%3Ft%3Dg2zuS_OAHTtjrVe0bHp2xYcX7PpDxg8ebRIHTmF3H1c%26s%3D1759861731%26e%3D14400%26f%3D57634053%26node%3DUOx5276IumOH4BADikx4rlHC%2BibdAWZ%2Bmo07sx3WfaU%3D%26i%3D104.28%26sp%3D2500%26asn%3D13335%26q%3Dl%26rq%3DFxkyWdISXylA0UaLSPNcXWkDrksjs0pkAzy0GvIS",
+  },
+]
+`;
+
 exports[`Voe encoding error 1`] = `[]`;
 
 exports[`Voe jilliandescribecompany 1`] = `
@@ -28,6 +45,7 @@ exports[`Voe premium only without resolution 1`] = `
     "meta": {
       "bytes": 363216240,
       "countryCodes": [],
+      "height": 800,
       "title": "268836--21ba9fb2-97f9-4566-b5eb-3d9cef7674cf--zrxn--2352322-voesx.mp4",
     },
     "sourceId": "voe_",

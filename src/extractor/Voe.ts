@@ -3,7 +3,7 @@ import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
 import {
-  buildMediaFlowProxyExtractorStreamUrl,
+  buildMediaFlowProxyExtractorStreamUrl, guessHeightFromPlaylist,
   supportsMediaFlowProxy,
 } from '../utils';
 import { Extractor } from './Extractor';
@@ -81,6 +81,7 @@ export class Voe extends Extractor {
         'maxfinishseveral.com',
         'metagnathtuggers.com',
         'michaelapplysome.com',
+        'mikaylaarealike.com',
         'nathanfromsubject.com',
         'nectareousoverelate.com',
         'nonesnanking.com',
@@ -121,7 +122,18 @@ export class Voe extends Extractor {
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
-    const html = await this.fetcher.text(ctx, url, { headers });
+    let html: string;
+    try {
+      html = await this.fetcher.text(ctx, url, { headers });
+    } catch (error) {
+      /* istanbul ignore next */
+      if (error instanceof NotFoundError && !url.href.includes('/e/')) {
+        return await this.extractInternal(ctx, new URL(`/e${url.pathname}`, url.origin), meta);
+      }
+
+      /* istanbul ignore next */
+      throw error;
+    }
 
     const redirectMatch = html.match(/window\.location\.href\s*=\s*'([^']+)/);
     if (redirectMatch && redirectMatch[1]) {
@@ -136,9 +148,12 @@ export class Voe extends Extractor {
     const title = $('meta[name="description"]').attr('content')?.trim().replace(/^Watch /, '').replace(/ at VOE$/, '').trim();
 
     const sizeMatch = html.matchAll(/[\d.]+ ?[GM]B/g).toArray().at(-1);
-    const heightMatch = html.match(/<b>(\d{3,})p<\/b>/);
+    const size = sizeMatch ? bytes.parse(sizeMatch[0] as string) as number : /* istanbul ignore next */null;
 
     const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'Voe', url, headers);
+
+    const heightMatch = html.match(/<b>(\d{3,})p<\/b>/);
+    const height = heightMatch ? parseInt(heightMatch[1] as string) : await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, url);
 
     return [
       {
@@ -149,9 +164,9 @@ export class Voe extends Extractor {
         ttl: this.ttl,
         meta: {
           ...meta,
+          height,
           title,
-          ...(sizeMatch && { bytes: bytes.parse(sizeMatch[0] as string) as number }),
-          ...(heightMatch && { height: parseInt(heightMatch[1] as string) }),
+          ...(size && size > 16777216 && { bytes: size }),
         },
       },
     ];
