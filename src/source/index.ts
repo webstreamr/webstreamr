@@ -7,7 +7,6 @@ import { FourKHDHub } from './FourKHDHub';
 import { Frembed } from './Frembed';
 import { FrenchCloud } from './FrenchCloud';
 import { HomeCine } from './HomeCine';
-import { KinoGer } from './KinoGer';
 import { Kokoshka } from './Kokoshka';
 import { MegaKino } from './MegaKino';
 import { MeineCloud } from './MeineCloud';
@@ -39,7 +38,6 @@ export const createSources = (fetcher: Fetcher): Source[] => {
     new VerHdLink(fetcher),
     // DE
     new Einschalten(fetcher),
-    new KinoGer(fetcher),
     new MegaKino(fetcher),
     new MeineCloud(fetcher),
     new StreamKiste(fetcher),

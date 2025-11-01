@@ -21,7 +21,7 @@ exports[`buildManifest default manifest 1`] = `
     },
     {
       "key": "de",
-      "title": "German 🇩🇪 (Einschalten, KinoGer, MegaKino, MeineCloud, StreamKiste)",
+      "title": "German 🇩🇪 (Einschalten, MegaKino, MeineCloud, StreamKiste)",
       "type": "checkbox",
     },
     {
@@ -81,7 +81,7 @@ exports[`buildManifest default manifest 1`] = `
 
 Supported languages: Albanian, German, English, Castilian Spanish, French, Hindi, Italian, Latin American Spanish
 
-Supported sources: 4KHDHub, VixSrc, Kokoshka, VidSrc, CineHDPlus, Cuevana, HomeCine, VerHdLink, Einschalten, KinoGer, MegaKino, MeineCloud, StreamKiste, Frembed, FrenchCloud, Movix, Eurostreaming, MostraGuarda
+Supported sources: 4KHDHub, VixSrc, Kokoshka, VidSrc, CineHDPlus, Cuevana, HomeCine, VerHdLink, Einschalten, MegaKino, MeineCloud, StreamKiste, Frembed, FrenchCloud, Movix, Eurostreaming, MostraGuarda
 
 Supported extractors: ",
   "id": "webstreamr",
