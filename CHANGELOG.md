@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.57.1](https://github.com/webstreamr/webstreamr/compare/v0.57.0...v0.57.1) (2025-11-02)
+
+
+### Bug Fixes
+
+* **source:** switch to new Frembed domain ([88a1fe1](https://github.com/webstreamr/webstreamr/commit/88a1fe10a155d72b05df905e0eabff3ff857b483))
+
 ## [0.57.0](https://github.com/webstreamr/webstreamr/compare/v0.56.8...v0.57.0) (2025-11-01)
 
 
