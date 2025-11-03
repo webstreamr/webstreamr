@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.57.2](https://github.com/webstreamr/webstreamr/compare/v0.57.1...v0.57.2) (2025-11-03)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @types/express to v5.0.5 ([#472](https://github.com/webstreamr/webstreamr/issues/472)) ([a7bc742](https://github.com/webstreamr/webstreamr/commit/a7bc742035b0a836f785308b922ed919eed4e8b6))
+* **extractor:** register Vidora extractor ([82b810e](https://github.com/webstreamr/webstreamr/commit/82b810ed3609cfda5628a33b98e417847bcf3cc6))
+
+
+### Bug Fixes
+
+* **extractor:** fix KinoGer and add new domains ([8e1ea10](https://github.com/webstreamr/webstreamr/commit/8e1ea10c5a031c864ab8dc752e2a2568671050a4))
+
 ## [0.57.1](https://github.com/webstreamr/webstreamr/compare/v0.57.0...v0.57.1) (2025-11-02)
 
 
