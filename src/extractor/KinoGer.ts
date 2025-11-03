@@ -17,7 +17,9 @@ export class KinoGer extends Extractor {
       'disneycdn.net',
       'dzo.vidplayer.live',
       'filedecrypt.link',
+      'filma365.strp2p.site',
       'flimmer.rpmvip.com',
+      'flixfilmesonline.strp2p.site',
       'kinoger.re',
       'moflix.rpmplay.xyz',
       'moflix.upns.xyz',
@@ -25,6 +27,7 @@ export class KinoGer extends Extractor {
       'securecdn.shop',
       'shiid4u.upn.one',
       'srbe84.vidplayer.live',
+      'strp2p.site',
       't1.p2pplay.pro',
       'tuktuk.rpmvid.com',
       'ultrastream.online',
@@ -40,11 +43,15 @@ export class KinoGer extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const headers = { 'Referer': meta.referer ?? url.href, 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36' };
+    const headers = {
+      'Origin': url.origin,
+      'Referer': url.origin + '/',
+      'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36',
+    };
 
     const hexData = await this.fetcher.text(ctx, url, { headers });
 
-    const encrypted = Buffer.from(hexData, 'hex');
+    const encrypted = Buffer.from(hexData.slice(0, -1), 'hex');
     const key = Buffer.from('6b69656d7469656e6d75613931316361', 'hex');
     const iv = Buffer.from('313233343536373839306f6975797472', 'hex');
     const decipher = crypto.createDecipheriv('aes-128-cbc', key, iv);
@@ -56,7 +63,7 @@ export class KinoGer extends Extractor {
 
     return [
       {
-        url: new URL(cf),
+        url: m3u8Url,
         format: Format.hls,
         label: this.label,
         sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,

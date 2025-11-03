@@ -39,3 +39,23 @@ exports[`KinoGer Dead City 1`] = `
   },
 ]
 `;
+
+exports[`KinoGer filma365.strp2p.site 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "KinoGer",
+    "meta": {
+      "countryCodes": [],
+      "height": 640,
+      "title": "Our.Fault.2025.mp4",
+    },
+    "requestHeaders": {
+      "Referer": "https://filma365.strp2p.site",
+    },
+    "sourceId": "kinoger_",
+    "ttl": 21600000,
+    "url": "https://slp.seawindart.space/v4/s93/vih6bx/cf-master.txt?v=1760732665",
+  },
+]
+`;

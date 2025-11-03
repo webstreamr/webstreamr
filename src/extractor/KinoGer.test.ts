@@ -17,4 +17,8 @@ describe('KinoGer', () => {
   test('Dead City', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://kinoger.re/#x6tsx9'))).toMatchSnapshot();
   });
+
+  test('filma365.strp2p.site', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://filma365.strp2p.site/#vih6bx'))).toMatchSnapshot();
+  });
 });
