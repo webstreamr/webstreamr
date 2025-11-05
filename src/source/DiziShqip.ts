@@ -92,7 +92,9 @@ const searchUrl = new URL(`/?s=${encodeURIComponent(search)}`, this.baseUrl);
     const html = await this.fetcher.text(ctx, pageUrl);
     const $ = cheerio.load(html);
 
-    const episodeLink = $(`a[href*="episodi-${tmdbId.episode}"]`).attr('href');
+    const episodeLink = $('a[href]').toArray()
+    .map(el => $(el).attr('href'))
+    .find(href => href?.match(new RegExp(`-episodi-${tmdbId.episode}\\b`)));
     if (episodeLink) return new URL(episodeLink, this.baseUrl);
 
     const guessed = `${pageUrl.href.replace(/\/$/, '')}-episodi-${tmdbId.episode}/`;
