@@ -2,6 +2,7 @@ import * as cheerio from 'cheerio';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
 import { Fetcher, getTmdbId, getTmdbNameAndYear, Id, TmdbId } from '../utils';
+import { getTmdbTvDetails } from '../utils';
 import { Source, SourceResult } from './Source';
 
 export class DiziShqip extends Source {
@@ -25,10 +26,13 @@ export class DiziShqip extends Source {
     if (!pageUrl) return [];
 
     let episodeUrl: URL = pageUrl;
+    let absoluteEpisode: number | undefined;
+
     if (tmdbId.season && tmdbId.episode) {
-      const fetchedEpisodeUrl = await this.fetchEpisodeUrl(ctx, pageUrl, tmdbId);
-      if (!fetchedEpisodeUrl) return [];
-      episodeUrl = fetchedEpisodeUrl;
+      const fetchedEpisode = await this.fetchEpisodeUrl(ctx, pageUrl, tmdbId);
+      if (!fetchedEpisode) return [];
+      episodeUrl = fetchedEpisode.url;
+      absoluteEpisode = fetchedEpisode.absoluteEpisode;
     }
 
     const html = await this.fetcher.text(ctx, episodeUrl);
@@ -47,7 +51,9 @@ export class DiziShqip extends Source {
       meta: {
         referer: episodeUrl.href,
         countryCodes: [CountryCode.al],
-        title: `${name} – Episodi ${tmdbId.episode ?? ''}`,
+        title: absoluteEpisode
+          ? `${name} – Episodi ${absoluteEpisode}`
+          : name,
       },
     }));
   }
@@ -55,27 +61,19 @@ export class DiziShqip extends Source {
   private readonly fetchPageUrl = async (ctx: Context, tmdbId: TmdbId, language: string): Promise<URL | undefined> => {
     const [name] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId, language);
     const normalizeSearch = (title: string) =>
-  title
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')        // remove accents
-    .replace(/[^\p{L}\p{N}\s]/gu, '')        // remove all punctuation (:, !, ?, etc.)
-    .replace(/\s+/g, ' ')                    // collapse multiple spaces
-    .trim()
-    .replace(/ı/g, 'i')
-    .replace(/ş/g, 's')
-    .replace(/ç/g, 'c')
-    .replace(/ğ/g, 'g')
-    .replace(/ö/g, 'o')
-    .replace(/ü/g, 'u')
-    .replace(/İ/g, 'I')
-    .replace(/Ş/g, 'S')
-    .replace(/Ç/g, 'C')
-    .replace(/Ğ/g, 'G')
-    .replace(/Ö/g, 'O')
-    .replace(/Ü/g, 'U');
+      title
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')        // remove accents
+        .replace(/[^\p{L}\p{N}\s]/gu, '')       // remove punctuation
+        .replace(/\s+/g, ' ')                   // collapse spaces
+        .trim()
+        .replace(/ı/g, 'i').replace(/ş/g, 's').replace(/ç/g, 'c')
+        .replace(/ğ/g, 'g').replace(/ö/g, 'o').replace(/ü/g, 'u')
+        .replace(/İ/g, 'I').replace(/Ş/g, 'S').replace(/Ç/g, 'C')
+        .replace(/Ğ/g, 'G').replace(/Ö/g, 'O').replace(/Ü/g, 'U');
 
-   const search = normalizeSearch(name).toLowerCase();
-const searchUrl = new URL(`/?s=${encodeURIComponent(search)}`, this.baseUrl);
+    const search = normalizeSearch(name).toLowerCase();
+    const searchUrl = new URL(`/?s=${encodeURIComponent(search)}`, this.baseUrl);
     const html = await this.fetcher.text(ctx, searchUrl);
     const $ = cheerio.load(html);
 
@@ -88,16 +86,31 @@ const searchUrl = new URL(`/?s=${encodeURIComponent(search)}`, this.baseUrl);
     return undefined;
   };
 
-  private async fetchEpisodeUrl(ctx: Context, pageUrl: URL, tmdbId: TmdbId): Promise<URL | undefined> {
+  private async fetchEpisodeUrl(ctx: Context, pageUrl: URL, tmdbId: TmdbId): Promise<{ url: URL; absoluteEpisode: number } | undefined> {
+    if (!tmdbId.season || !tmdbId.episode) return { url: pageUrl, absoluteEpisode: tmdbId.episode ?? 1 };
+
+    // Fetch show details to compute absolute episode
+    const showDetails = await getTmdbTvDetails(ctx, this.fetcher, tmdbId, 'tr');
+
+    let absoluteEpisode = tmdbId.episode;
+    for (const season of showDetails.seasons) {
+      if (season.season_number < tmdbId.season) {
+        absoluteEpisode += season.episode_count;
+      }
+    }
+
     const html = await this.fetcher.text(ctx, pageUrl);
     const $ = cheerio.load(html);
 
-    const episodeLink = $('a[href]').toArray()
-    .map(el => $(el).attr('href'))
-    .find(href => href?.match(new RegExp(`-episodi-${tmdbId.episode}\\b`)));
-    if (episodeLink) return new URL(episodeLink, this.baseUrl);
+    const episodeLink = $('a[href]')
+      .toArray()
+      .map(el => $(el).attr('href'))
+      .find(href => href?.includes(`-episodi-${absoluteEpisode}`));
 
-    const guessed = `${pageUrl.href.replace(/\/$/, '')}-episodi-${tmdbId.episode}/`;
-    return new URL(guessed);
+    if (episodeLink) return { url: new URL(episodeLink, this.baseUrl), absoluteEpisode };
+
+    // fallback: guessed URL
+    const guessed = `${pageUrl.href.replace(/\/$/, '')}-episodi-${absoluteEpisode}/`;
+    return { url: new URL(guessed), absoluteEpisode };
   }
 }
