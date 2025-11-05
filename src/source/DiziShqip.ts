@@ -1,8 +1,7 @@
 import * as cheerio from 'cheerio';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
-import { Fetcher, getTmdbId, getTmdbNameAndYear, Id, TmdbId } from '../utils';
-import { getTmdbTvDetails } from '../utils';
+import { Fetcher, getTmdbId, getTmdbNameAndYear, getTmdbTvDetails, Id, TmdbId } from '../utils';
 import { Source, SourceResult } from './Source';
 
 export class DiziShqip extends Source {
@@ -93,15 +92,20 @@ export class DiziShqip extends Source {
     const showDetails = await getTmdbTvDetails(ctx, this.fetcher, tmdbId, 'tr');
 
     let absoluteEpisode = tmdbId.episode;
-    for (const season of showDetails.seasons) {
-      if (season.season_number < tmdbId.season) {
-        absoluteEpisode += season.episode_count;
+
+    // Compute absolute episode using seasons info
+    if (showDetails.seasons) {
+      for (const season of showDetails.seasons) {
+        if (season.season_number < tmdbId.season) {
+          absoluteEpisode += season.episode_count;
+        }
       }
     }
 
     const html = await this.fetcher.text(ctx, pageUrl);
     const $ = cheerio.load(html);
 
+    // Try to find the episode link using absolute episode number
     const episodeLink = $('a[href]')
       .toArray()
       .map(el => $(el).attr('href'))
@@ -109,7 +113,7 @@ export class DiziShqip extends Source {
 
     if (episodeLink) return { url: new URL(episodeLink, this.baseUrl), absoluteEpisode };
 
-    // fallback: guessed URL
+    // Fallback: guessed URL
     const guessed = `${pageUrl.href.replace(/\/$/, '')}-episodi-${absoluteEpisode}/`;
     return { url: new URL(guessed), absoluteEpisode };
   }
