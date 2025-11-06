@@ -9,11 +9,22 @@ import { Extractor } from './Extractor';
 
 export class Streamtape extends Extractor {
   public readonly id = 'streamtape';
+  public readonly label = 'Streamtape(MFP)';
 
-  public readonly label = 'Streamtape (via MediaFlow Proxy)';
+  // ✅ Add the domains list here
+  public readonly domains = [
+    'streamtape.com', 'strtape.cloud', 'streamtape.net', 'streamta.pe', 'streamtape.site',
+    'strcloud.link', 'strcloud.club', 'strtpe.link', 'streamtape.cc', 'scloud.online', 'stape.fun',
+    'streamadblockplus.com', 'shavetape.cash', 'streamtape.to', 'streamta.site',
+    'streamadblocker.xyz', 'tapewithadblock.org', 'adblocktape.wiki', 'antiadtape.com',
+    'streamtape.xyz', 'tapeblocker.com', 'streamnoads.com', 'tapeadvertisement.com',
+    'tapeadsenjoyer.com', 'watchadsontape.com'
+  ];
 
   public supports(ctx: Context, url: URL): boolean {
-    return null !== url.host.match(/streamtape/) && supportsMediaFlowProxy(ctx);
+    // ✅ Match any of the known domains dynamically
+    const isSupportedDomain = this.domains.some(domain => url.hostname.endsWith(domain));
+    return isSupportedDomain && supportsMediaFlowProxy(ctx);
   }
 
   public override normalize(url: URL): URL {
@@ -29,7 +40,6 @@ export class Streamtape extends Extractor {
     const html = await this.fetcher.text(ctx, url, { headers });
 
     const sizeMatch = html.match(/([\d.]+ ?[GM]B)/) as string[];
-
     const $ = cheerio.load(html);
     const title = $('meta[name="og:title"]').attr('content') as string;
 
@@ -43,7 +53,7 @@ export class Streamtape extends Extractor {
         meta: {
           ...meta,
           title,
-          bytes: bytes.parse(sizeMatch[1] as string) as number,
+          bytes: bytes.parse(sizeMatch?.[1] ?? '0') as number,
         },
       },
     ];
