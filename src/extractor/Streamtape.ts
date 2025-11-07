@@ -13,9 +13,37 @@ export class Streamtape extends Extractor {
   public readonly label = 'Streamtape (via MediaFlow Proxy)';
 
   public supports(ctx: Context, url: URL): boolean {
-  return null !== url.host.match(
-    /(streamtape|strtape\.cloud|streamtape\.net|streamta\.pe|streamtape\.site|strcloud\.link|strcloud\.club|strtpe\.link|streamtape\.cc|scloud\.online|stape\.fun|streamadblockplus\.com|shavetape\.cash|streamtape\.to|streamta\.site|streamadblocker\.xyz|tapewithadblock\.org|adblocktape\.wiki|antiadtape\.com|streamtape\.xyz|tapeblocker\.com|streamnoads\.com|tapeadvertisement\.com|tapeadsenjoyer\.com|watchadsontape\.com)/
-  ) && supportsMediaFlowProxy(ctx);
+  const supportedDomain =
+    null !== url.host.match(/streamtape/) ||
+    [
+      'streamtape.com',
+      'strtape.cloud',
+      'streamtape.net',
+      'streamta.pe',
+      'streamtape.site',
+      'strcloud.link',
+      'strcloud.club',
+      'strtpe.link',
+      'streamtape.cc',
+      'scloud.online',
+      'stape.fun',
+      'streamadblockplus.com',
+      'shavetape.cash',
+      'streamtape.to',
+      'streamta.site',
+      'streamadblocker.xyz',
+      'tapewithadblock.org',
+      'adblocktape.wiki',
+      'antiadtape.com',
+      'streamtape.xyz',
+      'tapeblocker.com',
+      'streamnoads.com',
+      'tapeadvertisement.com',
+      'tapeadsenjoyer.com',
+      'watchadsontape.com',
+    ].includes(url.host);
+
+  return supportedDomain && supportsMediaFlowProxy(ctx);
 }
 
   public override normalize(url: URL): URL {
