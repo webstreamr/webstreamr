@@ -17,7 +17,6 @@ export class Streamtape extends Extractor {
     null !== url.host.match(/streamtape/) ||
     [
       'strtape.cloud',
-      'streamtape.net',
       'streamta.pe',
       'streamtape.site',
       'strcloud.link',
