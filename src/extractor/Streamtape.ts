@@ -30,7 +30,6 @@ export class Streamtape extends Extractor {
       'tapewithadblock.org',
       'adblocktape.wiki',
       'antiadtape.com',
-      'streamtape.xyz',
       'tapeblocker.com',
       'streamnoads.com',
       'tapeadvertisement.com',
