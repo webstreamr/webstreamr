@@ -21,7 +21,6 @@ export class Streamtape extends Extractor {
       'strcloud.link',
       'strcloud.club',
       'strtpe.link',
-      'streamtape.cc',
       'scloud.online',
       'stape.fun',
       'streamadblockplus.com',
