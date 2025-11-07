@@ -25,7 +25,6 @@ export class Streamtape extends Extractor {
       'stape.fun',
       'streamadblockplus.com',
       'shavetape.cash',
-      'streamtape.to',
       'streamta.site',
       'streamadblocker.xyz',
       'tapewithadblock.org',
