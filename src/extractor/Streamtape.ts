@@ -16,7 +16,6 @@ export class Streamtape extends Extractor {
   const supportedDomain =
     null !== url.host.match(/streamtape/) ||
     [
-      'streamtape.com',
       'strtape.cloud',
       'streamtape.net',
       'streamta.pe',
