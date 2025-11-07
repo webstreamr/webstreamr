@@ -18,7 +18,6 @@ export class Streamtape extends Extractor {
     [
       'strtape.cloud',
       'streamta.pe',
-      'streamtape.site',
       'strcloud.link',
       'strcloud.club',
       'strtpe.link',
