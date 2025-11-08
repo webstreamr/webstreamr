@@ -74,5 +74,5 @@ export class Streamtape extends Extractor {
         },
       },
     ];
-  }
+  };
 }
