@@ -13,38 +13,42 @@ export class Streamtape extends Extractor {
   public readonly label = 'Streamtape (via MediaFlow Proxy)';
 
   public supports(ctx: Context, url: URL): boolean {
-  const supportedDomain =
-    null !== url.host.match(/streamtape/) ||
-    [
-      'strtape.cloud',
-      'streamta.pe',
-      'strcloud.link',
-      'strcloud.club',
-      'strtpe.link',
-      'scloud.online',
-      'stape.fun',
-      'streamadblockplus.com',
-      'shavetape.cash',
-      'streamta.site',
-      'streamadblocker.xyz',
-      'tapewithadblock.org',
-      'adblocktape.wiki',
-      'antiadtape.com',
-      'tapeblocker.com',
-      'streamnoads.com',
-      'tapeadvertisement.com',
-      'tapeadsenjoyer.com',
-      'watchadsontape.com',
-    ].includes(url.host);
+    const supportedDomain =
+      null !== url.host.match(/streamtape/) ||
+      [
+        'strtape.cloud',
+        'streamta.pe',
+        'strcloud.link',
+        'strcloud.club',
+        'strtpe.link',
+        'scloud.online',
+        'stape.fun',
+        'streamadblockplus.com',
+        'shavetape.cash',
+        'streamta.site',
+        'streamadblocker.xyz',
+        'tapewithadblock.org',
+        'adblocktape.wiki',
+        'antiadtape.com',
+        'tapeblocker.com',
+        'streamnoads.com',
+        'tapeadvertisement.com',
+        'tapeadsenjoyer.com',
+        'watchadsontape.com',
+      ].includes(url.host);
 
-  return supportedDomain && supportsMediaFlowProxy(ctx);
-}
+    return supportedDomain && supportsMediaFlowProxy(ctx);
+  }
 
   public override normalize(url: URL): URL {
     return new URL(url.href.replace('/e/', '/v/'));
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(
+    ctx: Context,
+    url: URL,
+    meta: Meta,
+  ): Promise<UrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
     // Only needed to properly find non-existing files via 404 response
@@ -71,5 +75,5 @@ export class Streamtape extends Extractor {
         },
       },
     ];
-  };
+  }
 }
