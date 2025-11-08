@@ -13,9 +13,9 @@ export class Streamtape extends Extractor {
   public readonly label = 'Streamtape (via MediaFlow Proxy)';
 
   public supports(ctx: Context, url: URL): boolean {
-  const supportedDomain
+    const supportedDomain
     = null !== url.host.match(/streamtape/)
-    || [
+      || [
       'strtape.cloud',
       'streamta.pe',
       'strcloud.link',
