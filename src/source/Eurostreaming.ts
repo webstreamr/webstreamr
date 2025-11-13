@@ -14,7 +14,7 @@ export class Eurostreaming extends Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.it];
 
-  public readonly baseUrl = 'https://eurostreaming.luxe';
+  public readonly baseUrl = 'https://eurostreamings.vip';
 
   private readonly fetcher: Fetcher;
 
