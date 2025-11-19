@@ -29,7 +29,9 @@ export class Vidmoly extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-  const headers: Record<string, string> = { Referer: 'https://vidmoly.net' };
+
+  const referer = meta.referer ?? url.href;
+  const headers: Record<string, string> = { Referer: referer };
 
   // --- 1. Fetch embed page for HLS ---
   const embedHtml = await this.fetcher.text(ctx, url, headers);
