@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.57.3](https://github.com/webstreamr/webstreamr/compare/v0.57.2...v0.57.3) (2025-11-19)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#473](https://github.com/webstreamr/webstreamr/issues/473)) ([57bc464](https://github.com/webstreamr/webstreamr/commit/57bc4640e5931ad38d1200027a1f2f68891f18bb))
+* **deps:** lock file maintenance ([#495](https://github.com/webstreamr/webstreamr/issues/495)) ([e478a45](https://github.com/webstreamr/webstreamr/commit/e478a45bc0f5fc3d86f42d0065a445e37e03255a))
+* **deps:** lock file maintenance ([#508](https://github.com/webstreamr/webstreamr/issues/508)) ([3b78186](https://github.com/webstreamr/webstreamr/commit/3b7818670248b2b17aecd74d795a4f49c4b844e0))
+* **deps:** update dependency @stylistic/eslint-plugin to v5.6.0 ([#512](https://github.com/webstreamr/webstreamr/issues/512)) ([b4ba098](https://github.com/webstreamr/webstreamr/commit/b4ba09815837c7cd3d02ba58cd4f63bc57fa95de))
+* **deps:** update dependency @stylistic/eslint-plugin to v5.6.1 ([#513](https://github.com/webstreamr/webstreamr/issues/513)) ([c50e095](https://github.com/webstreamr/webstreamr/commit/c50e095781eb179e874585d7a264ef2ff1f6969b))
+* **deps:** update dependency @tsconfig/node22 to v22.0.3 ([#502](https://github.com/webstreamr/webstreamr/issues/502)) ([3f0c661](https://github.com/webstreamr/webstreamr/commit/3f0c661dae7abbc06411c62c5244fe192f277924))
+* **deps:** update dependency @tsconfig/node22 to v22.0.4 ([#504](https://github.com/webstreamr/webstreamr/issues/504)) ([e2268a3](https://github.com/webstreamr/webstreamr/commit/e2268a325a09d11126b3c95782804278310be867))
+* **deps:** update dependency @tsconfig/node22 to v22.0.5 ([#511](https://github.com/webstreamr/webstreamr/issues/511)) ([836021c](https://github.com/webstreamr/webstreamr/commit/836021c57ec28819da374b7513bdd4429ea521dd))
+* **deps:** update dependency @types/node to v24.10.1 ([#507](https://github.com/webstreamr/webstreamr/issues/507)) ([dbbf310](https://github.com/webstreamr/webstreamr/commit/dbbf310661b3b1cabac7bc40f4a2c3d7eeab7537))
+* **deps:** update dependency cacheable to v2.2.0 ([#506](https://github.com/webstreamr/webstreamr/issues/506)) ([7eb760b](https://github.com/webstreamr/webstreamr/commit/7eb760b5d6d49f69ea8cca2fa110a60a23af0aec))
+* **deps:** update dependency nodemon to v3.1.11 ([#499](https://github.com/webstreamr/webstreamr/issues/499)) ([7dca36f](https://github.com/webstreamr/webstreamr/commit/7dca36fa83838b317b0315903a65f84b54948975))
+* **deps:** update dependency typescript-eslint to v8.46.3 ([#479](https://github.com/webstreamr/webstreamr/issues/479)) ([3c398d4](https://github.com/webstreamr/webstreamr/commit/3c398d4a1db17c67c6a3b220046b069e1f7e738b))
+* **deps:** update dependency typescript-eslint to v8.46.4 ([#497](https://github.com/webstreamr/webstreamr/issues/497)) ([159be1c](https://github.com/webstreamr/webstreamr/commit/159be1cac484f80ccc813e07202431f97d034086))
+* **deps:** update dependency typescript-eslint to v8.47.0 ([#510](https://github.com/webstreamr/webstreamr/issues/510)) ([0a85b0d](https://github.com/webstreamr/webstreamr/commit/0a85b0dc1ec195de3e14085c2d9132c8e64eaf66))
+* **deps:** update eslint monorepo to v9.39.1 ([#468](https://github.com/webstreamr/webstreamr/issues/468)) ([33dbeb9](https://github.com/webstreamr/webstreamr/commit/33dbeb9776ffb9bc4e697163de4172353502d163))
+
+
+### Continuous Integration
+
+* run build and test actions for PRs ([d80ca63](https://github.com/webstreamr/webstreamr/commit/d80ca63dad2ad87a05c369189551e8632e2ad909))
+
 ## [0.57.2](https://github.com/webstreamr/webstreamr/compare/v0.57.1...v0.57.2) (2025-11-03)
 
 
