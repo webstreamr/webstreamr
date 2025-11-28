@@ -14,7 +14,7 @@ export class MegaKino extends Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.de];
 
-  public readonly baseUrl = 'https://megakino.ms';
+  public readonly baseUrl = 'https://w1.megakino.do'; // TODO: determine this more dynamically since cookie fetching does not work otherwise
 
   private readonly fetcher: Fetcher;
 
@@ -29,10 +29,9 @@ export class MegaKino extends Source {
 
     const tokenResponse = await this.fetcher.fetch(ctx, new URL('/?yg=token', this.baseUrl), { method: 'HEAD' });
 
-    const cookie = Cookie.parse(tokenResponse.headers['set-cookie'] as string) as Cookie;
-    const baseUrl = new URL('/', tokenResponse.url);
+    const cookie = Cookie.parse((tokenResponse.headers['set-cookie'] as string[])[0] as string) as Cookie;
 
-    const pageUrl = await this.fetchPageUrl(ctx, baseUrl, imdbId, cookie);
+    const pageUrl = await this.fetchPageUrl(ctx, imdbId, cookie);
     if (!pageUrl) {
       return [];
     }
@@ -51,11 +50,13 @@ export class MegaKino extends Source {
     );
   };
 
-  private fetchPageUrl = async (ctx: Context, postUrl: URL, imdbId: ImdbId, cookie: Cookie): Promise<URL | undefined> => {
+  private fetchPageUrl = async (ctx: Context, imdbId: ImdbId, cookie: Cookie): Promise<URL | undefined> => {
     const form = new URLSearchParams();
     form.append('do', 'search');
     form.append('subaction', 'search');
     form.append('story', `${imdbId.id}`);
+
+    const postUrl = new URL(this.baseUrl);
 
     const html = await this.fetcher.textPost(
       ctx,
