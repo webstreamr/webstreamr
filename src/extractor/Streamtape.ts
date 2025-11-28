@@ -13,7 +13,30 @@ export class Streamtape extends Extractor {
   public readonly label = 'Streamtape (via MediaFlow Proxy)';
 
   public supports(ctx: Context, url: URL): boolean {
-    return null !== url.host.match(/streamtape/) && supportsMediaFlowProxy(ctx);
+    const supportedDomain = null !== url.host.match(/streamtape/)
+      || [
+        'strtape.cloud',
+        'streamta.pe',
+        'strcloud.link',
+        'strcloud.club',
+        'strtpe.link',
+        'scloud.online',
+        'stape.fun',
+        'streamadblockplus.com',
+        'shavetape.cash',
+        'streamta.site',
+        'streamadblocker.xyz',
+        'tapewithadblock.org',
+        'adblocktape.wiki',
+        'antiadtape.com',
+        'tapeblocker.com',
+        'streamnoads.com',
+        'tapeadvertisement.com',
+        'tapeadsenjoyer.com',
+        'watchadsontape.com',
+      ].includes(url.host);
+
+    return supportedDomain && supportsMediaFlowProxy(ctx);
   }
 
   public override normalize(url: URL): URL {
