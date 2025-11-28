@@ -1,12 +1,12 @@
+import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
 import { Extractor } from './Extractor';
 import {
   buildMediaFlowProxyExtractorStreamUrl,
+  guessHeightFromPlaylist,
   supportsMediaFlowProxy,
-  guessHeightFromPlaylist
 } from '../utils';
-import * as cheerio from 'cheerio';
 
 export class Vidmoly extends Extractor {
   public readonly id = 'Vidmoly';
@@ -29,59 +29,73 @@ export class Vidmoly extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+    const referer = meta.referer ?? url.href;
+    const headers: Record<string, string> = { Referer: referer };
 
-  const referer = meta.referer ?? url.href;
-  const headers: Record<string, string> = { Referer: referer };
+    // --- 1. Fetch embed page ---
+    const embedHtml = await this.fetcher.text(ctx, url, headers);
+    if (!embedHtml || embedHtml.includes('Video not found')) throw new NotFoundError();
 
-  // --- 1. Fetch embed page for HLS ---
-  const embedHtml = await this.fetcher.text(ctx, url, headers);
-  if (!embedHtml || embedHtml.includes('Video not found')) throw new NotFoundError();
+    // Extract HLS URL
+    const sourcesMatch = embedHtml.match(/sources:\s*\[\{file:"(?<url>[^"]+)"/);
+    const mediaUrl = sourcesMatch?.groups?.url;
 
-  // Extract HLS URL from embed page
-  const sourcesMatch = embedHtml.match(/sources:\s*\[\{file:"(?<url>[^"]+)"/);
-  const mediaUrl = sourcesMatch?.groups?.['url'];
+    let height: number | undefined;
 
-  let height: number | undefined;
-  if (mediaUrl) {
-    const streamUrl = mediaUrl.startsWith('//')
-      ? 'https:' + mediaUrl
-      : mediaUrl.startsWith('/')
-        ? url.origin + mediaUrl
-        : mediaUrl;
+    if (mediaUrl) {
+      const streamUrl = mediaUrl.startsWith('//')
+        ? 'https:' + mediaUrl
+        : mediaUrl.startsWith('/')
+          ? url.origin + mediaUrl
+          : mediaUrl;
+
+      try {
+        height = await guessHeightFromPlaylist(
+          ctx,
+          this.fetcher,
+          new URL(streamUrl),
+          url,
+          headers,
+        );
+      } catch {
+        // ignore
+      }
+    }
+
+    // --- 2. Fetch main page for title ---
+    const mainUrl = url.href.replace('embed-', '');
+    let title = this.label;
 
     try {
-      // Pass the actual HLS URL (not MediaFlow) to get best height
-      height = await guessHeightFromPlaylist(ctx, this.fetcher, new URL(streamUrl), url, headers);
+      const mainHtml = await this.fetcher.text(ctx, new URL(mainUrl), headers);
+      const $ = cheerio.load(mainHtml);
+      const vidDiv = $('div.vid-d');
+      const innerSpan = vidDiv.find('span span').first();
+      title = innerSpan.text().trim() || this.label;
+      title = title.replace(/\.mp4$/i, '');
     } catch {
-      // ignore
+      // fallback
     }
+
+    // --- 3. MediaFlow proxy ---
+    const proxiedUrl = await buildMediaFlowProxyExtractorStreamUrl(
+      ctx,
+      this.fetcher,
+      this.id,
+      url,
+      headers,
+    );
+
+    return [
+      {
+        url: proxiedUrl,
+        format: Format.hls,
+        label: this.label,
+        sourceId: `${this.id}_${meta.countryCodes?.join('_') ?? 'all'}`,
+        ttl: this.ttl,
+        requestHeaders: headers,
+        meta: { ...meta, title, height },
+      },
+    ];
   }
-
-  // --- 2. Fetch main page for title ---
-  const mainUrl = url.href.replace('embed-', '');
-  let title = this.label;
-  try {
-    const mainHtml = await this.fetcher.text(ctx, new URL(mainUrl), headers);
-    const $ = cheerio.load(mainHtml);
-    const vidDiv = $('div.vid-d');
-    const innerSpan = vidDiv.find('span span').first();
-    title = innerSpan.text().trim() || this.label;
-    title = title.replace(/\.mp4$/i, '');
-  } catch {
-    // fallback
-  }
-
-  // --- 3. MediaFlow proxy ---
-  const proxiedUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, this.id, url, headers);
-
-  return [{
-    url: proxiedUrl,
-    format: Format.hls,
-    label: this.label,
-    sourceId: `${this.id}_${meta.countryCodes?.join('_') ?? 'all'}`,
-    ttl: this.ttl,
-    requestHeaders: headers,
-    meta: { ...meta, title, height },
-  }];
- }
 }
