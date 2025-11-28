@@ -104,7 +104,7 @@ export class Fetcher {
   }
 
   protected async fetchWithTimeout(ctx: Context, url: URL, requestConfig?: CustomRequestConfig, tryCount = 0): Promise<AxiosResponse> {
-    const proxyUrl = this.getProxyForUrl(url);
+    const proxyUrl = this.getProxyForUrl(ctx, url);
 
     let message = `Fetch ${requestConfig?.method ?? 'GET'} ${url}`;
     /* istanbul ignore if */
@@ -319,7 +319,11 @@ export class Fetcher {
     return new Promise(sleep => setTimeout(sleep, ms));
   }
 
-  private getProxyForUrl(url: URL): URL | undefined {
+  private getProxyForUrl(ctx: Context, url: URL): URL | undefined {
+    if (ctx.config.mediaFlowProxyUrl && url.href.startsWith(ctx.config.mediaFlowProxyUrl)) {
+      return undefined;
+    }
+
     const proxyConfig = process.env['PROXY_CONFIG'];
 
     if (proxyConfig) {
