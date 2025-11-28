@@ -43,11 +43,7 @@ export class Streamtape extends Extractor {
     return new URL(url.href.replace('/e/', '/v/'));
   }
 
-  protected async extractInternal(
-    ctx: Context,
-    url: URL,
-    meta: Meta,
-  ): Promise<UrlResult[]> {
+ protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
     // Only needed to properly find non-existing files via 404 response
