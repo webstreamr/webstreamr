@@ -46,6 +46,7 @@ export class VixSrc extends Extractor {
         sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
+          ...meta,
           countryCodes,
           height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, url, { headers }),
         },
