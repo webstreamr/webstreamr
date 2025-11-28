@@ -2,7 +2,7 @@ import { Mutex } from 'async-mutex';
 import { NotFoundError } from '../error';
 import { Context } from '../types';
 import { envGetRequired } from './env';
-import { CustomRequestInit, Fetcher } from './Fetcher';
+import { CustomRequestConfig, Fetcher } from './Fetcher';
 import { ImdbId, TmdbId } from './id';
 
 interface FindResponsePartial {
@@ -32,7 +32,7 @@ interface TvDetailsResponsePartial {
 
 const mutexes = new Map<string, Mutex>();
 const tmdbFetch = async (ctx: Context, fetcher: Fetcher, path: string, searchParams?: Record<string, string | undefined>): Promise<unknown> => {
-  const config: CustomRequestInit = {
+  const config: CustomRequestConfig = {
     headers: {
       'Authorization': 'Bearer ' + envGetRequired('TMDB_ACCESS_TOKEN'),
       'Content-Type': 'application/json',

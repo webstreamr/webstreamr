@@ -1,4 +1,7 @@
 import { randomUUID } from 'node:crypto';
+import axios from 'axios';
+import { setupCache } from 'axios-cache-interceptor';
+import axiosRetry from 'axios-retry';
 import express, { NextFunction, Request, Response } from 'express';
 import winston from 'winston';
 import { ConfigureController, ManifestController, StreamController } from './controller';
@@ -33,7 +36,10 @@ process.on('unhandledRejection', (error: Error) => {
   logger.error(`Unhandled rejection: ${error}, cause: ${error.cause}, stack: ${error.stack}`);
 });
 
-const fetcher = new Fetcher(logger);
+const cachedAxios = setupCache(axios);
+axiosRetry(cachedAxios, { retries: 3, retryDelay: () => 333 });
+
+const fetcher = new Fetcher(cachedAxios, logger);
 
 const sources = createSources(fetcher);
 const extractors = createExtractors(fetcher);
@@ -96,7 +102,7 @@ addon.get('/live', async (req: Request, res: Response) => {
     const url = new URL(href);
 
     try {
-      await fetcher.head(ctx, url, { noCache: true });
+      await fetcher.head(ctx, url);
       results.set(url.host, 'ok');
     } catch (error) {
       if (error instanceof BlockedError) {

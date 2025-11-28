@@ -1,23 +1,16 @@
-import { gunzipSync, gzipSync } from 'zlib';
+/* istanbul ignore file */
 import { Mutex, Semaphore, SemaphoreInterface, withTimeout } from 'async-mutex';
+import { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 import { Cacheable, CacheableMemory, Keyv } from 'cacheable';
-import CachePolicy from 'http-cache-semantics';
+import { HttpProxyAgent } from 'http-proxy-agent';
+import { HttpsProxyAgent } from 'https-proxy-agent';
+import { minimatch } from 'minimatch';
+import { SocksProxyAgent } from 'socks-proxy-agent';
 import { Cookie, CookieJar } from 'tough-cookie';
-import { fetch, Headers, RequestInit, Response } from 'undici';
 import winston from 'winston';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
 import { BlockedReason, Context } from '../types';
-import { getProxyAgent, getProxyForUrl } from './dispatcher';
 import { envGet } from './env';
-
-export interface HttpCacheItem {
-  body: string;
-  headers: CachePolicy.Headers;
-  status: number;
-  statusText: string;
-  ttl: number;
-  url: string;
-}
 
 interface FlareSolverrResult {
   status: string;
@@ -44,11 +37,8 @@ interface FlareSolverrResult {
   version: string;
 }
 
-export type CustomRequestInit = RequestInit & {
+export type CustomRequestConfig = AxiosRequestConfig & {
   minCacheTtl?: number;
-  noCache?: boolean;
-  noFlareSolverr?: boolean;
-  noProxyHeaders?: boolean;
   queueLimit?: number;
   queueTimeout?: number;
   timeout?: number;
@@ -56,7 +46,6 @@ export type CustomRequestInit = RequestInit & {
 };
 
 export class Fetcher {
-  private readonly MIN_CACHE_TTL = 900000; // 15m
   private readonly DEFAULT_TIMEOUT = 10000;
   private readonly DEFAULT_QUEUE_LIMIT = 10;
   private readonly DEFAULT_QUEUE_TIMEOUT = 10000;
@@ -64,13 +53,11 @@ export class Fetcher {
   private readonly TIMEOUT_CACHE_TTL = 3600000; // 1h
   private readonly MAX_WAIT_RETRY_AFTER = 10000;
 
+  private readonly axios: AxiosInstance;
   private readonly logger: winston.Logger;
 
-  private readonly httpCache = new Cacheable({
-    primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }),
-    stats: true,
-  });
-
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private readonly proxyAgents = new Map<string, Record<'httpAgent' | 'httpsAgent', any>>();
   private readonly rateLimitedCache = new Cacheable({ primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }) });
   private readonly semaphores = new Map<string, SemaphoreInterface>();
   private readonly hostUserAgentMap = new Map<string, string>();
@@ -79,92 +66,160 @@ export class Fetcher {
   private readonly timeoutsCountCache = new Cacheable({ primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }) });
   private readonly timeoutsCountMutex = new Mutex();
 
-  public constructor(logger: winston.Logger) {
+  public constructor(axios: AxiosInstance, logger: winston.Logger) {
+    this.axios = axios;
     this.logger = logger;
   }
 
   public stats() {
-    return {
-      httpCache: this.httpCache.stats,
-    };
+    return {};
   };
 
-  public async fetch(ctx: Context, url: URL, init?: CustomRequestInit): Promise<HttpCacheItem> {
-    return await this.cachedFetch(ctx, url, init);
+  public async fetch(ctx: Context, url: URL, requestConfig?: CustomRequestConfig): Promise<AxiosResponse> {
+    return await this.queuedFetch(ctx, url, requestConfig);
   };
 
-  public async text(ctx: Context, url: URL, init?: CustomRequestInit): Promise<string> {
-    return (await this.cachedFetch(ctx, url, init)).body;
+  public async text(ctx: Context, url: URL, requestConfig?: CustomRequestConfig): Promise<string> {
+    return (await this.queuedFetch(ctx, url, requestConfig)).data;
   };
 
-  public async textPost(ctx: Context, url: URL, body: string, init?: CustomRequestInit): Promise<string> {
-    return (await this.cachedFetch(ctx, url, { ...init, method: 'POST', body })).body;
+  public async textPost(ctx: Context, url: URL, data: string, requestConfig?: CustomRequestConfig): Promise<string> {
+    return (await this.queuedFetch(ctx, url, { ...requestConfig, method: 'POST', data })).data;
   };
 
-  public async head(ctx: Context, url: URL, init?: CustomRequestInit): Promise<CachePolicy.Headers> {
-    return (await this.cachedFetch(ctx, url, { ...init, method: 'HEAD' })).headers;
+  public async head(ctx: Context, url: URL, requestConfig?: CustomRequestConfig): Promise<AxiosResponse['headers']> {
+    return (await this.queuedFetch(ctx, url, { ...requestConfig, method: 'HEAD' })).headers;
   };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  public async json(ctx: Context, url: URL, init?: CustomRequestInit): Promise<any> {
-    const jsonInit = {
+  public async json(ctx: Context, url: URL, requestConfig?: CustomRequestConfig): Promise<any> {
+    const jsonRequestConfig = {
       headers: {
         Accept: 'application/json,text/plain,*/*',
       },
-      ...init,
+      ...requestConfig,
     };
 
-    return JSON.parse(await this.text(ctx, url, jsonInit));
+    return JSON.parse(await this.text(ctx, url, jsonRequestConfig));
   }
 
-  private getInit(ctx: Context, url: URL, init?: CustomRequestInit): CustomRequestInit {
-    const cookieString = this.cookieJar.getCookieStringSync(url.href);
-    const noProxyHeaders = init?.noProxyHeaders ?? false;
+  protected async fetchWithTimeout(ctx: Context, url: URL, requestConfig?: CustomRequestConfig, tryCount = 0): Promise<AxiosResponse> {
+    const proxyUrl = this.getProxyForUrl(url);
 
-    const forwardedProto = url.protocol.slice(0, -1);
+    let message = `Fetch ${requestConfig?.method ?? 'GET'} ${url}`;
+    /* istanbul ignore if */
+    if (requestConfig?.headers && requestConfig?.headers['Referer']) {
+      message += ' with referer ' + requestConfig?.headers['Referer'];
+    }
+    /* istanbul ignore if */
+    if (proxyUrl) {
+      message += ' via proxy ' + proxyUrl;
+    }
+    this.logger.info(message, ctx);
 
-    return {
-      ...init,
-      headers: {
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'en',
-        ...(url.username && { Authorization: 'Basic ' + Buffer.from(`${url.username}:${url.password}`).toString('base64') }),
-        'Priority': 'u=0',
-        'User-Agent': this.hostUserAgentMap.get(url.host) ?? 'node',
-        ...(cookieString && { Cookie: cookieString }),
-        ...(ctx.ip && !noProxyHeaders && {
-          'Forwarded': `by=unknown;for=${ctx.ip};host=${url.host};proto=${forwardedProto}`,
-          'X-Forwarded-For': ctx.ip,
-          'X-Forwarded-Host': url.host,
-          'X-Forwarded-Proto': forwardedProto,
-          'X-Real-IP': ctx.ip,
-        }),
-        ...init?.headers,
-      },
-    };
-  };
+    const isRateLimitedRaw = await this.rateLimitedCache.getRaw<true>(url.host);
+    /* istanbul ignore if */
+    if (isRateLimitedRaw && isRateLimitedRaw.value && isRateLimitedRaw.expires) {
+      const ttl = isRateLimitedRaw.expires - Date.now();
+      if (ttl <= this.MAX_WAIT_RETRY_AFTER && tryCount < 1) {
+        this.logger.info(`Wait out rate limit for ${url}`, ctx);
 
-  private async handleHttpCacheItem(ctx: Context, httpCacheItem: HttpCacheItem, url: URL, init?: CustomRequestInit): Promise<HttpCacheItem> {
-    const triggeredCloudflareTurnstile = httpCacheItem.body.includes('cf-turnstile');
+        await this.sleep(ttl);
 
-    if (httpCacheItem.status && httpCacheItem.status >= 200 && httpCacheItem.status <= 399 && !triggeredCloudflareTurnstile) {
-      return httpCacheItem;
+        return await this.fetchWithTimeout(ctx, url, { ...requestConfig, queueLimit: 1 }, ++tryCount);
+      }
+
+      throw new TooManyRequestsError(url, (isRateLimitedRaw.expires as number - Date.now()) / 1000);
     }
 
-    if (httpCacheItem.status === 404) {
+    const timeouts = (await this.timeoutsCountCache.get<number>(url.host)) ?? 0;
+    if (timeouts >= (requestConfig?.timeoutsCountThrow ?? this.DEFAULT_TIMEOUTS_COUNT_THROW)) {
+      throw new TooManyTimeoutsError(url);
+    }
+
+    let response;
+    try {
+      const finalUrl = new URL(url.href);
+      finalUrl.username = '';
+      finalUrl.password = '';
+
+      const cookieString = this.cookieJar.getCookieStringSync(url.href);
+
+      const forwardedProto = url.protocol.slice(0, -1);
+
+      const hostUserAgent = this.hostUserAgentMap.get(url.host);
+
+      response = await this.axios.request({
+        ...requestConfig,
+        headers: {
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'en',
+          ...(url.username && { Authorization: 'Basic ' + Buffer.from(`${url.username}:${url.password}`).toString('base64') }),
+          'Priority': 'u=0',
+          'User-Agent': this.hostUserAgentMap.get(url.host) ?? 'Mozilla',
+          ...(hostUserAgent && { 'User-Agent': hostUserAgent }),
+          ...(cookieString && { Cookie: cookieString }),
+          ...(ctx.ip && {
+            'Forwarded': `by=unknown;for=${ctx.ip};host=${url.host};proto=${forwardedProto}`,
+            'X-Forwarded-For': ctx.ip,
+            'X-Forwarded-Host': url.host,
+            'X-Forwarded-Proto': forwardedProto,
+            'X-Real-IP': ctx.ip,
+          }),
+          ...(proxyUrl && this.getProxyAgents(proxyUrl)),
+          ...requestConfig?.headers,
+        },
+        url: finalUrl.href,
+        timeout: this.DEFAULT_TIMEOUT,
+        transformResponse: [data => data],
+        validateStatus: () => true,
+      });
+    } catch (error) {
+      this.logger.info(`Got error ${error} for ${url}`, ctx);
+
+      if (error instanceof AxiosError && error.code === 'ECONNABORTED') {
+        await this.increaseTimeoutsCount(url);
+        throw new TimeoutError(url);
+      }
+
+      throw error;
+    }
+
+    this.logger.info(`Got ${response.status} (${response.statusText}) for ${url}`, ctx);
+
+    await this.decreaseTimeoutsCount(url);
+
+    if (response.status === 429) {
+      const retryAfter = parseInt(`${response.headers['retry-after']}`) * 1000;
+      if (retryAfter <= this.MAX_WAIT_RETRY_AFTER && tryCount < 1) {
+        this.logger.info(`Wait out rate limit for ${url.host}`, ctx);
+
+        await this.sleep(retryAfter);
+
+        return await this.fetchWithTimeout(ctx, url, { ...requestConfig, queueLimit: 1 }, ++tryCount);
+      }
+    }
+
+    const triggeredCloudflareTurnstile = 'cf-turnstile' in response.headers;
+
+    if (response.status && response.status >= 200 && response.status <= 399 && !triggeredCloudflareTurnstile) {
+      return response;
+    }
+
+    if (response.status === 404) {
       throw new NotFoundError();
     }
 
-    if (httpCacheItem.headers['cf-mitigated'] === 'challenge' || triggeredCloudflareTurnstile) {
-      const noFlareSolverr = init?.noFlareSolverr ?? false;
+    if (response.headers['cf-mitigated'] === 'challenge' || triggeredCloudflareTurnstile) {
       const flareSolverrEndpoint = envGet('FLARESOLVERR_ENDPOINT');
-      if (noFlareSolverr || !flareSolverrEndpoint) {
-        throw new BlockedError(url, BlockedReason.cloudflare_challenge, httpCacheItem.headers);
+      if (!flareSolverrEndpoint) {
+        throw new BlockedError(url, BlockedReason.cloudflare_challenge, response.headers);
       }
 
       this.logger.info(`Query FlareSolverr for ${url.href}`, ctx);
 
       const body = { cmd: 'request.get', url: url.href, session: 'default' };
+      // @ts-expect-error idjaow awdiajwdoajwdoiajwdoi
       const challengeResult = await (await this.queuedFetch(ctx, new URL(flareSolverrEndpoint), { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' }, queueLimit: 1, timeout: 15000 })).json() as FlareSolverrResult;
       if (challengeResult.status !== 'ok') {
         this.logger.warn(`FlareSolverr issue: ${JSON.stringify(challengeResult)}`, ctx);
@@ -189,25 +244,25 @@ export class Fetcher {
 
       this.hostUserAgentMap.set(url.host, challengeResult.solution.userAgent);
 
-      httpCacheItem.body = challengeResult.solution.response;
+      response.data = challengeResult.solution.response;
 
-      return httpCacheItem;
+      return response;
     }
 
-    if (httpCacheItem.status === 403) {
+    if (response.status === 403) {
       if (ctx.config.mediaFlowProxyUrl && url.href.startsWith(ctx.config.mediaFlowProxyUrl)) {
-        throw new BlockedError(url, BlockedReason.media_flow_proxy_auth, httpCacheItem.headers);
+        throw new BlockedError(url, BlockedReason.media_flow_proxy_auth, response.headers);
       }
 
-      throw new BlockedError(url, BlockedReason.unknown, httpCacheItem.headers);
+      throw new BlockedError(url, BlockedReason.unknown, response.headers);
     }
 
-    if (httpCacheItem.status === 451) {
-      throw new BlockedError(url, BlockedReason.cloudflare_censor, httpCacheItem.headers);
+    if (response.status === 451) {
+      throw new BlockedError(url, BlockedReason.cloudflare_censor, response.headers);
     }
 
-    if (httpCacheItem.status === 429) {
-      const retryAfter = parseInt(`${httpCacheItem.headers['retry-after']}`);
+    if (response.status === 429) {
+      const retryAfter = parseInt(`${response.headers['retry-after']}`);
       if (!isNaN(retryAfter)) {
         await this.rateLimitedCache.set<true>(url.host, true, retryAfter * 1000);
       }
@@ -215,161 +270,7 @@ export class Fetcher {
       throw new TooManyRequestsError(url, retryAfter);
     }
 
-    throw new HttpError(url, httpCacheItem.status, httpCacheItem.statusText, httpCacheItem.headers);
-  };
-
-  private determineCacheKey(url: URL, init?: CustomRequestInit): string {
-    return `${url.href}_${init?.body?.toString()}`;
-  }
-
-  private determineCacheTtl(status: number, policy: CachePolicy, init?: CustomRequestInit): number {
-    if ((status >= 200 && status <= 299) || status === 404) {
-      return Math.max(policy.timeToLive(), init?.minCacheTtl ?? this.MIN_CACHE_TTL);
-    }
-
-    return 0;
-  };
-
-  private async cacheGet(key: string): Promise<HttpCacheItem | undefined> {
-    const buffer = await this.httpCache.get<Buffer>(key);
-
-    return buffer ? JSON.parse(gunzipSync(buffer).toString()) : undefined;
-  }
-
-  private async cacheSet(key: string, httpCacheItem: HttpCacheItem) {
-    if (httpCacheItem.ttl <= 0) {
-      return;
-    }
-
-    await this.httpCache.set<Buffer>(key, gzipSync(JSON.stringify(httpCacheItem)), httpCacheItem.ttl);
-  }
-
-  private headersToObject(headers: Headers): Record<string, string> {
-    const obj: Record<string, string> = {};
-
-    headers.forEach((value, name) => {
-      obj[name] = value;
-    });
-
-    return obj;
-  };
-
-  private async cachedFetch(ctx: Context, url: URL, init?: CustomRequestInit): Promise<HttpCacheItem> {
-    const newInit = this.getInit(ctx, url, init);
-
-    const request: CachePolicy.Request = { url: url.href, method: newInit.method ?? 'GET', headers: {} };
-
-    const cacheKey = this.determineCacheKey(url, init);
-    let httpCacheItem = await this.cacheGet(cacheKey);
-    const disableCache = init?.noCache;
-    if (httpCacheItem && !disableCache) {
-      this.logger.info(`Cached fetch ${request.method} ${url}: ${httpCacheItem.status} (${httpCacheItem.statusText})`, ctx);
-      return this.handleHttpCacheItem(ctx, httpCacheItem, url, init);
-    }
-
-    const response = await this.queuedFetch(ctx, url, newInit);
-    const body = await response.text();
-
-    const policy = new CachePolicy(request, { status: response.status, headers: this.headersToObject(response.headers) }, { shared: false });
-    const ttl = this.determineCacheTtl(response.status, policy, init);
-
-    httpCacheItem = { headers: policy.responseHeaders(), status: response.status, statusText: response.statusText, body, ttl, url: response.url };
-
-    await this.cacheSet(cacheKey, httpCacheItem);
-
-    return this.handleHttpCacheItem(ctx, httpCacheItem, url, init);
-  };
-
-  protected async fetchWithTimeout(ctx: Context, url: URL, init?: CustomRequestInit, tryCount = 0): Promise<Response> {
-    const proxyUrl = getProxyForUrl(url);
-
-    const headers = init?.headers as Record<string, string> | undefined;
-    let message = `Fetch ${init?.method ?? 'GET'} ${url}`;
-    /* istanbul ignore if */
-    if (headers && headers['Referer']) {
-      message += ' with referer ' + headers['Referer'];
-    }
-    /* istanbul ignore if */
-    if (proxyUrl) {
-      message += ' via proxy ' + proxyUrl;
-    }
-    this.logger.info(message, ctx);
-
-    const isRateLimitedRaw = await this.rateLimitedCache.getRaw<true>(url.host);
-    /* istanbul ignore if */
-    if (isRateLimitedRaw && isRateLimitedRaw.value && isRateLimitedRaw.expires) {
-      const ttl = isRateLimitedRaw.expires - Date.now();
-      if (ttl <= this.MAX_WAIT_RETRY_AFTER && tryCount < 1) {
-        this.logger.info(`Wait out rate limit for ${url}`, ctx);
-
-        await this.sleep(ttl);
-
-        return await this.fetchWithTimeout(ctx, url, { ...init, queueLimit: 1 }, ++tryCount);
-      }
-
-      throw new TooManyRequestsError(url, (isRateLimitedRaw.expires as number - Date.now()) / 1000);
-    }
-
-    const timeouts = (await this.timeoutsCountCache.get<number>(url.host)) ?? 0;
-    if (timeouts >= (init?.timeoutsCountThrow ?? this.DEFAULT_TIMEOUTS_COUNT_THROW)) {
-      throw new TooManyTimeoutsError(url);
-    }
-
-    let response;
-    try {
-      const finalUrl = new URL(url.href);
-      finalUrl.username = '';
-      finalUrl.password = '';
-
-      const finalInit = {
-        ...init,
-        keepalive: true,
-        signal: AbortSignal.timeout(init?.timeout ?? this.DEFAULT_TIMEOUT),
-        ...(/* istanbul ignore next */ proxyUrl && { dispatcher: getProxyAgent(proxyUrl) }),
-      };
-
-      response = await fetch(finalUrl, finalInit);
-    } catch (error) {
-      this.logger.info(`Got error ${error} for ${url}`, ctx);
-
-      if (error instanceof DOMException && ['AbortError', 'TimeoutError'].includes(error.name)) {
-        await this.increaseTimeoutsCount(url);
-        throw new TimeoutError(url);
-      }
-
-      if (tryCount < 3) {
-        this.logger.warn(`Retrying fetch ${init?.method ?? 'GET'} ${url} because of an unexpected error`, ctx);
-        await this.sleep(333);
-
-        return await this.fetchWithTimeout(ctx, url, init, ++tryCount);
-      }
-
-      throw error;
-    }
-
-    this.logger.info(`Got ${response.status} (${response.statusText}) for ${url}`, ctx);
-
-    await this.decreaseTimeoutsCount(url);
-
-    if (response.status === 429) {
-      const retryAfter = parseInt(`${response.headers.get('retry-after')}`) * 1000;
-      if (retryAfter <= this.MAX_WAIT_RETRY_AFTER && tryCount < 1) {
-        this.logger.info(`Wait out rate limit for ${url.host}`, ctx);
-
-        await this.sleep(retryAfter);
-
-        return await this.fetchWithTimeout(ctx, url, { ...init, queueLimit: 1 }, ++tryCount);
-      }
-    }
-
-    if ([503, 504].includes(response.status) && tryCount < 3) {
-      this.logger.warn(`Retrying fetch ${init?.method ?? 'GET'} ${url} because of a temporary server error`, ctx);
-      await this.sleep(333);
-
-      return await this.fetchWithTimeout(ctx, url, init, ++tryCount);
-    }
-
-    return response;
+    throw new HttpError(url, response.status, response.statusText, response.headers);
   };
 
   private async increaseTimeoutsCount(url: URL) {
@@ -399,7 +300,7 @@ export class Fetcher {
     return sem;
   }
 
-  private async queuedFetch(ctx: Context, url: URL, init?: CustomRequestInit): Promise<Response> {
+  private async queuedFetch(ctx: Context, url: URL, init?: CustomRequestConfig): Promise<AxiosResponse> {
     const queueLimit = init?.queueLimit ?? this.DEFAULT_QUEUE_LIMIT;
     const queueTimeout = init?.queueTimeout ?? this.DEFAULT_QUEUE_TIMEOUT;
 
@@ -416,5 +317,42 @@ export class Fetcher {
 
   private sleep(ms: number): Promise<void> {
     return new Promise(sleep => setTimeout(sleep, ms));
+  }
+
+  private getProxyForUrl(url: URL): URL | undefined {
+    const proxyConfig = process.env['PROXY_CONFIG'];
+
+    if (proxyConfig) {
+      for (const rule of proxyConfig.split(',')) {
+        const [hostPattern, proxy] = rule.split(/:(.+)/);
+        if (!hostPattern || !proxy) {
+          throw new Error(`Proxy rule "${rule}" is invalid.`);
+        }
+
+        if (hostPattern === '*' || minimatch(url.host, hostPattern)) {
+          return proxy === 'false' ? undefined : new URL(proxy);
+        }
+      }
+    } else if (process.env['ALL_PROXY']) {
+      return new URL(process.env['ALL_PROXY']);
+    }
+
+    return undefined;
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private getProxyAgents(proxyUrl: URL): Record<'httpAgent' | 'httpsAgent', any> {
+    let proxyAgents = this.proxyAgents.get(proxyUrl.href);
+
+    if (!proxyAgents) {
+      proxyAgents = {
+        httpAgent: proxyUrl.protocol === 'socks5:' ? new SocksProxyAgent(proxyUrl) : new HttpProxyAgent(proxyUrl),
+        httpsAgent: proxyUrl.protocol === 'socks5:' ? new SocksProxyAgent(proxyUrl) : new HttpsProxyAgent(proxyUrl),
+      };
+
+      this.proxyAgents.set(proxyUrl.href, proxyAgents);
+    }
+
+    return proxyAgents;
   }
 }

@@ -1,6 +1,6 @@
 import { Context, CountryCode, Format, Meta, UrlResult } from '../types';
 import {
-  CustomRequestInit,
+  CustomRequestConfig,
   guessHeightFromPlaylist, hasMultiEnabled,
   iso639FromCountryCode,
 } from '../utils';
@@ -53,7 +53,7 @@ export class VixSrc extends Extractor {
     ];
   };
 
-  private async determineCountryCodesFromPlaylist(ctx: Context, playlistUrl: URL, init?: CustomRequestInit): Promise<CountryCode[]> {
+  private async determineCountryCodesFromPlaylist(ctx: Context, playlistUrl: URL, init?: CustomRequestConfig): Promise<CountryCode[]> {
     const playlist = await this.fetcher.text(ctx, playlistUrl, init);
 
     const countryCodes: CountryCode[] = [CountryCode.it];

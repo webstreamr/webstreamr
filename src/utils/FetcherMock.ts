@@ -1,52 +1,51 @@
 /* istanbul ignore file */
 import crypto from 'crypto';
 import fs from 'node:fs';
-import CachePolicy from 'http-cache-semantics';
+import axios, { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 import slugify from 'slugify';
-import { RequestInit } from 'undici';
 import winston from 'winston';
 import { NotFoundError } from '../error';
 import { Context } from '../types';
 import { envGet } from './env';
-import { Fetcher, HttpCacheItem } from './Fetcher';
+import { CustomRequestConfig, Fetcher } from './Fetcher';
 
 export class FetcherMock extends Fetcher {
   private readonly fixturePath: string;
 
   public constructor(fixturePath: string) {
-    super(winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
+    super(axios, winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] }));
 
     this.fixturePath = fixturePath;
   }
 
-  public override async fetch(ctx: Context, url: URL, init?: RequestInit): Promise<HttpCacheItem> {
+  public override async fetch(ctx: Context, url: URL, requestConfig?: CustomRequestConfig): Promise<AxiosResponse> {
     let path: string;
 
-    if (init?.method === 'POST') {
-      const body = init.body as string;
-      path = `${this.fixturePath}/post-${this.slugifyUrl(url)}-${slugify(body)}`;
-    } else if (init?.method === 'HEAD') {
+    if (requestConfig?.method === 'POST') {
+      const data = requestConfig.data as string;
+      path = `${this.fixturePath}/post-${this.slugifyUrl(url)}-${slugify(data)}`;
+    } else if (requestConfig?.method === 'HEAD') {
       path = `${this.fixturePath}/head-${this.slugifyUrl(url)}`;
     } else {
       path = `${this.fixturePath}/${this.slugifyUrl(url)}`;
     }
 
-    return this.fetchInternal(path, ctx, url, init);
+    return this.fetchInternal(path, ctx, url, requestConfig);
   };
 
-  public override async text(ctx: Context, url: URL, init?: RequestInit): Promise<string> {
+  public override async text(ctx: Context, url: URL, requestConfig?: CustomRequestConfig): Promise<string> {
     const path = `${this.fixturePath}/${this.slugifyUrl(url)}`;
 
-    return (await this.fetchInternal(path, ctx, url, init)).body;
+    return (await this.fetchInternal(path, ctx, url, requestConfig)).data;
   };
 
-  public override async textPost(ctx: Context, url: URL, body: string, init?: RequestInit): Promise<string> {
-    const path = `${this.fixturePath}/post-${this.slugifyUrl(url)}-${slugify(body)}`;
+  public override async textPost(ctx: Context, url: URL, data: string, requestConfig?: CustomRequestConfig): Promise<string> {
+    const path = `${this.fixturePath}/post-${this.slugifyUrl(url)}-${slugify(data)}`;
 
-    return (await this.fetchInternal(path, ctx, url, { ...init, method: 'POST', body })).body;
+    return (await this.fetchInternal(path, ctx, url, { ...requestConfig, method: 'POST', data })).data;
   };
 
-  public override async head(ctx: Context, url: URL, init?: RequestInit): Promise<CachePolicy.Headers> {
+  public override async head(ctx: Context, url: URL, init?: CustomRequestConfig): Promise<AxiosResponse['headers']> {
     const path = `${this.fixturePath}/head-${this.slugifyUrl(url)}`;
 
     return (await this.fetchInternal(path, ctx, url, { ...init, method: 'HEAD' })).headers;
@@ -62,10 +61,10 @@ export class FetcherMock extends Fetcher {
     return slugifiedUrl;
   };
 
-  private readonly fetchInternal = async (path: string, ctx: Context, url: URL, init?: RequestInit): Promise<HttpCacheItem> => {
+  private readonly fetchInternal = async (path: string, ctx: Context, url: URL, requestConfig?: CustomRequestConfig): Promise<AxiosResponse> => {
     const errorPath = `${path}.error`;
 
-    const isHead = init?.method === 'HEAD';
+    const isHead = requestConfig?.method === 'HEAD';
 
     if (fs.existsSync(errorPath)) {
       const message = fs.readFileSync(errorPath).toString();
@@ -78,18 +77,17 @@ export class FetcherMock extends Fetcher {
       const data = fs.readFileSync(path).toString();
 
       return {
-        body: isHead ? '' : data,
+        data: isHead ? '' : data,
         headers: isHead ? JSON.parse(data) : {},
         status: 200,
         statusText: 'OK',
-        ttl: 0,
-        url: url.href,
+        config: { } as InternalAxiosRequestConfig,
       };
     } else {
       let response;
       try {
         if (envGet('TEST_UPDATE_FIXTURES')) {
-          response = await super.fetchWithTimeout(ctx, url, init);
+          response = await super.fetchWithTimeout(ctx, url, requestConfig);
         } else {
           console.error(`No fixture found at "${path}".`);
           process.exit(1);
@@ -107,26 +105,19 @@ export class FetcherMock extends Fetcher {
 
       let result;
       if (isHead) {
-        const headers: Record<string, string> = {};
-
-        response.headers.forEach((value, key) => {
-          headers[key] = value;
-        });
-
-        result = JSON.stringify(headers);
+        result = JSON.stringify(response.headers);
       } else {
-        result = await response.text();
+        result = response.data;
       }
 
       fs.writeFileSync(path, result);
 
       return {
-        body: isHead ? '' : result,
+        data: isHead ? '' : result,
         headers: isHead ? JSON.parse(result) : {},
         status: 200,
         statusText: 'OK',
-        ttl: 0,
-        url: url.href,
+        config: { } as InternalAxiosRequestConfig,
       };
     }
   };
