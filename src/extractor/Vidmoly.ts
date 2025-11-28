@@ -1,12 +1,12 @@
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
-import { Extractor } from './Extractor';
 import {
   buildMediaFlowProxyExtractorStreamUrl,
   guessHeightFromPlaylist,
   supportsMediaFlowProxy,
 } from '../utils';
+import { Extractor } from './Extractor';
 
 export class Vidmoly extends Extractor {
   public readonly id = 'Vidmoly';
