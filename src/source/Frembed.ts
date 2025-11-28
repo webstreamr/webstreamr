@@ -12,7 +12,7 @@ export class Frembed extends Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.fr];
 
-  public readonly baseUrl = 'https://frembed.mom';
+  public readonly baseUrl = 'https://frembed.my'; // TODO: determine this more dynamically, e.g. via https://audin213.com/
 
   private readonly fetcher: Fetcher;
 
@@ -29,7 +29,7 @@ export class Frembed extends Source {
       ? new URL(`/api/series?id=${tmdbId.id}&sa=${tmdbId.season}&epi=${tmdbId.episode}&idType=tmdb`, this.baseUrl)
       : new URL(`/api/films?id=${tmdbId.id}&idType=tmdb`, this.baseUrl);
 
-    const json = await this.fetcher.json(ctx, apiUrl);
+    const json = await this.fetcher.json(ctx, apiUrl, { headers: { Referer: this.baseUrl } });
 
     const urls: URL[] = [];
     for (const key in json) {
