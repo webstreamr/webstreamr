@@ -38,7 +38,7 @@ export class Vidmoly extends Extractor {
 
     // Extract HLS URL
     const sourcesMatch = embedHtml.match(/sources:\s*\[\{file:"(?<url>[^"]+)"/);
-    const mediaUrl = sourcesMatch?.groups?.url;
+    const mediaUrl = sourcesMatch?.groups?.['url'];
 
     let height: number | undefined;
 
