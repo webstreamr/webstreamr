@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.58.1](https://github.com/webstreamr/webstreamr/compare/v0.58.0...v0.58.1) (2025-11-29)
+
+
+### Miscellaneous Chores
+
+* switch to non-alpine based node image ([9f7155f](https://github.com/webstreamr/webstreamr/commit/9f7155f42e2ca68822c9b1c121b6bb3604f2e35d))
+
 ## [0.58.0](https://github.com/webstreamr/webstreamr/compare/v0.57.2...v0.58.0) (2025-11-29)
 
 
