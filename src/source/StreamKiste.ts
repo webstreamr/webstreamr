@@ -35,7 +35,7 @@ export class StreamKiste extends Source {
 
     const $ = cheerio.load(html);
 
-    const title = `${($('meta[property="og:title"]').attr('content') as string).trim()} ${tmdbId.season}x${tmdbId.episode}`;
+    const title = `${($('meta[property="og:title"]').attr('content') as string).trim()} S${tmdbId.season} E${tmdbId.episode}`;
 
     return Promise.all(
       $(`[data-num="${tmdbId.season}x${tmdbId.episode}"]`)

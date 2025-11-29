@@ -26,7 +26,7 @@ export class Cuevana extends Source {
   public async handleInternal(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
 
-    const [name] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId, 'es');
+    const [name, year] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId, 'es');
 
     let pageUrl = await this.fetchPageUrl(ctx, name);
     if (!pageUrl) {
@@ -36,12 +36,14 @@ export class Cuevana extends Source {
     let title: string = name;
 
     if (tmdbId.season) {
-      title += ` ${tmdbId.season}x${tmdbId.episode}`;
+      title += ` S${tmdbId.season} E${tmdbId.episode}`;
 
       pageUrl = await this.fetchEpisodeUrl(ctx, pageUrl, tmdbId);
       if (!pageUrl) {
         return [];
       }
+    } else {
+      title += ` (${year})`;
     }
 
     const html = await this.fetcher.text(ctx, pageUrl);

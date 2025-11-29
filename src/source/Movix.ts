@@ -1,6 +1,6 @@
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode } from '../types';
-import { Fetcher, getTmdbId, Id } from '../utils';
+import { Fetcher, getTmdbId, getTmdbNameAndYear, Id } from '../utils';
 import { Source, SourceResult } from './Source';
 
 interface MovixApiData {
@@ -29,6 +29,7 @@ export class Movix extends Source {
 
   public async handleInternal(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const tmdbId = await getTmdbId(ctx, this.fetcher, id);
+    const [, year] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId);
 
     const apiUrl = tmdbId.season
       ? new URL(`/api/tmdb/tv/${tmdbId.id}?season=${tmdbId.season}&episode=${tmdbId.episode}`, this.baseUrl)
@@ -44,8 +45,8 @@ export class Movix extends Source {
     const urls: URL[] = data['player_links'].map(({ decoded_url }) => new URL(decoded_url));
 
     const title = tmdbId.season
-      ? `${json['tmdb_details']['title']} ${tmdbId.season}x${tmdbId.episode}`
-      : json['tmdb_details']['title'];
+      ? `${json['tmdb_details']['title']} S${tmdbId.season} E${tmdbId.episode}`
+      : `${json['tmdb_details']['title']} (${year})`;
 
     return urls.map(url => ({ url, meta: { countryCodes: [CountryCode.fr], referer: data.iframe_src, title } }));
   };
