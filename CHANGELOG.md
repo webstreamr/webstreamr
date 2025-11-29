@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.58.2](https://github.com/webstreamr/webstreamr/compare/v0.58.1...v0.58.2) (2025-11-29)
+
+
+### Miscellaneous Chores
+
+* remove proxy headers in requests ([6f6a3ae](https://github.com/webstreamr/webstreamr/commit/6f6a3ae2fd58548c66822309e8768ae0ef76d9a3))
+
 ## [0.58.1](https://github.com/webstreamr/webstreamr/compare/v0.58.0...v0.58.1) (2025-11-29)
 
 
