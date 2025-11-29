@@ -219,9 +219,8 @@ export class Fetcher {
 
       this.logger.info(`Query FlareSolverr for ${url.href}`, ctx);
 
-      const body = { cmd: 'request.get', url: url.href, session: 'default' };
-      // @ts-expect-error idjaow awdiajwdoajwdoiajwdoi
-      const challengeResult = await (await this.queuedFetch(ctx, new URL(flareSolverrEndpoint), { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' }, queueLimit: 1, timeout: 15000 })).json() as FlareSolverrResult;
+      const data = { cmd: 'request.get', url: url.href, session: 'default' };
+      const challengeResult = (await this.queuedFetch(ctx, new URL(flareSolverrEndpoint), { method: 'POST', data, headers: { 'Content-Type': 'application/json' }, queueLimit: 1, timeout: 15000 })).data as FlareSolverrResult;
       if (challengeResult.status !== 'ok') {
         this.logger.warn(`FlareSolverr issue: ${JSON.stringify(challengeResult)}`, ctx);
         throw new BlockedError(url, BlockedReason.flaresolverr_failed, {});
