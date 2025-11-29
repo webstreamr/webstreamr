@@ -7,7 +7,7 @@ import { Extractor } from './Extractor';
 export class Fastream extends Extractor {
   public readonly id = 'fastream';
 
-  public readonly label = 'Fastream (via MediaFlow Proxy)';
+  public readonly label = 'Fastream (MFP)';
 
   public override viaMediaFlowProxy = true;
 

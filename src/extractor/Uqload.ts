@@ -7,7 +7,7 @@ import { Extractor } from './Extractor';
 export class Uqload extends Extractor {
   public readonly id = 'uqload';
 
-  public readonly label = 'Uqload (via MediaFlow Proxy)';
+  public readonly label = 'Uqload (MFP)';
 
   public override viaMediaFlowProxy = true;
 

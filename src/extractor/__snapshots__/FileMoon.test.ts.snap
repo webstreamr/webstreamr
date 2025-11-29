@@ -6,7 +6,7 @@ exports[`FileMoon z1ekv717 d 1`] = `
 [
   {
     "format": "hls",
-    "label": "FileMoon (via MediaFlow Proxy)",
+    "label": "FileMoon (MFP)",
     "meta": {
       "countryCodes": [],
       "height": 720,

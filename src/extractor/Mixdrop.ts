@@ -8,7 +8,7 @@ import { Extractor } from './Extractor';
 export class Mixdrop extends Extractor {
   public readonly id = 'mixdrop';
 
-  public readonly label = 'Mixdrop (via MediaFlow Proxy)';
+  public readonly label = 'Mixdrop (MFP)';
 
   public override viaMediaFlowProxy = true;
 

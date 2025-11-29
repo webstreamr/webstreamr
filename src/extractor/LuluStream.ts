@@ -12,7 +12,7 @@ import { Extractor } from './Extractor';
 export class LuluStream extends Extractor {
   public readonly id = 'lulustream';
 
-  public readonly label = 'LuluStream (via MediaFlow Proxy)';
+  public readonly label = 'LuluStream (MFP)';
 
   public override viaMediaFlowProxy = true;
 

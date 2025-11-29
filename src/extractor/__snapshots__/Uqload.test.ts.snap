@@ -6,7 +6,7 @@ exports[`Uqload uqload.net /embed- 1`] = `
 [
   {
     "format": "mp4",
-    "label": "Uqload (via MediaFlow Proxy)",
+    "label": "Uqload (MFP)",
     "meta": {
       "countryCodes": [],
       "height": 360,

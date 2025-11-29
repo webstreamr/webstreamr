@@ -6,7 +6,7 @@ exports[`FileLions filelions f 1`] = `
 [
   {
     "format": "hls",
-    "label": "FileLions (via MediaFlow Proxy)",
+    "label": "FileLions (MFP)",
     "meta": {
       "bytes": 481191526,
       "countryCodes": [],
@@ -24,7 +24,7 @@ exports[`FileLions mivalyo v referer lock 1`] = `
 [
   {
     "format": "hls",
-    "label": "FileLions (via MediaFlow Proxy)",
+    "label": "FileLions (MFP)",
     "meta": {
       "bytes": 2097152,
       "countryCodes": [],

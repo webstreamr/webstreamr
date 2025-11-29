@@ -4,7 +4,7 @@ exports[`Voe embed only urls which otherwise lead to 404 1`] = `
 [
   {
     "format": "hls",
-    "label": "VOE (via MediaFlow Proxy)",
+    "label": "VOE (MFP)",
     "meta": {
       "countryCodes": [],
       "height": 800,
@@ -23,7 +23,7 @@ exports[`Voe jilliandescribecompany 1`] = `
 [
   {
     "format": "hls",
-    "label": "VOE (via MediaFlow Proxy)",
+    "label": "VOE (MFP)",
     "meta": {
       "bytes": 1202590842,
       "countryCodes": [],
@@ -41,7 +41,7 @@ exports[`Voe premium only without resolution 1`] = `
 [
   {
     "format": "hls",
-    "label": "VOE (via MediaFlow Proxy)",
+    "label": "VOE (MFP)",
     "meta": {
       "bytes": 363216240,
       "countryCodes": [],

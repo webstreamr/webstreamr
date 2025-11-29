@@ -6,7 +6,7 @@ exports[`Fastream fastream.to embed 1`] = `
 [
   {
     "format": "hls",
-    "label": "Fastream (via MediaFlow Proxy)",
+    "label": "Fastream (MFP)",
     "meta": {
       "bytes": 1073741824,
       "countryCodes": [],
