@@ -37,6 +37,8 @@ interface FlareSolverrResult {
   version: string;
 }
 
+type ProxyConfig = Pick<AxiosRequestConfig, 'httpAgent' | 'httpsAgent' | 'proxy'>;
+
 export type CustomRequestConfig = AxiosRequestConfig & {
   minCacheTtl?: number;
   queueLimit?: number;
@@ -56,8 +58,7 @@ export class Fetcher {
   private readonly axios: AxiosInstance;
   private readonly logger: winston.Logger;
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  private readonly proxyAgents = new Map<string, Record<'httpAgent' | 'httpsAgent', any>>();
+  private readonly proxyConfig = new Map<string, ProxyConfig>();
   private readonly rateLimitedCache = new Cacheable({ primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }) });
   private readonly semaphores = new Map<string, SemaphoreInterface>();
   private readonly hostUserAgentMap = new Map<string, string>();
@@ -166,9 +167,9 @@ export class Fetcher {
             'X-Forwarded-Proto': forwardedProto,
             'X-Real-IP': ctx.ip,
           }),
-          ...(proxyUrl && this.getProxyAgents(proxyUrl)),
           ...requestConfig?.headers,
         },
+        ...(proxyUrl && this.getProxyConfig(proxyUrl)),
         url: finalUrl.href,
         timeout: this.DEFAULT_TIMEOUT,
         transformResponse: [data => data],
@@ -344,19 +345,19 @@ export class Fetcher {
     return undefined;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  private getProxyAgents(proxyUrl: URL): Record<'httpAgent' | 'httpsAgent', any> {
-    let proxyAgents = this.proxyAgents.get(proxyUrl.href);
+  private getProxyConfig(proxyUrl: URL): ProxyConfig {
+    let proxyConfig = this.proxyConfig.get(proxyUrl.href);
 
-    if (!proxyAgents) {
-      proxyAgents = {
+    if (!proxyConfig) {
+      proxyConfig = {
         httpAgent: proxyUrl.protocol === 'socks5:' ? new SocksProxyAgent(proxyUrl) : new HttpProxyAgent(proxyUrl),
         httpsAgent: proxyUrl.protocol === 'socks5:' ? new SocksProxyAgent(proxyUrl) : new HttpsProxyAgent(proxyUrl),
+        proxy: false,
       };
 
-      this.proxyAgents.set(proxyUrl.href, proxyAgents);
+      this.proxyConfig.set(proxyUrl.href, proxyConfig);
     }
 
-    return proxyAgents;
+    return proxyConfig;
   }
 }
