@@ -25,7 +25,7 @@ export class Vidoza extends Extractor {
   public override normalize(url: URL): URL {
     const id
       = url.pathname.match(/embed-([A-Za-z0-9]+)\.html?/i)?.[1]
-      || url.pathname.match(/\/([A-Za-z0-9]+)\.html?/i)?.[1];
+        || url.pathname.match(/\/([A-Za-z0-9]+)\.html?/i)?.[1];
 
     if (!id) return url;
 
