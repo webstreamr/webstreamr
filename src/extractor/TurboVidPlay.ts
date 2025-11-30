@@ -51,10 +51,13 @@ export class TurboVidPlay extends Extractor {
       throw new NotFoundError();
     }
 
-    const match = html.match(/(?:urlPlay|data-hash)\s*=\s*['"](?<url>[^"']+)/);
+    // Extract media URL via named capture group
+    const match = html.match(
+      /(?:urlPlay|data-hash)\s*=\s*['"](?<url>[^"']+)/,
+    );
 
-    const mediaUrl
-      = match?.groups?.url;
+    const groups = match?.groups as Record<string, string> | undefined;
+    const mediaUrl = groups?.['url'];
 
     if (!mediaUrl) {
       throw new NotFoundError('Video link not found');
@@ -98,7 +101,7 @@ export class TurboVidPlay extends Extractor {
         }
       }
     } catch {
-      // intentionally ignored
+      // Ignore playlist parsing errors
     }
 
     const $ = cheerio.load(html);
