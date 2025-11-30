@@ -23,22 +23,22 @@ export class StreamWish extends Extractor {
     'swishsrv.com', 'iplayerhls.com', 'hlsflast.com', '4yftwvrdz7.sbs', 'ghbrisk.com',
     'hgbazooka.com', 'eb8gfmjn71.sbs', 'cybervynx.com', 'edbrdl7pab.sbs', 'stbhg.click',
     'dhcplay.com', 'strwish.xyz', 'gradehgplus.com', 'tryzendm.com', 'hglink.to', 'dumbalag.com',
-    'haxloppd.com', 'davioad.com', 'uasopt.com'
+    'haxloppd.com', 'davioad.com', 'uasopt.com',
   ];
 
   private readonly dmcaHosts = [
     'hgplaycdn.com', 'habetar.com', 'yuguaab.com',
-    'guxhag.com', 'auvexiug.com', 'xenolyzb.com'
+    'guxhag.com', 'auvexiug.com', 'xenolyzb.com',
   ];
 
   private readonly ruleHosts = [
     'dhcplay.com', 'hglink.to', 'test.hglink.to',
-    'wish-redirect.aiavh.com'
+    'wish-redirect.aiavh.com',
   ];
 
   private readonly mainHosts = [
     'kravaxxa.com', 'davioad.com', 'haxloppd.com',
-    'tryzendm.com', 'dumbalag.com'
+    'tryzendm.com', 'dumbalag.com',
   ];
 
   public supports(_ctx: Context, url: URL): boolean {
@@ -89,13 +89,13 @@ export class StreamWish extends Extractor {
     ctx: Context,
     url: URL,
     meta: Meta,
-    originalUrl?: URL
+    originalUrl?: URL,
   ): Promise<UrlResult[]> {
     const normalized = this.normalize(url);
     const rewritten = this.rewrite(normalized);
 
     const headers = {
-      Referer: meta.referer ?? originalUrl?.href ?? rewritten.href
+      Referer: meta.referer ?? originalUrl?.href ?? rewritten.href,
     };
 
     const proxyUrl = await buildMediaFlowProxyExtractorStreamUrl(
@@ -103,7 +103,7 @@ export class StreamWish extends Extractor {
       this.fetcher,
       this.id,
       rewritten,
-      headers
+      headers,
     );
 
     return [
@@ -114,8 +114,8 @@ export class StreamWish extends Extractor {
         sourceId: this.id,
         ttl: this.ttl,
         requestHeaders: headers,
-        meta
-      }
+        meta,
+      },
     ];
   }
 }
