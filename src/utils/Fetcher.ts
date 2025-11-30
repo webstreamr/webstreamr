@@ -146,6 +146,8 @@ export class Fetcher {
 
       const cookieString = this.cookieJar.getCookieStringSync(url.href);
 
+      const forwardedProto = url.protocol.slice(0, -1);
+
       const hostUserAgent = this.hostUserAgentMap.get(url.host);
 
       response = await this.axios.request({
@@ -155,9 +157,16 @@ export class Fetcher {
           'Accept-Language': 'en',
           ...(url.username && { Authorization: 'Basic ' + Buffer.from(`${url.username}:${url.password}`).toString('base64') }),
           'Priority': 'u=0',
-          'User-Agent': this.hostUserAgentMap.get(url.host) ?? 'Mozilla/5.0',
+          'User-Agent': this.hostUserAgentMap.get(url.host) ?? 'Mozilla',
           ...(hostUserAgent && { 'User-Agent': hostUserAgent }),
           ...(cookieString && { Cookie: cookieString }),
+          ...(ctx.ip && {
+            'Forwarded': `by=unknown;for=${ctx.ip};host=${url.host};proto=${forwardedProto}`,
+            'X-Forwarded-For': ctx.ip,
+            'X-Forwarded-Host': url.host,
+            'X-Forwarded-Proto': forwardedProto,
+            'X-Real-IP': ctx.ip,
+          }),
           ...requestConfig?.headers,
         },
         ...(proxyUrl && this.getProxyConfig(proxyUrl)),
