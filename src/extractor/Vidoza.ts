@@ -1,10 +1,10 @@
 import bytes from 'bytes';
 import { NotFoundError } from '../error';
+import { Context, Format, Meta, UrlResult } from '../types';
 import {
   buildMediaFlowProxyExtractorStreamUrl,
   supportsMediaFlowProxy,
 } from '../utils';
-import { Context, Format, Meta, UrlResult } from '../types';
 import { Extractor } from './Extractor';
 
 export class Vidoza extends Extractor {
@@ -23,8 +23,8 @@ export class Vidoza extends Extractor {
   }
 
   public override normalize(url: URL): URL {
-    const id =
-      url.pathname.match(/embed-([A-Za-z0-9]+)\.html?/i)?.[1]
+    const id
+      = url.pathname.match(/embed-([A-Za-z0-9]+)\.html?/i)?.[1]
       || url.pathname.match(/\/([A-Za-z0-9]+)\.html?/i)?.[1];
 
     if (!id) return url;
@@ -91,11 +91,11 @@ export class Vidoza extends Extractor {
   }
 
   private extractLabelFromHtml(html: string): string | null {
-    const regex =
-      /["']?\s*(?:file|src)\s*["']?\s*[:=,]?\s*["'][^"']+(?:[^}>\]]+)["']?\s*res\s*["']?\s*[:=]\s*["']?(\d{3,4})/i;
+    const regex
+      = /["']?\s*(?:file|src)\s*["']?\s*[:=,]?\s*["'][^"']+(?:[^}>\]]+)["']?\s*res\s*["']?\s*[:=]\s*["']?(\d{3,4})/i;
 
-    const m =
-      html.match(regex);
+    const m
+      = html.match(regex);
 
     return m && m[1] ? m[1] : null;
   }
