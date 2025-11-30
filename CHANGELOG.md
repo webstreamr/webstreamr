@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.58.4](https://github.com/webstreamr/webstreamr/compare/v0.58.3...v0.58.4) (2025-11-30)
+
+
+### Miscellaneous Chores
+
+* noop ([825d97a](https://github.com/webstreamr/webstreamr/commit/825d97adc4985beef5acf7a67d3ed7f91e2b9f78))
+
 ## [0.58.3](https://github.com/webstreamr/webstreamr/compare/v0.58.2...v0.58.3) (2025-11-30)
 
 
