@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.58.3](https://github.com/webstreamr/webstreamr/compare/v0.58.2...v0.58.3) (2025-11-30)
+
+
+### Miscellaneous Chores
+
+* adapt default user agent slightly ([1dd9d32](https://github.com/webstreamr/webstreamr/commit/1dd9d324e6a39b70bd7c171aed5853430b0f6159))
+
+
+### Reverts
+
+* "chore: remove proxy headers in requests" ([afbc16a](https://github.com/webstreamr/webstreamr/commit/afbc16a3ec717275f4f9af134edd9a2542a781c0))
+
 ## [0.58.2](https://github.com/webstreamr/webstreamr/compare/v0.58.1...v0.58.2) (2025-11-29)
 
 
