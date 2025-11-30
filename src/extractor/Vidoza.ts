@@ -1,11 +1,11 @@
+import bytes from 'bytes';
 import { NotFoundError } from '../error';
-import { Context, Format, Meta, UrlResult } from '../types';
-import { Extractor } from './Extractor';
 import {
   buildMediaFlowProxyExtractorStreamUrl,
   supportsMediaFlowProxy,
 } from '../utils';
-import bytes from 'bytes';
+import { Context, Format, Meta, UrlResult } from '../types';
+import { Extractor } from './Extractor';
 
 export class Vidoza extends Extractor {
   public readonly id = 'Vidoza';
@@ -17,15 +17,15 @@ export class Vidoza extends Extractor {
 
   public supports(ctx: Context, url: URL): boolean {
     return (
-      this.domains.some(d => url.host.includes(d)) &&
-      supportsMediaFlowProxy(ctx)
+      this.domains.some(d => url.host.includes(d))
+      && supportsMediaFlowProxy(ctx)
     );
   }
 
   public override normalize(url: URL): URL {
     const id =
-      url.pathname.match(/embed-([A-Za-z0-9]+)\.html?/i)?.[1] ||
-      url.pathname.match(/\/([A-Za-z0-9]+)\.html?/i)?.[1];
+      url.pathname.match(/embed-([A-Za-z0-9]+)\.html?/i)?.[1]
+      || url.pathname.match(/\/([A-Za-z0-9]+)\.html?/i)?.[1];
 
     if (!id) return url;
 
@@ -35,14 +35,13 @@ export class Vidoza extends Extractor {
   protected override async extractInternal(
     ctx: Context,
     url: URL,
-    meta: Meta
+    meta: Meta,
   ): Promise<UrlResult[]> {
-
     const headers: Record<string, string> = {
-      Referer: 'https://vidoza.net/',
+      'Referer': 'https://vidoza.net/',
       'User-Agent':
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-      Accept: '*/*',
+      'Accept': '*/*',
       'Accept-Language': 'en-US,en;q=0.9',
     };
 
@@ -70,7 +69,7 @@ export class Vidoza extends Extractor {
       this.fetcher,
       this.id,
       url,
-      headers
+      headers,
     );
 
     return [
@@ -95,7 +94,9 @@ export class Vidoza extends Extractor {
     const regex =
       /["']?\s*(?:file|src)\s*["']?\s*[:=,]?\s*["'][^"']+(?:[^}>\]]+)["']?\s*res\s*["']?\s*[:=]\s*["']?(\d{3,4})/i;
 
-    const m = html.match(regex);
+    const m =
+      html.match(regex);
+
     return m && m[1] ? m[1] : null;
   }
 }
