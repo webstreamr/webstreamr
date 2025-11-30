@@ -62,7 +62,7 @@ export class Vidoza extends Extractor {
       }
     }
 
-    const extractedLabel = this.extractLabelFromHtml(html); // returns "720" etc.
+    const extractedLabel = this.extractLabelFromHtml(html);
     const height = extractedLabel ? parseInt(extractedLabel, 10) : null;
 
     const proxiedUrl = await buildMediaFlowProxyExtractorStreamUrl(
@@ -77,14 +77,14 @@ export class Vidoza extends Extractor {
       {
         url: proxiedUrl,
         format: Format.mp4,
-        label: extractedLabel ? `${extractedLabel}p` : this.label,
+        label: this.label,
         ttl: this.ttl,
         requestHeaders: headers,
         sourceId: `${this.id}_${meta.countryCodes?.join('_') ?? 'all'}`,
         meta: {
           ...meta,
           title,
-          ...(height ? { height } : {}),
+          ...(height !== null ? { height } : {}),
           ...(bytesSize && bytesSize > 16777216 ? { bytes: bytesSize } : {}),
         },
       },
