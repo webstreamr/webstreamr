@@ -8,6 +8,7 @@ import {
 } from '../utils';
 import { Extractor } from './Extractor';
 
+/** @see https://github.com/Gujal00/ResolveURL/blob/master/script.module.resolveurl/lib/resolveurl/plugins/vidmoly.py */
 export class Vidmoly extends Extractor {
   public readonly id = 'Vidmoly';
   public readonly label = 'VidMoly(MFP)';
