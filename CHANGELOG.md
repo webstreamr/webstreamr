@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.58.5](https://github.com/webstreamr/webstreamr/compare/v0.58.4...v0.58.5) (2025-12-01)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#542](https://github.com/webstreamr/webstreamr/issues/542)) ([d7e82ce](https://github.com/webstreamr/webstreamr/commit/d7e82ceff3c31f1f1a6ffb9c50ddd9dff41e8e34))
+* **extractor:** add new VOE domains ([cba3c8b](https://github.com/webstreamr/webstreamr/commit/cba3c8bbaea45996647d1a0a14a63a829fc5ce91))
+* **extractor:** match new DoodStream domain ([4a14ad7](https://github.com/webstreamr/webstreamr/commit/4a14ad7fb0dfbdb53f6a6cdd475f33cdd45842e6))
+* introduce helper for better and central season/episode formatting ([5c04104](https://github.com/webstreamr/webstreamr/commit/5c04104ad21f8b0c21a4228893fa8ed8bd8351e5))
+
+
+### Code Refactoring
+
+* **extractor:** move label format handling into central place ([ef2b672](https://github.com/webstreamr/webstreamr/commit/ef2b6721c72283dde9b3a56f92ab7c435a4daac1))
+
 ## [0.58.4](https://github.com/webstreamr/webstreamr/compare/v0.58.3...v0.58.4) (2025-11-30)
 
 
