@@ -12,7 +12,7 @@ import { Extractor } from './Extractor';
 export class Voe extends Extractor {
   public readonly id = 'voe';
 
-  public readonly label = 'VOE (MFP)';
+  public readonly label = 'VOE';
 
   public override viaMediaFlowProxy = true;
 

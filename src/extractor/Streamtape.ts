@@ -10,7 +10,9 @@ import { Extractor } from './Extractor';
 export class Streamtape extends Extractor {
   public readonly id = 'streamtape';
 
-  public readonly label = 'Streamtape (MFP)';
+  public readonly label = 'Streamtape';
+
+  public override viaMediaFlowProxy = true;
 
   public supports(ctx: Context, url: URL): boolean {
     const supportedDomain = null !== url.host.match(/streamtape/)

@@ -27,7 +27,9 @@ export abstract class Extractor {
 
   public async extract(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     try {
-      return await this.extractInternal(ctx, url, meta);
+      return (await this.extractInternal(ctx, url, meta)).map(
+        urlResult => ({ ...urlResult, label: this.formatLabel(urlResult.label) }),
+      );
     } catch (error) {
       if (error instanceof NotFoundError) {
         return [];
@@ -39,11 +41,15 @@ export abstract class Extractor {
           format: Format.unknown,
           isExternal: true,
           error,
-          label: this.label,
+          label: this.formatLabel(this.label),
           sourceId: `${this.id}`,
           meta,
         },
       ];
     }
   };
+
+  private formatLabel(label: string): string {
+    return this.viaMediaFlowProxy ? `${label} (MFP)` : label;
+  }
 }

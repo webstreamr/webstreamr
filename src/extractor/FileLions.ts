@@ -9,7 +9,7 @@ import { Extractor } from './Extractor';
 export class FileLions extends Extractor {
   public readonly id = 'filelions';
 
-  public readonly label = 'FileLions (MFP)';
+  public readonly label = 'FileLions';
 
   public override viaMediaFlowProxy = true;
 

@@ -12,7 +12,7 @@ import { Extractor } from './Extractor';
 export class FileMoon extends Extractor {
   public readonly id = 'filemoon';
 
-  public readonly label = 'FileMoon (MFP)';
+  public readonly label = 'FileMoon';
 
   public override viaMediaFlowProxy = true;
 
