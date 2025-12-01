@@ -48,7 +48,7 @@ export class HomeCine extends Source {
       pageHtml = await this.fetcher.text(ctx, pageUrl);
     }
 
-    const title = tmdbId.season ? `${name} S${tmdbId.season} E${tmdbId.episode}` : `${name} (${year})`;
+    const title = tmdbId.season ? `${name} ${tmdbId.formatSeasonAndEpisode()}` : `${name} (${year})`;
 
     const $ = cheerio.load(pageHtml);
 

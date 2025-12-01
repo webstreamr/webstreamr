@@ -26,4 +26,8 @@ export class TmdbId {
   public toString(): string {
     return this.season ? `${this.id}:${this.season}:${this.episode}` : `${this.id}`;
   }
+
+  public formatSeasonAndEpisode(): string {
+    return `S${String(this.season).padStart(2, '0')}E${String(this.episode).padStart(2, '0')}`;
+  }
 }

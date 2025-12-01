@@ -28,7 +28,7 @@ export class VixSrc extends Source {
 
     let title: string = name;
     if (tmdbId.season) {
-      title += ` S${tmdbId.season} E${tmdbId.episode}`;
+      title += ` ${tmdbId.formatSeasonAndEpisode()}`;
     } else {
       title += ` (${year})`;
     }

@@ -36,7 +36,7 @@ export class Cuevana extends Source {
     let title: string = name;
 
     if (tmdbId.season) {
-      title += ` S${tmdbId.season} E${tmdbId.episode}`;
+      title += ` ${tmdbId.formatSeasonAndEpisode()}`;
 
       pageUrl = await this.fetchEpisodeUrl(ctx, pageUrl, tmdbId);
       if (!pageUrl) {

@@ -37,7 +37,7 @@ export class CineHDPlus extends Source {
 
     const countryCodes = [($('.details__langs').html() as string).includes('Latino') ? CountryCode.mx : CountryCode.es];
 
-    const title = `${($('meta[property="og:title"]').attr('content') as string).trim()} S${tmdbId.season} E${tmdbId.episode}`;
+    const title = `${($('meta[property="og:title"]').attr('content') as string).trim()} ${tmdbId.formatSeasonAndEpisode()}`;
 
     return Promise.all(
       $(`[data-num="${tmdbId.season}x${tmdbId.episode}"]`)

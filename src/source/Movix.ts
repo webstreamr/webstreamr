@@ -45,7 +45,7 @@ export class Movix extends Source {
     const urls: URL[] = data['player_links'].map(({ decoded_url }) => new URL(decoded_url));
 
     const title = tmdbId.season
-      ? `${json['tmdb_details']['title']} S${tmdbId.season} E${tmdbId.episode}`
+      ? `${json['tmdb_details']['title']} ${tmdbId.formatSeasonAndEpisode()}`
       : `${json['tmdb_details']['title']} (${year})`;
 
     return urls.map(url => ({ url, meta: { countryCodes: [CountryCode.fr], referer: data.iframe_src, title } }));

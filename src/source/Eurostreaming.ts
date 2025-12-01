@@ -37,7 +37,7 @@ export class Eurostreaming extends Source {
 
     const $ = cheerio.load(html);
 
-    const title = `${name} S${tmdbId.season} E${tmdbId.episode}`;
+    const title = `${name} ${tmdbId.formatSeasonAndEpisode()}`;
 
     return Promise.all(
       $(`[data-num="${tmdbId.season}x${tmdbId.episode}"]`)

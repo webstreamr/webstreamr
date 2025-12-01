@@ -44,7 +44,7 @@ export class Frembed extends Source {
     }
 
     const title = tmdbId.season
-      ? `${json['title']} S${tmdbId.season} E${tmdbId.episode}`
+      ? `${json['title']} ${tmdbId.formatSeasonAndEpisode()}`
       : `${json['title']} (${year})`;
 
     return urls.map(url => ({ url, meta: { countryCodes: [CountryCode.fr], referer: this.baseUrl, title } }));
