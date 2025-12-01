@@ -37,6 +37,7 @@ export class Voe extends Extractor {
         'bradleyviewdoctor.com',
         'brittneystandardwestern.com',
         'brucevotewithin.com',
+        'christopheruntilpoint.com',
         'chromotypic.com',
         'chuckle-tube.com',
         'cindyeyefinal.com',
@@ -108,6 +109,7 @@ export class Voe extends Extractor {
         'uptodatefinishconferenceroom.com',
         'v-o-e-unblock.com',
         'valeronevijao.com',
+        'walterprettytheir.com',
         'wolfdyslectic.com',
         'yodelswartlike.com',
       ].includes(url.host);
