@@ -7,6 +7,7 @@ import {
 } from '../utils';
 import { Extractor } from './Extractor';
 
+/** @see https://github.com/Gujal00/ResolveURL/blob/master/script.module.resolveurl/lib/resolveurl/plugins/tuboviplay.py */
 export class TurboVidPlay extends Extractor {
   public readonly id = 'TurboVidPlay';
   public readonly label = 'TurboVidPlay';
