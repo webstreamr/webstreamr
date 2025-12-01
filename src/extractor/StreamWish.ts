@@ -2,6 +2,7 @@ import { Context, Format, Meta, UrlResult } from '../types';
 import { buildMediaFlowProxyExtractorStreamUrl } from '../utils';
 import { Extractor } from './Extractor';
 
+/** @see https://github.com/Gujal00/ResolveURL/blob/master/script.module.resolveurl/lib/resolveurl/plugins/streamwish.py */
 export class StreamWish extends Extractor {
   public readonly id = 'StreamWish';
   public readonly label = 'StreamWish(MFP)';
