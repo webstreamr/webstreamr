@@ -7,6 +7,7 @@ import {
 } from '../utils';
 import { Extractor } from './Extractor';
 
+/** @see https://github.com/Gujal00/ResolveURL/blob/master/script.module.resolveurl/lib/resolveurl/plugins/vidoza.py */
 export class Vidoza extends Extractor {
   public readonly id = 'Vidoza';
   public readonly label = 'Vidoza (via MediaFlow Proxy)';
