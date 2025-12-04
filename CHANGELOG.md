@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.58.6](https://github.com/webstreamr/webstreamr/compare/v0.58.5...v0.58.6) (2025-12-04)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency express to v5.2.0 ([#547](https://github.com/webstreamr/webstreamr/issues/547)) ([e092d72](https://github.com/webstreamr/webstreamr/commit/e092d7247d5085f7ac707e56f29c104af2196303))
+* **deps:** update dependency express to v5.2.1 ([#549](https://github.com/webstreamr/webstreamr/issues/549)) ([f549a32](https://github.com/webstreamr/webstreamr/commit/f549a32dd27629984df9706b98dc9aabf38cc784))
+* **deps:** update dependency ts-jest to v29.4.6 ([#546](https://github.com/webstreamr/webstreamr/issues/546)) ([d3dbedf](https://github.com/webstreamr/webstreamr/commit/d3dbedf18a582da1f4045820b6b76171d42791d6))
+* **deps:** update dependency typescript-eslint to v8.48.1 ([#550](https://github.com/webstreamr/webstreamr/issues/550)) ([d7392c0](https://github.com/webstreamr/webstreamr/commit/d7392c09d2b6eaeefdf797cb4df76583419f1488))
+
+
+### Bug Fixes
+
+* **extractor:** handle DoodStream Not Found ([ae00c43](https://github.com/webstreamr/webstreamr/commit/ae00c431060c3bdf2184ffddc335cac5dd6f4cc4))
+
 ## [0.58.5](https://github.com/webstreamr/webstreamr/compare/v0.58.4...v0.58.5) (2025-12-01)
 
 
