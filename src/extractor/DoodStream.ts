@@ -28,14 +28,14 @@ export class DoodStream extends Extractor {
 
     const html = await this.fetcher.text(ctx, url, { headers });
 
-    const passMd5Match = html.match(/\/pass_md5\/[\w-]+\/([\w-]+)/);
-    if (!passMd5Match) {
+    if (/Video not found/.test(html)) {
       throw new NotFoundError();
     }
 
+    const passMd5Match = html.match(/\/pass_md5\/[\w-]+\/([\w-]+)/) as string[];
     const token = passMd5Match[1] as string;
 
-    const baseUrl = await this.fetcher.text(ctx, new URL(passMd5Match[0], url.origin), { headers: { Referer: url.href } });
+    const baseUrl = await this.fetcher.text(ctx, new URL(passMd5Match[0] as string, url.origin), { headers: { Referer: url.href } });
 
     const $ = cheerio.load(html);
     const title = $('title').text().trim().replace(/ - DoodStream$/, '').trim();

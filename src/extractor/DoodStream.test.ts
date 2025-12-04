@@ -25,4 +25,8 @@ describe('DoodStream', () => {
   test('cloudflare storage', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://doodstream.com/e/wfpwtsgyr1xi'))).toMatchSnapshot();
   });
+
+  test('not found', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://myvidplay.com/e/cz7cus0bvlzr'))).toMatchSnapshot();
+  });
 });
