@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.58.7](https://github.com/webstreamr/webstreamr/compare/v0.58.6...v0.58.7) (2025-12-06)
+
+
+### Miscellaneous Chores
+
+* **extractor:** add kinoger.ru support to VOE ([50c5d3a](https://github.com/webstreamr/webstreamr/commit/50c5d3a1cd764086573c7c851595245c2f551140))
+
+
+### Bug Fixes
+
+* **source:** return all KinoGer domains, fixes VOE results ([cf0be47](https://github.com/webstreamr/webstreamr/commit/cf0be4712e0b8f718e9b23910ebbcab65d825130))
+* **source:** update MegaKino domain ([0f7bc7c](https://github.com/webstreamr/webstreamr/commit/0f7bc7c07f11e188cfd1d372e02d8cef18f32573))
+
+
+### Reverts
+
+* fix(source): remove KinoGer ([8dae887](https://github.com/webstreamr/webstreamr/commit/8dae887ecab9c45fa5ac7419019d91459a15bfbb))
+
 ## [0.58.6](https://github.com/webstreamr/webstreamr/compare/v0.58.5...v0.58.6) (2025-12-04)
 
 
