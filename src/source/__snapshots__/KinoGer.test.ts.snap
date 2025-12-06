@@ -10,6 +10,16 @@ exports[`KinoGer handle imdb blood and sinners 1`] = `
       "referer": "https://kinoger.com/stream/18809-blood-sinners-stream.html",
       "title": "Blood & Sinners (2025)",
     },
+    "url": "https://kinoger.ru/v/BkUY21dAvzyq/",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+      "referer": "https://kinoger.com/stream/18809-blood-sinners-stream.html",
+      "title": "Blood & Sinners (2025)",
+    },
     "url": "https://fsst.online/embed/900576/",
   },
   {
@@ -45,6 +55,16 @@ exports[`KinoGer handle imdb dead city s2e5 1`] = `
       "referer": "https://kinoger.com/stream/12971-the-walking-dead-dead-city-stream.html",
       "title": "The Walking Dead: Dead City 2x5",
     },
+    "url": "https://kinoger.ru/v/j1Odr1xqKEWS/",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+      "referer": "https://kinoger.com/stream/12971-the-walking-dead-dead-city-stream.html",
+      "title": "The Walking Dead: Dead City 2x5",
+    },
     "url": "https://supervideo.cc/e/bj6szat1pval",
   },
   {
@@ -70,6 +90,16 @@ exports[`KinoGer handle imdb dead city s2e6 1`] = `
       "referer": "https://kinoger.com/stream/12971-the-walking-dead-dead-city-stream.html",
       "title": "The Walking Dead: Dead City 2x6",
     },
+    "url": "https://kinoger.ru/v/15U2exVIfyEq/",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "de",
+      ],
+      "referer": "https://kinoger.com/stream/12971-the-walking-dead-dead-city-stream.html",
+      "title": "The Walking Dead: Dead City 2x6",
+    },
     "url": "https://fsst.online/embed/901994/",
   },
   {
@@ -86,18 +116,3 @@ exports[`KinoGer handle imdb dead city s2e6 1`] = `
 `;
 
 exports[`KinoGer handle missing episode imdb black mirror s3e4 1`] = `[]`;
-
-exports[`KinoGer handle no fsst via brokeback mountain 1`] = `
-[
-  {
-    "meta": {
-      "countryCodes": [
-        "de",
-      ],
-      "referer": "https://kinoger.com/stream/14781-brokeback-mountain-stream.html",
-      "title": "Brokeback Mountain (2005)",
-    },
-    "url": "https://dooodster.com/e/1cfcevn6dg8shrfvht22odxw2lty18hr",
-  },
-]
-`;

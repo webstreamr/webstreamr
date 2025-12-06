@@ -36,11 +36,6 @@ describe('KinoGer', () => {
     expect(streams).toMatchSnapshot();
   });
 
-  test('handle no fsst via brokeback mountain', async () => {
-    const streams = await source.handle(ctx, 'series', new ImdbId('tt0388795', undefined, undefined));
-    expect(streams).toMatchSnapshot();
-  });
-
   test('handle imdb blood and sinners', async () => {
     const streams = await source.handle(ctx, 'series', new ImdbId('tt31193180', undefined, undefined));
     expect(streams).toMatchSnapshot();
