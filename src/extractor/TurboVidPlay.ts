@@ -57,7 +57,7 @@ export class TurboVidPlay extends Extractor {
     );
 
     const groups = match?.groups as Record<string, string> | undefined;
-    const mediaUrl = groups?.url;
+    const mediaUrl = groups?.['url'];
 
     if (!mediaUrl) {
       throw new NotFoundError('Video link not found');
