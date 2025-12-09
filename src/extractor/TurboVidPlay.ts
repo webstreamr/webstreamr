@@ -43,7 +43,6 @@ export class TurboVidPlay extends Extractor {
       Referer: url.origin,
     };
 
-    // ---- 1. Fetch embed HTML ----
     const html = await this.fetcher.text(ctx, url, headers);
     if (
       !html
@@ -53,27 +52,24 @@ export class TurboVidPlay extends Extractor {
       throw new NotFoundError();
     }
 
-    // ---- 2. Extract media URL via named capture group ----
     const match = html.match(
       /(?:urlPlay|data-hash)\s*=\s*['"](?<url>[^"']+)/,
     );
 
     const groups = match?.groups as Record<string, string> | undefined;
-    const mediaUrl = groups?.['url'];
+    const mediaUrl = groups?.url;
 
     if (!mediaUrl) {
       throw new NotFoundError('Video link not found');
     }
 
-    // ---- 3. Build master playlist URL ----
-    const masterUrl =
-      mediaUrl.startsWith('//')
+    const masterUrl
+      = mediaUrl.startsWith('//')
         ? `https:${mediaUrl}`
         : mediaUrl.startsWith('/')
           ? url.origin + mediaUrl
           : mediaUrl;
 
-    // ---- 4. Parse playlist → height + /data/ direct stream ----
     let directDataStream: string | null = null;
     let height: number | undefined;
 
@@ -93,7 +89,6 @@ export class TurboVidPlay extends Extractor {
         const variantUrl = v[2];
         if (!attrs || !variantUrl) continue;
 
-        // Always attempt to extract height (max height wins)
         const resMatch = attrs.match(/RESOLUTION=\d+x(\d+)/);
         if (resMatch) {
           const h = Number(resMatch[1]);
@@ -102,11 +97,10 @@ export class TurboVidPlay extends Extractor {
           }
         }
 
-        // Decide if direct playback possible (first /data/ wins)
         if (!directDataStream && variantUrl.includes('/data/')) {
           const base = new URL(masterUrl);
-          directDataStream =
-            variantUrl.startsWith('http')
+          directDataStream
+            = variantUrl.startsWith('http')
               ? variantUrl
               : variantUrl.startsWith('/')
                 ? new URL(variantUrl, base.origin).href
@@ -114,14 +108,12 @@ export class TurboVidPlay extends Extractor {
         }
       }
     } catch {
-      // Ignore playlist parsing errors → fallback to MediaFlow only
+      // ignore → fallback to MediaFlow
     }
 
-    // ---- 5. Title ----
     const $ = cheerio.load(html);
     const title = $('title').text().trim() || this.label;
 
-    // ---- 6. Direct play if /data/ available ----
     if (directDataStream) {
       return [
         {
@@ -140,7 +132,6 @@ export class TurboVidPlay extends Extractor {
       ];
     }
 
-    // ---- 7. MediaFlow proxy fallback ----
     const proxiedUrl = await buildMediaFlowProxyExtractorStreamUrl(
       ctx,
       this.fetcher,
