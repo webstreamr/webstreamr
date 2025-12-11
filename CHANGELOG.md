@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.58.8](https://github.com/webstreamr/webstreamr/compare/v0.58.7...v0.58.8) (2025-12-11)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#562](https://github.com/webstreamr/webstreamr/issues/562)) ([5ff8a49](https://github.com/webstreamr/webstreamr/commit/5ff8a49be5a509df4b9503fb2ee42c9723207de5))
+* **deps:** update dependency axios-cache-interceptor to v1.9.0 ([#566](https://github.com/webstreamr/webstreamr/issues/566)) ([32b49d4](https://github.com/webstreamr/webstreamr/commit/32b49d49a957626311c655ea403b1b9d8977187b))
+* **deps:** update dependency typescript-eslint to v8.49.0 ([#567](https://github.com/webstreamr/webstreamr/issues/567)) ([580845a](https://github.com/webstreamr/webstreamr/commit/580845ae77c11652fafca932f79885d8f6738c56))
+* **deps:** update dependency winston to v3.19.0 ([#559](https://github.com/webstreamr/webstreamr/issues/559)) ([3955820](https://github.com/webstreamr/webstreamr/commit/3955820eb96a65c1971f7a1eaaa180c5216e8fd4))
+* **source:** remove VidSrc which does not add value atm ([1bd85fb](https://github.com/webstreamr/webstreamr/commit/1bd85fb4ad038ff979cb372fd0c8577c54aaf775))
+
+
+### Bug Fixes
+
+* **source:** update MegaKino domain ([42b9cbe](https://github.com/webstreamr/webstreamr/commit/42b9cbe38fc3449f64499419e35f380e1cdd2c80))
+
+
+### Code Refactoring
+
+* add generic source and extractor ids to meta and generalize bingeGroup generation ([d7edb51](https://github.com/webstreamr/webstreamr/commit/d7edb51698216ca56ce416fef0405f985dd85f3f))
+
 ## [0.58.7](https://github.com/webstreamr/webstreamr/compare/v0.58.6...v0.58.7) (2025-12-06)
 
 
