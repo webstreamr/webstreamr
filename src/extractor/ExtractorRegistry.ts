@@ -54,7 +54,7 @@ export class ExtractorRegistry {
 
     this.logger.info(`Extract ${url} using ${extractor.id} extractor`, ctx);
 
-    const urlResults = await extractor.extract(ctx, normalizedUrl, { ...meta, countryCodes: meta?.countryCodes ?? [] });
+    const urlResults = await extractor.extract(ctx, normalizedUrl, { ...meta, countryCodes: meta?.countryCodes ?? [], extractorId: extractor.id });
 
     if (!urlResults.length) {
       await this.urlResultCache.set<UrlResult[]>(cacheKey, urlResults, 43200000); // 12h

@@ -74,6 +74,8 @@ export interface Meta {
   referer?: string | undefined;
   title?: string | undefined;
   sourceLabel?: string | undefined;
+  sourceId?: string | undefined;
+  extractorId?: string | undefined;
 }
 
 export enum Format {
@@ -89,7 +91,6 @@ export interface UrlResult {
   ytId?: string;
   error?: unknown;
   label: string;
-  sourceId: string;
   ttl?: number;
   meta?: Meta;
   notWebReady?: boolean;

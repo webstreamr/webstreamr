@@ -36,7 +36,6 @@ export class Mixdrop extends Extractor {
         url: buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Mixdrop', url),
         format: Format.mp4,
         label: this.label,
-        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
           ...meta,

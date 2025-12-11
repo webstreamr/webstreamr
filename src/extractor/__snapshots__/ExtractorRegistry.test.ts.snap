@@ -10,8 +10,8 @@ exports[`ExtractorRegistry returns external URLs if enabled by config 1`] = `
     "label": "mixdrop.ag",
     "meta": {
       "countryCodes": [],
+      "extractorId": "external",
     },
-    "sourceId": "external_",
     "ttl": 21600000,
     "url": "https://mixdrop.ag/e/3nzwveprim63or6",
   },
@@ -28,8 +28,8 @@ exports[`ExtractorRegistry returns external url for error 1`] = `
     "label": "Dropload",
     "meta": {
       "countryCodes": [],
+      "extractorId": "dropload",
     },
-    "sourceId": "dropload",
     "url": "https://dropload.io/mocked-blocked.html",
   },
 ]

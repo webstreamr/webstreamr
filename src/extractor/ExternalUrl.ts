@@ -20,7 +20,6 @@ export class ExternalUrl extends Extractor {
         format: Format.unknown,
         isExternal: true,
         label: `${url.host}`,
-        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta,
       },

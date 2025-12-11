@@ -102,7 +102,6 @@ describe('resolve', () => {
             isExternal: true,
             error: new BlockedError(new URL('https://example.com'), BlockedReason.cloudflare_challenge, {}),
             label: 'hoster.com',
-            sourceId: '',
             meta: {
               countryCodes: [CountryCode.de],
             },
@@ -113,7 +112,6 @@ describe('resolve', () => {
             isExternal: true,
             error: new BlockedError(new URL('https://example.com'), BlockedReason.cloudflare_censor, {}),
             label: 'hoster.com',
-            sourceId: '',
             meta: {
               countryCodes: [CountryCode.de],
             },
@@ -124,7 +122,6 @@ describe('resolve', () => {
             isExternal: true,
             error: new BlockedError(new URL('https://example.com'), BlockedReason.media_flow_proxy_auth, {}),
             label: 'hoster.com',
-            sourceId: '',
             meta: {
               countryCodes: [CountryCode.de],
             },
@@ -135,7 +132,6 @@ describe('resolve', () => {
             isExternal: true,
             error: new BlockedError(new URL('https://example.com'), BlockedReason.unknown, {}),
             label: 'hoster.com',
-            sourceId: '',
             meta: {
               countryCodes: [CountryCode.de],
             },
@@ -144,7 +140,6 @@ describe('resolve', () => {
             url: new URL('https://working2.com'),
             format: Format.unknown,
             label: 'working1',
-            sourceId: 'hostercom',
             meta: {
               countryCodes: [CountryCode.de],
             },
@@ -155,7 +150,6 @@ describe('resolve', () => {
             isExternal: true,
             error: new TooManyRequestsError(new URL('https://example.com'), 10),
             label: 'hoster.com',
-            sourceId: '',
             meta: {
               countryCodes: [CountryCode.de],
             },
@@ -166,7 +160,6 @@ describe('resolve', () => {
             isExternal: true,
             error: new TooManyTimeoutsError(new URL('https://example.com')),
             label: 'hoster.com',
-            sourceId: '',
             meta: {
               countryCodes: [CountryCode.de],
             },
@@ -175,7 +168,6 @@ describe('resolve', () => {
             url: new URL('https://working1.com'),
             format: Format.unknown,
             label: 'working2',
-            sourceId: 'hostercom',
             meta: {
               countryCodes: [CountryCode.de],
             },
@@ -186,7 +178,6 @@ describe('resolve', () => {
             isExternal: true,
             error: new TypeError(),
             label: 'hoster.com',
-            sourceId: '',
             meta: {
               countryCodes: [CountryCode.de],
             },
@@ -197,7 +188,6 @@ describe('resolve', () => {
             isExternal: true,
             error: new TimeoutError(new URL('https://example2.com')),
             label: 'hoster.com',
-            sourceId: '',
             meta: {
               countryCodes: [CountryCode.de],
             },
@@ -208,7 +198,6 @@ describe('resolve', () => {
             isExternal: true,
             error: new QueueIsFullError(new URL('https://example3.com')),
             label: 'hoster.com',
-            sourceId: '',
             meta: {
               countryCodes: [CountryCode.de],
             },
@@ -219,7 +208,6 @@ describe('resolve', () => {
             isExternal: true,
             error: new HttpError(new URL('https://example4.com'), 500, 'Internal Server Error', { 'x-foo': 'bar' }),
             label: 'hoster.com',
-            sourceId: '',
             meta: {
               countryCodes: [CountryCode.de],
             },
@@ -230,7 +218,6 @@ describe('resolve', () => {
             isExternal: true,
             error: new HttpError(new URL('https://example5.com'), 418, 'I\'m a tea pot', { 'x-foo': 'bar' }),
             label: 'hoster.com',
-            sourceId: '',
             meta: {
               countryCodes: [CountryCode.de],
             },

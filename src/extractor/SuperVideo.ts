@@ -49,7 +49,6 @@ export class SuperVideo extends Extractor {
         url: m3u8Url,
         format: Format.hls,
         label: this.label,
-        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
           ...meta,

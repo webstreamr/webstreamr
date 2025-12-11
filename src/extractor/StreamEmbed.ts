@@ -27,7 +27,6 @@ export class StreamEmbed extends Extractor {
         url: new URL(`/m3u8/${video.uid}/${video.md5}/master.txt?s=1&id=${video.id}&cache=${video.status}`, url.origin),
         format: Format.hls,
         label: this.label,
-        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
           ...meta,

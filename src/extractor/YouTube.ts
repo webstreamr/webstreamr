@@ -25,7 +25,6 @@ export class YouTube extends Extractor {
         format: Format.unknown,
         ytId: url.searchParams.get('v') as string,
         label: this.label,
-        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
           ...meta,

@@ -9,10 +9,10 @@ exports[`StreamEmbed watch.gxplayer.xyz 1`] = `
     "label": "StreamEmbed",
     "meta": {
       "countryCodes": [],
+      "extractorId": "streamembed",
       "height": 720,
       "title": "Baymax - Riesiges Robowabohu.mp4",
     },
-    "sourceId": "streamembed_",
     "ttl": 900000,
     "url": "https://watch.gxplayer.xyz/m3u8/3/30b4a92517ace5825f5944c8a794ad3e/master.txt?s=1&id=11782&cache=1",
   },

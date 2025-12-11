@@ -63,7 +63,6 @@ export class Streamtape extends Extractor {
         url: buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Streamtape', url, headers),
         format: Format.mp4,
         label: this.label,
-        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
           ...meta,

@@ -5,7 +5,7 @@ exports[`resolve adds error info 1`] = `
   "streams": [
     {
       "behaviorHints": {
-        "bingeGroup": "webstreamr-hostercom",
+        "bingeGroup": "webstreamr-undefined-undefined-de",
         "notWebReady": true,
       },
       "name": "WebStreamr 🇩🇪",
@@ -14,7 +14,7 @@ exports[`resolve adds error info 1`] = `
     },
     {
       "behaviorHints": {
-        "bingeGroup": "webstreamr-hostercom",
+        "bingeGroup": "webstreamr-undefined-undefined-de",
         "notWebReady": true,
       },
       "name": "WebStreamr 🇩🇪",
@@ -30,6 +30,7 @@ exports[`resolve adds error info 2`] = `
   "streams": [
     {
       "behaviorHints": {
+        "bingeGroup": "webstreamr-undefined-undefined-de",
         "notWebReady": true,
       },
       "externalUrl": "https://example5.com/",
@@ -39,6 +40,7 @@ exports[`resolve adds error info 2`] = `
     },
     {
       "behaviorHints": {
+        "bingeGroup": "webstreamr-undefined-undefined-de",
         "notWebReady": true,
       },
       "externalUrl": "https://example4.com/",
@@ -48,6 +50,7 @@ exports[`resolve adds error info 2`] = `
     },
     {
       "behaviorHints": {
+        "bingeGroup": "webstreamr-undefined-undefined-de",
         "notWebReady": true,
       },
       "externalUrl": "https://example3.com/",
@@ -57,6 +60,7 @@ exports[`resolve adds error info 2`] = `
     },
     {
       "behaviorHints": {
+        "bingeGroup": "webstreamr-undefined-undefined-de",
         "notWebReady": true,
       },
       "externalUrl": "https://example2.com/",
@@ -66,6 +70,7 @@ exports[`resolve adds error info 2`] = `
     },
     {
       "behaviorHints": {
+        "bingeGroup": "webstreamr-undefined-undefined-de",
         "notWebReady": true,
       },
       "externalUrl": "https://example2.com/",
@@ -75,6 +80,7 @@ exports[`resolve adds error info 2`] = `
     },
     {
       "behaviorHints": {
+        "bingeGroup": "webstreamr-undefined-undefined-de",
         "notWebReady": true,
       },
       "externalUrl": "https://example.com/",
@@ -84,6 +90,7 @@ exports[`resolve adds error info 2`] = `
     },
     {
       "behaviorHints": {
+        "bingeGroup": "webstreamr-undefined-undefined-de",
         "notWebReady": true,
       },
       "externalUrl": "https://example.com/",
@@ -93,6 +100,7 @@ exports[`resolve adds error info 2`] = `
     },
     {
       "behaviorHints": {
+        "bingeGroup": "webstreamr-undefined-undefined-de",
         "notWebReady": true,
       },
       "externalUrl": "https://example.com/",
@@ -102,6 +110,7 @@ exports[`resolve adds error info 2`] = `
     },
     {
       "behaviorHints": {
+        "bingeGroup": "webstreamr-undefined-undefined-de",
         "notWebReady": true,
       },
       "externalUrl": "https://example.com/",
@@ -111,6 +120,7 @@ exports[`resolve adds error info 2`] = `
     },
     {
       "behaviorHints": {
+        "bingeGroup": "webstreamr-undefined-undefined-de",
         "notWebReady": true,
       },
       "externalUrl": "https://example.com/",
@@ -120,6 +130,7 @@ exports[`resolve adds error info 2`] = `
     },
     {
       "behaviorHints": {
+        "bingeGroup": "webstreamr-undefined-undefined-de",
         "notWebReady": true,
       },
       "externalUrl": "https://example.com/",
@@ -129,7 +140,7 @@ exports[`resolve adds error info 2`] = `
     },
     {
       "behaviorHints": {
-        "bingeGroup": "webstreamr-hostercom",
+        "bingeGroup": "webstreamr-undefined-undefined-de",
         "notWebReady": true,
       },
       "name": "WebStreamr 🇩🇪",
@@ -138,7 +149,7 @@ exports[`resolve adds error info 2`] = `
     },
     {
       "behaviorHints": {
-        "bingeGroup": "webstreamr-hostercom",
+        "bingeGroup": "webstreamr-undefined-undefined-de",
         "notWebReady": true,
       },
       "name": "WebStreamr 🇩🇪",
@@ -186,7 +197,7 @@ exports[`resolve returns sorted results 1`] = `
 [
   {
     "behaviorHints": {
-      "bingeGroup": "webstreamr-dropload_de",
+      "bingeGroup": "webstreamr-meinecloud-dropload-de",
       "notWebReady": true,
       "videoSize": 1395864371,
     },
@@ -197,7 +208,7 @@ exports[`resolve returns sorted results 1`] = `
   },
   {
     "behaviorHints": {
-      "bingeGroup": "webstreamr-dropload_it",
+      "bingeGroup": "webstreamr-mostraguarda-dropload-it",
       "notWebReady": true,
       "videoSize": 1181116006,
     },
@@ -208,7 +219,7 @@ exports[`resolve returns sorted results 1`] = `
   },
   {
     "behaviorHints": {
-      "bingeGroup": "webstreamr-supervideo_it",
+      "bingeGroup": "webstreamr-mostraguarda-supervideo-it",
       "notWebReady": true,
       "videoSize": 1181116006,
     },
@@ -219,7 +230,7 @@ exports[`resolve returns sorted results 1`] = `
   },
   {
     "behaviorHints": {
-      "bingeGroup": "webstreamr-supervideo_de",
+      "bingeGroup": "webstreamr-meinecloud-supervideo-de",
       "notWebReady": true,
       "videoSize": 1073741824,
     },
@@ -230,7 +241,7 @@ exports[`resolve returns sorted results 1`] = `
   },
   {
     "behaviorHints": {
-      "bingeGroup": "webstreamr-doodstream_de",
+      "bingeGroup": "webstreamr-meinecloud-doodstream-de",
       "notWebReady": true,
       "proxyHeaders": {
         "request": {
@@ -246,7 +257,7 @@ exports[`resolve returns sorted results 1`] = `
   },
   {
     "behaviorHints": {
-      "bingeGroup": "webstreamr-doodstream_it",
+      "bingeGroup": "webstreamr-mostraguarda-doodstream-it",
       "notWebReady": true,
       "proxyHeaders": {
         "request": {
@@ -267,7 +278,7 @@ exports[`resolve returns sorted results 2`] = `
 [
   {
     "behaviorHints": {
-      "bingeGroup": "webstreamr-dropload_de",
+      "bingeGroup": "webstreamr-meinecloud-dropload-de",
       "notWebReady": true,
       "videoSize": 1395864371,
     },
@@ -278,7 +289,7 @@ exports[`resolve returns sorted results 2`] = `
   },
   {
     "behaviorHints": {
-      "bingeGroup": "webstreamr-dropload_it",
+      "bingeGroup": "webstreamr-mostraguarda-dropload-it",
       "notWebReady": true,
       "videoSize": 1181116006,
     },
@@ -289,7 +300,7 @@ exports[`resolve returns sorted results 2`] = `
   },
   {
     "behaviorHints": {
-      "bingeGroup": "webstreamr-supervideo_it",
+      "bingeGroup": "webstreamr-mostraguarda-supervideo-it",
       "notWebReady": true,
       "videoSize": 1181116006,
     },
@@ -300,7 +311,7 @@ exports[`resolve returns sorted results 2`] = `
   },
   {
     "behaviorHints": {
-      "bingeGroup": "webstreamr-supervideo_de",
+      "bingeGroup": "webstreamr-meinecloud-supervideo-de",
       "notWebReady": true,
       "videoSize": 1073741824,
     },
@@ -311,7 +322,7 @@ exports[`resolve returns sorted results 2`] = `
   },
   {
     "behaviorHints": {
-      "bingeGroup": "webstreamr-doodstream_de",
+      "bingeGroup": "webstreamr-meinecloud-doodstream-de",
       "notWebReady": true,
       "proxyHeaders": {
         "request": {
@@ -327,7 +338,7 @@ exports[`resolve returns sorted results 2`] = `
   },
   {
     "behaviorHints": {
-      "bingeGroup": "webstreamr-doodstream_it",
+      "bingeGroup": "webstreamr-mostraguarda-doodstream-it",
       "notWebReady": true,
       "proxyHeaders": {
         "request": {
@@ -343,7 +354,7 @@ exports[`resolve returns sorted results 2`] = `
   },
   {
     "behaviorHints": {
-      "bingeGroup": "webstreamr-external_de",
+      "bingeGroup": "webstreamr-meinecloud-external-de",
       "notWebReady": true,
     },
     "externalUrl": "https://mixdrop.ag/e/3nzwveprim63or6",
@@ -352,7 +363,7 @@ exports[`resolve returns sorted results 2`] = `
   },
   {
     "behaviorHints": {
-      "bingeGroup": "webstreamr-external_it",
+      "bingeGroup": "webstreamr-mostraguarda-external-it",
       "notWebReady": true,
     },
     "externalUrl": "https://mixdrop.ag/e/vk196d6xfzwwo1",

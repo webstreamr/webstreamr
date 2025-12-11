@@ -8,8 +8,8 @@ exports[`ExternalUrl 404 - not found 1`] = `
     "label": "streamtape.com",
     "meta": {
       "countryCodes": [],
+      "extractorId": "external",
     },
-    "sourceId": "external_",
     "ttl": 21600000,
     "url": "https://streamtape.com/e/gjA1OQ4klyHxgJ",
   },
@@ -24,8 +24,8 @@ exports[`ExternalUrl netu.fanstream.us 1`] = `
     "label": "netu.fanstream.us",
     "meta": {
       "countryCodes": [],
+      "extractorId": "external",
     },
-    "sourceId": "external_",
     "ttl": 21600000,
     "url": "https://netu.fanstream.us/e/0DFgfkcXOsDP",
   },

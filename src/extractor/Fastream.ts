@@ -39,7 +39,6 @@ export class Fastream extends Extractor {
         url: playlistUrl,
         format: Format.hls,
         label: this.label,
-        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
           ...meta,

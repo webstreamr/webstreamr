@@ -10,10 +10,10 @@ exports[`LuluStream streamhihi 1`] = `
     "meta": {
       "bytes": 1288490188,
       "countryCodes": [],
+      "extractorId": "lulustream",
       "height": 720,
       "title": "The Thursday Murder Club 2025 1080p NF WEB-DL DDP5 1 Atmos H 264-playWEB",
     },
-    "sourceId": "lulustream_",
     "ttl": 900000,
     "url": "https://mediaflow.test.org/proxy/hls/manifest.m3u8?api_password=test&h_user-agent=Mozilla%2F5.0+%28Windows+NT+10.0%3B+Win64%3B+x64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F136.0.0.0+Safari%2F537.36&h_referer=https%3A%2F%2Fstreamhihi.com%2Fe%2Fmk9m58lz8ts6&d=https%3A%2F%2Fh1gdnnp1dr11.tnmr.org%2Fhls2%2F02%2F02416%2Fqx1ysro2ny1o_h%2Fmaster.m3u8%3Ft%3DC1RS64a-9j6bSDO9TmHU9jIZpVb59jsWah7j-KgJkRg%26s%3D1759753708%26e%3D28800%26f%3D12081096%26i%3D0.3%26sp%3D0",
   },
@@ -28,10 +28,10 @@ exports[`LuluStream streamhihi d 1`] = `
     "meta": {
       "bytes": 1288490188,
       "countryCodes": [],
+      "extractorId": "lulustream",
       "height": 720,
       "title": "The Thursday Murder Club 2025 1080p NF WEB-DL DDP5 1 Atmos H 264-playWEB",
     },
-    "sourceId": "lulustream_",
     "ttl": 900000,
     "url": "https://mediaflow.test.org/proxy/hls/manifest.m3u8?api_password=test&h_user-agent=Mozilla%2F5.0+%28Windows+NT+10.0%3B+Win64%3B+x64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F136.0.0.0+Safari%2F537.36&h_referer=https%3A%2F%2Fstreamhihi.com%2Fe%2Fmk9m58lz8ts6&d=https%3A%2F%2Fh1gdnnp1dr11.tnmr.org%2Fhls2%2F02%2F02416%2Fqx1ysro2ny1o_h%2Fmaster.m3u8%3Ft%3DC1RS64a-9j6bSDO9TmHU9jIZpVb59jsWah7j-KgJkRg%26s%3D1759753708%26e%3D28800%26f%3D12081096%26i%3D0.3%26sp%3D0",
   },

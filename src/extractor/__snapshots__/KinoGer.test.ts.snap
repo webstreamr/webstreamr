@@ -7,13 +7,13 @@ exports[`KinoGer Blood & Sinners 1`] = `
     "label": "KinoGer",
     "meta": {
       "countryCodes": [],
+      "extractorId": "kinoger",
       "height": 1080,
       "title": "Blood.and.Sinners.2025.mkv",
     },
     "requestHeaders": {
       "Referer": "https://kinoger.re",
     },
-    "sourceId": "kinoger_",
     "ttl": 21600000,
     "url": "https://scvo.processorprediction.shop/v4/bgm/ge5fhb/cf-master.txt?v=1748766126",
   },
@@ -27,13 +27,13 @@ exports[`KinoGer Dead City 1`] = `
     "label": "KinoGer",
     "meta": {
       "countryCodes": [],
+      "extractorId": "kinoger",
       "height": 1080,
       "title": "the.walking.dead.dead.city.s02e05.german.dl.1080p.web.x264-wvf.mkv",
     },
     "requestHeaders": {
       "Referer": "https://kinoger.re",
     },
-    "sourceId": "kinoger_",
     "ttl": 21600000,
     "url": "https://sipt.responseautomation.cyou/v4/vz1/x6tsx9/cf-master.txt?v=1748957184",
   },
@@ -47,13 +47,13 @@ exports[`KinoGer filma365.strp2p.site 1`] = `
     "label": "KinoGer",
     "meta": {
       "countryCodes": [],
+      "extractorId": "kinoger",
       "height": 640,
       "title": "Our.Fault.2025.mp4",
     },
     "requestHeaders": {
       "Referer": "https://filma365.strp2p.site",
     },
-    "sourceId": "kinoger_",
     "ttl": 21600000,
     "url": "https://slp.seawindart.space/v4/s93/vih6bx/cf-master.txt?v=1760732665",
   },

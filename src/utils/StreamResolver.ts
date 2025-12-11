@@ -50,7 +50,7 @@ export class StreamResolver {
         const sourceResults = await source.handle(ctx, type, id);
 
         const sourceUrlResults = await Promise.all(
-          sourceResults.map(({ url, meta }) => this.extractorRegistry.handle(ctx, url, { ...meta, sourceLabel: source.label })),
+          sourceResults.map(({ url, meta }) => this.extractorRegistry.handle(ctx, url, { ...meta, sourceLabel: source.label, sourceId: source.id })),
         );
 
         urlResults.push(...sourceUrlResults.flat());
@@ -100,7 +100,7 @@ export class StreamResolver {
           name: this.buildName(ctx, urlResult),
           title: this.buildTitle(ctx, urlResult),
           behaviorHints: {
-            ...(urlResult.sourceId && { bingeGroup: `webstreamr-${urlResult.sourceId}` }),
+            bingeGroup: `webstreamr-${urlResult.meta?.sourceId}-${urlResult.meta?.extractorId}-${urlResult.meta?.countryCodes?.join('_')}`,
             ...((urlResult.format !== Format.mp4 || urlResult.url.protocol !== 'https:') && { notWebReady: true }),
             ...(urlResult.requestHeaders !== undefined && {
               notWebReady: true,
@@ -182,7 +182,7 @@ export class StreamResolver {
     titleLines.push(titleDetailsLine.join(' '));
 
     if (urlResult.error) {
-      titleLines.push(logErrorAndReturnNiceString(ctx, this.logger, urlResult.sourceId, urlResult.error));
+      titleLines.push(logErrorAndReturnNiceString(ctx, this.logger, urlResult.meta?.sourceId ?? '', urlResult.error));
     }
 
     return titleLines.join('\n');

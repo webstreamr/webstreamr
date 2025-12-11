@@ -9,10 +9,10 @@ exports[`Uqload uqload.net /embed- 1`] = `
     "label": "Uqload (MFP)",
     "meta": {
       "countryCodes": [],
+      "extractorId": "uqload",
       "height": 360,
       "title": "Black Mirror S07E06 MULTI VFF 1080p WEBrip EAC3 5 1 x265-TyHD",
     },
-    "sourceId": "uqload_",
     "ttl": 900000,
     "url": "https://mediaflow.test.org/extractor/video?host=Uqload&api_password=test&d=https%3A%2F%2Fuqload.net%2Fz0xbr87oz637.html&redirect_stream=true",
   },
