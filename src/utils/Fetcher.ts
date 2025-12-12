@@ -92,6 +92,17 @@ export class Fetcher {
     return (await this.queuedFetch(ctx, url, { ...requestConfig, method: 'HEAD' })).headers;
   };
 
+  public async getFinalRedirectUrl(ctx: Context, url: URL, requestConfig?: CustomRequestConfig): Promise<URL> {
+    const newRequestConfig = { ...requestConfig, method: 'HEAD', maxRedirects: 0 };
+
+    const response = await this.queuedFetch(ctx, url, newRequestConfig);
+    if (response.status >= 300 && response.status < 400) {
+      return await this.getFinalRedirectUrl(ctx, new URL(response.headers['location']), newRequestConfig);
+    }
+
+    return url;
+  }
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public async json(ctx: Context, url: URL, requestConfig?: CustomRequestConfig): Promise<any> {
     const jsonRequestConfig = {
@@ -300,16 +311,16 @@ export class Fetcher {
     return sem;
   }
 
-  private async queuedFetch(ctx: Context, url: URL, init?: CustomRequestConfig): Promise<AxiosResponse> {
-    const queueLimit = init?.queueLimit ?? this.DEFAULT_QUEUE_LIMIT;
-    const queueTimeout = init?.queueTimeout ?? this.DEFAULT_QUEUE_TIMEOUT;
+  private async queuedFetch(ctx: Context, url: URL, requestConfig?: CustomRequestConfig): Promise<AxiosResponse> {
+    const queueLimit = requestConfig?.queueLimit ?? this.DEFAULT_QUEUE_LIMIT;
+    const queueTimeout = requestConfig?.queueTimeout ?? this.DEFAULT_QUEUE_TIMEOUT;
 
     const semaphore = this.getSemaphore(url, queueLimit, queueTimeout);
 
     const [,release] = await semaphore.acquire();
 
     try {
-      return await this.fetchWithTimeout(ctx, url, init);
+      return await this.fetchWithTimeout(ctx, url, requestConfig);
     } finally {
       release();
     }

@@ -1,4 +1,5 @@
 import * as cheerio from 'cheerio';
+import memoize from 'memoizee';
 import { ContentType } from 'stremio-addon-sdk';
 import { Cookie } from 'tough-cookie';
 import { Context, CountryCode } from '../types';
@@ -14,7 +15,7 @@ export class MegaKino extends Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.de];
 
-  public readonly baseUrl = 'https://megakino.club'; // TODO: determine this more dynamically since cookie fetching does not work otherwise
+  public readonly baseUrl = 'https://megakino.club';
 
   private readonly fetcher: Fetcher;
 
@@ -22,12 +23,17 @@ export class MegaKino extends Source {
     super();
 
     this.fetcher = fetcher;
+
+    this.getBaseUrl = memoize(this.getBaseUrl, {
+      maxAge: 3600000, // 1 hour
+      normalizer: () => 'baseUrl',
+    });
   }
 
   public async handleInternal(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
     const imdbId = await getImdbId(ctx, this.fetcher, id);
 
-    const tokenResponse = await this.fetcher.fetch(ctx, new URL('/?yg=token', this.baseUrl), { method: 'HEAD' });
+    const tokenResponse = await this.fetcher.fetch(ctx, new URL('/?yg=token', await this.getBaseUrl(ctx)), { method: 'HEAD' });
 
     const cookie = Cookie.parse((tokenResponse.headers['set-cookie'] as string[])[0] as string) as Cookie;
 
@@ -56,7 +62,7 @@ export class MegaKino extends Source {
     form.append('subaction', 'search');
     form.append('story', `${imdbId.id}`);
 
-    const postUrl = new URL(this.baseUrl);
+    const postUrl = await this.getBaseUrl(ctx);
 
     const html = await this.fetcher.textPost(
       ctx,
@@ -76,5 +82,11 @@ export class MegaKino extends Source {
     return $('#dle-content a[href].poster:first')
       .map((_i, el) => new URL($(el).attr('href') as string))
       .get(0);
+  };
+
+  private readonly getBaseUrl = async (ctx: Context): Promise<URL> => {
+    console.log('get base url');
+
+    return await this.fetcher.getFinalRedirectUrl(ctx, new URL(this.baseUrl));
   };
 }

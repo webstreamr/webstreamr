@@ -6,8 +6,8 @@
 <meta name="description" content="MegaKino – Dein Streaming-Portal für die besten Filme und Serien! Entdecke aktuelle Blockbuster, Klassiker und Neuerscheinungen in HD-Qualität. Genieße Action, Drama, Komödien, Thriller, Sci-Fi und mehr – jederzeit und überall.">
 <meta name="keywords" content="Filme online, Filme streamen, kostenlose Filme, neue Filme 2024, Kinofilme, Serien online, beste Filme, Blockbuster, HD Filme, Streaming kostenlos, Actionfilme, Abenteuerfilme, Komödien, Krimis, Dramen, Fantasyfilme, Horrorfilme, Thriller, Romantikfilme, Sci-Fi Filme, Animationsfilme, Dokumentationen, Familienfilme, historische Filme, Kriegsfilme, Westernfilme, TV-Filme, MegaKino Streaming, Filme in HD, Filmgenres entdecken">
 <meta name="generator" content="MegaKino">
-<link rel="search" type="application/opensearchdescription+xml" href="https://megakino.club/index.php?do=opensearch" title="MEGAKino - Filme und Serien Kostenlos in HD online anschauen auf Deutsch">
-<link rel="alternate" type="application/rss+xml" title="MEGAKino - Filme und Serien Kostenlos in HD online anschauen auf Deutsch" href="https://megakino.club/rss.xml">
+<link rel="search" type="application/opensearchdescription+xml" href="https://megakino.one/index.php?do=opensearch" title="MEGAKino - Filme und Serien Kostenlos in HD online anschauen auf Deutsch">
+<link rel="alternate" type="application/rss+xml" title="MEGAKino - Filme und Serien Kostenlos in HD online anschauen auf Deutsch" href="https://megakino.one/rss.xml">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="theme-color" content="#303d4a">
 	<link rel="preload" href="/templates/popcornie-dark/css/common.css" as="style">
@@ -30,15 +30,14 @@
 	
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q50V6DX0B"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q157F80YP2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-0Q50V6DX0B');
+  gtag('config', 'G-Q157F80YP2');
 </script>
-
 
 </head>
 
@@ -81,7 +80,7 @@
 					<div class="side-block js-this-in-mobile-menu">
 						<div class="side-block__title">Was interessiert Sie?</div>
 						<ul class="side-block__content side-block__menu" data-showitems="10" itemscope itemtype="http://schema.org/SiteNavigationElement"> 
-													<li><a href="https://megakino.club/films/" itemprop="url"><font itemprop="name">Filme</font></a><span style="float: right">4912</span></li><li><a href="https://megakino.club/kinofilme/" itemprop="url"><font itemprop="name">Kinofilme</font></a><span style="float: right">201</span></li><li><a href="https://megakino.club/serials/" itemprop="url"><font itemprop="name">Serien</font></a><span style="float: right">844</span></li><li><a href="https://megakino.club/multfilm/" itemprop="url"><font itemprop="name">Animation</font></a><span style="float: right">301</span></li><li><a href="https://megakino.club/documentary/" itemprop="url"><font itemprop="name">Dokumentationen</font></a><span style="float: right">75</span></li>
+													<li><a href="https://megakino.one/films/" itemprop="url"><font itemprop="name">Filme</font></a><span style="float: right">4913</span></li><li><a href="https://megakino.one/kinofilme/" itemprop="url"><font itemprop="name">Kinofilme</font></a><span style="float: right">201</span></li><li><a href="https://megakino.one/serials/" itemprop="url"><font itemprop="name">Serien</font></a><span style="float: right">845</span></li><li><a href="https://megakino.one/multfilm/" itemprop="url"><font itemprop="name">Animation</font></a><span style="float: right">301</span></li><li><a href="https://megakino.one/documentary/" itemprop="url"><font itemprop="name">Dokumentationen</font></a><span style="float: right">75</span></li>
 
 						</ul>
 					</div>
@@ -90,27 +89,27 @@
 					<div class="side-block">
 						<div class="side-block__title">Sammlung</div>
 						<div class="side-block__content collection-scroll">
-							<a href="https://megakino.club/collection/2092-die-besten-weihnachtsfilme.html" class="custom-collection">
+							<a href="https://megakino.one/collection/2092-die-besten-weihnachtsfilme.html" class="custom-collection">
   <div class="custom-collection-image"><img class="xfieldimage collection_cover" data-src="/uploads/posts/2022-12/merry.webp" alt=""></div>
   <div class="custom-collection-title">Die besten Weihnachtsfilme</div>
 </a>
-<a href="https://megakino.club/collection/412-batman-filme-die-komplette-chronologie.html" class="custom-collection">
+<a href="https://megakino.one/collection/412-batman-filme-die-komplette-chronologie.html" class="custom-collection">
   <div class="custom-collection-image"><img class="xfieldimage collection_cover" data-src="/uploads/posts/2022-02/batman.webp" alt=""></div>
   <div class="custom-collection-title">Batman Filme - Die Komplette Chronologie</div>
 </a>
-<a href="https://megakino.club/collection/127-marvel-filme-chronologischer.html" class="custom-collection">
+<a href="https://megakino.one/collection/127-marvel-filme-chronologischer.html" class="custom-collection">
   <div class="custom-collection-image"><img class="xfieldimage collection_cover" data-src="/uploads/posts/2022-01/mcu.webp" alt=""></div>
   <div class="custom-collection-title">Marvel Filme - Die Komplette Chronologie</div>
 </a>
-<a href="https://megakino.club/collection/181-harry-potter-die-komplette-chronologie.html" class="custom-collection">
+<a href="https://megakino.one/collection/181-harry-potter-die-komplette-chronologie.html" class="custom-collection">
   <div class="custom-collection-image"><img class="xfieldimage collection_cover" data-src="/uploads/posts/2022-01/harry.webp" alt=""></div>
   <div class="custom-collection-title">Harry Potter - Die Komplette Chronologie</div>
 </a>
-<a href="https://megakino.club/collection/136-star-wars-die-komplette-chronologie.html" class="custom-collection">
+<a href="https://megakino.one/collection/136-star-wars-die-komplette-chronologie.html" class="custom-collection">
   <div class="custom-collection-image"><img class="xfieldimage collection_cover" data-src="/uploads/posts/2022-01/starwars.webp" alt=""></div>
   <div class="custom-collection-title">Star Wars – Die Komplette Chronologie</div>
 </a>
-<a href="https://megakino.club/collection/135-fast-and-furious-chronologischer.html" class="custom-collection">
+<a href="https://megakino.one/collection/135-fast-and-furious-chronologischer.html" class="custom-collection">
   <div class="custom-collection-image"><img class="xfieldimage collection_cover" data-src="/uploads/posts/2022-01/forsag.webp" alt=""></div>
   <div class="custom-collection-title">Fast and Furious - Die Komplette Chronologie</div>
 </a>
@@ -122,7 +121,7 @@
 					<div class="side-block js-this-in-mobile-menu">
 						<div class="side-block__title">Genres</div>
 						<ul class="side-block__content side-block__menu" data-showitems="10"> 
-													<li><a href="https://megakino.club/multfilm/">Animation</a><span style="float: right">301</span></li><li><a href="https://megakino.club/action/">Action</a><span style="float: right">1594</span></li><li><a href="https://megakino.club/adventure/">Adventure</a><span style="float: right">905</span></li><li><a href="https://megakino.club/comedy/">Comedy</a><span style="float: right">1660</span></li><li><a href="https://megakino.club/crime/">Crime</a><span style="float: right">746</span></li><li><a href="https://megakino.club/documentary/">Dokumentationen</a><span style="float: right">75</span></li><li><a href="https://megakino.club/drama/">Drama</a><span style="float: right">2292</span></li><li><a href="https://megakino.club/family/">Family</a><span style="float: right">484</span></li><li><a href="https://megakino.club/fantasy/">Fantasy</a><span style="float: right">645</span></li><li><a href="https://megakino.club/history/">History</a><span style="float: right">232</span></li><li><a href="https://megakino.club/horror/">Horror</a><span style="float: right">845</span></li><li><a href="https://megakino.club/music/">Music</a><span style="float: right">108</span></li><li><a href="https://megakino.club/mystery/">Mystery</a><span style="float: right">389</span></li><li><a href="https://megakino.club/romance/">Romance</a><span style="float: right">526</span></li><li><a href="https://megakino.club/science-fiction/">Sci-Fi</a><span style="float: right">729</span></li><li><a href="https://megakino.club/tv-movie/">TV Movie</a><span style="float: right">56</span></li><li><a href="https://megakino.club/thriller/">Thriller</a><span style="float: right">1607</span></li><li><a href="https://megakino.club/war/">War</a><span style="float: right">144</span></li><li><a href="https://megakino.club/western/">Western</a><span style="float: right">86</span></li>
+													<li><a href="https://megakino.one/multfilm/">Animation</a><span style="float: right">301</span></li><li><a href="https://megakino.one/action/">Action</a><span style="float: right">1594</span></li><li><a href="https://megakino.one/adventure/">Adventure</a><span style="float: right">905</span></li><li><a href="https://megakino.one/comedy/">Comedy</a><span style="float: right">1662</span></li><li><a href="https://megakino.one/crime/">Crime</a><span style="float: right">746</span></li><li><a href="https://megakino.one/documentary/">Dokumentationen</a><span style="float: right">75</span></li><li><a href="https://megakino.one/drama/">Drama</a><span style="float: right">2292</span></li><li><a href="https://megakino.one/family/">Family</a><span style="float: right">484</span></li><li><a href="https://megakino.one/fantasy/">Fantasy</a><span style="float: right">645</span></li><li><a href="https://megakino.one/history/">History</a><span style="float: right">232</span></li><li><a href="https://megakino.one/horror/">Horror</a><span style="float: right">845</span></li><li><a href="https://megakino.one/music/">Music</a><span style="float: right">108</span></li><li><a href="https://megakino.one/mystery/">Mystery</a><span style="float: right">389</span></li><li><a href="https://megakino.one/romance/">Romance</a><span style="float: right">526</span></li><li><a href="https://megakino.one/science-fiction/">Sci-Fi</a><span style="float: right">729</span></li><li><a href="https://megakino.one/tv-movie/">TV Movie</a><span style="float: right">56</span></li><li><a href="https://megakino.one/thriller/">Thriller</a><span style="float: right">1607</span></li><li><a href="https://megakino.one/war/">War</a><span style="float: right">144</span></li><li><a href="https://megakino.one/western/">Western</a><span style="float: right">86</span></li>
 
 
 						</ul>
@@ -144,21 +143,21 @@
 		<div class="lcomm__date">29.11.25</div>
 	</div>
 	<div class="lcomm__text">Beste Serie</div>
-	<a class="lcomm__link ws-nowrap icon-at-left" href="https://megakino.club/serials/5877-stranger-things-5-stafffel.html#comment"><span class="fal fa-arrow-circle-right"></span>Stranger Things - 5 Stafffel</a>
+	<a class="lcomm__link ws-nowrap icon-at-left" href="https://megakino.one/serials/5877-stranger-things-5-stafffel.html#comment"><span class="fal fa-arrow-circle-right"></span>Stranger Things - 5 Stafffel</a>
 </div><div class="lcomm">
 	<div class="lcomm__meta d-flex ai-center">
 		<div class="lcomm__author flex-grow-1 ws-nowrap">E</div>
 		<div class="lcomm__date">29.11.25</div>
 	</div>
 	<div class="lcomm__text">Liebe den Film.Er ist so gut gemacht.??</div>
-	<a class="lcomm__link ws-nowrap icon-at-left" href="https://megakino.club/adventure/5015-niko-reise-zu-den-polarlichtern.html#comment"><span class="fal fa-arrow-circle-right"></span>Niko – Reise zu den Polarlichtern</a>
+	<a class="lcomm__link ws-nowrap icon-at-left" href="https://megakino.one/adventure/5015-niko-reise-zu-den-polarlichtern.html#comment"><span class="fal fa-arrow-circle-right"></span>Niko – Reise zu den Polarlichtern</a>
 </div><div class="lcomm">
 	<div class="lcomm__meta d-flex ai-center">
 		<div class="lcomm__author flex-grow-1 ws-nowrap">Ksecret</div>
 		<div class="lcomm__date">28.11.25</div>
 	</div>
 	<div class="lcomm__text">Geile Serie sehr empfehlenswert</div>
-	<a class="lcomm__link ws-nowrap icon-at-left" href="https://megakino.club/drama/3985-stranger-things-staffel-2.html#comment"><span class="fal fa-arrow-circle-right"></span>Stranger Things - Staffel 2</a>
+	<a class="lcomm__link ws-nowrap icon-at-left" href="https://megakino.one/drama/3985-stranger-things-staffel-2.html#comment"><span class="fal fa-arrow-circle-right"></span>Stranger Things - Staffel 2</a>
 </div>
 						</div>
 					</div>
@@ -169,12 +168,15 @@
 
 
 				<main class="col-main flex-grow-1 d-flex fd-column grid-2">
-					
+					<div class="message-info">
+	<div class="message-info__title">Information</div>
+	<div class="message-info__content">Unfortunately, site search yielded no results. Try to change or shorten your request. </div>
+</div>
 					
 
 					
 					
-					<div id="dle-content"><form name="fullsearch" id="fullsearch" action="https://megakino.club/index.php?do=search" method="post">
+					<div id="dle-content"><form name="fullsearch" id="fullsearch" action="https://megakino.one/index.php?do=search" method="post">
 <input type="hidden" name="do" id="do" value="search" />
 <input type="hidden" name="subaction" id="subaction" value="search" />
 <input type="hidden" name="search_start" id="search_start" value="0" />
@@ -186,7 +188,7 @@
   <tr>
     <td class="search">
       <div style="margin:10px;">
-                <input type="text" name="story" id="searchinput" value="tt3513498" class="textin" style="width:250px" onchange="document.getElementById('result_from').value = 1"><br /><br />
+                <input type="text" name="story" id="searchinput" value="tt12345678" class="textin" style="width:250px" onchange="document.getElementById('result_from').value = 1"><br /><br />
                 <input type="button" class="bbcodes" name="dosearch" id="dosearch" value="Start search" onclick="javascript:list_submit(-1); return false;">
                 <input type="button" class="bbcodes" name="dofullsearch" id="dofullsearch" value="Advanced search " onclick="javascript:full_submit(1); return false;" />
             </div>
@@ -194,7 +196,7 @@
         </td>
     </tr>
 </table></div>
-	<div class="message-info message-info--yellow">Found 1 responses (Query results 1 - 1) :</div>
+	
 </div><script>
 <!--
 function clearform(frmname){
@@ -234,29 +236,7 @@ function full_submit(prm){
 }
 //-->
 </script>
-</form>
-
-<a class="poster grid-item d-flex fd-column has-overlay" href="https://megakino.club/adventure/4804-the-lego-movie-2.html">
-    <div class="poster__img img-responsive img-responsive--portrait img-fit-cover">
-        <img data-src="/uploads/posts/2024-10/4977526_jpg-c_310_420_x-f_jpg-q_x-xxyxx.webp" src="/templates/popcornie-dark/images/no-img.png" alt="The LEGO Movie 2">
-        <div class="poster__label">HD</div>
-        <div class="has-overlay__mask btn-icon anim"><span class="fal fa-play"></span></div>
-    </div>
-    <div class="poster__desc">
-        <h3 class="poster__title ws-nowrap">The LEGO Movie 2</h3>
-        <ul class="poster__subtitle ws-nowrap">
-            <li>Canada, Denmark,, 2019</li>
-            <li>Adventure / Animation / Filme</li>
-        </ul>
-        <div class="poster__text line-clamp">Fünf Jahre, nachdem die Pläne des skrupellosen Lord Business (Stimme im Original: Will Ferrell) vereitelt werden konnten, haben die DUPLO-Invasoren</div>
-    </div>
-</a>
-
-
-
-
-
-</div>
+</form></div>
 					
 					
 
