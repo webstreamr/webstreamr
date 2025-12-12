@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.58.9](https://github.com/webstreamr/webstreamr/compare/v0.58.8...v0.58.9) (2025-12-12)
+
+
+### Bug Fixes
+
+* **extractor:** fix HubCloud picking up incorrect FSL URLs ([e438f3c](https://github.com/webstreamr/webstreamr/commit/e438f3cbbde4ccf5614f574a8816db722751fcee))
+* **extractor:** handle FileMoon with missing height info in packed ([d44e0a2](https://github.com/webstreamr/webstreamr/commit/d44e0a2588fddc332d5bc833936e42fcd5ca2667))
+* **extractor:** use extractorId per HubCloud sub hoster again for better bingeGroup ([d71aa24](https://github.com/webstreamr/webstreamr/commit/d71aa240e7a29d34b82bc171bafd1b576c2efa89))
+* **source:** resolve MegaKino dynamically and cache for an hour ([258e35c](https://github.com/webstreamr/webstreamr/commit/258e35c94db461a2efcb9089d640024ab123bdb6))
+
 ## [0.58.8](https://github.com/webstreamr/webstreamr/compare/v0.58.7...v0.58.8) (2025-12-11)
 
 
