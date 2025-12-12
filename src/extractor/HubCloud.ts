@@ -36,11 +36,11 @@ export class HubCloud extends Extractor {
             url,
             format: Format.unknown,
             label: `${this.label} (FSL)`,
-            sourceId: `${this.id}_fsl`,
             ttl: this.ttl,
             meta: {
               ...meta,
               bytes: bytes.parse($('#size').text()) as number,
+              extractorId: `${this.id}_fsl`,
               title: $('title').text().trim(),
             },
           };
@@ -53,11 +53,11 @@ export class HubCloud extends Extractor {
             url,
             format: Format.unknown,
             label: `${this.label} (PixelServer)`,
-            sourceId: `${this.id}_pixelserver`,
             ttl: this.ttl,
             meta: {
               ...meta,
               bytes: bytes.parse($('#size').text()) as number,
+              extractorId: `${this.id}_pixelserver`,
               title: $('title').text().trim(),
             },
           };
