@@ -65,7 +65,7 @@ export class FileMoon extends Extractor {
     const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'FileMoon', originalUrl as URL, headers);
 
     const unpacked = unpackEval(html);
-    const heightMatch = unpacked.match(/(\d{3,})p/) as string[];
+    const heightMatch = unpacked.match(/(\d{3,})p/);
 
     return [
       {
@@ -75,7 +75,7 @@ export class FileMoon extends Extractor {
         ttl: this.ttl,
         meta: {
           ...meta,
-          height: parseInt(heightMatch[1] as string),
+          ...(heightMatch && { height: parseInt(heightMatch[1] as string) }),
         },
       },
     ];

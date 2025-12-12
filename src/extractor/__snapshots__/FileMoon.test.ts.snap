@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`FileMoon missing height 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "FileMoon (MFP)",
+    "meta": {
+      "countryCodes": [],
+      "extractorId": "filemoon",
+      "title": "tt0307453",
+    },
+    "ttl": 900000,
+    "url": "https://mediaflow.test.org/proxy/hls/manifest.m3u8?api_password=test&h_user-agent=Mozilla%2F5.0+%28Windows+NT+10.0%3B+Win64%3B+x64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F136.0.0.0+Safari%2F537.36&h_referer=https%3A%2F%2Fico3c.com%2Fbkg%2Fugj7f1kq94p1&d=https%3A%2F%2Fbe7713.rcr82.waw05.i8yz83pn.com%2Fhls2%2F05%2F09711%2Faeuhexjcoysl_x%2Fmaster.m3u8%3Ft%3DfiqqJThcgnrc77etu-nLPLodbF1UeqY5Cou0vvnLIB0%26s%3D1765556185%26e%3D10800%26f%3D48721931%26srv%3D1050%26asn%3D13335%26sp%3D5500%26p%3D",
+  },
+]
+`;
+
 exports[`FileMoon page not found 1`] = `[]`;
 
 exports[`FileMoon z1ekv717 d 1`] = `

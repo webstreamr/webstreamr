@@ -17,4 +17,8 @@ describe('FileMoon', () => {
   test('page not found', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://filemoon.sx/e/n7i8zodwjqr9'))).toMatchSnapshot();
   });
+
+  test('missing height', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://filemoon.to/d/ugj7f1kq94p1'))).toMatchSnapshot();
+  });
 });
