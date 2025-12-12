@@ -18,7 +18,15 @@
 <meta name="googlebot" content="noindex,nofollow">
 
 
-<script data-cfasync="false" src="//d2hdyssxn6lpj2.cloudfront.net/?sydhd=1173967"></script>
+<!--<script data-cfasync="false" src="//dl4d3y1ajyv3q.cloudfront.net/?aydld=1220840"></script>-->
+
+
+<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+<script type="text/javascript">
+    aclib.runPop({
+        zoneId: '10550070',
+    });
+</script>
 
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4a22bad849ab4d2da600be878e3c0fc2"}'></script><!-- End Cloudflare Web Analytics -->
 
@@ -147,7 +155,7 @@
     
 
 <div class="header">
-HubCloud | <a href="https://hubcloud.fans/">Create An Account</a> |<a href="https://hubcloud.one/drive/admin">Login</a>
+HubCloud | <a href="https://hubcloud.fans/">Create An Account</a> |<a href="https://hubcloud.foo/drive/admin">Login</a>
 </div>
 <br>
 <div class="container container-fluid main">
@@ -217,7 +225,7 @@ HubCloud | <a href="https://hubcloud.fans/">Create An Account</a> |<a href="http
 	
 
 	
-<a id="download" href="https://gamerxyt.com/hubcloud.php?host=hubcloud&id=bffzqlpqfllfcld&token=ZDdhbnhoS3dXSzlGOGhnN3ErdTUxVGpNRHpBR2lCakE1ZHJUTlcvUTlaTT0=" rel="noopener noreferrer nofollow" class="btn btn-primary h6 p-2"><i class="fas fa-file-download fa-lg"></i> Generate Direct Download Link</a>
+<a id="download" href="https://gamerxyt.com/hubcloud.php?host=hubcloud&id=bffzqlpqfllfcld&token=ZDdhbnhoS3dXSzlGOGhnN3ErdTUxVEl6a2RJOUt6ZTkwSXZMa1JXOFd2WT0=" rel="noopener noreferrer nofollow" class="btn btn-primary h6 p-2"><i class="fas fa-file-download fa-lg"></i> Generate Direct Download Link</a>
 
 
 <center>
@@ -269,7 +277,7 @@ HubCloud | <a href="https://hubcloud.fans/">Create An Account</a> |<a href="http
 </div>
 <div class="card">
 <div class="card-body" id="div1">
-<p onclick="copy_link('div1')">https://hubcloud.one/drive/bffzqlpqfllfcld</p>
+<p onclick="copy_link('div1')">https://hubcloud.foo/drive/bffzqlpqfllfcld</p>
 </div>
 <button class="btn btn-success btn-sm" id="button1" onclick="copy_link('div1')"><i class="fa fa-copy"></i> Copy Link</button>
 <script>
@@ -280,7 +288,7 @@ setTimeout(function(){
 document.querySelector(".loading").classList.add("d-none");
 document.querySelector(".vd").classList.remove("d-none");
 }, 2000);  
-var url = 'https://gamerxyt.com/hubcloud.php?host=hubcloud&id=bffzqlpqfllfcld&token=ZDdhbnhoS3dXSzlGOGhnN3ErdTUxVGpNRHpBR2lCakE1ZHJUTlcvUTlaTT0=';
+var url = 'https://gamerxyt.com/hubcloud.php?host=hubcloud&id=bffzqlpqfllfcld&token=ZDdhbnhoS3dXSzlGOGhnN3ErdTUxVEl6a2RJOUt6ZTkwSXZMa1JXOFd2WT0=';
 
 var download = document.getElementById('download');
 download.onclick = function() {
@@ -312,6 +320,7 @@ function copy_link(e){let el=e;e = document.getElementById(el).value; if(typeof 
 <br><br>
 </div>
 
+    
 <div class="footer">
 
 <p>Made with <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="red" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" /> </svg></p>

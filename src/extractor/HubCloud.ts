@@ -28,7 +28,7 @@ export class HubCloud extends Extractor {
         .filter((_i, el) => {
           const text = $(el).text();
 
-          return text.includes('FSL') || text.includes('Download File');
+          return text.includes('FSL') && !text.includes('FSLv2');
         })
         .map((_i, el) => {
           const url = new URL($(el).attr('href') as string);

