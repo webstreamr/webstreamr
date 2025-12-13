@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.58.10](https://github.com/webstreamr/webstreamr/compare/v0.58.9...v0.58.10) (2025-12-13)
+
+
+### Miscellaneous Chores
+
+* **deps:** update eslint monorepo to v9.39.2 ([#574](https://github.com/webstreamr/webstreamr/issues/574)) ([4f7a9d7](https://github.com/webstreamr/webstreamr/commit/4f7a9d725e69be926b3142453590a314913e83c5))
+
 ## [0.58.9](https://github.com/webstreamr/webstreamr/compare/v0.58.8...v0.58.9) (2025-12-12)
 
 
