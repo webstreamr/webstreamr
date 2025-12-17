@@ -42,8 +42,12 @@ export class FileMoon extends Extractor {
   }
 
   public override normalize(url: URL): URL {
-    return new URL(url.href.replace('/e/', '/d/'));
+    if (url.pathname.startsWith('/d/')) {
+      return new URL(url.href.replace('/d/', '/e/'));
+    }
+    return url;
   }
+
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta, originalUrl?: URL): Promise<UrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
