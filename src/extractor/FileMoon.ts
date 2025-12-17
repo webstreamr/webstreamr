@@ -48,7 +48,6 @@ export class FileMoon extends Extractor {
     return url;
   }
 
-
   protected async extractInternal(ctx: Context, url: URL, meta: Meta, originalUrl?: URL): Promise<UrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
