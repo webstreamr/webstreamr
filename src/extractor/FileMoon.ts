@@ -57,9 +57,10 @@ export class FileMoon extends Extractor {
     const $ = cheerio.load(html);
     const title = $('h3').text().trim();
 
-    const iframeUrlMatch = html.match(/iframe.*?src=["'](.*?)["']/);
-    if (iframeUrlMatch && iframeUrlMatch[1]) {
-      return await this.extractInternal(ctx, new URL(iframeUrlMatch[1]), { title, ...meta }, url);
+    const iframeUrlMatches = Array.from(html.matchAll(/iframe.*?src=["'](.*?)["']/g));
+    if (iframeUrlMatches.length) {
+      // Use last match because there can be fake adblock catcher urls before
+      return await this.extractInternal(ctx, new URL((iframeUrlMatches[iframeUrlMatches.length - 1] as RegExpExecArray)[1] as string), { title, ...meta }, url);
     }
 
     const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'FileMoon', originalUrl as URL, headers);
