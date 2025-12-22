@@ -35,7 +35,9 @@ export class StreamController {
     } else if (rawId.startsWith('tt')) {
       id = ImdbId.fromString(rawId);
     } else {
-      throw new Error(`Unsupported ID: ${rawId}`);
+      res.status(400).send(`Unsupported ID: ${rawId}`);
+
+      return;
     }
 
     const ctx = contextFromRequestAndResponse(req, res);
