@@ -119,7 +119,7 @@ export class Voe extends Extractor {
   }
 
   public override normalize(url: URL): URL {
-    return new URL(`/${url.pathname.split('/').at(-1)}`, url);
+    return new URL(`/${url.pathname.replace(/\/+$/, '').split('/').at(-1)}`, url);
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {

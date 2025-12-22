@@ -29,7 +29,7 @@ export class LuluStream extends Extractor {
   }
 
   public override normalize(url: URL): URL {
-    const videoId = url.pathname.split('/').at(-1) as string;
+    const videoId = url.pathname.replace(/\/+$/, '').split('/').at(-1) as string;
 
     return new URL(`/e/${videoId}`, url);
   }
