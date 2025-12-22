@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.58.10](https://github.com/webstreamr/webstreamr/compare/v0.58.9...v0.58.10) (2025-12-22)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#580](https://github.com/webstreamr/webstreamr/issues/580)) ([0164995](https://github.com/webstreamr/webstreamr/commit/01649955b1f66c4b2093972c7d8c2e3a09cfd1af))
+* **deps:** lock file maintenance ([#595](https://github.com/webstreamr/webstreamr/issues/595)) ([36a15f0](https://github.com/webstreamr/webstreamr/commit/36a15f0091343165751ca3e9ecbe7d7709fdc39f))
+* **deps:** replace dependency @tsconfig/node22 with @tsconfig/node24 ([#581](https://github.com/webstreamr/webstreamr/issues/581)) ([9fd5634](https://github.com/webstreamr/webstreamr/commit/9fd563450ebf56c741146b488e2f16673d66a85c))
+* **deps:** update dependency @types/node to v24.10.4 ([#579](https://github.com/webstreamr/webstreamr/issues/579)) ([5d412b7](https://github.com/webstreamr/webstreamr/commit/5d412b759f7e3e3233fd5c6423418bfd3ea4d028))
+* **deps:** update dependency axios-cache-interceptor to v1.10.0 ([#592](https://github.com/webstreamr/webstreamr/issues/592)) ([58bd625](https://github.com/webstreamr/webstreamr/commit/58bd6250c9636ee99ece3930a792515a5a2e9d5e))
+* **deps:** update dependency axios-cache-interceptor to v1.9.1 ([#584](https://github.com/webstreamr/webstreamr/issues/584)) ([fa6bee4](https://github.com/webstreamr/webstreamr/commit/fa6bee4c834eae612019ced0081aed320fbf80f4))
+* **deps:** update dependency cacheable to v2.3.1 ([#587](https://github.com/webstreamr/webstreamr/issues/587)) ([10081a2](https://github.com/webstreamr/webstreamr/commit/10081a2276e9808f0a376c8084231ab929de3eda))
+* **deps:** update dependency typescript-eslint to v8.50.0 ([#583](https://github.com/webstreamr/webstreamr/issues/583)) ([40f9f9e](https://github.com/webstreamr/webstreamr/commit/40f9f9ec8c1f6f96429d86960c9973150a8d116d))
+* **deps:** update eslint monorepo to v9.39.2 ([#574](https://github.com/webstreamr/webstreamr/issues/574)) ([4f7a9d7](https://github.com/webstreamr/webstreamr/commit/4f7a9d725e69be926b3142453590a314913e83c5))
+* **source:** useless debug log ([7264fd2](https://github.com/webstreamr/webstreamr/commit/7264fd2ed4c3d2f05b8a330ef39e246d97bba039))
+
+
+### Bug Fixes
+
+* **extractor:** update FileLion domains, remove kinoger.be ([6cc24c0](https://github.com/webstreamr/webstreamr/commit/6cc24c0332b6a34276de1bfd9d53053541639163))
+* return 400 for invalid ID instead of raising Error ([0610b85](https://github.com/webstreamr/webstreamr/commit/0610b8556ae3190b291dd040eff831d5e3e90878))
+* **source:** determine Frembed domain dynamically ([924265b](https://github.com/webstreamr/webstreamr/commit/924265b9640385b33e3a7a8dfb61b4993442e52f))
+* use "Mozilla" instead of "Mozilla/5.0" as default user agent ([ddf4f22](https://github.com/webstreamr/webstreamr/commit/ddf4f227b3350b87a91be6f2c063a993bf90f746))
+
 ## [0.58.9](https://github.com/webstreamr/webstreamr/compare/v0.58.8...v0.58.9) (2025-12-12)
 
 
