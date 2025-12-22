@@ -51,6 +51,17 @@ export class FetcherMock extends Fetcher {
     return (await this.fetchInternal(path, ctx, url, { ...init, method: 'HEAD' })).headers;
   };
 
+  public override async getFinalRedirectUrl(ctx: Context, url: URL, requestConfig?: CustomRequestConfig): Promise<URL> {
+    const newRequestConfig = { ...requestConfig, method: 'HEAD', maxRedirects: 0 };
+
+    const response = await this.fetch(ctx, url, newRequestConfig);
+    if (response.headers['location']) {
+      return await this.getFinalRedirectUrl(ctx, new URL(response.headers['location']), newRequestConfig);
+    }
+
+    return url;
+  }
+
   private readonly slugifyUrl = (url: URL): string => {
     const slugifiedUrl = slugify(url.href);
 

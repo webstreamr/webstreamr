@@ -6,8 +6,8 @@
 <meta name="description" content="MegaKino – Dein Streaming-Portal für die besten Filme und Serien! Entdecke aktuelle Blockbuster, Klassiker und Neuerscheinungen in HD-Qualität. Genieße Action, Drama, Komödien, Thriller, Sci-Fi und mehr – jederzeit und überall.">
 <meta name="keywords" content="Filme online, Filme streamen, kostenlose Filme, neue Filme 2024, Kinofilme, Serien online, beste Filme, Blockbuster, HD Filme, Streaming kostenlos, Actionfilme, Abenteuerfilme, Komödien, Krimis, Dramen, Fantasyfilme, Horrorfilme, Thriller, Romantikfilme, Sci-Fi Filme, Animationsfilme, Dokumentationen, Familienfilme, historische Filme, Kriegsfilme, Westernfilme, TV-Filme, MegaKino Streaming, Filme in HD, Filmgenres entdecken">
 <meta name="generator" content="MegaKino">
-<link rel="search" type="application/opensearchdescription+xml" href="https://megakino.one/index.php?do=opensearch" title="MEGAKino - Filme und Serien Kostenlos in HD online anschauen auf Deutsch">
-<link rel="alternate" type="application/rss+xml" title="MEGAKino - Filme und Serien Kostenlos in HD online anschauen auf Deutsch" href="https://megakino.one/rss.xml">
+<link rel="search" type="application/opensearchdescription+xml" href="https://megakino.lol/index.php?do=opensearch" title="MEGAKino - Filme und Serien Kostenlos in HD online anschauen auf Deutsch">
+<link rel="alternate" type="application/rss+xml" title="MEGAKino - Filme und Serien Kostenlos in HD online anschauen auf Deutsch" href="https://megakino.lol/rss.xml">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="theme-color" content="#303d4a">
 	<link rel="preload" href="/templates/popcornie-dark/css/common.css" as="style">
@@ -28,16 +28,17 @@
 		.collection-container #dle-content{display:block!important}.collection-item{height:200px;position:relative;display:block;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px 0 rgba(0,0,0,0.5);margin-bottom:20px}.collection-image{position:absolute;left:-10px;top:-10px;right:-10px;bottom:-10px}.collection-image img{width:100%;height:100%;object-fit:cover;transition:.35s}.collection-info{position:absolute;bottom:15px;left:0;display:-webkit-flex;display:-ms-flex;display:flex;justify-content:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.collection-title{font-size:22px;padding:5px 25px;background-color:#3bb33b;margin-bottom:0;display:inline}.collection-text{display:none}.collection-item:before{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='41' height='40'%3E%3Cpath fill-rule='evenodd' fill='%233BB33B' d='M20.978 39.989C9.934 39.989.982 31.037.982 19.993.982 8.949 9.934-.003 20.978-.003c11.043 0 19.995 8.952 19.995 19.996 0 11.044-8.952 19.996-19.995 19.996Zm0-37.816c-9.789 0-17.821 8.031-17.821 17.82s8.032 17.821 17.821 17.821c9.788 0 17.82-8.032 17.82-17.821 0-9.789-8.032-17.82-17.82-17.82Zm-1.925 27.693 8.628-8.702H10.352v-2.342h17.329l-8.628-8.701 1.506-1.59 11.462 11.462-11.462 11.462-1.506-1.589Z'/%3E%3C/svg%3E") no-repeat;width:41px;height:40px;content:'';position:absolute;bottom:20px;right:20px;z-index:3;opacity:0;-webkit-transition:.35s;-o-transition:.35s;transition:.35s}.collection-scroll{margin-left:-30px;margin-right:-30px;max-height:350px;overflow:auto;scrollbar-color:#363d48 #090b0e;scrollbar-width:thin}.collection-scroll::-webkit-scrollbar{width:4px;background-color:#090b0e}.collection-scroll::-webkit-scrollbar-thumb{background-color:#363d48}.custom-collection{height:100px;max-width:180px;margin-left:auto;margin-right:auto;position:relative;display:block;border-radius:6px;overflow:hidden;box-shadow:0 8px 8px 0 rgba(0,0,0,0.35);margin-bottom:10px}.custom-collection-image{position:absolute;left:0;top:0;right:0;bottom:0}.custom-collection-image img{width:100%;height:100%;object-fit:cover;transition:.35s;border-radius:6px}.custom-collection-image:after{content:'';background:linear-gradient(to top,rgba(18,22,27,1) 0%,rgba(18,22,27,0) 100%);height:100%;width:100%;position:absolute;left:0;top:0;opacity:.85}.custom-collection-title{position:absolute;left:0;bottom:0;font-size:12px;font-weight:500;padding:10px;z-index:2;-webkit-transition:.25s;-o-transition:.25s;transition:.25s}.custom-collection:hover .custom-collection-title{padding-bottom:15px}.custom-collection-title:before{height:3px;position:absolute;left:10px;bottom:0;height:3px;width:60%;background-color:#3bb33b;content:''}.collection-entry-heading{padding-top:42%;position:relative;margin-left:-60px;margin-right:-60px;margin-top:-30px}.collection-entry-heading img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}.collection-entry-title{position:absolute;left:0;top:15px;font-size:24px;padding:5px 25px;background-color:#3bb33b;margin-bottom:0;font-weight:500}.collection-entry-content{background-color:rgba(26,31,39,0.85);margin-top:-40px;position:relative;z-index:2;padding:30px;margin-left:-30px;margin-right:-30px;font-size:1.1em;line-height:1.5}.collection-entry-showfull{padding:3px 8px;border-radius:3px;border:1px solid #3bb33b;color:#fff;display:inline-block;margin-top:10px;font-size:12px;font-weight:500;cursor:pointer}@media screen and (min-width: 951px){.collection-item:hover .collection-title{background-color:transparent;color:#3bb33b}.collection-item:hover .collection-text{display:block;padding:5px 25px}.collection-item:hover:before{opacity:1}.collection-item:hover img{filter:blur(5px);opacity:.25}.collection-item:hover .collection-info{left:0;bottom:0;width:100%;height:100%;padding-right:60px}}@media screen and (max-width: 950px){.custom-collection{max-width:90%}.collection-entry-heading{margin-left:-30px;margin-right:-30px;padding-top:56.25%}.collection-entry-title{font-size:20px}.collection-title{font-size:16px}}
 	</style>
 	
-
+	
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q157F80YP2"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EXDJZ07C8K"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-Q157F80YP2');
+  gtag('config', 'G-EXDJZ07C8K');
 </script>
+
 
 </head>
 
@@ -80,7 +81,7 @@
 					<div class="side-block js-this-in-mobile-menu">
 						<div class="side-block__title">Was interessiert Sie?</div>
 						<ul class="side-block__content side-block__menu" data-showitems="10" itemscope itemtype="http://schema.org/SiteNavigationElement"> 
-													<li><a href="https://megakino.one/films/" itemprop="url"><font itemprop="name">Filme</font></a><span style="float: right">4913</span></li><li><a href="https://megakino.one/kinofilme/" itemprop="url"><font itemprop="name">Kinofilme</font></a><span style="float: right">201</span></li><li><a href="https://megakino.one/serials/" itemprop="url"><font itemprop="name">Serien</font></a><span style="float: right">845</span></li><li><a href="https://megakino.one/multfilm/" itemprop="url"><font itemprop="name">Animation</font></a><span style="float: right">301</span></li><li><a href="https://megakino.one/documentary/" itemprop="url"><font itemprop="name">Dokumentationen</font></a><span style="float: right">75</span></li>
+													<li><a href="https://megakino.lol/films/" itemprop="url"><font itemprop="name">Filme</font></a><span style="float: right">4930</span></li><li><a href="https://megakino.lol/kinofilme/" itemprop="url"><font itemprop="name">Kinofilme</font></a><span style="float: right">202</span></li><li><a href="https://megakino.lol/serials/" itemprop="url"><font itemprop="name">Serien</font></a><span style="float: right">849</span></li><li><a href="https://megakino.lol/multfilm/" itemprop="url"><font itemprop="name">Animation</font></a><span style="float: right">301</span></li><li><a href="https://megakino.lol/documentary/" itemprop="url"><font itemprop="name">Dokumentationen</font></a><span style="float: right">76</span></li>
 
 						</ul>
 					</div>
@@ -89,27 +90,27 @@
 					<div class="side-block">
 						<div class="side-block__title">Sammlung</div>
 						<div class="side-block__content collection-scroll">
-							<a href="https://megakino.one/collection/2092-die-besten-weihnachtsfilme.html" class="custom-collection">
+							<a href="https://megakino.lol/collection/2092-die-besten-weihnachtsfilme.html" class="custom-collection">
   <div class="custom-collection-image"><img class="xfieldimage collection_cover" data-src="/uploads/posts/2022-12/merry.webp" alt=""></div>
   <div class="custom-collection-title">Die besten Weihnachtsfilme</div>
 </a>
-<a href="https://megakino.one/collection/412-batman-filme-die-komplette-chronologie.html" class="custom-collection">
+<a href="https://megakino.lol/collection/412-batman-filme-die-komplette-chronologie.html" class="custom-collection">
   <div class="custom-collection-image"><img class="xfieldimage collection_cover" data-src="/uploads/posts/2022-02/batman.webp" alt=""></div>
   <div class="custom-collection-title">Batman Filme - Die Komplette Chronologie</div>
 </a>
-<a href="https://megakino.one/collection/127-marvel-filme-chronologischer.html" class="custom-collection">
+<a href="https://megakino.lol/collection/127-marvel-filme-chronologischer.html" class="custom-collection">
   <div class="custom-collection-image"><img class="xfieldimage collection_cover" data-src="/uploads/posts/2022-01/mcu.webp" alt=""></div>
   <div class="custom-collection-title">Marvel Filme - Die Komplette Chronologie</div>
 </a>
-<a href="https://megakino.one/collection/181-harry-potter-die-komplette-chronologie.html" class="custom-collection">
+<a href="https://megakino.lol/collection/181-harry-potter-die-komplette-chronologie.html" class="custom-collection">
   <div class="custom-collection-image"><img class="xfieldimage collection_cover" data-src="/uploads/posts/2022-01/harry.webp" alt=""></div>
   <div class="custom-collection-title">Harry Potter - Die Komplette Chronologie</div>
 </a>
-<a href="https://megakino.one/collection/136-star-wars-die-komplette-chronologie.html" class="custom-collection">
+<a href="https://megakino.lol/collection/136-star-wars-die-komplette-chronologie.html" class="custom-collection">
   <div class="custom-collection-image"><img class="xfieldimage collection_cover" data-src="/uploads/posts/2022-01/starwars.webp" alt=""></div>
   <div class="custom-collection-title">Star Wars – Die Komplette Chronologie</div>
 </a>
-<a href="https://megakino.one/collection/135-fast-and-furious-chronologischer.html" class="custom-collection">
+<a href="https://megakino.lol/collection/135-fast-and-furious-chronologischer.html" class="custom-collection">
   <div class="custom-collection-image"><img class="xfieldimage collection_cover" data-src="/uploads/posts/2022-01/forsag.webp" alt=""></div>
   <div class="custom-collection-title">Fast and Furious - Die Komplette Chronologie</div>
 </a>
@@ -121,7 +122,7 @@
 					<div class="side-block js-this-in-mobile-menu">
 						<div class="side-block__title">Genres</div>
 						<ul class="side-block__content side-block__menu" data-showitems="10"> 
-													<li><a href="https://megakino.one/multfilm/">Animation</a><span style="float: right">301</span></li><li><a href="https://megakino.one/action/">Action</a><span style="float: right">1594</span></li><li><a href="https://megakino.one/adventure/">Adventure</a><span style="float: right">905</span></li><li><a href="https://megakino.one/comedy/">Comedy</a><span style="float: right">1662</span></li><li><a href="https://megakino.one/crime/">Crime</a><span style="float: right">746</span></li><li><a href="https://megakino.one/documentary/">Dokumentationen</a><span style="float: right">75</span></li><li><a href="https://megakino.one/drama/">Drama</a><span style="float: right">2292</span></li><li><a href="https://megakino.one/family/">Family</a><span style="float: right">484</span></li><li><a href="https://megakino.one/fantasy/">Fantasy</a><span style="float: right">645</span></li><li><a href="https://megakino.one/history/">History</a><span style="float: right">232</span></li><li><a href="https://megakino.one/horror/">Horror</a><span style="float: right">845</span></li><li><a href="https://megakino.one/music/">Music</a><span style="float: right">108</span></li><li><a href="https://megakino.one/mystery/">Mystery</a><span style="float: right">389</span></li><li><a href="https://megakino.one/romance/">Romance</a><span style="float: right">526</span></li><li><a href="https://megakino.one/science-fiction/">Sci-Fi</a><span style="float: right">729</span></li><li><a href="https://megakino.one/tv-movie/">TV Movie</a><span style="float: right">56</span></li><li><a href="https://megakino.one/thriller/">Thriller</a><span style="float: right">1607</span></li><li><a href="https://megakino.one/war/">War</a><span style="float: right">144</span></li><li><a href="https://megakino.one/western/">Western</a><span style="float: right">86</span></li>
+													<li><a href="https://megakino.lol/multfilm/">Animation</a><span style="float: right">301</span></li><li><a href="https://megakino.lol/action/">Action</a><span style="float: right">1598</span></li><li><a href="https://megakino.lol/adventure/">Adventure</a><span style="float: right">909</span></li><li><a href="https://megakino.lol/comedy/">Comedy</a><span style="float: right">1667</span></li><li><a href="https://megakino.lol/crime/">Crime</a><span style="float: right">747</span></li><li><a href="https://megakino.lol/documentary/">Dokumentationen</a><span style="float: right">76</span></li><li><a href="https://megakino.lol/drama/">Drama</a><span style="float: right">2302</span></li><li><a href="https://megakino.lol/family/">Family</a><span style="float: right">485</span></li><li><a href="https://megakino.lol/fantasy/">Fantasy</a><span style="float: right">647</span></li><li><a href="https://megakino.lol/history/">History</a><span style="float: right">233</span></li><li><a href="https://megakino.lol/horror/">Horror</a><span style="float: right">851</span></li><li><a href="https://megakino.lol/music/">Music</a><span style="float: right">108</span></li><li><a href="https://megakino.lol/mystery/">Mystery</a><span style="float: right">389</span></li><li><a href="https://megakino.lol/romance/">Romance</a><span style="float: right">528</span></li><li><a href="https://megakino.lol/science-fiction/">Sci-Fi</a><span style="float: right">732</span></li><li><a href="https://megakino.lol/tv-movie/">TV Movie</a><span style="float: right">56</span></li><li><a href="https://megakino.lol/thriller/">Thriller</a><span style="float: right">1612</span></li><li><a href="https://megakino.lol/war/">War</a><span style="float: right">144</span></li><li><a href="https://megakino.lol/western/">Western</a><span style="float: right">86</span></li>
 
 
 						</ul>
@@ -143,21 +144,21 @@
 		<div class="lcomm__date">29.11.25</div>
 	</div>
 	<div class="lcomm__text">Beste Serie</div>
-	<a class="lcomm__link ws-nowrap icon-at-left" href="https://megakino.one/serials/5877-stranger-things-5-stafffel.html#comment"><span class="fal fa-arrow-circle-right"></span>Stranger Things - 5 Stafffel</a>
+	<a class="lcomm__link ws-nowrap icon-at-left" href="https://megakino.lol/serials/5877-stranger-things-5-stafffel.html#comment"><span class="fal fa-arrow-circle-right"></span>Stranger Things - 5 Stafffel</a>
 </div><div class="lcomm">
 	<div class="lcomm__meta d-flex ai-center">
 		<div class="lcomm__author flex-grow-1 ws-nowrap">E</div>
 		<div class="lcomm__date">29.11.25</div>
 	</div>
 	<div class="lcomm__text">Liebe den Film.Er ist so gut gemacht.??</div>
-	<a class="lcomm__link ws-nowrap icon-at-left" href="https://megakino.one/adventure/5015-niko-reise-zu-den-polarlichtern.html#comment"><span class="fal fa-arrow-circle-right"></span>Niko – Reise zu den Polarlichtern</a>
+	<a class="lcomm__link ws-nowrap icon-at-left" href="https://megakino.lol/adventure/5015-niko-reise-zu-den-polarlichtern.html#comment"><span class="fal fa-arrow-circle-right"></span>Niko – Reise zu den Polarlichtern</a>
 </div><div class="lcomm">
 	<div class="lcomm__meta d-flex ai-center">
 		<div class="lcomm__author flex-grow-1 ws-nowrap">Ksecret</div>
 		<div class="lcomm__date">28.11.25</div>
 	</div>
 	<div class="lcomm__text">Geile Serie sehr empfehlenswert</div>
-	<a class="lcomm__link ws-nowrap icon-at-left" href="https://megakino.one/drama/3985-stranger-things-staffel-2.html#comment"><span class="fal fa-arrow-circle-right"></span>Stranger Things - Staffel 2</a>
+	<a class="lcomm__link ws-nowrap icon-at-left" href="https://megakino.lol/drama/3985-stranger-things-staffel-2.html#comment"><span class="fal fa-arrow-circle-right"></span>Stranger Things - Staffel 2</a>
 </div>
 						</div>
 					</div>
@@ -173,7 +174,7 @@
 
 					
 					
-					<div id="dle-content"><form name="fullsearch" id="fullsearch" action="https://megakino.one/index.php?do=search" method="post">
+					<div id="dle-content"><form name="fullsearch" id="fullsearch" action="https://megakino.lol/index.php?do=search" method="post">
 <input type="hidden" name="do" id="do" value="search" />
 <input type="hidden" name="subaction" id="subaction" value="search" />
 <input type="hidden" name="search_start" id="search_start" value="0" />
@@ -235,7 +236,7 @@ function full_submit(prm){
 </script>
 </form>
 
-<a class="poster grid-item d-flex fd-column has-overlay" href="https://megakino.one/films/727-the-lego-movie.html">
+<a class="poster grid-item d-flex fd-column has-overlay" href="https://megakino.lol/films/727-the-lego-movie.html">
     <div class="poster__img img-responsive img-responsive--portrait img-fit-cover">
         <img data-src="/uploads/posts/2022-04/137106_poster_164993468kwn.webp" src="/templates/popcornie-dark/images/no-img.png" alt="The Lego Movie">
         <div class="poster__label">HD</div>
