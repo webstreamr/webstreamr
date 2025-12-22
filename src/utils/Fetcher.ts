@@ -168,7 +168,7 @@ export class Fetcher {
           'Accept-Language': 'en',
           ...(url.username && { Authorization: 'Basic ' + Buffer.from(`${url.username}:${url.password}`).toString('base64') }),
           'Priority': 'u=0',
-          'User-Agent': this.hostUserAgentMap.get(url.host) ?? 'Mozilla/5.0',
+          'User-Agent': this.hostUserAgentMap.get(url.host) ?? 'Mozilla',
           ...(hostUserAgent && { 'User-Agent': hostUserAgent }),
           ...(cookieString && { Cookie: cookieString }),
           ...(ctx.ip && {
