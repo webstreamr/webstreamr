@@ -25,13 +25,13 @@ export class FileLions extends Extractor {
         'coolciima.online',
         'dhtpre.com',
         'dingtezuni.com',
+        'dintezuvio.com',
         'e4xb5c2xnz.sbs',
         'egsyxutd.sbs',
         'fdewsdc.sbs',
         'gsfomqu.sbs',
         'javplaya.com',
         'katomen.online',
-        'kinoger.be',
         'lumiawatch.top',
         'mivalyo.com',
         'moflix-stream.click',
@@ -51,6 +51,7 @@ export class FileLions extends Extractor {
         'vidhidepre.com',
         'vidhidepro.com',
         'vidhidevip.com',
+        'callistanise.com',
       ].includes(url.host);
 
     return supportedDomain && supportsMediaFlowProxy(ctx);
