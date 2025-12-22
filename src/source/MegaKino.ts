@@ -85,8 +85,6 @@ export class MegaKino extends Source {
   };
 
   private readonly getBaseUrl = async (ctx: Context): Promise<URL> => {
-    console.log('get base url');
-
     return await this.fetcher.getFinalRedirectUrl(ctx, new URL(this.baseUrl));
   };
 }
