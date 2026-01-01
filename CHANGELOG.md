@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.58.11](https://github.com/webstreamr/webstreamr/compare/v0.58.10...v0.58.11) (2026-01-01)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#606](https://github.com/webstreamr/webstreamr/issues/606)) ([9079fee](https://github.com/webstreamr/webstreamr/commit/9079feebbdaaec181915bca174034a46c9f62ab0))
+* **deps:** update dependency axios-cache-interceptor to v1.11.1 ([#605](https://github.com/webstreamr/webstreamr/issues/605)) ([a7d9359](https://github.com/webstreamr/webstreamr/commit/a7d93590c6c0d9e2a51cb08b5d6d9ddae64d0bec))
+* **deps:** update dependency axios-cache-interceptor to v1.11.2 ([#607](https://github.com/webstreamr/webstreamr/issues/607)) ([30c6026](https://github.com/webstreamr/webstreamr/commit/30c60261af9406bd202733c3d58455949d1d557e))
+* **deps:** update dependency typescript-eslint to v8.50.1 ([#599](https://github.com/webstreamr/webstreamr/issues/599)) ([d20c568](https://github.com/webstreamr/webstreamr/commit/d20c568e858ead5eac5b2ed4bd7b5e8838ccc9a2))
+* **deps:** update dependency typescript-eslint to v8.51.0 ([#608](https://github.com/webstreamr/webstreamr/issues/608)) ([f8b63f4](https://github.com/webstreamr/webstreamr/commit/f8b63f4cceade84592c43fbd6644a3fb291eae49))
+
+
+### Bug Fixes
+
+* **extractor:** add new FileLions domain ([c8e38d7](https://github.com/webstreamr/webstreamr/commit/c8e38d73fff2ad0ca9205bc1c6770d3c102c3416))
+* **extractor:** deal better with cases where video ID URLs end with a slash ([9f5ac02](https://github.com/webstreamr/webstreamr/commit/9f5ac02ec60b66fd08cd37fa33b723939faae4e5))
+* **extractor:** use last FileMoon iframe url matcher ([135d90a](https://github.com/webstreamr/webstreamr/commit/135d90a2334e9598d5cc93d1973db417ef97c253))
+* **fetcher:** increase queue limits 5 times ([e7b1e2a](https://github.com/webstreamr/webstreamr/commit/e7b1e2a4fcc9fae0b729118f274fc6fcc481ed4d))
+* **test:** improve stability of MegaKino test by dirty mocking getFinalRedirectUrl ([6f24b79](https://github.com/webstreamr/webstreamr/commit/6f24b7928deed81b7891885a85dce031e4693a5a))
+
 ## [0.58.10](https://github.com/webstreamr/webstreamr/compare/v0.58.9...v0.58.10) (2025-12-22)
 
 
