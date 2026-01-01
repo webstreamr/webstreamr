@@ -49,7 +49,7 @@ export type CustomRequestConfig = AxiosRequestConfig & {
 
 export class Fetcher {
   private readonly DEFAULT_TIMEOUT = 10000;
-  private readonly DEFAULT_QUEUE_LIMIT = 10;
+  private readonly DEFAULT_QUEUE_LIMIT = 50;
   private readonly DEFAULT_QUEUE_TIMEOUT = 10000;
   private readonly DEFAULT_TIMEOUTS_COUNT_THROW = 30;
   private readonly TIMEOUT_CACHE_TTL = 3600000; // 1h
