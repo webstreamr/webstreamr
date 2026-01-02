@@ -3,6 +3,7 @@ import * as cheerio from 'cheerio';
 import { BasicAcceptedElems, CheerioAPI } from 'cheerio';
 import { AnyNode } from 'domhandler';
 import levenshtein from 'fast-levenshtein';
+import memoize from 'memoizee';
 import rot13Cipher from 'rot13-cipher';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode, Meta } from '../types';
@@ -26,6 +27,11 @@ export class FourKHDHub extends Source {
     super();
 
     this.fetcher = fetcher;
+
+    this.getBaseUrl = memoize(this.getBaseUrl, {
+      maxAge: 3600000, // 1 hour
+      normalizer: () => 'baseUrl',
+    });
   }
 
   public async handleInternal(ctx: Context, _type: string, id: Id): Promise<SourceResult[]> {
@@ -64,7 +70,7 @@ export class FourKHDHub extends Source {
   private readonly fetchPageUrl = async (ctx: Context, tmdbId: TmdbId): Promise<URL | undefined> => {
     const [name, year] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId);
 
-    const searchUrl = new URL(`/?s=${encodeURIComponent(`${name} ${year}`)}`, this.baseUrl);
+    const searchUrl = new URL(`/?s=${encodeURIComponent(`${name} ${year}`)}`, await this.getBaseUrl(ctx));
     const html = await this.fetcher.text(ctx, searchUrl);
 
     const $ = cheerio.load(html);
@@ -83,7 +89,7 @@ export class FourKHDHub extends Source {
 
         return levenshtein.get(movieCardTitle, name, { useCollator: true }) < 5;
       })
-      .map((_i, el) => new URL($(el).attr('href') as string, this.baseUrl))
+      .map(async (_i, el) => new URL($(el).attr('href') as string, await this.getBaseUrl(ctx)))
       .get(0);
   };
 
@@ -127,4 +133,8 @@ export class FourKHDHub extends Source {
 
     return new URL(atob(redirectData['o']));
   }
+
+  private readonly getBaseUrl = async (ctx: Context): Promise<URL> => {
+    return await this.fetcher.getFinalRedirectUrl(ctx, new URL(this.baseUrl));
+  };
 }
