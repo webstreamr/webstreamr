@@ -55,4 +55,9 @@ describe('FourKHDHub', () => {
     const streams = await source.handle(ctx, 'series', new TmdbId(230923, 1, 1));
     expect(streams).toMatchSnapshot();
   });
+
+  test('handle stranger things s05e08', async () => {
+    const streams = await source.handle(ctx, 'series', new TmdbId(66732, 5, 8));
+    expect(streams).toMatchSnapshot();
+  });
 });

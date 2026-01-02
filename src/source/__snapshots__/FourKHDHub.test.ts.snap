@@ -231,6 +231,89 @@ exports[`FourKHDHub handle lovely runner 2024 s01e01 1`] = `
 
 exports[`FourKHDHub handle non-existent devil's bath 2024 gracefully 1`] = `[]`;
 
+exports[`FourKHDHub handle stranger things s05e08 1`] = `
+[
+  {
+    "meta": {
+      "bytes": 7215545057,
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Stranger.Things.S05E08.Chapter.Eight.The.Rightside.Up.1080p.NF.WEB-DL.Multi.DDP5.1.H.264-4kHdHub.Com.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/vxjyjvsqva1tfxs",
+  },
+  {
+    "meta": {
+      "bytes": 5508295557,
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Stranger.Things.S05E08.Chapter.Eight.The.Rightside.Up.1080p.NF.WEB-DL.Multi.DDP5.1.H.265-4kHdHub.Com.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/pcn0vz4wm1pzvrk",
+  },
+  {
+    "meta": {
+      "bytes": 6002216796,
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Stranger.Things.S05E08.Chapter.Eight.The.Rightside.Up.1080p.NF.WEB-DL.Multi.DDP5.1.HDR-DV.H.265-4kHdHub.Com.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/x1wwc1www1grtmg",
+  },
+  {
+    "meta": {
+      "bytes": 1513975971,
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Stranger.Things.S05E08.Chapter.Eight.The.Rightside.Up.1080p.NF.WEB-DL.Multi.AAC5.1.AV1-4kHdHub.Com.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/efsgttxesa22ale",
+  },
+  {
+    "meta": {
+      "bytes": 17544941404,
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "height": 2160,
+      "title": "Stranger.Things.S05E08.Chapter.Eight.The.Rightside.Up.2160p.REPACK.NF.SDR.WEB-DL.Multi.DDP5.1.Atmos.H.265-4kHDHub.com.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/vjt411st2kqtcpo",
+  },
+  {
+    "meta": {
+      "bytes": 20884278476,
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "height": 2160,
+      "title": "Stranger.Things.S05E08.Chapter.Eight.The.Rightside.Up.2160p.REPACK.NF.WEB-DL.Multi.DDP5.1.Atmos.DV.HDR.H.265-4kHDHub.com.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/kmu15o2v21pkk6c",
+  },
+]
+`;
+
 exports[`FourKHDHub handle superman 2025 1`] = `
 [
   {
