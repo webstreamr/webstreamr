@@ -21,4 +21,8 @@ describe('FileLions', () => {
   test('file not found', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://filelions.to/v/ylcp2cu5qanb'))).toMatchSnapshot();
   });
+
+  test('deleted by administration', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://callistanise.com/f/cy4t5nkerjrt'))).toMatchSnapshot();
+  });
 });

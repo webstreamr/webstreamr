@@ -71,7 +71,7 @@ export class FileLions extends Extractor {
       return await this.extractInternal(ctx, new URL(url.href.replace('/f/', '/v/')), meta);
     }
 
-    if (/File Not Found/.test(html)) {
+    if (/File Not Found|deleted by administration/.test(html)) {
       throw new NotFoundError();
     }
 
