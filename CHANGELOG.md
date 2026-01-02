@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.58.13](https://github.com/webstreamr/webstreamr/compare/v0.58.12...v0.58.13) (2026-01-02)
+
+
+### Bug Fixes
+
+* **extractor:** handle FileLions deleted by administration ([c075fe9](https://github.com/webstreamr/webstreamr/commit/c075fe9481f21e2f3f5715227b4b939c3de11d0b))
+
 ## [0.58.12](https://github.com/webstreamr/webstreamr/compare/v0.58.11...v0.58.12) (2026-01-02)
 
 
