@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.58.12](https://github.com/webstreamr/webstreamr/compare/v0.58.11...v0.58.12) (2026-01-02)
+
+
+### Miscellaneous Chores
+
+* **source:** add 4KHDHub test for stranger things s05e08 ([93a098e](https://github.com/webstreamr/webstreamr/commit/93a098e438438efe3d22b4439378f9de6fc0e577))
+* **source:** determine latest 4KHDHub domain more dynamically ([f8f62db](https://github.com/webstreamr/webstreamr/commit/f8f62db174eaa4acc8dbce1ff9f44a0318e99a7a))
+* **source:** update 4KHDHub TLD and re-generate fixtures ([1f4d7c7](https://github.com/webstreamr/webstreamr/commit/1f4d7c752d08f9952af3f0c8a87a66b64ddb2c1d))
+
+
+### Bug Fixes
+
+* run `npm audit fix` to fix security issues ([9b3c7c7](https://github.com/webstreamr/webstreamr/commit/9b3c7c76cf2eb77e9df895408b65f316c71f9406))
+
 ## [0.58.11](https://github.com/webstreamr/webstreamr/compare/v0.58.10...v0.58.11) (2026-01-01)
 
 
