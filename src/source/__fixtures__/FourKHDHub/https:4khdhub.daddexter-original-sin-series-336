@@ -1,0 +1,2890 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>  
+<meta charset="UTF-8">
+
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="4K-HDHub" />
+<link rel="manifest" href="/site.webmanifest" /> 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dexter: Original Sin (2024) - 4K-HDHub </title>
+<script>
+    !function(){try{"light"===localStorage.getItem("theme")?(document.documentElement.classList.remove("dark"),document.documentElement.classList.add("light")):(document.documentElement.classList.add("dark"),document.documentElement.classList.remove("light"))}catch(e){console.error("Theme initialization failed:",e)}}();
+  </script>
+
+
+<meta name="description" content="Download Dexter: Original Sin Series2024 in 4K, HDR, 1080p and more formats">
+
+<!-- Basic Open Graph meta tags -->
+<meta property="og:title" content="Dexter: Original Sin (2024) - 4K-HDHub" />
+<meta property="og:description" content="Download Dexter: Original Sin Series2024 in 4K, HDR, 1080p and more formats" />
+
+<meta property="og:image" content="https://image.tmdb.org/t/p/w500/j5bP7spdfS0NpDLKDlqJYyJPi1j.jpg" />
+
+<!--<meta property="og:url" content="https://example.com/your-page-url" />-->
+
+<!-- Optional: Additional Open Graph tags for more control -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="4K-HDHub" />
+
+<!-- Preload the logo -->
+<link rel="preload" href="/images/4KHDHUB-Dark-Logo.png" as="image" type="image/png" />
+<link rel="preload" href="/images/4KHDHUB-Bright-Logo.png" as="image" type="image/png" />
+
+
+<script data-cfasync="false" src="//dl4d3y1ajyv3q.cloudfront.net/?aydld=1221937"></script>
+  
+<!-- Font -->
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+
+<!-- Link to Google Fonts Stylesheets -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/trebuchet-ms-2" rel="stylesheet">
+
+
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="4K-HDHub" />
+<link rel="manifest" href="/site.webmanifest" /> 
+
+
+
+
+<!-- JavaScript to apply font-display: swap -->
+<script type="text/javascript">
+!function(e,n,t){"use strict";var o="https://fonts.googleapis.com/css?family=Open+Sans",r="__3perf_googleFonts_5fd56";function c(e){(n.head||n.body).appendChild(e)}function a(){var e=n.createElement("link");e.href=o,e.rel="stylesheet",c(e)}function f(e){if(!n.getElementById(r)){var t=n.createElement("style");t.id=r,c(t)}n.getElementById(r).innerHTML=e}e.FontFace&&e.FontFace.prototype.hasOwnProperty("display")?(t[r]&&f(t[r]),fetch(o).then(function(e){return e.text()}).then(function(e){return e.replace(/@font-face {/g,"@font-face{font-display:swap;")}).then(function(e){return t[r]=e}).then(f).catch(a)):a()}(window,document,localStorage);
+</script>
+
+<link rel="stylesheet" href="/css/styles.css?v=0.14.69c19">
+<script src="/js/main.js?v=0.14.69c19"></script>
+<script src="/js/series-page.js?v=0.14.69c19"></script>
+
+
+<style>
+    /* Add these styles to your existing CSS file */
+
+/* Movie detail page styles */
+.poster-container {
+  position: sticky;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0.2rem;
+  top: 5rem;
+}
+
+html.dark .poster-container {
+  background: linear-gradient(to top, #2b580c2b, #a5b250, #8f9e610f, #4d53485c);
+}
+
+html:not(.dark) .poster-container {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 768px) {
+  .poster-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.poster-image {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+
+/* Content grid layout */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  /*gap: 2rem;*/
+}
+
+@media (min-width: 768px) {
+  .content-grid {
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+  }
+}
+
+.content-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.content-main {
+  flex: 1;
+}
+
+/* Content sections */
+.content-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 1.875rem;
+  }
+}
+
+/* Badge styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  transition: background-color 0.2s ease;
+}
+
+.badge-outline {
+  background-color: transparent;
+  border: 1px solid currentColor;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border: none;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.btn:hover {
+  background-color: hsl(var(--primary) / 0.9);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: hsl(var(--foreground));
+}
+
+.btn-ghost:hover {
+  background-color: hsl(var(--accent) / 0.8);
+}
+
+.btn-sm {
+  height: 2.25rem;
+  /*padding-left: 0.75rem;*/
+  /*padding-right: 0.75rem;*/
+  font-size: 16px;
+}
+
+/* Download section styles */
+.download-item {
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.download-header {
+  padding: 0.75rem 1rem;
+  background-color: hsl(var(--muted) / 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.download-header:hover {
+  /*background-color: hsl(var(--muted) / 0.3);*/
+  background-color: hsl(213deg 69.03% 35.03% / 68%);
+}
+
+/* Info box styles */
+.info-box {
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  background-color: hsl(var(--background) / 0.5);
+}
+
+.info-list {
+  margin-left: 1.25rem;
+  list-style-type: decimal;
+}
+
+.info-list li {
+  margin-bottom: 0.5rem;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Metadata list - Fixed for mobile */
+.metadata-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  margin-top: 1rem;
+}
+
+.metadata-item {
+  gap: 0rem;
+}
+
+.metadata-label {
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.metadata-value {
+  color: hsl(var(--muted-foreground));
+}
+
+/* Desktop metadata layout */
+@media (min-width: 640px) {
+  .metadata-item {
+    flex-direction: row;
+    align-items: baseline;
+  }
+  
+  .metadata-label {
+    width: 6rem;
+    flex-shrink: 0;
+  }
+}
+
+/* Card grid for related content */
+.card-grid-small {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .card-grid-small {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .card-grid-small {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Fix for metadata items on mobile */
+@media (max-width: 640px) {
+  .metadata-item {
+    margin-bottom: 0.75rem;
+  }
+  
+  .metadata-label {
+    width: 30%;
+    margin-bottom: 0.25rem;
+  }
+  
+  .metadata-value {
+    width: 100%;
+  }
+
+}
+/* Breadcrumb styles */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-separator {
+  color: hsl(var(--muted-foreground));
+  font-size: 16px;
+}
+
+/* Page title and tagline */
+.page-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+}
+
+.text-muted-foreground {
+    font-size: 16px;
+}
+
+.movie-tagline {
+  font-size: 1.125rem;
+  font-style: italic;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  .page-title {
+    font-size: 2.25rem;
+  }
+  
+  .movie-tagline {
+    font-size: 1.25rem;
+  }
+}
+
+/* Page container */
+.page-container {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: .5rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .page-container {
+    padding: 2rem;
+  }
+}
+
+/* Trailer modal styles */
+#trailer-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+#trailer-container {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.375rem;
+}
+
+/* Fix for movie card styles */
+.movie-card {
+  display: block;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: hsl(var(--card));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.movie-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.movie-card-image {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+}
+
+.movie-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
+.movie-card:hover .movie-card-overlay {
+  opacity: 1;
+}
+
+.movie-card-formats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.movie-card-format {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 0.625rem;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+}
+
+.movie-card-content {
+  padding: 0.75rem;
+}
+
+.movie-card-title {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.movie-card-meta {
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+}
+</style>
+<style>
+/* Series page specific styles */
+
+/* Series tabs - Updated to match the provided image */
+.series-tabs {
+  display: flex;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  border-radius: 0.25rem;
+}
+
+.series-tab {
+  flex: 1;
+  padding: 0.875rem 1.25rem;
+  font-weight: 800;
+  text-align: center;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: #9d9d9da6;
+  color: white;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+}
+
+.series-tab.active {
+  background-color: #f90;
+  color: #000;
+}
+
+.series-tab-content {
+  display: none;
+}
+
+.series-tab-content.active {
+  display: block;
+}
+
+/* Seasons list */
+.seasons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.season-item {
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.season-header {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.season-header:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.season-info {
+  flex: 1;
+}
+
+.season-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.season-meta {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.season-toggle {
+  transition: transform 0.2s ease;
+}
+
+.season-header[aria-expanded="true"] .season-toggle {
+  transform: rotate(180deg);
+}
+
+.season-content {
+  /*padding: 1rem;*/
+  /*border-top: 1px solid hsl(var(--border));*/
+}
+
+/* Episodes list */
+.episodes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.episode-item {
+  margin-top: 0.2rem;
+  /*border: 1px solid hsl(var(--border));*/
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  
+}
+
+.episode-header {
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  background-color: hsl(var(--muted) / 0.1);
+}
+
+.episode-header:hover {
+  background-color: hsl(var(--muted) / 0.2);
+}
+
+.episode-number {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: hsl(var(--primary));
+  min-width: 2rem;
+  text-align: center;
+}
+
+.episode-info {
+  flex: 1;
+}
+
+.episode-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.episode-meta {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  display: ruby;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.episode-toggle {
+  transition: transform 0.2s ease;
+}
+
+.episode-header[aria-expanded="true"] .episode-toggle {
+  transform: rotate(180deg);
+}
+
+.episode-content {
+  border-top: 1px solid hsl(var(--border));
+}
+
+.episode-description {
+  margin-bottom: 1rem;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.episode-downloads {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.episode-download-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.6rem;
+  border-radius: 0.375rem;
+}
+
+.episode-file-title {
+  /*margin-bottom: 0.5rem;*/
+  color: white;
+}
+
+.episode-file-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .episode-download-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.episode-quality {
+  font-weight: 500;
+  font-size: 0.875rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.episode-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  /*margin-top: 0.5rem;*/
+}
+
+/* Custom badges for episode info - matching the provided image */
+.badge-2160p {
+  background-color: #1a56db;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-1080p {
+  background-color: #1e429f;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-web-dl {
+  background-color: #059669;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-hevc {
+  background-color: #7e22ce;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-size {
+  background-color: #ea580c;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-psa {
+  background-color: #dc2626;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-audio {
+  background-color: #0d9488;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Hide single option example by default */
+.single-option-example {
+  display: none;
+}
+
+.single-option-example.visible {
+  display: block;
+}
+
+/* Hide tabs when only one option is available */
+.single-option .series-tabs {
+  display: none;
+}
+
+/* Fix for mobile overflow issues */
+
+/* General container fixes */
+
+.content-main {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Fix for code elements and long filenames */
+code {
+  display: block;
+  white-space: normal;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  font-size: 16px;
+  max-width: 100%;
+  padding: 0.25rem 0;
+}
+
+/* Fix for download header with long filenames */
+.download-header .flex-1 {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: calc(100% - 30px);
+}
+
+/* Fix for episode file titles */
+.episode-file-title {
+    font-family: 'Trebuchet MS', sans-serif;
+  /*word-break: break-all;*/
+    /*overflow-wrap: break-word;*/
+    width: 100%;
+    font-size: 1rem;
+    border-top: 3px solid hsl(19deg 100% 57.57% / 68%);
+    border-radius: 5px;
+    color: #62b6ff;
+    border-bottom: 3px solid hsl(19deg 100% 57.57% / 68%);
+    padding-top: 10px;
+    padding-bottom: 10px;
+   
+}
+
+/* Fix for episode content padding */
+.episode-content {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Fix for episode download items */
+.episode-download-item {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Fix for download buttons on mobile */
+@media (max-width: 640px) {
+  .grid.grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .episode-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .episode-links .btn {
+    width: 100%;
+  }
+  
+  
+  
+  /* Adjust padding for mobile */
+  .px-4 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  /* Fix for episode header */
+  .episode-header {
+    padding: 0.75rem;
+  }
+  
+  /* Fix for episode number width */
+  .episode-number {
+    min-width: 2.5rem;
+  }
+}
+
+/* Fix for very small screens */
+@media (max-width: 360px) {
+  .episode-header {
+    padding: 0.5rem;
+  }
+  
+  .episode-number {
+    min-width: 2rem;
+  }
+  
+  .episode-file-title {
+    font-size: 1rem;
+  }
+  
+  code {
+    font-size: 16px;;
+  }
+}
+.responsive-icon {
+  width: 24px;   /* Set default size */
+  height: 24px;  /* Set default size */
+  max-width: 100%; /* Ensures the icon scales down on smaller screens */
+  vertical-align: bottom;
+}
+
+@media (max-width: 600px) {
+  .responsive-icon {
+    width: 22;   /* Reduce size on small screens (e.g., mobile) */
+    height: 22;
+  }
+}
+.episode-header:hover {
+    background-color: hsl(213deg 69.03% 35.03% / 68%);
+}
+/* Fix for very small screens */
+@media (max-width: 360px) {
+  .content-grid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .page-container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+.btn-sm {
+    font-weight: 700;
+}
+.text-sm {
+  font-size: 0.875rem;
+  list-style-type: none;
+}
+
+/* Fix for code elements and long filenames */
+    code {
+      display: block;
+      white-space: normal;
+      word-break: break-all;
+      overflow-wrap: break-word;
+      font-size: 0.8rem;
+      max-width: 100%;
+      padding: 0.25rem 0;
+    }
+ 
+    /* Fix for episode meta items spacing */
+    .episode-meta span {
+      white-space: normal;
+      display: inline-block;
+    }
+ 
+    /* Ensure proper spacing between meta items */
+    .episode-meta span:not(:last-child) {
+      margin-right: 0.25rem;
+    }
+ 
+    /* Uploader Notes Styling */
+    .uploader-notes {
+      margin: 1.5rem 0;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      border: 1px solid hsl(var(--border));
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+ 
+    /* Header styling */
+    .uploader-notes-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background-color: rgba(255, 153, 0, 0.2);
+      border-bottom: 1px solid rgba(255, 153, 0, 0.3);
+    }
+ 
+    /* Icon styling */
+    .uploader-notes-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 9999px;
+      background-color: rgba(255, 153, 0, 0.3);
+      flex-shrink: 0;
+    }
+ 
+    /* Title styling */
+    .uploader-notes-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: hsl(var(--foreground));
+    }
+ 
+    /* Content styling */
+    .uploader-notes-content {
+      padding: 1rem;
+      color: hsl(var(--muted-foreground));
+      font-size: 0.9375rem;
+      line-height: 1.5;
+    }
+ 
+    /* Highlight important text */
+    .uploader-notes-highlight {
+      color: #ff9900;
+      font-weight: 600;
+    }
+ 
+    /* List styling inside notes */
+    .uploader-notes-list {
+      /*margin-top: 0.75rem;*/
+      margin-left: 1.25rem;
+      list-style-type: disc;
+    }
+ 
+    .uploader-notes-list li {
+      font-size: medium;
+      margin-bottom: 0.5rem;
+    }
+ 
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .uploader-notes {
+        margin: 1rem 0;
+      }
+      
+      .uploader-notes-header {
+        padding: 0.625rem 0.875rem;
+      }
+      
+      .uploader-notes-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+      
+      .uploader-notes-title {
+        font-size: 0.9375rem;
+      }
+      
+      .uploader-notes-content {
+        padding: 0.875rem;
+        font-size: 0.875rem;
+      }
+    }
+ 
+    /* Collapsible notes functionality */
+    .uploader-notes.collapsible .uploader-notes-header {
+      cursor: pointer;
+      position: relative;
+    }
+ 
+    .uploader-notes.collapsible .uploader-notes-toggle {
+      margin-left: auto;
+      transition: transform 0.2s ease;
+    }
+ 
+    .uploader-notes.collapsible[aria-expanded="false"] .uploader-notes-content {
+      display: none;
+    }
+ 
+    .uploader-notes.collapsible[aria-expanded="false"] .uploader-notes-toggle {
+      transform: rotate(180deg);
+    }
+ 
+    /* Different note types */
+    .uploader-notes.info .uploader-notes-header {
+      background-color: rgba(59, 130, 246, 0.2);
+      border-bottom-color: rgba(59, 130, 246, 0.3);
+    }
+ 
+    .uploader-notes.info .uploader-notes-icon {
+      background-color: rgba(59, 130, 246, 0.3);
+    }
+ 
+    .uploader-notes.info .uploader-notes-highlight {
+      color: #3b82f6;
+    }
+ 
+    .uploader-notes.warning .uploader-notes-header {
+      background-color: rgba(245, 158, 11, 0.2);
+      border-bottom-color: rgba(245, 158, 11, 0.3);
+    }
+ 
+    .uploader-notes.warning .uploader-notes-icon {
+      background-color: rgba(245, 158, 11, 0.3);
+    }
+ 
+    .uploader-notes.warning .uploader-notes-highlight {
+      color: #f59e0b;
+    }
+ 
+    .uploader-notes.error .uploader-notes-header {
+      background-color: rgba(239, 68, 68, 0.2);
+      border-bottom-color: rgba(239, 68, 68, 0.3);
+    }
+ 
+    .uploader-notes.error .uploader-notes-icon {
+      background-color: rgba(239, 68, 68, 0.3);
+    }
+ 
+    .uploader-notes.error .uploader-notes-highlight {
+      color: #ef4444;
+    }
+    
+.file-title{
+    font-family: 'Trebuchet MS', sans-serif;
+    overflow-wrap: break-word;
+    /*word-break: break-all;*/
+    color: #62b6ff;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-left: hidden;
+    border-top: 2px solid hsl(213deg 69.03% 35.03% / 68%);
+    border-bottom: 2px solid hsl(213deg 69.03% 35.03% / 68%);
+    border-radius: 5px;
+    padding-left: 5px;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+/* The Rating Container */
+.imdb-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.1); /* Subtle background to match theme */
+  padding: 4px 8px;
+  border-radius: 4px; /* Slightly rounded corners */
+  border: 1px solid rgb(255 255 255 / 55%);
+}
+
+/* The Yellow IMDb Text/Logo */
+.imdb-logo {
+  background-color: #F5C518; /* Official IMDb Yellow */
+  color: #000000;
+  font-weight: 900;
+  padding: 0px 4px;
+  border-radius: 2px;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* The Score Text */
+.imdb-score {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* Optional: Style for the surrounding elements for context */
+.genre-tag {
+  border: 1px solid #666;
+  padding: 2px 10px;
+  border-radius: 12px;
+  color: #ccc;
+}
+.dot {
+  color: #666;
+}
+
+    
+</style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LL0RL7VX47"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LL0RL7VX47');
+</script>
+</head>
+<body>
+<div class="flex min-h-screen flex-col">
+<!-- Header with unified navigation -->
+ <header class="sticky top-0 z-50 w-full">
+    <div class="header">
+      <div class="container flex h-14 items-center justify-between">
+        <!-- Logo and mobile menu toggle -->
+        <div class="flex items-center">
+          <button id="menu-toggle" class="menu-toggle md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            <span class="sr-only">Toggle menu</span>
+          </button>
+          <a href="/" class="navbar-brand">
+            <img id="logo" class="h-8 w-auto" src="/images/4KHDHUB-Bright-Logo.png" alt="4KHDHub logo">
+          </a>
+        </div>
+
+        <!-- SINGLE Navigation - Visible on desktop, hidden on mobile -->
+        <nav id="main-nav" class="main-nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+            
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle">
+                Movies
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dropdown-indicator h-4 w-4">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/category/movies/" class="dropdown-item">Latest Movies</a></li>
+                <li><a href="/category/hindi-movies/" class="dropdown-item">Hindi Movies</a></li>
+                <li><a href="/category/english-movies/" class="dropdown-item">English Movies</a></li>
+              </ul>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle">
+                Web Series
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dropdown-indicator h-4 w-4">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/category/series/" class="dropdown-item">Latest Episodes</a></li>
+                <li><a href="/category/korean-series/" class="dropdown-item">Korean</a></li>
+                <li><a href="/category/drama-series/" class="dropdown-item">Drama</a></li>
+                <li><a href="/category/hindi-series/" class="dropdown-item">Hindi Series</a></li>
+                <li><a href="/category/english-series/" class="dropdown-item">English Series</a></li>
+                
+              </ul>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle">
+                OTT
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dropdown-indicator h-4 w-4">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/category/netflix/" class="dropdown-item">Netflix</a></li>
+                <li><a href="/category/amazon_prime_video/" class="dropdown-item">Amazon Prime Video</a></li>
+                <li><a href="/category/jiohotstar/" class="dropdown-item">JioHotstar</a></li>
+                <li><a href="/category/disney/" class="dropdown-item">Disney+</a></li>
+                <li><a href="/category/Apple_TV/" class="dropdown-item">Apple TV+</a></li>
+                
+              </ul>
+            </li>
+            
+            
+            <li class="nav-item"><a href="/category/anime/" class="nav-link">Anime</a></li>
+            <li class="nav-item"><a href="/category/2160p-HDR/" class="nav-link">4K HDR</a></li>
+            <li class="nav-item"><a href="/category/imdb/" class="nav-link">Top IMdb</a></li>
+            
+          </ul>
+        </nav>
+
+        <!-- Search and Theme Toggle -->
+        <div class="flex items-center">
+          <button id="search-toggle" class="search-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span class="sr-only">Search</span>
+          </button>
+          
+          <div class="search-container hidden md:flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon h-4 w-4">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            for
+            <input type="search" id="search" placeholder="Search movies & series" class="search-input">
+          </div>
+          
+          <button id="theme-toggle" class="theme-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon h-5 w-5">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <span class="sr-only">Toggle theme</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Backdrop (only shown when menu is open) -->
+    <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/70 hidden"></div>
+
+    <!-- Close button for mobile menu (only shown when menu is open) -->
+    <button id="close-mobile-menu" class="fixed top-4 right-4 p-2 rounded-full z-[60] hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="fixed inset-0 z-50 hidden">
+      <div class="fixed" id="search-backdrop"></div>
+      
+      
+      <button id="close-search" class="absolute right-4 top-4 p-2 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+        <span class="sr-only">Close</span>
+      </button>
+      
+      <form action="/" method="get" class="search-form">
+        <div class="search-input-container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon-overlay">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="search" name="s" placeholder="Search Movies & TV-Shows" class="search-input-overlay" autofocus autocomplete="off">
+        </div>
+        <button type="submit" class="search-submit">
+          Search
+        </button>
+      </form>
+    </div>
+  </header>
+ 
+<!-- Main Content -->
+<main class="flex-1">
+  <div class="page-container">
+    <div class="breadcrumb container">
+      <a href="/" class="btn-ghost btn-sm flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-4 w-4">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+        Home
+      </a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="/category/new-series-10811/" class="text-muted-foreground hover:text-foreground">
+        Web Series
+      </a>
+    </div>
+
+    <div class="content-grid container">
+      <div class="content-sidebar">
+        <div class="poster-container">
+          <div class="poster-image">
+            <img src="https://image.tmdb.org/t/p/w500/j5bP7spdfS0NpDLKDlqJYyJPi1j.jpg" alt="Poster Image of Dexter: Original Sin" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+      <div class="content-main">
+        <div class="mb-2">
+          <h1 class="page-title">Dexter: Original Sin</h1>
+          <p class="movie-tagline">They're catching killers. He's about to become one.</p>
+          <div class="mt-2 flex flex-wrap items-center gap-2 text-muted-foreground">
+              
+                        
+            
+                              <span class="badge badge-outline">Crime</span>
+                  
+                                    <span class="badge badge-outline">DDP</span>
+                  
+                                    <span class="badge badge-outline">Drama</span>
+                  
+                                    <span class="badge badge-outline">English</span>
+                  
+                                    <span class="badge badge-outline">Series</span>
+                  
+                                    <span class="badge badge-outline">Series</span>
+                  
+                                    
+           
+            <!--<span class="badge badge-outline">HBO</span>-->
+          </div>
+           <p class="mt-2 text-muted-foreground"> • S01 </p>
+           
+        </div>
+
+        <div class="content-section">
+          <div class="flex flex-wrap gap-4">
+            <button id="trailer-btn" style="font-family:'Open Sans',sans-serif !important;" class="btn flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-medium px-4 py-2 rounded-md shadow-md transition-colors " data-trailer-url="https://www.youtube.com/embed/Bw8ZdQpVtdU?autoplay=1&enablejsapi=1" >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              Watch Trailer
+            </button>
+          </div>
+
+          <p class="mt-4">
+            In 1991 Miami, Dexter Morgan transitions from student to avenging serial killer. When his bloodthirsty urges can't be ignored any longer, Dexter must learn to channel his inner darkness. With the guidance of his father, Harry, he adopts a Code designed to help him find and kill people who deserve to be eliminated from society without getting on law enforcements' radar. This is a particular challenge for young Dexter as he begins a forensics internship at the Miami Metro Police Department.          </p>
+          <div class="metadata-list mt-4">
+             
+              <div class="metadata-item" style="display: flex;">
+                <span class="metadata-label">Stars:</span>
+                <span class="metadata-value">Patrick Gibson (Dexter Morgan), Christian Slater (Harry Morgan), Molly Brown (Debra Morgan), James Martinez (Angel Batista), Christina Milian (Maria LaGuerta)</span>
+              </div>
+              <div class="metadata-item" style="display: flex;">
+                <span class="metadata-label">Last Air:</span>
+                <span class="metadata-value">2025-02-16</span>
+              </div>
+              
+            <div class="metadata-item" style="display: flex;">
+              <span class="metadata-label">Print:</span>
+              <span class="metadata-value">2160p, 2160p HDR | WEB-DL | H265</span>
+            </div>
+            <div class="metadata-item" style="display: flex;">
+              <span class="metadata-label">Audios:</span>
+              <span class="metadata-value" style="color: #ff9800;">English DDP5.1</span>
+            </div>
+            
+            <div class="metadata-item" style="display: flex;">
+              <span class="metadata-label">Seasons:</span>
+              <span class="metadata-value">S01</span>
+            </div>
+          </div>
+          
+                  
+          
+          
+        </div>
+
+        <div class="content-section">
+  <div class="series-tabs" id="series-tabs">
+    <button class="series-tab active" data-tab="complete-pack">Zip/Pack <svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM96 48c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16zm-6.3 71.8c3.7-14 16.4-23.8 30.9-23.8l14.8 0c14.5 0 27.2 9.7 30.9 23.8l23.5 88.2c1.4 5.4 2.1 10.9 2.1 16.4c0 35.2-28.8 63.7-64 63.7s-64-28.5-64-63.7c0-5.5 .7-11.1 2.1-16.4l23.5-88.2zM112 336c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0z"/></svg></button>
+    <button class="series-tab" data-tab="episodes">Single EP's <svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></button>
+  </div>
+
+  <!-- Complete Pack Tab Content -->
+  <div class="series-tab-content active" id="complete-pack">
+    <h2 class="section-title" style="color:#ff9800">Download Complete Season</h2>
+    <!-- Download Section with Toggle -->
+    <div class="space-y-4">
+        
+        
+      
+    </div>
+  </div>
+
+  <!-- Episodes Tab Content -->
+  <div class="series-tab-content" id="episodes">
+  <h2 class="section-title" style="color:#ff9800">Download Individual Episodes</h2>
+  
+  
+  <div class="k">
+      
+      <div class="season-content"
+      >
+        <div class="episodes-list">
+            
+                    <div class="season-item episode-item ">
+            <div class="episode-header" data-episode-id="596" aria-expanded="false">
+              <div class="episode-number">S01</div>
+              <div class="episode-info">
+                <h3 class="episode-title">S01 SDR 2160p WEB-DL H265</h3>
+                <div class="episode-meta">
+                  <span class="badge" style="background-color: #ea580c; color: white;">Episodes 10</span>
+                  <span class="badge" style="background-color: #0d9488; color: white;">English DDP5.1</span>
+                </div>
+              </div>
+              <div class="episode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon h-4 w-4" style="transform: rotate(0deg);">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="episode-content hidden" id="content-596">
+              <!--<p class="episode-description">-->
+              <!--  In 2003, a mass fungal infection of mutated Cordyceps sparks a global pandemic. Joel flees with his daughter, Sarah, and brother, Tommy, from their Texas home; Sarah is killed by a soldier.-->
+              <!--</p>-->
+              <div class="episode-downloads">
+                <!-- File 1 -->
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-01</span>
+    <span class="badge-size">5.34 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnY2hqSGo5RGg0N1M5Uk55SU55bzNVMFlmUk45ZzlDOFJHNzJWdWtXdm14VlE9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaEJQVEZmM3Jkc3J0SllxSHkyQTNlbUlRWC9sUlVROER0VU03aGlXQ3pDamc9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E02.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-02</span>
+    <span class="badge-size">5 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZDlKRnJUVVpEU3p3dkw3QXg5TWJnMVdZQXh1TVBHeGR5eVFOcFlhM2VyaWc9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZZzlKUXpSdUJ1cmpxQkFiR0FZUjEzR3pvbHRWUWlxb1NlT2tMeXNyYmtFZ2c9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E03.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-03</span>
+    <span class="badge-size">6.28 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnY04vVzdMdk5IRVlLSW02aW9zYUhRMWhqc1NNMUp4aUtUeUZLMXgvTVdhR1E9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZamhUYXoxYkY0SW9XVDBkUmZaZUpMNU5LcXV1TUprVUM3QUVSM3NKalFzUkE9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E04.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-04</span>
+    <span class="badge-size">5.33 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZjg2NzFtZGQ3Wi9kNzB3VVhxd3VLWU5zeVFjYTREK09wSDFrdlBSV2NYV0E9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaFc5Q1ExSlI0V2pZa1QwRU1Xa0VGOUozZWJkTE5rOVhYa1Q0Vk1RVHozUEE9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E05.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-05</span>
+    <span class="badge-size">5.55 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZmZqLys2U0piNEI4c2xnRmVuYVdrRXJiR3UyQmMzbUZubmNNVnNPTVpyVmc9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZamc5dHkvVi9jbm9JY0tEVnNPUyttbjBMZnFDaFByZUxpcXc1MzUrMkljbWc9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E06.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-06</span>
+    <span class="badge-size">5.35 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnY2J1VHNFR3kyRTdTWGdkZU9ObzRqVUhnZ28vT2VzNGpRai8zY2lna1lENUE9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaUF1MzdQNjJDV3lUMzVTK2xQa2xmSmp5RVFJSFMwcXlTUEtaWU83VWtTS1E9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E07.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-07</span>
+    <span class="badge-size">5.18 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZnVtNzRsOXdGRUpvSzNLQlNtM0FTTHczeER3b2FORGxGeEQ4c3gyRDZva1E9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZZ1VyaUVFUmpDbXZrWWFSeUptcUtuSlRsSC9PeitURTlEamJReGRVTEU3dlE9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E08.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-08</span>
+    <span class="badge-size">5.54 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZGFScWU2dU5Gb2FDOUxOYzNVYWpsaWVyMEV5K3dnNnIwUUxmTWFrQm0zQ2c9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZZ2Rxam4zYVhPVUJYcjUxMlY4OGxPbFQvL3R1NklqcWwybnROTERZM2FaM3c9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E09.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-09</span>
+    <span class="badge-size">5.44 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZVNsSXNBbW5ybmJyOFk1ZVMxd2hwNnZPQ3g3d2s0ajA2QllRNUxPSk55bGc9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaVhyTnVWRWpPS1JST2hRQTJ4K0RtQkx6VDNWTmJBQmx2Nk80OVcyUzRRS3c9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E10.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-10</span>
+    <span class="badge-size">5.34 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZDNyaGNGOFo1T2EvZlF3TXAzUTlub3U4aDc1elhwUTJUWFRqelhFTlg5SWc9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaml4OGlVNzl4V0diUWFjMFNSRFA1VktGVXlTSlJNVEp2Vk5ITGFUdTErOGc9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                
+                
+              </div>
+            </div>
+          </div>
+        
+                      <div class="season-item episode-item ">
+            <div class="episode-header" data-episode-id="597" aria-expanded="false">
+              <div class="episode-number">S01</div>
+              <div class="episode-info">
+                <h3 class="episode-title">S01 DoVi 2160p WEB-DL H265</h3>
+                <div class="episode-meta">
+                  <span class="badge" style="background-color: #ea580c; color: white;">Episodes 10</span>
+                  <span class="badge" style="background-color: #0d9488; color: white;">English DDP5.1</span>
+                </div>
+              </div>
+              <div class="episode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon h-4 w-4" style="transform: rotate(0deg);">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="episode-content hidden" id="content-597">
+              <!--<p class="episode-description">-->
+              <!--  In 2003, a mass fungal infection of mutated Cordyceps sparks a global pandemic. Joel flees with his daughter, Sarah, and brother, Tommy, from their Texas home; Sarah is killed by a soldier.-->
+              <!--</p>-->
+              <div class="episode-downloads">
+                <!-- File 1 -->
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E01.2160p.PMTP.WEB-DL.DDP5.1.DV.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-01</span>
+    <span class="badge-size">4.79 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZU5GdnpVc0xiWWFxZ3B5RkNWNHFzamdUSmRoK3E3aUhYS1kxQlZ5Q0RkeHc9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaWl2ZTRXU3E3cVFxdjlhdTFaNjZ4SUFLdUE1L1AwNlFuTk03ZUt2WU9PMVE9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E02.2160p.PMTP.WEB-DL.DDP5.1.DV.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-02</span>
+    <span class="badge-size">4.51 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnY0RFTXJpOEVRMUVObHBJbHl6Y1N1bUVjWE1EWklPeGpXalhLSWpLUHdtRUE9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZZ1JMQlBPeEIzL0dXMWF4MFlwZnB1TmoxZlpSYldFR1JJSUdNbmI2WnhxS3c9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E03.2160p.PMTP.WEB-DL.DDP5.1.DV.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-03</span>
+    <span class="badge-size">5.68 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZlF2Zld0V3BsNFgwd2ZNb0lNM1NTZkl3NnBIL1JsM0VTQjFObjNoa0NUd0E9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaTdCTG5JOEVBUmFQRDZvV3NoUC9HTXhPTjloM0pyUjNRTDBJTkRWQngwSmc9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E04.2160p.PMTP.WEB-DL.DDP5.1.DV.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-04</span>
+    <span class="badge-size">4.78 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZjJiWUhWeGJ1ODZENDd6STB5Rm81VnVkdkNrbjdlM011VGxUOWZQamkxOWc9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZanRoQXhhdzd6VTUrRlZrU290SzFNRlVkUEpsaTV3emlKZElsOEplekdESkE9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E05.2160p.PMTP.WEB-DL.DDP5.1.DV.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-05</span>
+    <span class="badge-size">4.95 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZE5DaFpDYlZ5N2o2OVMyci92enFPRDZoUTlvVlMvMTdNb3h5czNIOXVtK1E9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaXVxcGVYaVExOFl4aHk5MGN1ZEVGY1J0MU9iOStQblBsUlVyT2ZMaHJSUUE9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E06.2160p.PMTP.WEB-DL.DDP5.1.DV.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-06</span>
+    <span class="badge-size">4.8 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnYzhUL3YvNUhwc2JqZVdpRWlnc08yWk1LRkZ0RVFMTkdyR1ZVM25ZVC9BYmc9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZZ1dxYXhGSCtLMDNBU0lQczM4OWFPQjlWaEZVOHlkamY0NUs4MGo1NUhmWHc9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E07.2160p.PMTP.WEB-DL.DDP5.1.DV.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-07</span>
+    <span class="badge-size">4.67 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZFZwWGlrSUVKZmlXL1NvTWZLQTZ3MkZybnRsZWM1UjhmOGI1cHNJRlJyU1E9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaXF2UUJwcm05NUxoUjlYdmlWbUJjdVcwbHJtQkJkWi8vVU1TY2h0ZGYzZXc9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E08.2160p.PMTP.WEB-DL.DDP5.1.DV.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-08</span>
+    <span class="badge-size">5.04 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZWlac1c1THh3VUs2TzJtNWEvQ3JhYk43OG5QQ1B4Vk5lK2trNVMwYmYzY3c9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaTY2R251WGYrMHY1VTkvYVA3MHZBc0o1NzNDMVJqVlc2QWE0TFNMaGtUeUE9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E09.2160p.PMTP.WEB-DL.DDP5.1.DV.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-09</span>
+    <span class="badge-size">4.95 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZXVLWDFMT2J3dVRiL25NbFgwejEyM25QazNHWjNLemtRRFpjTGhvV2kvS0E9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaE5nMHRXZWhWbHdhVUNoQloyZG16RXlwTnF6QTExdFNyeTNteVlqeEJ0NHc9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E10.2160p.PMTP.WEB-DL.DDP5.1.DV.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-10</span>
+    <span class="badge-size">4.83 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZFpVWEF6S2dnRFZoSCtoR1BNYnNIVXlmemNCZDJ0UkpUYTMrK3Zqbk90TkE9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZZ3dmNHlkY2ZFNjVDQlFITmQvcVR0MTl5a1o5Z1l6a3R2dXhYWnBjeEtFRHc9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                
+                
+              </div>
+            </div>
+          </div>
+        
+                      <div class="season-item episode-item ">
+            <div class="episode-header" data-episode-id="598" aria-expanded="false">
+              <div class="episode-number">S01</div>
+              <div class="episode-info">
+                <h3 class="episode-title">S01 2160p HDR WEB-DL H265</h3>
+                <div class="episode-meta">
+                  <span class="badge" style="background-color: #ea580c; color: white;">Episodes 10</span>
+                  <span class="badge" style="background-color: #0d9488; color: white;">English DDP5.1</span>
+                </div>
+              </div>
+              <div class="episode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon h-4 w-4" style="transform: rotate(0deg);">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="episode-content hidden" id="content-598">
+              <!--<p class="episode-description">-->
+              <!--  In 2003, a mass fungal infection of mutated Cordyceps sparks a global pandemic. Joel flees with his daughter, Sarah, and brother, Tommy, from their Texas home; Sarah is killed by a soldier.-->
+              <!--</p>-->
+              <div class="episode-downloads">
+                <!-- File 1 -->
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E01.2160p.PMTP.WEB-DL.DDP5.1.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-01</span>
+    <span class="badge-size">4.7 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZHdxQ0sraW5YYWt4OE03M1dXdGVmdTNzeDNkck03cHlmQXNhaW5ETlZRQmc9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZZzFnZzZrNktVU1lLR1J0YUJndTgrSmhJaTJkWm1XZENsbjlOTjFJekJId0E9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E02.2160p.PMTP.WEB-DL.DDP5.1.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-02</span>
+    <span class="badge-size">4.44 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZjBJSzFRN2VnQWdvNktpdHhYTkNRZk5XZ2FpSHVlS3NPUnJUZHRyS3NTbUE9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZamlvWG53bFpmSjE0QW1HbkwzNlJ1NWF0ZzJ4eGxYeFhhNXlaNmlXNkVIZGc9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E03.2160p.PMTP.WEB-DL.DDP5.1.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-03</span>
+    <span class="badge-size">5.6 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnY0ZLT002NG9VaGI5bnNaZk5Jb1ROdmJ6cnQrUlRySWxBYjA0aHEzMmJLc3c9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZZ1cxMlBiZ1F2OEplVVVSOG9tTFlwTXQreXBvaGxWTTVyeVNMWkNiLzRGRmc9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E04.2160p.PMTP.WEB-DL.DDP5.1.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-04</span>
+    <span class="badge-size">4.74 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZkZEd3hpUzc3UVp4MngrRndyRkR1bE44NmNjSlFIbUhFRzVuN0FxSkQ2bnc9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaWJHNitzbnZ5S090SWpvanFYWS9UYm80OWlXSjlIUWxtdktiNE1xdVREWHc9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E05.2160p.PMTP.WEB-DL.DDP5.1.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-05</span>
+    <span class="badge-size">4.92 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZm9rWFpmZHRJZitTZ3ozWmM5ZFNqNVFsN0tRYXpVcEI5NVBpTHFlNXVpUWc9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaW1GRE1YMWFZNmQrV2U2Y2E3RVlaSTRTRFp2dER2cEN6cjFHSFh1aS9qbEE9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E06.2160p.PMTP.WEB-DL.DDP5.1.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-06</span>
+    <span class="badge-size">4.77 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZFZuRTJTcXhXVnV1dXp3S2VaTWo5Sk1JMkN3S0ltSktCRWFNZ3NEVkU5dEE9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZalFLcTNNUm1RcUxLRGFvLzFCQ0NwZlRpY1VEOGtUekpuUXhCYlJDbFZKMVE9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E07.2160p.PMTP.WEB-DL.DDP5.1.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-07</span>
+    <span class="badge-size">4.61 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZndjYVYycVorRTVlSFNxQm8yaWpyL0Fjd1FBRU1UMHNJTlVHK0pDeVg3Wnc9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaUJKNVp6VktBbkt3ek5Hcm1UdEhBV2lKTkNjSWxWZkoycXhaejZnekgzaGc9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E08.2160p.PMTP.WEB-DL.DDP5.1.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-08</span>
+    <span class="badge-size">4.96 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnY0VYbjZNNHdhVldSRGo5YWUvQW41dnVCY2FPcEh5V3g4c0Y5MmppLzUyMHc9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaVhuWE1IWkJHLzc3NE9KekhXSnlxUGlUQTlCeldvakVDOExxbjZSK3l0V2c9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E09.2160p.PMTP.WEB-DL.DDP5.1.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-09</span>
+    <span class="badge-size">4.87 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZTEvbEFzNXNpaGRwaUNzemI0ZHhKMGFhTHZQcGxRWVlxWHU5dmJxQzU5SEE9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZamRKQUVPMzFFc3ZYc1p5V2tTUzhmZnJUNmdrY3FmSVFqTVRSWUFoV1Urdmc9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E10.2160p.PMTP.WEB-DL.DDP5.1.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-10</span>
+    <span class="badge-size">4.79 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZDkrbHo0eTk4b25LenN1bzhhZktFVy9sa2ZoUFdDQUZFbnZZK2ptb1VYemc9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZZ3g4Y0JESzdqWFkwMjhNZkszMGpBdUNLS1pNMjZVR3RCenpZWSsrU09CdEE9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                
+                
+              </div>
+            </div>
+          </div>
+        
+                      <div class="season-item episode-item ">
+            <div class="episode-header" data-episode-id="599" aria-expanded="false">
+              <div class="episode-number">S01</div>
+              <div class="episode-info">
+                <h3 class="episode-title">S01 DoVi-HDR 2160p WEB-DL H265</h3>
+                <div class="episode-meta">
+                  <span class="badge" style="background-color: #ea580c; color: white;">Episodes 10</span>
+                  <span class="badge" style="background-color: #0d9488; color: white;">English DDP5.1</span>
+                </div>
+              </div>
+              <div class="episode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon h-4 w-4" style="transform: rotate(0deg);">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="episode-content hidden" id="content-599">
+              <!--<p class="episode-description">-->
+              <!--  In 2003, a mass fungal infection of mutated Cordyceps sparks a global pandemic. Joel flees with his daughter, Sarah, and brother, Tommy, from their Texas home; Sarah is killed by a soldier.-->
+              <!--</p>-->
+              <div class="episode-downloads">
+                <!-- File 1 -->
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E01.2160p.PMTP.WEB-DL.DDP5.1.DV.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-01</span>
+    <span class="badge-size">4.71 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnY2pVcno4NHlsN1dpT3IweE1QMUh6cmcxTjdGVDRGcVNzZ0FscWg1cDgvRmc9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZalh1bDFpTms5REN0ZldPY3ZBeWV5RXl4aE1KQTcrbDd3WXFhbXlEeE5FdFE9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E02.2160p.PMTP.WEB-DL.DDP5.1.DV.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-02</span>
+    <span class="badge-size">4.45 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZnpOOFF3aU1LTW4yN01TVnVBS0NDczRZS2MyK0Zwam5lNWU2SFZOM2dyZnc9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaEltcG5oaVpJNkQwR09Vd0xsUWxpUzZwYWxFL1RndTRDZFF1WDl5KzdneFE9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E03.2160p.PMTP.WEB-DL.DDP5.1.DV.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-03</span>
+    <span class="badge-size">5.62 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZHYxcnZySTNRUVhQem90VENmOUk3Rkl5cUxQWm1Gelc2WUdWNHdxenZvSEE9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaWNoMHFIZkdhZFN4TjdYL3psckJkTk9palhxcUZJNDJ4WUdpR3NVaWVkb0E9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E04.2160p.PMTP.WEB-DL.DDP5.1.DV.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-04</span>
+    <span class="badge-size">4.75 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZmd4SHVidGwxemJCRVJzWUtxeEUwMGFjUnBrTERKWmdXZklEVFBFRng2cXc9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZZ1pURStXUWR2YTVvNVQ3ekhLWithWlozd1dzbW40Vm9OWmFBZkJMeS9RUVE9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E05.2160p.PMTP.WEB-DL.DDP5.1.DV.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-05</span>
+    <span class="badge-size">4.94 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnY2FQMlZBamlaZlJYYlg4NGpYK2s4WTBFcFV2QzM3cWoxaVpvYVoyTllNemc9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZalErc1I5OUlUSUVDQ0lMUU5xZ3YrdS9CeG4vUCswMFY5amFzeW5vbjRSVWc9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E06.2160p.PMTP.WEB-DL.DDP5.1.DV.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-06</span>
+    <span class="badge-size">4.78 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZTBMZURyMnM1c0VjdjloYXl4YkZjQ0dwQXY1TGQ3ekxKbldmQVl4RjVoMkE9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaUVreUhZNjVmemZSMXJUS3ZqeUlOQTIxV0tLQmt2NjhiVHo0cjVrWU9rOFE9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E07.2160p.PMTP.WEB-DL.DDP5.1.DV.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-07</span>
+    <span class="badge-size">4.62 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZW5oeUFObUtvNWZKaWRZdi82elExT3AzWUpXU1V5ZlkyTWE0d3d6WXNuNGc9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZak1EV00rTHpsUGtydXQwTHdTN3B3VU9aQy9RelNXZHpDdFhlWFN0T0NhcXc9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E08.2160p.PMTP.WEB-DL.DDP5.1.DV.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-08</span>
+    <span class="badge-size">4.98 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnY2Fwb0FGYUd3aUNsNksyQmhSaTg0QTl0T3ZhYml1LzBWMkkreGRXL2dGRkE9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaHh2aG5leWIwUE55U0tYWnJoNG1lNi9GbGpHL01OYkxWellONDIyb3kvWFE9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E09.2160p.PMTP.WEB-DL.DDP5.1.DV.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-09</span>
+    <span class="badge-size">4.88 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZnJpWE1xTmQ4UUlGQnU5RXlJd0xqMzFjT3lNbWdWWVZRQXhteGR3QmFENlE9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaVUwTXlQeDJVSVV1NHhWSHNBa3J0UEg3Nm9SUE55MDg0MGZXMVZ1YW5xenc9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                <div class="episode-download-item">
+                  <div class="episode-file-title">
+                      
+                      Dexter.Original.Sin.S01E10.2160p.PMTP.WEB-DL.DDP5.1.DV.HDR.H.265-Tyrell.mkv                      
+                      </div>
+                  
+                      <div class="episode-file-info" data-has-pack="false">
+    <span class="badge-psa">Episode-10</span>
+    <span class="badge-size">4.8 GB</span>
+</div>
+
+
+                  <div class="episode-links">
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZGV5MUN3SEpSQW52UWt2TmRoTVl0RjdMS0JQU2Q1YWsySVBzWUllTGlJcVE9PQ==" class="btn btn-sm">Download HubCloud&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                    <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZajVxRHpuY2haZzA0cXAvUmkxbEF5aXdwTE1ZSytNdCs0RDNOdTA1Vk05a0E9PQ==" class="btn btn-sm">Download HubDrive&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg></a>
+                  </div>
+                </div>
+                
+                                
+                
+              </div>
+            </div>
+          </div>
+        
+            
+        </div>
+      </div>
+    </div>
+    
+  
+</div>
+</div>
+<script>document.addEventListener('DOMContentLoaded', function () {
+    // Function to handle header click logic
+    function setupHeaderClick(headers, getId, getContentId) {
+        let previousHeader = null;
+
+        headers.forEach(header => {
+            header.addEventListener('click', function () {
+                const id = getId(header);
+                const contentFile = document.getElementById(getContentId(id));
+
+                if (previousHeader && previousHeader !== header) {
+                    previousHeader.style.backgroundColor = '';
+                }
+
+                if (contentFile.classList.contains('hidden')) {
+                    header.style.backgroundColor = 'hsl(213deg 69.03% 35.03% / 68%)';
+                } else {
+                    header.style.backgroundColor = '';
+                }
+
+                previousHeader = header;
+            });
+        });
+    }
+
+    // Setup for download headers
+    const downloadHeaders = document.querySelectorAll('.download-header');
+    setupHeaderClick(
+        downloadHeaders,
+        header => header.getAttribute('data-file-id').replace('file', ''),
+        id => 'content-file' + id
+    );
+
+    // Setup for episode headers
+    const episodeHeaders = document.querySelectorAll('.episode-header');
+    setupHeaderClick(
+        episodeHeaders,
+        header => header.getAttribute('data-episode-id'),
+        id => 'content-' + id
+    );
+});
+
+</script>
+
+        <div class="info-box mt-8">
+          <div class="mb-4 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <h3 class="text-lg font-semibold">How to Download</h3>
+          </div>
+          <ol class="info-list">
+            <li>Click on the download link of your choice.</li>
+            <li>Wait for the page to load and bypass any ads if necessary.</li>
+            <li>Click on the download button on the file hosting site.</li>
+            <li>Enjoy your high-quality series!</li>
+          </ol>
+        </div>
+
+        <div class="mt-12">
+          <h2 class="section-title" style="font-family: 'Trebuchet Ms', SANS-SERIF;">You May Also Like</h2>
+          <div class="card-grid-small">
+              
+                        <!-- Related Series 1 -->
+            <a href="/stranger-things-series-414/" class="movie-card">
+              <div class="movie-card-image">
+                <img src="https://image.tmdb.org/t/p/w500/uOOtwVbSr4QDjAGIifLDwpb2Pdl.jpg" alt="Stranger Things" class="w-full h-full object-cover">
+                
+                <div class="movie-card-overlay">
+                  <div class="movie-card-formats">
+                                      <span class="movie-card-format">Drama</span>
+                  
+                                    <span class="movie-card-format">Horror</span>
+                  
+                                    <span class="movie-card-format">Mystery</span>
+                  
+                                    <span class="movie-card-format">Sci-Fi & Fantasy</span>
+                  
+                                    <span class="movie-card-format">Hindi</span>
+                  
+                                    <span class="movie-card-format">English</span>
+                  
+                                    <span class="movie-card-format">2160p</span>
+                  
+                                    <span class="movie-card-format">1080p</span>
+                  
+                                    <span class="movie-card-format">Netflix</span>
+                  
+                                    <span class="movie-card-format">Tamil</span>
+                  
+                                    <span class="movie-card-format">Series</span>
+                  
+                                    <span class="movie-card-format">Telugu</span>
+                  
+                                    </div>
+                </div>
+              </div>
+              <div class="movie-card-content">
+                <h3 class="movie-card-title">Stranger Things</h3>
+                <p class="movie-card-meta">2016                • S1.0-S5.2              </p>
+              </div>
+            </a>
+            
+                        <!-- Related Series 1 -->
+            <a href="/mayor-of-kingstown-series-4053/" class="movie-card">
+              <div class="movie-card-image">
+                <img src="https://image.tmdb.org/t/p/w500/86OUOPulMiM8rjrQSt4KMev7UAa.jpg" alt="Mayor of Kingstown" class="w-full h-full object-cover">
+                
+                <div class="movie-card-overlay">
+                  <div class="movie-card-formats">
+                                      <span class="movie-card-format">Drama</span>
+                  
+                                    <span class="movie-card-format">Thriller</span>
+                  
+                                    <span class="movie-card-format">Crime</span>
+                  
+                                    <span class="movie-card-format">Hindi</span>
+                  
+                                    <span class="movie-card-format">English</span>
+                  
+                                    <span class="movie-card-format">2160p</span>
+                  
+                                    <span class="movie-card-format">1080p</span>
+                  
+                                    <span class="movie-card-format">Series</span>
+                  
+                                    <span class="movie-card-format">JioHotstar</span>
+                  
+                                    <span class="movie-card-format">Paramount+</span>
+                  
+                                    </div>
+                </div>
+              </div>
+              <div class="movie-card-content">
+                <h3 class="movie-card-title">Mayor of Kingstown</h3>
+                <p class="movie-card-meta">2021                • S1.0-S4.0 EP10              </p>
+              </div>
+            </a>
+            
+                        <!-- Related Series 1 -->
+            <a href="/gachiakuta-series-2210/" class="movie-card">
+              <div class="movie-card-image">
+                <img src="https://image.tmdb.org/t/p/w500/84LdrRRvpWk8g0EaaW7z3eKdfum.jpg" alt="Gachiakuta" class="w-full h-full object-cover">
+                
+                <div class="movie-card-overlay">
+                  <div class="movie-card-formats">
+                                      <span class="movie-card-format">Animation</span>
+                  
+                                    <span class="movie-card-format">Drama</span>
+                  
+                                    <span class="movie-card-format">Action & Adventure</span>
+                  
+                                    <span class="movie-card-format">Sci-Fi & Fantasy</span>
+                  
+                                    <span class="movie-card-format">Hindi</span>
+                  
+                                    <span class="movie-card-format">English</span>
+                  
+                                    <span class="movie-card-format">Series</span>
+                  
+                                    <span class="movie-card-format">Anime</span>
+                  
+                                    </div>
+                </div>
+              </div>
+              <div class="movie-card-content">
+                <h3 class="movie-card-title">Gachiakuta</h3>
+                <p class="movie-card-meta">2025                • S1.1-S1.2 EP22              </p>
+              </div>
+            </a>
+            
+                        <!-- Related Series 1 -->
+            <a href="/surely-tomorrow-series-4772/" class="movie-card">
+              <div class="movie-card-image">
+                <img src="https://image.tmdb.org/t/p/w500/k9xPcIsxXbc1Xuf45K0FU8yM2m5.jpg" alt="Surely Tomorrow" class="w-full h-full object-cover">
+                
+                <div class="movie-card-overlay">
+                  <div class="movie-card-formats">
+                                      <span class="movie-card-format">Drama</span>
+                  
+                                    <span class="movie-card-format">Comedy</span>
+                  
+                                    <span class="movie-card-format">Romance</span>
+                  
+                                    <span class="movie-card-format">Hindi</span>
+                  
+                                    <span class="movie-card-format">Series</span>
+                  
+                                    <span class="movie-card-format">Amazon Prime Video</span>
+                  
+                                    <span class="movie-card-format">Korean</span>
+                  
+                                    </div>
+                </div>
+              </div>
+              <div class="movie-card-content">
+                <h3 class="movie-card-title">Surely Tomorrow</h3>
+                <p class="movie-card-meta">2025                • S1.0 EP08              </p>
+              </div>
+            </a>
+            
+            
+            
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<!-- Footer -->
+<footer class="border-t bg-background">
+    <div class="container py-8 md:py-12">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-4 justify-center text-center md:text-left">
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold">4K-HDHub</h3>
+          <p class="text-sm text-muted-foreground">
+            Your one-stop destination for high-quality movies and TV shows in various formats.
+          </p>
+        </div>
+        
+        <!-- Quick Links Section -->
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold">Quick Links</h3>
+          <ul class="flex flex-wrap justify-center gap-4 text-sm">
+            <li>
+              <a href="/about" class="text-muted-foreground hover:text-primary">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="/contact" class="text-muted-foreground hover:text-primary">
+                Contact Us
+              </a>
+            </li>
+            <li>
+              <a href="/dmca" class="text-muted-foreground hover:text-primary">
+                DMCA
+              </a>
+            </li>
+            <li>
+              <a href="/privacy-policy" class="text-muted-foreground hover:text-primary">
+                Privacy Policy
+              </a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold">Connect</h3>
+          <p class="text-sm text-muted-foreground">Stay updated with the latest releases and news.</p>
+        </div>
+      </div>
+  
+      <!-- Footer Bottom -->
+      <div class="mt-8 border-t pt-8 text-center">
+        <p class="text-xs text-muted-foreground">© <span id="current-year">2025</span> 4K-HDHub - All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+
+<!-- Back to top button -->
+<button id="back-to-top" class="fixed bottom-6 right-6 z-50 rounded-full shadow-md transition-opacity duration-300 opacity-0 pointer-events-none bg-primary text-primary-foreground p-2" aria-label="Back to top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m18 15-6-6-6 6" />
+  </svg>
+</button>
+
+<!-- Trailer Modal -->
+<div id="trailer-modal" class="fixed inset-0 z-[9999] flex items-start justify-center pt-20 bg-black/80 backdrop-blur-sm hidden">
+  <div class="relative w-[90%] max-w-3xl bg-background rounded-lg shadow-lg overflow-hidden">
+    <div class="p-4 flex justify-between items-center border-b">
+      <div>
+        <h3 class="text-lg font-semibold">Dexter: Original Sin - Official Trailer</h3>
+        <p class="text-sm text-muted-foreground">Watch the official trailer for Dexter: Original Sin</p>
+      </div>
+      <button id="close-trailer" class="rounded-full hover:bg-muted/50 p-2 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+        <span class="sr-only">Close trailer</span>
+      </button>
+    </div>
+    <div class="p-4">
+      <div id="trailer-container" class="aspect-video w-full bg-black/50 rounded-md">
+        <!-- iframe will be inserted here dynamically -->
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+</body>
+</html>

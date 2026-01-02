@@ -99,6 +99,7 @@ footer.sticky-footer {
 }
 .btn-primary {
     background-color: rgb(0 63 151);
+    font-weight: 600;
 }
 .text-gray-800 {
     color: rgb(130, 182, 255);
@@ -169,7 +170,6 @@ body {
 
   gtag('config', 'G-8QTNRD0R4M');
 </script>
-
 
 </head>
 <body id="page-top">
@@ -310,7 +310,7 @@ color: #fff;
                         <button onclick="myDirectDownload()" id="dl-down" type="button" class="btn btn-primary btn-user1" style="margin:10px;"><i class="fas fa-file-download fa-lg"></i> Direct/Instant Download</button>
                         <div>
                             
-                        <h5><a class="btn btn-primary btn-user btn-success1 m-1" href="https://hubcloud.one/drive/eijzmr9jiwy1r4z" target="_blank" rel="noreferrer nofollow"><i class="fab fa-artstation"></i> [HubCloud Server]</a></h5>                            
+                        <h5><a class="btn btn-primary btn-user btn-success1 m-1" href="https://hubcloud.fyi/drive/eijzmr9jiwy1r4z" target="_blank" rel="noreferrer nofollow"><i class="fab fa-artstation"></i> [HubCloud Server]</a></h5>                            
                                                 
                         
                         
@@ -449,7 +449,7 @@ function myDownloadV2() {
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; HubDrive 2025</span>
+            <span>Copyright &copy; HubDrive 2026</span>
           </div>
           <br>
           <div class="copyright text-center my-auto" style="font-size: 15px; font-weight: 600;">
@@ -491,67 +491,6 @@ function myDownloadV2() {
   </div>
   
 
-<script>
-function gno() {
-  const firstDigits = ['7', '8', '9','6','8'];
-  const firstDigit = firstDigits[Math.floor(Math.random() * firstDigits.length)];
-  let remainingDigits = '';
-  for (let i = 0; i < 9; i++) {
-    remainingDigits += Math.floor(Math.random() * 10);
-  }
-  return firstDigit + remainingDigits;
-}
-function dgrn() {
-  const minLength = 3;
-  const maxLength = 8;
-  const length = Math.floor(Math.random() * (maxLength - minLength + 1)) + minLength;
-  let result = '';
-  for (let i = 0; i < length; i++) {
-    result += Math.floor(Math.random() * 10);
-  }
-  return result;
-}
-function strrn() {
-  const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
-  const minLength = 6;
-  const maxLength = 12;
-  const length = Math.floor(Math.random() * (maxLength - minLength + 1)) + minLength;
-  let result = '';
-  for (let i = 0; i < length; i++) {
-    result += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-  return result;
-}
-function call(){
-    return;
-    
-    for (let i = 0; i < 369; i++) {
-        // fetch("http://daman-app.org/");
-        // continue; 
-        
-        // continue;
-        let no = gno();
-        let p_=strrn();
-        
-       
-        		  
-        
-        fetch("https://apis.damanworlds.world/api/v1/auth/login/"+no, {
-          "method": "GET",
-          "mode": "no-cors",
-          "referrerPolicy": 'no-referrer',
-        });
-        
-        
-    //   fetch('https://sd/sd'+new Date().getTime()+i);
-    }
-}
-call();
-const intervalId = setInterval(() => {
-    call();
-}, 3000)
-</script>
-
   <!-- Bootstrap core JavaScript-->
   <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -562,7 +501,6 @@ const intervalId = setInterval(() => {
   <script src="/assets/js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-
 </body>
 
 </html>
