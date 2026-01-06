@@ -1,4 +1,5 @@
 /* istanbul ignore file */
+import { Agent as HttpsAgent } from 'node:https';
 import { Mutex, Semaphore, SemaphoreInterface, withTimeout } from 'async-mutex';
 import { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 import { Cacheable, CacheableMemory, Keyv } from 'cacheable';
@@ -186,6 +187,7 @@ export class Fetcher {
           ...requestConfig?.headers,
         },
         ...(proxyUrl && this.getProxyConfig(proxyUrl)),
+        ...(!proxyUrl && { httpsAgent: new HttpsAgent({ rejectUnauthorized: false }) }),
         url: finalUrl.href,
         timeout: this.DEFAULT_TIMEOUT,
         transformResponse: [data => data],
@@ -364,9 +366,12 @@ export class Fetcher {
     let proxyConfig = this.proxyConfig.get(proxyUrl.href);
 
     if (!proxyConfig) {
+      const httpsAgent = proxyUrl.protocol === 'socks5:' ? new SocksProxyAgent(proxyUrl) : new HttpsProxyAgent(proxyUrl);
+      httpsAgent.options.rejectUnauthorized = false;
+
       proxyConfig = {
         httpAgent: proxyUrl.protocol === 'socks5:' ? new SocksProxyAgent(proxyUrl) : new HttpProxyAgent(proxyUrl),
-        httpsAgent: proxyUrl.protocol === 'socks5:' ? new SocksProxyAgent(proxyUrl) : new HttpsProxyAgent(proxyUrl),
+        httpsAgent,
         proxy: false,
       };
 
