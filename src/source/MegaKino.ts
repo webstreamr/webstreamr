@@ -80,7 +80,7 @@ export class MegaKino extends Source {
     const $ = cheerio.load(html);
 
     return $('#dle-content a[href].poster:first')
-      .map((_i, el) => new URL($(el).attr('href') as string))
+      .map(async (_i, el) => new URL($(el).attr('href') as string, await this.getBaseUrl(ctx)))
       .get(0);
   };
 
