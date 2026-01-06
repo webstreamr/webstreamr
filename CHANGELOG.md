@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.59.0](https://github.com/webstreamr/webstreamr/compare/v0.58.12...v0.59.0) (2026-01-06)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#615](https://github.com/webstreamr/webstreamr/issues/615)) ([8d1991e](https://github.com/webstreamr/webstreamr/commit/8d1991ed84f566585ec528345bee1548b4916c35))
+* **deps:** update dependency typescript-eslint to v8.52.0 ([#616](https://github.com/webstreamr/webstreamr/issues/616)) ([430e5b7](https://github.com/webstreamr/webstreamr/commit/430e5b7fce20925814227a7effbe55a5eb6bb2eb))
+* **extractor:** add crystaltreatmenteast.com to VOE ([bfe8c36](https://github.com/webstreamr/webstreamr/commit/bfe8c36e874c9f246852d17fcedf83eb5e4d481f))
+* **source:** do not filter out any KinoGer links ([41bc53b](https://github.com/webstreamr/webstreamr/commit/41bc53b9da4f4882b415b055d99f0ef31c5a907a))
+
+
+### Features
+
+* **extractor:** bring back Fsst ([e1e8f37](https://github.com/webstreamr/webstreamr/commit/e1e8f37862874f3e178b4e4dbd2f44bfcc47a0ab))
+
+
+### Bug Fixes
+
+* **extractor:** handle FileLions deleted by administration ([c075fe9](https://github.com/webstreamr/webstreamr/commit/c075fe9481f21e2f3f5715227b4b939c3de11d0b))
+* **source:** handle MegaKino relative page links ([7146c6c](https://github.com/webstreamr/webstreamr/commit/7146c6cf11fa0d7ad12596987eeff176daf97697))
+
 ## [0.58.12](https://github.com/webstreamr/webstreamr/compare/v0.58.11...v0.58.12) (2026-01-02)
 
 
