@@ -51,12 +51,16 @@ export class FetcherMock extends Fetcher {
     return (await this.fetchInternal(path, ctx, url, { ...init, method: 'HEAD' })).headers;
   };
 
-  public override async getFinalRedirectUrl(ctx: Context, url: URL, requestConfig?: CustomRequestConfig): Promise<URL> {
+  public override async getFinalRedirectUrl(ctx: Context, url: URL, requestConfig?: CustomRequestConfig, maxCount?: number, count?: number): Promise<URL> {
     const newRequestConfig = { ...requestConfig, method: 'HEAD', maxRedirects: 0 };
+
+    if (count && maxCount && count >= maxCount) {
+      return url;
+    }
 
     const response = await this.fetch(ctx, url, newRequestConfig);
     if (response.headers['location']) {
-      return await this.getFinalRedirectUrl(ctx, new URL(response.headers['location']), newRequestConfig);
+      return await this.getFinalRedirectUrl(ctx, new URL(response.headers['location']), newRequestConfig, maxCount, (count ?? 0) + 1);
     }
 
     return url;

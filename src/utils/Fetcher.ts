@@ -41,6 +41,7 @@ type ProxyConfig = Pick<AxiosRequestConfig, 'httpAgent' | 'httpsAgent' | 'proxy'
 
 export type CustomRequestConfig = AxiosRequestConfig & {
   minCacheTtl?: number;
+  noProxyHeaders?: boolean;
   queueLimit?: number;
   queueTimeout?: number;
   timeout?: number;
@@ -92,12 +93,16 @@ export class Fetcher {
     return (await this.queuedFetch(ctx, url, { ...requestConfig, method: 'HEAD' })).headers;
   };
 
-  public async getFinalRedirectUrl(ctx: Context, url: URL, requestConfig?: CustomRequestConfig): Promise<URL> {
+  public async getFinalRedirectUrl(ctx: Context, url: URL, requestConfig?: CustomRequestConfig, maxCount?: number, count?: number): Promise<URL> {
     const newRequestConfig = { ...requestConfig, method: 'HEAD', maxRedirects: 0 };
+
+    if (count && maxCount && count >= maxCount) {
+      return url;
+    }
 
     const response = await this.queuedFetch(ctx, url, newRequestConfig);
     if (response.status >= 300 && response.status < 400) {
-      return await this.getFinalRedirectUrl(ctx, new URL(response.headers['location']), newRequestConfig);
+      return await this.getFinalRedirectUrl(ctx, new URL(response.headers['location']), newRequestConfig, maxCount, (count ?? 0) + 1);
     }
 
     return url;
@@ -171,7 +176,7 @@ export class Fetcher {
           'User-Agent': this.hostUserAgentMap.get(url.host) ?? 'Mozilla',
           ...(hostUserAgent && { 'User-Agent': hostUserAgent }),
           ...(cookieString && { Cookie: cookieString }),
-          ...(ctx.ip && {
+          ...(ctx.ip && !requestConfig?.noProxyHeaders && {
             'Forwarded': `by=unknown;for=${ctx.ip};host=${url.host};proto=${forwardedProto}`,
             'X-Forwarded-For': ctx.ip,
             'X-Forwarded-Host': url.host,

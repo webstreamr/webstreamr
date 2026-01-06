@@ -6,6 +6,7 @@ import { Extractor } from './Extractor';
 import { Fastream } from './Fastream';
 import { FileLions } from './FileLions';
 import { FileMoon } from './FileMoon';
+import { Fsst } from './Fsst';
 import { HubCloud } from './HubCloud';
 import { KinoGer } from './KinoGer';
 import { LuluStream } from './LuluStream';
@@ -32,6 +33,7 @@ export const createExtractors = (fetcher: Fetcher): Extractor[] => {
     new Fastream(fetcher),
     new FileLions(fetcher),
     new FileMoon(fetcher),
+    new Fsst(fetcher),
     new HubCloud(fetcher),
     new KinoGer(fetcher),
     new LuluStream(fetcher),
