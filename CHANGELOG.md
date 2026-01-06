@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.59.1](https://github.com/webstreamr/webstreamr/compare/v0.59.0...v0.59.1) (2026-01-06)
+
+
+### Bug Fixes
+
+* **source:** adapt MegaKino domain ([04f3fc4](https://github.com/webstreamr/webstreamr/commit/04f3fc42e06f4a69804bb0c080922615843af31f))
+
 ## [0.59.0](https://github.com/webstreamr/webstreamr/compare/v0.58.12...v0.59.0) (2026-01-06)
 
 
