@@ -34,7 +34,7 @@ export class StreamUp extends Extractor {
     const referer = `${url.origin}/`;
 
     const headers = {
-      Referer: referer,
+      'Referer': referer,
       'User-Agent': 'Mozilla/5.0',
     };
 
