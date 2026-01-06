@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.60.0](https://github.com/webstreamr/webstreamr/compare/v0.59.1...v0.60.0) (2026-01-06)
+
+
+### Miscellaneous Chores
+
+* **fetcher:** disable TLS verification ([281fe00](https://github.com/webstreamr/webstreamr/commit/281fe00a351fc7aa25596e4b1f6b6272247feeb8))
+
+
+### Features
+
+* **extractor:** switch KinoGer from cf to source, add kinoger.p2pplay.pro support ([f6f71b0](https://github.com/webstreamr/webstreamr/commit/f6f71b043bc51b1b22316c53c916bf24ab745f95))
+
 ## [0.59.1](https://github.com/webstreamr/webstreamr/compare/v0.59.0...v0.59.1) (2026-01-06)
 
 
