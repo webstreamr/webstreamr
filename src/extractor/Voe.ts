@@ -43,6 +43,7 @@ export class Voe extends Extractor {
         'cindyeyefinal.com',
         'counterclockwisejacky.com',
         'crownmakermacaronicism.com',
+        'crystaltreatmenteast.com',
         'cyamidpulverulence530.com',
         'diananatureforeign.com',
         'donaldlineelse.com',
