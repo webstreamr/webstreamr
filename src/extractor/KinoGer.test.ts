@@ -21,4 +21,8 @@ describe('KinoGer', () => {
   test('filma365.strp2p.site', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://filma365.strp2p.site/#vih6bx'))).toMatchSnapshot();
   });
+
+  test('kinoger.p2pplay.pro', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://kinoger.p2pplay.pro/#k53k9'))).toMatchSnapshot();
+  });
 });

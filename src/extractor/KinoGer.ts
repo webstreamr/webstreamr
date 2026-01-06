@@ -20,6 +20,7 @@ export class KinoGer extends Extractor {
       'filma365.strp2p.site',
       'flimmer.rpmvip.com',
       'flixfilmesonline.strp2p.site',
+      'kinoger.p2pplay.pro',
       'kinoger.re',
       'moflix.rpmplay.xyz',
       'moflix.upns.xyz',
@@ -57,9 +58,9 @@ export class KinoGer extends Extractor {
     const decipher = crypto.createDecipheriv('aes-128-cbc', key, iv);
     const decrypted = Buffer.concat([decipher.update(encrypted), decipher.final()]).toString();
 
-    const { cf, title } = JSON.parse(decrypted) as { cf: string; title: string };
+    const { source, title } = JSON.parse(decrypted) as { source: string; title: string };
 
-    const m3u8Url = new URL(cf);
+    const m3u8Url = new URL(source);
 
     return [
       {
@@ -69,12 +70,10 @@ export class KinoGer extends Extractor {
         ttl: this.ttl,
         meta: {
           ...meta,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, url, { headers: { Referer: url.href } }),
+          height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, url, { headers }),
           title,
         },
-        requestHeaders: {
-          Referer: url.origin,
-        },
+        requestHeaders: headers,
       },
     ];
   };
