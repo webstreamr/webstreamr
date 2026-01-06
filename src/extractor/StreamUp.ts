@@ -43,6 +43,8 @@ export class StreamUp extends Extractor {
     const sessionMatch = html.match(/'([a-f0-9]{32})'/);
     const encryptedMatch = html.match(/'([A-Za-z0-9+/=]{200,})'/);
 
+    let streamUrl: string | undefined;
+
     if (sessionMatch && encryptedMatch) {
       /* encrypted flow */
       const sessionId = sessionMatch[1] as string;
