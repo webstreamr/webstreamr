@@ -1,7 +1,7 @@
 import crypto from 'crypto';
+import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
 import { Extractor } from './Extractor';
-import { NotFoundError } from '../error';
 
 /**
  * Port of:
