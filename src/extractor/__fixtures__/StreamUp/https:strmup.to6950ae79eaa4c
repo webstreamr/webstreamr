@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Wake.Up.Dead.Man.A.Knives.Out.Mystery.2025</title>
+    <script src='https://ssl.p.jwpcdn.com/player/v/8.36.2/jwplayer.js'></script>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" type="text/css" href="panel/assets/css/jwplayer.css?v=5" />
+    <link rel="stylesheet" type="text/css" href="panel/assets/css/netflix.css?v=5" />
+    <script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+    <style type="text/css">#video-container,body,html{width:100%;height:100%;overflow:hidden}body,html{font-family:Tahoma;padding:0;margin:0;background-color:#000}#video-container{position:fixed;top:0;left:0;z-index:10}#jwplayer{width:100%!important;height:100%!important}.play-button-outer{position:absolute;z-index:999997;width:6em;height:6em;background-color:gray;cursor:pointer}.play-button{margin:0 auto;top:25%;position:relative;width:0;height:0;border-style:solid;border-width:1.5em 0 1.5em 3em;border-color:transparent transparent transparent #000;opacity:.75}.play-button-outer:hover{background-color:#a9a9a9}.play-button-outer:hover .play-button{opacity:1}.swal-text,.swal-title{font-family:Arial,sans-serif}</style>
+</head>
+<body>
+<div id="video-container">
+    <div id="jwplayer"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script>
+jwplayer.key="ITWMv7t88JGzI0xPwW8I0+LveiXX9SWbfdmt0ArUSyc=";let player=jwplayer("jwplayer"),globalFilecode=null,positionApplied=!1,totalWatchTime=0;function getFilecodeFromURL(){let e=window.location.pathname.split("/");return e.pop()||e.pop()}function getQueryParam(e){return new URL(window.location.href).searchParams.get(e)}let filecode=getFilecodeFromURL();if(filecode){globalFilecode=filecode;let e=`/ajax/stream?filecode=${encodeURIComponent(filecode)}`,t=new URLSearchParams(window.location.search);t.delete("filecode");let _=t.toString();_&&(e+="&"+_),fetch(e).then(e=>e.json()).then(e=>{window.videoSubtitles=e.subtitles||[],window.defaultSubtitleLang=(e.default_sub_lang||"").toLowerCase(),setupSubtitlesOnly(e)}).catch(e=>console.error("Failed to load stream data:",e))}function setupSubtitlesOnly(e){let t=window.videoSubtitles||[],_=(window.defaultSubtitleLang||"").toLowerCase(),$=t.filter(e=>0===e.type).map(e=>{let t=e.language||"Subtitle",$=t.toLowerCase(),l=_&&($===_||$.includes(_));return{file:e.file_path,label:t,kind:"captions",default:l}});if($.filter(e=>e.default).length>1){let l=$.findIndex(e=>e.default);$=$.map((e,t)=>({...e,default:t===l}))}setupPlayer(e,$)}function setupPlayer(e,t){player.setup({playlist:[{sources:[{file:e.streaming_url}],title:e.title,image:e.thumbnail,tracks:t}],autostart:!1,cast:{},controls:!0,displaytitle:!0,displaydescription:!0,abouttext:"StreamUP",aboutlink:"https://streamup.cc/",skin:{name:"netflix",buttons:"over"},advertising:{client:"googima",schedule:{adBreak1:{offset:"pre",tag:e.vast_ads}}},playbackRateControls:!0,playbackRates:[.5,1,1.5,2]}),player.on("ready",function(){jwplayer().addButton('<svg xmlns="http://www.w3.org/2000/svg" class="jw-svg-icon jw-svg-icon-rewind2" viewBox="0 0 240 240" focusable="false"><path d="m 25.993957,57.778 v 125.3 c 0.03604,2.63589 2.164107,4.76396 4.8,4.8 h 62.7 v -19.3 h -48.2 v -96.4 H 160.99396 v 19.3 c 0,5.3 3.6,7.2 8,4.3 l 41.8,-27.9 c 2.93574,-1.480087 4.13843,-5.04363 2.7,-8 -0.57502,-1.174985 -1.52502,-2.124979 -2.7,-2.7 l -41.8,-27.9 c -4.4,-2.9 -8,-1 -8,4.3 v 19.3 H 30.893957 c -2.689569,0.03972 -4.860275,2.210431 -4.9,4.9 z m 163.422413,73.04577 c -3.72072,-6.30626 -10.38421,-10.29683 -17.7,-10.6 -7.31579,0.30317 -13.97928,4.29374 -17.7,10.6 -8.60009,14.23525 -8.60009,32.06475 0,46.3 3.72072,6.30626 10.38421,10.29683 17.7,10.6 7.31579,-0.30317 13.97928,-4.29374 17.7,-10.6 8.60009,-14.23525 8.60009,-32.06475 0,-46.3 z m -17.7,47.2 c -7.8,0 -14.4,-11 -14.4,-24.1 0,-13.1 6.6,-24.1 14.4,-24.1 7.8,0 14.4,11 14.4,24.1 0,13.1 -6.5,24.1 -14.4,24.1 z m -47.77056,9.72863 v -51 l -4.8,4.8 -6.8,-6.8 13,-12.99999 c 3.02543,-3.03598 8.21053,-0.88605 8.2,3.4 v 62.69999 z"></path></svg>',"Forward 10 sec",function(){jwplayer().seek(jwplayer().getPosition()+10)},"ff11"),jwplayer().addButton('<svg xmlns="http://www.w3.org/2000/svg" class="jw-svg-icon jw-svg-icon-rewind" viewBox="0 0 240 240" focusable="false"><path d="M113.2,131.078a21.589,21.589,0,0,0-17.7-10.6,21.589,21.589,0,0,0-17.7,10.6,44.769,44.769,0,0,0,0,46.3,21.589,21.589,0,0,0,17.7,10.6,21.589,21.589,0,0,0,17.7-10.6,44.769,44.769,0,0,0,0-46.3Zm-17.7,47.2c-7.8,0-14.4-11-14.4-24.1s6.6-24.1,14.4-24.1,14.4,11,14.4,24.1S103.4,178.278,95.5,178.278Zm-43.4,9.7v-51l-4.8,4.8-6.8-6.8,13-13a4.8,4.8,0,0,1,8.2,3.4v62.7l-9.6-.1Zm162-130.2v125.3a4.867,4.867,0,0,1-4.8,4.8H146.6v-19.3h48.2v-96.4H79.1v19.3c0,5.3-3.6,7.2-8,4.3l-41.8-27.9a6.013,6.013,0,0,1-2.7-8,5.887,5.887,0,0,1,2.7-2.7l41.8-27.9c4.4-2.9,8-1,8,4.3v19.3H209.2A4.974,4.974,0,0,1,214.1,57.778Z"></path></svg>',"Rewind 10 sec",function(){var e=jwplayer().getPosition()-10;e<0&&(e=0),jwplayer().seek(e)},"ff00")}),handlePlayerEvents(e.filecode)}function handlePlayerEvents(e){if(!e)return;let t=null;player.on("play",function(){if(!positionApplied){let _=localStorage.getItem(`videoPlaybackPosition_${e}`);_&&(player.seek(parseFloat(_)/1e3),positionApplied=!0)}t||(t=setInterval(()=>{totalWatchTime++},1e3))}),player.on("pause",()=>{clearInterval(t),t=null}),player.on("complete",()=>{clearInterval(t),t=null}),player.on("time",function(t){let _=t.position;localStorage.setItem(`videoPlaybackPosition_${e}`,1e3*_)})}
+</script>
+<script>
+const file_id="2229055",visitorData={file_id:"2229055",gpu:null,cpu:null,screen_res:`${screen.width}x${screen.height}`,iframe_size:`${window.innerWidth}x${window.innerHeight}`,mouse_position:"",click_position:"",page_duration:0,referer:document.referrer||window.location.href,watch_time:0,tab_visibility_changes:0};let startTime=Date.now(),lastActivityTime=Date.now(),inactivityStart=null;function updateActivity(){lastActivityTime=Date.now()}document.addEventListener("mousemove",t=>{visitorData.mouse_position=`${t.pageX}x${t.pageY}`,updateActivity()}),document.addEventListener("click",t=>{visitorData.click_position=`${t.pageX}x${t.pageY}`,updateActivity()}),document.addEventListener("visibilitychange",()=>{document.hidden&&visitorData.tab_visibility_changes++}),setInterval(()=>{let t=Date.now();t-lastActivityTime>=1e4&&!inactivityStart?inactivityStart=lastActivityTime:t-lastActivityTime<1e4&&inactivityStart&&(inactivityStart=null)},1e3);try{let t=document.createElement("canvas"),i=t.getContext("webgl")||t.getContext("experimental-webgl"),a=i.getExtension("WEBGL_debug_renderer_info");visitorData.gpu=a?i.getParameter(a.UNMASKED_RENDERER_WEBGL):"Unknown"}catch{visitorData.gpu="Unavailable"}visitorData.cpu=navigator.hardwareConcurrency?`${navigator.hardwareConcurrency} cores`:"Unknown";let hasSentData=!1;function sendVisitorData(){hasSentData||(hasSentData=!0,visitorData.page_duration=Math.round((Date.now()-startTime)/1e3),visitorData.watch_time=Math.round(totalWatchTime),fetch("/ajax/data",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(visitorData)}).catch(()=>{}))}setInterval(()=>{"undefined"!=typeof totalWatchTime&&!hasSentData&&Math.floor(totalWatchTime)>=87&&sendVisitorData()},500);
+</script>
+
+<script src="assets/js/new100.js?v=1"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MJZHCJR7Q8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MJZHCJR7Q8');
+</script>
+        <script>
+        const l = [{"url":"https://zoovanuzauphoth.net/4/9188322","delay":3000,"lastOpened":0}];
+        let i = 0;
+        document.addEventListener("click", function () {
+            const t = Date.now(), e = l[i % l.length];
+            if (t - e.lastOpened >= e.delay) {
+                window.open(e.url, "popupWindow", "width=800,height=600,scrollbars=yes,resizable=yes");
+                e.lastOpened = t;
+            }
+            i++;
+        });
+        </script>
+    
+<script>
+const l=[{"url":"https://obqj2.com/4/9637106","delay":240000,"lastOpened":0},{"url":"https://obqj2.com/4/9637106","delay":240000,"lastOpened":0}];let i=0;document.addEventListener("click",function(){const t=Date.now(),e=l[i%l.length];t-e.lastOpened>=e.delay&&(window.open(e.url,"popupWindow","width=800,height=600,scrollbars=yes,resizable=yes"),e.lastOpened=t),i++});
+</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bb6680ecad95d57',t:'MTc2Nzk4NzYyNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

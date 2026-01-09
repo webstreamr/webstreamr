@@ -15,6 +15,7 @@ import { RgShows } from './RgShows';
 import { SaveFiles } from './SaveFiles';
 import { StreamEmbed } from './StreamEmbed';
 import { Streamtape } from './Streamtape';
+import { StreamUp } from './StreamUp';
 import { SuperVideo } from './SuperVideo';
 import { Uqload } from './Uqload';
 import { Vidora } from './Vidora';
@@ -43,6 +44,7 @@ export const createExtractors = (fetcher: Fetcher): Extractor[] => {
     new SaveFiles(fetcher),
     new StreamEmbed(fetcher),
     new Streamtape(fetcher),
+    new StreamUp(fetcher),
     new SuperVideo(fetcher),
     new Uqload(fetcher),
     new Vidora(fetcher),
