@@ -238,6 +238,7 @@ export function landingTemplate(manifest: CustomManifest) {
       }
       const updateLink = () => {
         const config = Object.fromEntries(new FormData(mainForm))
+        config.mediaFlowProxyUrl = config.mediaFlowProxyUrl.replace(/^https?.\\/\\//, '');
         installLink.href = 'stremio://' + window.location.host + '/' + encodeURIComponent(JSON.stringify(config)) + '/manifest.json'
       }
       mainForm.onchange = updateLink
