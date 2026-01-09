@@ -17,7 +17,13 @@ export const guessHeightFromPlaylist = async (ctx: Context, fetcher: Fetcher, pl
     return height;
   }
 
-  const m3u8Data = await fetcher.text(ctx, playlistUrl, init);
+  let m3u8Data: string;
+  try {
+    m3u8Data = await fetcher.text(ctx, playlistUrl, init);
+  } catch {
+    /* istanbul ignore next */
+    return undefined;
+  }
 
   const heights = Array.from(m3u8Data.matchAll(/\d+x(\d+)|(\d+)p/g))
     .map(heightMatch => heightMatch[1] ?? heightMatch[2])
