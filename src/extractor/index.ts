@@ -11,6 +11,7 @@ import { HubCloud } from './HubCloud';
 import { KinoGer } from './KinoGer';
 import { LuluStream } from './LuluStream';
 import { Mixdrop } from './Mixdrop';
+import { RgShows } from './RgShows';
 import { SaveFiles } from './SaveFiles';
 import { StreamEmbed } from './StreamEmbed';
 import { Streamtape } from './Streamtape';
@@ -38,6 +39,7 @@ export const createExtractors = (fetcher: Fetcher): Extractor[] => {
     new KinoGer(fetcher),
     new LuluStream(fetcher),
     new Mixdrop(fetcher),
+    new RgShows(fetcher),
     new SaveFiles(fetcher),
     new StreamEmbed(fetcher),
     new Streamtape(fetcher),

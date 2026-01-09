@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`RgShows handle one battle after another 1`] = `
+[
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+      ],
+      "title": "One Battle After Another (2025)",
+    },
+    "url": "https://api.rgshows.ru/main/movie/1054867",
+  },
+]
+`;
+
+exports[`RgShows handle stranger things s05e01 1`] = `
+[
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+      ],
+      "title": "Stranger Things S05E01",
+    },
+    "url": "https://api.rgshows.ru/main/tv/66732/5/1",
+  },
+]
+`;

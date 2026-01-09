@@ -42,6 +42,7 @@ type ProxyConfig = Pick<AxiosRequestConfig, 'httpAgent' | 'httpsAgent' | 'proxy'
 
 export type CustomRequestConfig = AxiosRequestConfig & {
   minCacheTtl?: number;
+  noProxy?: boolean;
   noProxyHeaders?: boolean;
   queueLimit?: number;
   queueTimeout?: number;
@@ -122,7 +123,7 @@ export class Fetcher {
   }
 
   protected async fetchWithTimeout(ctx: Context, url: URL, requestConfig?: CustomRequestConfig, tryCount = 0): Promise<AxiosResponse> {
-    const proxyUrl = this.getProxyForUrl(ctx, url);
+    const proxyUrl = requestConfig?.noProxy ? null : this.getProxyForUrl(ctx, url);
 
     let message = `Fetch ${requestConfig?.method ?? 'GET'} ${url}`;
     /* istanbul ignore if */

@@ -13,6 +13,7 @@ import { MegaKino } from './MegaKino';
 import { MeineCloud } from './MeineCloud';
 import { MostraGuarda } from './MostraGuarda';
 import { Movix } from './Movix';
+import { RgShows } from './RgShows';
 import { Source } from './Source';
 import { StreamKiste } from './StreamKiste';
 import { VerHdLink } from './VerHdLink';
@@ -26,6 +27,7 @@ export const createSources = (fetcher: Fetcher): Source[] => {
   return [
     // multi
     new FourKHDHub(fetcher),
+    new RgShows(fetcher),
     new VixSrc(fetcher),
     // AL
     new Kokoshka(fetcher),

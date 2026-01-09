@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`RgShows handle one battle after another 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "RgShows",
+    "meta": {
+      "countryCodes": [],
+      "extractorId": "rgshows",
+      "height": 1080,
+    },
+    "requestHeaders": {
+      "Origin": "https://rgshows.ru",
+      "Referer": "https://rgshows.ru/",
+      "User-Agent": "Mozilla",
+    },
+    "ttl": 10800000,
+    "url": "https://i-arch-400.lethe399key.com/stream2/i-arch-400/01df0d24fc785e08a44241ed17dc9aef/MJTMsp1RshGTygnMNRUR2N2MSlnWXZEdMNDZzQWe5MDZzMmdZJTO1R2RWVHZDljekhkSsl1VwYnWtx2cihVT2pFVNlnT6FVNPR1a04kMJlnTUJkaO1WWzklaNFTTHV1daRUW04ERFhnWUFVP:1767971011:193.233.230.8:338a99d2e898667664ed62657ac0b65a05ed7308fe98419b3a65225ee36a7ae1/index.m3u8",
+  },
+]
+`;
+
+exports[`RgShows handle stranger things s05e01 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "RgShows",
+    "meta": {
+      "countryCodes": [],
+      "extractorId": "rgshows",
+      "height": 1080,
+    },
+    "requestHeaders": {
+      "Origin": "https://rgshows.ru",
+      "Referer": "https://rgshows.ru/",
+      "User-Agent": "Mozilla",
+    },
+    "ttl": 10800000,
+    "url": "https://i-cdn-0.lethe399key.com/stream2/i-cdn-0/01df0d24fc785e08a44241ed17dc9aef/MJTMsp1RshGTygnMNRUR2N2MSlnWXZEdMNDZzQWe5MDZzMmdZJTO1R2RWVHZDljekhkSsl1VwYnWtx2cihVT290VZBjTH1kMORVR390RFRTT6lFMPRUS18EVNhnWUtWMapWQ5l1VRJjTHlUP:1767971582:193.233.230.8:3e079e35a7d560d1b37aa2a38f4b3e6cf2d6449ab480651c4c3557eda220addd/index.m3u8",
+  },
+]
+`;
