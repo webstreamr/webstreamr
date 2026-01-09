@@ -22,11 +22,7 @@ export class StreamUp extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const headers = {
-      'Referer': `${url.origin}/`,
-      'Origin': url.origin,
-      'User-Agent': 'Mozilla/5.0',
-    };
+    const headers = { Referer: `${url.origin}/`, Origin: url.origin };
 
     const html = await this.fetcher.text(ctx, url, { headers });
 
