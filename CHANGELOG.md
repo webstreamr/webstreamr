@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.61.0](https://github.com/webstreamr/webstreamr/compare/v0.60.0...v0.61.0) (2026-01-09)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @stylistic/eslint-plugin to v5.7.0 ([#624](https://github.com/webstreamr/webstreamr/issues/624)) ([86eb3d4](https://github.com/webstreamr/webstreamr/commit/86eb3d498c3a147c14342c709986ba67fba47919))
+* **deps:** update dependency axios-cache-interceptor to v1.11.3 ([#626](https://github.com/webstreamr/webstreamr/issues/626)) ([4bec9e5](https://github.com/webstreamr/webstreamr/commit/4bec9e556f8618bc00ea3cda685e3e91aeba82c3))
+* enforce https:// prefix in mediaflow proxy url and support config without scheme to work aroud elfhosted weirdness ([da7397f](https://github.com/webstreamr/webstreamr/commit/da7397fe75d434aa8a76e1f6ea2443bd631a4ace))
+
+
+### Features
+
+* add RgShows ([dcad7db](https://github.com/webstreamr/webstreamr/commit/dcad7db29c272dcb35504cc38d365a929906bf9c))
+
 ## [0.60.0](https://github.com/webstreamr/webstreamr/compare/v0.59.1...v0.60.0) (2026-01-06)
 
 
