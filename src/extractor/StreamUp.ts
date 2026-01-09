@@ -42,10 +42,9 @@ export class StreamUp extends Extractor {
         format: Format.hls,
         label: this.label,
         ttl: this.ttl,
-        requestHeaders: headers,
         meta: {
           ...meta,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, url, { headers }),
+          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, url),
           title,
         },
       },
