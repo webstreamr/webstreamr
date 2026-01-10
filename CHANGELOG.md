@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.62.1](https://github.com/webstreamr/webstreamr/compare/v0.62.0...v0.62.1) (2026-01-10)
+
+
+### Miscellaneous Chores
+
+* **source:** simplifly Frembed domain detection again ([559ee6e](https://github.com/webstreamr/webstreamr/commit/559ee6ed4e1d705dce358b54f98478317375562a))
+
 ## [0.62.0](https://github.com/webstreamr/webstreamr/compare/v0.61.0...v0.62.0) (2026-01-10)
 
 
