@@ -24,7 +24,7 @@ export class RgShows extends Extractor {
     nonSubDomainUrl.hostname = nonSubDomainUrl.hostname.split('.').slice(-2).join('.');
     const headers = { 'Referer': `${nonSubDomainUrl.origin}/`, 'Origin': nonSubDomainUrl.origin, 'User-Agent': 'Mozilla' };
 
-    const data = await this.fetcher.json(ctx, url, { headers, noProxy: true }) as RgShowsApiData;
+    const data = await this.fetcher.json(ctx, url, { headers }) as RgShowsApiData;
 
     const playlistUrl = new URL(data.stream.url);
 
@@ -36,7 +36,7 @@ export class RgShows extends Extractor {
         ttl: this.ttl,
         meta: {
           ...meta,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, url, { headers, noProxy: true }),
+          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, url, { headers }),
         },
         requestHeaders: headers,
       },
