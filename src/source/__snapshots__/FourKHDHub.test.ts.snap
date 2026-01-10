@@ -200,6 +200,95 @@ exports[`FourKHDHub handle dexter resurrection 2025 s01e01 1`] = `
 ]
 `;
 
+exports[`FourKHDHub handle f1 1`] = `
+[
+  {
+    "meta": {
+      "bytes": 71296457113,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 2160,
+      "title": "F1 - The Movie (2025) 2160p UHD BluRay REMUX DV HDR 10bit HEVC [Hindi-Tamil-Telugu DDP 5.1 + English TrueHD Atmos 7.1] x265 (CiNPEHiLES-LUMiX).mkv",
+    },
+    "url": "https://hubcloud.foo/drive/sbj15b8jgaxbnnq",
+  },
+  {
+    "meta": {
+      "bytes": 41414222151,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 2160,
+      "title": "F1 - The Movie (2025) 2160p UHD BluRay DV HDR 10bit HEVC [Hindi-Tamil-Telugu DDP 5.1 + English TrueHD Atmos 7.1] x265 (WiKi-LUMiX).mkv",
+    },
+    "url": "https://hubcloud.foo/drive/0ii553mi0xjiixo",
+  },
+  {
+    "meta": {
+      "bytes": 30096983326,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 2160,
+      "title": "F1 - The Movie (2025) 2160p iT WEB-DL 10bit HEVC [Hindi-Tamil-Telugu DDP 5.1 + English TrueHD Atmos 7.1] x265 (WADU-LUMiX).mkv",
+    },
+    "url": "https://hubcloud.foo/drive/vuaxnarwlevl0nw",
+  },
+  {
+    "meta": {
+      "bytes": 29785598197,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "F1 - The Movie (2025) 1080p BluRay REMUX AVC [Hindi-Tamil-Telugu DDP 5.1 + English TrueHD Atmos 7.1] x264 (HDT-LUMiX).mkv",
+    },
+    "url": "https://hubcloud.foo/drive/ycoim8u1jihngjc",
+  },
+  {
+    "meta": {
+      "bytes": 21496311316,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "F1 - The Movie (2025) 1080p UHD BluRay DV HDR 10bit HEVC [Hindi-Tamil-Telugu DDP 5.1 + English DDP 7.1] x265 (HiDt-LUMiX).mkv",
+    },
+    "url": "https://hubcloud.foo/drive/1eeyidcyrsiin17",
+  },
+  {
+    "meta": {
+      "bytes": 19520626360,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "F1 - The Movie (2025) 1080p BluRay [Hindi-Tamil-Telugu DDP 5.1 + English DDP 7.1] x264 (SPHD-LUMiX).mkv",
+    },
+    "url": "https://hubcloud.foo/drive/az6ttan8ssdusn1",
+  },
+  {
+    "meta": {
+      "bytes": 11424613007,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "F1 - The Movie (2025) 1080p BluRay 10bit HEVC [Hindi-Tamil-Telugu DDP 5.1 + English DDP 5.1] x265 (StOiC-LUMiX).mkv",
+    },
+    "url": "https://hubcloud.foo/drive/osj1xhy1lpsop5n",
+  },
+]
+`;
+
 exports[`FourKHDHub handle lovely runner 2024 s01e01 1`] = `
 [
   {
@@ -459,6 +548,67 @@ exports[`FourKHDHub handle superman 2025 1`] = `
       "title": "Superman (2025) IMAX 1080p DS4K MA WEBRip 10bit HEVC [Hindi-Tamil-Telugu DDP 5.1 + English DDP Atmos 5.1] x265 (StOiC-LUMiX).mkv",
     },
     "url": "https://hubcloud.foo/drive/f8a1y8218xq1xl1",
+  },
+]
+`;
+
+exports[`FourKHDHub handle the tank 1`] = `
+[
+  {
+    "meta": {
+      "bytes": 14688788152,
+      "countryCodes": [
+        "multi",
+        "de",
+        "en",
+        "hi",
+      ],
+      "height": 2160,
+      "title": "The.Tank.2025.2160p.AMZN.WEB-DL.Multi.DDP5.1.HDR.H.265-4kHdHub.Com.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/5ocppg18qpun5nb",
+  },
+  {
+    "meta": {
+      "bytes": 14667313315,
+      "countryCodes": [
+        "multi",
+        "de",
+        "en",
+        "hi",
+      ],
+      "height": 2160,
+      "title": "The.Tank.2025.2160p.AMZN.WEB-DL.Multi.DDP5.1.H.265-4kHdHub.Com.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/qzs8ys88skusyst",
+  },
+  {
+    "meta": {
+      "bytes": 9953586708,
+      "countryCodes": [
+        "multi",
+        "de",
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "The.Tank.2025.1080p.AMZN.WEB-DL.Multi.DDP5.1.H.264-4kHdHub.Com.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/7bm6zx26sf1ofis",
+  },
+  {
+    "meta": {
+      "bytes": 4456028569,
+      "countryCodes": [
+        "multi",
+        "de",
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "The.Tank.2025.1080p.AMZN.WEB-DL.Multi.DDP5.1.H.265-4kHdHub.Com.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/fmhbhwnhdwwxddw",
   },
 ]
 `;

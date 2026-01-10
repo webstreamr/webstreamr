@@ -60,4 +60,14 @@ describe('FourKHDHub', () => {
     const streams = await source.handle(ctx, 'series', new TmdbId(66732, 5, 8));
     expect(streams).toMatchSnapshot();
   });
+
+  test('handle f1', async () => {
+    const streams = await source.handle(ctx, 'movie', new TmdbId(911430, undefined, undefined));
+    expect(streams).toMatchSnapshot();
+  });
+
+  test('handle the tank', async () => {
+    const streams = await source.handle(ctx, 'movie', new TmdbId(1252037, undefined, undefined));
+    expect(streams).toMatchSnapshot();
+  });
 });

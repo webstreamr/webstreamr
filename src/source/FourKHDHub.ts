@@ -70,7 +70,7 @@ export class FourKHDHub extends Source {
   private readonly fetchPageUrl = async (ctx: Context, tmdbId: TmdbId): Promise<URL | undefined> => {
     const [name, year] = await getTmdbNameAndYear(ctx, this.fetcher, tmdbId);
 
-    const searchUrl = new URL(`/?s=${encodeURIComponent(`${name} ${year}`)}`, await this.getBaseUrl(ctx));
+    const searchUrl = new URL(`/?s=${encodeURIComponent(name)}`, await this.getBaseUrl(ctx));
     const html = await this.fetcher.text(ctx, searchUrl);
 
     const $ = cheerio.load(html);
@@ -87,7 +87,10 @@ export class FourKHDHub extends Source {
           .replace(/\[.*?]/, '')
           .trim();
 
-        return levenshtein.get(movieCardTitle, name, { useCollator: true }) < 5;
+        const diff = levenshtein.get(movieCardTitle, name, { useCollator: true });
+
+        return diff < 5
+          || (movieCardTitle.includes(name) && diff < 15);
       })
       .map(async (_i, el) => new URL($(el).attr('href') as string, await this.getBaseUrl(ctx)))
       .get(0);

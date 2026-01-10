@@ -1213,6 +1213,9 @@ code {
                 <li><a href="/category/jiohotstar/" class="dropdown-item">JioHotstar</a></li>
                 <li><a href="/category/disney/" class="dropdown-item">Disney+</a></li>
                 <li><a href="/category/Apple_TV/" class="dropdown-item">Apple TV+</a></li>
+                <li><a href="/category/hbo_max/" class="dropdown-item">HBO Max</a></li>
+                <li><a href="/category/hulu/" class="dropdown-item">Hulu</a></li>
+                <li><a href="/category/crave/" class="dropdown-item">Crave</a></li>
                 
               </ul>
             </li>
@@ -1312,7 +1315,7 @@ code {
         Home
       </a>
       <span class="breadcrumb-separator">/</span>
-      <a href="/category/new-series-10811/" class="text-muted-foreground hover:text-foreground">
+      <a href="/category/series/" class="text-muted-foreground hover:text-foreground">
         Web Series
       </a>
     </div>
@@ -1328,7 +1331,7 @@ code {
       <div class="content-main">
         <div class="mb-2">
           <h1 class="page-title">Stranger Things</h1>
-          <p class="movie-tagline">One last adventure.</p>
+          <p class="movie-tagline">It only gets stranger...</p>
           <div class="mt-2 flex flex-wrap items-center gap-2 text-muted-foreground">
               
                             <div class="imdb-badge badge">
@@ -1338,29 +1341,29 @@ code {
                 <span>•</span>
                         
             
-                              <span class="badge badge-outline">Drama</span>
+                              <span class="badge badge-outline"><a href="/category/drama/">Drama</a></span>
                   
-                                    <span class="badge badge-outline">Mystery</span>
+                                    <span class="badge badge-outline"><a href="/category/mystery/">Mystery</a></span>
                   
-                                    <span class="badge badge-outline">Sci-Fi & Fantasy</span>
+                                    <span class="badge badge-outline"><a href="/category/sci-fi & fantasy/">Sci-Fi & Fantasy</a></span>
                   
-                                    <span class="badge badge-outline">Series</span>
+                                    <span class="badge badge-outline"><a href="/category/series/">Series</a></span>
                   
-                                    <span class="badge badge-outline">1080p</span>
+                                    <span class="badge badge-outline"><a href="/category/1080p/">1080p</a></span>
                   
-                                    <span class="badge badge-outline">2160p</span>
+                                    <span class="badge badge-outline"><a href="/category/2160p/">2160p</a></span>
                   
-                                    <span class="badge badge-outline">English</span>
+                                    <span class="badge badge-outline"><a href="/category/english/">English</a></span>
                   
-                                    <span class="badge badge-outline">Hindi</span>
+                                    <span class="badge badge-outline"><a href="/category/hindi/">Hindi</a></span>
                   
-                                    <span class="badge badge-outline">Horror</span>
+                                    <span class="badge badge-outline"><a href="/category/horror/">Horror</a></span>
                   
-                                    <span class="badge badge-outline">Netflix</span>
+                                    <span class="badge badge-outline"><a href="/category/netflix/">Netflix</a></span>
                   
-                                    <span class="badge badge-outline">Tamil</span>
+                                    <span class="badge badge-outline"><a href="/category/tamil/">Tamil</a></span>
                   
-                                    <span class="badge badge-outline">Telugu</span>
+                                    <span class="badge badge-outline"><a href="/category/telugu/">Telugu</a></span>
                   
                                     
            
@@ -1386,7 +1389,7 @@ code {
              
               <div class="metadata-item" style="display: flex;">
                 <span class="metadata-label">Stars:</span>
-                <span class="metadata-value">Millie Bobby Brown (El Hopper), Winona Ryder (Joyce Byers), David Harbour (Jim Hopper), Finn Wolfhard (Mike Wheeler), Gaten Matarazzo (Dustin Henderson)</span>
+                <span class="metadata-value">Winona Ryder (Joyce Byers), David Harbour (Jim Hopper), Millie Bobby Brown (Eleven / Jane Hopper), Finn Wolfhard (Mike Wheeler), Gaten Matarazzo (Dustin Henderson)</span>
               </div>
               <div class="metadata-item" style="display: flex;">
                 <span class="metadata-label">Last Air:</span>
@@ -11182,115 +11185,13 @@ code {
           <div class="card-grid-small">
               
                         <!-- Related Series 1 -->
-            <a href="/taxi-driver-series-4566/" class="movie-card">
+            <a href="/his-hers-series-5252/" class="movie-card">
               <div class="movie-card-image">
-                <img src="https://image.tmdb.org/t/p/w500/lghfb8beej1aH9ML8QyeSixniom.jpg" alt="Taxi Driver" class="w-full h-full object-cover">
+                <img src="https://image.tmdb.org/t/p/w500/cDSXLVQLkCSBIpBx3UW04TsfZ5c.jpg" alt="HIS & HERS" class="w-full h-full object-cover">
                 
                 <div class="movie-card-overlay">
                   <div class="movie-card-formats">
                                       <span class="movie-card-format">Drama</span>
-                  
-                                    <span class="movie-card-format">Crime</span>
-                  
-                                    <span class="movie-card-format">Action & Adventure</span>
-                  
-                                    <span class="movie-card-format">English</span>
-                  
-                                    <span class="movie-card-format">Netflix</span>
-                  
-                                    <span class="movie-card-format">Series</span>
-                  
-                                    <span class="movie-card-format">Korean</span>
-                  
-                                    </div>
-                </div>
-              </div>
-              <div class="movie-card-content">
-                <h3 class="movie-card-title">Taxi Driver</h3>
-                <p class="movie-card-meta">2021                • S1.0-S3.0 EP12              </p>
-              </div>
-            </a>
-            
-                        <!-- Related Series 1 -->
-            <a href="/percy-jackson-and-the-olympians-series-4844/" class="movie-card">
-              <div class="movie-card-image">
-                <img src="https://image.tmdb.org/t/p/w500/40eFcTzZier3DWLqldsP5VHxeoD.jpg" alt="Percy Jackson and the Olympians" class="w-full h-full object-cover">
-                
-                <div class="movie-card-overlay">
-                  <div class="movie-card-formats">
-                                      <span class="movie-card-format">Drama</span>
-                  
-                                    <span class="movie-card-format">Family</span>
-                  
-                                    <span class="movie-card-format">Action & Adventure</span>
-                  
-                                    <span class="movie-card-format">Sci-Fi & Fantasy</span>
-                  
-                                    <span class="movie-card-format">English</span>
-                  
-                                    <span class="movie-card-format">2160p</span>
-                  
-                                    <span class="movie-card-format">1080p</span>
-                  
-                                    <span class="movie-card-format">DSNP</span>
-                  
-                                    <span class="movie-card-format">Series</span>
-                  
-                                    <span class="movie-card-format">Disney+</span>
-                  
-                                    <span class="movie-card-format">JioHotstar</span>
-                  
-                                    <span class="movie-card-format">Hulu</span>
-                  
-                                    </div>
-                </div>
-              </div>
-              <div class="movie-card-content">
-                <h3 class="movie-card-title">Percy Jackson and the Olympians</h3>
-                <p class="movie-card-meta">2023                • S1.0-S2.0 EP05              </p>
-              </div>
-            </a>
-            
-                        <!-- Related Series 1 -->
-            <a href="/tokyo-ghoul-series-2239/" class="movie-card">
-              <div class="movie-card-image">
-                <img src="https://image.tmdb.org/t/p/w500/1m4RlC9BTCbyY549TOdVQ5NRPcR.jpg" alt="Tokyo Ghoul" class="w-full h-full object-cover">
-                
-                <div class="movie-card-overlay">
-                  <div class="movie-card-formats">
-                                      <span class="movie-card-format">Animation</span>
-                  
-                                    <span class="movie-card-format">Drama</span>
-                  
-                                    <span class="movie-card-format">Action</span>
-                  
-                                    <span class="movie-card-format">Sci-Fi & Fantasy</span>
-                  
-                                    <span class="movie-card-format">English</span>
-                  
-                                    <span class="movie-card-format">Series</span>
-                  
-                                    <span class="movie-card-format">Anime</span>
-                  
-                                    </div>
-                </div>
-              </div>
-              <div class="movie-card-content">
-                <h3 class="movie-card-title">Tokyo Ghoul</h3>
-                <p class="movie-card-meta">2014                • S1.0-S5.0              </p>
-              </div>
-            </a>
-            
-                        <!-- Related Series 1 -->
-            <a href="/made-in-korea-series-5037/" class="movie-card">
-              <div class="movie-card-image">
-                <img src="https://image.tmdb.org/t/p/w500/q9ZRQN98L2OvYP00mIlv4oPPfOU.jpg" alt="Made in Korea" class="w-full h-full object-cover">
-                
-                <div class="movie-card-overlay">
-                  <div class="movie-card-formats">
-                                      <span class="movie-card-format">Drama</span>
-                  
-                                    <span class="movie-card-format">Action</span>
                   
                                     <span class="movie-card-format">Thriller</span>
                   
@@ -11300,20 +11201,140 @@ code {
                   
                                     <span class="movie-card-format">English</span>
                   
-                                    <span class="movie-card-format">2160p</span>
+                                    <span class="movie-card-format">Netflix</span>
                   
-                                    <span class="movie-card-format">1080p</span>
+                                    <span class="movie-card-format">Tamil</span>
                   
                                     <span class="movie-card-format">Series</span>
                   
-                                    <span class="movie-card-format">Korean</span>
+                                    <span class="movie-card-format">Telugu</span>
                   
                                     </div>
                 </div>
               </div>
               <div class="movie-card-content">
-                <h3 class="movie-card-title">Made in Korea</h3>
-                <p class="movie-card-meta">2025                • S1.0 EP04              </p>
+                <h3 class="movie-card-title">HIS & HERS</h3>
+                <p class="movie-card-meta">2026                • S1.0              </p>
+              </div>
+            </a>
+            
+                        <!-- Related Series 1 -->
+            <a href="/jujutsu-kaisen-series-224/" class="movie-card">
+              <div class="movie-card-image">
+                <img src="https://image.tmdb.org/t/p/w500/fHpKWq9ayzSk8nSwqRuaAUemRKh.jpg" alt="JUJUTSU KAISEN" class="w-full h-full object-cover">
+                
+                <div class="movie-card-overlay">
+                  <div class="movie-card-formats">
+                                      <span class="movie-card-format">Animation</span>
+                  
+                                    <span class="movie-card-format">Action</span>
+                  
+                                    <span class="movie-card-format">Action & Adventure</span>
+                  
+                                    <span class="movie-card-format">Sci-Fi & Fantasy</span>
+                  
+                                    <span class="movie-card-format">1080p</span>
+                  
+                                    <span class="movie-card-format">HEVC</span>
+                  
+                                    <span class="movie-card-format">WEB-DL</span>
+                  
+                                    <span class="movie-card-format">BluRay</span>
+                  
+                                    <span class="movie-card-format">Series</span>
+                  
+                                    <span class="movie-card-format">Anime</span>
+                  
+                                    <span class="movie-card-format">Multi Audios</span>
+                  
+                                    </div>
+                </div>
+              </div>
+              <div class="movie-card-content">
+                <h3 class="movie-card-title">JUJUTSU KAISEN</h3>
+                <p class="movie-card-meta">2020                • S1.0-S3.0 EP49              </p>
+              </div>
+            </a>
+            
+                        <!-- Related Series 1 -->
+            <a href="/hells-paradise-jigokuraku-series-2092/" class="movie-card">
+              <div class="movie-card-image">
+                <img src="https://image.tmdb.org/t/p/w500/1V9I7SvZbYoMbSvdtnlkkq9SB1k.jpg" alt="Hell's Paradise: Jigokuraku" class="w-full h-full object-cover">
+                
+                <div class="movie-card-overlay">
+                  <div class="movie-card-formats">
+                                      <span class="movie-card-format">Animation</span>
+                  
+                                    <span class="movie-card-format">Drama</span>
+                  
+                                    <span class="movie-card-format">Thriller</span>
+                  
+                                    <span class="movie-card-format">Action & Adventure</span>
+                  
+                                    <span class="movie-card-format">Sci-Fi & Fantasy</span>
+                  
+                                    <span class="movie-card-format">English</span>
+                  
+                                    <span class="movie-card-format">Dual Language</span>
+                  
+                                    <span class="movie-card-format">1080p</span>
+                  
+                                    <span class="movie-card-format">BluRay</span>
+                  
+                                    <span class="movie-card-format">REMUX</span>
+                  
+                                    <span class="movie-card-format">Series</span>
+                  
+                                    <span class="movie-card-format">Anime</span>
+                  
+                                    </div>
+                </div>
+              </div>
+              <div class="movie-card-content">
+                <h3 class="movie-card-title">Hell's Paradise: Jigokuraku</h3>
+                <p class="movie-card-meta">2023                • S1.0              </p>
+              </div>
+            </a>
+            
+                        <!-- Related Series 1 -->
+            <a href="/rascal-does-not-dream-of-bunny-girl-senpai-series-1759/" class="movie-card">
+              <div class="movie-card-image">
+                <img src="https://image.tmdb.org/t/p/w400/fbqDG7GjodvaNecgv1q8kfSNPl5.jpg" alt="Rascal Does Not Dream of Bunny Girl Senpai" class="w-full h-full object-cover">
+                
+                <div class="movie-card-overlay">
+                  <div class="movie-card-formats">
+                                      <span class="movie-card-format">Fantasy</span>
+                  
+                                    <span class="movie-card-format">Animation</span>
+                  
+                                    <span class="movie-card-format">Drama</span>
+                  
+                                    <span class="movie-card-format">Comedy</span>
+                  
+                                    <span class="movie-card-format">Mystery</span>
+                  
+                                    <span class="movie-card-format">Romance</span>
+                  
+                                    <span class="movie-card-format">English</span>
+                  
+                                    <span class="movie-card-format">Dual Language</span>
+                  
+                                    <span class="movie-card-format">1080p</span>
+                  
+                                    <span class="movie-card-format">BluRay</span>
+                  
+                                    <span class="movie-card-format">REMUX</span>
+                  
+                                    <span class="movie-card-format">Series</span>
+                  
+                                    <span class="movie-card-format">Anime</span>
+                  
+                                    </div>
+                </div>
+              </div>
+              <div class="movie-card-content">
+                <h3 class="movie-card-title">Rascal Does Not Dream of Bunny Girl Senpai</h3>
+                <p class="movie-card-meta">2018                • S1.0-S5.0              </p>
               </div>
             </a>
             

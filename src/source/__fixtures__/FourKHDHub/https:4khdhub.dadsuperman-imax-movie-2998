@@ -1080,6 +1080,9 @@ p, .metadata-value, .episode-description, .movie-tagline {
                 <li><a href="/category/jiohotstar/" class="dropdown-item">JioHotstar</a></li>
                 <li><a href="/category/disney/" class="dropdown-item">Disney+</a></li>
                 <li><a href="/category/Apple_TV/" class="dropdown-item">Apple TV+</a></li>
+                <li><a href="/category/hbo_max/" class="dropdown-item">HBO Max</a></li>
+                <li><a href="/category/hulu/" class="dropdown-item">Hulu</a></li>
+                <li><a href="/category/crave/" class="dropdown-item">Crave</a></li>
                 
               </ul>
             </li>
@@ -1179,7 +1182,7 @@ p, .metadata-value, .episode-description, .movie-tagline {
           Home
         </a>
         <span class="breadcrumb-separator">/</span>
-        <a href="/category/new-movies-10810/" class="text-muted-foreground hover:text-foreground">
+        <a href="/category/movies/" class="text-muted-foreground hover:text-foreground">
           Movies
         </a>
       </div>
@@ -1209,23 +1212,23 @@ p, .metadata-value, .episode-description, .movie-tagline {
                 </div>
                 <span>•</span>
                         
-                                <span class="badge badge-outline">1080p</span>
+                                <span class="badge badge-outline"><a href="/category/1080p/">1080p</a></span>
                   
-                                    <span class="badge badge-outline">2160p</span>
+                                    <span class="badge badge-outline"><a href="/category/2160p/">2160p</a></span>
                   
-                                    <span class="badge badge-outline">Action</span>
+                                    <span class="badge badge-outline"><a href="/category/action/">Action</a></span>
                   
-                                    <span class="badge badge-outline">Adventure</span>
+                                    <span class="badge badge-outline"><a href="/category/adventure/">Adventure</a></span>
                   
-                                    <span class="badge badge-outline">HDR</span>
+                                    <span class="badge badge-outline"><a href="/category/hdr/">HDR</a></span>
                   
-                                    <span class="badge badge-outline">English</span>
+                                    <span class="badge badge-outline"><a href="/category/english/">English</a></span>
                   
-                                    <span class="badge badge-outline">Science Fiction</span>
+                                    <span class="badge badge-outline"><a href="/category/science fiction/">Science Fiction</a></span>
                   
-                                    <span class="badge badge-outline">WEB-DL</span>
+                                    <span class="badge badge-outline"><a href="/category/web-dl/">WEB-DL</a></span>
                   
-                                    <span class="badge badge-outline">Movies</span>
+                                    <span class="badge badge-outline"><a href="/category/movies/">Movies</a></span>
                   
                                 <!--<span class="badge badge-outline">Dual Audio</span>-->
           </div>
@@ -1949,119 +1952,13 @@ p, .metadata-value, .episode-description, .movie-tagline {
           <div class="card-grid-small">
               
                         <!-- Related Series 1 -->
-            <a href="/demon-slayer-kimetsu-no-yaiba-infinity-castle-movie-5110/" class="movie-card">
+            <a href="/jujutsu-kaisen-series-224/" class="movie-card">
               <div class="movie-card-image">
-                <img src="https://image.tmdb.org/t/p/w500/fWVSwgjpT2D78VUh6X8UBd2rorW.jpg" alt="Demon Slayer: Kimetsu no Yaiba Infinity Castle" class="w-full h-full object-cover">
+                <img src="https://image.tmdb.org/t/p/w500/fHpKWq9ayzSk8nSwqRuaAUemRKh.jpg" alt="JUJUTSU KAISEN" class="w-full h-full object-cover">
                 
                 <div class="movie-card-overlay">
                   <div class="movie-card-formats">
-                                      <span class="movie-card-format">Fantasy</span>
-                  
-                                    <span class="movie-card-format">Animation</span>
-                  
-                                    <span class="movie-card-format">Action</span>
-                  
-                                    <span class="movie-card-format">1080p</span>
-                  
-                                    <span class="movie-card-format">WEB-DL</span>
-                  
-                                    <span class="movie-card-format">Movies</span>
-                  
-                                    </div>
-                </div>
-              </div>
-              <div class="movie-card-content">
-                <h3 class="movie-card-title">Demon Slayer: Kimetsu no Yaiba Infinity Castle</h3>
-                <p class="movie-card-meta">2025                              </p>
-              </div>
-            </a>
-            
-                        <!-- Related Series 1 -->
-            <a href="/justice-league-movie-5109/" class="movie-card">
-              <div class="movie-card-image">
-                <img src="https://image.tmdb.org/t/p/w500/eifGNCSDuxJeS1loAXil5bIGgvC.jpg" alt="Justice League" class="w-full h-full object-cover">
-                
-                <div class="movie-card-overlay">
-                  <div class="movie-card-formats">
-                                      <span class="movie-card-format">Adventure</span>
-                  
-                                    <span class="movie-card-format">Action</span>
-                  
-                                    <span class="movie-card-format">Science Fiction</span>
-                  
-                                    <span class="movie-card-format">2160p</span>
-                  
-                                    <span class="movie-card-format">1080p</span>
-                  
-                                    <span class="movie-card-format">WEB-DL</span>
-                  
-                                    <span class="movie-card-format">BluRay</span>
-                  
-                                    <span class="movie-card-format">REMUX</span>
-                  
-                                    <span class="movie-card-format">Movies</span>
-                  
-                                    <span class="movie-card-format">10Bit</span>
-                  
-                                    <span class="movie-card-format">DV HDR</span>
-                  
-                                    <span class="movie-card-format">SDR</span>
-                  
-                                    </div>
-                </div>
-              </div>
-              <div class="movie-card-content">
-                <h3 class="movie-card-title">Justice League</h3>
-                <p class="movie-card-meta">2017                              </p>
-              </div>
-            </a>
-            
-                        <!-- Related Series 1 -->
-            <a href="/the-hobbit-the-battle-of-the-five-armies-movie-946/" class="movie-card">
-              <div class="movie-card-image">
-                <img src="https://image.tmdb.org/t/p/w500/xT98tLqatZPQApyRmlPL12LtiWp.jpg" alt="The Hobbit: The Battle of the Five Armies" class="w-full h-full object-cover">
-                
-                <div class="movie-card-overlay">
-                  <div class="movie-card-formats">
-                                      <span class="movie-card-format">Adventure</span>
-                  
-                                    <span class="movie-card-format">Fantasy</span>
-                  
-                                    <span class="movie-card-format">Action</span>
-                  
-                                    <span class="movie-card-format">2160p</span>
-                  
-                                    <span class="movie-card-format">1080p</span>
-                  
-                                    <span class="movie-card-format">WEB-DL</span>
-                  
-                                    <span class="movie-card-format">BluRay</span>
-                  
-                                    <span class="movie-card-format">Movies</span>
-                  
-                                    <span class="movie-card-format">10Bit</span>
-                  
-                                    <span class="movie-card-format">DV HDR</span>
-                  
-                                    <span class="movie-card-format">SDR</span>
-                  
-                                    </div>
-                </div>
-              </div>
-              <div class="movie-card-content">
-                <h3 class="movie-card-title">The Hobbit: The Battle of the Five Armies</h3>
-                <p class="movie-card-meta">2014                              </p>
-              </div>
-            </a>
-            
-                        <!-- Related Series 1 -->
-            <a href="/cashero-series-5072/" class="movie-card">
-              <div class="movie-card-image">
-                <img src="https://image.tmdb.org/t/p/w500/dm6RoaKgkGUxckamMDzsbqtLhFv.jpg" alt="Cashero" class="w-full h-full object-cover">
-                
-                <div class="movie-card-overlay">
-                  <div class="movie-card-formats">
-                                      <span class="movie-card-format">Drama</span>
+                                      <span class="movie-card-format">Animation</span>
                   
                                     <span class="movie-card-format">Action</span>
                   
@@ -2069,24 +1966,146 @@ p, .metadata-value, .episode-description, .movie-tagline {
                   
                                     <span class="movie-card-format">Sci-Fi & Fantasy</span>
                   
-                                    <span class="movie-card-format">Hindi</span>
+                                    <span class="movie-card-format">1080p</span>
                   
-                                    <span class="movie-card-format">English</span>
+                                    <span class="movie-card-format">HEVC</span>
                   
-                                    <span class="movie-card-format">Tamil</span>
+                                    <span class="movie-card-format">WEB-DL</span>
+                  
+                                    <span class="movie-card-format">BluRay</span>
                   
                                     <span class="movie-card-format">Series</span>
                   
-                                    <span class="movie-card-format">Telugu</span>
+                                    <span class="movie-card-format">Anime</span>
                   
-                                    <span class="movie-card-format">Korean</span>
+                                    <span class="movie-card-format">Multi Audios</span>
                   
                                     </div>
                 </div>
               </div>
               <div class="movie-card-content">
-                <h3 class="movie-card-title">Cashero</h3>
-                <p class="movie-card-meta">2025                • S1.0              </p>
+                <h3 class="movie-card-title">JUJUTSU KAISEN</h3>
+                <p class="movie-card-meta">2020                • S1.0-S3.0 EP49              </p>
+              </div>
+            </a>
+            
+                        <!-- Related Series 1 -->
+            <a href="/tehran-series-2790/" class="movie-card">
+              <div class="movie-card-image">
+                <img src="https://image.tmdb.org/t/p/w500/pXV1fcIQIbpTNYRJ47rfUvG6hq4.jpg" alt="Tehran" class="w-full h-full object-cover">
+                
+                <div class="movie-card-overlay">
+                  <div class="movie-card-formats">
+                                      <span class="movie-card-format">Drama</span>
+                  
+                                    <span class="movie-card-format">Action</span>
+                  
+                                    <span class="movie-card-format">Thriller</span>
+                  
+                                    <span class="movie-card-format">Crime</span>
+                  
+                                    <span class="movie-card-format">English</span>
+                  
+                                    <span class="movie-card-format">2160p</span>
+                  
+                                    <span class="movie-card-format">1080p</span>
+                  
+                                    <span class="movie-card-format">HDR</span>
+                  
+                                    <span class="movie-card-format">DoVi</span>
+                  
+                                    <span class="movie-card-format">Series</span>
+                  
+                                    </div>
+                </div>
+              </div>
+              <div class="movie-card-content">
+                <h3 class="movie-card-title">Tehran</h3>
+                <p class="movie-card-meta">2020                • S1.0-S3.0 EP01              </p>
+              </div>
+            </a>
+            
+                        <!-- Related Series 1 -->
+            <a href="/tron-ares-movie-4691/" class="movie-card">
+              <div class="movie-card-image">
+                <img src="https://image.tmdb.org/t/p/w500/chpWmskl3aKm1aTZqUHRCtviwPy.jpg" alt="TRON: Ares" class="w-full h-full object-cover">
+                
+                <div class="movie-card-overlay">
+                  <div class="movie-card-formats">
+                                      <span class="movie-card-format">1080p</span>
+                  
+                                    <span class="movie-card-format">2160p</span>
+                  
+                                    <span class="movie-card-format">Action</span>
+                  
+                                    <span class="movie-card-format">Adventure</span>
+                  
+                                    <span class="movie-card-format">BluRay</span>
+                  
+                                    <span class="movie-card-format">Disney+</span>
+                  
+                                    <span class="movie-card-format">DSNP</span>
+                  
+                                    <span class="movie-card-format">DV HDR</span>
+                  
+                                    <span class="movie-card-format">English</span>
+                  
+                                    <span class="movie-card-format">HEVC</span>
+                  
+                                    <span class="movie-card-format">Hindi</span>
+                  
+                                    <span class="movie-card-format">IMAX</span>
+                  
+                                    <span class="movie-card-format">Movies</span>
+                  
+                                    <span class="movie-card-format">Multi Audios</span>
+                  
+                                    <span class="movie-card-format">Science Fiction</span>
+                  
+                                    <span class="movie-card-format">SDR</span>
+                  
+                                    <span class="movie-card-format">Tamil</span>
+                  
+                                    <span class="movie-card-format">Telugu</span>
+                  
+                                    <span class="movie-card-format">WEB-DL</span>
+                  
+                                    </div>
+                </div>
+              </div>
+              <div class="movie-card-content">
+                <h3 class="movie-card-title">TRON: Ares</h3>
+                <p class="movie-card-meta">2025                              </p>
+              </div>
+            </a>
+            
+                        <!-- Related Series 1 -->
+            <a href="/the-blue-trail-movie-5265/" class="movie-card">
+              <div class="movie-card-image">
+                <img src="https://image.tmdb.org/t/p/w500/ua8XnJ450rhBTxkY2wpD2ITw7BJ.jpg" alt="The Blue Trail" class="w-full h-full object-cover">
+                
+                <div class="movie-card-overlay">
+                  <div class="movie-card-formats">
+                                      <span class="movie-card-format">Drama</span>
+                  
+                                    <span class="movie-card-format">Comedy</span>
+                  
+                                    <span class="movie-card-format">Science Fiction</span>
+                  
+                                    <span class="movie-card-format">1080p</span>
+                  
+                                    <span class="movie-card-format">WEB-DL</span>
+                  
+                                    <span class="movie-card-format">Movies</span>
+                  
+                                    <span class="movie-card-format">VOD</span>
+                  
+                                    </div>
+                </div>
+              </div>
+              <div class="movie-card-content">
+                <h3 class="movie-card-title">The Blue Trail</h3>
+                <p class="movie-card-meta">2025                              </p>
               </div>
             </a>
             

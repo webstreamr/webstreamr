@@ -1213,6 +1213,9 @@ code {
                 <li><a href="/category/jiohotstar/" class="dropdown-item">JioHotstar</a></li>
                 <li><a href="/category/disney/" class="dropdown-item">Disney+</a></li>
                 <li><a href="/category/Apple_TV/" class="dropdown-item">Apple TV+</a></li>
+                <li><a href="/category/hbo_max/" class="dropdown-item">HBO Max</a></li>
+                <li><a href="/category/hulu/" class="dropdown-item">Hulu</a></li>
+                <li><a href="/category/crave/" class="dropdown-item">Crave</a></li>
                 
               </ul>
             </li>
@@ -1312,7 +1315,7 @@ code {
         Home
       </a>
       <span class="breadcrumb-separator">/</span>
-      <a href="/category/new-series-10811/" class="text-muted-foreground hover:text-foreground">
+      <a href="/category/series/" class="text-muted-foreground hover:text-foreground">
         Web Series
       </a>
     </div>
@@ -1338,25 +1341,25 @@ code {
                 <span>•</span>
                         
             
-                              <span class="badge badge-outline">Amazon Prime Video</span>
+                              <span class="badge badge-outline"><a href="/category/amazon prime video/">Amazon Prime Video</a></span>
                   
-                                    <span class="badge badge-outline">Comedy</span>
+                                    <span class="badge badge-outline"><a href="/category/comedy/">Comedy</a></span>
                   
-                                    <span class="badge badge-outline">Drama</span>
+                                    <span class="badge badge-outline"><a href="/category/drama/">Drama</a></span>
                   
-                                    <span class="badge badge-outline">Hindi</span>
+                                    <span class="badge badge-outline"><a href="/category/hindi/">Hindi</a></span>
                   
-                                    <span class="badge badge-outline">Korean</span>
+                                    <span class="badge badge-outline"><a href="/category/korean/">Korean</a></span>
                   
-                                    <span class="badge badge-outline">Music</span>
+                                    <span class="badge badge-outline"><a href="/category/music/">Music</a></span>
                   
-                                    <span class="badge badge-outline">Mystery</span>
+                                    <span class="badge badge-outline"><a href="/category/mystery/">Mystery</a></span>
                   
-                                    <span class="badge badge-outline">Romance</span>
+                                    <span class="badge badge-outline"><a href="/category/romance/">Romance</a></span>
                   
-                                    <span class="badge badge-outline">Sci-Fi & Fantasy</span>
+                                    <span class="badge badge-outline"><a href="/category/sci-fi & fantasy/">Sci-Fi & Fantasy</a></span>
                   
-                                    <span class="badge badge-outline">Series</span>
+                                    <span class="badge badge-outline"><a href="/category/series/">Series</a></span>
                   
                                     
            
@@ -2772,14 +2775,14 @@ code {
               </div>
               <div class="movie-card-content">
                 <h3 class="movie-card-title">Stranger Things</h3>
-                <p class="movie-card-meta">2016                • S1.0-S5.2              </p>
+                <p class="movie-card-meta">2016                • S1.0-S5.3              </p>
               </div>
             </a>
             
                         <!-- Related Series 1 -->
-            <a href="/mayor-of-kingstown-series-4053/" class="movie-card">
+            <a href="/his-hers-series-5252/" class="movie-card">
               <div class="movie-card-image">
-                <img src="https://image.tmdb.org/t/p/w500/86OUOPulMiM8rjrQSt4KMev7UAa.jpg" alt="Mayor of Kingstown" class="w-full h-full object-cover">
+                <img src="https://image.tmdb.org/t/p/w500/cDSXLVQLkCSBIpBx3UW04TsfZ5c.jpg" alt="HIS & HERS" class="w-full h-full object-cover">
                 
                 <div class="movie-card-overlay">
                   <div class="movie-card-formats">
@@ -2789,33 +2792,65 @@ code {
                   
                                     <span class="movie-card-format">Crime</span>
                   
-                                    <span class="movie-card-format">Hindi</span>
+                                    <span class="movie-card-format">Mystery</span>
                   
                                     <span class="movie-card-format">English</span>
                   
-                                    <span class="movie-card-format">2160p</span>
+                                    <span class="movie-card-format">Netflix</span>
                   
-                                    <span class="movie-card-format">1080p</span>
+                                    <span class="movie-card-format">Tamil</span>
                   
                                     <span class="movie-card-format">Series</span>
                   
-                                    <span class="movie-card-format">JioHotstar</span>
-                  
-                                    <span class="movie-card-format">Paramount+</span>
+                                    <span class="movie-card-format">Telugu</span>
                   
                                     </div>
                 </div>
               </div>
               <div class="movie-card-content">
-                <h3 class="movie-card-title">Mayor of Kingstown</h3>
-                <p class="movie-card-meta">2021                • S1.0-S4.0 EP10              </p>
+                <h3 class="movie-card-title">HIS & HERS</h3>
+                <p class="movie-card-meta">2026                • S1.0              </p>
               </div>
             </a>
             
                         <!-- Related Series 1 -->
-            <a href="/one-punch-man-series-565/" class="movie-card">
+            <a href="/people-we-meet-on-vacation-movie-5267/" class="movie-card">
               <div class="movie-card-image">
-                <img src="https://image.tmdb.org/t/p/original/sCYBBcI1PQFUsPWYVtW1dR1dhY7.jpg" alt="One Punch Man" class="w-full h-full object-cover">
+                <img src="https://image.tmdb.org/t/p/w500/xzZaU0MN6L9oc1pl0RUXSB7hWwD.jpg" alt="People We Meet on Vacation" class="w-full h-full object-cover">
+                
+                <div class="movie-card-overlay">
+                  <div class="movie-card-formats">
+                                      <span class="movie-card-format">Drama</span>
+                  
+                                    <span class="movie-card-format">Comedy</span>
+                  
+                                    <span class="movie-card-format">Romance</span>
+                  
+                                    <span class="movie-card-format">Hindi</span>
+                  
+                                    <span class="movie-card-format">English</span>
+                  
+                                    <span class="movie-card-format">Netflix</span>
+                  
+                                    <span class="movie-card-format">Tamil</span>
+                  
+                                    <span class="movie-card-format">Movies</span>
+                  
+                                    <span class="movie-card-format">Telugu</span>
+                  
+                                    </div>
+                </div>
+              </div>
+              <div class="movie-card-content">
+                <h3 class="movie-card-title">People We Meet on Vacation</h3>
+                <p class="movie-card-meta">2026                              </p>
+              </div>
+            </a>
+            
+                        <!-- Related Series 1 -->
+            <a href="/lets-play-series-4010/" class="movie-card">
+              <div class="movie-card-image">
+                <img src="https://image.tmdb.org/t/p/w500/aLzTaEle2w6W4rKKbIrF6WYWw9w.jpg" alt="Let's Play" class="w-full h-full object-cover">
                 
                 <div class="movie-card-overlay">
                   <div class="movie-card-formats">
@@ -2823,39 +2858,7 @@ code {
                   
                                     <span class="movie-card-format">Comedy</span>
                   
-                                    <span class="movie-card-format">Action & Adventure</span>
-                  
-                                    <span class="movie-card-format">1080p</span>
-                  
-                                    <span class="movie-card-format">WEB-DL</span>
-                  
-                                    <span class="movie-card-format">Series</span>
-                  
-                                    <span class="movie-card-format">Anime</span>
-                  
-                                    </div>
-                </div>
-              </div>
-              <div class="movie-card-content">
-                <h3 class="movie-card-title">One Punch Man</h3>
-                <p class="movie-card-meta">2015                • S1.0-S3.0 EP13              </p>
-              </div>
-            </a>
-            
-                        <!-- Related Series 1 -->
-            <a href="/gachiakuta-series-2210/" class="movie-card">
-              <div class="movie-card-image">
-                <img src="https://image.tmdb.org/t/p/w500/84LdrRRvpWk8g0EaaW7z3eKdfum.jpg" alt="Gachiakuta" class="w-full h-full object-cover">
-                
-                <div class="movie-card-overlay">
-                  <div class="movie-card-formats">
-                                      <span class="movie-card-format">Animation</span>
-                  
-                                    <span class="movie-card-format">Drama</span>
-                  
-                                    <span class="movie-card-format">Action & Adventure</span>
-                  
-                                    <span class="movie-card-format">Sci-Fi & Fantasy</span>
+                                    <span class="movie-card-format">Romance</span>
                   
                                     <span class="movie-card-format">Hindi</span>
                   
@@ -2865,12 +2868,14 @@ code {
                   
                                     <span class="movie-card-format">Anime</span>
                   
+                                    <span class="movie-card-format">Crunchyroll</span>
+                  
                                     </div>
                 </div>
               </div>
               <div class="movie-card-content">
-                <h3 class="movie-card-title">Gachiakuta</h3>
-                <p class="movie-card-meta">2025                • S1.1-S1.2 EP22              </p>
+                <h3 class="movie-card-title">Let's Play</h3>
+                <p class="movie-card-meta">2025                • S1.0 EP11              </p>
               </div>
             </a>
             

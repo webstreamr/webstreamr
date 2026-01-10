@@ -1080,6 +1080,9 @@ p, .metadata-value, .episode-description, .movie-tagline {
                 <li><a href="/category/jiohotstar/" class="dropdown-item">JioHotstar</a></li>
                 <li><a href="/category/disney/" class="dropdown-item">Disney+</a></li>
                 <li><a href="/category/Apple_TV/" class="dropdown-item">Apple TV+</a></li>
+                <li><a href="/category/hbo_max/" class="dropdown-item">HBO Max</a></li>
+                <li><a href="/category/hulu/" class="dropdown-item">Hulu</a></li>
+                <li><a href="/category/crave/" class="dropdown-item">Crave</a></li>
                 
               </ul>
             </li>
@@ -1179,7 +1182,7 @@ p, .metadata-value, .episode-description, .movie-tagline {
           Home
         </a>
         <span class="breadcrumb-separator">/</span>
-        <a href="/category/new-movies-10810/" class="text-muted-foreground hover:text-foreground">
+        <a href="/category/movies/" class="text-muted-foreground hover:text-foreground">
           Movies
         </a>
       </div>
@@ -1203,20 +1206,25 @@ p, .metadata-value, .episode-description, .movie-tagline {
            
            <div class="mt-2 flex flex-wrap items-center gap-2 text-muted-foreground">
             
+                            <div class="imdb-badge badge">
+                    <span class="imdb-logo">IMDb</span>
+                    <span class="imdb-score">6.9</span>
+                </div>
+                <span>•</span>
                         
-                                <span class="badge badge-outline">Action</span>
+                                <span class="badge badge-outline"><a href="/category/action/">Action</a></span>
                   
-                                    <span class="badge badge-outline">Crime</span>
+                                    <span class="badge badge-outline"><a href="/category/crime/">Crime</a></span>
                   
-                                    <span class="badge badge-outline">Thriller</span>
+                                    <span class="badge badge-outline"><a href="/category/thriller/">Thriller</a></span>
                   
-                                    <span class="badge badge-outline">Movies</span>
+                                    <span class="badge badge-outline"><a href="/category/movies/">Movies</a></span>
                   
-                                    <span class="badge badge-outline">1080p</span>
+                                    <span class="badge badge-outline"><a href="/category/1080p/">1080p</a></span>
                   
-                                    <span class="badge badge-outline">10Bit</span>
+                                    <span class="badge badge-outline"><a href="/category/10bit/">10Bit</a></span>
                   
-                                    <span class="badge badge-outline">BluRay</span>
+                                    <span class="badge badge-outline"><a href="/category/bluray/">BluRay</a></span>
                   
                                 <!--<span class="badge badge-outline">Dual Audio</span>-->
           </div>
@@ -1490,37 +1498,9 @@ p, .metadata-value, .episode-description, .movie-tagline {
           <div class="card-grid-small">
               
                         <!-- Related Series 1 -->
-            <a href="/demon-slayer-kimetsu-no-yaiba-infinity-castle-movie-5110/" class="movie-card">
+            <a href="/his-hers-series-5252/" class="movie-card">
               <div class="movie-card-image">
-                <img src="https://image.tmdb.org/t/p/w500/fWVSwgjpT2D78VUh6X8UBd2rorW.jpg" alt="Demon Slayer: Kimetsu no Yaiba Infinity Castle" class="w-full h-full object-cover">
-                
-                <div class="movie-card-overlay">
-                  <div class="movie-card-formats">
-                                      <span class="movie-card-format">Fantasy</span>
-                  
-                                    <span class="movie-card-format">Animation</span>
-                  
-                                    <span class="movie-card-format">Action</span>
-                  
-                                    <span class="movie-card-format">1080p</span>
-                  
-                                    <span class="movie-card-format">WEB-DL</span>
-                  
-                                    <span class="movie-card-format">Movies</span>
-                  
-                                    </div>
-                </div>
-              </div>
-              <div class="movie-card-content">
-                <h3 class="movie-card-title">Demon Slayer: Kimetsu no Yaiba Infinity Castle</h3>
-                <p class="movie-card-meta">2025                              </p>
-              </div>
-            </a>
-            
-                        <!-- Related Series 1 -->
-            <a href="/mayor-of-kingstown-series-4053/" class="movie-card">
-              <div class="movie-card-image">
-                <img src="https://image.tmdb.org/t/p/w500/86OUOPulMiM8rjrQSt4KMev7UAa.jpg" alt="Mayor of Kingstown" class="w-full h-full object-cover">
+                <img src="https://image.tmdb.org/t/p/w500/cDSXLVQLkCSBIpBx3UW04TsfZ5c.jpg" alt="HIS & HERS" class="w-full h-full object-cover">
                 
                 <div class="movie-card-overlay">
                   <div class="movie-card-formats">
@@ -1530,54 +1510,94 @@ p, .metadata-value, .episode-description, .movie-tagline {
                   
                                     <span class="movie-card-format">Crime</span>
                   
+                                    <span class="movie-card-format">Mystery</span>
+                  
+                                    <span class="movie-card-format">English</span>
+                  
+                                    <span class="movie-card-format">Netflix</span>
+                  
+                                    <span class="movie-card-format">Tamil</span>
+                  
+                                    <span class="movie-card-format">Series</span>
+                  
+                                    <span class="movie-card-format">Telugu</span>
+                  
+                                    </div>
+                </div>
+              </div>
+              <div class="movie-card-content">
+                <h3 class="movie-card-title">HIS & HERS</h3>
+                <p class="movie-card-meta">2026                • S1.0              </p>
+              </div>
+            </a>
+            
+                        <!-- Related Series 1 -->
+            <a href="/jujutsu-kaisen-series-224/" class="movie-card">
+              <div class="movie-card-image">
+                <img src="https://image.tmdb.org/t/p/w500/fHpKWq9ayzSk8nSwqRuaAUemRKh.jpg" alt="JUJUTSU KAISEN" class="w-full h-full object-cover">
+                
+                <div class="movie-card-overlay">
+                  <div class="movie-card-formats">
+                                      <span class="movie-card-format">Animation</span>
+                  
+                                    <span class="movie-card-format">Action</span>
+                  
+                                    <span class="movie-card-format">Action & Adventure</span>
+                  
+                                    <span class="movie-card-format">Sci-Fi & Fantasy</span>
+                  
+                                    <span class="movie-card-format">1080p</span>
+                  
+                                    <span class="movie-card-format">HEVC</span>
+                  
+                                    <span class="movie-card-format">WEB-DL</span>
+                  
+                                    <span class="movie-card-format">BluRay</span>
+                  
+                                    <span class="movie-card-format">Series</span>
+                  
+                                    <span class="movie-card-format">Anime</span>
+                  
+                                    <span class="movie-card-format">Multi Audios</span>
+                  
+                                    </div>
+                </div>
+              </div>
+              <div class="movie-card-content">
+                <h3 class="movie-card-title">JUJUTSU KAISEN</h3>
+                <p class="movie-card-meta">2020                • S1.0-S3.0 EP49              </p>
+              </div>
+            </a>
+            
+                        <!-- Related Series 1 -->
+            <a href="/marvels-daredevil-series-104/" class="movie-card">
+              <div class="movie-card-image">
+                <img src="https://image.tmdb.org/t/p/w500/QWbPaDxiB6LW2LjASknzYBvjMj.jpg" alt="Marvel's Daredevil" class="w-full h-full object-cover">
+                
+                <div class="movie-card-overlay">
+                  <div class="movie-card-formats">
+                                      <span class="movie-card-format">Drama</span>
+                  
+                                    <span class="movie-card-format">Crime</span>
+                  
+                                    <span class="movie-card-format">Action & Adventure</span>
+                  
                                     <span class="movie-card-format">Hindi</span>
                   
                                     <span class="movie-card-format">English</span>
                   
+                                    <span class="movie-card-format">Dual Language</span>
+                  
                                     <span class="movie-card-format">2160p</span>
                   
                                     <span class="movie-card-format">1080p</span>
+                  
+                                    <span class="movie-card-format">WEB-DL</span>
+                  
+                                    <span class="movie-card-format">BluRay</span>
                   
                                     <span class="movie-card-format">Series</span>
                   
-                                    <span class="movie-card-format">JioHotstar</span>
-                  
-                                    <span class="movie-card-format">Paramount+</span>
-                  
-                                    </div>
-                </div>
-              </div>
-              <div class="movie-card-content">
-                <h3 class="movie-card-title">Mayor of Kingstown</h3>
-                <p class="movie-card-meta">2021                • S1.0-S4.0 EP10              </p>
-              </div>
-            </a>
-            
-                        <!-- Related Series 1 -->
-            <a href="/justice-league-movie-5109/" class="movie-card">
-              <div class="movie-card-image">
-                <img src="https://image.tmdb.org/t/p/w500/eifGNCSDuxJeS1loAXil5bIGgvC.jpg" alt="Justice League" class="w-full h-full object-cover">
-                
-                <div class="movie-card-overlay">
-                  <div class="movie-card-formats">
-                                      <span class="movie-card-format">Adventure</span>
-                  
-                                    <span class="movie-card-format">Action</span>
-                  
-                                    <span class="movie-card-format">Science Fiction</span>
-                  
-                                    <span class="movie-card-format">2160p</span>
-                  
-                                    <span class="movie-card-format">1080p</span>
-                  
-                                    <span class="movie-card-format">WEB-DL</span>
-                  
-                                    <span class="movie-card-format">BluRay</span>
-                  
-                                    <span class="movie-card-format">REMUX</span>
-                  
-                                    <span class="movie-card-format">Movies</span>
-                  
                                     <span class="movie-card-format">10Bit</span>
                   
                                     <span class="movie-card-format">DV HDR</span>
@@ -1588,46 +1608,38 @@ p, .metadata-value, .episode-description, .movie-tagline {
                 </div>
               </div>
               <div class="movie-card-content">
-                <h3 class="movie-card-title">Justice League</h3>
-                <p class="movie-card-meta">2017                              </p>
+                <h3 class="movie-card-title">Marvel's Daredevil</h3>
+                <p class="movie-card-meta">2015                • S1.0-S3.0              </p>
               </div>
             </a>
             
                         <!-- Related Series 1 -->
-            <a href="/the-hobbit-the-battle-of-the-five-armies-movie-946/" class="movie-card">
+            <a href="/the-night-manager-series-5119/" class="movie-card">
               <div class="movie-card-image">
-                <img src="https://image.tmdb.org/t/p/w500/xT98tLqatZPQApyRmlPL12LtiWp.jpg" alt="The Hobbit: The Battle of the Five Armies" class="w-full h-full object-cover">
+                <img src="https://image.tmdb.org/t/p/w500/hdCC5N42cXERbzIn6ED7oqTKtkq.jpg" alt="The Night Manager" class="w-full h-full object-cover">
                 
                 <div class="movie-card-overlay">
                   <div class="movie-card-formats">
-                                      <span class="movie-card-format">Adventure</span>
+                                      <span class="movie-card-format">Drama</span>
                   
-                                    <span class="movie-card-format">Fantasy</span>
+                                    <span class="movie-card-format">Thriller</span>
                   
-                                    <span class="movie-card-format">Action</span>
+                                    <span class="movie-card-format">Crime</span>
                   
-                                    <span class="movie-card-format">2160p</span>
+                                    <span class="movie-card-format">Mystery</span>
                   
-                                    <span class="movie-card-format">1080p</span>
+                                    <span class="movie-card-format">English</span>
                   
-                                    <span class="movie-card-format">WEB-DL</span>
+                                    <span class="movie-card-format">Series</span>
                   
-                                    <span class="movie-card-format">BluRay</span>
-                  
-                                    <span class="movie-card-format">Movies</span>
-                  
-                                    <span class="movie-card-format">10Bit</span>
-                  
-                                    <span class="movie-card-format">DV HDR</span>
-                  
-                                    <span class="movie-card-format">SDR</span>
+                                    <span class="movie-card-format">Amazon Prime Video</span>
                   
                                     </div>
                 </div>
               </div>
               <div class="movie-card-content">
-                <h3 class="movie-card-title">The Hobbit: The Battle of the Five Armies</h3>
-                <p class="movie-card-meta">2014                              </p>
+                <h3 class="movie-card-title">The Night Manager</h3>
+                <p class="movie-card-meta">2016                • S1.0              </p>
               </div>
             </a>
             

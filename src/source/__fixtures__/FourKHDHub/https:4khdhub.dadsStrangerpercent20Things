@@ -128,6 +128,9 @@
                 <li><a href="/category/jiohotstar/" class="dropdown-item">JioHotstar</a></li>
                 <li><a href="/category/disney/" class="dropdown-item">Disney+</a></li>
                 <li><a href="/category/Apple_TV/" class="dropdown-item">Apple TV+</a></li>
+                <li><a href="/category/hbo_max/" class="dropdown-item">HBO Max</a></li>
+                <li><a href="/category/hulu/" class="dropdown-item">Hulu</a></li>
+                <li><a href="/category/crave/" class="dropdown-item">Crave</a></li>
                 
               </ul>
             </li>
@@ -223,7 +226,7 @@
       <section class="latest-releases">
         <div class="latest-releases-header">
           <h2 class="latest-releases-title">
-          <span><svg style="vertical-align: bottom;" xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e3e3e3"><path d="M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z"/></svg></span> Latest Releases          </h2>
+          <span><svg style="vertical-align: bottom;" xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e3e3e3"><path d="M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z"/></svg></span> Search - Stranger Things          </h2>
           
         </div>
         
@@ -232,65 +235,65 @@
           
           
                     
-                    <a href="/crank-movie-1745/" class="movie-card">
+                    <a href="/stranger-things-series-414/" class="movie-card">
             <div class="movie-card-image">
-              <img src="https://image.tmdb.org/t/p/w500/rsKmhnvzJezjwC1Ud2Hh37oNpdQ.jpg" alt="Crank" class="w-full h-full object-cover">
+              <img src="https://image.tmdb.org/t/p/w500/uOOtwVbSr4QDjAGIifLDwpb2Pdl.jpg" alt="Stranger Things" class="w-full h-full object-cover">
               <div class="movie-card-overlay">
                 <div class="movie-card-formats">
                   
-                                    <span class="movie-card-format">Action</span>
+                                    <span class="movie-card-format">Drama</span>
                   
-                                    <span class="movie-card-format">Thriller</span>
+                                    <span class="movie-card-format">Horror</span>
                   
-                                    <span class="movie-card-format">Crime</span>
+                                    <span class="movie-card-format">Mystery</span>
+                  
+                                    <span class="movie-card-format">Sci-Fi & Fantasy</span>
+                  
+                                    <span class="movie-card-format">Hindi</span>
+                  
+                                    <span class="movie-card-format">English</span>
+                  
+                                    <span class="movie-card-format">2160p</span>
                   
                                     <span class="movie-card-format">1080p</span>
                   
-                                    <span class="movie-card-format">BluRay</span>
+                                    <span class="movie-card-format">Netflix</span>
                   
-                                    <span class="movie-card-format">Movies</span>
+                                    <span class="movie-card-format">Tamil</span>
                   
-                                    <span class="movie-card-format">10Bit</span>
+                                    <span class="movie-card-format">Series</span>
+                  
+                                    <span class="movie-card-format">Telugu</span>
                   
                                     <!--<span class="movie-card-format">HEVC</span>-->
                 </div>
               </div>
             </div>
             <div class="movie-card-content">
-              <h3 class="movie-card-title">Crank</h3>
-              <p class="movie-card-meta">2006                            </p>
+              <h3 class="movie-card-title">Stranger Things</h3>
+              <p class="movie-card-meta">2016              • S01-S5.3              </p>
             </div>
           </a>
           
           
                     
-                    <a href="/crank-high-voltage-movie-1746/" class="movie-card">
+                    <a href="/behind-the-curtain-stranger-things-the-first-shadow-movie-141/" class="movie-card">
             <div class="movie-card-image">
-              <img src="https://image.tmdb.org/t/p/w500/tzTC4EEvF0OPL63frEiogxL2T8M.jpg" alt="Crank: High Voltage" class="w-full h-full object-cover">
+              <img src="https://image.tmdb.org/t/p/w500/7jQIbTMx2BlZrYGyOS94YUNcGjV.jpg" alt="Behind the Curtain: Stranger Things: The First Shadow" class="w-full h-full object-cover">
               <div class="movie-card-overlay">
                 <div class="movie-card-formats">
                   
-                                    <span class="movie-card-format">Action</span>
-                  
-                                    <span class="movie-card-format">Thriller</span>
-                  
-                                    <span class="movie-card-format">Crime</span>
-                  
-                                    <span class="movie-card-format">1080p</span>
-                  
-                                    <span class="movie-card-format">BluRay</span>
+                                    <span class="movie-card-format">Documentary</span>
                   
                                     <span class="movie-card-format">Movies</span>
-                  
-                                    <span class="movie-card-format">10Bit</span>
                   
                                     <!--<span class="movie-card-format">HEVC</span>-->
                 </div>
               </div>
             </div>
             <div class="movie-card-content">
-              <h3 class="movie-card-title">Crank: High Voltage</h3>
-              <p class="movie-card-meta">2009                            </p>
+              <h3 class="movie-card-title">Behind the Curtain: Stranger Things: The First Shadow</h3>
+              <p class="movie-card-meta">2025                            </p>
             </div>
           </a>
           

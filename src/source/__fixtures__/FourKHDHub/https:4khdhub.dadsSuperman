@@ -128,6 +128,9 @@
                 <li><a href="/category/jiohotstar/" class="dropdown-item">JioHotstar</a></li>
                 <li><a href="/category/disney/" class="dropdown-item">Disney+</a></li>
                 <li><a href="/category/Apple_TV/" class="dropdown-item">Apple TV+</a></li>
+                <li><a href="/category/hbo_max/" class="dropdown-item">HBO Max</a></li>
+                <li><a href="/category/hulu/" class="dropdown-item">Hulu</a></li>
+                <li><a href="/category/crave/" class="dropdown-item">Crave</a></li>
                 
               </ul>
             </li>
@@ -223,7 +226,7 @@
       <section class="latest-releases">
         <div class="latest-releases-header">
           <h2 class="latest-releases-title">
-          <span><svg style="vertical-align: bottom;" xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e3e3e3"><path d="M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z"/></svg></span> Latest Releases          </h2>
+          <span><svg style="vertical-align: bottom;" xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e3e3e3"><path d="M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z"/></svg></span> Search - Superman          </h2>
           
         </div>
         
@@ -232,61 +235,133 @@
           
           
                     
-                    <a href="/dark-series-889/" class="movie-card">
+                    <a href="/superman-movie-903/" class="movie-card">
             <div class="movie-card-image">
-              <img src="https://image.tmdb.org/t/p/w500/apbrbWs8M9lyOpJYU5WXrpFbk1Z.jpg" alt="Dark" class="w-full h-full object-cover">
+              <img src="https://image.tmdb.org/t/p/w500/d7px1FQxW4tngdACVRsCSaZq0Xl.jpg" alt="Superman" class="w-full h-full object-cover">
               <div class="movie-card-overlay">
                 <div class="movie-card-formats">
                   
-                                    <span class="movie-card-format">Drama</span>
+                                    <span class="movie-card-format">Adventure</span>
                   
-                                    <span class="movie-card-format">Crime</span>
+                                    <span class="movie-card-format">Action</span>
                   
-                                    <span class="movie-card-format">Mystery</span>
+                                    <span class="movie-card-format">Science Fiction</span>
                   
-                                    <span class="movie-card-format">Sci-Fi & Fantasy</span>
-                  
-                                    <span class="movie-card-format">Hindi</span>
-                  
-                                    <span class="movie-card-format">English</span>
+                                    <span class="movie-card-format">Dual Language</span>
                   
                                     <span class="movie-card-format">2160p</span>
                   
                                     <span class="movie-card-format">1080p</span>
                   
-                                    <span class="movie-card-format">AAC</span>
+                                    <span class="movie-card-format">HDR</span>
                   
-                                    <span class="movie-card-format">DDP</span>
+                                    <span class="movie-card-format">BluRay</span>
                   
-                                    <span class="movie-card-format">Series</span>
+                                    <span class="movie-card-format">Movies</span>
                   
                                     <!--<span class="movie-card-format">HEVC</span>-->
                 </div>
               </div>
             </div>
             <div class="movie-card-content">
-              <h3 class="movie-card-title">Dark</h3>
-              <p class="movie-card-meta">2017              • S01-S03              </p>
+              <h3 class="movie-card-title">Superman</h3>
+              <p class="movie-card-meta">1978                            </p>
             </div>
           </a>
           
           
                     
-                    <a href="/the-dark-knight-rises-movie-467/" class="movie-card">
+                    <a href="/superman-ii-movie-926/" class="movie-card">
             <div class="movie-card-image">
-              <img src="https://image.tmdb.org/t/p/w500/hr0L2aueqlP2BYUblTTjmtn0hw4.jpg" alt="The Dark Knight Rises" class="w-full h-full object-cover">
+              <img src="https://image.tmdb.org/t/p/w500/3xk5cno9BHcnwc97XO9k21aI1Zi.jpg" alt="Superman II" class="w-full h-full object-cover">
               <div class="movie-card-overlay">
                 <div class="movie-card-formats">
                   
-                                    <span class="movie-card-format">Drama</span>
+                                    <span class="movie-card-format">Adventure</span>
                   
                                     <span class="movie-card-format">Action</span>
                   
-                                    <span class="movie-card-format">Thriller</span>
+                                    <span class="movie-card-format">Science Fiction</span>
                   
-                                    <span class="movie-card-format">Crime</span>
+                                    <span class="movie-card-format">English</span>
                   
                                     <span class="movie-card-format">Dual Language</span>
+                  
+                                    <span class="movie-card-format">2160p</span>
+                  
+                                    <span class="movie-card-format">1080p</span>
+                  
+                                    <span class="movie-card-format">HDR</span>
+                  
+                                    <span class="movie-card-format">DoVi</span>
+                  
+                                    <span class="movie-card-format">BluRay</span>
+                  
+                                    <span class="movie-card-format">REMUX</span>
+                  
+                                    <span class="movie-card-format">Movies</span>
+                  
+                                    <!--<span class="movie-card-format">HEVC</span>-->
+                </div>
+              </div>
+            </div>
+            <div class="movie-card-content">
+              <h3 class="movie-card-title">Superman II</h3>
+              <p class="movie-card-meta">1980                            </p>
+            </div>
+          </a>
+          
+          
+                    
+                    <a href="/superman-returns-movie-931/" class="movie-card">
+            <div class="movie-card-image">
+              <img src="https://image.tmdb.org/t/p/w500/385XwTQZDpRX2d3kxtnpiLrjBXw.jpg" alt="Superman Returns" class="w-full h-full object-cover">
+              <div class="movie-card-overlay">
+                <div class="movie-card-formats">
+                  
+                                    <span class="movie-card-format">Adventure</span>
+                  
+                                    <span class="movie-card-format">Action</span>
+                  
+                                    <span class="movie-card-format">Science Fiction</span>
+                  
+                                    <span class="movie-card-format">Dual Language</span>
+                  
+                                    <span class="movie-card-format">1080p</span>
+                  
+                                    <span class="movie-card-format">BluRay</span>
+                  
+                                    <span class="movie-card-format">Movies</span>
+                  
+                                    <!--<span class="movie-card-format">HEVC</span>-->
+                </div>
+              </div>
+            </div>
+            <div class="movie-card-content">
+              <h3 class="movie-card-title">Superman Returns</h3>
+              <p class="movie-card-meta">2006                            </p>
+            </div>
+          </a>
+          
+          
+                    
+                    <a href="/superman-iv-the-quest-for-peace-movie-928/" class="movie-card">
+            <div class="movie-card-image">
+              <img src="https://image.tmdb.org/t/p/w500/aQ1d9OB0xtAenIL0Ke3xV17St4S.jpg" alt="Superman IV: The Quest for Peace" class="w-full h-full object-cover">
+              <div class="movie-card-overlay">
+                <div class="movie-card-formats">
+                  
+                                    <span class="movie-card-format">Adventure</span>
+                  
+                                    <span class="movie-card-format">Action</span>
+                  
+                                    <span class="movie-card-format">Science Fiction</span>
+                  
+                                    <span class="movie-card-format">Dual Language</span>
+                  
+                                    <span class="movie-card-format">2160p</span>
+                  
+                                    <span class="movie-card-format">1080p</span>
                   
                                     <span class="movie-card-format">HDR</span>
                   
@@ -294,171 +369,31 @@
                   
                                     <span class="movie-card-format">Movies</span>
                   
-                                    <span class="movie-card-format">IMAX</span>
-                  
                                     <!--<span class="movie-card-format">HEVC</span>-->
                 </div>
               </div>
             </div>
             <div class="movie-card-content">
-              <h3 class="movie-card-title">The Dark Knight Rises</h3>
-              <p class="movie-card-meta">2012                            </p>
+              <h3 class="movie-card-title">Superman IV: The Quest for Peace</h3>
+              <p class="movie-card-meta">1987                            </p>
             </div>
           </a>
           
           
                     
-                    <a href="/the-dark-knight-movie-465/" class="movie-card">
+                    <a href="/superman-iii-movie-927/" class="movie-card">
             <div class="movie-card-image">
-              <img src="https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg" alt="The Dark Knight" class="w-full h-full object-cover">
+              <img src="https://image.tmdb.org/t/p/w500/aac3vujaTWRLARNDEcMyGSvJfsx.jpg" alt="Superman III" class="w-full h-full object-cover">
               <div class="movie-card-overlay">
                 <div class="movie-card-formats">
                   
-                                    <span class="movie-card-format">Drama</span>
+                                    <span class="movie-card-format">Adventure</span>
                   
                                     <span class="movie-card-format">Action</span>
-                  
-                                    <span class="movie-card-format">Thriller</span>
-                  
-                                    <span class="movie-card-format">Crime</span>
-                  
-                                    <span class="movie-card-format">Dual Language</span>
-                  
-                                    <span class="movie-card-format">HDR</span>
-                  
-                                    <span class="movie-card-format">BluRay</span>
-                  
-                                    <span class="movie-card-format">Movies</span>
-                  
-                                    <span class="movie-card-format">IMAX</span>
-                  
-                                    <!--<span class="movie-card-format">HEVC</span>-->
-                </div>
-              </div>
-            </div>
-            <div class="movie-card-content">
-              <h3 class="movie-card-title">The Dark Knight</h3>
-              <p class="movie-card-meta">2008                            </p>
-            </div>
-          </a>
-          
-          
-                    
-                    <a href="/yandere-dark-elf-she-chased-me-all-the-way-from-another-world-series-4443/" class="movie-card">
-            <div class="movie-card-image">
-              <img src="https://image.tmdb.org/t/p/w500/eCWtp80MCEBPMuRmAjm2zNMgOSW.jpg" alt="Yandere Dark Elf: She Chased Me All the Way from Another World!" class="w-full h-full object-cover">
-              <div class="movie-card-overlay">
-                <div class="movie-card-formats">
-                  
-                                    <span class="movie-card-format">Animation</span>
                   
                                     <span class="movie-card-format">Comedy</span>
                   
-                                    <span class="movie-card-format">Sci-Fi & Fantasy</span>
-                  
-                                    <span class="movie-card-format">1080p</span>
-                  
-                                    <span class="movie-card-format">WEB-DL</span>
-                  
-                                    <span class="movie-card-format">Series</span>
-                  
-                                    <span class="movie-card-format">VOD</span>
-                  
-                                    <!--<span class="movie-card-format">HEVC</span>-->
-                </div>
-              </div>
-            </div>
-            <div class="movie-card-content">
-              <h3 class="movie-card-title">Yandere Dark Elf: She Chased Me All the Way from Another World!</h3>
-              <p class="movie-card-meta">2025              • S01              </p>
-            </div>
-          </a>
-          
-          
-                    
-                    <a href="/jeremy-wades-dark-waters-series-4244/" class="movie-card">
-            <div class="movie-card-image">
-              <img src="https://image.tmdb.org/t/p/w500/aIfRUAUaPqNZ2L2F5fkJyiTEqp9.jpg" alt="Jeremy Wade's Dark Waters" class="w-full h-full object-cover">
-              <div class="movie-card-overlay">
-                <div class="movie-card-formats">
-                  
-                                    <span class="movie-card-format">Documentary</span>
-                  
-                                    <span class="movie-card-format">Hindi</span>
-                  
-                                    <span class="movie-card-format">English</span>
-                  
-                                    <span class="movie-card-format">Tamil</span>
-                  
-                                    <span class="movie-card-format">Series</span>
-                  
-                                    <span class="movie-card-format">Amazon Prime Video</span>
-                  
-                                    <span class="movie-card-format">Disney+</span>
-                  
-                                    <!--<span class="movie-card-format">HEVC</span>-->
-                </div>
-              </div>
-            </div>
-            <div class="movie-card-content">
-              <h3 class="movie-card-title">Jeremy Wade's Dark Waters</h3>
-              <p class="movie-card-meta">2019              • S01              </p>
-            </div>
-          </a>
-          
-          
-                    
-                    <a href="/dark-nuns-movie-4203/" class="movie-card">
-            <div class="movie-card-image">
-              <img src="https://image.tmdb.org/t/p/w500/2Abt2GgscAGtGAXTrhH44qPhugI.jpg" alt="Dark Nuns" class="w-full h-full object-cover">
-              <div class="movie-card-overlay">
-                <div class="movie-card-formats">
-                  
-                                    <span class="movie-card-format">Drama</span>
-                  
-                                    <span class="movie-card-format">Horror</span>
-                  
-                                    <span class="movie-card-format">Thriller</span>
-                  
-                                    <span class="movie-card-format">Mystery</span>
-                  
-                                    <span class="movie-card-format">Hindi</span>
-                  
-                                    <span class="movie-card-format">Dual Language</span>
-                  
-                                    <span class="movie-card-format">1080p</span>
-                  
-                                    <span class="movie-card-format">BluRay</span>
-                  
-                                    <span class="movie-card-format">REMUX</span>
-                  
-                                    <span class="movie-card-format">Movies</span>
-                  
-                                    <!--<span class="movie-card-format">HEVC</span>-->
-                </div>
-              </div>
-            </div>
-            <div class="movie-card-content">
-              <h3 class="movie-card-title">Dark Nuns</h3>
-              <p class="movie-card-meta">2025                            </p>
-            </div>
-          </a>
-          
-          
-                    
-                    <a href="/the-terminal-list-dark-wolf-series-3193/" class="movie-card">
-            <div class="movie-card-image">
-              <img src="https://image.tmdb.org/t/p/w500/9mYeRoWguq5etbwJRdF8BXFKiF.jpg" alt="The Terminal List: Dark Wolf" class="w-full h-full object-cover">
-              <div class="movie-card-overlay">
-                <div class="movie-card-formats">
-                  
-                                    <span class="movie-card-format">Drama</span>
-                  
-                                    <span class="movie-card-format">Thriller</span>
-                  
-                                    <span class="movie-card-format">Action & Adventure</span>
-                  
-                                    <span class="movie-card-format">Hindi</span>
+                                    <span class="movie-card-format">Science Fiction</span>
                   
                                     <span class="movie-card-format">English</span>
                   
@@ -468,89 +403,25 @@
                   
                                     <span class="movie-card-format">HDR</span>
                   
-                                    <span class="movie-card-format">Series</span>
-                  
-                                    <!--<span class="movie-card-format">HEVC</span>-->
-                </div>
-              </div>
-            </div>
-            <div class="movie-card-content">
-              <h3 class="movie-card-title">The Terminal List: Dark Wolf</h3>
-              <p class="movie-card-meta">2025              • S01 EP07              </p>
-            </div>
-          </a>
-          
-          
-                    
-                    <a href="/dark-whispers---volume-1-movie-3615/" class="movie-card">
-            <div class="movie-card-image">
-              <img src="https://image.tmdb.org/t/p/w500/tJq1KtnSRCDOMnPcVUtxGB5dfAQ.jpg" alt="Dark Whispers - Volume 1" class="w-full h-full object-cover">
-              <div class="movie-card-overlay">
-                <div class="movie-card-formats">
-                  
-                                    <span class="movie-card-format">Horror</span>
-                  
-                                    <span class="movie-card-format">Thriller</span>
-                  
-                                    <span class="movie-card-format">Dual Language</span>
-                  
-                                    <span class="movie-card-format">1080p</span>
-                  
-                                    <span class="movie-card-format">WEB-DL</span>
-                  
-                                    <span class="movie-card-format">Hollywood</span>
-                  
-                                    <span class="movie-card-format">Movies</span>
-                  
-                                    <!--<span class="movie-card-format">HEVC</span>-->
-                </div>
-              </div>
-            </div>
-            <div class="movie-card-content">
-              <h3 class="movie-card-title">Dark Whispers - Volume 1</h3>
-              <p class="movie-card-meta">2019                            </p>
-            </div>
-          </a>
-          
-          
-                    
-                    <a href="/30-days-of-night-dark-days-movie-3605/" class="movie-card">
-            <div class="movie-card-image">
-              <img src="https://image.tmdb.org/t/p/w500/bXHaXVGncI2WKUrNRYDyTyj3ymR.jpg" alt="30 Days of Night: Dark Days" class="w-full h-full object-cover">
-              <div class="movie-card-overlay">
-                <div class="movie-card-formats">
-                  
-                                    <span class="movie-card-format">Horror</span>
-                  
-                                    <span class="movie-card-format">Thriller</span>
-                  
-                                    <span class="movie-card-format">Dual Language</span>
-                  
-                                    <span class="movie-card-format">1080p</span>
-                  
                                     <span class="movie-card-format">BluRay</span>
                   
-                                    <span class="movie-card-format">REMUX</span>
-                  
                                     <span class="movie-card-format">Movies</span>
-                  
-                                    <span class="movie-card-format">10Bit</span>
                   
                                     <!--<span class="movie-card-format">HEVC</span>-->
                 </div>
               </div>
             </div>
             <div class="movie-card-content">
-              <h3 class="movie-card-title">30 Days of Night: Dark Days</h3>
-              <p class="movie-card-meta">2010                            </p>
+              <h3 class="movie-card-title">Superman III</h3>
+              <p class="movie-card-meta">1983                            </p>
             </div>
           </a>
           
           
                     
-                    <a href="/the-dark-crystal-movie-2994/" class="movie-card">
+                    <a href="/batman-v-superman-dawn-of-justice-movie-80/" class="movie-card">
             <div class="movie-card-image">
-              <img src="https://image.tmdb.org/t/p/w500/6g1Kh73qQRosyhRJpL3euQpMxOE.jpg" alt="The Dark Crystal" class="w-full h-full object-cover">
+              <img src="https://image.tmdb.org/t/p/w500/5UsK3grJvtQrtzEgqNlDljJW96w.jpg" alt="Batman v Superman: Dawn of Justice" class="w-full h-full object-cover">
               <div class="movie-card-overlay">
                 <div class="movie-card-formats">
                   
@@ -558,15 +429,7 @@
                   
                                     <span class="movie-card-format">Fantasy</span>
                   
-                                    <span class="movie-card-format">Family</span>
-                  
-                                    <span class="movie-card-format">English</span>
-                  
-                                    <span class="movie-card-format">1080p</span>
-                  
-                                    <span class="movie-card-format">HDR</span>
-                  
-                                    <span class="movie-card-format">BluRay</span>
+                                    <span class="movie-card-format">Action</span>
                   
                                     <span class="movie-card-format">Movies</span>
                   
@@ -575,24 +438,24 @@
               </div>
             </div>
             <div class="movie-card-content">
-              <h3 class="movie-card-title">The Dark Crystal</h3>
-              <p class="movie-card-meta">1982                            </p>
+              <h3 class="movie-card-title">Batman v Superman: Dawn of Justice</h3>
+              <p class="movie-card-meta">2016                            </p>
             </div>
           </a>
           
           
                     
-                    <a href="/elvira-mistress-of-the-dark-movie-2846/" class="movie-card">
+                    <a href="/superman-imax-movie-2998/" class="movie-card">
             <div class="movie-card-image">
-              <img src="https://image.tmdb.org/t/p/w500/pCbjmtAsrcJVYelv2OoRWwZ8uro.jpg" alt="Elvira: Mistress of the Dark" class="w-full h-full object-cover">
+              <img src="https://image.tmdb.org/t/p/w500/ombsmhYUqR4qqOLOxAyr5V8hbyv.jpg" alt="Superman [IMAX]" class="w-full h-full object-cover">
               <div class="movie-card-overlay">
                 <div class="movie-card-formats">
                   
-                                    <span class="movie-card-format">Fantasy</span>
+                                    <span class="movie-card-format">Adventure</span>
                   
-                                    <span class="movie-card-format">Horror</span>
+                                    <span class="movie-card-format">Action</span>
                   
-                                    <span class="movie-card-format">Comedy</span>
+                                    <span class="movie-card-format">Science Fiction</span>
                   
                                     <span class="movie-card-format">English</span>
                   
@@ -600,9 +463,9 @@
                   
                                     <span class="movie-card-format">1080p</span>
                   
-                                    <span class="movie-card-format">BluRay</span>
+                                    <span class="movie-card-format">HDR</span>
                   
-                                    <span class="movie-card-format">REMUX</span>
+                                    <span class="movie-card-format">WEB-DL</span>
                   
                                     <span class="movie-card-format">Movies</span>
                   
@@ -611,30 +474,30 @@
               </div>
             </div>
             <div class="movie-card-content">
-              <h3 class="movie-card-title">Elvira: Mistress of the Dark</h3>
-              <p class="movie-card-meta">1988                            </p>
+              <h3 class="movie-card-title">Superman [IMAX]</h3>
+              <p class="movie-card-meta">2025                            </p>
             </div>
           </a>
           
           
                     
-                    <a href="/zero-dark-thirty-movie-2786/" class="movie-card">
+                    <a href="/superman-doomsday-movie-3569/" class="movie-card">
             <div class="movie-card-image">
-              <img src="https://image.tmdb.org/t/p/original/dVodtdWDkLsutWGgEEWSFnnH6ei.jpg" alt="Zero Dark Thirty" class="w-full h-full object-cover">
+              <img src="https://image.tmdb.org/t/p/w500/itvuWm7DFWWzWgW0xgiaKzzWszP.jpg" alt="Superman: Doomsday" class="w-full h-full object-cover">
               <div class="movie-card-overlay">
                 <div class="movie-card-formats">
                   
-                                    <span class="movie-card-format">Drama</span>
+                                    <span class="movie-card-format">Animation</span>
                   
-                                    <span class="movie-card-format">Thriller</span>
+                                    <span class="movie-card-format">Action</span>
                   
-                                    <span class="movie-card-format">Dual Language</span>
+                                    <span class="movie-card-format">Science Fiction</span>
+                  
+                                    <span class="movie-card-format">English</span>
                   
                                     <span class="movie-card-format">2160p</span>
                   
                                     <span class="movie-card-format">1080p</span>
-                  
-                                    <span class="movie-card-format">HDR</span>
                   
                                     <span class="movie-card-format">BluRay</span>
                   
@@ -642,13 +505,55 @@
                   
                                     <span class="movie-card-format">10Bit</span>
                   
+                                    <span class="movie-card-format">DV HDR</span>
+                  
                                     <!--<span class="movie-card-format">HEVC</span>-->
                 </div>
               </div>
             </div>
             <div class="movie-card-content">
-              <h3 class="movie-card-title">Zero Dark Thirty</h3>
-              <p class="movie-card-meta">2012                            </p>
+              <h3 class="movie-card-title">Superman: Doomsday</h3>
+              <p class="movie-card-meta">2007                            </p>
+            </div>
+          </a>
+          
+          
+                    
+                    <a href="/supermanbatman-public-enemies-movie-3627/" class="movie-card">
+            <div class="movie-card-image">
+              <img src="https://image.tmdb.org/t/p/w500/izvMc22ywSLFWUXZEIuJJ8dms75.jpg" alt="Superman/Batman: Public Enemies" class="w-full h-full object-cover">
+              <div class="movie-card-overlay">
+                <div class="movie-card-formats">
+                  
+                                    <span class="movie-card-format">Adventure</span>
+                  
+                                    <span class="movie-card-format">Animation</span>
+                  
+                                    <span class="movie-card-format">Drama</span>
+                  
+                                    <span class="movie-card-format">Science Fiction</span>
+                  
+                                    <span class="movie-card-format">English</span>
+                  
+                                    <span class="movie-card-format">2160p</span>
+                  
+                                    <span class="movie-card-format">1080p</span>
+                  
+                                    <span class="movie-card-format">BluRay</span>
+                  
+                                    <span class="movie-card-format">Movies</span>
+                  
+                                    <span class="movie-card-format">DV HDR</span>
+                  
+                                    <span class="movie-card-format">SDR</span>
+                  
+                                    <!--<span class="movie-card-format">HEVC</span>-->
+                </div>
+              </div>
+            </div>
+            <div class="movie-card-content">
+              <h3 class="movie-card-title">Superman/Batman: Public Enemies</h3>
+              <p class="movie-card-meta">2009                            </p>
             </div>
           </a>
           
@@ -683,14 +588,9 @@
         
         <!-- Previous Page Link -->
                 
-        <a class='pagination-item active'>1</a><a href='/page/2/?s=Dark 2017' class='pagination-item'>2</a><a href='/page/2/?s=Dark 2017' class='pagination-item'>2</a>
+        <a class='pagination-item active'>1</a>
         
         <!-- Next Page Link -->
-                <a href="/page/2/?s=Dark 2017" class="pagination-item pagination-next">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-        </a>
             </div>
 </div>
 
