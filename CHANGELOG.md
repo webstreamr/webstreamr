@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.62.2](https://github.com/webstreamr/webstreamr/compare/v0.62.1...v0.62.2) (2026-01-10)
+
+
+### Bug Fixes
+
+* **extractor:** support non-HLS streams in RgShows ([d1fcd67](https://github.com/webstreamr/webstreamr/commit/d1fcd671c9646ef923ff7bd8bcb2fe7ad0d599b1))
+
 ## [0.62.1](https://github.com/webstreamr/webstreamr/compare/v0.62.0...v0.62.1) (2026-01-10)
 
 
