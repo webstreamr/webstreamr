@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`StreamUp handle one battle after another 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "StreamUP",
+    "meta": {
+      "countryCodes": [],
+      "extractorId": "streamup",
+      "height": 1080,
+      "title": "Wake.Up.Dead.Man.A.Knives.Out.Mystery.2025",
+    },
+    "ttl": 10800000,
+    "url": "https://s3-hls2-cdn59.strmupcdn.com/hls/SJbD5Zm1pj06jZ2LDbHa13YBmryxas/master.m3u8?token=35f702a94c0e324d607d8761795a3788-1768016464-104.28.197.7-5ebad85b212e5e349b388501e051c992a2b68e70fdcaa6cc18270adee1f7c003",
+  },
+]
+`;
