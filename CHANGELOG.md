@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.62.0](https://github.com/webstreamr/webstreamr/compare/v0.61.0...v0.62.0) (2026-01-10)
+
+
+### Miscellaneous Chores
+
+* do not fail resolution if height guessing fails ([28a8a15](https://github.com/webstreamr/webstreamr/commit/28a8a1554d1c14eb85577e73191a325cc686f22a))
+* remove all proxy black magic ([66fb0e2](https://github.com/webstreamr/webstreamr/commit/66fb0e2e6dc379a8d4347c576a3c15605745d257))
+
+
+### Features
+
+* **extractor:** add StreamUP ([#621](https://github.com/webstreamr/webstreamr/issues/621)) ([baf5c91](https://github.com/webstreamr/webstreamr/commit/baf5c9143d4dab4607de891f5b17184e89e027c7))
+
 ## [0.61.0](https://github.com/webstreamr/webstreamr/compare/v0.60.0...v0.61.0) (2026-01-09)
 
 
