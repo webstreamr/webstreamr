@@ -17,4 +17,8 @@ describe('RgShows', () => {
   test('handle stranger things s05e01', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://api.rgshows.ru/main/tv/66732/5/1'))).toMatchSnapshot();
   });
+
+  test('handle parasite 2019 (mp4)', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://api.rgshows.ru/main/movie/496243'))).toMatchSnapshot();
+  });
 });

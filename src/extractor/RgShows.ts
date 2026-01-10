@@ -26,17 +26,19 @@ export class RgShows extends Extractor {
 
     const data = await this.fetcher.json(ctx, url, { headers }) as RgShowsApiData;
 
-    const playlistUrl = new URL(data.stream.url);
+    const streamUrl = new URL(data.stream.url);
+    const isMp4 = streamUrl.href.includes('mp4');
+    const isHls = streamUrl.href.includes('m3u8') || streamUrl.href.includes('txt');
 
     return [
       {
-        url: playlistUrl,
-        format: Format.hls,
+        url: streamUrl,
+        format: isMp4 ? Format.mp4 : (isHls ? Format.hls : /* istanbul ignore next */ Format.unknown),
         label: this.label,
         ttl: this.ttl,
         meta: {
           ...meta,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, url, { headers }),
+          ...(isHls && { height: await guessHeightFromPlaylist(ctx, this.fetcher, streamUrl, url, { headers }) }),
         },
         requestHeaders: headers,
       },
