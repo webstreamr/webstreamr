@@ -59,10 +59,6 @@ export class Frembed extends Source {
   };
 
   private readonly getBaseUrl = async (ctx: Context): Promise<URL> => {
-    const html = await this.fetcher.text(ctx, new URL('https://audin213.com/'));
-
-    const frembedMatcher = html.match(/"(https:\/\/frembed.*?)"/) as string[];
-
-    return new URL(frembedMatcher[1] as string);
+    return await this.fetcher.getFinalRedirectUrl(ctx, new URL(this.baseUrl));
   };
 }
