@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.62.3](https://github.com/webstreamr/webstreamr/compare/v0.62.2...v0.62.3) (2026-01-11)
+
+
+### Miscellaneous Chores
+
+* configure more Indian languages, add Tamil and Telugu to 4KHDHub ([05b80a2](https://github.com/webstreamr/webstreamr/commit/05b80a2d6367a459fe84879c9b318c416a7a4180))
+* enable nonBlocking secondary cache writes ([1a99a9e](https://github.com/webstreamr/webstreamr/commit/1a99a9e99ba233c1144107cb3de32c8a5bd28073))
+* **extractor:** return only best Fsst result ([f49769f](https://github.com/webstreamr/webstreamr/commit/f49769f3c4c2ca9cfca006a45d8a59c7bc3b68e8))
+
+
+### Bug Fixes
+
+* **source:** RgShows is multi ([de79dc0](https://github.com/webstreamr/webstreamr/commit/de79dc014fc00e91f926a7d5b450f875acd2bcdb))
+
 ## [0.62.2](https://github.com/webstreamr/webstreamr/compare/v0.62.1...v0.62.2) (2026-01-10)
 
 
