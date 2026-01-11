@@ -10,7 +10,7 @@ export class RgShows extends Source {
 
   public readonly contentTypes: ContentType[] = ['movie', 'series'];
 
-  public readonly countryCodes: CountryCode[] = [CountryCode.en];
+  public readonly countryCodes: CountryCode[] = [CountryCode.multi];
 
   public readonly baseUrl = 'https://rgshows.ru';
 
