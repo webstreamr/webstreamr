@@ -52,9 +52,15 @@ addon.use((_req: Request, res: Response, next: NextFunction) => {
 
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
 
   if (envIsProd()) {
     res.setHeader('Cache-Control', 'max-age=10, public');
+  }
+
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
   }
 
   next();
