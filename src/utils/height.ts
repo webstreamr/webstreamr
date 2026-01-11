@@ -6,6 +6,7 @@ import { getCacheDir } from './env';
 import { CustomRequestConfig, Fetcher } from './Fetcher';
 
 const playlistHeightCache = new Cacheable({
+  nonBlocking: true,
   primary: new Keyv({ store: new CacheableMemory({ lruSize: 16384 }) }),
   secondary: new Keyv(new KeyvSqlite(`sqlite://${getCacheDir()}/webstreamr-playlist-height-cache.sqlite`)),
 });

@@ -25,6 +25,7 @@ export abstract class Source {
   public abstract readonly baseUrl: string;
 
   private static readonly sourceResultCache = new Cacheable({
+    nonBlocking: true,
     primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }),
     secondary: new Keyv(new KeyvSqlite(`sqlite://${getCacheDir()}/webstreamr-source-cache-v2.sqlite`)),
     stats: true,
