@@ -50,6 +50,16 @@ exports[`buildManifest default manifest 1`] = `
       "type": "checkbox",
     },
     {
+      "key": "ta",
+      "title": "Tamil 🇮🇳 (4KHDHub)",
+      "type": "checkbox",
+    },
+    {
+      "key": "te",
+      "title": "Telugu 🇮🇳 (4KHDHub)",
+      "type": "checkbox",
+    },
+    {
       "key": "showErrors",
       "title": "Show errors",
       "type": "checkbox",
@@ -74,7 +84,7 @@ exports[`buildManifest default manifest 1`] = `
   ],
   "description": "Provides HTTP URLs from streaming websites. Configure add-on for additional languages. Add MediaFlow proxy for more URLs.
 
-Supported languages: Albanian, German, Castilian Spanish, French, Hindi, Italian, Latin American Spanish
+Supported languages: Albanian, German, Castilian Spanish, French, Hindi, Italian, Latin American Spanish, Tamil, Telugu
 
 Supported sources: 4KHDHub, RgShows, VixSrc, Kokoshka, CineHDPlus, Cuevana, HomeCine, VerHdLink, Einschalten, KinoGer, MegaKino, MeineCloud, StreamKiste, Frembed, FrenchCloud, Movix, Eurostreaming, MostraGuarda
 
