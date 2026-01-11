@@ -21,23 +21,20 @@ export class Fsst extends Extractor {
 
     const filesMatch = html.match(/file:"(.*)"/) as string[];
 
-    return Promise.all(
-      (filesMatch[1] as string).split(',').map(async (fileString) => {
-        const heightAndUrlMatch = fileString.match(/\[?([\d]*)p?]?(.*)/) as string[];
-        const fileHref = heightAndUrlMatch[2] as string;
+    const lastFile = (filesMatch[1] as string).split(',').pop() as string;
 
-        return {
-          url: await this.fetcher.getFinalRedirectUrl(ctx, new URL(fileHref), { headers, noProxyHeaders: true }, 1),
-          format: Format.mp4,
-          label: this.label,
-          sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
-          meta: {
-            ...meta,
-            height: parseInt(heightAndUrlMatch[1] as string),
-            title,
-          },
-        };
-      }),
-    );
+    const heightAndUrlMatch = lastFile.match(/\[?([\d]*)p?]?(.*)/) as string[];
+    const fileHref = heightAndUrlMatch[2] as string;
+
+    return [{
+      url: await this.fetcher.getFinalRedirectUrl(ctx, new URL(fileHref), { headers, noProxyHeaders: true }, 1),
+      format: Format.mp4,
+      label: this.label,
+      meta: {
+        ...meta,
+        height: parseInt(heightAndUrlMatch[1] as string),
+        title,
+      },
+    }];
   };
 }
