@@ -187,8 +187,8 @@ export class StreamWish extends Extractor {
 
     const referer
       = meta.referer
-      ?? originalUrl?.href
-      ?? rewritten.href;
+        ?? originalUrl?.href
+        ?? rewritten.href;
 
     const requestHeaders: Record<string, string> = {
       Referer: referer,
