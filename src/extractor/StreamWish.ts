@@ -185,8 +185,8 @@ export class StreamWish extends Extractor {
     const normalized = this.normalize(url);
     const rewritten = this.rewrite(normalized);
 
-    const referer =
-      meta.referer
+    const referer
+      = meta.referer
       ?? originalUrl?.href
       ?? rewritten.href;
 
