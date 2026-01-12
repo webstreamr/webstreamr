@@ -1,5 +1,4 @@
 import * as cheerio from 'cheerio';
-
 import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
 import {
@@ -49,7 +48,7 @@ export class Vidmoly extends Extractor {
   ): Promise<UrlResult[]> {
     const referer
       = meta.referer
-      ?? url.href;
+        ?? url.href;
 
     const headers: Record<string, string> = {
       Referer: referer,
