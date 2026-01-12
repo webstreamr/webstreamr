@@ -21,7 +21,7 @@ export class ManifestController {
   }
 
   private getManifest(req: Request, res: Response) {
-    const config: Config = JSON.parse(req.params['config'] || JSON.stringify(getDefaultConfig()));
+    const config: Config = JSON.parse(req.params['config'] as string || JSON.stringify(getDefaultConfig()));
 
     const manifest = buildManifest(this.sources, this.extractors, config);
 

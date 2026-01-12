@@ -22,7 +22,7 @@ export class ConfigureController {
   }
 
   private getConfigure(req: Request, res: Response) {
-    const config: Config = JSON.parse(req.params['config'] || JSON.stringify(getDefaultConfig()));
+    const config: Config = JSON.parse(req.params['config'] as string || JSON.stringify(getDefaultConfig()));
 
     // Convenience preset for ElfHosted WebStreamr bundle including Media Flow Proxy
     if (!req.params['config'] && isElfHostedInstance(req)) {

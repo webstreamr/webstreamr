@@ -7,6 +7,6 @@ export const contextFromRequestAndResponse = (req: Request, res: Response): Cont
     hostUrl: new URL(`${req.protocol}://${req.host}`),
     id: res.getHeader('X-Request-ID') as string,
     ...(req.ip && { ip: req.ip }),
-    config: req.params['config'] ? JSON.parse(req.params['config']) : getDefaultConfig(),
+    config: req.params['config'] ? JSON.parse(req.params['config'] as string) : getDefaultConfig(),
   };
 };

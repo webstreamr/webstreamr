@@ -27,7 +27,7 @@ export class StreamController {
 
   private async getStream(req: Request, res: Response) {
     const type: ContentType = (req.params['type'] || '') as ContentType;
-    const rawId: string = req.params['id'] || '';
+    const rawId: string = req.params['id'] as string || '';
 
     let id: Id;
     if (rawId.startsWith('tmdb:')) {
