@@ -9,12 +9,19 @@ import { Extractor } from './Extractor';
 export class ExtractorRegistry {
   private readonly logger: winston.Logger;
   private readonly extractors: Extractor[];
+
+  private readonly metaCache: Cacheable;
   private readonly urlResultCache: Cacheable;
 
   public constructor(logger: winston.Logger, extractors: Extractor[]) {
     this.logger = logger;
     this.extractors = extractors;
 
+    this.metaCache = new Cacheable({
+      nonBlocking: true,
+      primary: new Keyv({ store: new CacheableMemory({ lruSize: 16384 }) }),
+      secondary: new Keyv(new KeyvSqlite(`sqlite://${getCacheDir()}/webstreamr-meta-cache.sqlite`)),
+    });
     this.urlResultCache = new Cacheable({
       nonBlocking: true,
       primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }),
@@ -55,12 +62,14 @@ export class ExtractorRegistry {
 
     this.logger.info(`Extract ${url} using ${extractor.id} extractor`, ctx);
 
+    const cachedMeta = await this.metaCache.get<Meta>(cacheKey);
+
     const urlResults = await extractor.extract(
       ctx,
       normalizedUrl,
       {
         ...meta,
-        countryCodes: meta?.countryCodes ?? [],
+        ...cachedMeta,
         extractorId: meta?.extractorId ?? extractor.id,
       },
     );
@@ -69,6 +78,10 @@ export class ExtractorRegistry {
       await this.urlResultCache.set<UrlResult[]>(cacheKey, urlResults, 43200000); // 12h
     } else if (!urlResults.some(urlResult => urlResult.error) && extractor.ttl) {
       await this.urlResultCache.set<UrlResult[]>(cacheKey, urlResults, extractor.ttl);
+    }
+
+    if (urlResults.length) {
+      await this.metaCache.set<Meta>(cacheKey, urlResults[0]?.meta as Meta, 2628000); // 1 month
     }
 
     return urlResults;

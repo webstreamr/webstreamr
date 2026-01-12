@@ -40,7 +40,7 @@ export class StreamUp extends Extractor {
         ttl: this.ttl,
         meta: {
           ...meta,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, url),
+          height: meta.height ?? await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl),
           title,
         },
       },

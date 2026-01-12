@@ -6,7 +6,6 @@ exports[`SafeFiles savefiles /d/ 1`] = `
     "format": "hls",
     "label": "SaveFiles",
     "meta": {
-      "countryCodes": [],
       "extractorId": "savefiles",
       "height": 532,
       "title": "dexter resurrection s01e01 1080p web h264-successfulcrab",
@@ -23,7 +22,6 @@ exports[`SafeFiles savefiles /e/ 1`] = `
     "format": "hls",
     "label": "SaveFiles",
     "meta": {
-      "countryCodes": [],
       "extractorId": "savefiles",
       "height": 720,
       "title": "dexter resurrection s01e01 1080p web h264-successfulcrab",
@@ -40,7 +38,6 @@ exports[`SafeFiles savefiles 1`] = `
     "format": "hls",
     "label": "SaveFiles",
     "meta": {
-      "countryCodes": [],
       "extractorId": "savefiles",
       "height": 720,
       "title": "King Of The Hill S14E01 1080p HEVC x265-MeGusta",
@@ -61,7 +58,6 @@ exports[`SafeFiles streamhls /e/ 1`] = `
     "format": "hls",
     "label": "SaveFiles",
     "meta": {
-      "countryCodes": [],
       "extractorId": "savefiles",
       "height": 720,
       "title": "King Of The Hill S14E01 1080p HEVC x265-MeGusta",

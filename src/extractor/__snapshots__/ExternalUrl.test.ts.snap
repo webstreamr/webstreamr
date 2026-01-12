@@ -7,7 +7,6 @@ exports[`ExternalUrl 404 - not found 1`] = `
     "isExternal": true,
     "label": "streamtape.com",
     "meta": {
-      "countryCodes": [],
       "extractorId": "external",
     },
     "ttl": 21600000,
@@ -23,7 +22,6 @@ exports[`ExternalUrl netu.fanstream.us 1`] = `
     "isExternal": true,
     "label": "netu.fanstream.us",
     "meta": {
-      "countryCodes": [],
       "extractorId": "external",
     },
     "ttl": 21600000,

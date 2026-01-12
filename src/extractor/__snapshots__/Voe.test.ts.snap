@@ -6,7 +6,6 @@ exports[`Voe embed only urls which otherwise lead to 404 1`] = `
     "format": "hls",
     "label": "VOE (MFP)",
     "meta": {
-      "countryCodes": [],
       "extractorId": "voe",
       "height": 800,
       "title": "Weapons.2025.German.DL.1080p.WEB.H264-ZeroTwo_encoded.mp4",
@@ -26,7 +25,6 @@ exports[`Voe jilliandescribecompany 1`] = `
     "label": "VOE (MFP)",
     "meta": {
       "bytes": 1202590842,
-      "countryCodes": [],
       "extractorId": "voe",
       "height": 720,
       "title": "Superman.2025.2160p.WEB-DL.DV.HDR10Plus.X265.DDP5.1.Atmos-YIN.mp4",
@@ -44,7 +42,6 @@ exports[`Voe premium only without resolution 1`] = `
     "label": "VOE (MFP)",
     "meta": {
       "bytes": 363216240,
-      "countryCodes": [],
       "extractorId": "voe",
       "height": 800,
       "title": "268836--21ba9fb2-97f9-4566-b5eb-3d9cef7674cf--zrxn--2352322-voesx.mp4",

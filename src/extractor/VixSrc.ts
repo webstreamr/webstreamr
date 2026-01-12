@@ -32,7 +32,7 @@ export class VixSrc extends Extractor {
     playlistUrl.searchParams.append('expires', expiresMatch[1] as string);
     playlistUrl.searchParams.append('h', '1');
 
-    const countryCodes = await this.determineCountryCodesFromPlaylist(ctx, playlistUrl, { headers });
+    const countryCodes = meta.countryCodes ?? await this.determineCountryCodesFromPlaylist(ctx, playlistUrl, { headers });
 
     if (!hasMultiEnabled(ctx.config) && !countryCodes.some(countryCode => countryCode in ctx.config)) {
       return [];
@@ -47,7 +47,7 @@ export class VixSrc extends Extractor {
         meta: {
           ...meta,
           countryCodes,
-          height: await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, url, { headers }),
+          height: meta.height ?? await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, { headers }),
         },
       },
     ];

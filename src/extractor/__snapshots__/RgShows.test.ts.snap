@@ -6,7 +6,6 @@ exports[`RgShows handle one battle after another 1`] = `
     "format": "hls",
     "label": "RgShows",
     "meta": {
-      "countryCodes": [],
       "extractorId": "rgshows",
       "height": 1080,
     },
@@ -27,7 +26,6 @@ exports[`RgShows handle parasite 2019 (mp4) 1`] = `
     "format": "mp4",
     "label": "RgShows",
     "meta": {
-      "countryCodes": [],
       "extractorId": "rgshows",
     },
     "requestHeaders": {
@@ -47,7 +45,6 @@ exports[`RgShows handle stranger things s05e01 1`] = `
     "format": "hls",
     "label": "RgShows",
     "meta": {
-      "countryCodes": [],
       "extractorId": "rgshows",
       "height": 1080,
     },

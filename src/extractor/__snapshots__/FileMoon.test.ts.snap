@@ -6,7 +6,6 @@ exports[`FileMoon missing height 1`] = `
     "format": "hls",
     "label": "FileMoon (MFP)",
     "meta": {
-      "countryCodes": [],
       "extractorId": "filemoon",
       "title": "tt0307453",
     },
@@ -24,7 +23,6 @@ exports[`FileMoon z1ekv717 d 1`] = `
     "format": "hls",
     "label": "FileMoon (MFP)",
     "meta": {
-      "countryCodes": [],
       "extractorId": "filemoon",
       "height": 720,
       "title": "alien earth s01e01 1080p web h264-successfulcrab",
