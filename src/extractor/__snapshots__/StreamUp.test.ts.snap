@@ -6,7 +6,6 @@ exports[`StreamUp handle one battle after another 1`] = `
     "format": "hls",
     "label": "StreamUP",
     "meta": {
-      "countryCodes": [],
       "extractorId": "streamup",
       "height": 1080,
       "title": "Wake.Up.Dead.Man.A.Knives.Out.Mystery.2025",

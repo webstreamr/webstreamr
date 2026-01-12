@@ -38,7 +38,7 @@ export class RgShows extends Extractor {
         ttl: this.ttl,
         meta: {
           ...meta,
-          ...(isHls && { height: await guessHeightFromPlaylist(ctx, this.fetcher, streamUrl, url, { headers }) }),
+          ...(isHls && { height: meta.height ?? await guessHeightFromPlaylist(ctx, this.fetcher, streamUrl, { headers }) }),
         },
         requestHeaders: headers,
       },

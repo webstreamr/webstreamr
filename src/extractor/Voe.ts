@@ -157,7 +157,9 @@ export class Voe extends Extractor {
     const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'Voe', url, headers);
 
     const heightMatch = html.match(/<b>(\d{3,})p<\/b>/);
-    const height = heightMatch ? parseInt(heightMatch[1] as string) : await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, url);
+    const height = heightMatch
+      ? parseInt(heightMatch[1] as string)
+      : meta.height ?? await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl);
 
     return [
       {

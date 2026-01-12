@@ -11,7 +11,6 @@ exports[`FileLions filelions f 1`] = `
     "label": "FileLions (MFP)",
     "meta": {
       "bytes": 481191526,
-      "countryCodes": [],
       "extractorId": "filelions",
       "height": 720,
       "title": "dexter resurrection s01e01 1080p web h264-successfulcrab",
@@ -29,7 +28,6 @@ exports[`FileLions mivalyo v referer lock 1`] = `
     "label": "FileLions (MFP)",
     "meta": {
       "bytes": 2097152,
-      "countryCodes": [],
       "extractorId": "filelions",
       "height": 1080,
       "referer": "https://kinoger.com",

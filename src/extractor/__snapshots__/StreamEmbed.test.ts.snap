@@ -8,7 +8,6 @@ exports[`StreamEmbed watch.gxplayer.xyz 1`] = `
     "format": "hls",
     "label": "StreamEmbed",
     "meta": {
-      "countryCodes": [],
       "extractorId": "streamembed",
       "height": 720,
       "title": "Baymax - Riesiges Robowabohu.mp4",

@@ -7,7 +7,6 @@ exports[`DoodStream can guess height from title 1`] = `
     "label": "DoodStream",
     "meta": {
       "bytes": 549139251,
-      "countryCodes": [],
       "extractorId": "doodstream",
       "title": "Black Mirror S04E02 FRENCH 720p WEB x264-RiPiT",
     },
@@ -26,7 +25,6 @@ exports[`DoodStream cloudflare storage 1`] = `
     "format": "mp4",
     "label": "DoodStream",
     "meta": {
-      "countryCodes": [],
       "extractorId": "doodstream",
       "title": "241653--5bf448d3-184a-4b3f-a766-fa98d93c1300--bllz--2100527-doodstream",
     },
@@ -46,7 +44,6 @@ exports[`DoodStream dood.to 1`] = `
     "label": "DoodStream",
     "meta": {
       "bytes": 1395864371,
-      "countryCodes": [],
       "extractorId": "doodstream",
       "title": "des-teufels-bad-2024",
     },

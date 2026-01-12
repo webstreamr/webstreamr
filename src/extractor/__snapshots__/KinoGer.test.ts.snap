@@ -6,7 +6,6 @@ exports[`KinoGer Blood & Sinners 1`] = `
     "format": "hls",
     "label": "KinoGer",
     "meta": {
-      "countryCodes": [],
       "extractorId": "kinoger",
       "height": 1080,
       "title": "Blood.and.Sinners.2025.mkv",
@@ -28,7 +27,6 @@ exports[`KinoGer Dead City 1`] = `
     "format": "hls",
     "label": "KinoGer",
     "meta": {
-      "countryCodes": [],
       "extractorId": "kinoger",
       "height": 1080,
       "title": "the.walking.dead.dead.city.s02e05.german.dl.1080p.web.x264-wvf.mkv",
@@ -50,7 +48,6 @@ exports[`KinoGer filma365.strp2p.site 1`] = `
     "format": "hls",
     "label": "KinoGer",
     "meta": {
-      "countryCodes": [],
       "extractorId": "kinoger",
       "height": 640,
       "title": "Our.Fault.2025.mp4",
@@ -72,7 +69,6 @@ exports[`KinoGer kinoger.p2pplay.pro 1`] = `
     "format": "hls",
     "label": "KinoGer",
     "meta": {
-      "countryCodes": [],
       "extractorId": "kinoger",
       "height": 960,
       "title": "Stranger.Things.S01E01.German.AC3.DL.1080p.WebRip.x265-FuN.mkv",

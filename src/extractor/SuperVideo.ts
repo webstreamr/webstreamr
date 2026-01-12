@@ -39,7 +39,7 @@ export class SuperVideo extends Extractor {
     const size = heightAndSizeMatch ? bytes.parse(heightAndSizeMatch[2] as string) as number : undefined;
     const height = heightAndSizeMatch
       ? parseInt(heightAndSizeMatch[1] as string)
-      : await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, url, { headers: { Referer: url.href } });
+      : meta.height ?? await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, { headers: { Referer: url.href } });
 
     const $ = cheerio.load(html);
     const title = $('.download__title').text().trim();

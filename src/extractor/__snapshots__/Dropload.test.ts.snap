@@ -7,7 +7,6 @@ exports[`Dropload download URL 1`] = `
     "label": "Dropload",
     "meta": {
       "bytes": 333027737,
-      "countryCodes": [],
       "extractorId": "dropload",
       "height": 720,
       "title": "[~Squid~Game~EnG~]~S03E01~720p~WebRip ~❤️GLD❤️~",
@@ -24,7 +23,6 @@ exports[`Dropload dropload unknown height and size 1`] = `
     "format": "hls",
     "label": "Dropload",
     "meta": {
-      "countryCodes": [],
       "extractorId": "dropload",
       "height": 800,
       "title": "The Lost Bus 2025 1080p WEBRip x265",
@@ -42,7 +40,6 @@ exports[`Dropload dropload.io 1`] = `
     "label": "Dropload",
     "meta": {
       "bytes": 1395864371,
-      "countryCodes": [],
       "extractorId": "dropload",
       "height": 1080,
       "title": "des-teufels-bad-2024",

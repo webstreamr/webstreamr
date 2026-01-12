@@ -9,7 +9,6 @@ exports[`Fastream fastream.to embed 1`] = `
     "label": "Fastream (MFP)",
     "meta": {
       "bytes": 1073741824,
-      "countryCodes": [],
       "extractorId": "fastream",
       "height": 1080,
       "title": "black.mirror.s01e01.lat.720p.mp4",

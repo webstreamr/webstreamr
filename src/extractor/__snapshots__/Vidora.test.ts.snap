@@ -6,7 +6,6 @@ exports[`Vidora vidora.stream /embed/ 1`] = `
     "format": "hls",
     "label": "Vidora",
     "meta": {
-      "countryCodes": [],
       "extractorId": "vidora",
       "height": 800,
       "title": "Highest Lowest 2025 1080p ATVP WEB DDP5 Atmos 264 BYNDR",
@@ -26,7 +25,6 @@ exports[`Vidora vidora.stream 1`] = `
     "format": "hls",
     "label": "Vidora",
     "meta": {
-      "countryCodes": [],
       "extractorId": "vidora",
       "height": 800,
       "title": "Highest Lowest 2025 1080p ATVP WEB DDP5 Atmos 264 BYNDR",
