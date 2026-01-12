@@ -122,7 +122,7 @@ export class StreamWish extends Extractor {
   ];
 
   public supports(_ctx: Context, url: URL): boolean {
-    return this.domains.some((d) => url.host.includes(d));
+    return this.domains.some(d => url.host.includes(d));
   }
 
   public override normalize(url: URL): URL {
@@ -186,9 +186,9 @@ export class StreamWish extends Extractor {
     const rewritten = this.rewrite(normalized);
 
     const referer =
-      meta.referer ??
-      originalUrl?.href ??
-      rewritten.href;
+      meta.referer
+      ?? originalUrl?.href
+      ?? rewritten.href;
 
     const requestHeaders: Record<string, string> = {
       Referer: referer,
@@ -244,8 +244,8 @@ export class StreamWish extends Extractor {
       /* noop */
     }
 
-    const proxyUrl =
-      await buildMediaFlowProxyExtractorStreamUrl(
+    const proxyUrl
+      = await buildMediaFlowProxyExtractorStreamUrl(
         ctx,
         this.fetcher,
         this.id,
