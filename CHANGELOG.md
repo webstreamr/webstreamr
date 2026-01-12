@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.63.0](https://github.com/webstreamr/webstreamr/compare/v0.62.3...v0.63.0) (2026-01-12)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#640](https://github.com/webstreamr/webstreamr/issues/640)) ([20ce2ac](https://github.com/webstreamr/webstreamr/commit/20ce2ac831f1204ffc4dad01d30c1cd00bfe4007))
+* **deps:** update dependency @types/node to v24.10.7 ([#639](https://github.com/webstreamr/webstreamr/issues/639)) ([816123a](https://github.com/webstreamr/webstreamr/commit/816123ab83c6be300155f8013788d2473650b39a))
+* **deps:** update dependency typescript-eslint to v8.53.0 ([#645](https://github.com/webstreamr/webstreamr/issues/645)) ([9e25618](https://github.com/webstreamr/webstreamr/commit/9e256186aa6270df59e98cb793f8a62578e30775))
+
+
+### Features
+
+* introduce generic meta cache ([f047287](https://github.com/webstreamr/webstreamr/commit/f047287fe90fba26c19831c1becf0e6d127ee020))
+* introduce lazy extract for all non-HLS streams ([c6a6a70](https://github.com/webstreamr/webstreamr/commit/c6a6a70eafcff803ea4594037c7a39616a43a304))
+
 ## [0.62.3](https://github.com/webstreamr/webstreamr/compare/v0.62.2...v0.62.3) (2026-01-11)
 
 
