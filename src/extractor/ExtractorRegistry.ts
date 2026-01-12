@@ -2,31 +2,30 @@
 import KeyvSqlite from '@keyv/sqlite';
 import { Cacheable, CacheableMemory, Keyv } from 'cacheable';
 import winston from 'winston';
-import { Context, Meta, UrlResult } from '../types';
-import { getCacheDir, isExtractorDisabled } from '../utils';
+import { Context, Format, Meta, UrlResult } from '../types';
+import { envGet, getCacheDir, isExtractorDisabled } from '../utils';
 import { Extractor } from './Extractor';
 
 export class ExtractorRegistry {
   private readonly logger: winston.Logger;
   private readonly extractors: Extractor[];
 
-  private readonly metaCache: Cacheable;
   private readonly urlResultCache: Cacheable;
+  private readonly lazyUrlResultCache: Cacheable;
 
   public constructor(logger: winston.Logger, extractors: Extractor[]) {
     this.logger = logger;
     this.extractors = extractors;
 
-    this.metaCache = new Cacheable({
-      nonBlocking: true,
-      primary: new Keyv({ store: new CacheableMemory({ lruSize: 16384 }) }),
-      secondary: new Keyv(new KeyvSqlite(`sqlite://${getCacheDir()}/webstreamr-meta-cache.sqlite`)),
-    });
     this.urlResultCache = new Cacheable({
       nonBlocking: true,
       primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }),
       secondary: new Keyv(new KeyvSqlite(`sqlite://${getCacheDir()}/webstreamr-extractor-cache.sqlite`)),
       stats: true,
+    });
+    this.lazyUrlResultCache = new Cacheable({
+      primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }),
+      secondary: new Keyv(new KeyvSqlite(`sqlite://${getCacheDir()}/webstreamr-extractor-lazy-cache.sqlite`)),
     });
   }
 
@@ -36,7 +35,7 @@ export class ExtractorRegistry {
     };
   };
 
-  public async handle(ctx: Context, url: URL, meta?: Meta): Promise<UrlResult[]> {
+  public async handle(ctx: Context, url: URL, meta?: Meta, allowLazy?: boolean): Promise<UrlResult[]> {
     const extractor = this.extractors.find(extractor => !isExtractorDisabled(ctx.config, extractor) && extractor.supports(ctx, url));
     if (!extractor) {
       return [];
@@ -60,16 +59,32 @@ export class ExtractorRegistry {
       }
     }
 
-    this.logger.info(`Extract ${url} using ${extractor.id} extractor`, ctx);
+    const lazyUrlResults = await this.lazyUrlResultCache.get<UrlResult[]>(normalizedUrl.href) ?? [];
 
-    const cachedMeta = await this.metaCache.get<Meta>(normalizedUrl.href);
+    /* istanbul ignore next */
+    if (
+      lazyUrlResults.length && allowLazy && !extractor.viaMediaFlowProxy && extractor.id !== 'external'
+      && lazyUrlResults.every(urlResult => urlResult.format !== Format.hls) // related to Android issues, e.g. https://github.com/Stremio/stremio-bugs/issues/1574 or https://github.com/Stremio/stremio-bugs/issues/1579
+    ) {
+      // generate lazy extract urls
+      return lazyUrlResults.map((urlResult, index) => {
+        const extractUrl = new URL(`${envGet('PROTOCOL')}:${envGet('HOST')}/extract/`);
+
+        extractUrl.searchParams.set('index', `${index}`);
+        extractUrl.searchParams.set('url', url.href);
+
+        return { ...urlResult, url: extractUrl };
+      });
+    }
+
+    this.logger.info(`Extract ${url} using ${extractor.id} extractor`, ctx);
 
     const urlResults = await extractor.extract(
       ctx,
       normalizedUrl,
       {
         ...meta,
-        ...cachedMeta,
+        ...lazyUrlResults[0]?.meta,
         extractorId: meta?.extractorId ?? extractor.id,
       },
     );
@@ -78,10 +93,9 @@ export class ExtractorRegistry {
       await this.urlResultCache.set<UrlResult[]>(cacheKey, urlResults, 43200000); // 12h
     } else if (!urlResults.some(urlResult => urlResult.error) && extractor.ttl) {
       await this.urlResultCache.set<UrlResult[]>(cacheKey, urlResults, extractor.ttl);
-    }
-
-    if (urlResults.length) {
-      await this.metaCache.set<Meta>(normalizedUrl.href, urlResults[0]?.meta as Meta, 2628000); // 1 month
+      await this.lazyUrlResultCache.set<UrlResult[]>(normalizedUrl.href, urlResults, 2628000); // 1 month
+    } else {
+      await this.lazyUrlResultCache.delete(normalizedUrl.href);
     }
 
     return urlResults;

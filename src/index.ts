@@ -4,7 +4,7 @@ import { setupCache } from 'axios-cache-interceptor';
 import axiosRetry from 'axios-retry';
 import express, { NextFunction, Request, Response } from 'express';
 import winston from 'winston';
-import { ConfigureController, ManifestController, StreamController } from './controller';
+import { ConfigureController, ExtractController, ManifestController, StreamController } from './controller';
 import { BlockedError, logErrorAndReturnNiceString } from './error';
 import { createExtractors, ExtractorRegistry } from './extractor';
 import { createSources, Source } from './source';
@@ -47,7 +47,10 @@ const extractors = createExtractors(fetcher);
 const addon = express();
 addon.set('trust proxy', true);
 
-addon.use((_req: Request, res: Response, next: NextFunction) => {
+addon.use((req: Request, res: Response, next: NextFunction) => {
+  process.env['HOST'] = req.host;
+  process.env['PROTOCOL'] = req.protocol;
+
   res.setHeader('X-Request-ID', randomUUID());
 
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -60,10 +63,12 @@ addon.use((_req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
+const extractorRegistry = new ExtractorRegistry(logger, extractors);
+
+addon.use('/', (new ExtractController(logger, fetcher, extractorRegistry)).router);
 addon.use('/', (new ConfigureController(sources, extractors)).router);
 addon.use('/', (new ManifestController(sources, extractors)).router);
 
-const extractorRegistry = new ExtractorRegistry(logger, extractors);
 const streamResolver = new StreamResolver(logger, extractorRegistry);
 addon.use('/', (new StreamController(logger, sources, streamResolver)).router);
 
