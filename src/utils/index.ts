@@ -1,6 +1,7 @@
 export * from './Fetcher';
 export * from './FetcherMock';
 export * from './StreamResolver';
+export * from './cache';
 export * from './config';
 export * from './context';
 export * from './embed';

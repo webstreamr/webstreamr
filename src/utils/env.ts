@@ -18,6 +18,8 @@ export const envGetAppName = (): string => process.env['MANIFEST_NAME'] || 'WebS
 
 export const envIsProd = (): boolean => process.env['NODE_ENV'] === 'production';
 
+export const envIsTest = (): boolean => process.env['NODE_ENV'] === 'test';
+
 export const isElfHostedInstance = (req: Request): boolean => req.host.endsWith('elfhosted.com');
 
 export const getCacheDir = (): string => envGet('CACHE_DIR') ?? os.tmpdir();
