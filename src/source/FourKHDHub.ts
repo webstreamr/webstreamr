@@ -90,7 +90,7 @@ export class FourKHDHub extends Source {
         const diff = levenshtein.get(movieCardTitle, name, { useCollator: true });
 
         return diff < 5
-          || (movieCardTitle.includes(name) && diff < 15);
+          || (movieCardTitle.includes(name) && diff < 16);
       })
       .map(async (_i, el) => new URL($(el).attr('href') as string, await this.getBaseUrl(ctx)))
       .get(0);

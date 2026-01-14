@@ -1,5 +1,166 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`FourKHDHub handle avengers: endgame 1`] = `
+[
+  {
+    "meta": {
+      "bytes": 67645734912,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 2160,
+      "title": "Avengers Endgame (2019) 2160p 4K UHD HDR10 BluRay REMUX x265 10bit HEVC [Org Hindi DDP 5.1  640Kbps + English DTS-HDMA TrueHD Atmos 7.1] ESubs  FGT",
+    },
+    "url": "https://hubcloud.foo/drive/iucvnehopzt48c1",
+  },
+  {
+    "meta": {
+      "bytes": 50036368998,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Avengers Endgame (2019) 1080p BluRay REMUX x264 AVC [Org Hindi DDP 5.1 ~ 640Kbps + English DTS-HDMA TrueHD Atmos 7.1] ESubs ~ FGT",
+    },
+    "url": "https://hubcloud.foo/drive/ucp81jufn8pobei",
+  },
+  {
+    "meta": {
+      "bytes": 37795712204,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 2160,
+      "title": "Avengers.Endgame.2019.IMAX.2160p.DSNP.WEB-DL.HIN-ENG.x265.10bit.HDR.DTS-HD.MA.TrueHD.7.1.Atmos-SWTYBLZ",
+    },
+    "url": "https://hubcloud.foo/drive/visgvyc4vw40sb4",
+  },
+  {
+    "meta": {
+      "bytes": 26736171417,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "[144FPS].Avengers.Endgame.1080p.IMAX.DSNP.WEBRip.Dual.DDP5.1.Atmos.H.265.Homelander",
+    },
+    "url": "https://hubcloud.foo/drive/3rhv1h6n3hsrnod",
+  },
+  {
+    "meta": {
+      "bytes": 20615843020,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Avengers Endgame (2019) 1080p BluRay x264 AVC [Org Hindi DDP 5.1 ~ 640Kbps + English DTS-HDMA 7.1] ESubs ~ FGT",
+    },
+    "url": "https://hubcloud.foo/drive/gara4j9b4uzgjtg",
+  },
+  {
+    "meta": {
+      "bytes": 17824114278,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "[60FPS].Avengers.Endgame.1080p.IMAX.DSNP.WEBRip.Dual.DDP5.1.Atmos.H.265.Homelander",
+    },
+    "url": "https://hubcloud.foo/drive/1qmsr8wkmr2m1qw",
+  },
+  {
+    "meta": {
+      "bytes": 15998753177,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 2160,
+      "title": "Avengers Endgame (2019) 2160p 4K UHD  HDR10 BluRay x265 10bit HEVC [Org Hindi DDP 5.1 ~ 640Kbps + English DTS-HDMA 7.1] ESubs ~ TERMiNAL",
+    },
+    "url": "https://hubcloud.foo/drive/xkrhsqktrrlqmrb",
+  },
+  {
+    "meta": {
+      "bytes": 9126805504,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 2160,
+      "title": "Avengers Endgame (2019) 2160p Bluray x265 HEVC 10bit [Org Hindi DDP 5.1 ~192Kbps + English AAC 7.1] ESub - Joy [UTR]",
+    },
+    "url": "https://hubcloud.foo/drive/1or45vfv5rvvfvi",
+  },
+  {
+    "meta": {
+      "bytes": 8321499136,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Avengers Endgame (2019) 1080p [IMAX] 10bit DSNP WEB-DL x265 HEVC [Org Hindi DDP 5.1 ~ 640Kbps + English AAC 5.1] ESubs ~ Silence",
+    },
+    "url": "https://hubcloud.foo/drive/qlge1eobb64sy0p",
+  },
+  {
+    "meta": {
+      "bytes": 8010114007,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Avengers Endgame (2019) 1080p BluRay x264 {Dual Audio} {Hindi DD 2.0-Eng BD 5.1} ESub By~Hammer~",
+    },
+    "url": "https://hubcloud.foo/drive/xr4xfnj1hef1dew",
+  },
+  {
+    "meta": {
+      "bytes": 7730941132,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Avengers - Endgame (2019) 1080p [60FPS] 10bit BluRay x265 HEVC [Org HS Hindi DD+ 5.1Ch 192Kbps + English DD 5.1] ESubs ~MORNINGSTAR",
+    },
+    "url": "https://hubcloud.foo/drive/99nx1ygp6nzyivh",
+  },
+  {
+    "meta": {
+      "bytes": 7000796692,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Avengers Endgame (2019) 1080p 10bit BluRay x265 HEVC [Org Hindi DDP 5.1 ~ 640Kbps + English AAC 7.1] ESubs ~ Tigole",
+    },
+    "url": "https://hubcloud.foo/drive/99nx1ygp6nzyivh",
+  },
+  {
+    "meta": {
+      "bytes": 4015794421,
+      "countryCodes": [
+        "en",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Avengers Endgame (2019) 1080p UHD HDR10 BluRay x265 10bit HEVC [Org Hindi DDP 5.1 - 640Kbps + English DD 5.1] ESubs - Pahe",
+    },
+    "url": "https://hubcloud.foo/drive/2whcw1ke1dkwwsk",
+  },
+]
+`;
+
 exports[`FourKHDHub handle crank 2006 1`] = `
 [
   {

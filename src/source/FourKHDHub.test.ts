@@ -70,4 +70,9 @@ describe('FourKHDHub', () => {
     const streams = await source.handle(ctx, 'movie', new TmdbId(1252037, undefined, undefined));
     expect(streams).toMatchSnapshot();
   });
+
+  test('handle avengers: endgame', async () => {
+    const streams = await source.handle(ctx, 'movie', new TmdbId(299534, undefined, undefined));
+    expect(streams).toMatchSnapshot();
+  });
 });
