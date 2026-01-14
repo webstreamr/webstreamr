@@ -17,6 +17,7 @@ import { RgShows } from './RgShows';
 import { Source } from './Source';
 import { StreamKiste } from './StreamKiste';
 import { VerHdLink } from './VerHdLink';
+import { VidSrc } from './VidSrc';
 import { VixSrc } from './VixSrc';
 
 export * from './Source';
@@ -31,6 +32,8 @@ export const createSources = (fetcher: Fetcher): Source[] => {
     new VixSrc(fetcher),
     // AL
     new Kokoshka(fetcher),
+    // EN
+    new VidSrc(),
     // ES / MX
     new CineHDPlus(fetcher),
     new Cuevana(fetcher),
