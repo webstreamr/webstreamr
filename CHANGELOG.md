@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.63.1](https://github.com/webstreamr/webstreamr/compare/v0.63.0...v0.63.1) (2026-01-14)
+
+
+### Miscellaneous Chores
+
+* do not ignore errors on height guessing ([a189cdd](https://github.com/webstreamr/webstreamr/commit/a189cddd370c84cc22a93809827c8b988cbbc13f))
+* **extractor:** make lazyUrlResultCache non-blocking and add stats ([9d6d138](https://github.com/webstreamr/webstreamr/commit/9d6d138fff8a2240f87b227a506fe3ecebd0f677))
+* regularly clean-up expired items from sqlite cache ([51aa127](https://github.com/webstreamr/webstreamr/commit/51aa127a33f3a3b5b5cfc738e00cd9f682394ea8))
+
+
+### Bug Fixes
+
+* **source:** make 4KHDHub title matching just a tiny bit less strict ([f7cf9da](https://github.com/webstreamr/webstreamr/commit/f7cf9da686e44a36229c590772f651bcd8955a85))
+
 ## [0.63.0](https://github.com/webstreamr/webstreamr/compare/v0.62.3...v0.63.0) (2026-01-12)
 
 
