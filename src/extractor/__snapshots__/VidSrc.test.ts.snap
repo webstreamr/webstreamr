@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`VidSrc Black Mirror 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "CloudStream Pro",
+    "meta": {
+      "extractorId": "vidsrc",
+      "height": 1040,
+      "title": "Black Mirror (2011) S04E02",
+    },
+    "ttl": 10800000,
+    "url": "https://tmstr1.cloudnestra.com/pl/H4sIAAAAAAAAAwXB3ZKCIBgA0FcC0X72bmuU1pRW4EPlDsHGkBxr2nXz6fcct.lwl_Sx6XC0M1tntrYnZtejTXzF6Hr9UMjGdb3PWTTcWIqLc8Rb8C0qqf6WkmEZhkI0LVG1OnCKcOlZYikfOc6K1g.RTUdUZrMA0D_KcykgqyT9m.wUDoYOF1vnSquQKOKai9SNgUDNCs8z_nqatfyVaf4QgXGlZtD3MFji0h7CiaFEAsXHi3htoPmMxO3l69TJCu3f_PhigLNayXJhqz4WpH1XUx4LPL_PSC8ahkexukrfs4cjagNeEwGIOO.ybsomATm1mJ3MFGY18gpwWARhQa7D2HmNS1C1HvUCEu3_ASDZlyFBAQAA/master.m3u8",
+  },
+]
+`;
+
+exports[`VidSrc Full Metal Jacket 1`] = `
+[
+  {
+    "format": "hls",
+    "label": "CloudStream Pro",
+    "meta": {
+      "extractorId": "vidsrc",
+      "height": 714,
+      "title": "Full Metal Jacket (1987)",
+    },
+    "ttl": 10800000,
+    "url": "https://tmstr5.cloudnestra.com/pl/H4sIAAAAAAAAAw3O3W6CMBgA0FdqQRR2p2IlXQqjtF9_7qCQYEHGwATH02_nCc7JtTFKgqZBxy4OExyfGhc3iYtdjZyL2g85kA0y.BHX.CAUCaUABBOpK88zINaX4.XLYgtMu6jc26PF53eREt0ALfg0PxRhiwioqqYWq9vwZprhHOWKpVS43S1C92vnqTXBWJVAkPC94Zpt.ZMbuM9G3NfABvOxmXj2ifClS8._.TBeYcA39jyEbZizSlyIkPxmCRFmpKyWUVENs5apWQD3r0JFYTPM4___1flclwqHrZe7nIBytC3u8SIcw1YJ.nCea6f4LghDRuJV.iFw2djXKc1yTCVgWHl6DgHsdylQ8gd2WpeiQQEAAA--/master.m3u8",
+  },
+]
+`;
