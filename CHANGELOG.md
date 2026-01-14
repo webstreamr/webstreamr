@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.64.0](https://github.com/webstreamr/webstreamr/compare/v0.63.1...v0.64.0) (2026-01-14)
+
+
+### Features
+
+* **extractor:** add back VidSrc ([9ee91df](https://github.com/webstreamr/webstreamr/commit/9ee91dff31636d6bf980614bfd0f375135c735e7))
+* **source:** bring back VidSrc as multi source ([381fb89](https://github.com/webstreamr/webstreamr/commit/381fb89cfba8ff3c985ec2ddb11f65467f59c230))
+
 ## [0.63.1](https://github.com/webstreamr/webstreamr/compare/v0.63.0...v0.63.1) (2026-01-14)
 
 
