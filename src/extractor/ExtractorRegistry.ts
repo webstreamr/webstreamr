@@ -24,14 +24,17 @@ export class ExtractorRegistry {
       stats: true,
     });
     this.lazyUrlResultCache = new Cacheable({
+      nonBlocking: true,
       primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }),
       secondary: new Keyv(new KeyvSqlite(`sqlite://${getCacheDir()}/webstreamr-extractor-lazy-cache.sqlite`)),
+      stats: true,
     });
   }
 
   public stats() {
     return {
       urlResultCache: this.urlResultCache.stats,
+      lazyUrlResultCache: this.lazyUrlResultCache.stats,
     };
   };
 
