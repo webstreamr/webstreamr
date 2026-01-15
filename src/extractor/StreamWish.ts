@@ -7,9 +7,7 @@ import { Extractor } from './Extractor';
 
 export class StreamWish extends Extractor {
   public readonly id = 'StreamWish';
-
   public readonly label = 'StreamWish(MFP)';
-
   public override viaMediaFlowProxy = true;
 
   private readonly domains = [
@@ -133,12 +131,17 @@ export class StreamWish extends Extractor {
     );
   }
 
+  /**
+   * Safe under `noUncheckedIndexedAccess`
+   */
   private rand<T>(arr: readonly T[]): T {
     if (arr.length === 0) {
       throw new Error('StreamWish: empty host list');
     }
 
-    return arr[Math.floor(Math.random() * arr.length)];
+    const index = Math.floor(Math.random() * arr.length);
+
+    return arr.at(index)!;
   }
 
   private getMediaId(path: string): string {
@@ -250,7 +253,7 @@ export class StreamWish extends Extractor {
         ];
       }
     } catch {
-      /* noop */
+      // Ignore embed/iframe failures
     }
 
     const proxyUrl = await buildMediaFlowProxyExtractorStreamUrl(
