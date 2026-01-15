@@ -114,7 +114,7 @@ export class Vidmoly extends Extractor {
         }
       }
     } catch {
-      /* ignore main page failures */
+
     }
 
     const proxiedUrl = await buildMediaFlowProxyExtractorStreamUrl(
