@@ -8,7 +8,7 @@ export class VidSrc extends Source {
 
   public readonly label = 'VidSrc';
 
-  public override readonly isFallback = true;
+  public override readonly useOnlyWithMaxUrlsFound = 0;
 
   public readonly contentTypes: ContentType[] = ['movie', 'series'];
 

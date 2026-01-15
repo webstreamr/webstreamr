@@ -8,7 +8,7 @@ export class RgShows extends Source {
 
   public readonly label = 'RgShows';
 
-  public override readonly isFallback = true;
+  public override readonly useOnlyWithMaxUrlsFound = 1;
 
   public readonly contentTypes: ContentType[] = ['movie', 'series'];
 

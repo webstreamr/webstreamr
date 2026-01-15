@@ -9,7 +9,7 @@ import { Context, CountryCode, Format, UrlResult } from '../types';
 import { showErrors, showExternalUrls } from './config';
 import { envGetAppName } from './env';
 import { Id } from './id';
-import { countryCodesFromConfig, flagFromCountryCode } from './language';
+import { flagFromCountryCode } from './language';
 
 interface ResolveResponse {
   streams: Stream[];
@@ -50,16 +50,17 @@ export class StreamResolver {
 
     const skippedFallbackSources: Source[] = [];
 
-    const handleSource = async (source: Source) => {
+    const handleSource = async (source: Source, countUrlResultsByCountryCode: boolean) => {
       try {
         const sourceResults = await source.handle(ctx, type, id);
         const sourceUrlResults = await Promise.all(
           sourceResults.map(({ url, meta }) => this.extractorRegistry.handle(ctx, url, { ...meta, sourceLabel: source.label, sourceId: source.id }, true)),
         );
 
-        const urlResultsToAdd = sourceUrlResults.flat();
-        for (const urlResult of urlResultsToAdd) {
-          if (urlResult.error) {
+        for (const urlResult of sourceUrlResults.flat()) {
+          urlResults.push(urlResult);
+
+          if (urlResult.error || !countUrlResultsByCountryCode) {
             continue;
           }
 
@@ -69,7 +70,6 @@ export class StreamResolver {
             });
           });
         }
-        urlResults.push(...urlResultsToAdd);
       } catch (error) {
         await sourceErrorCountMutex.runExclusive(() => {
           sourceErrorCount++;
@@ -91,25 +91,28 @@ export class StreamResolver {
         return;
       }
 
-      if (source.isFallback) {
+      if (source.useOnlyWithMaxUrlsFound !== undefined) {
         skippedFallbackSources.push(source);
         return;
       }
 
-      await handleSource(source);
+      await handleSource(source, true);
     });
     await Promise.all(sourcePromises);
 
     // Resolve fallback sources if we didn't get enough results already
-    for (const skippedFallbackSource of skippedFallbackSources) {
-      const configCountryCodes = countryCodesFromConfig(ctx.config);
-      const resultCount = urlResults.reduce((accumulator, urlResult) => accumulator + Number(this.arraysIntersect(urlResult.meta?.countryCodes as CountryCode[], configCountryCodes)), 0);
-      if (resultCount > 2) {
-        continue;
+    const skippedFallbackSourcePromises = skippedFallbackSources.map(async (skippedFallbackSource) => {
+      console.log(skippedFallbackSource.countryCodes);
+      console.log(urlResults[0]?.meta?.countryCodes);
+      const resultCount = urlResults.reduce((accumulator, urlResult) => accumulator + Number(this.arraysIntersect(skippedFallbackSource.countryCodes, urlResult.meta?.countryCodes as CountryCode[])), 0);
+      console.log(skippedFallbackSource.id, resultCount);
+      if (resultCount > (skippedFallbackSource.useOnlyWithMaxUrlsFound as number)) {
+        return;
       }
 
-      await handleSource(skippedFallbackSource);
-    }
+      await handleSource(skippedFallbackSource, false);
+    });
+    await Promise.all(skippedFallbackSourcePromises);
 
     urlResults.sort((a, b) => {
       if (a.error || b.error) {
