@@ -51,6 +51,7 @@
     "cacheable": "^2.0.0",
     "cheerio": "^1.0.0",
     "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
     "fast-levenshtein": "^3.0.0",
     "http-proxy-agent": "^7.0.2",
     "https-proxy-agent": "^7.0.6",

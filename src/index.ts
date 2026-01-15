@@ -3,6 +3,8 @@ import axios from 'axios';
 import { setupCache } from 'axios-cache-interceptor';
 import axiosRetry from 'axios-retry';
 import express, { NextFunction, Request, Response } from 'express';
+// eslint-disable-next-line import/no-named-as-default
+import rateLimit from 'express-rate-limit';
 import winston from 'winston';
 import { ConfigureController, ExtractController, ManifestController, StreamController } from './controller';
 import { BlockedError, logErrorAndReturnNiceString } from './error';
@@ -47,6 +49,10 @@ const extractors = createExtractors(fetcher);
 const addon = express();
 addon.set('trust proxy', true);
 
+if (envIsProd()) {
+  addon.use(rateLimit({ windowMs: 60 * 1000, limit: 10 }));
+}
+
 addon.use((req: Request, res: Response, next: NextFunction) => {
   process.env['HOST'] = req.host;
   process.env['PROTOCOL'] = req.protocol;
@@ -57,7 +63,7 @@ addon.use((req: Request, res: Response, next: NextFunction) => {
   res.setHeader('Access-Control-Allow-Headers', '*');
 
   if (envIsProd()) {
-    res.setHeader('Cache-Control', 'max-age=10, public');
+    res.setHeader('Cache-Control', 'public, max-age=10, immutable');
   }
 
   next();
