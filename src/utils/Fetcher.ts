@@ -69,13 +69,18 @@ export class Fetcher {
   private readonly timeoutsCountCache = new Cacheable({ primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }) });
   private readonly timeoutsCountMutex = new Mutex();
 
+  private readonly httpStatus = new Map<string, Record<number, number>>();
+  private readonly httpStatusMutex = new Mutex();
+
   public constructor(axios: AxiosInstance, logger: winston.Logger) {
     this.axios = axios;
     this.logger = logger;
   }
 
   public stats() {
-    return {};
+    return {
+      httpStatus: Object.fromEntries(this.httpStatus),
+    };
   };
 
   public async fetch(ctx: Context, url: URL, requestConfig?: CustomRequestConfig): Promise<AxiosResponse> {
@@ -194,6 +199,7 @@ export class Fetcher {
         validateStatus: () => true,
       });
     } catch (error) {
+      await this.trackHttpStatus(ctx, url, 0);
       this.logger.info(`Got error ${error} for ${url}`, ctx);
 
       if (error instanceof AxiosError && error.code === 'ECONNABORTED') {
@@ -204,6 +210,7 @@ export class Fetcher {
       throw error;
     }
 
+    await this.trackHttpStatus(ctx, url, response.status);
     this.logger.info(`Got ${response.status} (${response.statusText}) for ${url}`, ctx);
 
     await this.decreaseTimeoutsCount(url);
@@ -268,7 +275,7 @@ export class Fetcher {
     }
 
     if (response.status === 403) {
-      if (ctx.config.mediaFlowProxyUrl && url.href.startsWith(ctx.config.mediaFlowProxyUrl)) {
+      if (ctx.config.mediaFlowProxyUrl && url.href.includes(ctx.config.mediaFlowProxyUrl)) {
         throw new BlockedError(url, BlockedReason.media_flow_proxy_auth, response.headers);
       }
 
@@ -375,5 +382,17 @@ export class Fetcher {
     }
 
     return proxyConfig;
+  }
+
+  private async trackHttpStatus(ctx: Context, url: URL, status: number) {
+    if (ctx.config.mediaFlowProxyUrl && url.href.includes(ctx.config.mediaFlowProxyUrl)) {
+      return;
+    }
+
+    await this.httpStatusMutex.runExclusive(() => {
+      const httpStatusCounts = this.httpStatus.get(url.host) ?? {};
+      httpStatusCounts[status] = (httpStatusCounts[status] ?? 0) + 1;
+      this.httpStatus.set(url.host, httpStatusCounts);
+    });
   }
 }
