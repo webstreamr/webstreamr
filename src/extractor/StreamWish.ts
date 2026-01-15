@@ -7,7 +7,9 @@ import { Extractor } from './Extractor';
 
 export class StreamWish extends Extractor {
   public readonly id = 'StreamWish';
+
   public readonly label = 'StreamWish(MFP)';
+
   public override viaMediaFlowProxy = true;
 
   private readonly domains = [
@@ -131,7 +133,11 @@ export class StreamWish extends Extractor {
     );
   }
 
-  private rand<T>(arr: T[]): T {
+  private rand<T>(arr: readonly T[]): T {
+    if (arr.length === 0) {
+      throw new Error('StreamWish: empty host list');
+    }
+
     return arr[Math.floor(Math.random() * arr.length)];
   }
 
@@ -226,7 +232,7 @@ export class StreamWish extends Extractor {
           ctx,
           this.fetcher,
           masterUrl,
-          rewritten,
+          requestCfg,
         );
 
         return [
@@ -234,9 +240,12 @@ export class StreamWish extends Extractor {
             url: masterUrl,
             format: Format.hls,
             label: this.label,
-            sourceId: this.id,
             ttl: this.ttl,
-            meta: { ...meta, height },
+            meta: {
+              ...meta,
+              height,
+              sourceId: this.id,
+            },
           },
         ];
       }
@@ -244,20 +253,19 @@ export class StreamWish extends Extractor {
       /* noop */
     }
 
-    const proxyUrl
-      = await buildMediaFlowProxyExtractorStreamUrl(
-        ctx,
-        this.fetcher,
-        this.id,
-        rewritten,
-        requestHeaders,
-      );
+    const proxyUrl = await buildMediaFlowProxyExtractorStreamUrl(
+      ctx,
+      this.fetcher,
+      this.id,
+      rewritten,
+      requestHeaders,
+    );
 
     const height = await guessHeightFromPlaylist(
       ctx,
       this.fetcher,
       proxyUrl,
-      rewritten,
+      requestCfg,
     );
 
     return [
@@ -265,9 +273,12 @@ export class StreamWish extends Extractor {
         url: proxyUrl,
         format: Format.hls,
         label: this.label,
-        sourceId: this.id,
         ttl: this.ttl,
-        meta: { ...meta, height },
+        meta: {
+          ...meta,
+          height,
+          sourceId: this.id,
+        },
       },
     ];
   }
