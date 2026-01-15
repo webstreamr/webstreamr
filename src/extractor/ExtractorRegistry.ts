@@ -99,8 +99,11 @@ export class ExtractorRegistry {
 
     if (!urlResults.length) {
       await this.urlResultCache.set<UrlResult[]>(cacheKey, urlResults, 43200000); // 12h
-    } else if (!urlResults.some(urlResult => urlResult.error) && extractor.ttl) {
-      await this.urlResultCache.set<UrlResult[]>(cacheKey, urlResults, extractor.ttl);
+    } else if (!urlResults.some(urlResult => urlResult.error)) {
+      /* istanbul ignore else */
+      if (extractor.ttl) {
+        await this.urlResultCache.set<UrlResult[]>(cacheKey, urlResults, extractor.ttl);
+      }
       await this.lazyUrlResultCache.set<UrlResult[]>(normalizedUrl.href, urlResults, 2628000); // 1 month
     } else {
       await this.lazyUrlResultCache.delete(normalizedUrl.href);
