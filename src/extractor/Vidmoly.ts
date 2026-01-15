@@ -10,8 +10,11 @@ import { Extractor } from './Extractor';
 
 export class Vidmoly extends Extractor {
   public readonly id = 'Vidmoly';
+
   public readonly label = 'VidMoly(MFP)';
+
   public override readonly ttl = 10800000;
+
   public override viaMediaFlowProxy = true;
 
   private domains = [
@@ -21,10 +24,8 @@ export class Vidmoly extends Extractor {
   ];
 
   public supports(ctx: Context, url: URL): boolean {
-    return (
-      this.domains.some(d => url.host.includes(d))
-      && supportsMediaFlowProxy(ctx)
-    );
+    return this.domains.some(d => url.host.includes(d))
+      && supportsMediaFlowProxy(ctx);
   }
 
   public override normalize(url: URL): URL {
@@ -46,9 +47,7 @@ export class Vidmoly extends Extractor {
     url: URL,
     meta: Meta,
   ): Promise<UrlResult[]> {
-    const referer
-      = meta.referer
-        ?? url.href;
+    const referer = meta.referer ?? url.href;
 
     const headers: Record<string, string> = {
       Referer: referer,
@@ -118,14 +117,13 @@ export class Vidmoly extends Extractor {
       /* ignore main page failures */
     }
 
-    const proxiedUrl
-      = await buildMediaFlowProxyExtractorStreamUrl(
-        ctx,
-        this.fetcher,
-        this.id,
-        url,
-        headers,
-      );
+    const proxiedUrl = await buildMediaFlowProxyExtractorStreamUrl(
+      ctx,
+      this.fetcher,
+      this.id,
+      url,
+      headers,
+    );
 
     if (!height) {
       try {
@@ -133,7 +131,9 @@ export class Vidmoly extends Extractor {
           ctx,
           this.fetcher,
           proxiedUrl,
-          url,
+          {
+            headers,
+          },
         );
       } catch {
         /* ignore height failure */
