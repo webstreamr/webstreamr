@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.65.1](https://github.com/webstreamr/webstreamr/compare/v0.65.0...v0.65.1) (2026-01-15)
+
+
+### Bug Fixes
+
+* calculate fallback count properly, only use VidSrc when no other normal source provided results ([5ef6119](https://github.com/webstreamr/webstreamr/commit/5ef61192948b42240ea21ddde7940e881f921aaf))
+* **extractor:** use lazy url/meta cache also for extractors without a ttl ([26278aa](https://github.com/webstreamr/webstreamr/commit/26278aadba170948107c909c9bf9426e6379b10a))
+* **extractor:** use milliseconds instead of incorrect seconds for ttl ([17e70c1](https://github.com/webstreamr/webstreamr/commit/17e70c169b6e26ee674c2d608e4bef1bdbb3a08c))
+* **source:** be resilient against missing heights in 4KHDHub ([79c8e7f](https://github.com/webstreamr/webstreamr/commit/79c8e7fc3255333ae011c12262410ef1739f304b))
+
 ## [0.65.0](https://github.com/webstreamr/webstreamr/compare/v0.64.0...v0.65.0) (2026-01-15)
 
 
