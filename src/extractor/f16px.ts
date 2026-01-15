@@ -41,7 +41,7 @@ export class F16Px extends Extractor {
     const headers: Record<string, string> = {};
 
     if (!this.domains.some(d => (meta.referer ?? '').includes(d))) {
-      headers.Referer = meta.referer ?? `${url.origin}/`;
+      headers['Referer'] = meta.referer ?? `${url.origin}/`;
     }
 
     const embedCheck = await this.fetcher.text(ctx, url, headers);
@@ -83,7 +83,9 @@ export class F16Px extends Extractor {
       ctx,
       this.fetcher,
       proxiedUrl,
-      url,
+      {
+        headers,
+      },
     );
 
     return [
@@ -91,13 +93,13 @@ export class F16Px extends Extractor {
         url: proxiedUrl,
         format: Format.hls,
         label: this.label,
-        sourceId: `${this.id}_${meta.countryCodes?.join('_') ?? 'all'}`,
         ttl: this.ttl,
         requestHeaders: headers,
         meta: {
           ...meta,
           height,
           title,
+          sourceId: `${this.id}_${meta.countryCodes?.join('_') ?? 'all'}`,
         },
       },
     ];
