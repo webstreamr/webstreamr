@@ -1,9 +1,5 @@
 import { Context, CountryCode, Format, Meta, UrlResult } from '../types';
-import {
-  CustomRequestConfig,
-  guessHeightFromPlaylist, hasMultiEnabled,
-  iso639FromCountryCode,
-} from '../utils';
+import { CustomRequestConfig, guessHeightFromPlaylist, hasMultiEnabled, iso639FromCountryCode } from '../utils';
 import { Extractor } from './Extractor';
 
 export class VixSrc extends Extractor {
@@ -46,7 +42,7 @@ export class VixSrc extends Extractor {
         ttl: this.ttl,
         meta: {
           ...meta,
-          countryCodes,
+          countryCodes: countryCodes.length ? countryCodes : [CountryCode.multi],
           height: meta.height ?? await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, { headers }),
         },
       },
@@ -56,7 +52,7 @@ export class VixSrc extends Extractor {
   private async determineCountryCodesFromPlaylist(ctx: Context, playlistUrl: URL, init?: CustomRequestConfig): Promise<CountryCode[]> {
     const playlist = await this.fetcher.text(ctx, playlistUrl, init);
 
-    const countryCodes: CountryCode[] = [CountryCode.it];
+    const countryCodes: CountryCode[] = [];
 
     (Object.keys(CountryCode) as CountryCode[]).forEach((countryCode) => {
       const iso639 = iso639FromCountryCode(countryCode);
