@@ -99,14 +99,14 @@ export class FourKHDHub extends Source {
   private readonly extractSourceResults = async (ctx: Context, $: CheerioAPI, el: BasicAcceptedElems<AnyNode>, countryCodes: CountryCode[]): Promise<SourceResult> => {
     const localHtml = $(el).html() as string;
 
-    const sizeMatch = localHtml.match(/([\d.]+ ?[GM]B)/) as string[];
+    const sizeMatch = localHtml.match(/([\d.]+ ?[GM]B)/);
     const heightMatch = localHtml.match(/\d{3,}p/) as string[];
 
     const meta: Meta = {
       countryCodes: [...new Set([...countryCodes, ...findCountryCodes(localHtml)])],
-      bytes: bytes.parse(sizeMatch[1] as string) as number,
       height: parseInt(heightMatch[0] as string),
       title: $('.file-title, .episode-file-title', el).text().trim(),
+      ...(sizeMatch && { bytes: bytes.parse(sizeMatch[1] as string) as number }),
     };
 
     const redirectUrlHubCloud = $('a', el)

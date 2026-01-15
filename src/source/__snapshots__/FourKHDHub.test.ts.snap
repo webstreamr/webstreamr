@@ -389,6 +389,58 @@ exports[`FourKHDHub handle dexter resurrection 2025 s01e01 1`] = `
 ]
 `;
 
+exports[`FourKHDHub handle dust bunny 1`] = `
+[
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+      ],
+      "height": 1080,
+      "title": "Dust.Bunny.2025.1080p.iT.WEB-DL.English.DDP5.1.Atmos.H.264-4kHDHub.Com.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/lo89bsn98fp9gt1",
+  },
+  {
+    "meta": {
+      "bytes": 19746112143,
+      "countryCodes": [
+        "multi",
+        "en",
+      ],
+      "height": 2160,
+      "title": "Dust.Bunny.2025.2160p.iT.WEB-DL.English.DDP5.1.Atmos.DV.HDR.H.265-4kHDHub.Com.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/tgeemytzlxgtyal",
+  },
+  {
+    "meta": {
+      "bytes": 12498354831,
+      "countryCodes": [
+        "multi",
+        "en",
+      ],
+      "height": 2160,
+      "title": "Dust.Bunny.2025.2160p.AMZN.WEB-DL.English.DDP5.1.Atmos.H.265-4kHDHub.Com.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/giejj9shsc9i777",
+  },
+  {
+    "meta": {
+      "bytes": 4155380858,
+      "countryCodes": [
+        "multi",
+        "en",
+      ],
+      "height": 1080,
+      "title": "Dust.Bunny.2025.1080p.AMZN.WEB-DL.English.DDP5.1.Atmos.H.264-4kHDHub.Com.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/xd2ndhiin1w8fbd",
+  },
+]
+`;
+
 exports[`FourKHDHub handle f1 1`] = `
 [
   {

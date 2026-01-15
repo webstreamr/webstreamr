@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dust Bunny (2025) - 4K-HDHub </title>
+  <script>
+    !function(){try{"light"===localStorage.getItem("theme")?(document.documentElement.classList.remove("dark"),document.documentElement.classList.add("light")):(document.documentElement.classList.add("dark"),document.documentElement.classList.remove("light"))}catch(e){console.error("Theme initialization failed:",e)}}();
+  </script>
+
+  
+  
+
+  
+  <meta name="description" content="Download Dust Bunny 2025 in 4K, HDR, 1080p and more formats">
+  
+  <!-- Basic Open Graph meta tags -->
+<meta property="og:title" content="Dust Bunny (2025) - 4K-HDHub" />
+<meta property="og:description" content="Download Dust Bunny 2025 in 4K, HDR, 1080p and more formats" />
+
+<meta property="og:image" content="https://image.tmdb.org/t/p/w500/jMcT1Quf34qZWNNE1rAqep8f9DW.jpg" />
+
+  
+  <!-- Preload the logo -->
+  <link rel="preload" href="/images/4KHDHUB-Dark-Logo.png" as="image" type="image/png" />
+  <link rel="preload" href="/images/4KHDHUB-Bright-Logo.png" as="image" type="image/png" />
+  
+  <script data-cfasync="false" src="//dl4d3y1ajyv3q.cloudfront.net/?aydld=1221937"></script>
+  
+  
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="4K-HDHub" />
+<link rel="manifest" href="/site.webmanifest" /> 
+
+  
+  <link rel="stylesheet" href="/css/styles.css?v=0.14.69c19">
+  
+  <script src="/js/main.js?v=0.14.69c19"></script>
+    <script src="/js/movie-page.js?v=0.14.69c19"></script>
+
+  <!-- Font -->
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+
+<!-- Link to Google Fonts Stylesheets -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/trebuchet-ms-2" rel="stylesheet">
+
+<!-- JavaScript to apply font-display: swap -->
+<script type="text/javascript">
+!function(e,n,t){"use strict";var o="https://fonts.googleapis.com/css?family=Open+Sans",r="__3perf_googleFonts_5fd56";function c(e){(n.head||n.body).appendChild(e)}function a(){var e=n.createElement("link");e.href=o,e.rel="stylesheet",c(e)}function f(e){if(!n.getElementById(r)){var t=n.createElement("style");t.id=r,c(t)}n.getElementById(r).innerHTML=e}e.FontFace&&e.FontFace.prototype.hasOwnProperty("display")?(t[r]&&f(t[r]),fetch(o).then(function(e){return e.text()}).then(function(e){return e.replace(/@font-face {/g,"@font-face{font-display:swap;")}).then(function(e){return t[r]=e}).then(f).catch(a)):a()}(window,document,localStorage);
+</script>
+ 
+ <style>
+/* Movie detail page styles */
+.poster-container {
+  position: sticky;
+  top: 5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0.2rem;
+}
+
+html.dark .poster-container {
+  background: linear-gradient(to top, #2b580c2b, #a5b250, #8f9e610f, #4d53485c);
+}
+
+html:not(.dark) .poster-container {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 768px) {
+  .poster-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.poster-image {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+
+/* Content grid layout */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  /*gap: 2rem;*/
+}
+
+@media (min-width: 768px) {
+  .content-grid {
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+  }
+}
+
+.content-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.content-main {
+  flex: 1;
+}
+
+/* Content sections */
+.content-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 1.875rem;
+  }
+}
+
+/* Badge styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  transition: background-color 0.2s ease;
+}
+
+.badge-outline {
+  background-color: transparent;
+  border: 1px solid currentColor;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border: none;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.btn:hover {
+  background-color: hsl(var(--primary) / 0.9);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: hsl(var(--foreground));
+}
+
+.btn-ghost:hover {
+  background-color: hsl(var(--accent) / 0.8);
+}
+
+.btn-sm {
+  height: 2.25rem;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Download section styles */
+.download-item {
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.download-header {
+  padding: 0.75rem 1rem;
+  background-color: hsl(var(--muted) / 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-header:hover,.download-header:active,.download-header:focus {
+   background-color: hsl(213deg 69.03% 35.03% / 68%);
+}
+
+/* Info box styles */
+.info-box {
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  background-color: hsl(var(--background) / 0.5);
+}
+
+.info-list {
+  margin-left: 1.25rem;
+  list-style-type: decimal;
+}
+
+.info-list li {
+  margin-bottom: 0.5rem;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Metadata list - Fixed for mobile */
+.metadata-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  margin-top: 1rem;
+}
+
+.metadata-item {
+  gap: 0rem;
+}
+
+.metadata-label {
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.metadata-value {
+  color: hsl(var(--muted-foreground));
+}
+
+/* Desktop metadata layout */
+@media (min-width: 640px) {
+  .metadata-item {
+    flex-direction: row;
+    align-items: baseline;
+  }
+  
+  .metadata-label {
+    width: 6rem;
+    flex-shrink: 0;
+  }
+}
+
+/* Card grid for related content */
+.card-grid-small {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .card-grid-small {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .card-grid-small {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Breadcrumb styles */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-separator {
+  color: hsl(var(--muted-foreground));
+  font-size: 16px;
+}
+
+/* Page title and tagline */
+.page-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+}
+
+.movie-tagline {
+  font-size: 1.125rem;
+  font-style: italic;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  .page-title {
+    font-size: 2.25rem;
+  }
+  
+  .movie-tagline {
+    font-size: 1.25rem;
+  }
+}
+
+/* Page container */
+.page-container {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: .5rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .page-container {
+    padding: 2rem;
+  }
+}
+
+/* Trailer modal styles */
+#trailer-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+#trailer-container {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.375rem;
+}
+
+/* Fix for movie card styles */
+.movie-card {
+  display: block;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: hsl(var(--card));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.movie-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.movie-card-image {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+}
+
+.movie-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
+.movie-card:hover .movie-card-overlay {
+  opacity: 1;
+}
+
+.movie-card-formats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.movie-card-format {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 0.625rem;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+}
+
+.movie-card-content {
+  padding: 0.75rem;
+}
+
+.movie-card-title {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.movie-card-meta {
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Fix for text overflow on mobile devices */
+
+/* General text wrapping fix : , .episode-file-title */
+p, .metadata-value, .episode-description, .movie-tagline {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  max-width: 100%;
+}
+
+.tag-badge{
+    font-size: medium !important;
+    background: hsl(var(--primary) / 0.4) !important;
+    margin: 2px;
+}
+  
+
+/* Fix for metadata items on mobile */
+@media (max-width: 640px) {
+  .metadata-item {
+    margin-bottom: 0.75rem;
+  }
+  
+  .metadata-label {
+    width: 30%;
+    margin-bottom: 0.25rem;
+  }
+  
+  .metadata-value {
+    width: 100%;
+  }
+  
+  /* Ensure content stays within container */
+  .content-main, .content-section, .episode-content, .season-content {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Fix for long titles */
+  .page-title, .episode-title, .season-title {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    max-width: 100%;
+  }
+  
+  /* Fix for badges wrapping */
+  .badge, .badge-2160p, .badge-1080p, .badge-web-dl, 
+  .badge-hevc, .badge-size, .badge-psa, .badge-audio {
+    margin-bottom: 0.25rem;
+  }
+  
+  /* Fix for episode file info */
+  .episode-file-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Fix for download buttons */
+  .episode-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .episode-links .btn {
+    flex: 1;
+    min-width: 80px;
+  }
+  
+  
+  
+}
+
+/* Fix for very small screens */
+@media (max-width: 360px) {
+  .content-grid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .page-container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  /* Smaller font sizes on very small screens */
+  .page-title {
+    font-size: 1.5rem;
+  }
+  
+  .movie-tagline {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+  }
+}
+/* Fix for download header titles and filenames */
+
+/* Style for the download header title */
+.download-header .flex-1 {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  padding-right: 1rem; /* Space for the chevron icon */
+}
+
+/* Style for the filename display */
+.download-item .filename {
+  font-family: "Trebuchet MS" !important;
+  font-size: 0.85rem;
+  word-break: break-all; /* Force break anywhere for long filenames */
+  white-space: normal;
+  color: hsl(var(--muted-foreground));
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+  overflow-x: auto; /* Allow horizontal scroll for very long names */
+  max-width: 100%;
+}
+
+/* Make sure the download header has enough space */
+.download-header {
+  min-height: 3.5rem;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Ensure the chevron icon stays on the right */
+.download-header .chevron-icon {
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+/* Adjust spacing in the download content */
+.download-item .px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (max-width: 640px) {
+  /* Smaller font size on mobile */
+  .download-header .flex-1 {
+    font-size: 0.9rem;
+  }
+  
+  /* Ensure proper spacing on small screens */
+  .download-header {
+    padding: 0.75rem 0.75rem;
+  }
+  
+  .download-item .px-4 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    word-break: break-word;
+  }
+}
+.responsive-icon {
+  width: 23px;   /* Set default size */
+  height: 23px;  /* Set default size */
+  max-width: 100%; /* Ensures the icon scales down on smaller screens */
+  vertical-align: bottom;
+}
+
+@media (max-width: 600px) {
+  .responsive-icon {
+    width: 23;   /* Reduce size on small screens (e.g., mobile) */
+    height: 23;
+  }
+}
+@media (max-width: 640px) {
+    .grid.grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+}
+.text-muted-foreground {
+    font-size: 16px;
+}
+.text-sm {
+  font-size: 0.875rem;
+  list-style-type: none;
+}
+/* Fix for code elements and long filenames */
+    code {
+      display: block;
+      white-space: normal;
+      word-break: break-all;
+      overflow-wrap: break-word;
+      font-size: 0.8rem;
+      max-width: 100%;
+      padding: 0.25rem 0;
+    }
+ 
+    /* Fix for episode meta items spacing */
+    .episode-meta span {
+      white-space: normal;
+      display: inline-block;
+    }
+ 
+    /* Ensure proper spacing between meta items */
+    .episode-meta span:not(:last-child) {
+      margin-right: 0.25rem;
+    }
+ 
+    /* Uploader Notes Styling */
+    .uploader-notes {
+      margin: 1.5rem 0;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      border: 1px solid hsl(var(--border));
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+ 
+    /* Header styling */
+    .uploader-notes-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background-color: rgba(255, 153, 0, 0.2);
+      border-bottom: 1px solid rgba(255, 153, 0, 0.3);
+    }
+ 
+    /* Icon styling */
+    .uploader-notes-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 9999px;
+      background-color: rgba(255, 153, 0, 0.3);
+      flex-shrink: 0;
+    }
+ 
+    /* Title styling */
+    .uploader-notes-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: hsl(var(--foreground));
+    }
+ 
+    /* Content styling */
+    .uploader-notes-content {
+      padding: 1rem;
+      color: hsl(var(--muted-foreground));
+      font-size: 0.9375rem;
+      line-height: 1.5;
+    }
+ 
+    /* Highlight important text */
+    .uploader-notes-highlight {
+      color: #ff9900;
+      font-weight: 600;
+    }
+ 
+    /* List styling inside notes */
+    .uploader-notes-list {
+      /*margin-top: 0.75rem;*/
+      margin-left: 1.25rem;
+      list-style-type: disc;
+    }
+ 
+    .uploader-notes-list li {
+      font-size: medium;
+      margin-bottom: 0.5rem;
+    }
+ 
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .uploader-notes {
+        margin: 1rem 0;
+      }
+      
+      .uploader-notes-header {
+        padding: 0.625rem 0.875rem;
+      }
+      
+      .uploader-notes-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+      
+      .uploader-notes-title {
+        font-size: 0.9375rem;
+      }
+      
+      .uploader-notes-content {
+        padding: 0.875rem;
+        font-size: 0.875rem;
+      }
+    }
+ 
+    /* Collapsible notes functionality */
+    .uploader-notes.collapsible .uploader-notes-header {
+      cursor: pointer;
+      position: relative;
+    }
+ 
+    .uploader-notes.collapsible .uploader-notes-toggle {
+      margin-left: auto;
+      transition: transform 0.2s ease;
+    }
+ 
+    .uploader-notes.collapsible[aria-expanded="false"] .uploader-notes-content {
+      display: none;
+    }
+ 
+    .uploader-notes.collapsible[aria-expanded="false"] .uploader-notes-toggle {
+      transform: rotate(180deg);
+    }
+ 
+    /* Different note types */
+    .uploader-notes.info .uploader-notes-header {
+      background-color: rgba(59, 130, 246, 0.2);
+      border-bottom-color: rgba(59, 130, 246, 0.3);
+    }
+ 
+    .uploader-notes.info .uploader-notes-icon {
+      background-color: rgba(59, 130, 246, 0.3);
+    }
+ 
+    .uploader-notes.info .uploader-notes-highlight {
+      color: #3b82f6;
+    }
+ 
+    .uploader-notes.warning .uploader-notes-header {
+      background-color: rgba(245, 158, 11, 0.2);
+      border-bottom-color: rgba(245, 158, 11, 0.3);
+    }
+ 
+    .uploader-notes.warning .uploader-notes-icon {
+      background-color: rgba(245, 158, 11, 0.3);
+    }
+ 
+    .uploader-notes.warning .uploader-notes-highlight {
+      color: #f59e0b;
+    }
+ 
+    .uploader-notes.error .uploader-notes-header {
+      background-color: rgba(239, 68, 68, 0.2);
+      border-bottom-color: rgba(239, 68, 68, 0.3);
+    }
+ 
+    .uploader-notes.error .uploader-notes-icon {
+      background-color: rgba(239, 68, 68, 0.3);
+    }
+ 
+    .uploader-notes.error .uploader-notes-highlight {
+      color: #ef4444;
+    }
+    
+    .file-title{
+    font-family: 'Trebuchet MS', sans-serif;
+    overflow-wrap: break-word;
+    /*word-break: break-all;*/
+    color: #62b6ff;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-left: hidden;
+    border-top: 2px solid hsl(213deg 69.03% 35.03% / 68%);
+    border-bottom: 2px solid hsl(213deg 69.03% 35.03% / 68%);
+    border-radius: 5px;
+    padding-left: 5px;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+
+.player-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            z-index: 1000;
+        }
+
+        .controls {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+        }
+
+        .control-btn {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: color 0.2s ease;
+        }
+
+        .control-btn:hover {
+            color: #d1d5db;
+        }
+
+        .arrow-left, .arrow-right {
+            width: 0;
+            height: 0;
+            display: inline-block;
+        }
+
+        .arrow-left {
+            border-right: 12px solid currentColor;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+
+        .arrow-right {
+            border-left: 12px solid currentColor;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+
+        .video-select {
+            background: #1f2937;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid #4b5563;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .video-select:focus {
+            outline: none;
+            border-color: #dc2626;
+        }
+
+        .video-select option {
+            background: #1f2937;
+            color: white;
+        }
+
+        .video-player {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #dc2626;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 16px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .source-changing {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .loading-text {
+            color: white;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .play-container {
+                padding: 32px 24px;
+            }
+            
+            .play-container h1 {
+                font-size: 1.5rem;
+            }
+            
+            .controls {
+                padding: 12px;
+            }
+            
+            .video-select {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+        
+
+/* The Rating Container */
+.imdb-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.1); /* Subtle background to match theme */
+  padding: 4px 8px;
+  border-radius: 4px; /* Slightly rounded corners */
+  border: 1px solid rgb(255 255 255 / 55%);
+}
+
+/* The Yellow IMDb Text/Logo */
+.imdb-logo {
+  background-color: #F5C518; /* Official IMDb Yellow */
+  color: #000000;
+  font-weight: 900;
+  padding: 0px 4px;
+  border-radius: 2px;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* The Score Text */
+.imdb-score {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* Optional: Style for the surrounding elements for context */
+.genre-tag {
+  border: 1px solid #666;
+  padding: 2px 10px;
+  border-radius: 12px;
+  color: #ccc;
+}
+.dot {
+  color: #666;
+}
+        
+</style>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LL0RL7VX47"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LL0RL7VX47');
+</script>
+   
+</head>
+<body>
+<div class="flex min-h-screen flex-col">
+  <!-- Header -->
+    <header class="sticky top-0 z-50 w-full">
+    <div class="header">
+      <div class="container flex h-14 items-center justify-between">
+        <!-- Logo and mobile menu toggle -->
+        <div class="flex items-center">
+          <button id="menu-toggle" class="menu-toggle md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            <span class="sr-only">Toggle menu</span>
+          </button>
+          <a href="/" class="navbar-brand">
+            <img id="logo" class="h-8 w-auto" src="/images/4KHDHUB-Bright-Logo.png" alt="4KHDHub logo">
+          </a>
+        </div>
+
+        <!-- SINGLE Navigation - Visible on desktop, hidden on mobile -->
+        <nav id="main-nav" class="main-nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+            
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle">
+                Movies
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dropdown-indicator h-4 w-4">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/category/movies/" class="dropdown-item">Latest Movies</a></li>
+                <li><a href="/category/hindi-movies/" class="dropdown-item">Hindi Movies</a></li>
+                <li><a href="/category/english-movies/" class="dropdown-item">English Movies</a></li>
+              </ul>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle">
+                Web Series
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dropdown-indicator h-4 w-4">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/category/series/" class="dropdown-item">Latest Episodes</a></li>
+                <li><a href="/category/korean-series/" class="dropdown-item">Korean</a></li>
+                <li><a href="/category/drama-series/" class="dropdown-item">Drama</a></li>
+                <li><a href="/category/hindi-series/" class="dropdown-item">Hindi Series</a></li>
+                <li><a href="/category/english-series/" class="dropdown-item">English Series</a></li>
+                
+              </ul>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle">
+                OTT
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dropdown-indicator h-4 w-4">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/category/netflix/" class="dropdown-item">Netflix</a></li>
+                <li><a href="/category/amazon_prime_video/" class="dropdown-item">Amazon Prime Video</a></li>
+                <li><a href="/category/jiohotstar/" class="dropdown-item">JioHotstar</a></li>
+                <li><a href="/category/disney/" class="dropdown-item">Disney+</a></li>
+                <li><a href="/category/Apple_TV/" class="dropdown-item">Apple TV+</a></li>
+                <li><a href="/category/hbo_max/" class="dropdown-item">HBO Max</a></li>
+                <li><a href="/category/hulu/" class="dropdown-item">Hulu</a></li>
+                <li><a href="/category/crave/" class="dropdown-item">Crave</a></li>
+                
+              </ul>
+            </li>
+            
+            
+            <li class="nav-item"><a href="/category/anime/" class="nav-link">Anime</a></li>
+            <li class="nav-item"><a href="/category/2160p-HDR/" class="nav-link">4K HDR</a></li>
+            <li class="nav-item"><a href="/category/imdb/" class="nav-link">Top IMdb</a></li>
+            
+          </ul>
+        </nav>
+
+        <!-- Search and Theme Toggle -->
+        <div class="flex items-center">
+          <button id="search-toggle" class="search-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span class="sr-only">Search</span>
+          </button>
+          
+          <div class="search-container hidden md:flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon h-4 w-4">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            for
+            <input type="search" id="search" placeholder="Search movies & series" class="search-input">
+          </div>
+          
+          <button id="theme-toggle" class="theme-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon h-5 w-5">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <span class="sr-only">Toggle theme</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Backdrop (only shown when menu is open) -->
+    <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/70 hidden"></div>
+
+    <!-- Close button for mobile menu (only shown when menu is open) -->
+    <button id="close-mobile-menu" class="fixed top-4 right-4 p-2 rounded-full z-[60] hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="fixed inset-0 z-50 hidden">
+      <div class="fixed" id="search-backdrop"></div>
+      
+      
+      <button id="close-search" class="absolute right-4 top-4 p-2 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+        <span class="sr-only">Close</span>
+      </button>
+      
+      <form action="/" method="get" class="search-form">
+        <div class="search-input-container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon-overlay">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="search" name="s" placeholder="Search Movies & TV-Shows" class="search-input-overlay" autofocus autocomplete="off">
+        </div>
+        <button type="submit" class="search-submit">
+          Search
+        </button>
+      </form>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1">
+    <div class="page-container">
+      <div class="breadcrumb container">
+        <a href="/" class="btn-ghost btn-sm flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-4 w-4">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          Home
+        </a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="/category/movies/" class="text-muted-foreground hover:text-foreground">
+          Movies
+        </a>
+      </div>
+
+      <div class="content-grid container">
+        <div class="content-sidebar">
+          <div class="poster-container">
+            <div class="poster-image">
+              <img src="https://image.tmdb.org/t/p/w500/jMcT1Quf34qZWNNE1rAqep8f9DW.jpg" alt="Poster Image of Dust Bunny" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+        <div class="content-main pl-4">
+          <div>
+            <h1 class="page-title">Dust Bunny (2025)</h1>
+            
+            
+                    
+           
+           <p class="movie-tagline">Sometimes there really are monsters under your bed.</p>
+           
+           <div class="mt-2 flex flex-wrap items-center gap-2 text-muted-foreground">
+            
+                        
+                                <span class="badge badge-outline"><a href="/category/action/">Action</a></span>
+                  
+                                    <span class="badge badge-outline"><a href="/category/fantasy/">Fantasy</a></span>
+                  
+                                    <span class="badge badge-outline"><a href="/category/thriller/">Thriller</a></span>
+                  
+                                    <span class="badge badge-outline"><a href="/category/movies/">Movies</a></span>
+                  
+                                    <span class="badge badge-outline"><a href="/category/1080p/">1080p</a></span>
+                  
+                                    <span class="badge badge-outline"><a href="/category/2160p/">2160p</a></span>
+                  
+                                    <span class="badge badge-outline"><a href="/category/dv hdr/">DV HDR</a></span>
+                  
+                                    <span class="badge badge-outline"><a href="/category/sdr/">SDR</a></span>
+                  
+                                    <span class="badge badge-outline"><a href="/category/english/">English</a></span>
+                  
+                                    <span class="badge badge-outline"><a href="/category/hevc/">HEVC</a></span>
+                  
+                                <!--<span class="badge badge-outline">Dual Audio</span>-->
+          </div>
+
+          </div>
+
+          <div class="content-section">
+            <div class="flex flex-wrap gap-4 mt-4">
+              <button id="play-btn" style="font-family:'Open Sans',sans-serif !important;" class="btn flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-medium px-4 py-2 rounded-md shadow-md transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                Watch Online
+              </button>
+              
+              <button id="trailer-btn" style="font-family:'Open Sans',sans-serif !important;" class="btn flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-medium px-4 py-2 rounded-md shadow-md transition-colors " data-trailer-url="https://www.youtube.com/embed/lQqmOjPDlWg?autoplay=1&enablejsapi=1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                Trailer
+              </button>
+              
+            </div>
+
+            <p class="mt-4">
+             Ten-year-old Aurora asks her hitman neighbor to kill the monster she believes ate her entire family. To protect her, he'll need to battle an onslaught of assassins while accepting the fact that some monsters are real.            </p>
+            
+            <div class="metadata-list">
+              <div class="metadata-item" style="display: flex;">
+                <span class="metadata-label">Director:</span>
+                <span class="metadata-value">Bryan Fuller</span>
+              </div>
+              <div class="metadata-item" style="display: flex; ">
+                <span class="metadata-label">Stars:</span>
+                <span class="metadata-value">Sophie Sloan (Aurora), Mads Mikkelsen (Resident 5B), Sigourney Weaver (Laverne), David Dastmalchian (Conspicuously Inconspicuous Man), Sheila Atim (Brenda)</span>
+              </div>
+              <div class="metadata-item" style="display: flex; ">
+                <span class="metadata-label">Release:</span>
+                <span class="metadata-value">2025-12-11</span>
+              </div>
+              <div class="metadata-item" style="display: flex; ">
+                <span class="metadata-label">Prints:</span>
+                <span class="metadata-value">WEB-DL | 1080p, 2160p | H264, HDR DV H265, H265</span>
+              </div>
+              <div class="metadata-item" style="display: flex; ">
+                <span class="metadata-label">Audios:</span>
+                <span class="metadata-value" style="color: #ff9800;">English</span>
+              </div>
+            </div>
+
+            
+            
+            
+          </div>
+
+          <div class="content-section">
+            <!--hr style="background-color:#3f3f3f; height: 2px; border: none;margin-bottom: 5px;"-->
+            <h2 class="section-title" style="color:#ff9800">Download Links</h2>
+            <!--hr style="background-color:#3f3f3f; height: 2px; border: none;"-->         
+    
+            <!-- Download Section with Toggle -->
+            <div class="space-y-4">
+                
+                          <!-- File 1 -->
+              <div class="download-item border rounded-lg overflow-hidden">
+                <div class="download-header px-4 py-3 bg-muted/20 flex items-center justify-between cursor-pointer" data-file-id="file15482">
+                    
+                  <div class="flex-1 text-left font-semibold">
+                      
+                      Dust Bunny (1080p WEB-DL H264)
+                      <br><code><span class="badge" style="background-color: #ea580c; color: white;">7.9 PB</span>
+                      <span class="badge" style="background-color: #0d9488; color: white;">English</span>
+                      <span class="badge" style="background-color: #15803d; color: white;">WEB-DL</span>
+                      </code>
+                  </div>
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon h-4 w-4">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </div>
+                <div id="content-file15482" class="px-4 pb-4 pt-2 hidden">
+                    
+                <div class="file-title">Dust.Bunny.2025.1080p.iT.WEB-DL.English.DDP5.1.Atmos.H.264-4kHDHub.Com.mkv</div>                
+                  <div class="grid gap-4" style="padding-top:10px;">
+                    <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="badge" style="background-color: #15803d; color: white;">WEB-DL</span>
+                      <span class="badge" style="background-color: #1e40af; color: white;">iTunes 1080p</span>
+                      <span class="badge" style="background-color: #0d9488; color: white;">English</span>
+                      <span class="badge" style="background-color: #7e22ce; color: white;">H264</span>
+                      <span class="badge" style="background-color: #dc2626; color: white;">4kHDHub.com</span>
+                      <!--span class="badge" style="background-color: #ea580c; color: white;">7.9 PB</span-->
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                      <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnY0xFcnFERGNvUE0vbnBNMWk0NFh4Z1ArTTYzTnBaQlhrZHFZQkJuVllQenc9PQ==" class="btn w-full flex justify-between items-center">
+                        <span style="">Download HubCloud&nbsp;</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg>
+                      </a>
+                      <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZZ0lxeHkydUMybE4rMWZHYzQwdUJGaEhFcjFYdUhuREhVL1JHYnROMXpFb1E9PQ==" class="btn w-full flex justify-between items-center">
+                        <span>Download HubDrive&nbsp;</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                           <!-- File 1 -->
+              <div class="download-item border rounded-lg overflow-hidden">
+                <div class="download-header px-4 py-3 bg-muted/20 flex items-center justify-between cursor-pointer" data-file-id="file15484">
+                    
+                  <div class="flex-1 text-left font-semibold">
+                      
+                      Dust Bunny (2160p WEB-DL HDR DV H265)
+                      <br><code><span class="badge" style="background-color: #ea580c; color: white;">18.39 GB</span>
+                      <span class="badge" style="background-color: #0d9488; color: white;">English</span>
+                      <span class="badge" style="background-color: #15803d; color: white;">WEB-DL</span>
+                      </code>
+                  </div>
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon h-4 w-4">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </div>
+                <div id="content-file15484" class="px-4 pb-4 pt-2 hidden">
+                    
+                <div class="file-title">Dust.Bunny.2025.2160p.iT.WEB-DL.English.DDP5.1.Atmos.DV.HDR.H.265-4kHDHub.Com.mkv</div>                
+                  <div class="grid gap-4" style="padding-top:10px;">
+                    <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="badge" style="background-color: #15803d; color: white;">WEB-DL</span>
+                      <span class="badge" style="background-color: #1e40af; color: white;">iTunes 2160p</span>
+                      <span class="badge" style="background-color: #0d9488; color: white;">English</span>
+                      <span class="badge" style="background-color: #7e22ce; color: white;">HDR DV H265</span>
+                      <span class="badge" style="background-color: #dc2626; color: white;">4kHDHub.com</span>
+                      <!--span class="badge" style="background-color: #ea580c; color: white;">18.39 GB</span-->
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                      <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZFFJbHRteXpZYkMrNmNBbTBMMWxPanRJcWcycmRxd2JoWGthR1dodVova1E9PQ==" class="btn w-full flex justify-between items-center">
+                        <span style="">Download HubCloud&nbsp;</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg>
+                      </a>
+                      <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaE13TWgyWXRydm8rSXArTzZMVC9seDAwaXk3cTFxRTZRcUhTeDY1TEZiaEE9PQ==" class="btn w-full flex justify-between items-center">
+                        <span>Download HubDrive&nbsp;</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                           <!-- File 1 -->
+              <div class="download-item border rounded-lg overflow-hidden">
+                <div class="download-header px-4 py-3 bg-muted/20 flex items-center justify-between cursor-pointer" data-file-id="file15483">
+                    
+                  <div class="flex-1 text-left font-semibold">
+                      
+                      Dust Bunny (2160p WEB-DL H265)
+                      <br><code><span class="badge" style="background-color: #ea580c; color: white;">11.64 GB</span>
+                      <span class="badge" style="background-color: #0d9488; color: white;">English</span>
+                      <span class="badge" style="background-color: #15803d; color: white;">WEB-DL</span>
+                      </code>
+                  </div>
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon h-4 w-4">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </div>
+                <div id="content-file15483" class="px-4 pb-4 pt-2 hidden">
+                    
+                <div class="file-title">Dust.Bunny.2025.2160p.AMZN.WEB-DL.English.DDP5.1.Atmos.H.265-4kHDHub.Com.mkv</div>                
+                  <div class="grid gap-4" style="padding-top:10px;">
+                    <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="badge" style="background-color: #15803d; color: white;">WEB-DL</span>
+                      <span class="badge" style="background-color: #1e40af; color: white;">AMZN 2160p</span>
+                      <span class="badge" style="background-color: #0d9488; color: white;">English</span>
+                      <span class="badge" style="background-color: #7e22ce; color: white;">H265</span>
+                      <span class="badge" style="background-color: #dc2626; color: white;">4kHDHub.com</span>
+                      <!--span class="badge" style="background-color: #ea580c; color: white;">11.64 GB</span-->
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                      <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZXhIRWplczRhaCt2MEZHZStPc2pkTDJYbmhRSGJINmlHNjNGd01LV2VlMUE9PQ==" class="btn w-full flex justify-between items-center">
+                        <span style="">Download HubCloud&nbsp;</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg>
+                      </a>
+                      <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaDltaThGUkUwbFBuOTFnblpqd3RyNHZrMW1NTmIrdG5seEp5eVppaEc4OFE9PQ==" class="btn w-full flex justify-between items-center">
+                        <span>Download HubDrive&nbsp;</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                           <!-- File 1 -->
+              <div class="download-item border rounded-lg overflow-hidden">
+                <div class="download-header px-4 py-3 bg-muted/20 flex items-center justify-between cursor-pointer" data-file-id="file15481">
+                    
+                  <div class="flex-1 text-left font-semibold">
+                      
+                      Dust Bunny (1080p WEB-DL H264)
+                      <br><code><span class="badge" style="background-color: #ea580c; color: white;">3.87 GB</span>
+                      <span class="badge" style="background-color: #0d9488; color: white;">English</span>
+                      <span class="badge" style="background-color: #15803d; color: white;">WEB-DL</span>
+                      </code>
+                  </div>
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon h-4 w-4">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </div>
+                <div id="content-file15481" class="px-4 pb-4 pt-2 hidden">
+                    
+                <div class="file-title">Dust.Bunny.2025.1080p.AMZN.WEB-DL.English.DDP5.1.Atmos.H.264-4kHDHub.Com.mkv</div>                
+                  <div class="grid gap-4" style="padding-top:10px;">
+                    <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="badge" style="background-color: #15803d; color: white;">WEB-DL</span>
+                      <span class="badge" style="background-color: #1e40af; color: white;">AMZN 1080p</span>
+                      <span class="badge" style="background-color: #0d9488; color: white;">English</span>
+                      <span class="badge" style="background-color: #7e22ce; color: white;">H264</span>
+                      <span class="badge" style="background-color: #dc2626; color: white;">4kHDHub.com</span>
+                      <!--span class="badge" style="background-color: #ea580c; color: white;">3.87 GB</span-->
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                      <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvZzhmMjZOTkNrdktvSEp1VXBaU3FnZkVTNkJWaEhDVDhPMjgyQWRoeng5NzRoNFp1YzR2WGhUTjg1cmNNcGdFNlE9PQ==" class="btn w-full flex justify-between items-center">
+                        <span style="">Download HubCloud&nbsp;</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg>
+                      </a>
+                      <a target="_blank" href="https://gadgetsweb.xyz/?id=Q1dxTzFnbjhrQm5kMG5lL01tQzcvblZxSithZnFJTFdic1JwYUxHVkpZaVJnWFdmdHB1bGIwSkFoVlNRdk5kejhneU5YWTRxN2NJTzdocVlJUTZtaHc9PQ==" class="btn w-full flex justify-between items-center">
+                        <span>Download HubDrive&nbsp;</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="responsive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
+</svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+             
+            </div>
+          </div>
+<script>document.addEventListener('DOMContentLoaded', function () {
+    // Select all the download headers
+    const downloadHeaders = document.querySelectorAll('.download-header');
+
+    // Keep track of the previously opened header
+    let previousHeader = null;
+
+    downloadHeaders.forEach(header => {
+        // Add click event to each download header
+        header.addEventListener('click', function () {
+            // Get the file id from the 'data-file-id' attribute of the clicked header
+            const fileId = header.getAttribute('data-file-id').replace('file', '');
+            const contentFile = document.getElementById('content-file' + fileId);
+
+            // If there is a previously opened header, remove its background color
+            if (previousHeader && previousHeader !== header) {
+                previousHeader.style.backgroundColor = '';  // Remove the background color from the previous header
+            }
+
+            // Apply background color logic
+            if (contentFile.classList.contains('hidden')) {
+                // Apply background color when content is hidden
+                header.style.backgroundColor = 'hsl(213deg 69.03% 35.03% / 68%)';
+            } else {
+                // Reset background color when content is open
+                header.style.backgroundColor = '';
+            }
+
+            // Update the previous header to the current one
+            previousHeader = header;
+        });
+    });
+});
+</script>
+          <div class="info-box mt-8">
+            <div class="mb-4 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-primary">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              <h3 class="text-lg font-semibold">How to Download</h3>
+            </div>
+            <ol class="info-list">
+              <li>Click on the download link of your choice.</li>
+              <li>Wait for the page to load and bypass any ads if necessary.</li>
+              <li>Click on the download button on the file hosting site.</li>
+              <li>Enjoy your high-quality movie!</li>
+            </ol>
+          </div>
+
+          <div class="mt-12">
+          <h2 class="section-title">You May Also Like</h2>
+          <div class="card-grid-small">
+              
+                        <!-- Related Series 1 -->
+            <a href="/the-housemaid-movie-5299/" class="movie-card">
+              <div class="movie-card-image">
+                <img src="https://image.tmdb.org/t/p/w500/acrlZuaS7ypiEUb3oZRA28Ox7TV.jpg" alt="The Housemaid" class="w-full h-full object-cover">
+                
+                <div class="movie-card-overlay">
+                  <div class="movie-card-formats">
+                                      <span class="movie-card-format">Drama</span>
+                  
+                                    <span class="movie-card-format">Thriller</span>
+                  
+                                    <span class="movie-card-format">Hindi</span>
+                  
+                                    <span class="movie-card-format">Dual Language</span>
+                  
+                                    <span class="movie-card-format">1080p</span>
+                  
+                                    <span class="movie-card-format">BluRay</span>
+                  
+                                    <span class="movie-card-format">Movies</span>
+                  
+                                    <span class="movie-card-format">10Bit</span>
+                  
+                                    <span class="movie-card-format">Korean</span>
+                  
+                                    </div>
+                </div>
+              </div>
+              <div class="movie-card-content">
+                <h3 class="movie-card-title">The Housemaid</h3>
+                <p class="movie-card-meta">2010                              </p>
+              </div>
+            </a>
+            
+                        <!-- Related Series 1 -->
+            <a href="/soul-movie-5297/" class="movie-card">
+              <div class="movie-card-image">
+                <img src="https://image.tmdb.org/t/p/w500/6jmppcaubzLF8wkXM36ganVISCo.jpg" alt="Soul" class="w-full h-full object-cover">
+                
+                <div class="movie-card-overlay">
+                  <div class="movie-card-formats">
+                                      <span class="movie-card-format">Fantasy</span>
+                  
+                                    <span class="movie-card-format">Animation</span>
+                  
+                                    <span class="movie-card-format">Drama</span>
+                  
+                                    <span class="movie-card-format">Comedy</span>
+                  
+                                    <span class="movie-card-format">Music</span>
+                  
+                                    <span class="movie-card-format">Family</span>
+                  
+                                    <span class="movie-card-format">English</span>
+                  
+                                    <span class="movie-card-format">2160p</span>
+                  
+                                    <span class="movie-card-format">1080p</span>
+                  
+                                    <span class="movie-card-format">BluRay</span>
+                  
+                                    <span class="movie-card-format">Movies</span>
+                  
+                                    <span class="movie-card-format">10Bit</span>
+                  
+                                    <span class="movie-card-format">DV HDR</span>
+                  
+                                    <span class="movie-card-format">SDR</span>
+                  
+                                    </div>
+                </div>
+              </div>
+              <div class="movie-card-content">
+                <h3 class="movie-card-title">Soul</h3>
+                <p class="movie-card-meta">2020                              </p>
+              </div>
+            </a>
+            
+                        <!-- Related Series 1 -->
+            <a href="/sleepwalker-movie-5296/" class="movie-card">
+              <div class="movie-card-image">
+                <img src="https://image.tmdb.org/t/p/w500/760SP4VsZagpyB9WLfeZykE3DFg.jpg" alt="Sleepwalker" class="w-full h-full object-cover">
+                
+                <div class="movie-card-overlay">
+                  <div class="movie-card-formats">
+                                      <span class="movie-card-format">Horror</span>
+                  
+                                    <span class="movie-card-format">Western</span>
+                  
+                                    <span class="movie-card-format">Thriller</span>
+                  
+                                    <span class="movie-card-format">English</span>
+                  
+                                    <span class="movie-card-format">1080p</span>
+                  
+                                    <span class="movie-card-format">WEB-DL</span>
+                  
+                                    <span class="movie-card-format">Movies</span>
+                  
+                                    <span class="movie-card-format">VOD</span>
+                  
+                                    </div>
+                </div>
+              </div>
+              <div class="movie-card-content">
+                <h3 class="movie-card-title">Sleepwalker</h3>
+                <p class="movie-card-meta">2026                              </p>
+              </div>
+            </a>
+            
+                        <!-- Related Series 1 -->
+            <a href="/wwe-raw-series-386/" class="movie-card">
+              <div class="movie-card-image">
+                <img src="https://image.tmdb.org/t/p/original/4CQYMgv6hJ1Pgdr5qxvZpHzzg53.jpg" alt="WWE Raw" class="w-full h-full object-cover">
+                
+                <div class="movie-card-overlay">
+                  <div class="movie-card-formats">
+                                      <span class="movie-card-format">Action</span>
+                  
+                                    <span class="movie-card-format">Reality</span>
+                  
+                                    <span class="movie-card-format">Hindi</span>
+                  
+                                    <span class="movie-card-format">English</span>
+                  
+                                    <span class="movie-card-format">Netflix</span>
+                  
+                                    <span class="movie-card-format">Series</span>
+                  
+                                    <span class="movie-card-format">60 FPS</span>
+                  
+                                    <span class="movie-card-format">Live</span>
+                  
+                                    <span class="movie-card-format">WWE</span>
+                  
+                                    </div>
+                </div>
+              </div>
+              <div class="movie-card-content">
+                <h3 class="movie-card-title">WWE Raw</h3>
+                <p class="movie-card-meta">2025                • S33.0-S34.0 EP02              </p>
+              </div>
+            </a>
+            
+            
+            
+
+            
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </main>
+<!-- Footer -->
+<footer class="border-t bg-background">
+    <div class="container py-8 md:py-12">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-4 justify-center text-center md:text-left">
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold">4K-HDHub</h3>
+          <p class="text-sm text-muted-foreground">
+            Your one-stop destination for high-quality movies and TV shows in various formats.
+          </p>
+        </div>
+        
+        <!-- Quick Links Section -->
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold">Quick Links</h3>
+          <ul class="flex flex-wrap justify-center gap-4 text-sm">
+            <li>
+              <a href="/about" class="text-muted-foreground hover:text-primary">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="/contact" class="text-muted-foreground hover:text-primary">
+                Contact Us
+              </a>
+            </li>
+            <li>
+              <a href="/dmca" class="text-muted-foreground hover:text-primary">
+                DMCA
+              </a>
+            </li>
+            <li>
+              <a href="/privacy-policy" class="text-muted-foreground hover:text-primary">
+                Privacy Policy
+              </a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold">Connect</h3>
+          <p class="text-sm text-muted-foreground">Stay updated with the latest releases and news.</p>
+        </div>
+      </div>
+  
+      <!-- Footer Bottom -->
+      <div class="mt-8 border-t pt-8 text-center">
+        <p class="text-xs text-muted-foreground">© <span id="current-year">2025</span> 4K-HDHub - All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Fullscreen Player Container -->
+    <div id="playerContainer" class="player-container hidden">
+        <!-- Loading overlay -->
+        <div id="loadingOverlay" class="loading-overlay hidden">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Loading video source...</p>
+        </div>
+
+        <!-- Top Controls -->
+        <div class="controls">
+            <!-- Go Back Button -->
+            <button id="goBackButton" class="control-btn">
+                <div class="arrow-left"></div>
+            </button>
+            
+            <!-- Video Source Select -->
+            <select id="videoSource" aria-label="Select video source" class="video-select">
+                <option value="4K">4K</option>
+                <option value="Autoembed">Autoembed</option>
+               
+            </select>
+            
+            <!-- Next Button (Hidden by default) -->
+            <button id="nextButton" class="control-btn hidden">
+                <div class="arrow-right"></div>
+            </button>
+        </div>
+
+        <!-- Video Player -->
+        <iframe id="videoPlayer" 
+                class="video-player" 
+                src="https://player.videasy.net/movie/1043197"
+                width="100%" 
+                height="100%" 
+                allowfullscreen="" 
+                title="Video Player - Dust Bunny"
+                referrerpolicy="origin" 
+                loading="eager"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+        </iframe>
+    </div>
+     <script>
+// Get DOM elements
+const playButton = document.getElementById('play-btn');
+const playerContainer = document.getElementById('playerContainer');
+const goBackButton = document.getElementById('goBackButton');
+const videoSource = document.getElementById('videoSource');
+const videoPlayer = document.getElementById('videoPlayer');
+const loadingOverlay = document.getElementById('loadingOverlay');
+
+const videoSources = {
+    '4K': 'https://player.videasy.net/movie/',
+    'Autoembed': 'https://player.autoembed.cc/embed/movie/',
+};
+
+const defaultVideoId = '1043197';
+
+// Track loading states
+let loadingStates = {
+    '4K': 'not-loaded', // 'not-loaded', 'loading', 'loaded', 'error'
+    'Autoembed': 'not-loaded'
+};
+
+function showLoading() {
+    loadingOverlay.classList.remove('hidden');
+    videoSource.classList.add('source-changing');
+}
+
+function hideLoading() {
+    loadingOverlay.classList.add('hidden');
+    videoSource.classList.remove('source-changing');
+}
+
+function preloadDefaultVideo() {
+    const defaultSource = loadVideoSourcePreference();
+    
+    if (loadingStates[defaultSource] === 'not-loaded') {
+        loadingStates[defaultSource] = 'loading';
+        
+        const videoUrl = videoSources[defaultSource] + defaultVideoId;
+        
+        // Set up load event listener
+        videoPlayer.onload = function() {
+            loadingStates[defaultSource] = 'loaded';
+            console.log(`${defaultSource} source preloaded successfully`);
+            
+            // Hide loading if player is currently visible and this is the active source
+            if (!playerContainer.classList.contains('hidden') && videoSource.value === defaultSource) {
+                hideLoading();
+            }
+        };
+        
+        // Set up error event listener
+        videoPlayer.onerror = function() {
+            loadingStates[defaultSource] = 'error';
+            console.log(`${defaultSource} source failed to load`);
+            
+            // Hide loading if player is currently visible and this is the active source
+            if (!playerContainer.classList.contains('hidden') && videoSource.value === defaultSource) {
+                hideLoading();
+            }
+        };
+        
+        videoPlayer.src = videoUrl;
+    }
+}
+
+function loadVideoSource(source) {
+    if (loadingStates[source] === 'not-loaded') {
+        loadingStates[source] = 'loading';
+        
+        const videoUrl = videoSources[source] + defaultVideoId;
+        
+        videoPlayer.onload = function() {
+            loadingStates[source] = 'loaded';
+            
+            // Hide loading if player is visible and this is the active source
+            if (!playerContainer.classList.contains('hidden') && videoSource.value === source) {
+                hideLoading();
+            }
+        };
+        
+        videoPlayer.onerror = function() {
+            loadingStates[source] = 'error';
+            
+            // Hide loading if player is visible and this is the active source
+            if (!playerContainer.classList.contains('hidden') && videoSource.value === source) {
+                hideLoading();
+            }
+        };
+        
+        videoPlayer.src = videoUrl;
+    }
+}
+
+function showPlayer() {
+    document.body.style.overflow = 'hidden';
+    playerContainer.classList.remove('hidden');
+    
+    const selectedSource = videoSource.value;
+    const currentState = loadingStates[selectedSource];
+    
+    switch (currentState) {
+        case 'loaded':
+            // Already loaded, show instantly
+            hideLoading();
+            break;
+            
+        case 'loading':
+            // Currently loading, show loading overlay
+            showLoading();
+            break;
+            
+        case 'not-loaded':
+            // Need to start loading
+            showLoading();
+            loadVideoSource(selectedSource);
+            break;
+            
+        case 'error':
+            // Previous load failed, try again
+            showLoading();
+            loadingStates[selectedSource] = 'not-loaded';
+            loadVideoSource(selectedSource);
+            break;
+    }
+}
+
+function hidePlayer() {
+    document.body.style.overflow = 'auto';
+    playerContainer.classList.add('hidden');
+    hideLoading(); // Always hide loading when closing player
+}
+
+function changeVideoSource(source) {
+    const currentState = loadingStates[source];
+    
+    switch (currentState) {
+        case 'loaded':
+            // Already loaded, switch instantly
+            const videoUrl = videoSources[source] + defaultVideoId;
+            videoPlayer.src = videoUrl;
+            hideLoading();
+            break;
+            
+        case 'loading':
+            // Currently loading, show loading overlay
+            showLoading();
+            break;
+            
+        case 'not-loaded':
+            // Need to start loading
+            showLoading();
+            loadVideoSource(source);
+            break;
+            
+        case 'error':
+            // Previous load failed, try again
+            showLoading();
+            loadingStates[source] = 'not-loaded';
+            loadVideoSource(source);
+            break;
+    }
+}
+
+// Preload after page load
+window.addEventListener('load', function() {
+    setTimeout(preloadDefaultVideo, 2000);
+});
+
+function saveVideoSourcePreference(source) {
+    localStorage.setItem('preferredVideoSource', source);
+}
+
+function loadVideoSourcePreference() {
+    return localStorage.getItem('preferredVideoSource') || '4K';
+}
+
+// Event listeners
+playButton.addEventListener('click', showPlayer);
+goBackButton.addEventListener('click', hidePlayer);
+
+videoSource.addEventListener('change', function() {
+    const selectedSource = this.value;
+    saveVideoSourcePreference(selectedSource);
+    changeVideoSource(selectedSource);
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !playerContainer.classList.contains('hidden')) {
+        hidePlayer();
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const savedSource = loadVideoSourcePreference();
+    videoSource.value = savedSource;
+});
+</script>
+  
+
+  <!-- Back to top button -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 z-50 rounded-full shadow-md transition-opacity duration-300 opacity-0 pointer-events-none bg-primary text-primary-foreground p-2" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6" />
+    </svg>
+  </button>
+
+  <!-- Trailer Modal -->
+  <div id="trailer-modal" class="fixed inset-0 z-[9999] flex items-start justify-center pt-20 bg-black/80 backdrop-blur-sm hidden">
+    <div class="relative w-[90%] max-w-3xl bg-background rounded-lg shadow-lg overflow-hidden">
+      <div class="p-4 flex justify-between items-center border-b">
+        <div>
+          <h3 class="text-lg font-semibold">Dust Bunny - Official Trailer</h3>
+          <p class="text-sm text-muted-foreground">Watch the official trailer for Dust Bunny</p>
+        </div>
+        <button id="close-trailer" class="rounded-full hover:bg-muted/50 p-2 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          <span class="sr-only">Close trailer</span>
+        </button>
+      </div>
+      <div class="p-4">
+        <div id="trailer-container" class="aspect-video w-full bg-black/50 rounded-md">
+          <!-- iframe will be inserted here dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
+

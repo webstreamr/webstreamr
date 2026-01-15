@@ -75,4 +75,9 @@ describe('FourKHDHub', () => {
     const streams = await source.handle(ctx, 'movie', new TmdbId(299534, undefined, undefined));
     expect(streams).toMatchSnapshot();
   });
+
+  test('handle dust bunny', async () => {
+    const streams = await source.handle(ctx, 'movie', new TmdbId(1043197, undefined, undefined));
+    expect(streams).toMatchSnapshot();
+  });
 });
