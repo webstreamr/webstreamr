@@ -19,10 +19,8 @@ export class F16Px extends Extractor {
   private domains = ['f16px.com', 'filemoon', 'byse'];
 
   public supports(ctx: Context, url: URL): boolean {
-    return (
-      this.domains.some((d) => url.host.includes(d)) &&
-      supportsMediaFlowProxy(ctx)
-    );
+    return this.domains.some(d => url.host.includes(d))
+      && supportsMediaFlowProxy(ctx);
   }
 
   public override normalize(url: URL): URL {
@@ -42,7 +40,7 @@ export class F16Px extends Extractor {
   ): Promise<UrlResult[]> {
     const headers: Record<string, string> = {};
 
-    if (!this.domains.some((d) => (meta.referer ?? '').includes(d))) {
+    if (!this.domains.some(d => (meta.referer ?? '').includes(d))) {
       headers.Referer = meta.referer ?? `${url.origin}/`;
     }
 
@@ -69,7 +67,7 @@ export class F16Px extends Extractor {
           title = details.title;
         }
       }
-    } catch (error) {
+    } catch {
       // Ignore metadata fetch failures
     }
 
