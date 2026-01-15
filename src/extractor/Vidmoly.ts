@@ -114,6 +114,7 @@ export class Vidmoly extends Extractor {
         }
       }
     } catch {
+      // Ignore main page failures
     }
 
     const proxiedUrl = await buildMediaFlowProxyExtractorStreamUrl(
@@ -135,6 +136,7 @@ export class Vidmoly extends Extractor {
           },
         );
       } catch {
+        // Ignore height detection failure
       }
     }
 
