@@ -145,14 +145,13 @@ export class Vidmoly extends Extractor {
         url: proxiedUrl,
         format: Format.hls,
         label: this.label,
-        sourceId:
-          `${this.id}_${meta.countryCodes?.join('_') ?? 'all'}`,
         ttl: this.ttl,
         requestHeaders: headers,
         meta: {
           ...meta,
           title,
           height,
+          sourceId: `${this.id}_${meta.countryCodes?.join('_') ?? 'all'}`,
         },
       },
     ];
