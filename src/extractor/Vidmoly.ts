@@ -136,7 +136,7 @@ export class Vidmoly extends Extractor {
           },
         );
       } catch {
-        /* ignore height failure */
+
       }
     }
 
