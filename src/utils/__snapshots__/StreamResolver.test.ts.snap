@@ -167,6 +167,21 @@ exports[`resolve ignores not found errors 1`] = `
 }
 `;
 
+exports[`resolve keeps fallback sources if needed 1`] = `
+[
+  {
+    "behaviorHints": {
+      "bingeGroup": "webstreamr-vidsrc-vidsrc-multi",
+      "notWebReady": true,
+    },
+    "name": "WebStreamr 🌐 1080p",
+    "title": "Wake Up Dead Man: A Knives Out Mystery (2025)
+🔗 CloudStream Pro from VidSrc",
+    "url": "https://tmstr4.cloudnestra.com/pl/H4sIAAAAAAAAAwXB0ZKCIBQA0F8CMSf3sTUrAlpQLsYbqE2jWM7WbOLX7zkk6ck2y3ybo_SW4a5zeer7bXbLvWvRBn1Vo5IsAWoPY5SP8SOJeLUQXhWRaY130aGwCEMXi.6Kl2H2JkxnUl66cZ4VoUxpxWC4pvXxFK9aBIZmCdraPiheYVgtqKH_fv_BQJkn4mBqirwu1x7U7lLQn64Ruk44FkdYvZELfwTCVv3xexn7o_7ravXUw27jcTe7cVZmAmG1iupAn3KCeE1ASNyxS6N_W1JK.Sgbvb9HV1jHCwpt9V5NIZBAtK6M3YiCRzUobJrw5Hsc6ykwF04rH8Tiy5A6Avac2MYB_dgV5f.vyM6uQQEAAA--/master.m3u8",
+  },
+]
+`;
+
 exports[`resolve returns empty array if no source found anything 1`] = `
 {
   "streams": [],
@@ -390,4 +405,130 @@ exports[`resolve returns source errors as stream 2`] = `
     },
   ],
 }
+`;
+
+exports[`resolve skips fallback sources if possible 1`] = `
+[
+  {
+    "behaviorHints": {
+      "bingeGroup": "webstreamr-4khdhub-hubcloud_fsl-multi_en_hi",
+      "notWebReady": true,
+      "videoSize": 22430466703,
+    },
+    "name": "WebStreamr 🌐 🇺🇸 🇮🇳 2160p",
+    "title": "Wake.Up.Dead.Man.A.Knives.Out.Mystery.2025.2160p.NF.WEB-DL.DUAL.DDP5.1.Atmos.DV.HDR.H.265-4kHDHub.Com.mkv
+💾 20.89 GB 🔗 HubCloud (FSL) from 4KHDHub",
+    "url": "https://fsl.master.surf/03ee346a29b2b13afa1935bfbd6d05e8?token=1768483596",
+  },
+  {
+    "behaviorHints": {
+      "bingeGroup": "webstreamr-4khdhub-hubcloud_fsl-multi_en_hi",
+      "notWebReady": true,
+      "videoSize": 19295140577,
+    },
+    "name": "WebStreamr 🌐 🇺🇸 🇮🇳 2160p",
+    "title": "Wake.Up.Dead.Man.A.Knives.Out.Mystery.2025.2160p.NF.WEB-DL.DUAL.DDP5.1.Atmos.H.265-4kHDHub.Com.mkv
+💾 17.97 GB 🔗 HubCloud (FSL) from 4KHDHub",
+    "url": "https://fsl.master.surf/e25e157cd10b4c203ad281a9280d5931?token=1768483596",
+  },
+  {
+    "behaviorHints": {
+      "bingeGroup": "webstreamr-4khdhub-hubcloud_pixelserver-multi_en_hi",
+      "notWebReady": true,
+      "videoSize": 19295140577,
+    },
+    "name": "WebStreamr 🌐 🇺🇸 🇮🇳 2160p",
+    "title": "Wake.Up.Dead.Man.A.Knives.Out.Mystery.2025.2160p.NF.WEB-DL.DUAL.DDP5.1.Atmos.H.265-4kHDHub.Com.mkv
+💾 17.97 GB 🔗 HubCloud (PixelServer) from 4KHDHub",
+    "url": "https://pixeldrain.dev/api/file/Kd5MqbDS",
+  },
+  {
+    "behaviorHints": {
+      "bingeGroup": "webstreamr-4khdhub-hubcloud_fsl-multi_en_hi",
+      "notWebReady": true,
+      "videoSize": 10018011217,
+    },
+    "name": "WebStreamr 🌐 🇺🇸 🇮🇳 1080p",
+    "title": "Wake.Up.Dead.Man.A.Knives.Out.Mystery.2025.1080p.NF.WEB-DL.Hindi.DDP5.1.Atmos-English.DDP5.1.Atmos.H.265-4kHdHub.Com.mkv
+💾 9.33 GB 🔗 HubCloud (FSL) from 4KHDHub",
+    "url": "https://fsl.master.surf/7a5fb128b139c4170291e04f0f6cd729?token=1768483596",
+  },
+  {
+    "behaviorHints": {
+      "bingeGroup": "webstreamr-4khdhub-hubcloud_pixelserver-multi_en_hi",
+      "notWebReady": true,
+      "videoSize": 10018011217,
+    },
+    "name": "WebStreamr 🌐 🇺🇸 🇮🇳 1080p",
+    "title": "Wake.Up.Dead.Man.A.Knives.Out.Mystery.2025.1080p.NF.WEB-DL.Hindi.DDP5.1.Atmos-English.DDP5.1.Atmos.H.265-4kHdHub.Com.mkv
+💾 9.33 GB 🔗 HubCloud (PixelServer) from 4KHDHub",
+    "url": "https://pixeldrain.dev/api/file/h7hpWDSW",
+  },
+  {
+    "behaviorHints": {
+      "bingeGroup": "webstreamr-4khdhub-hubcloud_fsl-multi_en_hi",
+      "notWebReady": true,
+      "videoSize": 9985798963,
+    },
+    "name": "WebStreamr 🌐 🇺🇸 🇮🇳 1080p",
+    "title": "Wake.Up.Dead.Man.A.Knives.Out.Mystery.2025.1080p.NF.WEB-DL.Hindi.DDP5.1.Atmos-English.DDP5.1.Atmos.H.264-4kHdHub.Com.mkv
+💾 9.3 GB 🔗 HubCloud (FSL) from 4KHDHub",
+    "url": "https://fsl.master.surf/f956e46a610fa88657d505d07be917e9?token=1768483435",
+  },
+  {
+    "behaviorHints": {
+      "bingeGroup": "webstreamr-4khdhub-hubcloud_pixelserver-multi_en_hi",
+      "notWebReady": true,
+      "videoSize": 9985798963,
+    },
+    "name": "WebStreamr 🌐 🇺🇸 🇮🇳 1080p",
+    "title": "Wake.Up.Dead.Man.A.Knives.Out.Mystery.2025.1080p.NF.WEB-DL.Hindi.DDP5.1.Atmos-English.DDP5.1.Atmos.H.264-4kHdHub.Com.mkv
+💾 9.3 GB 🔗 HubCloud (PixelServer) from 4KHDHub",
+    "url": "https://pixeldrain.dev/api/file/yzyxiGzC",
+  },
+  {
+    "behaviorHints": {
+      "bingeGroup": "webstreamr-4khdhub-hubcloud_fsl-multi_en_hi",
+      "notWebReady": true,
+      "videoSize": 5712306503,
+    },
+    "name": "WebStreamr 🌐 🇺🇸 🇮🇳 1080p",
+    "title": "Wake.Up.Dead.Man.A.Knives.Out.Mystery.2025.1080p.NF.WEB-DL.Hindi.DDP5.1.Atmos-English.DDP5.1.Atmos.HDR-DV.H.265-4kHdHub.Com.mkv
+💾 5.32 GB 🔗 HubCloud (FSL) from 4KHDHub",
+    "url": "https://fsl.master.surf/27df6ba61996f9a2e1725d5faa4a0cbb?token=1768483596",
+  },
+  {
+    "behaviorHints": {
+      "bingeGroup": "webstreamr-4khdhub-hubcloud_pixelserver-multi_en_hi",
+      "notWebReady": true,
+      "videoSize": 5712306503,
+    },
+    "name": "WebStreamr 🌐 🇺🇸 🇮🇳 1080p",
+    "title": "Wake.Up.Dead.Man.A.Knives.Out.Mystery.2025.1080p.NF.WEB-DL.Hindi.DDP5.1.Atmos-English.DDP5.1.Atmos.HDR-DV.H.265-4kHdHub.Com.mkv
+💾 5.32 GB 🔗 HubCloud (PixelServer) from 4KHDHub",
+    "url": "https://pixeldrain.dev/api/file/gPsPz3B7",
+  },
+  {
+    "behaviorHints": {
+      "bingeGroup": "webstreamr-4khdhub-hubcloud_fsl-multi_en_hi",
+      "notWebReady": true,
+      "videoSize": 1374389534,
+    },
+    "name": "WebStreamr 🌐 🇺🇸 🇮🇳 1080p",
+    "title": "Wake.Up.Dead.Man.A.Knives.Out.Mystery.2025.1080p.NF.WEB-DL.Hindi.AAC5.1-English.AAC5.1.AV1-4kHdHub.Com.mkv
+💾 1.28 GB 🔗 HubCloud (FSL) from 4KHDHub",
+    "url": "https://fsl.master.surf/f391f8beec927157dc784b261af950c2?token=1768483596",
+  },
+  {
+    "behaviorHints": {
+      "bingeGroup": "webstreamr-4khdhub-hubcloud_pixelserver-multi_en_hi",
+      "notWebReady": true,
+      "videoSize": 1374389534,
+    },
+    "name": "WebStreamr 🌐 🇺🇸 🇮🇳 1080p",
+    "title": "Wake.Up.Dead.Man.A.Knives.Out.Mystery.2025.1080p.NF.WEB-DL.Hindi.AAC5.1-English.AAC5.1.AV1-4kHdHub.Com.mkv
+💾 1.28 GB 🔗 HubCloud (PixelServer) from 4KHDHub",
+    "url": "https://pixeldrain.dev/api/file/XsNetT2P",
+  },
+]
 `;

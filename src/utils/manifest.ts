@@ -35,6 +35,8 @@ export const buildManifest = (sources: Source[], extractors: Extractor[], config
     },
   };
 
+  sources.sort((sourceA, sourceB) => sourceA.label.localeCompare(sourceB.label));
+
   const countryCodeSources: Partial<Record<CountryCode, Source[]>> = {};
   sources.forEach(source =>
     source.countryCodes

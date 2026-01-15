@@ -7,6 +7,7 @@ exports[`VixSrc Black Mirror 1`] = `
     "label": "VixSrc",
     "meta": {
       "countryCodes": [
+        "multi",
         "en",
         "it",
       ],
@@ -28,6 +29,7 @@ exports[`VixSrc Full Metal Jacket 1`] = `
     "label": "VixSrc",
     "meta": {
       "countryCodes": [
+        "multi",
         "en",
         "it",
       ],

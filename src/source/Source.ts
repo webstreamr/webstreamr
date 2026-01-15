@@ -27,6 +27,8 @@ export abstract class Source {
 
   public readonly ttl: number = 43200000; // 12h
 
+  public readonly isFallback: boolean = false; // fallback sources are only considered if we don't have enough URLs from others already
+
   public abstract readonly contentTypes: ContentType[];
 
   public abstract readonly countryCodes: CountryCode[];

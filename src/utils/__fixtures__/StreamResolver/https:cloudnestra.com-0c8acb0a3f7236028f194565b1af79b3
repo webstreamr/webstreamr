@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="" crossorigin="anonymous"/>
+<link rel="stylesheet" href="/style_rcp-e600e6.css?t=1744906951"/>
+
+<style>
+    body {
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+    .hidden {
+        display:none;
+    }
+    
+    #asdf {
+        width: 0px;
+        height: 0px;
+    }
+    
+    #iframe_title {
+        position: absolute;
+        top: calc(50% + 45px);
+        font-size: 1.1em;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        width: calc(100% - 30px);
+        text-align: center;
+        padding: 0px 15px;
+    }
+</style>
+</head>
+<body data-i="14364480"  >
+    
+    
+        <!--<div id="pop_asdf" style="position:absolute; width:100%; height:100%; z-index:2147483650; pointer-events: none;"></div>-->
+        
+    <!--<div id="loading_overlay"></div>-->
+    <div id="the_frame" style="background-image: none;">
+                <div id="pl_but_background" style="background-image: url('//image.tmdb.org/t/p/w780/c1oFbGc89FVZ4KvAe8riNJ8lPX1.jpg');">
+            <div id="iframe_title">
+                Wake Up Dead Man: A Knives Out Mystery (2025)            </div>
+            <i id="pl_but" class="fas fa-play"></i>
+        </div>
+            </div>
+    
+    <div id="hidden" style="display:hidden;"></div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha256-1A78rJEdiWTzco6qdn3igTBv9VupN3Q1ozZNTR4WE/Y=" crossorigin="anonymous"></script>
+    <script src="/base64.js?t="></script>
+    
+    <script src="/sbx.js?t=1751380596"></script>
+
+    
+    <script>
+    
+    /*
+    $(document).ready(function(){
+        
+        
+        if($.cookie('pop_asdf')){
+            $("#pop_asdf").addClass("hidden");
+        }
+        
+        $("#pop_asdf").click(function(){
+            if(!$.cookie('pop_asdf')){
+                if($.cookie('pop_asdf_tmp') >= 3){
+                    var date = new Date();
+                    date.setTime(date.getTime() + (10800 * 1000));
+                    $.cookie('pop_asdf', 1, { expires: date });
+                    $("#pop_asdf").addClass("hidden");
+                }else{
+                    var cookie_value = 1;
+                    if($.cookie('pop_asdf_tmp'))
+                        cookie_value = $.cookie('pop_asdf_tmp');
+                        
+                    cookie_value++;
+                    
+                    $.cookie('pop_asdf_tmp', cookie_value);
+                    $(this).addClass("hidden");
+                    setTimeout(function(){
+                        $("#pop_asdf").removeClass("hidden");
+                    }, 59000);
+                }
+            }
+        });
+    });
+    */
+    
+        
+    $("#pl_but_background , #pl_but").click(function(){
+        loadIframe();
+    });
+    
+        
+    function loadIframe(data = 1){
+        if(data == 1){
+            $("#the_frame").removeAttr("style");
+            $("#the_frame").html("");
+            $('<iframe>', {
+               id: 'player_iframe',
+               src: '/prorcp/YTljYzc3N2YxNzRhN2E3ODIwYTEwYzlhMjRkMmU5MjM6ZVRjdk5UbDBaV2RvUVZsak9DOURVV3BTZFZwMVMwcDFSRXR1TDBoWmVtMDFNM2R5VVVoNVpraEhhMWR4UlZwSlIyOVlTRlJQWjBkWU5ITkxTV1pIYVhBd01ERlpiSE5qWWtwMFdtMXhVelJrWmxkSWFYWk9abTl2VVdOdGVHMVJibGMwTDB3NVJqSlVNa05VY25GUmNqVmxiMDlQYkZCNVNXaFRVRUZ4YkhkTVRHSTFTMlJsWkV0eWRtdFNNMlYzWlRRMGRtSXlhbmhqZEdoVU1sbFFWRTVNV1hVelRGSnZVblpsTW1SQlFXdDVZa1ZEYkVKUVJYWndhRWRLVkdsaE1GWjNVR2xRTUhCS1FqWkpORmwzYlROcFNGVXdPVGRQUzJOak4yMW5heTlZVW5kMWNVdFhWMUVyU1ZoU1dXNHllV3RpVm1oMWVsWlFZVVpLTVhSRGFrWjNZVmRtV1dOUllWRnhNRFpxZUZoSVMyRkNOalJ5TVRSUGNtaHlOV3Q0WmxRNVVYbGpValk0UjNCRWNVUm9TRE00TjNSc1dVWk1TMVF4VDBOWFFYQkJVRmhwTTJWVGJWTnNNMUpNU1hKWFZFTXlRbVp1YWpSdWMxTmtaakJ1SzBadVFqWjFlVWRHWWtsQ1NWcENNMDUxYkVWcVpsTjJWbTgyUlhFMmFFRTVUbU5NWkVGSk1rRk5WbXh0WkN0VWNERlRWVVp0TUdKUllXRlJUMGh0YVU1SFVqRTNMMVU0Y2pneVNsZFVaMlpoYVd4TFUydG5VRXRJZDBGcFJrRnhhRUoyTlRSb00xWlVXRGRwVWtWT1RFNVFLMngzVEhOa1RIQjZaV1JhUkc1VVRWQmhRa3hGWVZWaWRFZGlUM0JyWWpsRlp5OW5ia0V2Y1ROUFUyUlNiSEJCWW5aNGJEWnNWaXMzY2xwYVZEVlBOR1pxY0dGV1FtOUdWamxRZWpWdVNscHFXVkZwY25sbE9YQlJkVTUxY1VGM2RuQlFZVWRtU1cxdmQzQmFhWFJWVkN0elMwczRTMkZWWmpkRGNsSTVWME5OY2tSU1pVeHBVbk5xZFRKWldVWklWMUpUTUcxVFZHRlBWM0paTUhCcE1tdFBUM2R4YlZCekwzUmFWMFVyWkd4dlEydzRZbG8yT1hwVFZrdFRWRkpGVVdaNmJtTnRkbFJXSzBobWMxZENlR0pETVV0TU5FUmtkV1J2Y21zemQyNXpaa2czV0UxamRUTjJVRWxGZFdwMFYzRk5aMmhyV2tkRmFHTm5USHBDWjFKTFlsUldabkUxWWtSbVNucHlVVlJLWnpneVdWSjVhMk5UYm0weGN6SjVkVW92VUU5TlVVaFJRaXRNWTFwRWQwOW5OVVpuTldkc09VMWphWFF5UnpWVU5uQXJkVkpLYjJVd1EwTlJibEYwWWpSUk0zcHpjV2R0VkRkVWVuVjJNR2hpUm5KYU5IbHJNRkZXWkZGWlptMTNPRVZXY1ZsUWMxSnhPRUpJVlhsdVZXaExjRGtyZURjeVZUTnBObEo2ZVZNeFQzRlRXSFF6WkhwcGFrWm1RV1l5TmxKcmJUVnhWMWhWVWt0SFFVSlJTVEpCSzJJME5UVmtkRmhLYkc5NFdtTm1jVWRHYW01amQyNXhkM1YzUVc1VFJITkZlbXhxWTBoNlZHUjNWM1pGUml0WVZXbEVhV1pMYms5Q09WRkZRVkZ2UWt4TmFEaDJOWE5UYmxOc09VNWhSV3h2Y1dwb1dFaHNjM3BJYVVvM2RrMW1SVUpvTjFaUFRXeHJSMWRqVERkMWNqVXZUbWRWUlV4dGFUZGhNbGxyVlVaalEySktkbk5DTkM5bk9FbzROR0Y2Umtadk5tRjVjVzlYYm5GaVNIZExVblZNZW1kM1kzZEpXRWhPVW1ablUxSTVNMmczT0RJMksyWjRkMEpwWm1kemQwbEVVMGhtWTBkUlFWa3pOMnBDWkRSelZIcG5aazVPZEVReVZra3JVMHR3TnpKSU9IZGphWGRKZDBKRWRIRlZTRWhQVkdOclZXcFZWa0V4Vm5GR055OWxXblp1UkhkU1pqbEdaeTlEVUc1RmIwTjJXVFkwVVVoMWFIbEpXREJ4WVUxdWFVaHlTUzkwT1ZZeVVVRXZUWGhpVHpWaU1HOU5WVlV6Vm1zMFpWRXZjamt2TTJkc2FXUnpTakF3ZUhObGRXVlBaaTgyUnpGVVFURnRka2R6YkVSalQyTTFjRFYyU1RCQmVrVldkVVJoTW1sTWJUVjBWRXR2ZDBjPQ--',
+               frameborder: 0,
+               scrolling: 'no',
+               allowfullscreen: 'yes',
+               allow: "autoplay",
+               style: 'height: 100%; width: 100%;'
+            }).appendTo('#the_frame');
+            $("#player_iframe").on("load", function () {
+                $("#the_frame").attr("style","background-image: none;");
+            });
+        }
+    }
+    
+    // pm redirector
+    window.addEventListener('message', message => {
+        if (message.source == window) {
+            return; // Skip message in this event listener
+        }
+        
+        var the_iframe = document.getElementById('player_iframe');
+        
+        if(message.source == window.parent){
+            the_iframe.contentWindow.postMessage(message.data,'*');
+        }else{
+            window.parent.postMessage(message.data , '*');
+        }
+        
+        
+        
+    });
+        
+        
+        
+    </script>
+    
+    
+    
+    
+    
+    
+   
+</body>
+</html>

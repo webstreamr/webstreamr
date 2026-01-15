@@ -2,21 +2,27 @@ import { ContentType } from 'stremio-addon-sdk';
 import winston from 'winston';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
 import { createExtractors, Extractor, ExtractorRegistry } from '../extractor';
+import { HubCloud } from '../extractor/HubCloud';
+import { VidSrc as VidSrcExtractor } from '../extractor/VidSrc';
 import { Source, SourceResult } from '../source';
+import { FourKHDHub } from '../source/FourKHDHub';
 import { MeineCloud } from '../source/MeineCloud';
 import { MostraGuarda } from '../source/MostraGuarda';
+import { VidSrc } from '../source/VidSrc';
 import { createTestContext } from '../test';
 import { BlockedReason, CountryCode, Format, UrlResult } from '../types';
 import { FetcherMock } from './FetcherMock';
-import { ImdbId } from './id';
+import { ImdbId, TmdbId } from './id';
 import { StreamResolver } from './StreamResolver';
 
 const logger = winston.createLogger({ transports: [new winston.transports.Console({ level: 'nope' })] });
 const fetcher = new FetcherMock(`${__dirname}/__fixtures__/StreamResolver`);
 const ctx = createTestContext({ de: 'on', it: 'on' });
 
+const fourKhdHub = new FourKHDHub(fetcher);
 const meineCloud = new MeineCloud(fetcher);
 const mostraGuarda = new MostraGuarda(fetcher);
+const vidSrc = new VidSrc();
 
 describe('resolve', () => {
   test('returns info as stream if no sources were configured', async () => {
@@ -66,6 +72,20 @@ describe('resolve', () => {
     const streamsWithExternalUrls = await streamResolver.resolve({ ...ctx, config: { ...ctx.config, includeExternalUrls: 'on' } }, [meineCloud, mostraGuarda], 'movie', new ImdbId('tt29141112', undefined, undefined));
     expect(streamsWithExternalUrls.ttl).not.toBeUndefined();
     expect(streamsWithExternalUrls.streams).toMatchSnapshot();
+  });
+
+  test('skips fallback sources if possible', async () => {
+    const streamResolver = new StreamResolver(logger, new ExtractorRegistry(logger, [new HubCloud(fetcher), new VidSrcExtractor(fetcher, ['vidsrc-embed.ru'])]));
+
+    const streams = await streamResolver.resolve(createTestContext(), [fourKhdHub, vidSrc], 'movie', new TmdbId(812583, undefined, undefined));
+    expect(streams.streams).toMatchSnapshot();
+  });
+
+  test('keeps fallback sources if needed', async () => {
+    const streamResolver = new StreamResolver(logger, new ExtractorRegistry(logger, [new HubCloud(fetcher), new VidSrcExtractor(fetcher, ['vidsrc-embed.ru'])]));
+
+    const streams = await streamResolver.resolve(createTestContext(), [vidSrc], 'movie', new TmdbId(812583, undefined, undefined));
+    expect(streams.streams).toMatchSnapshot();
   });
 
   test('adds error info', async () => {

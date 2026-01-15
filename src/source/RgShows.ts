@@ -8,6 +8,8 @@ export class RgShows extends Source {
 
   public readonly label = 'RgShows';
 
+  public override readonly isFallback = true;
+
   public readonly contentTypes: ContentType[] = ['movie', 'series'];
 
   public readonly countryCodes: CountryCode[] = [CountryCode.multi];

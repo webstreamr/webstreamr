@@ -1,14 +1,15 @@
+import { Mutex } from 'async-mutex';
 import bytes from 'bytes';
 import { ContentType, Stream } from 'stremio-addon-sdk';
 import winston from 'winston';
 import { logErrorAndReturnNiceString } from '../error';
 import { ExtractorRegistry } from '../extractor';
 import { Source } from '../source';
-import { Context, Format, UrlResult } from '../types';
+import { Context, CountryCode, Format, UrlResult } from '../types';
 import { showErrors, showExternalUrls } from './config';
 import { envGetAppName } from './env';
 import { Id } from './id';
-import { flagFromCountryCode } from './language';
+import { countryCodesFromConfig, flagFromCountryCode } from './language';
 
 interface ResolveResponse {
   streams: Stream[];
@@ -40,22 +41,39 @@ export class StreamResolver {
     const streams: Stream[] = [];
 
     let sourceErrorCount = 0;
-    const urlResults: UrlResult[] = [];
-    const sourcePromises = sources.map(async (source) => {
-      if (!source.contentTypes.includes(type)) {
-        return;
-      }
+    const sourceErrorCountMutex = new Mutex();
 
+    const urlResults: UrlResult[] = [];
+
+    const urlResultsCountByCountryCode = new Map<CountryCode, number>();
+    const urlResultsCountByCountryCodeMutex = new Mutex();
+
+    const skippedFallbackSources: Source[] = [];
+
+    const handleSource = async (source: Source) => {
       try {
         const sourceResults = await source.handle(ctx, type, id);
-
         const sourceUrlResults = await Promise.all(
           sourceResults.map(({ url, meta }) => this.extractorRegistry.handle(ctx, url, { ...meta, sourceLabel: source.label, sourceId: source.id }, true)),
         );
 
-        urlResults.push(...sourceUrlResults.flat());
+        const urlResultsToAdd = sourceUrlResults.flat();
+        for (const urlResult of urlResultsToAdd) {
+          if (urlResult.error) {
+            continue;
+          }
+
+          await urlResultsCountByCountryCodeMutex.runExclusive(() => {
+            urlResult.meta?.countryCodes?.forEach((countryCode) => {
+              urlResultsCountByCountryCode.set(countryCode, (urlResultsCountByCountryCode.get(countryCode) ?? 0) + 1);
+            });
+          });
+        }
+        urlResults.push(...urlResultsToAdd);
       } catch (error) {
-        sourceErrorCount++;
+        await sourceErrorCountMutex.runExclusive(() => {
+          sourceErrorCount++;
+        });
 
         if (showErrors(ctx.config)) {
           streams.push({
@@ -65,8 +83,33 @@ export class StreamResolver {
           });
         }
       }
+    };
+
+    // Resolve non-fallback sources in parallel extracting all their results
+    const sourcePromises = sources.map(async (source) => {
+      if (!source.contentTypes.includes(type)) {
+        return;
+      }
+
+      if (source.isFallback) {
+        skippedFallbackSources.push(source);
+        return;
+      }
+
+      await handleSource(source);
     });
     await Promise.all(sourcePromises);
+
+    // Resolve fallback sources if we didn't get enough results already
+    for (const skippedFallbackSource of skippedFallbackSources) {
+      const configCountryCodes = countryCodesFromConfig(ctx.config);
+      const resultCount = urlResults.reduce((accumulator, urlResult) => accumulator + Number(this.arraysIntersect(urlResult.meta?.countryCodes as CountryCode[], configCountryCodes)), 0);
+      if (resultCount > 2) {
+        continue;
+      }
+
+      await handleSource(skippedFallbackSource);
+    }
 
     urlResults.sort((a, b) => {
       if (a.error || b.error) {
@@ -118,6 +161,10 @@ export class StreamResolver {
       ...(ttl && { ttl }),
     };
   };
+
+  private arraysIntersect<T>(arr1: T[], arr2: T[]): boolean {
+    return arr1.filter(item => arr2.includes(item)).length > 0;
+  }
 
   private determineTtl(urlResults: UrlResult[]): number | undefined {
     if (!urlResults.length) {

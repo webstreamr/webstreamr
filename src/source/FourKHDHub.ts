@@ -50,7 +50,7 @@ export class FourKHDHub extends Source {
         $(`.episode-item`)
           .filter((_i, el) => $('.episode-title', el).text().includes(`S${String(tmdbId.season).padStart(2, '0')}`))
           .map((_i, el) => ({
-            countryCodes: findCountryCodes($(el).html() as string),
+            countryCodes: [CountryCode.multi, ...findCountryCodes($(el).html() as string)],
             downloadItem: $('.episode-download-item', el)
               .filter((_i, el) => $(el).text().includes(`Episode-${String(tmdbId.episode).padStart(2, '0')}`))
               .get(0),
@@ -62,7 +62,7 @@ export class FourKHDHub extends Source {
 
     return Promise.all(
       $(`.download-item`)
-        .map(async (_i, el) => await this.extractSourceResults(ctx, $, el, findCountryCodes($(el).html() as string)))
+        .map(async (_i, el) => await this.extractSourceResults(ctx, $, el, [CountryCode.multi, ...findCountryCodes($(el).html() as string)]))
         .toArray(),
     );
   };

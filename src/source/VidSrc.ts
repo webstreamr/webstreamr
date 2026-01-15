@@ -8,6 +8,8 @@ export class VidSrc extends Source {
 
   public readonly label = 'VidSrc';
 
+  public override readonly isFallback = true;
+
   public readonly contentTypes: ContentType[] = ['movie', 'series'];
 
   public readonly countryCodes: CountryCode[] = [CountryCode.multi];

@@ -50,7 +50,7 @@ const addon = express();
 addon.set('trust proxy', true);
 
 if (envIsProd()) {
-  addon.use(rateLimit({ windowMs: 60 * 1000, limit: 10 }));
+  addon.use(rateLimit({ windowMs: 60 * 1000, limit: 30 }));
 }
 
 addon.use((req: Request, res: Response, next: NextFunction) => {

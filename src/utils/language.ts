@@ -1,4 +1,4 @@
-import { CountryCode } from '../types';
+import { Config, CountryCode } from '../types';
 
 const countryCodeMap: Record<CountryCode, { language: string; flag: string; iso639: string | undefined }> = {
   multi: { language: 'Multi', flag: '🌐', iso639: undefined },
@@ -64,7 +64,19 @@ export const findCountryCodes = (value: string): CountryCode[] => {
   const countryCodes: CountryCode[] = [];
 
   for (const countryCode in countryCodeMap) {
-    if (value.includes(countryCodeMap[countryCode as CountryCode]['language'])) {
+    if (!countryCodes.includes(countryCode as CountryCode) && value.includes(countryCodeMap[countryCode as CountryCode]['language'])) {
+      countryCodes.push(countryCode as CountryCode);
+    }
+  }
+
+  return countryCodes;
+};
+
+export const countryCodesFromConfig = (config: Config): CountryCode[] => {
+  const countryCodes: CountryCode[] = [];
+
+  for (const countryCode in countryCodeMap) {
+    if (countryCode in config) {
       countryCodes.push(countryCode as CountryCode);
     }
   }

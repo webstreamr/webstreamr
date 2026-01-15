@@ -28,12 +28,11 @@ export const createSources = (fetcher: Fetcher): Source[] => {
   return [
     // multi
     new FourKHDHub(fetcher),
-    new RgShows(fetcher),
     new VixSrc(fetcher),
+    new VidSrc(),
+    new RgShows(fetcher),
     // AL
     new Kokoshka(fetcher),
-    // EN
-    new VidSrc(),
     // ES / MX
     new CineHDPlus(fetcher),
     new Cuevana(fetcher),
