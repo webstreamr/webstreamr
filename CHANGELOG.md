@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.65.0](https://github.com/webstreamr/webstreamr/compare/v0.64.0...v0.65.0) (2026-01-15)
+
+
+### Miscellaneous Chores
+
+* make cache immutable, add rate limit ([7593d3d](https://github.com/webstreamr/webstreamr/commit/7593d3d62e638168c9cfbab5cd71f514745ed42a))
+
+
+### Features
+
+* add fetcher http stats ([4cf08fc](https://github.com/webstreamr/webstreamr/commit/4cf08fc6d55dbcc1de551091d14f731265b89fd5))
+* introduce fallback sources and mark VidSrc and RgShows as such ([bad1170](https://github.com/webstreamr/webstreamr/commit/bad1170421298ef6aa5f1c69a6214065fe184773))
+
+
+### Bug Fixes
+
+* **extractor:** make VixSrc fall back to multi instead of it if language cannot be determined ([ce11a80](https://github.com/webstreamr/webstreamr/commit/ce11a80ba9d71def7f4eab29666eb606e1f5ad59))
+
 ## [0.64.0](https://github.com/webstreamr/webstreamr/compare/v0.63.1...v0.64.0) (2026-01-14)
 
 
