@@ -132,7 +132,8 @@ export class StreamWish extends Extractor {
   }
 
   /**
-   * Safe under `noUncheckedIndexedAccess`
+   * Strict-safe random selector.
+   * Works with `noUncheckedIndexedAccess` and forbids non-null assertions.
    */
   private rand<T>(arr: readonly T[]): T {
     if (arr.length === 0) {
@@ -140,8 +141,13 @@ export class StreamWish extends Extractor {
     }
 
     const index = Math.floor(Math.random() * arr.length);
+    const value = arr.at(index);
 
-    return arr.at(index)!;
+    if (value === undefined) {
+      throw new Error('StreamWish: random index out of bounds');
+    }
+
+    return value;
   }
 
   private getMediaId(path: string): string {
@@ -253,7 +259,7 @@ export class StreamWish extends Extractor {
         ];
       }
     } catch {
-      // Ignore embed/iframe failures
+      // Ignore embed / iframe failures
     }
 
     const proxyUrl = await buildMediaFlowProxyExtractorStreamUrl(
