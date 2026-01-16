@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.65.3](https://github.com/webstreamr/webstreamr/compare/v0.65.2...v0.65.3) (2026-01-16)
+
+
+### Documentation
+
+* add tmp mount for persistent cache to Docker run example ([231a12f](https://github.com/webstreamr/webstreamr/commit/231a12f685e56aeaab7fd377c4b953e992bcce7e))
+* mention FlareSolverr support / env var ([e54b54b](https://github.com/webstreamr/webstreamr/commit/e54b54bfb3e13d417b52be001bcd646edfcf4bcf))
+
+
+### Bug Fixes
+
+* **fetcher:** more FlareSolverr related stats, fix clearance cookie expiration ([4cfbf73](https://github.com/webstreamr/webstreamr/commit/4cfbf731b87873e70a76119f96984e2f1a958fdf))
+
 ## [0.65.2](https://github.com/webstreamr/webstreamr/compare/v0.65.1...v0.65.2) (2026-01-16)
 
 
