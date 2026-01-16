@@ -127,7 +127,7 @@ export class Fetcher {
   }
 
   protected async fetchWithTimeout(ctx: Context, url: URL, requestConfig?: CustomRequestConfig, tryCount = 0): Promise<AxiosResponse> {
-    const proxyUrl = this.getProxyForUrl(url);
+    const proxyUrl = this.getProxyForUrl(ctx, url);
 
     let message = `Fetch ${requestConfig?.method ?? 'GET'} ${url}`;
     /* istanbul ignore if */
@@ -244,8 +244,17 @@ export class Fetcher {
 
       this.logger.info(`Query FlareSolverr for ${url.href}`, ctx);
 
-      const data = { cmd: 'request.get', url: url.href, session: 'default' };
-      const challengeResult = (await this.queuedFetch(ctx, new URL(flareSolverrEndpoint), { method: 'POST', data, headers: { 'Content-Type': 'application/json' }, queueLimit: 1, timeout: 15000 })).data as FlareSolverrResult;
+      const data = {
+        cmd: 'request.get',
+        url: url.href,
+        session: 'default',
+        maxTimeout: 60000,
+        ...(proxyUrl && { proxy: { url: proxyUrl.href } }),
+      };
+
+      const requestConfig = { method: 'POST', data, headers: { 'Content-Type': 'application/json' }, timeout: 60000 };
+      const challengeResult = JSON.parse((await this.queuedFetch(ctx, new URL('/v1', flareSolverrEndpoint), requestConfig)).data) as FlareSolverrResult;
+
       if (challengeResult.status !== 'ok') {
         this.logger.warn(`FlareSolverr issue: ${JSON.stringify(challengeResult)}`, ctx);
         throw new BlockedError(url, BlockedReason.flaresolverr_failed, {});
@@ -344,7 +353,16 @@ export class Fetcher {
     return new Promise(sleep => setTimeout(sleep, ms));
   }
 
-  private getProxyForUrl(url: URL): URL | undefined {
+  private getProxyForUrl(ctx: Context, url: URL): URL | undefined {
+    if (ctx.config.mediaFlowProxyUrl && url.href.includes(ctx.config.mediaFlowProxyUrl)) {
+      return undefined;
+    }
+
+    const flareSolverrEndpoint = envGet('FLARESOLVERR_ENDPOINT');
+    if (flareSolverrEndpoint && url.href.startsWith(flareSolverrEndpoint)) {
+      return undefined;
+    }
+
     const proxyConfig = process.env['PROXY_CONFIG'];
 
     if (proxyConfig) {
