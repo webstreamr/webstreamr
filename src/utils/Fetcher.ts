@@ -21,7 +21,7 @@ interface FlareSolverrResult {
     status: number;
     cookies: {
       domain: string;
-      expires: number;
+      expiry: number;
       httpOnly: boolean;
       name: string;
       path: string;
@@ -64,6 +64,7 @@ export class Fetcher {
   private readonly rateLimitedCache = new Cacheable({ primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }) });
   private readonly semaphores = new Map<string, SemaphoreInterface>();
   private readonly hostUserAgentMap = new Map<string, string>();
+
   private readonly cookieJar = new CookieJar();
 
   private readonly timeoutsCountCache = new Cacheable({ primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }) });
@@ -80,6 +81,8 @@ export class Fetcher {
   public stats() {
     return {
       httpStatus: Object.fromEntries(this.httpStatus),
+      hostUserAgentMap: Object.fromEntries(this.hostUserAgentMap),
+      cookieJar: this.cookieJar.toJSON(),
     };
   };
 
@@ -170,8 +173,6 @@ export class Fetcher {
 
       const forwardedProto = url.protocol.slice(0, -1);
 
-      const hostUserAgent = this.hostUserAgentMap.get(url.host);
-
       response = await this.axios.request({
         ...requestConfig,
         headers: {
@@ -180,7 +181,6 @@ export class Fetcher {
           ...(url.username && { Authorization: 'Basic ' + Buffer.from(`${url.username}:${url.password}`).toString('base64') }),
           'Priority': 'u=0',
           'User-Agent': this.hostUserAgentMap.get(url.host) ?? 'Mozilla',
-          ...(hostUserAgent && { 'User-Agent': hostUserAgent }),
           ...(cookieString && { Cookie: cookieString }),
           ...(ctx.ip && !requestConfig?.noProxyHeaders && {
             'Forwarded': `by=unknown;for=${ctx.ip};host=${url.host};proto=${forwardedProto}`,
@@ -252,7 +252,7 @@ export class Fetcher {
         ...(proxyUrl && { proxy: { url: proxyUrl.href } }),
       };
 
-      const requestConfig = { method: 'POST', data, headers: { 'Content-Type': 'application/json' }, timeout: 60000 };
+      const requestConfig: CustomRequestConfig = { method: 'POST', data, headers: { 'Content-Type': 'application/json' }, timeout: 60000, queueLimit: 1 };
       const challengeResult = JSON.parse((await this.queuedFetch(ctx, new URL('/v1', flareSolverrEndpoint), requestConfig)).data) as FlareSolverrResult;
 
       if (challengeResult.status !== 'ok') {
@@ -267,10 +267,14 @@ export class Fetcher {
 
         this.cookieJar.setCookie(
           new Cookie({
-            key: cookie.name,
-            value: cookie.value,
-            expires: new Date(cookie.expires * 1000),
             domain: cookie.domain.replace(/^.+/, ''),
+            expires: new Date(cookie.expiry * 1000),
+            httpOnly: cookie.httpOnly,
+            key: cookie.name,
+            path: cookie.path,
+            sameSite: cookie.sameSite,
+            secure: cookie.secure,
+            value: cookie.value,
           }),
           url.href,
         );
