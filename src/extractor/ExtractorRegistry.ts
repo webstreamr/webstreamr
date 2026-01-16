@@ -57,13 +57,11 @@ export class ExtractorRegistry {
     const storedDataRaw = await this.urlResultCache.getRaw<UrlResult[]>(cacheKey);
     const expires = storedDataRaw?.expires;
     if (storedDataRaw && expires) {
-      // Ignore the cache randomly after at least 2/3 of the TTL passed to start refreshing results slowly
-      const refreshTimestamp = this.randomInteger(expires - extractor.ttl * (2 / 3), expires);
-      const now = Date.now();
+      const ttl = expires - Date.now();
 
       /* istanbul ignore if */
-      if (refreshTimestamp > now) {
-        return (storedDataRaw.value as UrlResult[]).map(urlResult => ({ ...urlResult, ttl: expires - now, url: new URL(urlResult.url) }));
+      if (ttl > 0) {
+        return (storedDataRaw.value as UrlResult[]).map(urlResult => ({ ...urlResult, ttl, url: new URL(urlResult.url) }));
       }
     }
 
@@ -111,8 +109,4 @@ export class ExtractorRegistry {
 
     return urlResults;
   };
-
-  private randomInteger(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
 }
