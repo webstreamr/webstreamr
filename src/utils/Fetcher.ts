@@ -248,11 +248,11 @@ export class Fetcher {
         cmd: 'request.get',
         url: url.href,
         session: 'default',
-        maxTimeout: 60000,
+        maxTimeout: 15000,
         ...(proxyUrl && { proxy: { url: proxyUrl.href } }),
       };
 
-      const requestConfig: CustomRequestConfig = { method: 'POST', data, headers: { 'Content-Type': 'application/json' }, timeout: 60000, queueLimit: 1 };
+      const requestConfig: CustomRequestConfig = { method: 'POST', data, headers: { 'Content-Type': 'application/json' }, timeout: 15000, queueTimeout: 60000, queueLimit: 1 };
       const challengeResult = JSON.parse((await this.queuedFetch(ctx, new URL('/v1', flareSolverrEndpoint), requestConfig)).data) as FlareSolverrResult;
 
       if (challengeResult.status !== 'ok') {
@@ -261,7 +261,7 @@ export class Fetcher {
       }
 
       challengeResult.solution.cookies.forEach((cookie) => {
-        if (!['cf_clearance'].includes(cookie.name)) {
+        if (!cookie.name.startsWith('cf_') && !cookie.name.startsWith('__cf') && !cookie.name.startsWith('__ddg')) {
           return;
         }
 
