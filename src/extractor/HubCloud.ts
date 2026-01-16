@@ -8,7 +8,7 @@ export class HubCloud extends Extractor {
 
   public readonly label = 'HubCloud';
 
-  public override readonly ttl: number = 259200000; // 3d
+  public override readonly ttl: number = 518400000; // 6d
 
   public supports(_ctx: Context, url: URL): boolean {
     return null !== url.host.match(/hubcloud/);

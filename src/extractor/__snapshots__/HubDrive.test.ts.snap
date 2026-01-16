@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`HubDrive handle avatar 1`] = `
+[
+  {
+    "format": "unknown",
+    "label": "HubCloud (FSL)",
+    "meta": {
+      "bytes": 64649995223,
+      "extractorId": "hubcloud_fsl",
+      "title": "Avatar (2009) Extended Collector's Edition IMAX 2160p UHD BluRay REMUX DV HDR 10bit HEVC [Hindi DDP 5.1 + English DTS-HD MA 5.1] x265 (LM-LUMiX) 4KHDHUB.[Com].mkv",
+    },
+    "ttl": 518400000,
+    "url": "https://love.polgen.buzz/9eb5c280ca70adc5c98417476ff16743?token=1768569027",
+  },
+]
+`;

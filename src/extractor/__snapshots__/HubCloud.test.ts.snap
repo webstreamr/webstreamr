@@ -10,7 +10,7 @@ exports[`HubCloud handle crayon shin-chan 1993 1`] = `
       "extractorId": "hubcloud_fsl",
       "title": "Crayon Shinchan Action Kamen vs Demon (1993) 1080p BluRay REMUX AVC [Hindi DD 2.0 + Japanese FLAC 2.0] (PitiPati-Ionicboy) (4kHDHub.com).mkv",
     },
-    "ttl": 259200000,
+    "ttl": 518400000,
     "url": "https://pub-6b25c191839c4b01a878de4fdde0227b.r2.dev/e35ec4a9a4efb5a154d0d10f9481dafc?token=1765557445",
   },
 ]
@@ -26,7 +26,7 @@ exports[`HubCloud handle dark 2017 s03e08 1`] = `
       "extractorId": "hubcloud_pixelserver",
       "title": "Dark.S03E08.The.Paradise.1080p.NF.WEB-DL.English.DDP5.1-German.DDP5.1.H.264-4kHdHub.Com.mkv",
     },
-    "ttl": 259200000,
+    "ttl": 518400000,
     "url": "https://pixeldrain.dev/api/file/2kFQBQio",
   },
 ]
@@ -42,7 +42,7 @@ exports[`HubCloud handle dexter original sin 2024 s01e01 1`] = `
       "extractorId": "hubcloud_fsl",
       "title": "Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv",
     },
-    "ttl": 259200000,
+    "ttl": 518400000,
     "url": "https://pub-b5ecaffddf2344a0ae2222f5e8913e1b.r2.dev/Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv?token=1765557444",
   },
   {
@@ -53,7 +53,7 @@ exports[`HubCloud handle dexter original sin 2024 s01e01 1`] = `
       "extractorId": "hubcloud_pixelserver",
       "title": "Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv",
     },
-    "ttl": 259200000,
+    "ttl": 518400000,
     "url": "https://pixeldrain.dev/api/file/HqAiguQV",
   },
 ]

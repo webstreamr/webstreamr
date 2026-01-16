@@ -8,6 +8,7 @@ import { FileLions } from './FileLions';
 import { FileMoon } from './FileMoon';
 import { Fsst } from './Fsst';
 import { HubCloud } from './HubCloud';
+import { HubDrive } from './HubDrive';
 import { KinoGer } from './KinoGer';
 import { LuluStream } from './LuluStream';
 import { Mixdrop } from './Mixdrop';
@@ -30,6 +31,8 @@ export * from './ExtractorRegistry';
 export const createExtractors = (fetcher: Fetcher): Extractor[] => {
   const disabledExtractors = envGet('DISABLED_EXTRACTORS')?.split(',') ?? [];
 
+  const hubCloud = new HubCloud(fetcher);
+
   return [
     new DoodStream(fetcher),
     new Dropload(fetcher),
@@ -37,7 +40,8 @@ export const createExtractors = (fetcher: Fetcher): Extractor[] => {
     new FileLions(fetcher),
     new FileMoon(fetcher),
     new Fsst(fetcher),
-    new HubCloud(fetcher),
+    hubCloud,
+    new HubDrive(fetcher, hubCloud),
     new KinoGer(fetcher),
     new LuluStream(fetcher),
     new Mixdrop(fetcher),

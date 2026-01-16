@@ -123,10 +123,7 @@ export class FourKHDHub extends Source {
       .map((_i, el) => new URL($(el).attr('href') as string))
       .get(0) as URL;
 
-    const hubDriveHtml = await this.fetcher.text(ctx, await this.resolveRedirectUrl(ctx, redirectUrlHubDrive));
-    const $2 = cheerio.load(hubDriveHtml);
-
-    return { url: new URL($2('a:contains("HubCloud")').attr('href') as string), meta };
+    return { url: await this.resolveRedirectUrl(ctx, redirectUrlHubDrive), meta };
   };
 
   private async resolveRedirectUrl(ctx: Context, redirectUrl: URL): Promise<URL> {
