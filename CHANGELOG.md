@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.65.2](https://github.com/webstreamr/webstreamr/compare/v0.65.1...v0.65.2) (2026-01-16)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @tsconfig/node24 to v24.0.4 ([#662](https://github.com/webstreamr/webstreamr/issues/662)) ([90c56de](https://github.com/webstreamr/webstreamr/commit/90c56debfe2e52812f16c9043da601404c6dfbbc))
+
+
+### Bug Fixes
+
+* **fetcher:** make FlareSolverr work again, use single session and pass proxy ([59c8495](https://github.com/webstreamr/webstreamr/commit/59c84952ede26df776cc33c6da57e75ef9dfc258))
+* remove leftover logging ([9cf9c44](https://github.com/webstreamr/webstreamr/commit/9cf9c4498c610cc84af4f5bf28967f169fda214a))
+
 ## [0.65.1](https://github.com/webstreamr/webstreamr/compare/v0.65.0...v0.65.1) (2026-01-15)
 
 
