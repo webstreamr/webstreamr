@@ -51,6 +51,7 @@ You can run the latest WebStreamr via Docker. E.g.
     --pull always \
     --publish 51546:51546 \
     --env TMDB_ACCESS_TOKEN="YOUR_TOKEN" \
+    --volume /tmp:/tmp \
     webstreamr/webstreamr
 ```
 
