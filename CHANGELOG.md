@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.65.4](https://github.com/webstreamr/webstreamr/compare/v0.65.3...v0.65.4) (2026-01-16)
+
+
+### Miscellaneous Chores
+
+* extract HubDrive handling into own extractor re-using HubCloud for better caching, increase both TTLs ([986db2c](https://github.com/webstreamr/webstreamr/commit/986db2cc670dba5ce5c01e69d280803140bda24d))
+* **extractor:** simplify cache expiration handling ([507b960](https://github.com/webstreamr/webstreamr/commit/507b96014c8cce1ebf4f836f084e6ce3af67acfb))
+
 ## [0.65.3](https://github.com/webstreamr/webstreamr/compare/v0.65.2...v0.65.3) (2026-01-16)
 
 
