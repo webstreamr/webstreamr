@@ -16,6 +16,8 @@ export class RgShows extends Source {
 
   public readonly baseUrl = 'https://rgshows.ru';
 
+  public override readonly priority = -1;
+
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {

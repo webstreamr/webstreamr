@@ -35,6 +35,8 @@ export abstract class Source {
 
   public abstract readonly baseUrl: string;
 
+  public readonly priority: number = 0;
+
   protected abstract handleInternal(ctx: Context, type: ContentType, id: Id): Promise<(SourceResult[])>;
 
   public static stats() {

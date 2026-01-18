@@ -78,12 +78,13 @@ export enum BlockedReason {
 export interface Meta {
   bytes?: number | undefined;
   countryCodes?: CountryCode[];
-  height?: number | undefined;
-  referer?: string | undefined;
-  title?: string | undefined;
-  sourceLabel?: string | undefined;
-  sourceId?: string | undefined;
   extractorId?: string | undefined;
+  height?: number | undefined;
+  priority?: number | undefined;
+  referer?: string | undefined;
+  sourceId?: string | undefined;
+  sourceLabel?: string | undefined;
+  title?: string | undefined;
 }
 
 export enum Format {

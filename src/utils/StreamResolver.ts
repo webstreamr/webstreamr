@@ -54,7 +54,7 @@ export class StreamResolver {
       try {
         const sourceResults = await source.handle(ctx, type, id);
         const sourceUrlResults = await Promise.all(
-          sourceResults.map(({ url, meta }) => this.extractorRegistry.handle(ctx, url, { ...meta, sourceLabel: source.label, sourceId: source.id }, true)),
+          sourceResults.map(({ url, meta }) => this.extractorRegistry.handle(ctx, url, { ...meta, sourceLabel: source.label, sourceId: source.id, priority: source.priority }, true)),
         );
 
         for (const urlResult of sourceUrlResults.flat()) {
@@ -128,6 +128,11 @@ export class StreamResolver {
       const bytesComparison = (b.meta?.bytes ?? 0) - (a.meta?.bytes ?? 0);
       if (bytesComparison !== 0) {
         return bytesComparison;
+      }
+
+      const priorityComparison = (b.meta?.priority ?? 0) - (a.meta?.priority ?? 0);
+      if (priorityComparison !== 0) {
+        return priorityComparison;
       }
 
       return a.label.localeCompare(b.label);

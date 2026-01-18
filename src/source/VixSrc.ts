@@ -14,6 +14,8 @@ export class VixSrc extends Source {
 
   public readonly baseUrl = 'https://vixsrc.to';
 
+  public override readonly priority = 1;
+
   private readonly fetcher: Fetcher;
 
   public constructor(fetcher: Fetcher) {

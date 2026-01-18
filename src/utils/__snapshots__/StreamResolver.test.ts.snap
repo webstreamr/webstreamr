@@ -532,3 +532,35 @@ exports[`resolve skips fallback sources if possible 1`] = `
   },
 ]
 `;
+
+exports[`resolve uses priority for sorting 1`] = `
+[
+  {
+    "behaviorHints": {
+      "bingeGroup": "webstreamr-vixsrc-vixsrc-multi_en_it",
+      "notWebReady": true,
+    },
+    "name": "WebStreamr 🌐 🇺🇸 🇮🇹 1080p",
+    "title": "South Park S26E02
+🔗 VixSrc",
+    "url": "https://vixsrc.to/playlist/418073.m3u8?token=9d4070344ef84e26fa4dd3cdf5c45037&expires=1773926255&h=1",
+  },
+  {
+    "behaviorHints": {
+      "bingeGroup": "webstreamr-rgshows-rgshows-multi",
+      "notWebReady": true,
+      "proxyHeaders": {
+        "request": {
+          "Origin": "https://rgshows.ru",
+          "Referer": "https://rgshows.ru/",
+          "User-Agent": "Mozilla",
+        },
+      },
+    },
+    "name": "WebStreamr 🌐 1080p",
+    "title": "South Park S26E02
+🔗 RgShows",
+    "url": "https://sad.moriartis.store/v4/pk8/karuh/cf-master.1755845058.txt?t=121478a4&e=1765241578",
+  },
+]
+`;

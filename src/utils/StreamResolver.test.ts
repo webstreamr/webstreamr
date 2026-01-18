@@ -3,12 +3,16 @@ import winston from 'winston';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
 import { createExtractors, Extractor, ExtractorRegistry } from '../extractor';
 import { HubCloud } from '../extractor/HubCloud';
+import { RgShows as RgShowsExtractor } from '../extractor/RgShows';
 import { VidSrc as VidSrcExtractor } from '../extractor/VidSrc';
+import { VixSrc as VixSrcExtractor } from '../extractor/VixSrc';
 import { Source, SourceResult } from '../source';
 import { FourKHDHub } from '../source/FourKHDHub';
 import { MeineCloud } from '../source/MeineCloud';
 import { MostraGuarda } from '../source/MostraGuarda';
+import { RgShows } from '../source/RgShows';
 import { VidSrc } from '../source/VidSrc';
+import { VixSrc } from '../source/VixSrc';
 import { createTestContext } from '../test';
 import { BlockedReason, CountryCode, Format, UrlResult } from '../types';
 import { FetcherMock } from './FetcherMock';
@@ -85,6 +89,13 @@ describe('resolve', () => {
     const streamResolver = new StreamResolver(logger, new ExtractorRegistry(logger, [new HubCloud(fetcher), new VidSrcExtractor(fetcher, ['vidsrc-embed.ru'])]));
 
     const streams = await streamResolver.resolve(createTestContext(), [vidSrc], 'movie', new TmdbId(812583, undefined, undefined));
+    expect(streams.streams).toMatchSnapshot();
+  });
+
+  test('uses priority for sorting', async () => {
+    const streamResolver = new StreamResolver(logger, new ExtractorRegistry(logger, [new RgShowsExtractor(fetcher), new VixSrcExtractor(fetcher)]));
+
+    const streams = await streamResolver.resolve(createTestContext(), [new RgShows(fetcher), new VixSrc(fetcher)], 'series', new TmdbId(2190, 26, 2));
     expect(streams.streams).toMatchSnapshot();
   });
 
