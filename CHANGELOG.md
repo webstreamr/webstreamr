@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.65.5](https://github.com/webstreamr/webstreamr/compare/v0.65.4...v0.65.5) (2026-01-18)
+
+
+### Miscellaneous Chores
+
+* add issue templates ([5fd6202](https://github.com/webstreamr/webstreamr/commit/5fd62028ce56e03750a4aa415760076cfed793ce))
+* add priority for sorting, move VixSrc up and RgShows down ([7b708e2](https://github.com/webstreamr/webstreamr/commit/7b708e23851ce191439cbfbe625db07f6554ac8f))
+* **deps:** update dependency cacheable to v2.3.2 ([#667](https://github.com/webstreamr/webstreamr/issues/667)) ([8aa1344](https://github.com/webstreamr/webstreamr/commit/8aa1344fa590b7ab1fdeecf43f5a55472186805a))
+* **fetcher:** tune FlareSolverr timeouts and use other cookie variants too ([5b49dd0](https://github.com/webstreamr/webstreamr/commit/5b49dd07356efce2e542fde8bc1fdba7bdf39b32))
+
+
+### Bug Fixes
+
+* **extractor:** only use bytes and height from meta cache to avoid clashes ([a9c281c](https://github.com/webstreamr/webstreamr/commit/a9c281c8c4c0d215dc78fedd6a34072e0aec9f31))
+
 ## [0.65.4](https://github.com/webstreamr/webstreamr/compare/v0.65.3...v0.65.4) (2026-01-16)
 
 
