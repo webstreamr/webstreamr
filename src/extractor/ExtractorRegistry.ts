@@ -69,7 +69,7 @@ export class ExtractorRegistry {
 
     /* istanbul ignore next */
     if (
-      lazyUrlResults.length && allowLazy && !extractor.viaMediaFlowProxy && extractor.id !== 'external'
+      lazyUrlResults.length && allowLazy && !extractor.viaMediaFlowProxy
       && lazyUrlResults.every(urlResult => urlResult.format !== Format.hls) // related to Android issues, e.g. https://github.com/Stremio/stremio-bugs/issues/1574 or https://github.com/Stremio/stremio-bugs/issues/1579
     ) {
       // generate lazy extract urls
@@ -90,7 +90,8 @@ export class ExtractorRegistry {
       normalizedUrl,
       {
         ...meta,
-        ...lazyUrlResults[0]?.meta,
+        ...(/* istanbul ignore next */lazyUrlResults[0]?.meta?.bytes && { bytes: lazyUrlResults[0]?.meta?.bytes }),
+        ...(/* istanbul ignore next */lazyUrlResults[0]?.meta?.height && { height: lazyUrlResults[0]?.meta?.height }),
         extractorId: meta?.extractorId ?? extractor.id,
       },
     );
