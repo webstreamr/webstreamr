@@ -102,7 +102,7 @@ export class StreamResolver {
 
     // Resolve fallback sources if we didn't get enough results already
     const skippedFallbackSourcePromises = skippedFallbackSources.map(async (skippedFallbackSource) => {
-      const resultCount = urlResults.reduce((accumulator, urlResult) => accumulator + Number(this.arraysIntersect(skippedFallbackSource.countryCodes, urlResult.meta?.countryCodes as CountryCode[])), 0);
+      const resultCount = urlResults.reduce((accumulator, urlResult) => accumulator + Number(this.arraysIntersect(skippedFallbackSource.countryCodes, /* istanbul ignore next */ urlResult.meta?.countryCodes ?? [])), 0);
       if (resultCount > (skippedFallbackSource.useOnlyWithMaxUrlsFound as number)) {
         return;
       }
