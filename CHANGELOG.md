@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.65.6](https://github.com/webstreamr/webstreamr/compare/v0.65.5...v0.65.6) (2026-01-19)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#669](https://github.com/webstreamr/webstreamr/issues/669)) ([7c99e4d](https://github.com/webstreamr/webstreamr/commit/7c99e4d1c1d1195235b18639f21ac5d38d29e722))
+* **deps:** update dependency @types/node to v24.10.9 ([#668](https://github.com/webstreamr/webstreamr/issues/668)) ([aeb15d8](https://github.com/webstreamr/webstreamr/commit/aeb15d86400c16d9594cd8e9f29fc2a366db69f7))
+
+
+### Bug Fixes
+
+* **extractor:** use correct referer for rgshows, treat vidzee response as block ([d259587](https://github.com/webstreamr/webstreamr/commit/d25958749119c0d4600609197323dd8e5463d65d))
+* log all unhandled errors inside next handlers, terminate app properly for unhandled error outside ([646e75d](https://github.com/webstreamr/webstreamr/commit/646e75d5f88b3083f8fe491a238d1b5e061909a9))
+
 ## [0.65.5](https://github.com/webstreamr/webstreamr/compare/v0.65.4...v0.65.5) (2026-01-18)
 
 
