@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.65.7](https://github.com/webstreamr/webstreamr/compare/v0.65.6...v0.65.7) (2026-01-19)
+
+
+### Bug Fixes
+
+* pass empty array instead of undefined if meta has no countries ([e8ed29e](https://github.com/webstreamr/webstreamr/commit/e8ed29eb9dea2bfe52fc2c2f07c8c245b08bee3e))
+
 ## [0.65.6](https://github.com/webstreamr/webstreamr/compare/v0.65.5...v0.65.6) (2026-01-19)
 
 
