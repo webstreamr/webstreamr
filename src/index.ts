@@ -32,6 +32,7 @@ const logger = winston.createLogger({
 
 process.on('uncaughtException', (error: Error) => {
   logger.error(`Uncaught exception caught: ${error}, cause: ${error.cause}, stack: ${error.stack}`);
+  process.exit(1);
 });
 
 process.on('unhandledRejection', (error: Error) => {
@@ -77,6 +78,13 @@ addon.use('/', (new ManifestController(sources, extractors)).router);
 
 const streamResolver = new StreamResolver(logger, extractorRegistry);
 addon.use('/', (new StreamController(logger, sources, streamResolver)).router);
+
+// error handler needs to stay at the end of the stack
+addon.use((err: Error, _req: Request, _res: Response, next: NextFunction) => {
+  logger.error(`Error: ${err}, cause: ${err.cause}, stack: ${err.stack}`);
+
+  return next(err);
+});
 
 addon.get('/', (_req: Request, res: Response) => {
   res.redirect('/configure');
