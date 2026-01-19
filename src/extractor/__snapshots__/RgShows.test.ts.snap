@@ -10,8 +10,8 @@ exports[`RgShows handle one battle after another 1`] = `
       "height": 1080,
     },
     "requestHeaders": {
-      "Origin": "https://rgshows.ru",
-      "Referer": "https://rgshows.ru/",
+      "Origin": "https://www.rgshows.ru",
+      "Referer": "https://www.rgshows.ru/",
       "User-Agent": "Mozilla",
     },
     "ttl": 10800000,
@@ -29,8 +29,8 @@ exports[`RgShows handle parasite 2019 (mp4) 1`] = `
       "extractorId": "rgshows",
     },
     "requestHeaders": {
-      "Origin": "https://rgshows.ru",
-      "Referer": "https://rgshows.ru/",
+      "Origin": "https://www.rgshows.ru",
+      "Referer": "https://www.rgshows.ru/",
       "User-Agent": "Mozilla",
     },
     "ttl": 10800000,
@@ -49,8 +49,8 @@ exports[`RgShows handle stranger things s05e01 1`] = `
       "height": 1080,
     },
     "requestHeaders": {
-      "Origin": "https://rgshows.ru",
-      "Referer": "https://rgshows.ru/",
+      "Origin": "https://www.rgshows.ru",
+      "Referer": "https://www.rgshows.ru/",
       "User-Agent": "Mozilla",
     },
     "ttl": 10800000,

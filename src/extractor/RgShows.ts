@@ -1,4 +1,5 @@
-import { Context, Format, Meta, UrlResult } from '../types';
+import { BlockedError } from '../error';
+import { BlockedReason, Context, Format, Meta, UrlResult } from '../types';
 import { guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -20,13 +21,16 @@ export class RgShows extends Extractor {
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const nonSubDomainUrl = new URL(url);
-    nonSubDomainUrl.hostname = nonSubDomainUrl.hostname.split('.').slice(-2).join('.');
-    const headers = { 'Referer': `${nonSubDomainUrl.origin}/`, 'Origin': nonSubDomainUrl.origin, 'User-Agent': 'Mozilla' };
+    const headers = { 'Referer': 'https://www.rgshows.ru/', 'Origin': 'https://www.rgshows.ru', 'User-Agent': 'Mozilla' };
 
     const data = await this.fetcher.json(ctx, url, { headers }) as RgShowsApiData;
 
     const streamUrl = new URL(data.stream.url);
+    /* istanbul ignore if */
+    if (streamUrl.host.includes('vidzee')) {
+      throw new BlockedError(url, BlockedReason.unknown, {});
+    }
+
     const isMp4 = streamUrl.href.includes('mp4');
     const isHls = streamUrl.href.includes('m3u8') || streamUrl.href.includes('txt');
 

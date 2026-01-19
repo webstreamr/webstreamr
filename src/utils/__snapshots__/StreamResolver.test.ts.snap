@@ -551,8 +551,8 @@ exports[`resolve uses priority for sorting 1`] = `
       "notWebReady": true,
       "proxyHeaders": {
         "request": {
-          "Origin": "https://rgshows.ru",
-          "Referer": "https://rgshows.ru/",
+          "Origin": "https://www.rgshows.ru",
+          "Referer": "https://www.rgshows.ru/",
           "User-Agent": "Mozilla",
         },
       },
