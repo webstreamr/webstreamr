@@ -2,7 +2,7 @@ import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
-import { buildMediaFlowProxyExtractorStreamUrl, supportsMediaFlowProxy } from '../utils';
+import { buildMediaFlowProxyExtractorRedirectUrl, supportsMediaFlowProxy } from '../utils';
 import { Extractor } from './Extractor';
 
 export class DoodStream extends Extractor {
@@ -42,7 +42,7 @@ export class DoodStream extends Extractor {
 
     return [
       {
-        url: await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'Doodstream', url, headers),
+        url: buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Doodstream', url, headers),
         format: Format.mp4,
         label: this.label,
         ttl: this.ttl,
