@@ -1,70 +1,62 @@
-import bytes from 'bytes';
-import * as cheerio from 'cheerio';
-import randomstring from 'randomstring';
-import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
 import { Extractor } from './Extractor';
+import { NotFoundError } from '../error';
+import {
+  buildMediaFlowProxyExtractorStreamUrl,
+  supportsMediaFlowProxy,
+} from '../utils';
 
 export class DoodStream extends Extractor {
   public readonly id = 'doodstream';
+  public readonly label = 'Dood(MFP)';
+  public override readonly ttl = 6 * 60 * 60 * 1000; // 6h
 
-  public readonly label = 'DoodStream';
+  public override viaMediaFlowProxy = true;
 
-  public override readonly ttl: number = 21600000; // 6h
+  public supports(ctx: Context, url: URL): boolean {
+    const supportedDomain =
+      /dood|do[0-9]go|doood|dooood|ds2play|ds2video|dsvplay|d0o0d|do0od|d0000d|d000d|myvidplay|vidply|all3do|doply|vide0|vvide0|d-s/.test(
+        url.host
+      );
 
-  /** @see https://github.com/Gujal00/ResolveURL/blob/master/script.module.resolveurl/lib/resolveurl/plugins/doodstream.py */
-  public supports(_ctx: Context, url: URL): boolean {
-    return null !== url.host.match(/dood|do[0-9]go|doood|dooood|ds2play|ds2video|dsvplay|d0o0d|do0od|d0000d|d000d|myvidplay|vidply|all3do|doply|vide0|vvide0|d-s/);
-  };
+    return supportedDomain && supportsMediaFlowProxy(ctx);
+  }
 
   public override normalize(url: URL): URL {
-    const videoId = url.pathname.replace(/\/+$/, '').split('/').at(-1) as string;
+    const id = url.pathname.replace(/\/+$/, '').split('/').pop();
+    if (!id) throw new NotFoundError('Dood: invalid URL');
 
-    return new URL(`http://dood.to/e/${videoId}`);
-  };
+    return new URL(`https://dood.to/e/${id}`);
+  }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const headers = { Referer: meta.referer ?? url.href };
+  protected async extractInternal(
+    ctx: Context,
+    url: URL,
+    meta: Meta
+  ): Promise<UrlResult[]> {
 
-    const html = await this.fetcher.text(ctx, url, { headers });
+    const headers = {
+      Referer: meta.referer ?? url.href,
+    };
 
-    if (/Video not found/.test(html)) {
-      throw new NotFoundError();
-    }
-
-    const passMd5Match = html.match(/\/pass_md5\/[\w-]+\/([\w-]+)/) as string[];
-    const token = passMd5Match[1] as string;
-
-    const baseUrl = await this.fetcher.text(ctx, new URL(passMd5Match[0] as string, url.origin), { headers: { Referer: url.href } });
-
-    const $ = cheerio.load(html);
-    const title = $('title').text().trim().replace(/ - DoodStream$/, '').trim();
-
-    const downloadHtml = await this.fetcher.text(ctx, new URL(url.href.replace('/e/', '/d/')));
-    const sizeMatch = downloadHtml.match(/([\d.]+ ?[GM]B)/);
-
-    let mp4Url: URL;
-    if (baseUrl.includes('cloudflarestorage')) {
-      mp4Url = new URL(baseUrl);
-    } else {
-      mp4Url = new URL(`${baseUrl}${randomstring.generate(10)}?token=${token}&expiry=${Date.now()}`);
-    }
+    const streamUrl =
+      await buildMediaFlowProxyExtractorStreamUrl(
+        ctx,
+        this.fetcher,
+        'Doodstream',
+        url,
+        headers
+      );
 
     return [
       {
-        url: mp4Url,
+        url: streamUrl,
         format: Format.mp4,
         label: this.label,
+        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
-        meta: {
-          ...meta,
-          title,
-          ...(sizeMatch && { bytes: bytes.parse(sizeMatch[1] as string) as number }),
-        },
-        requestHeaders: {
-          Referer: url.origin,
-        },
+        meta,
       },
     ];
-  };
+  }
 }
