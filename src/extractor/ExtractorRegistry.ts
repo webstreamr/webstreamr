@@ -103,7 +103,9 @@ export class ExtractorRegistry {
       if (extractor.ttl) {
         await this.urlResultCache.set<UrlResult[]>(cacheKey, urlResults, extractor.ttl);
       }
-      await this.lazyUrlResultCache.set<UrlResult[]>(normalizedUrl.href, urlResults, 2629800000); // 1 month
+      if (extractor.id !== 'external') {
+        await this.lazyUrlResultCache.set<UrlResult[]>(normalizedUrl.href, urlResults, 2629800000); // 1 month
+      }
     } else {
       await this.lazyUrlResultCache.delete(normalizedUrl.href);
     }
