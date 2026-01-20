@@ -14,7 +14,7 @@ export class DoodStream extends Extractor {
   public override viaMediaFlowProxy = true;
 
   public supports(ctx: Context, url: URL): boolean {
-    const supportedDomain = 
+    const supportedDomain =
       /dood|do[0-9]go|doood|dooood|ds2play|ds2video|dsvplay|d0o0d|do0od|d0000d|d000d|myvidplay|vidply|all3do|doply|vide0|vvide0|d-s/.test(
         url.host,
       );
