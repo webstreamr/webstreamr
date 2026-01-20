@@ -1,10 +1,10 @@
-import { Context, Format, Meta, UrlResult } from '../types';
-import { Extractor } from './Extractor';
 import { NotFoundError } from '../error';
+import { Context, Format, Meta, UrlResult } from '../types';
 import {
   buildMediaFlowProxyExtractorStreamUrl,
   supportsMediaFlowProxy,
 } from '../utils';
+import { Extractor } from './Extractor';
 
 export class DoodStream extends Extractor {
   public readonly id = 'doodstream';
@@ -14,10 +14,9 @@ export class DoodStream extends Extractor {
   public override viaMediaFlowProxy = true;
 
   public supports(ctx: Context, url: URL): boolean {
-    const supportedDomain =
-      /dood|do[0-9]go|doood|dooood|ds2play|ds2video|dsvplay|d0o0d|do0od|d0000d|d000d|myvidplay|vidply|all3do|doply|vide0|vvide0|d-s/.test(
-        url.host
-      );
+    const supportedDomain = /dood|do[0-9]go|doood|dooood|ds2play|ds2video|dsvplay|d0o0d|do0od|d0000d|d000d|myvidplay|vidply|all3do|doply|vide0|vvide0|d-s/.test(
+      url.host
+    );
 
     return supportedDomain && supportsMediaFlowProxy(ctx);
   }
@@ -34,7 +33,6 @@ export class DoodStream extends Extractor {
     url: URL,
     meta: Meta
   ): Promise<UrlResult[]> {
-
     const headers = {
       Referer: meta.referer ?? url.href,
     };
@@ -45,7 +43,7 @@ export class DoodStream extends Extractor {
         this.fetcher,
         'Doodstream',
         url,
-        headers
+        headers,
       );
 
     return [
