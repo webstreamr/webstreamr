@@ -14,8 +14,8 @@ export class DoodStream extends Extractor {
   public override viaMediaFlowProxy = true;
 
   public supports(ctx: Context, url: URL): boolean {
-    const supportedDomain =
-      /dood|do[0-9]go|doood|dooood|ds2play|ds2video|dsvplay|d0o0d|do0od|d0000d|d000d|myvidplay|vidply|all3do|doply|vide0|vvide0|d-s/.test(
+    const supportedDomain
+      = /dood|do[0-9]go|doood|dooood|ds2play|ds2video|dsvplay|d0o0d|do0od|d0000d|d000d|myvidplay|vidply|all3do|doply|vide0|vvide0|d-s/.test(
         url.host,
       );
 
@@ -38,8 +38,8 @@ export class DoodStream extends Extractor {
       Referer: meta.referer ?? url.href,
     };
 
-    const streamUrl =
-      await buildMediaFlowProxyExtractorStreamUrl(
+    const streamUrl
+      = await buildMediaFlowProxyExtractorStreamUrl(
         ctx,
         this.fetcher,
         'Doodstream',
@@ -52,9 +52,11 @@ export class DoodStream extends Extractor {
         url: streamUrl,
         format: Format.mp4,
         label: this.label,
-        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
-        meta,
+        meta: {
+          ...meta,
+          sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
+        },
       },
     ];
   }
