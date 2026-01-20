@@ -75,6 +75,7 @@ export class Voe extends Extractor {
         'kinoger.ru',
         'kristiesoundsimply.com',
         'launchreliantcleaverriver.com',
+        'lauradaydo.com',
         'lisatrialidea.com',
         'loriwithinfamily.com',
         'lukecomparetwo.com',
