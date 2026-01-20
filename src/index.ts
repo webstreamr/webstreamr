@@ -1,3 +1,4 @@
+import { promises as fs } from 'fs';
 import { randomUUID } from 'node:crypto';
 import axios from 'axios';
 import { setupCache } from 'axios-cache-interceptor';
@@ -5,6 +6,7 @@ import axiosRetry from 'axios-retry';
 import express, { NextFunction, Request, Response } from 'express';
 // eslint-disable-next-line import/no-named-as-default
 import rateLimit from 'express-rate-limit';
+import { glob } from 'glob';
 import winston from 'winston';
 import { ConfigureController, ExtractController, ManifestController, StreamController } from './controller';
 import { BlockedError, logErrorAndReturnNiceString } from './error';
@@ -13,7 +15,7 @@ import { createSources, Source } from './source';
 import { HomeCine } from './source/HomeCine';
 import { MeineCloud } from './source/MeineCloud';
 import { MostraGuarda } from './source/MostraGuarda';
-import { contextFromRequestAndResponse, envGet, envIsProd, Fetcher, StreamResolver } from './utils';
+import { contextFromRequestAndResponse, envGet, envIsProd, Fetcher, getCacheDir, StreamResolver } from './utils';
 
 if (envIsProd()) {
   console.log = console.warn = console.error = console.info = console.debug = () => { /* disable in favor of logger */ };
@@ -52,6 +54,15 @@ addon.set('trust proxy', true);
 
 if (envIsProd()) {
   addon.use(rateLimit({ windowMs: 60 * 1000, limit: 30 }));
+}
+
+if (envGet('CACHE_FILES_DELETE_ON_START')) {
+  (async function () {
+    for (const file of await glob(`${getCacheDir()}/webstreamr*`)) {
+      logger.info(`Delete cache file ${file}`);
+      await fs.rm(file);
+    }
+  })();
 }
 
 addon.use((req: Request, res: Response, next: NextFunction) => {
