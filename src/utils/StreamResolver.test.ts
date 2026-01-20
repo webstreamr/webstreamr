@@ -131,6 +131,15 @@ describe('resolve', () => {
             url: new URL('https://example.com'),
             format: Format.unknown,
             isExternal: true,
+            label: 'hoster.com',
+            meta: {
+              countryCodes: [CountryCode.de],
+            },
+          },
+          {
+            url: new URL('https://example.com'),
+            format: Format.unknown,
+            isExternal: true,
             error: new BlockedError(new URL('https://example.com'), BlockedReason.cloudflare_challenge, {}),
             label: 'hoster.com',
             meta: {

@@ -113,7 +113,7 @@ export class StreamResolver {
 
     urlResults.sort((a, b) => {
       if (a.error || b.error) {
-        return a.isExternal ? -1 : 1;
+        return a.error ? -1 : 1;
       }
 
       if (a.isExternal || b.isExternal) {
@@ -149,7 +149,7 @@ export class StreamResolver {
           title: this.buildTitle(ctx, urlResult),
           behaviorHints: {
             bingeGroup: `webstreamr-${urlResult.meta?.sourceId}-${urlResult.meta?.extractorId}-${urlResult.meta?.countryCodes?.join('_')}`,
-            ...((urlResult.format !== Format.mp4 || urlResult.url.protocol !== 'https:') && { notWebReady: true }),
+            ...(urlResult.format !== Format.mp4 && { notWebReady: true }),
             ...(urlResult.requestHeaders !== undefined && {
               notWebReady: true,
               proxyHeaders: { request: urlResult.requestHeaders },
