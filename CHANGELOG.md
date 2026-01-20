@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.65.8](https://github.com/webstreamr/webstreamr/compare/v0.65.7...v0.65.8) (2026-01-20)
+
+
+### Miscellaneous Chores
+
+* add env var for one-time cache file deletion ([93fe1ae](https://github.com/webstreamr/webstreamr/commit/93fe1ae871a91b5a94b79a91e7b1e97497086c29))
+* **deps:** update dependency typescript-eslint to v8.53.1 ([#674](https://github.com/webstreamr/webstreamr/issues/674)) ([7c88658](https://github.com/webstreamr/webstreamr/commit/7c886583c97ffa6edc92690c8412e7241a7b3f86))
+* **extractor:** add lauradaydo.com to VOE ([3c979e7](https://github.com/webstreamr/webstreamr/commit/3c979e77cc3f6790e17bb3982012aad668c202db))
+* npm audit fix ([28a83e2](https://github.com/webstreamr/webstreamr/commit/28a83e2f29ed6ca10a58ba61d9dcdee2d591b2ad))
+
+
+### Bug Fixes
+
+* **extractor:** never use external URL results for lazy URL caching to avoid clashes ([1ddc8d9](https://github.com/webstreamr/webstreamr/commit/1ddc8d99d6443f36381b36fd7daaf69eec5b39c2))
+* **extractor:** use MediaFlow Proxy for DoodStream ([#676](https://github.com/webstreamr/webstreamr/issues/676)) ([a00fa2c](https://github.com/webstreamr/webstreamr/commit/a00fa2c3d65ace25783532066e33d105a17b2853))
+
 ## [0.65.7](https://github.com/webstreamr/webstreamr/compare/v0.65.6...v0.65.7) (2026-01-19)
 
 
