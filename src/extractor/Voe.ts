@@ -157,7 +157,7 @@ export class Voe extends Extractor {
     const heightMatch = html.match(/<b>(\d{3,})p<\/b>/);
     const height = heightMatch
       ? parseInt(heightMatch[1] as string)
-      : await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, url);
+      : await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, { headers });
 
     // Extract obfuscated JSON payload for subtitles
     const payloadMatch = html.match(/json">\["([^"]+)"]/);
@@ -185,12 +185,12 @@ export class Voe extends Extractor {
         url: playlistUrl,
         format: Format.hls,
         label: this.label,
-        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
           ...meta,
           title,
           height,
+          sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
           ...(size && size > 16777216 && { bytes: size }),
           subtitles,
         },
