@@ -1,18 +1,18 @@
-import bytes from 'bytes'
-import { NotFoundError } from '../error'
-import { Context, Format, Meta, UrlResult } from '../types'
+import bytes from 'bytes';
+import { NotFoundError } from '../error';
+import { Context, Format, Meta, UrlResult } from '../types';
 import {
   buildMediaFlowProxyExtractorStreamUrl,
   guessHeightFromPlaylist,
   supportsMediaFlowProxy,
-} from '../utils'
-import { Extractor } from './Extractor'
+} from '../utils';
+import { Extractor } from './Extractor';
 
 /** VOE(MFP) Extractor */
 export class Voe extends Extractor {
-  public readonly id = 'voe'
-  public readonly label = 'VOE(MFP)'
-  public override viaMediaFlowProxy = true
+  public readonly id = 'voe';
+  public readonly label = 'VOE(MFP)';
+  public override viaMediaFlowProxy = true;
 
   public supports(ctx: Context, url: URL): boolean {
     const supportedDomain =
@@ -114,32 +114,32 @@ export class Voe extends Extractor {
         'crystaltreatmenteast.com',
         'lauradaydo.com',
         'smoki.cc',
-      ].includes(url.host)
+      ].includes(url.host);
 
-    return supportedDomain && supportsMediaFlowProxy(ctx)
+    return supportedDomain && supportsMediaFlowProxy(ctx);
   }
 
   public override normalize(url: URL): URL {
-    return new URL(`/${url.pathname.split('/').at(-1)}`, url)
+    return new URL(`/${url.pathname.split('/').at(-1)}`, url);
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
-    const headers = { Referer: meta.referer ?? url.href }
+    const headers = { Referer: meta.referer ?? url.href };
 
-    let html: string
+    let html: string;
     try {
-      html = await this.fetcher.text(ctx, url, { headers })
+      html = await this.fetcher.text(ctx, url, { headers });
     } catch (error) {
       if (error instanceof NotFoundError && !url.href.includes('/e/')) {
-        return this.extractInternal(ctx, new URL(`/e${url.pathname}`, url.origin), meta)
+        return this.extractInternal(ctx, new URL(`/e${url.pathname}`, url.origin), meta);
       }
-      throw error
+      throw error;
     }
 
     // Handle redirects
-    const redirectMatch = html.match(/window\.location\.href\s*=\s*'([^']+)/)
+    const redirectMatch = html.match(/window\.location\.href\s*=\s*'([^']+)/);
     if (redirectMatch?.[1]) {
-      return this.extractInternal(ctx, new URL(redirectMatch[1]), meta)
+      return this.extractInternal(ctx, new URL(redirectMatch[1]), meta);
     }
 
     // Extract title, size, height
@@ -147,10 +147,10 @@ export class Voe extends Extractor {
       .match(/<meta name="description" content="([^"]+)"/)?.[1]
       ?.replace(/^Watch /, '')
       .replace(/ at VOE$/, '')
-      .trim()
+      .trim();
 
-    const sizeMatch = Array.from(html.matchAll(/[\d.]+ ?[GM]B/g)).at(-1)
-    const size = sizeMatch ? (bytes.parse(sizeMatch[0] as string) as number) : null
+    const sizeMatch = Array.from(html.matchAll(/[\d.]+ ?[GM]B/g)).at(-1);
+    const size = sizeMatch ? (bytes.parse(sizeMatch[0] as string) as number) : null;
 
     const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(
       ctx,
@@ -158,31 +158,31 @@ export class Voe extends Extractor {
       'Voe',
       url,
       headers
-    )
-    if (!playlistUrl) throw new Error('VOE: failed to build playlist URL')
+    );
+    if (!playlistUrl) throw new Error('VOE: failed to build playlist URL');
 
-    const heightMatch = html.match(/<b>(\d{3,})p<\/b>/)
+    const heightMatch = html.match(/<b>(\d{3,})p<\/b>/);
     const height = heightMatch
       ? parseInt(heightMatch[1] as string)
-      : await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, url)
+      : await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, url);
 
     // Extract obfuscated JSON payload for subtitles
-    const payloadMatch = html.match(/json">\["([^"]+)"]/)
-    const scriptMatch = html.match(/<script\s*src="([^"]+)"/)
-    let subtitles: string[] = []
+    const payloadMatch = html.match(/json">\["([^"]+)"]/);
+    const scriptMatch = html.match(/<script\s*src="([^"]+)"/);
+    let subtitles: string[] = [];
 
     if (payloadMatch?.[1] && scriptMatch?.[1]) {
-      const payload = payloadMatch[1]
-      const scriptUrl = new URL(scriptMatch[1], url.origin).href
-      const scriptText = await this.fetcher.text(ctx, new URL(scriptUrl))
+      const payload = payloadMatch[1];
+      const scriptUrl = new URL(scriptMatch[1], url.origin).href;
+      const scriptText = await this.fetcher.text(ctx, new URL(scriptUrl));
 
-      const lutsMatch = scriptText.match(/(\[(?:'\W{2}'[,\]]){1,9})/)
+      const lutsMatch = scriptText.match(/(\[(?:'\W{2}'[,\]]){1,9})/);
       if (lutsMatch?.[1]) {
-        const decoded = this.voeDecode(payload, lutsMatch[1])
+        const decoded = this.voeDecode(payload, lutsMatch[1]);
         if (decoded.captions?.length) {
           subtitles = decoded.captions.map((c: { file: string }) =>
             `${url.origin}${c.file.startsWith('/') ? c.file : '/' + c.file}`
-          )
+          );
         }
       }
     }
@@ -202,7 +202,7 @@ export class Voe extends Extractor {
           subtitles,
         },
       },
-    ]
+    ];
   }
 
   protected voeDecode(
@@ -212,23 +212,26 @@ export class Voe extends Extractor {
     const lut: string[] = luts
       .slice(2, -2)
       .split("','")
-      .map(i => i.replace(/([.*+?^${}()|[\]\\])/g, '\\$1'))
+      .map((i) => i.replace(/([.*+?^${}()|[\]\\])/g, '\\$1'));
 
-    let txt = ''
+    let txt = '';
     for (const char of ct) {
-      let x = char.charCodeAt(0)
-      if (x > 64 && x < 91) x = ((x - 52) % 26) + 65
-      else if (x > 96 && x < 123) x = ((x - 84) % 26) + 97
-      txt += String.fromCharCode(x)
+      let x = char.charCodeAt(0);
+      if (x > 64 && x < 91) x = ((x - 52) % 26) + 65;
+      else if (x > 96 && x < 123) x = ((x - 84) % 26) + 97;
+      txt += String.fromCharCode(x);
     }
 
-    for (const pattern of lut) txt = txt.replace(new RegExp(pattern, 'g'), '')
+    for (const pattern of lut) txt = txt.replace(new RegExp(pattern, 'g'), '');
 
-    let ctDecoded = Buffer.from(txt, 'base64').toString('utf-8')
-    ctDecoded = ctDecoded.split('').map(c => String.fromCharCode(c.charCodeAt(0) - 3)).join('')
-    const reversed = ctDecoded.split('').reverse().join('')
-    const finalDecoded = Buffer.from(reversed, 'base64').toString('utf-8')
+    let ctDecoded = Buffer.from(txt, 'base64').toString('utf-8');
+    ctDecoded = ctDecoded
+      .split('')
+      .map((c) => String.fromCharCode(c.charCodeAt(0) - 3))
+      .join('');
+    const reversed = ctDecoded.split('').reverse().join('');
+    const finalDecoded = Buffer.from(reversed, 'base64').toString('utf-8');
 
-    return JSON.parse(finalDecoded)
+    return JSON.parse(finalDecoded);
   }
 }
