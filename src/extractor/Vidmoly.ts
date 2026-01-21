@@ -1,12 +1,21 @@
+import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
-import { Extractor } from './Extractor';
 import {
   buildMediaFlowProxyExtractorStreamUrl,
   guessHeightFromPlaylist,
   supportsMediaFlowProxy,
 } from '../utils';
-import * as cheerio from 'cheerio';
+import { Extractor } from './Extractor';
+
+interface VidmolyTrack {
+  file: string;
+  kind?: string;
+}
+
+interface VidmolySetup {
+  tracks?: VidmolyTrack[];
+}
 
 export class Vidmoly extends Extractor {
   public readonly id = 'Vidmoly';
@@ -17,7 +26,8 @@ export class Vidmoly extends Extractor {
   private domains = ['vidmoly.me', 'vidmoly.to', 'vidmoly.net'];
 
   public supports(ctx: Context, url: URL): boolean {
-    return this.domains.some(d => url.host.includes(d)) && supportsMediaFlowProxy(ctx);
+    return this.domains.some(d => url.host.includes(d))
+      && supportsMediaFlowProxy(ctx);
   }
 
   public override normalize(url: URL): URL {
@@ -37,32 +47,40 @@ export class Vidmoly extends Extractor {
     } catch {
       throw new NotFoundError('Vidmoly: embed not responding');
     }
-    if (!embedHtml) throw new NotFoundError('Vidmoly: empty embed');
-    if ((embedHtml.includes('staticmoly') && embedHtml.includes('notice')) || embedHtml.includes('Video not found')) {
+
+    if (!embedHtml) {
+      throw new NotFoundError('Vidmoly: empty embed');
+    }
+
+    if (
+      (embedHtml.includes('staticmoly') && embedHtml.includes('notice'))
+      || embedHtml.includes('Video not found')
+    ) {
       throw new NotFoundError('Vidmoly: video removed');
     }
 
     let subtitles: string[] = [];
     const setupMatch = embedHtml.match(/player\.setup\((\{[\s\S]+?\})\);/);
+
     if (setupMatch?.[1]) {
       try {
         const jsonText = setupMatch[1]
-          .replace(/(['"])?([a-zA-Z0-9_]+)(['"])?:/g, '"$2":') 
+          .replace(/(['"])?([a-zA-Z0-9_]+)(['"])?:/g, '"$2":')
           .replace(/'/g, '"');
-        const setup = JSON.parse(jsonText);
 
-        if (setup?.tracks?.length) {
+        const setup: VidmolySetup = JSON.parse(jsonText);
+
+        if (setup.tracks?.length) {
           subtitles = setup.tracks
-            .filter((t: any) => t?.kind === 'captions' && t?.file)
-            .map((t: any) => {
-            
+            .filter(t => t.kind === 'captions' && t.file)
+            .map(t => {
               const urlObj = new URL(t.file, url.origin);
               urlObj.host = 'vidmoly.net';
               return urlObj.href;
             });
         }
       } catch {
-        
+        // ignore malformed setup JSON
       }
     }
 
@@ -74,7 +92,10 @@ export class Vidmoly extends Extractor {
       const mainHtml = await this.fetcher.text(ctx, mainUrl, headers);
       const $ = cheerio.load(mainHtml);
 
-      const titleSpan = $('span').filter((_, el) => $(el).text().includes('.mp4')).first();
+      const titleSpan = $('span')
+        .filter((_, el) => $(el).text().includes('.mp4'))
+        .first();
+
       if (titleSpan.length > 0) {
         const rawText = titleSpan.text().trim();
         if (rawText) title = rawText.replace(/\.mp4$/i, '');
@@ -82,22 +103,32 @@ export class Vidmoly extends Extractor {
 
       if (!height) {
         const fallback = $('body').text().match(/\b(360p|480p|720p|1080p)\b/i);
-        if (fallback) {
-          const [, value] = fallback;
-          if (value) height = parseInt(value, 10);
+        if (fallback?.[1]) {
+          height = parseInt(fallback[1], 10);
         }
       }
     } catch {
-      
+      // ignore main page errors
     }
 
-    const proxiedUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, this.id, url, headers);
+    const proxiedUrl = await buildMediaFlowProxyExtractorStreamUrl(
+      ctx,
+      this.fetcher,
+      this.id,
+      url,
+      headers,
+    );
 
     if (!height) {
       try {
-        height = await guessHeightFromPlaylist(ctx, this.fetcher, proxiedUrl, url);
+        height = await guessHeightFromPlaylist(
+          ctx,
+          this.fetcher,
+          proxiedUrl,
+          url,
+        );
       } catch {
-        
+        // ignore playlist probing errors
       }
     }
 
