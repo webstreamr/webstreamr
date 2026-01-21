@@ -84,6 +84,7 @@ export interface Meta {
   sourceLabel?: string | undefined;
   sourceId?: string | undefined;
   extractorId?: string | undefined;
+  subtitles?: string[];
 }
 
 export enum Format {
