@@ -1,24 +1,23 @@
 import bytes from 'bytes';
-import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
 import { Context, Format, Meta, UrlResult } from '../types';
 import {
-  buildMediaFlowProxyExtractorStreamUrl, guessHeightFromPlaylist,
+  buildMediaFlowProxyExtractorStreamUrl,
+  guessHeightFromPlaylist,
   supportsMediaFlowProxy,
 } from '../utils';
 import { Extractor } from './Extractor';
 
-/** @see https://github.com/Gujal00/ResolveURL/blob/master/script.module.resolveurl/lib/resolveurl/plugins/voesx.py */
+/** VOE(MFP) Extractor */
 export class Voe extends Extractor {
   public readonly id = 'voe';
-
-  public readonly label = 'VOE';
-
+  public readonly label = 'VOE(MFP)';
   public override viaMediaFlowProxy = true;
 
   public supports(ctx: Context, url: URL): boolean {
-    const supportedDomain = null !== url.host.match(/voe/)
-      || [
+    const supportedDomain =
+      url.host.includes('voe') ||
+      [
         '19turanosephantasia.com',
         '20demidistance9elongations.com',
         '30sensualizeexpression.com',
@@ -37,13 +36,11 @@ export class Voe extends Extractor {
         'bradleyviewdoctor.com',
         'brittneystandardwestern.com',
         'brucevotewithin.com',
-        'christopheruntilpoint.com',
         'chromotypic.com',
         'chuckle-tube.com',
         'cindyeyefinal.com',
         'counterclockwisejacky.com',
         'crownmakermacaronicism.com',
-        'crystaltreatmenteast.com',
         'cyamidpulverulence530.com',
         'diananatureforeign.com',
         'donaldlineelse.com',
@@ -75,7 +72,6 @@ export class Voe extends Extractor {
         'kinoger.ru',
         'kristiesoundsimply.com',
         'launchreliantcleaverriver.com',
-        'lauradaydo.com',
         'lisatrialidea.com',
         'loriwithinfamily.com',
         'lukecomparetwo.com',
@@ -115,13 +111,16 @@ export class Voe extends Extractor {
         'walterprettytheir.com',
         'wolfdyslectic.com',
         'yodelswartlike.com',
+        'crystaltreatmenteast.com',
+        'lauradaydo.com',
+        'smoki.cc',
       ].includes(url.host);
 
     return supportedDomain && supportsMediaFlowProxy(ctx);
   }
 
   public override normalize(url: URL): URL {
-    return new URL(`/${url.pathname.replace(/\/+$/, '').split('/').at(-1)}`, url);
+    return new URL(`/${url.pathname.split('/').at(-1)}`, url);
   }
 
   protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
@@ -131,50 +130,94 @@ export class Voe extends Extractor {
     try {
       html = await this.fetcher.text(ctx, url, { headers });
     } catch (error) {
-      /* istanbul ignore next */
       if (error instanceof NotFoundError && !url.href.includes('/e/')) {
         return await this.extractInternal(ctx, new URL(`/e${url.pathname}`, url.origin), meta);
       }
-
-      /* istanbul ignore next */
       throw error;
     }
 
+    // Handle redirects
     const redirectMatch = html.match(/window\.location\.href\s*=\s*'([^']+)/);
-    if (redirectMatch && redirectMatch[1]) {
+    if (redirectMatch?.[1]) {
       return await this.extractInternal(ctx, new URL(redirectMatch[1]), meta);
     }
 
-    if (/An error occurred during encoding/.test(html)) {
-      throw new NotFoundError();
-    }
+    // Extract title, size, height
+    const title = html.match(/<meta name="description" content="([^"]+)"/)?.[1]
+      ?.replace(/^Watch /, '')
+      .replace(/ at VOE$/, '')
+      .trim();
 
-    const $ = cheerio.load(html);
-    const title = $('meta[name="description"]').attr('content')?.trim().replace(/^Watch /, '').replace(/ at VOE$/, '').trim();
-
-    const sizeMatch = html.matchAll(/[\d.]+ ?[GM]B/g).toArray().at(-1);
-    const size = sizeMatch ? bytes.parse(sizeMatch[0] as string) as number : /* istanbul ignore next */null;
+    const sizeMatch = Array.from(html.matchAll(/[\d.]+ ?[GM]B/g)).at(-1);
+    const size = sizeMatch ? bytes.parse(sizeMatch[0] as string) as number : null;
 
     const playlistUrl = await buildMediaFlowProxyExtractorStreamUrl(ctx, this.fetcher, 'Voe', url, headers);
+    if (!playlistUrl) throw new Error('VOE: failed to build playlist URL');
 
     const heightMatch = html.match(/<b>(\d{3,})p<\/b>/);
-    const height = heightMatch
-      ? parseInt(heightMatch[1] as string)
-      : meta.height ?? await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl);
+    const height = heightMatch ? parseInt(heightMatch[1] as string) :
+      await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, url);
+
+    // Extract obfuscated JSON payload for subtitles
+    const payloadMatch = html.match(/json">\["([^"]+)"]/);
+    const scriptMatch = html.match(/<script\s*src="([^"]+)"/);
+    let subtitles: string[] = [];
+
+    if (payloadMatch?.[1] && scriptMatch?.[1]) {
+      const payload = payloadMatch[1];
+      const scriptUrl = new URL(scriptMatch[1], url.origin).href;
+      const scriptText = await this.fetcher.text(ctx, new URL(scriptUrl));
+
+      const lutsMatch = scriptText.match(/(\[(?:'\W{2}'[,\]]){1,9})/);
+      if (lutsMatch?.[1]) {
+        const decoded = this.voeDecode(payload, lutsMatch[1]);
+        if (decoded.captions?.length) {
+          subtitles = decoded.captions.map((c: { file: string }) =>
+            `${url.origin}${c.file.startsWith('/') ? c.file : '/' + c.file}`
+          );
+        }
+      }
+    }
 
     return [
       {
         url: playlistUrl,
         format: Format.hls,
         label: this.label,
+        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: this.ttl,
         meta: {
           ...meta,
-          height,
           title,
+          height,
           ...(size && size > 16777216 && { bytes: size }),
+          subtitles,
         },
       },
     ];
-  };
+  }
+
+  protected voeDecode(ct: string, luts: string): { captions?: { file: string }[]; [key: string]: any } {
+    const lut: string[] = luts
+      .slice(2, -2)
+      .split("','")
+      .map(i => i.replace(/([.*+?^${}()|[\]\\])/g, '\\$1'));
+
+    let txt = '';
+    for (const char of ct) {
+      let x = char.charCodeAt(0);
+      if (x > 64 && x < 91) x = ((x - 52) % 26) + 65;
+      else if (x > 96 && x < 123) x = ((x - 84) % 26) + 97;
+      txt += String.fromCharCode(x);
+    }
+
+    for (const pattern of lut) txt = txt.replace(new RegExp(pattern, 'g'), '');
+
+    let ctDecoded = Buffer.from(txt, 'base64').toString('utf-8');
+    ctDecoded = ctDecoded.split('').map(c => String.fromCharCode(c.charCodeAt(0) - 3)).join('');
+    const reversed = ctDecoded.split('').reverse().join('');
+    const finalDecoded = Buffer.from(reversed, 'base64').toString('utf-8');
+
+    return JSON.parse(finalDecoded);
+  }
 }
