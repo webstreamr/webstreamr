@@ -73,7 +73,7 @@ export class Vidmoly extends Extractor {
         if (setup.tracks?.length) {
           subtitles = setup.tracks
             .filter(t => t.kind === 'captions' && t.file)
-            .map(t => {
+            .map((t) => {
               const urlObj = new URL(t.file, url.origin);
               urlObj.host = 'vidmoly.net';
               return urlObj.href;
