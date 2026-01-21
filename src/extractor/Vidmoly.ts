@@ -125,7 +125,7 @@ export class Vidmoly extends Extractor {
           ctx,
           this.fetcher,
           proxiedUrl,
-          url,
+          { headers },
         );
       } catch {
         // ignore playlist probing errors
