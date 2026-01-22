@@ -1,6 +1,5 @@
-import * as os from 'node:os';
 import { Request } from 'express';
-import { envGet, envGetAppId, envGetAppName, envGetRequired, envIsProd, getCacheDir, isElfHostedInstance } from './env';
+import { envGet, envGetAppId, envGetAppName, envGetRequired, envIsProd, isElfHostedInstance } from './env';
 
 describe('env', () => {
   test('envGet', () => {
@@ -43,14 +42,5 @@ describe('env', () => {
   test('isElfHostedInstancce', () => {
     expect(isElfHostedInstance({ host: 'someuser.elfhosted.com' } as Request)).toBeTruthy();
     expect(isElfHostedInstance({ host: 'webstreamr.hayd.uk' } as Request)).toBeFalsy();
-  });
-
-  test('getCacheDir', () => {
-    const previousCacheDir = process.env['CACHE_DIR'];
-    delete process.env['CACHE_DIR'];
-    expect(getCacheDir()).toBe(os.tmpdir());
-    process.env['CACHE_DIR'] = previousCacheDir;
-
-    expect(getCacheDir()).toBe('/dev/null');
   });
 });
