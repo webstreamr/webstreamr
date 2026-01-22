@@ -1,9 +1,7 @@
-// eslint-disable-next-line import/no-named-as-default
-import KeyvSqlite from '@keyv/sqlite';
 import { Cacheable, CacheableMemory, Keyv } from 'cacheable';
 import winston from 'winston';
 import { Context, Format, Meta, UrlResult } from '../types';
-import { envGet, getCacheDir, isExtractorDisabled, scheduleKeyvSqliteCleanup } from '../utils';
+import { createKeyvSqlite, envGet, isExtractorDisabled } from '../utils';
 import { Extractor } from './Extractor';
 
 export class ExtractorRegistry {
@@ -17,23 +15,19 @@ export class ExtractorRegistry {
     this.logger = logger;
     this.extractors = extractors;
 
-    const urlResultKeyvSqlite = new KeyvSqlite(`sqlite://${getCacheDir()}/webstreamr-extractor-cache.sqlite`);
     this.urlResultCache = new Cacheable({
       nonBlocking: true,
       primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }),
-      secondary: new Keyv(urlResultKeyvSqlite),
+      secondary: createKeyvSqlite('extractor-cache'),
       stats: true,
     });
-    scheduleKeyvSqliteCleanup(urlResultKeyvSqlite);
 
-    const lazyUrlResultKeyvSqlite = new KeyvSqlite(`sqlite://${getCacheDir()}/webstreamr-extractor-lazy-cache.sqlite`);
     this.lazyUrlResultCache = new Cacheable({
       nonBlocking: true,
       primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }),
-      secondary: new Keyv(lazyUrlResultKeyvSqlite),
+      secondary: createKeyvSqlite('extractor-lazy-cache'),
       stats: true,
     });
-    scheduleKeyvSqliteCleanup(lazyUrlResultKeyvSqlite);
   }
 
   public stats() {
