@@ -84,8 +84,7 @@ export class ExtractorRegistry {
       normalizedUrl,
       {
         ...meta,
-        ...(/* istanbul ignore next */lazyUrlResults[0]?.meta?.bytes && { bytes: lazyUrlResults[0]?.meta?.bytes }),
-        ...(/* istanbul ignore next */lazyUrlResults[0]?.meta?.height && { height: lazyUrlResults[0]?.meta?.height }),
+        ...lazyUrlResults[0]?.meta,
         extractorId: meta?.extractorId ?? extractor.id,
       },
     );
