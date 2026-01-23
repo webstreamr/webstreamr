@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.65.9](https://github.com/webstreamr/webstreamr/compare/v0.65.8...v0.65.9) (2026-01-23)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @keyv/sqlite to v4.0.8 ([#677](https://github.com/webstreamr/webstreamr/issues/677)) ([e5197fd](https://github.com/webstreamr/webstreamr/commit/e5197fdb8be200235514fe9de5d5e1ad98fb6a12))
+* **deps:** update dependency @stylistic/eslint-plugin to v5.7.1 ([#682](https://github.com/webstreamr/webstreamr/issues/682)) ([622b1b3](https://github.com/webstreamr/webstreamr/commit/622b1b3bcc6890e5d926611184c90b392959caaa))
+* **deps:** update dependency axios-cache-interceptor to v1.11.4 ([#678](https://github.com/webstreamr/webstreamr/issues/678)) ([d3db3fc](https://github.com/webstreamr/webstreamr/commit/d3db3fc5129e3450630d384c849cec4ae83158f8))
+* **deps:** update dependency cheerio to v1.2.0 ([#683](https://github.com/webstreamr/webstreamr/issues/683)) ([43e16f5](https://github.com/webstreamr/webstreamr/commit/43e16f5bfa8447b22ae402928aa9b7c18ce14299))
+
+
+### Bug Fixes
+
+* **extractor:** use full cached meta to avoid invalid cache states ([a90d7b1](https://github.com/webstreamr/webstreamr/commit/a90d7b1cad8501a2fa74aa8e457e2249bde4e2ae))
+
+
+### Code Refactoring
+
+* **cache:** extract clearCache function ([12ea135](https://github.com/webstreamr/webstreamr/commit/12ea135feb4d7f363a4eefb48588f063815eeaf0))
+* **cache:** make code more dry and return in-memory cache for test env ([a5539bc](https://github.com/webstreamr/webstreamr/commit/a5539bcf595761a973fafda77db8741f8d0c35a8))
+
 ## [0.65.8](https://github.com/webstreamr/webstreamr/compare/v0.65.7...v0.65.8) (2026-01-20)
 
 
