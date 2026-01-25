@@ -103,6 +103,7 @@ export class Voe extends Extractor {
         'sethniceletter.com',
         'shannonpersonalcost.com',
         'simpulumlamerop.com',
+        'smoki.cc',
         'stevenimaginelittle.com',
         'strawberriesporail.com',
         'telyn610zoanthropy.com',
