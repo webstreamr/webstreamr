@@ -1,7 +1,7 @@
 import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
-import { Context, Format, Meta, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta } from '../types';
 import { buildMediaFlowProxyExtractorRedirectUrl, supportsMediaFlowProxy } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -18,7 +18,7 @@ export class Mixdrop extends Extractor {
 
   public override readonly normalize = (url: URL): URL => new URL(url.href.replace('/f/', '/e/'));
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     const fileUrl = new URL(url.href.replace('/e/', '/f/'));
     const html = await this.fetcher.text(ctx, fileUrl);
 
@@ -35,8 +35,6 @@ export class Mixdrop extends Extractor {
       {
         url: buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Mixdrop', url),
         format: Format.mp4,
-        label: this.label,
-        ttl: this.ttl,
         meta: {
           ...meta,
           bytes: bytes.parse((sizeMatch[1] as string).replace(',', '')) as number,

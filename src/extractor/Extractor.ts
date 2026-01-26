@@ -1,5 +1,5 @@
 import { NotFoundError } from '../error';
-import { Context, Format, Meta, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta, UrlResult } from '../types';
 import { Fetcher } from '../utils';
 
 export abstract class Extractor {
@@ -23,12 +23,16 @@ export abstract class Extractor {
     return url;
   };
 
-  protected abstract extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]>;
+  protected abstract extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]>;
 
   public async extract(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
     try {
       return (await this.extractInternal(ctx, url, meta)).map(
-        urlResult => ({ ...urlResult, label: this.formatLabel(urlResult.label) }),
+        urlResult => ({
+          ...urlResult,
+          label: this.formatLabel(urlResult.label ?? this.label),
+          ttl: this.ttl,
+        }),
       );
     } catch (error) {
       if (error instanceof NotFoundError) {

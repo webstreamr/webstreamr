@@ -1,6 +1,6 @@
 import bytes from 'bytes';
 import { NotFoundError } from '../error';
-import { Context, Format, Meta, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta } from '../types';
 import { buildMediaFlowProxyExtractorStreamUrl, supportsMediaFlowProxy } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -19,7 +19,7 @@ export class Fastream extends Extractor {
     return new URL(url.href.replace('/e/', '/embed-').replace('/d/', '/embed-'));
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
     const downloadUrl = new URL(url.href.replace('/embed-', '/d/'));
@@ -38,8 +38,6 @@ export class Fastream extends Extractor {
       {
         url: playlistUrl,
         format: Format.hls,
-        label: this.label,
-        ttl: this.ttl,
         meta: {
           ...meta,
           bytes: bytes.parse(heightAndSizeMatch[2] as string) as number,

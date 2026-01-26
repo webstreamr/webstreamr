@@ -1,7 +1,7 @@
 import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
-import { Context, Format, Meta, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta } from '../types';
 import { extractUrlFromPacked, guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -20,7 +20,7 @@ export class SuperVideo extends Extractor {
     return new URL(url.href.replace('/e/', '/').replace('/k/', '/').replace('/embed-', '/'));
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
     const html = await this.fetcher.text(ctx, url, { headers });
@@ -48,8 +48,6 @@ export class SuperVideo extends Extractor {
       {
         url: m3u8Url,
         format: Format.hls,
-        label: this.label,
-        ttl: this.ttl,
         meta: {
           ...meta,
           title,

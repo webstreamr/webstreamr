@@ -1,4 +1,4 @@
-import { Context, CountryCode, Format, Meta, UrlResult } from '../types';
+import { Context, CountryCode, Format, InternalUrlResult, Meta } from '../types';
 import { CustomRequestConfig, guessHeightFromPlaylist, hasMultiEnabled, iso639FromCountryCode } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -13,7 +13,7 @@ export class VixSrc extends Extractor {
     return null !== url.host.match(/vixsrc/);
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     const headers = { Referer: url.href };
 
     const html = await this.fetcher.text(ctx, url);
@@ -38,8 +38,6 @@ export class VixSrc extends Extractor {
       {
         url: playlistUrl,
         format: Format.hls,
-        label: this.label,
-        ttl: this.ttl,
         meta: {
           ...meta,
           countryCodes,

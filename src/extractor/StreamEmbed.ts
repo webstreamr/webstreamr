@@ -1,5 +1,5 @@
 import { NotFoundError } from '../error';
-import { Context, Format, Meta, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta } from '../types';
 import { Extractor } from './Extractor';
 
 export class StreamEmbed extends Extractor {
@@ -11,7 +11,7 @@ export class StreamEmbed extends Extractor {
     return null !== url.host.match(/bullstream|mp4player|watch\.gxplayer/);
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
     const html = await this.fetcher.text(ctx, url, { headers });
@@ -26,8 +26,6 @@ export class StreamEmbed extends Extractor {
       {
         url: new URL(`/m3u8/${video.uid}/${video.md5}/master.txt?s=1&id=${video.id}&cache=${video.status}`, url.origin),
         format: Format.hls,
-        label: this.label,
-        ttl: this.ttl,
         meta: {
           ...meta,
           height: parseInt(JSON.parse(video.quality)[0]),

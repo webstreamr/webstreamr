@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import { BlockedError, TooManyRequestsError } from '../error';
-import { Context, Format, Meta, NonEmptyArray, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta, NonEmptyArray } from '../types';
 import { Fetcher, guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -23,7 +23,7 @@ export class VidSrc extends Extractor {
     return null !== url.host.match(/vidsrc|vsrc/);
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     // While this is a crappy thing to do, they seem to be blocking overly strict IMO
     const randomIp = `${Math.floor(Math.random() * 223) + 1}.${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}`;
     const newCtx = { ...ctx, ip: randomIp };
@@ -31,7 +31,7 @@ export class VidSrc extends Extractor {
     return this.extractUsingRandomDomain(newCtx, url, meta, [...this.domains]);
   };
 
-  private async extractUsingRandomDomain(ctx: Context, url: URL, meta: Meta, domains: string[]): Promise<UrlResult[]> {
+  private async extractUsingRandomDomain(ctx: Context, url: URL, meta: Meta, domains: string[]): Promise<InternalUrlResult[]> {
     const domainIndex = Math.floor(Math.random() * domains.length);
     const [domain] = domains.splice(domainIndex, 1) as [string];
 
@@ -74,7 +74,6 @@ export class VidSrc extends Extractor {
             url: m3u8Url,
             format: Format.hls,
             label: serverName,
-            ttl: this.ttl,
             meta: {
               ...meta,
               height: await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, { headers: { Referer: iframeUrl.href } }),

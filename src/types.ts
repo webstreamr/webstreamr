@@ -93,6 +93,17 @@ export enum Format {
   unknown = 'unknown',
 }
 
+export interface InternalUrlResult {
+  url: URL;
+  format: Format;
+  isExternal?: boolean;
+  ytId?: string;
+  error?: unknown;
+  label?: string;
+  meta?: Meta;
+  requestHeaders?: Record<string, string>;
+}
+
 export interface UrlResult {
   url: URL;
   format: Format;

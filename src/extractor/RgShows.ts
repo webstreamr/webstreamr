@@ -1,5 +1,5 @@
 import { BlockedError } from '../error';
-import { BlockedReason, Context, Format, Meta, UrlResult } from '../types';
+import { BlockedReason, Context, Format, InternalUrlResult, Meta } from '../types';
 import { guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -20,7 +20,7 @@ export class RgShows extends Extractor {
     return null !== url.host.match(/rgshows/);
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     const headers = { 'Referer': 'https://www.rgshows.ru/', 'Origin': 'https://www.rgshows.ru', 'User-Agent': 'Mozilla' };
 
     const data = await this.fetcher.json(ctx, url, { headers }) as RgShowsApiData;
@@ -38,8 +38,6 @@ export class RgShows extends Extractor {
       {
         url: streamUrl,
         format: isMp4 ? Format.mp4 : (isHls ? Format.hls : /* istanbul ignore next */ Format.unknown),
-        label: this.label,
-        ttl: this.ttl,
         meta: {
           ...meta,
           ...(isHls && { height: meta.height ?? await guessHeightFromPlaylist(ctx, this.fetcher, streamUrl, { headers }) }),

@@ -1,4 +1,4 @@
-import { Context, Format, Meta, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta } from '../types';
 import { Extractor } from './Extractor';
 
 export class YouTube extends Extractor {
@@ -12,7 +12,7 @@ export class YouTube extends Extractor {
     return null !== url.host.match(/youtube/) && url.searchParams.has('v');
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
     const html = await this.fetcher.text(ctx, url, { headers });
@@ -24,8 +24,6 @@ export class YouTube extends Extractor {
         url,
         format: Format.unknown,
         ytId: url.searchParams.get('v') as string,
-        label: this.label,
-        ttl: this.ttl,
         meta: {
           ...meta,
           title: titleMatch[1] as string,

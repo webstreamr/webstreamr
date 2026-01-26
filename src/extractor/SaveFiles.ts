@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
-import { Context, Format, Meta, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta } from '../types';
 import { Extractor } from './Extractor';
 
 export class SaveFiles extends Extractor {
@@ -18,7 +18,7 @@ export class SaveFiles extends Extractor {
     return new URL(url.href.replace('/e/', '/').replace('/d/', '/'));
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
     const html = await this.fetcher.text(ctx, url, { headers });
@@ -37,8 +37,6 @@ export class SaveFiles extends Extractor {
       {
         url: new URL(fileMatch[1] as string),
         format: Format.hls,
-        label: this.label,
-        ttl: this.ttl,
         meta: {
           ...meta,
           title,

@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
-import { Context, Format, Meta, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta } from '../types';
 import { buildMediaFlowProxyExtractorRedirectUrl, supportsMediaFlowProxy } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -19,7 +19,7 @@ export class Uqload extends Extractor {
     return new URL(url.href.replace('/embed-', '/'));
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     const html = await this.fetcher.text(ctx, url);
 
     if (/File Not Found/.test(html)) {
@@ -35,8 +35,6 @@ export class Uqload extends Extractor {
       {
         url: buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Uqload', url),
         format: Format.mp4,
-        label: this.label,
-        ttl: this.ttl,
         meta: {
           ...meta,
           title,

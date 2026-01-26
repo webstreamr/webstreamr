@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
-import { Context, Format, Meta, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta } from '../types';
 import {
   buildMediaFlowProxyExtractorStreamUrl,
   supportsMediaFlowProxy,
@@ -45,7 +45,7 @@ export class FileMoon extends Extractor {
     return new URL(url.href.replace('/e/', '/d/'));
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta, originalUrl?: URL): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta, originalUrl?: URL): Promise<InternalUrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
     const html = await this.fetcher.text(ctx, url, { headers });
@@ -72,8 +72,6 @@ export class FileMoon extends Extractor {
       {
         url: playlistUrl,
         format: Format.hls,
-        label: this.label,
-        ttl: this.ttl,
         meta: {
           ...meta,
           ...(heightMatch && { height: parseInt(heightMatch[1] as string) }),

@@ -1,7 +1,7 @@
 import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
-import { Context, Format, Meta, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta } from '../types';
 import { buildMediaFlowProxyExtractorRedirectUrl, supportsMediaFlowProxy } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -25,7 +25,7 @@ export class DoodStream extends Extractor {
     return new URL(`http://dood.to/e/${videoId}`);
   };
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
     const html = await this.fetcher.text(ctx, url, { headers });
@@ -44,8 +44,6 @@ export class DoodStream extends Extractor {
       {
         url: buildMediaFlowProxyExtractorRedirectUrl(ctx, 'Doodstream', url, headers),
         format: Format.mp4,
-        label: this.label,
-        ttl: this.ttl,
         meta: {
           ...meta,
           title,

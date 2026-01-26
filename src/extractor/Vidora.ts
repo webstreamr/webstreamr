@@ -1,5 +1,5 @@
 import * as cheerio from 'cheerio';
-import { Context, Format, Meta, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta } from '../types';
 import { extractUrlFromPacked, guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -18,7 +18,7 @@ export class Vidora extends Extractor {
     return new URL(url.href.replace('/embed/', '/'));
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     const html = await this.fetcher.text(ctx, url);
 
     const $ = cheerio.load(html);
@@ -31,8 +31,6 @@ export class Vidora extends Extractor {
       {
         url: m3u8Url,
         format: Format.hls,
-        label: this.label,
-        ttl: this.ttl,
         meta: {
           ...meta,
           height: meta.height ?? await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, { headers }),

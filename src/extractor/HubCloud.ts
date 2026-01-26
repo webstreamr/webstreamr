@@ -1,6 +1,6 @@
 import bytes from 'bytes';
 import * as cheerio from 'cheerio';
-import { Context, Format, Meta, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta } from '../types';
 import { Extractor } from './Extractor';
 
 export class HubCloud extends Extractor {
@@ -14,7 +14,7 @@ export class HubCloud extends Extractor {
     return null !== url.host.match(/hubcloud/);
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
     const redirectHtml = await this.fetcher.text(ctx, url, { headers });
@@ -36,7 +36,6 @@ export class HubCloud extends Extractor {
             url,
             format: Format.unknown,
             label: `${this.label} (FSL)`,
-            ttl: this.ttl,
             meta: {
               ...meta,
               bytes: bytes.parse($('#size').text()) as number,
@@ -53,7 +52,6 @@ export class HubCloud extends Extractor {
             url,
             format: Format.unknown,
             label: `${this.label} (PixelServer)`,
-            ttl: this.ttl,
             meta: {
               ...meta,
               bytes: bytes.parse($('#size').text()) as number,

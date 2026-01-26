@@ -1,7 +1,7 @@
 import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
-import { Context, Format, Meta, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta } from '../types';
 import { extractUrlFromPacked, guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -18,7 +18,7 @@ export class Dropload extends Extractor {
 
   public override readonly normalize = (url: URL): URL => new URL(url.href.replace('/d/', '/').replace('/e/', '/').replace('/embed-', '/'));
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
     const html = await this.fetcher.text(ctx, url, { headers });
@@ -44,8 +44,6 @@ export class Dropload extends Extractor {
       {
         url: playlistUrl,
         format: Format.hls,
-        label: this.label,
-        ttl: this.ttl,
         meta: {
           ...meta,
           title,

@@ -1,4 +1,4 @@
-import { Context, Format, Meta, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta } from '../types';
 import { showExternalUrls } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -13,14 +13,13 @@ export class ExternalUrl extends Extractor {
     return showExternalUrls(ctx.config) && null !== url.host.match(/.*/);
   }
 
-  protected async extractInternal(_ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(_ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     return [
       {
         url: url,
         format: Format.unknown,
         isExternal: true,
         label: `${url.host}`,
-        ttl: this.ttl,
         meta,
       },
     ];

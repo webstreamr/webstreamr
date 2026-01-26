@@ -1,5 +1,5 @@
 import * as cheerio from 'cheerio';
-import { Context, Meta, UrlResult } from '../types';
+import { Context, InternalUrlResult, Meta } from '../types';
 import { Fetcher } from '../utils';
 import { Extractor } from './Extractor';
 import { HubCloud } from './HubCloud';
@@ -23,7 +23,7 @@ export class HubDrive extends Extractor {
     return null !== url.host.match(/hubdrive/);
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
     const html = await this.fetcher.text(ctx, url, { headers });

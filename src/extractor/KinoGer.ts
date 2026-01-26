@@ -1,5 +1,5 @@
 import crypto from 'crypto';
-import { Context, Format, Meta, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta } from '../types';
 import { guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -43,7 +43,7 @@ export class KinoGer extends Extractor {
     return new URL(`${url.origin}/api/v1/video?id=${url.hash.slice(1)}`);
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     const headers = {
       'Origin': url.origin,
       'Referer': url.origin + '/',
@@ -66,8 +66,6 @@ export class KinoGer extends Extractor {
       {
         url: m3u8Url,
         format: Format.hls,
-        label: this.label,
-        ttl: this.ttl,
         meta: {
           ...meta,
           height: meta.height ?? await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, { headers }),

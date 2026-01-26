@@ -1,5 +1,5 @@
 import * as cheerio from 'cheerio';
-import { Context, Format, Meta, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta } from '../types';
 import { guessHeightFromPlaylist } from '../utils';
 import { Extractor } from './Extractor';
 
@@ -21,7 +21,7 @@ export class StreamUp extends Extractor {
     ].includes(url.host);
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     const headers = { Referer: `${url.origin}/`, Origin: url.origin };
 
     const html = await this.fetcher.text(ctx, url, { headers });
@@ -36,8 +36,6 @@ export class StreamUp extends Extractor {
       {
         url: playlistUrl,
         format: Format.hls,
-        label: this.label,
-        ttl: this.ttl,
         meta: {
           ...meta,
           height: meta.height ?? await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl),

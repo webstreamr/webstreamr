@@ -1,7 +1,7 @@
 import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { NotFoundError } from '../error';
-import { Context, Format, Meta, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta } from '../types';
 import {
   buildMediaFlowProxyExtractorStreamUrl, guessHeightFromPlaylist,
   supportsMediaFlowProxy,
@@ -125,7 +125,7 @@ export class Voe extends Extractor {
     return new URL(`/${url.pathname.replace(/\/+$/, '').split('/').at(-1)}`, url);
   }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
     let html: string;
@@ -167,8 +167,6 @@ export class Voe extends Extractor {
       {
         url: playlistUrl,
         format: Format.hls,
-        label: this.label,
-        ttl: this.ttl,
         meta: {
           ...meta,
           height,

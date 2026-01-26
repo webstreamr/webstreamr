@@ -1,5 +1,5 @@
 import * as cheerio from 'cheerio';
-import { Context, Format, Meta, UrlResult } from '../types';
+import { Context, Format, InternalUrlResult, Meta } from '../types';
 import { Extractor } from './Extractor';
 
 export class Fsst extends Extractor {
@@ -11,7 +11,7 @@ export class Fsst extends Extractor {
     return null !== url.host.match(/fsst/);
   };
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<UrlResult[]> {
+  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
     const headers = { Referer: meta.referer ?? url.href };
 
     const html = await this.fetcher.text(ctx, url, { headers, noProxyHeaders: true });
@@ -29,8 +29,6 @@ export class Fsst extends Extractor {
     return [{
       url: await this.fetcher.getFinalRedirectUrl(ctx, new URL(fileHref), { headers, noProxyHeaders: true }, 1),
       format: Format.mp4,
-      label: this.label,
-      ttl: this.ttl,
       meta: {
         ...meta,
         height: parseInt(heightAndUrlMatch[1] as string),
