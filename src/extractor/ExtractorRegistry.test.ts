@@ -49,6 +49,11 @@ describe('ExtractorRegistry', () => {
     expect(urlResults).toMatchSnapshot();
   });
 
+  test('empty results are cached', async () => {
+    const urlResults = await extractorRegistry.handle(ctx, new URL('https://dropload.io/asdfghijklmn.html'), { title: 'title' });
+    expect(urlResults).toMatchSnapshot();
+  });
+
   test('stats returns something', async () => {
     const stats = extractorRegistry.stats();
 

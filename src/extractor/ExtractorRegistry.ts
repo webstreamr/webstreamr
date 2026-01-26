@@ -79,17 +79,11 @@ export class ExtractorRegistry {
 
     this.logger.info(`Extract ${url} using ${extractor.id} extractor`, ctx);
 
-    const urlResults = await extractor.extract(
-      ctx,
-      normalizedUrl,
-      {
-        ...meta,
-        ...lazyUrlResults[0]?.meta,
-        extractorId: meta?.extractorId ?? extractor.id,
-      },
-    );
+    const mergedMeta: Meta = { ...meta, ...lazyUrlResults[0]?.meta };
+    const urlResults = await extractor.extract(ctx, normalizedUrl, { extractorId: extractor.id, ...mergedMeta });
 
-    if (urlResults.some(urlResult => urlResult.error)) {
+    if (!Object.keys(mergedMeta).length || urlResults.some(urlResult => urlResult.error)) {
+      await this.urlResultCache.delete(cacheKey);
       await this.lazyUrlResultCache.delete(normalizedUrl.href);
 
       return urlResults;

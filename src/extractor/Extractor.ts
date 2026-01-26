@@ -32,6 +32,7 @@ export abstract class Extractor {
           ...urlResult,
           label: this.formatLabel(urlResult.label ?? this.label),
           ttl: this.ttl,
+
         }),
       );
     } catch (error) {

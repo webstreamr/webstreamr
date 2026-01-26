@@ -54,7 +54,7 @@ export class StreamResolver {
       try {
         const sourceResults = await source.handle(ctx, type, id);
         const sourceUrlResults = await Promise.all(
-          sourceResults.map(({ url, meta }) => this.extractorRegistry.handle(ctx, url, { ...meta, sourceLabel: source.label, sourceId: source.id, priority: source.priority }, true)),
+          sourceResults.map(({ url, meta }) => this.extractorRegistry.handle(ctx, url, { sourceLabel: source.label, sourceId: source.id, priority: source.priority, ...meta }, true)),
         );
 
         for (const urlResult of sourceUrlResults.flat()) {

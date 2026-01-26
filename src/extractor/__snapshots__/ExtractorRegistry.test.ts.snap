@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`ExtractorRegistry empty results are cached 1`] = `[]`;
+
 exports[`ExtractorRegistry returns error result from extractor 1`] = `[]`;
 
 exports[`ExtractorRegistry returns external URLs if enabled by config 1`] = `
