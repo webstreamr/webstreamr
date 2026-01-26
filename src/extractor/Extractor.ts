@@ -42,6 +42,7 @@ export abstract class Extractor {
           isExternal: true,
           error,
           label: this.formatLabel(this.label),
+          ttl: 0,
           meta,
         },
       ];

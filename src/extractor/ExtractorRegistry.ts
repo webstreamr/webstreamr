@@ -89,18 +89,18 @@ export class ExtractorRegistry {
       },
     );
 
-    if (!urlResults.length) {
-      await this.urlResultCache.set<UrlResult[]>(cacheKey, urlResults, 43200000); // 12h
-    } else if (!urlResults.some(urlResult => urlResult.error)) {
-      /* istanbul ignore else */
-      if (extractor.ttl) {
-        await this.urlResultCache.set<UrlResult[]>(cacheKey, urlResults, extractor.ttl);
-      }
-      if (extractor.id !== 'external') {
-        await this.lazyUrlResultCache.set<UrlResult[]>(normalizedUrl.href, urlResults, 2629800000); // 1 month
-      }
-    } else {
+    if (urlResults.some(urlResult => urlResult.error)) {
       await this.lazyUrlResultCache.delete(normalizedUrl.href);
+
+      return urlResults;
+    }
+
+    const ttl = urlResults.length ? extractor.ttl : 43200000; // 12h
+
+    await this.urlResultCache.set<UrlResult[]>(cacheKey, urlResults, ttl);
+
+    if (extractor.id !== 'external') {
+      await this.lazyUrlResultCache.set<UrlResult[]>(normalizedUrl.href, urlResults, 2629800000); // 1 month
     }
 
     return urlResults;

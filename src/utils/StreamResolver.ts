@@ -176,10 +176,6 @@ export class StreamResolver {
       return 900000; // 15m
     }
 
-    if (urlResults.some(urlResult => urlResult.ttl === undefined)) {
-      return undefined;
-    }
-
     return Math.min(...urlResults.map(urlResult => urlResult.ttl as number));
   };
 

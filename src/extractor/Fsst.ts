@@ -30,6 +30,7 @@ export class Fsst extends Extractor {
       url: await this.fetcher.getFinalRedirectUrl(ctx, new URL(fileHref), { headers, noProxyHeaders: true }, 1),
       format: Format.mp4,
       label: this.label,
+      ttl: this.ttl,
       meta: {
         ...meta,
         height: parseInt(heightAndUrlMatch[1] as string),

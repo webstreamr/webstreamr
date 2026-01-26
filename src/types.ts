@@ -100,7 +100,7 @@ export interface UrlResult {
   ytId?: string;
   error?: unknown;
   label: string;
-  ttl?: number;
+  ttl: number;
   meta?: Meta;
   notWebReady?: boolean;
   requestHeaders?: Record<string, string>;

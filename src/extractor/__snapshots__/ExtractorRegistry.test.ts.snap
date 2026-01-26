@@ -28,6 +28,7 @@ exports[`ExtractorRegistry returns external url for error 1`] = `
     "meta": {
       "extractorId": "dropload",
     },
+    "ttl": 0,
     "url": "https://dropload.io/mocked-blocked.html",
   },
 ]

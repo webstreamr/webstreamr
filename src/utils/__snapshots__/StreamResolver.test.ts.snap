@@ -31,6 +31,7 @@ exports[`resolve adds error info 1`] = `
       "title": "🔗 hoster.com",
     },
   ],
+  "ttl": 1,
 }
 `;
 
@@ -175,6 +176,7 @@ exports[`resolve adds error info 2`] = `
       "title": "🔗 hoster.com",
     },
   ],
+  "ttl": 1,
 }
 `;
 
