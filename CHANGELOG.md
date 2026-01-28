@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.65.10](https://github.com/webstreamr/webstreamr/compare/v0.65.9...v0.65.10) (2026-01-28)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#686](https://github.com/webstreamr/webstreamr/issues/686)) ([0743111](https://github.com/webstreamr/webstreamr/commit/074311107a96cb3ed3c3dd2af6828a9a28bbe705))
+* **deps:** update dependency axios to v1.13.3 ([#685](https://github.com/webstreamr/webstreamr/issues/685)) ([19a73b3](https://github.com/webstreamr/webstreamr/commit/19a73b38669a809a473e69872be5816807da5d13))
+* **deps:** update dependency axios to v1.13.4 ([#689](https://github.com/webstreamr/webstreamr/issues/689)) ([5c87c5d](https://github.com/webstreamr/webstreamr/commit/5c87c5d9e2b52aeb1665212144d06cca7e6147a4))
+* **deps:** update dependency typescript-eslint to v8.54.0 ([#687](https://github.com/webstreamr/webstreamr/issues/687)) ([8f8ecb8](https://github.com/webstreamr/webstreamr/commit/8f8ecb868e5fb1dc03073ff0b53d416087ca5437))
+* **extractor:** add new VOE domain ([75c9509](https://github.com/webstreamr/webstreamr/commit/75c9509793f582fd566ece0694fc6961df5f7f61))
+* **extractor:** increase Fsst TTL to 3 hours ([a876c9b](https://github.com/webstreamr/webstreamr/commit/a876c9b14489f713460e56a32bcf39a3e4897796))
+* **extractor:** increase StreamEmbed TTL to 3d ([e52cee2](https://github.com/webstreamr/webstreamr/commit/e52cee212508a1945bc810bda5ce07c3322769a2))
+
+
+### Bug Fixes
+
+* **extractor:** avoid caching results with empty meta, add some self-healing ([2ba6e4f](https://github.com/webstreamr/webstreamr/commit/2ba6e4fa358ca89aa522e1e97b4e2ed3ded7114a))
+* **extractor:** ensure every result has a ttl ([db860c2](https://github.com/webstreamr/webstreamr/commit/db860c25c687b87bbec34bc72995ed47aa9115aa))
+
+
+### Code Refactoring
+
+* **extractor:** introduce internal type to reduce common code ([50a7e55](https://github.com/webstreamr/webstreamr/commit/50a7e5559bfa98305e006f8b7833aa2952d65029))
+
 ## [0.65.9](https://github.com/webstreamr/webstreamr/compare/v0.65.8...v0.65.9) (2026-01-23)
 
 
