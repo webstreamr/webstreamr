@@ -7,6 +7,8 @@ export class StreamEmbed extends Extractor {
 
   public readonly label = 'StreamEmbed';
 
+  public override readonly ttl: number = 259200000; // 3d
+
   public supports(_ctx: Context, url: URL): boolean {
     return null !== url.host.match(/bullstream|mp4player|watch\.gxplayer/);
   }
