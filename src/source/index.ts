@@ -19,6 +19,7 @@ import { StreamKiste } from './StreamKiste';
 import { VerHdLink } from './VerHdLink';
 import { VidSrc } from './VidSrc';
 import { VixSrc } from './VixSrc';
+import { XDMovies } from './XDMovies';
 
 export * from './Source';
 
@@ -28,6 +29,7 @@ export const createSources = (fetcher: Fetcher): Source[] => {
   return [
     // multi
     new FourKHDHub(fetcher),
+    new XDMovies(fetcher),
     new VixSrc(fetcher),
     new VidSrc(),
     new RgShows(fetcher),

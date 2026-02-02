@@ -11,12 +11,17 @@ exports[`buildManifest default manifest 1`] = `
   "config": [
     {
       "key": "multi",
-      "title": "Multi 🌐 (4KHDHub, RgShows, VidSrc, VixSrc)",
+      "title": "Multi 🌐 (4KHDHub, RgShows, VidSrc, VixSrc, XDMovies)",
       "type": "checkbox",
     },
     {
       "key": "al",
       "title": "Albanian 🇦🇱 (Kokoshka)",
+      "type": "checkbox",
+    },
+    {
+      "key": "bl",
+      "title": "Bengali 🇮🇳 (XDMovies)",
       "type": "checkbox",
     },
     {
@@ -35,8 +40,13 @@ exports[`buildManifest default manifest 1`] = `
       "type": "checkbox",
     },
     {
+      "key": "gu",
+      "title": "Gujarati 🇮🇳 (XDMovies)",
+      "type": "checkbox",
+    },
+    {
       "key": "hi",
-      "title": "Hindi 🇮🇳 (4KHDHub)",
+      "title": "Hindi 🇮🇳 (4KHDHub, XDMovies)",
       "type": "checkbox",
     },
     {
@@ -45,18 +55,48 @@ exports[`buildManifest default manifest 1`] = `
       "type": "checkbox",
     },
     {
+      "key": "ja",
+      "title": "Japanese 🇯🇵 (XDMovies)",
+      "type": "checkbox",
+    },
+    {
+      "key": "kn",
+      "title": "Kannada 🇮🇳 (XDMovies)",
+      "type": "checkbox",
+    },
+    {
+      "key": "ko",
+      "title": "Korean 🇰🇷 (XDMovies)",
+      "type": "checkbox",
+    },
+    {
+      "key": "ml",
+      "title": "Malayalam 🇮🇳 (XDMovies)",
+      "type": "checkbox",
+    },
+    {
+      "key": "mr",
+      "title": "Marathi 🇮🇳 (XDMovies)",
+      "type": "checkbox",
+    },
+    {
       "key": "mx",
       "title": "Latin American Spanish 🇲🇽 (CineHDPlus, Cuevana, HomeCine, VerHdLink)",
       "type": "checkbox",
     },
     {
+      "key": "pa",
+      "title": "Punjabi 🇮🇳 (XDMovies)",
+      "type": "checkbox",
+    },
+    {
       "key": "ta",
-      "title": "Tamil 🇮🇳 (4KHDHub)",
+      "title": "Tamil 🇮🇳 (4KHDHub, XDMovies)",
       "type": "checkbox",
     },
     {
       "key": "te",
-      "title": "Telugu 🇮🇳 (4KHDHub)",
+      "title": "Telugu 🇮🇳 (4KHDHub, XDMovies)",
       "type": "checkbox",
     },
     {
@@ -84,9 +124,9 @@ exports[`buildManifest default manifest 1`] = `
   ],
   "description": "Provides HTTP URLs from streaming websites. Configure add-on for additional languages. Add MediaFlow proxy for more URLs.
 
-Supported languages: Albanian, German, Castilian Spanish, French, Hindi, Italian, Latin American Spanish, Tamil, Telugu
+Supported languages: Albanian, Bengali, German, Castilian Spanish, French, Gujarati, Hindi, Italian, Japanese, Kannada, Korean, Malayalam, Marathi, Latin American Spanish, Punjabi, Tamil, Telugu
 
-Supported sources: 4KHDHub, CineHDPlus, Cuevana, Einschalten, Eurostreaming, Frembed, FrenchCloud, HomeCine, KinoGer, Kokoshka, MegaKino, MeineCloud, MostraGuarda, Movix, RgShows, StreamKiste, VerHdLink, VidSrc, VixSrc
+Supported sources: 4KHDHub, CineHDPlus, Cuevana, Einschalten, Eurostreaming, Frembed, FrenchCloud, HomeCine, KinoGer, Kokoshka, MegaKino, MeineCloud, MostraGuarda, Movix, RgShows, StreamKiste, VerHdLink, VidSrc, VixSrc, XDMovies
 
 Supported extractors: ",
   "id": "webstreamr",

@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`XDMovies handle non-existent devil's bath 2024 gracefully 1`] = `[]`;
+
+exports[`XDMovies handle rathnam 2024 1`] = `
+[
+  {
+    "meta": {
+      "bytes": 1395864371,
+      "countryCodes": [
+        "multi",
+        "hi",
+      ],
+      "height": 720,
+      "title": "Rathnam.2024.720p.AMZN.WEB-DL.DDP2.0.H.265-XDMovies.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/qgdndi5j1rvil2l",
+  },
+  {
+    "meta": {
+      "bytes": 4949949808,
+      "countryCodes": [
+        "multi",
+        "hi",
+      ],
+      "height": 720,
+      "title": "Rathnam.2024.720p.AMZN.WEB-DL.DDP2.0.H.264-XDMovies.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/iy7587kppeg6b6p",
+  },
+  {
+    "meta": {
+      "bytes": 4080218931,
+      "countryCodes": [
+        "multi",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Rathnam.2024.1080p.AMZN.WEB-DL.DDP2.0.H.265-XDMovies.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/oae0mzzzje1xrvy",
+  },
+  {
+    "meta": {
+      "bytes": 9105330667,
+      "countryCodes": [
+        "multi",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "Rathnam.2024.1080p.AMZN.WEB-DL.DDP2.0.H.264-XDMovies.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/dn5g8g5drixrrl1",
+  },
+]
+`;
+
+exports[`XDMovies handle stranger things s05e08 1`] = `
+[
+  {
+    "meta": {
+      "bytes": 17544941404,
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+        "ta",
+        "te",
+      ],
+      "height": 2160,
+      "title": "Stranger.Things.S05E08.2160p.NF.WEB-DL.DDP5.1.H.265-XDMovies.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/k7sgskvmmzppzap",
+  },
+  {
+    "meta": {
+      "bytes": 1513975971,
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+        "ta",
+        "te",
+      ],
+      "height": 1080,
+      "title": "Stranger.Things.S05E08.1080p.NF.WEB-DL.AAC5.1.AV1-XDMovies.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/ft5h778dgcot8yd",
+  },
+  {
+    "meta": {
+      "bytes": 5508295557,
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+        "ta",
+        "te",
+      ],
+      "height": 1080,
+      "title": "Stranger.Things.S05E08.1080p.NF.WEB-DL.DDP5.1.H.265-XDMovies.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/d140ytrad4r228o",
+  },
+  {
+    "meta": {
+      "bytes": 7215545057,
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+        "ta",
+        "te",
+      ],
+      "height": 1080,
+      "title": "Stranger.Things.S05E08.1080p.NF.WEB-DL.DDP5.1.Atmos.H.264-XDMovies.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/8mxktxm8ho4ib44",
+  },
+  {
+    "meta": {
+      "bytes": 5991479377,
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+        "ta",
+        "te",
+      ],
+      "height": 1080,
+      "title": "Stranger.Things.S05E08.1080p.NF.WEB-DL.DDP5.1.DV.HDR.H.265-XDMovies.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/bzxqjl1vkvdxsvy",
+  },
+  {
+    "meta": {
+      "bytes": 1170378588,
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+        "ta",
+        "te",
+      ],
+      "height": 720,
+      "title": "Stranger.Things.S05E08.720p.NF.WEB-DL.AAC5.1.AV1-XDMovies.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/vfhor1uv59jkrha",
+  },
+  {
+    "meta": {
+      "bytes": 2534030704,
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+        "ta",
+        "te",
+      ],
+      "height": 720,
+      "title": "Stranger.Things.S05E08.720p.NF.WEB-DL.AAC5.1.H.264-XDMovies.mkv",
+    },
+    "url": "https://hubcloud.foo/drive/njntlayllkcrtb1",
+  },
+]
+`;
