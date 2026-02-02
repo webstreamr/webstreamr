@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.66.1](https://github.com/webstreamr/webstreamr/compare/v0.66.0...v0.66.1) (2026-02-02)
+
+
+### Bug Fixes
+
+* **source:** make XDMovies a fallback source to avoid hubcloud and many duplicates ([2612860](https://github.com/webstreamr/webstreamr/commit/2612860f1525a8f803e6d37aabdf5fd28b3d287f))
+
 ## [0.66.0](https://github.com/webstreamr/webstreamr/compare/v0.65.10...v0.66.0) (2026-02-02)
 
 
