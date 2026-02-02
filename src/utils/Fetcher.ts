@@ -159,7 +159,7 @@ export class Fetcher {
     }
 
     const timeouts = (await this.timeoutsCountCache.get<number>(url.host)) ?? 0;
-    if (timeouts >= (requestConfig?.timeoutsCountThrow ?? this.DEFAULT_TIMEOUTS_COUNT_THROW)) {
+    if (!this.isFlareSolverrUrl(url) && timeouts >= (requestConfig?.timeoutsCountThrow ?? this.DEFAULT_TIMEOUTS_COUNT_THROW)) {
       throw new TooManyTimeoutsError(url);
     }
 
@@ -357,13 +357,18 @@ export class Fetcher {
     return new Promise(sleep => setTimeout(sleep, ms));
   }
 
+  private isFlareSolverrUrl(url: URL): boolean {
+    const flareSolverrEndpoint = envGet('FLARESOLVERR_ENDPOINT');
+
+    return !!flareSolverrEndpoint && url.href.startsWith(flareSolverrEndpoint);
+  }
+
   private getProxyForUrl(ctx: Context, url: URL): URL | undefined {
     if (ctx.config.mediaFlowProxyUrl && url.href.includes(ctx.config.mediaFlowProxyUrl)) {
       return undefined;
     }
 
-    const flareSolverrEndpoint = envGet('FLARESOLVERR_ENDPOINT');
-    if (flareSolverrEndpoint && url.href.startsWith(flareSolverrEndpoint)) {
+    if (this.isFlareSolverrUrl(url)) {
       return undefined;
     }
 
