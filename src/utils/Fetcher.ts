@@ -11,7 +11,7 @@ import { Cookie, CookieJar } from 'tough-cookie';
 import winston from 'winston';
 import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError, TooManyRequestsError, TooManyTimeoutsError } from '../error';
 import { BlockedReason, Context } from '../types';
-import { envGet } from './env';
+import { envGet, envGetAppId } from './env';
 
 interface FlareSolverrResult {
   status: string;
@@ -194,7 +194,7 @@ export class Fetcher {
         ...(proxyUrl && this.getProxyConfig(proxyUrl)),
         ...(!proxyUrl && { httpsAgent: new HttpsAgent({ rejectUnauthorized: false }) }),
         url: finalUrl.href,
-        timeout: this.DEFAULT_TIMEOUT,
+        timeout: requestConfig?.timeout ?? this.DEFAULT_TIMEOUT,
         transformResponse: [data => data],
         validateStatus: () => true,
       });
@@ -244,15 +244,19 @@ export class Fetcher {
 
       this.logger.info(`Query FlareSolverr for ${url.href}`, ctx);
 
+      const flareSolverrSessions = parseInt(envGet('FLARESOLVERR_SESSIONS') ?? '5');
       const data = {
         cmd: 'request.get',
         url: url.href,
-        session: 'default',
+        session: `${envGetAppId()}_${Math.floor(Math.random() * flareSolverrSessions)}`,
+        session_ttl_minutes: 60,
         maxTimeout: 15000,
+        cookies: (await this.cookieJar.getCookies(url.href)).map(cookie => ({ name: cookie.key, value: cookie.value })),
+        disableMedia: true,
         ...(proxyUrl && { proxy: { url: proxyUrl.href } }),
       };
 
-      const requestConfig: CustomRequestConfig = { method: 'POST', data, headers: { 'Content-Type': 'application/json' }, timeout: 15000, queueTimeout: 60000, queueLimit: 1 };
+      const requestConfig: CustomRequestConfig = { method: 'POST', data, headers: { 'Content-Type': 'application/json' }, timeout: 15000, queueTimeout: 60000, queueLimit: flareSolverrSessions };
       const challengeResult = JSON.parse((await this.queuedFetch(ctx, new URL('/v1', flareSolverrEndpoint), requestConfig)).data) as FlareSolverrResult;
 
       if (challengeResult.status !== 'ok') {

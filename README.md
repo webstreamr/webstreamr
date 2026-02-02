@@ -78,6 +78,10 @@ Optional. Comma separated list of sources which should be disabled. E.g. `frembe
 Optional. If domains show Cloudflare challenges, FlareSolverr can be used to work around them. E.g. `http://flaresolverr:8191`
 Proxy configuration is passed-through and only a single session is used to save resources. Byparr is not supported.
 
+#### `FLARESOLVERR_SESSIONS`
+
+Optional. Configure how many FlareSolverr sessions can be open at the same time. Default: `5`
+
 #### `MANIFEST_ID`
 
 Optional. Add-on manifest ID. Default: `webstreamr`
