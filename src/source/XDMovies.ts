@@ -23,6 +23,8 @@ export class XDMovies extends Source {
 
   public readonly label = 'XDMovies';
 
+  public override readonly useOnlyWithMaxUrlsFound = 1;
+
   public readonly contentTypes: ContentType[] = ['movie', 'series'];
 
   public readonly countryCodes: CountryCode[] = [CountryCode.multi, CountryCode.hi, CountryCode.ta, CountryCode.te, CountryCode.ml, CountryCode.bl, CountryCode.mr, CountryCode.kn, CountryCode.ja, CountryCode.ko, CountryCode.pa, CountryCode.gu];
