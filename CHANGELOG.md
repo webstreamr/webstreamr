@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.66.0](https://github.com/webstreamr/webstreamr/compare/v0.65.10...v0.66.0) (2026-02-02)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#692](https://github.com/webstreamr/webstreamr/issues/692)) ([455d84d](https://github.com/webstreamr/webstreamr/commit/455d84d5b186ff916734977bd2b4cb0b355ca485))
+
+
+### Features
+
+* **source:** add XDMovies ([1f4d81b](https://github.com/webstreamr/webstreamr/commit/1f4d81bfc99066bfe6dafd3da7ffc8b13cdfffc1))
+
+
+### Bug Fixes
+
+* **fetcher:** never block flaresolverr timeouts ([c23ffa3](https://github.com/webstreamr/webstreamr/commit/c23ffa382d862ced1a385cf36d895f75ad3b7e97))
+
 ## [0.65.10](https://github.com/webstreamr/webstreamr/compare/v0.65.9...v0.65.10) (2026-01-28)
 
 
