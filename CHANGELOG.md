@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.66.3](https://github.com/webstreamr/webstreamr/compare/v0.66.2...v0.66.3) (2026-02-03)
+
+
+### Performance Improvements
+
+* **fetcher:** simplify FlareSolverr integration by just using a request per host ([31da8aa](https://github.com/webstreamr/webstreamr/commit/31da8aa92c48618b0b52fd2194262685c947e02e))
+
 ## [0.66.2](https://github.com/webstreamr/webstreamr/compare/v0.66.1...v0.66.2) (2026-02-03)
 
 
