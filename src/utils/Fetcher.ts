@@ -73,6 +73,8 @@ export class Fetcher {
   private readonly httpStatus = new Map<string, Record<number, number>>();
   private readonly httpStatusMutex = new Mutex();
 
+  private readonly flareSolverrMutexes = new Map<string, Mutex>();
+
   public constructor(axios: AxiosInstance, logger: winston.Logger) {
     this.axios = axios;
     this.logger = logger;
@@ -242,22 +244,30 @@ export class Fetcher {
         throw new BlockedError(url, BlockedReason.cloudflare_challenge, response.headers);
       }
 
-      this.logger.info(`Query FlareSolverr for ${url.href}`, ctx);
+      const session = `${envGetAppId()}_${url.host}`;
 
-      const flareSolverrSessions = parseInt(envGet('FLARESOLVERR_SESSIONS') ?? '5');
-      const data = {
-        cmd: 'request.get',
-        url: url.href,
-        session: `${envGetAppId()}_${Math.floor(Math.random() * flareSolverrSessions)}`,
-        session_ttl_minutes: 60,
-        maxTimeout: 15000,
-        cookies: (await this.cookieJar.getCookies(url.href)).map(cookie => ({ name: cookie.key, value: cookie.value })),
-        disableMedia: true,
-        ...(proxyUrl && { proxy: { url: proxyUrl.href } }),
-      };
+      let mutex = this.flareSolverrMutexes.get(session);
+      if (!mutex) {
+        mutex = new Mutex();
+        this.flareSolverrMutexes.set(session, mutex);
+      }
 
-      const requestConfig: CustomRequestConfig = { method: 'POST', data, headers: { 'Content-Type': 'application/json' }, timeout: 15000, queueTimeout: 60000, queueLimit: flareSolverrSessions };
-      const challengeResult = JSON.parse((await this.queuedFetch(ctx, new URL('/v1', flareSolverrEndpoint), requestConfig)).data) as FlareSolverrResult;
+      const challengeResult = await mutex.runExclusive(async () => {
+        this.logger.info(`Query FlareSolverr for ${url.href}`, ctx);
+
+        const data = {
+          cmd: 'request.get',
+          url: url.href,
+          session,
+          session_ttl_minutes: 60,
+          maxTimeout: 15000,
+          disableMedia: true,
+          ...(proxyUrl && { proxy: { url: proxyUrl.href } }),
+        };
+
+        const requestConfig: CustomRequestConfig = { method: 'POST', data, headers: { 'Content-Type': 'application/json' }, timeout: 15000, queueTimeout: 60000 };
+        return JSON.parse((await this.queuedFetch(ctx, new URL('/v1', flareSolverrEndpoint), requestConfig)).data) as FlareSolverrResult;
+      });
 
       if (challengeResult.status !== 'ok') {
         this.logger.warn(`FlareSolverr issue: ${JSON.stringify(challengeResult)}`, ctx);
