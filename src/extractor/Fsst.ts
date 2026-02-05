@@ -1,41 +1,77 @@
-import * as cheerio from 'cheerio';
-import { Context, Format, InternalUrlResult, Meta } from '../types';
+import { Context, Format, Meta, UrlResult } from '../types';
 import { Extractor } from './Extractor';
 
 export class Fsst extends Extractor {
   public readonly id = 'fsst';
-
   public readonly label = 'Fsst';
+  public override readonly ttl = 10800000; // 3h
 
-  public override readonly ttl: number = 10800000; // 3h
+  private domains = ['fsst.online', 'secvideo1.online'];
 
   public supports(_ctx: Context, url: URL): boolean {
-    return null !== url.host.match(/fsst/);
-  };
+    return this.domains.some(d => url.host.includes(d));
+  }
 
-  protected async extractInternal(ctx: Context, url: URL, meta: Meta): Promise<InternalUrlResult[]> {
-    const headers = { Referer: meta.referer ?? url.href };
+  public override normalize(url: URL): URL {
+    if (url.host.includes('fsst.online')) {
+      return new URL(url.href.replace('fsst.online', 'secvideo1.online'));
+    }
+    return url;
+  }
 
-    const html = await this.fetcher.text(ctx, url, { headers, noProxyHeaders: true });
+ protected async extractInternal(
+  ctx: Context,
+  url: URL,
+  meta: Meta
+): Promise<UrlResult[]> {
+  const headers: Record<string, string> = { Referer: meta.referer ?? url.href };
 
-    const $ = cheerio.load(html);
-    const title = $('title').text().trim();
+  const html = await this.fetcher.text(ctx, url, { headers });
 
-    const filesMatch = html.match(/file:"(.*)"/) as string[];
+  let title = this.label;
+  const titleMatch = html.match(/<title>([^<]+)<\/title>/i);
+  if (titleMatch && titleMatch[1]) {
+    title = titleMatch[1].trim();
+  }
 
-    const lastFile = (filesMatch[1] as string).split(',').pop() as string;
+  const fileMatch = html.match(/file\s*:\s*"(.*?)"/);
+  if (!fileMatch || !fileMatch[1]) return [];
 
-    const heightAndUrlMatch = lastFile.match(/\[?([\d]*)p?]?(.*)/) as string[];
-    const fileHref = heightAndUrlMatch[2] as string;
+  const filesRaw = fileMatch[1].split(',').map(f => {
+    const m = f.match(/\[([0-9]+)p\](.+)/);
+    if (!m) return null;
 
-    return [{
-      url: await this.fetcher.getFinalRedirectUrl(ctx, new URL(fileHref), { headers, noProxyHeaders: true }, 1),
+    const heightStr = m[1];
+    const link = m[2];
+    if (!heightStr || !link) return null;
+
+    return { height: parseInt(heightStr, 10), url: link };
+  });
+
+  const files: { height: number; url: string }[] = filesRaw.filter(
+    (f): f is { height: number; url: string } => f !== null
+  );
+
+  if (files.length === 0) return [];
+
+  const best = files.reduce((prev, curr) =>
+    curr.height > prev.height ? curr : prev
+  );
+
+  return [
+    {
+      url: new URL(best.url),
       format: Format.mp4,
+      label: this.label,
+      sourceId: `${this.id}_${meta.countryCodes?.join('_') ?? 'all'}`,
+      requestHeaders: headers,
+      ttl: this.ttl,
       meta: {
         ...meta,
-        height: parseInt(heightAndUrlMatch[1] as string),
+        height: best.height,
         title,
       },
-    }];
-  };
+    },
+  ];
+ }
 }
