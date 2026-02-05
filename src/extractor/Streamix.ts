@@ -53,7 +53,7 @@ export class Streamix extends Extractor {
         format: Format.hls,
         label: this.label,
         sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
-        ttl: 3600000
+        ttl: 3600000,
         requestHeaders: {
           Referer: referer,
           Origin: url.origin,
