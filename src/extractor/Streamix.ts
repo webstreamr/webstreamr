@@ -52,13 +52,15 @@ export class Streamix extends Extractor {
         url: new URL(data.streaming_url),
         format: Format.hls,
         label: this.label,
-        sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
         ttl: 3600000,
         requestHeaders: {
           Referer: referer,
           Origin: url.origin,
         },
-        meta,
+        meta: {
+          ...meta,
+          sourceId: `${this.id}_${meta.countryCodes?.join('_')}`,
+        },
       },
     ];
   }
