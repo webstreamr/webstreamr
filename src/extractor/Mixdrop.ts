@@ -13,7 +13,7 @@ export class Mixdrop extends Extractor {
   public override viaMediaFlowProxy = true;
 
   public supports(ctx: Context, url: URL): boolean {
-    return null !== url.host.match(/mixdrop/) && supportsMediaFlowProxy(ctx);
+    return null !== url.host.match(/mixdrop|mixdrp|mixdroop|m1xdrop/) && supportsMediaFlowProxy(ctx);
   }
 
   public override readonly normalize = (url: URL): URL => new URL(url.href.replace('/f/', '/e/'));
