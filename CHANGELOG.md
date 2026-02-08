@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.66.4](https://github.com/webstreamr/webstreamr/compare/v0.66.3...v0.66.4) (2026-02-08)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency axios to v1.13.5 ([#705](https://github.com/webstreamr/webstreamr/issues/705)) ([de13209](https://github.com/webstreamr/webstreamr/commit/de13209709071f8f5241f209a0dbc75232925c3c))
+* **deps:** update dependency glob to v13.0.1 ([#698](https://github.com/webstreamr/webstreamr/issues/698)) ([72c191f](https://github.com/webstreamr/webstreamr/commit/72c191fbc10ed9524e698609736f01de0f236c43))
+* **extractor:** adapt mixdrop host check ([34500ea](https://github.com/webstreamr/webstreamr/commit/34500ea3fc11376eb99a86a08c179137239d612d))
+
 ## [0.66.3](https://github.com/webstreamr/webstreamr/compare/v0.66.2...v0.66.3) (2026-02-03)
 
 
