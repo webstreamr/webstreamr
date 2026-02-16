@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.66.4](https://github.com/webstreamr/webstreamr/compare/v0.66.3...v0.66.4) (2026-02-16)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#708](https://github.com/webstreamr/webstreamr/issues/708)) ([ccdd460](https://github.com/webstreamr/webstreamr/commit/ccdd4600bba1041b5f2f2515c730856eb729991f))
+* **deps:** lock file maintenance ([#718](https://github.com/webstreamr/webstreamr/issues/718)) ([d0f3e0f](https://github.com/webstreamr/webstreamr/commit/d0f3e0f9316770fe47d0395269dafe155fa1e17d))
+* **deps:** update dependency @stylistic/eslint-plugin to v5.8.0 ([#709](https://github.com/webstreamr/webstreamr/issues/709)) ([1ae12fa](https://github.com/webstreamr/webstreamr/commit/1ae12fa0f790566193bfe42f3457fe9d4e976502))
+* **deps:** update dependency @types/node to v24.10.12 ([#707](https://github.com/webstreamr/webstreamr/issues/707)) ([3f35ecf](https://github.com/webstreamr/webstreamr/commit/3f35ecf6f3eab3c2c789a176be73d1a80539762d))
+* **deps:** update dependency @types/node to v24.10.13 ([#717](https://github.com/webstreamr/webstreamr/issues/717)) ([524630d](https://github.com/webstreamr/webstreamr/commit/524630d671a74dd844ce0f629b4ccae1f88cf6e6))
+* **deps:** update dependency axios to v1.13.5 ([#705](https://github.com/webstreamr/webstreamr/issues/705)) ([de13209](https://github.com/webstreamr/webstreamr/commit/de13209709071f8f5241f209a0dbc75232925c3c))
+* **deps:** update dependency glob to v13.0.1 ([#698](https://github.com/webstreamr/webstreamr/issues/698)) ([72c191f](https://github.com/webstreamr/webstreamr/commit/72c191fbc10ed9524e698609736f01de0f236c43))
+* **deps:** update dependency glob to v13.0.2 ([#711](https://github.com/webstreamr/webstreamr/issues/711)) ([eccea52](https://github.com/webstreamr/webstreamr/commit/eccea520b7cf8b997a694c6f4fded3cbc74b960a))
+* **deps:** update dependency glob to v13.0.3 ([#714](https://github.com/webstreamr/webstreamr/issues/714)) ([65a0e57](https://github.com/webstreamr/webstreamr/commit/65a0e57ab9694648977822f73d89e641feabf893))
+* **deps:** update dependency typescript-eslint to v8.55.0 ([#710](https://github.com/webstreamr/webstreamr/issues/710)) ([7ec9c5b](https://github.com/webstreamr/webstreamr/commit/7ec9c5b1473e1e04203421ebbdd0c8d904744e99))
+* **extractor:** adapt mixdrop host check ([34500ea](https://github.com/webstreamr/webstreamr/commit/34500ea3fc11376eb99a86a08c179137239d612d))
+
 ## [0.66.3](https://github.com/webstreamr/webstreamr/compare/v0.66.2...v0.66.3) (2026-02-03)
 
 
