@@ -18,6 +18,11 @@ interface SearchResponsePartial {
   audio_languages: string;
 }
 
+interface LinkProtectorResponse {
+  sessionId: string;
+  token: string;
+}
+
 export class XDMovies extends Source {
   public readonly id = 'xdmovies';
 
@@ -105,6 +110,11 @@ export class XDMovies extends Source {
       .map((_i, el) => new URL($(el).attr('href') as string))
       .get(0) as URL;
 
-    return { url: await this.fetcher.getFinalRedirectUrl(ctx, url, undefined, 1), meta };
+    const linkProtectorUrl = await this.fetcher.getFinalRedirectUrl(ctx, url, undefined, 1);
+    const code = linkProtectorUrl.pathname.split('/').pop() as string;
+
+    const linkProtectorResponse = JSON.parse(await this.fetcher.textPost(ctx, new URL('/api/session', linkProtectorUrl), JSON.stringify({ code }), { headers: { 'Content-Type': 'application/json' } })) as LinkProtectorResponse;
+
+    return { url: await this.fetcher.getFinalRedirectUrl(ctx, new URL(`/go/${linkProtectorResponse.sessionId}?t=${encodeURIComponent(linkProtectorResponse.token)}`, linkProtectorUrl), undefined, 1), meta };
   };
 }
