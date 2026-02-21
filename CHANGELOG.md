@@ -1,5 +1,36 @@
 # Changelog
 
+## [0.66.4](https://github.com/webstreamr/webstreamr/compare/v0.66.3...v0.66.4) (2026-02-21)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#708](https://github.com/webstreamr/webstreamr/issues/708)) ([ccdd460](https://github.com/webstreamr/webstreamr/commit/ccdd4600bba1041b5f2f2515c730856eb729991f))
+* **deps:** lock file maintenance ([#718](https://github.com/webstreamr/webstreamr/issues/718)) ([d0f3e0f](https://github.com/webstreamr/webstreamr/commit/d0f3e0f9316770fe47d0395269dafe155fa1e17d))
+* **deps:** update dependency @stylistic/eslint-plugin to v5.8.0 ([#709](https://github.com/webstreamr/webstreamr/issues/709)) ([1ae12fa](https://github.com/webstreamr/webstreamr/commit/1ae12fa0f790566193bfe42f3457fe9d4e976502))
+* **deps:** update dependency @stylistic/eslint-plugin to v5.9.0 ([#723](https://github.com/webstreamr/webstreamr/issues/723)) ([bd160eb](https://github.com/webstreamr/webstreamr/commit/bd160eb32ce3719bfbebb468a5b2e45d9b4a35ce))
+* **deps:** update dependency @types/node to v24.10.12 ([#707](https://github.com/webstreamr/webstreamr/issues/707)) ([3f35ecf](https://github.com/webstreamr/webstreamr/commit/3f35ecf6f3eab3c2c789a176be73d1a80539762d))
+* **deps:** update dependency @types/node to v24.10.13 ([#717](https://github.com/webstreamr/webstreamr/issues/717)) ([524630d](https://github.com/webstreamr/webstreamr/commit/524630d671a74dd844ce0f629b4ccae1f88cf6e6))
+* **deps:** update dependency axios to v1.13.5 ([#705](https://github.com/webstreamr/webstreamr/issues/705)) ([de13209](https://github.com/webstreamr/webstreamr/commit/de13209709071f8f5241f209a0dbc75232925c3c))
+* **deps:** update dependency glob to v13.0.1 ([#698](https://github.com/webstreamr/webstreamr/issues/698)) ([72c191f](https://github.com/webstreamr/webstreamr/commit/72c191fbc10ed9524e698609736f01de0f236c43))
+* **deps:** update dependency glob to v13.0.2 ([#711](https://github.com/webstreamr/webstreamr/issues/711)) ([eccea52](https://github.com/webstreamr/webstreamr/commit/eccea520b7cf8b997a694c6f4fded3cbc74b960a))
+* **deps:** update dependency glob to v13.0.3 ([#714](https://github.com/webstreamr/webstreamr/issues/714)) ([65a0e57](https://github.com/webstreamr/webstreamr/commit/65a0e57ab9694648977822f73d89e641feabf893))
+* **deps:** update dependency glob to v13.0.4 ([#720](https://github.com/webstreamr/webstreamr/issues/720)) ([245dcf6](https://github.com/webstreamr/webstreamr/commit/245dcf6007b6e02d767246463b224e18eecaccb8))
+* **deps:** update dependency glob to v13.0.5 ([#721](https://github.com/webstreamr/webstreamr/issues/721)) ([fb354b4](https://github.com/webstreamr/webstreamr/commit/fb354b47461f58a25c245dcac65ca2de26302207))
+* **deps:** update dependency glob to v13.0.6 ([#724](https://github.com/webstreamr/webstreamr/issues/724)) ([23db19d](https://github.com/webstreamr/webstreamr/commit/23db19d07317350d007b646c6915bb9fef60b165))
+* **deps:** update dependency nodemon to v3.1.12 ([#725](https://github.com/webstreamr/webstreamr/issues/725)) ([5bfbd94](https://github.com/webstreamr/webstreamr/commit/5bfbd94e51e1c7291e12ac912578fcbf6bb39232))
+* **deps:** update dependency nodemon to v3.1.13 ([#726](https://github.com/webstreamr/webstreamr/issues/726)) ([728ed7e](https://github.com/webstreamr/webstreamr/commit/728ed7ec0631d8de8df12626cdea857b1aad1059))
+* **deps:** update dependency nodemon to v3.1.14 ([#728](https://github.com/webstreamr/webstreamr/issues/728)) ([3bb7a80](https://github.com/webstreamr/webstreamr/commit/3bb7a800e3662e0bd2ae31ec4b4a61eaee5dde6c))
+* **deps:** update dependency typescript-eslint to v8.55.0 ([#710](https://github.com/webstreamr/webstreamr/issues/710)) ([7ec9c5b](https://github.com/webstreamr/webstreamr/commit/7ec9c5b1473e1e04203421ebbdd0c8d904744e99))
+* **deps:** update dependency typescript-eslint to v8.56.0 ([#719](https://github.com/webstreamr/webstreamr/issues/719)) ([94f5c74](https://github.com/webstreamr/webstreamr/commit/94f5c7438d82f96edfb0692e55eb071642d008a9))
+* **deps:** update eslint monorepo to v9.39.3 ([#727](https://github.com/webstreamr/webstreamr/issues/727)) ([26b6143](https://github.com/webstreamr/webstreamr/commit/26b6143152b8b15f2d79f747dbdb8cb48137a46a))
+* **extractor:** adapt mixdrop host check ([34500ea](https://github.com/webstreamr/webstreamr/commit/34500ea3fc11376eb99a86a08c179137239d612d))
+
+
+### Bug Fixes
+
+* **source:** handle new XDMovies URL protection ([cf8fb4c](https://github.com/webstreamr/webstreamr/commit/cf8fb4cfa47741ef8cb3fd214e7eff24ecc72375))
+
 ## [0.66.3](https://github.com/webstreamr/webstreamr/compare/v0.66.2...v0.66.3) (2026-02-03)
 
 
