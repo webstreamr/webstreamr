@@ -13,26 +13,27 @@ import { BlockedError, HttpError, NotFoundError, QueueIsFullError, TimeoutError,
 import { BlockedReason, Context } from '../types';
 import { envGet, envGetAppId } from './env';
 
+interface FlareSolverrSolution {
+  url: string;
+  status: number;
+  cookies: {
+    domain: string;
+    expiry: number;
+    httpOnly: boolean;
+    name: string;
+    path: string;
+    sameSite: string;
+    secure: boolean;
+    value: string;
+  }[];
+  userAgent: string;
+  headers: Record<string, string>;
+  response: string;
+}
 interface FlareSolverrResult {
   status: string;
   message: string;
-  solution: {
-    url: string;
-    status: number;
-    cookies: {
-      domain: string;
-      expiry: number;
-      httpOnly: boolean;
-      name: string;
-      path: string;
-      sameSite: string;
-      secure: boolean;
-      value: string;
-    }[];
-    userAgent: string;
-    headers: Record<string, string>;
-    response: string;
-  };
+  solution: FlareSolverrSolution;
   startTimeStamp: number;
   endTimeStamp: number;
   version: string;
@@ -246,9 +247,10 @@ export class Fetcher {
         throw new BlockedError(url, BlockedReason.cloudflare_challenge, response.headers);
       }
 
-      const cachedResponseData = await this.flareSolverrCache.get<string>(url.href);
-      if (cachedResponseData) {
-        response.data = cachedResponseData;
+      const cachedSolution = await this.flareSolverrCache.get<FlareSolverrSolution>(url.href);
+      if (cachedSolution) {
+        response.status = cachedSolution.status;
+        response.data = cachedSolution.response;
         return response;
       }
 
@@ -304,8 +306,9 @@ export class Fetcher {
 
       this.hostUserAgentMap.set(url.host, challengeResult.solution.userAgent);
 
+      response.status = challengeResult.solution.status;
       response.data = challengeResult.solution.response;
-      await this.flareSolverrCache.set<string>(url.href, response.data, this.FLARESOLVERR_CACHE_TTL);
+      await this.flareSolverrCache.set<FlareSolverrSolution>(url.href, challengeResult.solution, this.FLARESOLVERR_CACHE_TTL);
 
       return response;
     }
