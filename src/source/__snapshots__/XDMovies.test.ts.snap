@@ -1,5 +1,58 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`XDMovies handle great indian kapil show s03e01 1`] = `
+[
+  {
+    "meta": {
+      "bytes": 1320702443,
+      "countryCodes": [
+        "multi",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "The.Great.Indian.Kapil.Show.S03E01.1080p.NF.WEB-DL.DDP5.1.AV1-PrimeFix.mkv",
+    },
+    "url": "https://hubcloud.one/drive/3uuwzq1q3pye9yv",
+  },
+  {
+    "meta": {
+      "bytes": 3103113871,
+      "countryCodes": [
+        "multi",
+        "hi",
+      ],
+      "height": 1080,
+      "title": "The.Great.Indian.Kapil.Show.S03E01.1080p.NF.WEB-DL.DDP5.1.H.264-PrimeFix.mkv",
+    },
+    "url": "https://hubcloud.one/drive/lpuxelnsleaec6y",
+  },
+  {
+    "meta": {
+      "bytes": 450971566,
+      "countryCodes": [
+        "multi",
+        "hi",
+      ],
+      "height": 720,
+      "title": "The.Great.Indian.Kapil.Show.S03E01.720p.NF.WEB-DL.DDP5.1.AV1-PrimeFix.mkv",
+    },
+    "url": "https://hubcloud.one/drive/2114yktggdye42a",
+  },
+  {
+    "meta": {
+      "bytes": 1868310773,
+      "countryCodes": [
+        "multi",
+        "hi",
+      ],
+      "height": 720,
+      "title": "The.Great.Indian.Kapil.Show.S03E01.720p.NF.WEB-DL.DDP5.1.H.264-PrimeFix.mkv",
+    },
+    "url": "https://hubcloud.one/drive/cgghjzjgjbqxgmi",
+  },
+]
+`;
+
 exports[`XDMovies handle non-existent devil's bath 2024 gracefully 1`] = `[]`;
 
 exports[`XDMovies handle rathnam 2024 1`] = `

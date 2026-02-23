@@ -110,6 +110,10 @@ export class XDMovies extends Source {
       .map((_i, el) => new URL($(el).attr('href') as string))
       .get(0) as URL;
 
+    if (!url.host.startsWith('link.')) {
+      return { url, meta };
+    }
+
     const linkProtectorUrl = await this.fetcher.getFinalRedirectUrl(ctx, url, undefined, 1);
     const code = linkProtectorUrl.pathname.split('/').pop() as string;
 

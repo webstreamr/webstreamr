@@ -25,4 +25,9 @@ describe('XDMovies', () => {
     const streams = await source.handle(ctx, 'series', new TmdbId(66732, 5, 8));
     expect(streams).toMatchSnapshot();
   });
+
+  test('handle great indian kapil show s03e01', async () => {
+    const streams = await source.handle(ctx, 'series', new TmdbId(247769, 3, 1));
+    expect(streams).toMatchSnapshot();
+  });
 });
