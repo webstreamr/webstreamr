@@ -54,7 +54,8 @@ export class Fetcher {
   private readonly DEFAULT_QUEUE_LIMIT = 50;
   private readonly DEFAULT_QUEUE_TIMEOUT = 10000;
   private readonly DEFAULT_TIMEOUTS_COUNT_THROW = 30;
-  private readonly TIMEOUT_CACHE_TTL = 3600000; // 1h
+  private readonly TIMEOUT_CACHE_TTL = 60 * 60 * 1000; // 1h
+  private readonly FLARESOLVERR_CACHE_TTL = 15 * 60 * 1000; // 15m
   private readonly MAX_WAIT_RETRY_AFTER = 10000;
 
   private readonly axios: AxiosInstance;
@@ -73,6 +74,7 @@ export class Fetcher {
   private readonly httpStatus = new Map<string, Record<number, number>>();
   private readonly httpStatusMutex = new Mutex();
 
+  private readonly flareSolverrCache = new Cacheable({ primary: new Keyv({ store: new CacheableMemory({ lruSize: 1024 }) }) });
   private readonly flareSolverrMutexes = new Map<string, Mutex>();
 
   public constructor(axios: AxiosInstance, logger: winston.Logger) {
@@ -244,6 +246,12 @@ export class Fetcher {
         throw new BlockedError(url, BlockedReason.cloudflare_challenge, response.headers);
       }
 
+      const cachedResponseData = await this.flareSolverrCache.get<string>(url.href);
+      if (cachedResponseData) {
+        response.data = cachedResponseData;
+        return response;
+      }
+
       const session = `${envGetAppId()}_${url.host}`;
 
       let mutex = this.flareSolverrMutexes.get(session);
@@ -297,6 +305,7 @@ export class Fetcher {
       this.hostUserAgentMap.set(url.host, challengeResult.solution.userAgent);
 
       response.data = challengeResult.solution.response;
+      await this.flareSolverrCache.set<string>(url.href, response.data, this.FLARESOLVERR_CACHE_TTL);
 
       return response;
     }

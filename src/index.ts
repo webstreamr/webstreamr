@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import axios from 'axios';
-import { setupCache } from 'axios-cache-interceptor';
+import { buildMemoryStorage, setupCache } from 'axios-cache-interceptor';
 import axiosRetry from 'axios-retry';
 import express, { NextFunction, Request, Response } from 'express';
 // eslint-disable-next-line import/no-named-as-default
@@ -39,7 +39,11 @@ process.on('unhandledRejection', (error: Error) => {
   logger.error(`Unhandled rejection: ${error}, cause: ${error.cause}, stack: ${error.stack}`);
 });
 
-const cachedAxios = setupCache(axios);
+const cachedAxios = setupCache(axios, {
+  interpretHeader: true,
+  storage: buildMemoryStorage(false, 3 * 60 * 60 * 1000, 4096, 12 * 60 * 60 * 1000),
+  ttl: 15 * 60 * 1000, // 15m
+});
 axiosRetry(cachedAxios, { retries: 3, retryDelay: () => 333 });
 
 const fetcher = new Fetcher(cachedAxios, logger);
