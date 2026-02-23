@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.66.5](https://github.com/webstreamr/webstreamr/compare/v0.66.4...v0.66.5) (2026-02-23)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#730](https://github.com/webstreamr/webstreamr/issues/730)) ([6c10236](https://github.com/webstreamr/webstreamr/commit/6c102362fde48af0a6857f8ab66bc42385a3411a))
+
+
+### Bug Fixes
+
+* **extractor:** remove StreamUp ([556b20e](https://github.com/webstreamr/webstreamr/commit/556b20e6690c251e86e10740b45ca0b4c614b222))
+* **source:** add support for old XDMovies uploads without URL protector ([964e979](https://github.com/webstreamr/webstreamr/commit/964e9794695201367900ae6e4eda4ad439652222))
+
+
+### Performance Improvements
+
+* cache all non-error requests for 15m, tune axios caching ([ae10810](https://github.com/webstreamr/webstreamr/commit/ae10810caaebb909ffe5c51c37dc4a01184391a9))
+
 ## [0.66.4](https://github.com/webstreamr/webstreamr/compare/v0.66.3...v0.66.4) (2026-02-21)
 
 
