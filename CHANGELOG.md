@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.66.6](https://github.com/webstreamr/webstreamr/compare/v0.66.5...v0.66.6) (2026-02-25)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency minimatch to v10.2.3 ([#715](https://github.com/webstreamr/webstreamr/issues/715)) ([ce4637e](https://github.com/webstreamr/webstreamr/commit/ce4637ea80adaee5f7c325defd9676533dfb884e))
+* **deps:** update dependency minimatch to v10.2.4 ([#735](https://github.com/webstreamr/webstreamr/issues/735)) ([354c273](https://github.com/webstreamr/webstreamr/commit/354c2731d8ffe1948f5ff8647a7be668c6ce5cbd))
+* **deps:** update dependency typescript-eslint to v8.56.1 ([#734](https://github.com/webstreamr/webstreamr/issues/734)) ([73ce5f3](https://github.com/webstreamr/webstreamr/commit/73ce5f372d5c2c2be39d1f36fa104afbdee41b77))
+* **fetcher:** cache whole flaresolverr solution and also use status from it ([221fa98](https://github.com/webstreamr/webstreamr/commit/221fa989f4c51e13308a41e59dd088a2b0128e45))
+
 ## [0.66.5](https://github.com/webstreamr/webstreamr/compare/v0.66.4...v0.66.5) (2026-02-23)
 
 
