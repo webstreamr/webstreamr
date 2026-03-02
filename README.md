@@ -1,6 +1,6 @@
 # WebStreamr
 
-[![Tests](https://github.com/webstreamr/webstreamr/workflows/Tests/badge.svg)](https://github.com/webstreamr/webstreamr/actions/workflows/tests.yml)
+[![Tests](https://github.com/webstreamr/webstreamr/actions/workflows/tests.yml/badge.svg)](https://github.com/webstreamr/webstreamr/actions/workflows/tests.yml)
 [![GitHub release](https://img.shields.io/github/v/release/webstreamr/webstreamr)](https://github.com/webstreamr/webstreamr/releases)
 ![GitHub License](https://img.shields.io/github/license/webstreamr/webstreamr)
 
