@@ -50,6 +50,7 @@ export class Dropload extends Extractor {
           ...(size && { bytes: size }),
           ...(height && { height }),
         },
+        requestHeaders: { Referer: url.origin },
       },
     ];
   };

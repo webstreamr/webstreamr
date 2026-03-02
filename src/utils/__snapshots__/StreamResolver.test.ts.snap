@@ -234,6 +234,11 @@ exports[`resolve returns sorted results 1`] = `
     "behaviorHints": {
       "bingeGroup": "webstreamr-meinecloud-dropload-de",
       "notWebReady": true,
+      "proxyHeaders": {
+        "request": {
+          "Referer": "https://dropload.io",
+        },
+      },
       "videoSize": 1395864371,
     },
     "name": "WebStreamr 🇩🇪 1080p",
@@ -245,6 +250,11 @@ exports[`resolve returns sorted results 1`] = `
     "behaviorHints": {
       "bingeGroup": "webstreamr-mostraguarda-dropload-it",
       "notWebReady": true,
+      "proxyHeaders": {
+        "request": {
+          "Referer": "https://dropload.io",
+        },
+      },
       "videoSize": 1181116006,
     },
     "name": "WebStreamr 🇮🇹 720p",
@@ -283,6 +293,11 @@ exports[`resolve returns sorted results 2`] = `
     "behaviorHints": {
       "bingeGroup": "webstreamr-meinecloud-dropload-de",
       "notWebReady": true,
+      "proxyHeaders": {
+        "request": {
+          "Referer": "https://dropload.io",
+        },
+      },
       "videoSize": 1395864371,
     },
     "name": "WebStreamr 🇩🇪 1080p",
@@ -294,6 +309,11 @@ exports[`resolve returns sorted results 2`] = `
     "behaviorHints": {
       "bingeGroup": "webstreamr-mostraguarda-dropload-it",
       "notWebReady": true,
+      "proxyHeaders": {
+        "request": {
+          "Referer": "https://dropload.io",
+        },
+      },
       "videoSize": 1181116006,
     },
     "name": "WebStreamr 🇮🇹 720p",
