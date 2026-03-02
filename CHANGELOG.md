@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.66.8](https://github.com/webstreamr/webstreamr/compare/v0.66.7...v0.66.8) (2026-03-02)
+
+
+### Documentation
+
+* add known issues / limitations section ([438387f](https://github.com/webstreamr/webstreamr/commit/438387faee8fb8604f4de7c1a7876be40d79fa79))
+* add more limitations ([aa820e1](https://github.com/webstreamr/webstreamr/commit/aa820e1f6463d216ad12c44587b7134f424e1c9a))
+* add more references ([38d0ac5](https://github.com/webstreamr/webstreamr/commit/38d0ac53059ed338718a759c76c425a2458fa5c2))
+
+
+### Bug Fixes
+
+* **extractor:** use Dropload playlist headers also internally ([7dfc599](https://github.com/webstreamr/webstreamr/commit/7dfc599de900c34703e41eeea5c4e459da6380cf))
+
 ## [0.66.7](https://github.com/webstreamr/webstreamr/compare/v0.66.6...v0.66.7) (2026-03-02)
 
 
