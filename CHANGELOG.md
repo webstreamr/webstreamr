@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.66.7](https://github.com/webstreamr/webstreamr/compare/v0.66.6...v0.66.7) (2026-03-02)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#745](https://github.com/webstreamr/webstreamr/issues/745)) ([8ea6d4f](https://github.com/webstreamr/webstreamr/commit/8ea6d4fe3709067c1a2c30dcbf53567e10f102dc))
+* **deps:** update dependency @types/node to v24.11.0 ([#744](https://github.com/webstreamr/webstreamr/issues/744)) ([282b3d0](https://github.com/webstreamr/webstreamr/commit/282b3d05b32bbcc6e2ac2137e3cb96974ee4ddfb))
+* **deps:** update dependency axios to v1.13.6 ([#736](https://github.com/webstreamr/webstreamr/issues/736)) ([50e024a](https://github.com/webstreamr/webstreamr/commit/50e024a3ea1b2326fad7f2fcb59324d34a8561a2))
+* **deps:** update dependency cacheable to v2.3.3 ([#737](https://github.com/webstreamr/webstreamr/issues/737)) ([168d028](https://github.com/webstreamr/webstreamr/commit/168d0280dcef9402815e353bc162af5bbf11af84))
+
+
+### Bug Fixes
+
+* **extractor:** add referer as proxy header for Dropload ([bbb80f3](https://github.com/webstreamr/webstreamr/commit/bbb80f3cf0b918668149f5f6be1a2c38157a414b))
+
 ## [0.66.6](https://github.com/webstreamr/webstreamr/compare/v0.66.5...v0.66.6) (2026-02-25)
 
 
