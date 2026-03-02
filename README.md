@@ -10,6 +10,10 @@
 
 A public instance is available at https://webstreamr.hayd.uk. Hosting infrastructure for this instance is donated by [ElfHosted](https://elfhosted.com), and independently maintained by [Hayduk](https://hayd.uk).
 
+## Known issues / limitations
+
+- Dropload on Android does not work because Stremio does not use the `Referer` header properly via HLS playlists: https://github.com/Stremio/stremio-bugs/issues/2389
+
 ## MediaFlow Proxy
 
 [MediaFlow Proxy](https://github.com/mhdzumair/mediaflow-proxy/) can be added when configuration the add-on to gain access to a couple of more file hosters.
