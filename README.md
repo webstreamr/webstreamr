@@ -14,6 +14,10 @@ A public instance is available at https://webstreamr.hayd.uk. Hosting infrastruc
 
 - Dropload on Android does not work because Stremio does not use the `Referer` header properly via HLS playlists: https://github.com/Stremio/stremio-bugs/issues/2389, maybe https://github.com/Stremio/stremio-bugs/issues/1579
 - MediaFlow proxy has to be used in an inefficient way because Stremio on Android or its players cannot deal with HLS playlist with redirects: https://github.com/Stremio/stremio-bugs/issues/1574
+- FlareSolverr cookies cannot be used because Cloudflare does techniques like TLS fingerprinting most likely. But FlareSolverr uses a session per host and should be quick.
+- VidSrc works but rate limits heavily and is therefore only queried as fallback if nothing else is found.
+- RgShows detects shared usage and blocks IPs. It therefore only works on private instances.
+- XDMovies is used as fallback if not more than one other result is found.
 
 ## MediaFlow Proxy
 
