@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.66.9](https://github.com/webstreamr/webstreamr/compare/v0.66.8...v0.66.9) (2026-03-04)
+
+
+### Miscellaneous Chores
+
+* add referral ([a5e429f](https://github.com/webstreamr/webstreamr/commit/a5e429fea365ee04a3bd32f07676a852511be852))
+* **deps:** update docker/setup-qemu-action action to v4 ([#749](https://github.com/webstreamr/webstreamr/issues/749)) ([b36e148](https://github.com/webstreamr/webstreamr/commit/b36e1484eb51b7d86352c6f78f2f4c21adba28d0))
+
+
+### Documentation
+
+* use default branch for tests badge ([6d5870c](https://github.com/webstreamr/webstreamr/commit/6d5870ccb219bcb6448aac732914d02f59b8b602))
+
 ## [0.66.8](https://github.com/webstreamr/webstreamr/compare/v0.66.7...v0.66.8) (2026-03-02)
 
 
