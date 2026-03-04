@@ -280,6 +280,13 @@ export function landingTemplate(manifest: CustomManifest) {
 
       <div class="separator"></div>
 
+      <p>
+        Note: HTTP streams have limitations. For a better experience, I'd advise using a Debrid service and WebStreamr as fallback.
+        <a href="https://torbox.app/subscription?referral=f22eb00d-27ce-4e20-85fc-68da3d018b99" target="_blank"><strong>TorBox</strong></a> is working very well. 
+      </p>
+
+      <div class="separator"></div>
+
       <h3 class="gives">This addon has more :</h3>
       <ul>
       ${stylizedTypes.map(t => `<li>${t}</li>`).join('')}

@@ -6,6 +6,10 @@
 
 [Stremio](https://www.stremio.com/) add-on which provides HTTP URLs from streaming websites.
 
+HTTP streams have limitations.
+For a better experience, I'd advise using a Debrid service and WebStreamr as fallback.
+[TorBox](https://torbox.app/subscription?referral=f22eb00d-27ce-4e20-85fc-68da3d018b99) is working very well.
+
 ## Public instance
 
 A public instance is available at https://webstreamr.hayd.uk. Hosting infrastructure for this instance is donated by [ElfHosted](https://elfhosted.com), and independently maintained by [Hayduk](https://hayd.uk).
