@@ -13,7 +13,7 @@ export class Dropload extends Extractor {
   public override readonly ttl: number = 10800000; // 3h
 
   public supports(_ctx: Context, url: URL): boolean {
-    return null !== url.host.match(/dropload/);
+    return null !== url.host.match(/dropload|dr0pstream/);
   }
 
   public override readonly normalize = (url: URL): URL => new URL(url.href.replace('/d/', '/').replace('/e/', '/').replace('/embed-', '/'));
@@ -28,7 +28,8 @@ export class Dropload extends Extractor {
     }
 
     const playlistUrl = extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]);
-    const playlistHeaders = { Referer: url.origin };
+    const hostUrlMatch = html.match(/(https:\/\/.+?\/)player/) as string[];
+    const playlistHeaders = { Referer: hostUrlMatch[1] as string };
 
     const heightMatch = html.match(/\d{3,}x(\d{3,}),/);
     const height = heightMatch

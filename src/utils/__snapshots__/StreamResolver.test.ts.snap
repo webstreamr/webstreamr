@@ -236,7 +236,7 @@ exports[`resolve returns sorted results 1`] = `
       "notWebReady": true,
       "proxyHeaders": {
         "request": {
-          "Referer": "https://dropload.io",
+          "Referer": "https://dropload.io/",
         },
       },
       "videoSize": 1395864371,
@@ -252,7 +252,7 @@ exports[`resolve returns sorted results 1`] = `
       "notWebReady": true,
       "proxyHeaders": {
         "request": {
-          "Referer": "https://dropload.io",
+          "Referer": "https://dropload.io/",
         },
       },
       "videoSize": 1181116006,
@@ -295,7 +295,7 @@ exports[`resolve returns sorted results 2`] = `
       "notWebReady": true,
       "proxyHeaders": {
         "request": {
-          "Referer": "https://dropload.io",
+          "Referer": "https://dropload.io/",
         },
       },
       "videoSize": 1395864371,
@@ -311,7 +311,7 @@ exports[`resolve returns sorted results 2`] = `
       "notWebReady": true,
       "proxyHeaders": {
         "request": {
-          "Referer": "https://dropload.io",
+          "Referer": "https://dropload.io/",
         },
       },
       "videoSize": 1181116006,
