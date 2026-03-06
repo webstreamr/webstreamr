@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.66.10](https://github.com/webstreamr/webstreamr/compare/v0.66.9...v0.66.10) (2026-03-06)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency @stylistic/eslint-plugin to v5.10.0 ([#760](https://github.com/webstreamr/webstreamr/issues/760)) ([4e43650](https://github.com/webstreamr/webstreamr/commit/4e436509bf8b6bed5d1d879756f7cccba28b0d6a))
+* **deps:** update dependency axios-cache-interceptor to v1.12.0 ([#755](https://github.com/webstreamr/webstreamr/issues/755)) ([edebd86](https://github.com/webstreamr/webstreamr/commit/edebd860aa3c4c01b6444c0296e21279ea3231ff))
+* **deps:** update dependency express-rate-limit to v8.3.0 ([#758](https://github.com/webstreamr/webstreamr/issues/758)) ([f58e0e1](https://github.com/webstreamr/webstreamr/commit/f58e0e1f4f6c4db1e4efbeba6278a5358d1f6a56))
+* **deps:** update docker/build-push-action action to v7 ([#759](https://github.com/webstreamr/webstreamr/issues/759)) ([737a806](https://github.com/webstreamr/webstreamr/commit/737a8063a8921a8fd0247e2cb3c053030b018294))
+* **deps:** update docker/login-action action to v4 ([#750](https://github.com/webstreamr/webstreamr/issues/750)) ([6b8363b](https://github.com/webstreamr/webstreamr/commit/6b8363bd9c970b8760a1412a66086b120422567f))
+* **deps:** update docker/setup-buildx-action action to v4 ([#757](https://github.com/webstreamr/webstreamr/issues/757)) ([d2e72b0](https://github.com/webstreamr/webstreamr/commit/d2e72b0756e8a86d64e6c70e168b689429d4b3d7))
+
+
+### Bug Fixes
+
+* **extractor:** use Dropload hosting URL origin as Referer ([423abf2](https://github.com/webstreamr/webstreamr/commit/423abf2479b7dffde3138c6043eb1f2854e4b077))
+
 ## [0.66.9](https://github.com/webstreamr/webstreamr/compare/v0.66.8...v0.66.9) (2026-03-04)
 
 
