@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.66.11](https://github.com/webstreamr/webstreamr/compare/v0.66.10...v0.66.11) (2026-03-13)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#764](https://github.com/webstreamr/webstreamr/issues/764)) ([394dc91](https://github.com/webstreamr/webstreamr/commit/394dc91bfa0a2382ad7d084f02a2f99b7eb91ca5))
+* **deps:** update dependency @types/node to v24.12.0 ([#763](https://github.com/webstreamr/webstreamr/issues/763)) ([7de0468](https://github.com/webstreamr/webstreamr/commit/7de046838d8c851caf7ec164c441b77907705c89))
+* **deps:** update dependency express-rate-limit to v8.3.1 ([#765](https://github.com/webstreamr/webstreamr/issues/765)) ([e90b558](https://github.com/webstreamr/webstreamr/commit/e90b5583a7c2d005e53b60f8152eb4e37dd6591b))
+* **deps:** update dependency tough-cookie to v6.0.1 ([#773](https://github.com/webstreamr/webstreamr/issues/773)) ([2734fb4](https://github.com/webstreamr/webstreamr/commit/2734fb4d0db6c658022ba1d6a89b90c7194d84b9))
+* **deps:** update dependency typescript-eslint to v8.57.0 ([#766](https://github.com/webstreamr/webstreamr/issues/766)) ([ad3d0b3](https://github.com/webstreamr/webstreamr/commit/ad3d0b317e476621bef309b95fd683bd0b47fa38))
+* **deps:** update eslint monorepo to v9.39.4 ([#761](https://github.com/webstreamr/webstreamr/issues/761)) ([955872a](https://github.com/webstreamr/webstreamr/commit/955872a8254e1ab93e298df720ae1e618d2fd3bc))
+* **deps:** update jest monorepo to v30.3.0 ([#767](https://github.com/webstreamr/webstreamr/issues/767)) ([b522314](https://github.com/webstreamr/webstreamr/commit/b5223148c7ed336136c4182aaaa59f031ea6dc2a))
+
+
+### Bug Fixes
+
+* **deps:** update dependency sqlite3 to v6 ([#772](https://github.com/webstreamr/webstreamr/issues/772)) ([930e819](https://github.com/webstreamr/webstreamr/commit/930e8191beac055e8b82ee9a79bd78f56b2613a2))
+* **extractor:** add missing VOE domain ([c78c1ad](https://github.com/webstreamr/webstreamr/commit/c78c1ad628c81391bdead00273e3a346983b1f45))
+* **source:** switch to new Frembed URL and resolve link redirects ([8fe4cc5](https://github.com/webstreamr/webstreamr/commit/8fe4cc5a9bf37612647ed348cf76702fdbf6857e))
+
 ## [0.66.10](https://github.com/webstreamr/webstreamr/compare/v0.66.9...v0.66.10) (2026-03-06)
 
 
