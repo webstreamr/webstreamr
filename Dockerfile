@@ -2,13 +2,15 @@ FROM node:24 AS builder
 WORKDIR /app
 
 COPY package*.json ./
+# you might want to add --build-from-source=sqlite3 here too.
 RUN npm ci
 
 COPY tsconfig.json ./
 COPY src ./src
 RUN npm run build
 
-RUN npm ci --only=production
+# FIX: Force sqlite3 to compile against the container's glibc 
+RUN npm ci --only=production --build-from-source=sqlite3
 
 FROM node:24
 WORKDIR /app
