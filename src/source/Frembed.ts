@@ -13,7 +13,7 @@ export class Frembed extends Source {
 
   public readonly countryCodes: CountryCode[] = [CountryCode.fr];
 
-  public readonly baseUrl = 'https://frembed.my';
+  public readonly baseUrl = 'https://frembed.work';
 
   private readonly fetcher: Fetcher;
 
@@ -44,7 +44,7 @@ export class Frembed extends Source {
     for (const key in json) {
       if (key.startsWith('link') && json[key] && !json[key].includes(',https')) {
         try {
-          urls.push(new URL(json[key].trim()));
+          urls.push(await this.fetcher.getFinalRedirectUrl(ctx, new URL(json[key].trim(), baseUrl), { headers: { Referer: baseUrl.origin + '/' } }));
         } catch {
           // Skip invalid URL
         }
