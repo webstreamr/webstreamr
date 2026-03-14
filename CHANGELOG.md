@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.66.13](https://github.com/webstreamr/webstreamr/compare/v0.66.12...v0.66.13) (2026-03-14)
+
+
+### Bug Fixes
+
+* downgrade sqlite for now ([66ee72b](https://github.com/webstreamr/webstreamr/commit/66ee72baf02560ca4bed0864869ab8046e85d0eb))
+
 ## [0.66.12](https://github.com/webstreamr/webstreamr/compare/v0.66.11...v0.66.12) (2026-03-14)
 
 
