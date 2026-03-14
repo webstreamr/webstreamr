@@ -10,7 +10,7 @@ RUN npm run build
 
 RUN npm ci --only=production
 
-FROM node:24
+FROM node:24-trixie
 WORKDIR /app
 
 COPY --from=builder /app/dist ./dist
