@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.66.12](https://github.com/webstreamr/webstreamr/compare/v0.66.11...v0.66.12) (2026-03-14)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#779](https://github.com/webstreamr/webstreamr/issues/779)) ([b7093ed](https://github.com/webstreamr/webstreamr/commit/b7093ed4ae37cc4e4a2603bd6c8dac0118f8e617))
+* **deps:** update dependency slugify to v1.6.8 ([#777](https://github.com/webstreamr/webstreamr/issues/777)) ([20289ea](https://github.com/webstreamr/webstreamr/commit/20289eaeaf8710c4cfb60d661061c62a3cfa4aeb))
+
+
+### Bug Fixes
+
+* require sqlite with alpine fix ([0f004dc](https://github.com/webstreamr/webstreamr/commit/0f004dc878c1c1a24cae553100426c61d45841a9))
+
 ## [0.66.11](https://github.com/webstreamr/webstreamr/compare/v0.66.10...v0.66.11) (2026-03-13)
 
 
