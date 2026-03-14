@@ -1,4 +1,4 @@
-FROM node:24 AS builder
+FROM node:24-trixie AS builder
 WORKDIR /app
 
 COPY package*.json ./
