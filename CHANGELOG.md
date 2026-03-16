@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.66.14](https://github.com/webstreamr/webstreamr/compare/v0.66.13...v0.66.14) (2026-03-16)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#784](https://github.com/webstreamr/webstreamr/issues/784)) ([9eca05e](https://github.com/webstreamr/webstreamr/commit/9eca05efc5c56dc0c008b6cac6314c2849e11382))
+
 ## [0.66.13](https://github.com/webstreamr/webstreamr/compare/v0.66.12...v0.66.13) (2026-03-14)
 
 
