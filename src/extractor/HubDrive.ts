@@ -9,7 +9,7 @@ export class HubDrive extends Extractor {
 
   public readonly label = 'HubDrive';
 
-  public override readonly ttl: number = 518400000; // 6d
+  public override readonly ttl: number = 43200000; // 12h
 
   private readonly hubCloud: HubCloud;
 
