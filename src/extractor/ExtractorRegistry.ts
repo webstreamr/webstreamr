@@ -44,9 +44,7 @@ export class ExtractorRegistry {
     }
 
     const normalizedUrl = extractor.normalize(url);
-    const cacheKey = extractor.viaMediaFlowProxy
-      ? `${extractor.id}_${normalizedUrl}_${ctx.config.mediaFlowProxyUrl}`
-      : `${extractor.id}_${normalizedUrl}`;
+    const cacheKey = this.determineCacheKey(ctx, extractor, normalizedUrl);
 
     const storedDataRaw = await this.urlResultCache.getRaw<UrlResult[]>(cacheKey);
     const expires = storedDataRaw?.expires;
@@ -99,4 +97,16 @@ export class ExtractorRegistry {
 
     return urlResults;
   };
+
+  private determineCacheKey(ctx: Context, extractor: Extractor, url: URL): string {
+    let suffix = '';
+    if (extractor.viaMediaFlowProxy) {
+      suffix += `_${ctx.config.mediaFlowProxyUrl}`;
+    }
+    if (extractor.cacheVersion) {
+      suffix += `_${extractor.cacheVersion}`;
+    }
+
+    return `${extractor.id}_${url}${suffix}`;
+  }
 }

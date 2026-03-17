@@ -9,6 +9,8 @@ export abstract class Extractor {
 
   public readonly ttl: number = 900000; // 15m
 
+  public readonly cacheVersion: number | undefined = undefined;
+
   public readonly viaMediaFlowProxy: boolean = false;
 
   protected readonly fetcher: Fetcher;

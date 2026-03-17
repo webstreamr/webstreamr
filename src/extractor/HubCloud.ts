@@ -10,6 +10,8 @@ export class HubCloud extends Extractor {
 
   public override readonly ttl: number = 43200000; // 12h
 
+  public override readonly cacheVersion = 1;
+
   public supports(_ctx: Context, url: URL): boolean {
     return null !== url.host.match(/hubcloud/);
   }

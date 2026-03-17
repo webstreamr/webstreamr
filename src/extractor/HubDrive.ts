@@ -11,6 +11,8 @@ export class HubDrive extends Extractor {
 
   public override readonly ttl: number = 43200000; // 12h
 
+  public override readonly cacheVersion = 1;
+
   private readonly hubCloud: HubCloud;
 
   public constructor(fetcher: Fetcher, hubCloud: HubCloud) {
