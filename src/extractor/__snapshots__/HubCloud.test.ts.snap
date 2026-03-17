@@ -26,8 +26,11 @@ exports[`HubCloud handle dark 2017 s03e08 1`] = `
       "extractorId": "hubcloud_pixelserver",
       "title": "Dark.S03E08.The.Paradise.1080p.NF.WEB-DL.English.DDP5.1-German.DDP5.1.H.264-4kHdHub.Com.mkv",
     },
+    "requestHeaders": {
+      "Referer": "https://pixeldrain.dev/u/2kFQBQio",
+    },
     "ttl": 518400000,
-    "url": "https://pixeldrain.dev/api/file/2kFQBQio",
+    "url": "https://pixeldrain.dev/api/file/2kFQBQio?download=",
   },
 ]
 `;
@@ -53,8 +56,11 @@ exports[`HubCloud handle dexter original sin 2024 s01e01 1`] = `
       "extractorId": "hubcloud_pixelserver",
       "title": "Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv",
     },
+    "requestHeaders": {
+      "Referer": "https://pixeldrain.dev/u/HqAiguQV",
+    },
     "ttl": 518400000,
-    "url": "https://pixeldrain.dev/api/file/HqAiguQV",
+    "url": "https://pixeldrain.dev/api/file/HqAiguQV?download=",
   },
 ]
 `;

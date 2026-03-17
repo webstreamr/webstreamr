@@ -47,7 +47,10 @@ export class HubCloud extends Extractor {
       ...$('a')
         .filter((_i, el) => $(el).text().includes('PixelServer'))
         .map((_i, el) => {
-          const url = new URL(($(el).attr('href') as string).replace('/u/', '/api/file/'));
+          const userUrl = new URL(($(el).attr('href') as string).replace('/api/file/', '/u/'));
+          const url = new URL(userUrl.href.replace('/u/', '/api/file/'));
+          url.searchParams.set('download', '');
+
           return {
             url,
             format: Format.unknown,
@@ -58,6 +61,7 @@ export class HubCloud extends Extractor {
               extractorId: `${this.id}_pixelserver`,
               title: $('title').text().trim(),
             },
+            requestHeaders: { Referer: userUrl.href },
           };
         }).toArray(),
     ]);
