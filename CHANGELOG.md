@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.66.14](https://github.com/webstreamr/webstreamr/compare/v0.66.13...v0.66.14) (2026-03-17)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#784](https://github.com/webstreamr/webstreamr/issues/784)) ([9eca05e](https://github.com/webstreamr/webstreamr/commit/9eca05efc5c56dc0c008b6cac6314c2849e11382))
+* **deps:** update dependency typescript-eslint to v8.57.1 ([#786](https://github.com/webstreamr/webstreamr/issues/786)) ([b769cd0](https://github.com/webstreamr/webstreamr/commit/b769cd0aa1f8284c921f68c620fa01565097952b))
+* **extractor:** add cacheVersion and bump it for HubCloud and HubDrive ([ee3effa](https://github.com/webstreamr/webstreamr/commit/ee3effaf0079ee932d6b8a93ead0f095ea7e4906))
+
+
+### Bug Fixes
+
+* **extractor:** add PixelDrain referer to HubCloud extractor ([693a77e](https://github.com/webstreamr/webstreamr/commit/693a77e73e984e81aee9a702092c5ef098d4e48f))
+* **extractor:** reduce HubCloud + HubDrive ttl to 12h ([296f047](https://github.com/webstreamr/webstreamr/commit/296f0478b03c4dfd4927c0e53037ce8f9de64872))
+
 ## [0.66.13](https://github.com/webstreamr/webstreamr/compare/v0.66.12...v0.66.13) (2026-03-14)
 
 
