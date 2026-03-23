@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.66.16](https://github.com/webstreamr/webstreamr/compare/v0.66.15...v0.66.16) (2026-03-23)
+
+
+### Documentation
+
+* remove mention of XDMovies ([b60496b](https://github.com/webstreamr/webstreamr/commit/b60496bf224f1869626bceaa7e3eebabfdec8754))
+
+
+### Bug Fixes
+
+* **source:** remove XDMovies ([ff39c59](https://github.com/webstreamr/webstreamr/commit/ff39c594755b586ec4214d942c04026b873854fd))
+
 ## [0.66.15](https://github.com/webstreamr/webstreamr/compare/v0.66.14...v0.66.15) (2026-03-23)
 
 
