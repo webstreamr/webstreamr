@@ -28,8 +28,7 @@ export class Dropload extends Extractor {
     }
 
     const playlistUrl = extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]);
-    const hostUrlMatch = html.match(/(https:\/\/.+?\/)player/) as string[];
-    const playlistHeaders = { Referer: hostUrlMatch[1] as string };
+    const playlistHeaders = { Referer: 'https://dr0pstream.com/' };
 
     const heightMatch = html.match(/\d{3,}x(\d{3,}),/);
     const height = heightMatch

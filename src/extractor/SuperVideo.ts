@@ -33,20 +33,21 @@ export class SuperVideo extends Extractor {
       throw new NotFoundError();
     }
 
-    const m3u8Url = extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]);
+    const playlistUrl = extractUrlFromPacked(html, [/sources:\[{file:"(.*?)"/]);
+    const playlistHeaders = { Referer: 'https://supervideo.cc/' };
 
     const heightAndSizeMatch = html.match(/\d{3,}x(\d{3,}), ([\d.]+ ?[GM]B)/);
     const size = heightAndSizeMatch ? bytes.parse(heightAndSizeMatch[2] as string) as number : undefined;
     const height = heightAndSizeMatch
       ? parseInt(heightAndSizeMatch[1] as string)
-      : meta.height ?? await guessHeightFromPlaylist(ctx, this.fetcher, m3u8Url, { headers: { Referer: url.href } });
+      : meta.height ?? await guessHeightFromPlaylist(ctx, this.fetcher, playlistUrl, { headers: playlistHeaders });
 
     const $ = cheerio.load(html);
     const title = $('.download__title').text().trim();
 
     return [
       {
-        url: m3u8Url,
+        url: playlistUrl,
         format: Format.hls,
         meta: {
           ...meta,
@@ -54,6 +55,7 @@ export class SuperVideo extends Extractor {
           ...(size && { bytes: size }),
           ...(height && { height }),
         },
+        requestHeaders: playlistHeaders,
       },
     ];
   };
