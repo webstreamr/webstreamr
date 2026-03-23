@@ -21,7 +21,6 @@ A public instance is available at https://webstreamr.hayd.uk. Hosting infrastruc
 - FlareSolverr cookies cannot be used because Cloudflare does techniques like TLS fingerprinting most likely. But FlareSolverr uses a session per host and should be quick.
 - VidSrc works but rate limits heavily and is therefore only queried as fallback if nothing else is found.
 - RgShows detects shared usage and blocks IPs. It therefore only works on private instances.
-- XDMovies is used as fallback if not more than one other result is found.
 
 ## MediaFlow Proxy
 
