@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.66.15](https://github.com/webstreamr/webstreamr/compare/v0.66.14...v0.66.15) (2026-03-23)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#792](https://github.com/webstreamr/webstreamr/issues/792)) ([fc3d61b](https://github.com/webstreamr/webstreamr/commit/fc3d61b05a31c00607c7309ed04c8438c8f344f7))
+* **deps:** update dependency cacheable to v2.3.4 ([#789](https://github.com/webstreamr/webstreamr/issues/789)) ([b2b9760](https://github.com/webstreamr/webstreamr/commit/b2b9760445f7b1a987f5aa795ef3a5302e753178))
+
+
+### Bug Fixes
+
+* **extractor:** hard-code referer for Dropload and SuperVideo for now ([eecf9c4](https://github.com/webstreamr/webstreamr/commit/eecf9c42c5f95266fe1ec0deba1042741efe7306))
+
 ## [0.66.14](https://github.com/webstreamr/webstreamr/compare/v0.66.13...v0.66.14) (2026-03-17)
 
 
