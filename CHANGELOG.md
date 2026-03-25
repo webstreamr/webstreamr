@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.67.0](https://github.com/webstreamr/webstreamr/compare/v0.66.16...v0.67.0) (2026-03-25)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency typescript-eslint to v8.57.2 ([#795](https://github.com/webstreamr/webstreamr/issues/795)) ([5cffa11](https://github.com/webstreamr/webstreamr/commit/5cffa112bac29ee4eb18958f5345f0a3ae68ff30))
+
+
+### Features
+
+* **extractor:** support FSLv2 server in HubCloud ([e36d460](https://github.com/webstreamr/webstreamr/commit/e36d460d57bdc071fc111b1459ea26184a3233e3))
+
 ## [0.66.16](https://github.com/webstreamr/webstreamr/compare/v0.66.15...v0.66.16) (2026-03-23)
 
 
