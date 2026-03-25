@@ -2,8 +2,7 @@
 <head>
 <title>Crayon Shinchan Action Kamen vs Demon (1993) 1080p BluRay REMUX AVC [Hindi DD 2.0 + Japanese FLAC 2.0] (PitiPati-Ionicboy) (4kHDHub.com).mkv</title>
 <meta charset="utf-8">
-<script async src="https://arc.io/widget.min.js#cmedRMLe"></script>
-<meta name="referrer" content="no-referrer">
+<meta name="referrer" content="no-referrer"/>
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
@@ -18,15 +17,14 @@
 <meta name="googlebot" content="noindex,nofollow">
 
 
-<!--<script data-cfasync="false" src="//dl4d3y1ajyv3q.cloudfront.net/?aydld=1220840"></script>-->
+<script data-cfasync="false" src="//d33f51dyacx7bd.cloudfront.net/?aydfd=1015073"></script>
 
-
-<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
-<script type="text/javascript">
-    aclib.runPop({
-        zoneId: '10550070',
-    });
-</script>
+<!--<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--    aclib.runPop({-->
+<!--        zoneId: '10550070',-->
+<!--    });-->
+<!--</script>-->
 
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4a22bad849ab4d2da600be878e3c0fc2"}'></script><!-- End Cloudflare Web Analytics -->
 
@@ -150,7 +148,12 @@
 	color: #000
 }
 </style>
-<body><center>
+<body>
+<script data-cfasync="false" type="text/javascript" id="AdsCoreLoader100892" src="https://sads.adsboosters.xyz/e782f10ef81a2b65f5c2b85518948f4b.js"></script> 
+<script data-cfasync="false" type="text/javascript" id="AdsCoreLoader101001" src="https://sads.adsboosters.xyz/1c76fee9418816ee07f81c9d3386f754.js"></script> 
+<div class="ads-core-ads-100892"></div> 
+<div class="ads-core-ads-101001"></div>
+<center>
     <br/>
     
 
@@ -225,7 +228,7 @@ HubCloud | <a href="https://hubcloud.fans/">Create An Account</a> |<a href="http
 	
 
 	
-<a id="download" href="https://gamerxyt.com/hubcloud.php?host=hubcloud&id=bffzqlpqfllfcld&token=ZDdhbnhoS3dXSzlGOGhnN3ErdTUxVEl6a2RJOUt6ZTkwSXZMa1JXOFd2WT0=" rel="noopener noreferrer nofollow" class="btn btn-primary h6 p-2"><i class="fas fa-file-download fa-lg"></i> Generate Direct Download Link</a>
+<a id="download" href="https://gamerxyt.com/hubcloud.php?host=hubcloud&id=bffzqlpqfllfcld&token=ZDdhbnhoS3dXSzlGOGhnN3ErdTUxU1ZQelhidzNibXJ5TXk1eDdydjFJcz0=" rel="noopener noreferrer nofollow" class="btn btn-primary h6 p-2"><i class="fas fa-file-download fa-lg"></i> Generate Direct Download Link</a>
 
 
 <center>
@@ -280,22 +283,32 @@ HubCloud | <a href="https://hubcloud.fans/">Create An Account</a> |<a href="http
 <p onclick="copy_link('div1')">https://hubcloud.foo/drive/bffzqlpqfllfcld</p>
 </div>
 <button class="btn btn-success btn-sm" id="button1" onclick="copy_link('div1')"><i class="fa fa-copy"></i> Copy Link</button>
+
 <script>
-// function d(e){document.cookie=e+"=; path=/; SameSite=None; Secure; expires=Thu, 01 Jan 1970 00:00:01 GMT;"}setTimeout(()=>{d(atob('Y2xldmVyLWNvdW50ZXItODk4Nzg='))},2000);
-// function clsd(){d(atob('Y2xldmVyLWNvdW50ZXItODk4Nzg='))}
+function copy_link(e){let el=e;e = document.getElementById(el).value; if(typeof e == 'undefined'){e=document.getElementById(el).innerText}a=document.createElement("textarea");a.innerHTML=e,document.body.appendChild(a),a.select();document.execCommand("copy");document.body.removeChild(a),swal("Link Copied! : "+e)}function stck(e,t,i){let o="";if(i){let e=new Date;e.setTime(e.getTime()+60*i*1e3),o="; expires="+e.toUTCString()}document.cookie=`${e}=${t||""}${o}; path=/; SameSite=None; Secure`}stck('xla',"s4t",30240);
+</script>
+
+<script>
+
+
+var url = 'https://gamerxyt.com/hubcloud.php?host=hubcloud&id=bffzqlpqfllfcld&token=ZDdhbnhoS3dXSzlGOGhnN3ErdTUxU1ZQelhidzNibXJ5TXk1eDdydjFJcz0=';
 
 setTimeout(function(){
 document.querySelector(".loading").classList.add("d-none");
 document.querySelector(".vd").classList.remove("d-none");
+if (!document.cookie.split(';').some(item => item.trim().startsWith('xlax='))) {
+    stck('xlax',"s4t",1440);
+    window.location.href = url;
+}
 }, 2000);  
-var url = 'https://gamerxyt.com/hubcloud.php?host=hubcloud&id=bffzqlpqfllfcld&token=ZDdhbnhoS3dXSzlGOGhnN3ErdTUxVEl6a2RJOUt6ZTkwSXZMa1JXOFd2WT0=';
+
 
 var download = document.getElementById('download');
 download.onclick = function() {
     if (this.classList.contains('disabled')) {
         event.preventDefault();
         return;
-    }
+    } 
     window.location.href = url;
 	download.classList.add('disabled');
 	setTimeout(function() {
@@ -303,9 +316,9 @@ download.onclick = function() {
 	}, 6000);
 }
 </script>
-<script>
-function copy_link(e){let el=e;e = document.getElementById(el).value; if(typeof e == 'undefined'){e=document.getElementById(el).innerText}a=document.createElement("textarea");a.innerHTML=e,document.body.appendChild(a),a.select();document.execCommand("copy");document.body.removeChild(a),swal("Link Copied! : "+e)}
-</script>
+
+
+
 <script>
 // function sT(e){let t=hashKey(e),r=Date.now();localStorage.setItem(t,r.toString())}function hashKey(e){let t=0;for(let r=0;r<e.length;r++)t=(t<<5)-t+e.charCodeAt(r);t=Math.abs(t);let n="";for(let o=0;o<6;o++)n+="abcdefghijklmnopqrstuvwxyz"[t%26],t=Math.floor(t/26);return n}function is_v(e,t){let r=hashKey(e),n=localStorage.getItem(r);return!!n&&(Date.now()-parseInt(n))/6e4<=t}var s__=!1,observer=null,sc_="a, button",d_=!1;function clsd(){s__=!1,d_=!0,sT("dfdf")}var E_=["aHR0cHM6Ly9wYWlzYXZ5YXBhcmkuY29tL2J1c2luZXNzLw==","aHR0cHM6Ly92aXNoZXNodG9kYXkuY29tL3RlY2hub2xvZ3kv"];function isD(){return!/Mobi|Android/i.test(navigator.userAgent)}let t_=[];for(let e_=0;e_<4 && (true || !d_ && !isD());e_++){let e=E_[Math.floor(Math.random()*E_.length)];if(!t_.includes(e)){var t,r=document.createElement("iframe");if(sT(e),t_.push(e),r.src=atob(e),r.width="0",r.height="0",r.style.display="none",r.referrerPolicy="no-referrer",document.querySelector("body")){console.log("inserted"),document.body.appendChild(r);break}}}function opst(e){if(d_){console.log("closed d_");return}if(!s__){console.log("no s__");return}e.preventDefault(),e.stopImmediatePropagation();let t=document.createElement("a");t.href=s__,t.target="_blank",t.rel="noopener noreferrer",t.click();let r;s__=!1,document.querySelectorAll(sc_).forEach(e=>{e.removeEventListener("click",opst)}),observer.disconnect()}function atchs(){document.querySelectorAll(sc_).forEach(e=>{e.addEventListener("click",opst,{once:!0})})}window.addEventListener("message",function(e){try{let t=JSON.parse(e.data);console.log(t),t?.url&&(s__=t.url,atchs(),(observer=new MutationObserver(atchs)).observe(document.body,{childList:!0,subtree:!0}))}catch(r){console.log("Error: ",r)}},!1);
 </script>

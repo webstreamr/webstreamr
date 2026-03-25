@@ -21,4 +21,8 @@ describe('HubCloud', () => {
   test('handle dark 2017 s03e08', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://hubcloud.one/drive/nknlofk8snfnknh'))).toMatchSnapshot();
   });
+
+  test('handle goat 2026', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://hubcloud.foo/drive/p94k4dccjwxjcx4'))).toMatchSnapshot();
+  });
 });
