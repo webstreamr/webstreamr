@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.68.0](https://github.com/webstreamr/webstreamr/compare/v0.67.0...v0.68.0) (2026-03-26)
+
+
+### Features
+
+* exclude resolution config options ([4c7da5d](https://github.com/webstreamr/webstreamr/commit/4c7da5dc208a1854a17aa43a26553fb6c83e7287))
+
 ## [0.67.0](https://github.com/webstreamr/webstreamr/compare/v0.66.16...v0.67.0) (2026-03-25)
 
 
