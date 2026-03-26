@@ -11,4 +11,5 @@ export * from './id';
 export * from './language';
 export * from './manifest';
 export * from './media-flow-proxy';
+export * from './resolution';
 export * from './tmdb';

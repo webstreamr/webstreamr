@@ -6,10 +6,11 @@ import { logErrorAndReturnNiceString } from '../error';
 import { ExtractorRegistry } from '../extractor';
 import { Source } from '../source';
 import { Context, CountryCode, Format, UrlResult } from '../types';
-import { showErrors, showExternalUrls } from './config';
+import { isResolutionExcluded, showErrors, showExternalUrls } from './config';
 import { envGetAppName } from './env';
 import { Id } from './id';
 import { flagFromCountryCode } from './language';
+import { getClosestResolution } from './resolution';
 
 interface ResolveResponse {
   streams: Stream[];
@@ -142,7 +143,7 @@ export class StreamResolver {
     this.logger.info(`Got ${urlResults.length} url results, including ${errorCount} errors`, ctx);
 
     streams.push(
-      ...urlResults.filter(urlResult => !urlResult.error || showErrors(ctx.config))
+      ...urlResults.filter(urlResult => (!urlResult.error || showErrors(ctx.config)) && !isResolutionExcluded(ctx.config, getClosestResolution(urlResult.meta?.height)))
         .map(urlResult => ({
           ...this.buildUrl(urlResult),
           name: this.buildName(ctx, urlResult),
@@ -200,7 +201,7 @@ export class StreamResolver {
     });
 
     if (urlResult.meta?.height) {
-      name += ` ${urlResult.meta.height}p`;
+      name += ` ${getClosestResolution(urlResult.meta.height)}`;
     }
 
     if (urlResult.isExternal && showExternalUrls(ctx.config)) {

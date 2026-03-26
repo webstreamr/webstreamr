@@ -1,9 +1,15 @@
 import { Extractor } from '../extractor';
 import { Source } from '../source';
 import { Config, CountryCode, CustomManifest } from '../types';
-import { disableExtractorConfigKey, isExtractorDisabled } from './config';
+import {
+  disableExtractorConfigKey,
+  excludeResolutionConfigKey,
+  isExtractorDisabled,
+  isResolutionExcluded,
+} from './config';
 import { envGetAppId, envGetAppName } from './env';
 import { flagFromCountryCode, languageFromCountryCode } from './language';
+import { RESOLUTIONS } from './resolution';
 
 const typedEntries = <T extends object>(obj: T): [keyof T, T[keyof T]][] => (Object.entries(obj) as [keyof T, T[keyof T]][]);
 
@@ -90,6 +96,15 @@ export const buildManifest = (sources: Source[], extractors: Extractor[], config
     type: 'password',
     title: 'MediaFlow Proxy Password',
     default: config['mediaFlowProxyPassword'] ?? '',
+  });
+
+  RESOLUTIONS.forEach((resolution) => {
+    manifest.config.push({
+      key: excludeResolutionConfigKey(resolution),
+      type: 'checkbox',
+      title: `Exclude resolution ${resolution}`,
+      ...(isResolutionExcluded(config, resolution) && { default: 'checked' }),
+    });
   });
 
   extractors.forEach((extractor) => {

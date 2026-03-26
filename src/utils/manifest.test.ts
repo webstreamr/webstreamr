@@ -72,4 +72,10 @@ describe('buildManifest', () => {
 
     expect(manifest.config).toMatchSnapshot();
   });
+
+  test('has checked excludeResolution_2160p', () => {
+    const manifest = buildManifest([], [], { excludeResolution_2160p: 'on' });
+
+    expect(manifest.config).toMatchSnapshot();
+  });
 });
