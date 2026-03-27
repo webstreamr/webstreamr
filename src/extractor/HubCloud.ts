@@ -1,7 +1,7 @@
 import bytes from 'bytes';
 import * as cheerio from 'cheerio';
 import { Context, Format, InternalUrlResult, Meta } from '../types';
-import { findHeight } from '../utils';
+import { findCountryCodes, findHeight } from '../utils';
 import { Extractor } from './Extractor';
 
 export class HubCloud extends Extractor {
@@ -27,6 +27,7 @@ export class HubCloud extends Extractor {
     const $ = cheerio.load(linksHtml);
 
     const title = $('title').text().trim();
+    const countryCodes = [...new Set([...meta.countryCodes ?? [], ...findCountryCodes(title)])];
     const height = meta.height ?? findHeight(title);
 
     return Promise.all([
@@ -46,6 +47,7 @@ export class HubCloud extends Extractor {
               ...meta,
               bytes: bytes.parse($('#size').text()) as number,
               extractorId: `${this.id}_fsl`,
+              countryCodes,
               height,
               title,
             },
@@ -67,6 +69,7 @@ export class HubCloud extends Extractor {
               ...meta,
               bytes: bytes.parse($('#size').text()) as number,
               extractorId: `${this.id}_fslv2`,
+              countryCodes,
               height,
               title,
             },
@@ -87,6 +90,7 @@ export class HubCloud extends Extractor {
               ...meta,
               bytes: bytes.parse($('#size').text()) as number,
               extractorId: `${this.id}_pixelserver`,
+              countryCodes,
               height,
               title,
             },
