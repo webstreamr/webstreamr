@@ -16,6 +16,7 @@ A public instance is available at https://webstreamr.hayd.uk. Hosting infrastruc
 
 ## Known issues / limitations
 
+- PixelServer / pixeldrain has a daily limit of 6 GB per IP: https://pixeldrain.dev
 - Dropload and SuperVideo on Android do not work because Stremio does not use the `Referer` header properly via HLS playlists: https://github.com/Stremio/stremio-bugs/issues/2389, maybe https://github.com/Stremio/stremio-bugs/issues/1579
 - MediaFlow proxy has to be used in an inefficient way because Stremio on Android or its players cannot deal with HLS playlist with redirects: https://github.com/Stremio/stremio-bugs/issues/1574
 - FlareSolverr cookies cannot be used because Cloudflare does techniques like TLS fingerprinting most likely. But FlareSolverr uses a session per host and should be quick.
