@@ -206,3 +206,99 @@ exports[`HDHub4u handle superman 2025 1`] = `
   },
 ]
 `;
+
+exports[`HDHub4u handle the bone temple 2026 1`] = `
+[
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+    },
+    "url": "https://hubdrive.space/file/2165806385",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+    },
+    "url": "https://hubdrive.space/file/2777734670",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+    },
+    "url": "https://hubdrive.space/file/6051118182",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+    },
+    "url": "https://hubdrive.space/file/13783802255",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "referer": "https://hblinks.dad/archives/104571",
+    },
+    "url": "https://hubdrive.space/file/2026023433",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "referer": "https://hblinks.dad/archives/104570",
+    },
+    "url": "https://hubdrive.space/file/4232622187",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "hi",
+      ],
+    },
+    "url": "https://hubdrive.space/file/2298599706",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "hi",
+      ],
+      "referer": "https://hblinks.dad/archives/103118",
+    },
+    "url": "https://hubdrive.space/file/2291074311",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "hi",
+      ],
+      "referer": "https://hblinks.dad/archives/103119",
+    },
+    "url": "https://hubdrive.space/file/2244066767",
+  },
+]
+`;

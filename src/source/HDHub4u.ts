@@ -95,7 +95,7 @@ export class HDHub4u extends Source {
   private readonly extractHubDriveUrlResults = (html: string, meta: Meta): SourceResult[] => {
     const $ = cheerio.load(html);
 
-    return $('a[href*="hubdrive"]')
+    return $('a[href*="hubdrive"]:not(:contains("⚡"))')
       .map((_i, el) => ({ url: new URL($(el).attr('href') as string), meta }))
       .toArray();
   };

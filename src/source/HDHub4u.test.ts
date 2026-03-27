@@ -16,6 +16,11 @@ describe('HDHub4u', () => {
     expect(streams).toMatchSnapshot();
   });
 
+  test('handle the bone temple 2026', async () => {
+    const streams = await source.handle(ctx, 'movie', new ImdbId('tt32141377', undefined, undefined));
+    expect(streams).toMatchSnapshot();
+  });
+
   test('handle stranger things s05e01', async () => {
     const streams = await source.handle(ctx, 'series', new ImdbId('tt4574334', 5, 1));
     expect(streams).toMatchSnapshot();
