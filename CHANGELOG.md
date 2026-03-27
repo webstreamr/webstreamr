@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.69.2](https://github.com/webstreamr/webstreamr/compare/v0.69.1...v0.69.2) (2026-03-27)
+
+
+### Documentation
+
+* mention PixelServer / pixeldrain limits ([720c9bb](https://github.com/webstreamr/webstreamr/commit/720c9bb651a7a06a62f5f3636099b5cfb7506bcb))
+
 ## [0.69.1](https://github.com/webstreamr/webstreamr/compare/v0.69.0...v0.69.1) (2026-03-27)
 
 
