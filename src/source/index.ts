@@ -6,6 +6,7 @@ import { Eurostreaming } from './Eurostreaming';
 import { FourKHDHub } from './FourKHDHub';
 import { Frembed } from './Frembed';
 import { FrenchCloud } from './FrenchCloud';
+import { HDHub4u } from './HDHub4u';
 import { HomeCine } from './HomeCine';
 import { KinoGer } from './KinoGer';
 import { Kokoshka } from './Kokoshka';
@@ -28,6 +29,7 @@ export const createSources = (fetcher: Fetcher): Source[] => {
   return [
     // multi
     new FourKHDHub(fetcher),
+    new HDHub4u(fetcher),
     new VixSrc(fetcher),
     new VidSrc(),
     new RgShows(fetcher),

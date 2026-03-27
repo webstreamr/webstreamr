@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`HDHub4u handle stranger things s05e01 1`] = `
+[
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+    },
+    "url": "https://hubdrive.space/file/2452204677",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+    },
+    "url": "https://hubdrive.space/file/1788432714",
+  },
+]
+`;
+
+exports[`HDHub4u handle stranger things s05e08 1`] = `
+[
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "referer": "https://hblinks.dad/archives/102319",
+    },
+    "url": "https://hubdrive.space/file/1793632174",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "referer": "https://hblinks.dad/archives/102319",
+    },
+    "url": "https://hubdrive.space/file/2655940410",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "referer": "https://hblinks.dad/archives/102319",
+    },
+    "url": "https://hubdrive.space/file/2007803192",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "referer": "https://hblinks.dad/archives/102319",
+    },
+    "url": "https://hubdrive.space/file/2913823672",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "referer": "https://hblinks.dad/archives/102319",
+    },
+    "url": "https://hubdrive.space/file/1898122266",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "referer": "https://hblinks.dad/archives/102319",
+    },
+    "url": "https://hubdrive.space/file/3043520687",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "referer": "https://hblinks.dad/archives/102319",
+    },
+    "url": "https://hubdrive.space/file/4664307676",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "referer": "https://hblinks.dad/archives/102319",
+    },
+    "url": "https://hubdrive.space/file/8835271729",
+  },
+]
+`;
+
+exports[`HDHub4u handle superman 2025 1`] = `
+[
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+    },
+    "url": "https://hubdrive.space/file/2048323831",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+    },
+    "url": "https://hubdrive.space/file/1931317982",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+    },
+    "url": "https://hubdrive.space/file/7875454809",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+    },
+    "url": "https://hubdrive.space/file/3608508909",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "referer": "https://hblinks.dad/archives/95885",
+    },
+    "url": "https://hubdrive.space/file/2171324800",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "referer": "https://hblinks.dad/archives/95884",
+    },
+    "url": "https://hubdrive.space/file/1866728891",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "referer": "https://hblinks.dad/archives/95883",
+    },
+    "url": "https://hubdrive.space/file/3938026297",
+  },
+  {
+    "meta": {
+      "countryCodes": [
+        "multi",
+        "en",
+        "hi",
+      ],
+      "referer": "https://hblinks.dad/archives/95882",
+    },
+    "url": "https://hubdrive.space/file/2823990434",
+  },
+]
+`;

@@ -11,7 +11,7 @@ exports[`buildManifest default manifest 1`] = `
   "config": [
     {
       "key": "multi",
-      "title": "Multi 🌐 (4KHDHub, RgShows, VidSrc, VixSrc)",
+      "title": "Multi 🌐 (4KHDHub, HDHub4u, RgShows, VidSrc, VixSrc)",
       "type": "checkbox",
     },
     {
@@ -35,8 +35,13 @@ exports[`buildManifest default manifest 1`] = `
       "type": "checkbox",
     },
     {
+      "key": "gu",
+      "title": "Gujarati 🇮🇳 (HDHub4u)",
+      "type": "checkbox",
+    },
+    {
       "key": "hi",
-      "title": "Hindi 🇮🇳 (4KHDHub)",
+      "title": "Hindi 🇮🇳 (4KHDHub, HDHub4u)",
       "type": "checkbox",
     },
     {
@@ -45,18 +50,28 @@ exports[`buildManifest default manifest 1`] = `
       "type": "checkbox",
     },
     {
+      "key": "ml",
+      "title": "Malayalam 🇮🇳 (HDHub4u)",
+      "type": "checkbox",
+    },
+    {
       "key": "mx",
       "title": "Latin American Spanish 🇲🇽 (CineHDPlus, Cuevana, HomeCine, VerHdLink)",
       "type": "checkbox",
     },
     {
+      "key": "pa",
+      "title": "Punjabi 🇮🇳 (HDHub4u)",
+      "type": "checkbox",
+    },
+    {
       "key": "ta",
-      "title": "Tamil 🇮🇳 (4KHDHub)",
+      "title": "Tamil 🇮🇳 (4KHDHub, HDHub4u)",
       "type": "checkbox",
     },
     {
       "key": "te",
-      "title": "Telugu 🇮🇳 (4KHDHub)",
+      "title": "Telugu 🇮🇳 (4KHDHub, HDHub4u)",
       "type": "checkbox",
     },
     {
@@ -134,9 +149,9 @@ exports[`buildManifest default manifest 1`] = `
   ],
   "description": "Provides HTTP URLs from streaming websites. Configure add-on for additional languages. Add MediaFlow proxy for more URLs.
 
-Supported languages: Albanian, German, Castilian Spanish, French, Hindi, Italian, Latin American Spanish, Tamil, Telugu
+Supported languages: Albanian, German, Castilian Spanish, French, Gujarati, Hindi, Italian, Malayalam, Latin American Spanish, Punjabi, Tamil, Telugu
 
-Supported sources: 4KHDHub, CineHDPlus, Cuevana, Einschalten, Eurostreaming, Frembed, FrenchCloud, HomeCine, KinoGer, Kokoshka, MegaKino, MeineCloud, MostraGuarda, Movix, RgShows, StreamKiste, VerHdLink, VidSrc, VixSrc
+Supported sources: 4KHDHub, CineHDPlus, Cuevana, Einschalten, Eurostreaming, Frembed, FrenchCloud, HDHub4u, HomeCine, KinoGer, Kokoshka, MegaKino, MeineCloud, MostraGuarda, Movix, RgShows, StreamKiste, VerHdLink, VidSrc, VixSrc
 
 Supported extractors: ",
   "id": "webstreamr",
