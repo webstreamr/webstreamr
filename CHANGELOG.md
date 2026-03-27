@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.69.1](https://github.com/webstreamr/webstreamr/compare/v0.69.0...v0.69.1) (2026-03-27)
+
+
+### Bug Fixes
+
+* **source:** exclude ad videos in HDHub4u ([65191cf](https://github.com/webstreamr/webstreamr/commit/65191cfc8dad8f58b44e2c355b9adc600b99b2bf))
+* **source:** remove stray console.log ([bd2dec0](https://github.com/webstreamr/webstreamr/commit/bd2dec03925d8b7760044dbfaaaec00b48f7cb66))
+
 ## [0.69.0](https://github.com/webstreamr/webstreamr/compare/v0.68.0...v0.69.0) (2026-03-27)
 
 
