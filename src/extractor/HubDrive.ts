@@ -31,8 +31,10 @@ export class HubDrive extends Extractor {
     const html = await this.fetcher.text(ctx, url, { headers });
     const $ = cheerio.load(html);
 
-    const hubCloudUrl = new URL($('a:contains("HubCloud")').attr('href') as string);
+    const hubCloudUrl = $('a:contains("HubCloud")')
+      .map((_i, el) => new URL($(el).attr('href') as string))
+      .get(0);
 
-    return this.hubCloud.extract(ctx, hubCloudUrl, meta);
+    return hubCloudUrl ? this.hubCloud.extract(ctx, hubCloudUrl, meta) : [];
   };
 }

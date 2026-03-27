@@ -22,4 +22,8 @@ describe('HubDrive', () => {
   test('handle avatar', async () => {
     expect(await extractorRegistry.handle(ctx, new URL('https://hubdrive.space/file/7283903021'))).toMatchSnapshot();
   });
+
+  test('handle missing hubcloud', async () => {
+    expect(await extractorRegistry.handle(ctx, new URL('https://hubdrive.space/file/2243124026'))).toMatchSnapshot();
+  });
 });
