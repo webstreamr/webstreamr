@@ -93,7 +93,6 @@ export class HDHub4u extends Source {
   };
 
   private readonly extractHubDriveUrlResults = (html: string, meta: Meta): SourceResult[] => {
-    console.log(html);
     const $ = cheerio.load(html);
 
     return $('a[href*="hubdrive"]')
