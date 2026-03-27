@@ -128,104 +128,9 @@ describe('resolve', () => {
       protected readonly extractInternal = async (): Promise<UrlResult[]> =>
         [
           {
-            url: new URL('https://example.com'),
+            url: new URL('https://example1.com'),
             format: Format.unknown,
             isExternal: true,
-            label: 'hoster.com',
-            ttl: this.ttl,
-            meta: {
-              countryCodes: [CountryCode.de],
-            },
-          },
-          {
-            url: new URL('https://example.com'),
-            format: Format.unknown,
-            isExternal: true,
-            error: new BlockedError(new URL('https://example.com'), BlockedReason.cloudflare_challenge, {}),
-            label: 'hoster.com',
-            ttl: this.ttl,
-            meta: {
-              countryCodes: [CountryCode.de],
-            },
-          },
-          {
-            url: new URL('https://example.com'),
-            format: Format.unknown,
-            isExternal: true,
-            error: new BlockedError(new URL('https://example.com'), BlockedReason.cloudflare_censor, {}),
-            label: 'hoster.com',
-            ttl: this.ttl,
-            meta: {
-              countryCodes: [CountryCode.de],
-            },
-          },
-          {
-            url: new URL('https://example.com'),
-            format: Format.unknown,
-            isExternal: true,
-            error: new BlockedError(new URL('https://example.com'), BlockedReason.media_flow_proxy_auth, {}),
-            label: 'hoster.com',
-            ttl: this.ttl,
-            meta: {
-              countryCodes: [CountryCode.de],
-            },
-          },
-          {
-            url: new URL('https://example.com'),
-            format: Format.unknown,
-            isExternal: true,
-            error: new BlockedError(new URL('https://example.com'), BlockedReason.unknown, {}),
-            label: 'hoster.com',
-            ttl: this.ttl,
-            meta: {
-              countryCodes: [CountryCode.de],
-            },
-          },
-          {
-            url: new URL('https://working2.com'),
-            format: Format.unknown,
-            label: 'working1',
-            ttl: this.ttl,
-            meta: {
-              countryCodes: [CountryCode.de],
-            },
-          },
-          {
-            url: new URL('https://example.com'),
-            format: Format.unknown,
-            isExternal: true,
-            error: new TooManyRequestsError(new URL('https://example.com'), 10),
-            label: 'hoster.com',
-            ttl: this.ttl,
-            meta: {
-              countryCodes: [CountryCode.de],
-            },
-          },
-          {
-            url: new URL('https://example.com'),
-            format: Format.unknown,
-            isExternal: true,
-            error: new TooManyTimeoutsError(new URL('https://example.com')),
-            label: 'hoster.com',
-            ttl: this.ttl,
-            meta: {
-              countryCodes: [CountryCode.de],
-            },
-          },
-          {
-            url: new URL('https://working1.com'),
-            format: Format.unknown,
-            label: 'working2',
-            ttl: this.ttl,
-            meta: {
-              countryCodes: [CountryCode.de],
-            },
-          },
-          {
-            url: new URL('https://example2.com'),
-            format: Format.unknown,
-            isExternal: true,
-            error: new TypeError(),
             label: 'hoster.com',
             ttl: this.ttl,
             meta: {
@@ -236,7 +141,7 @@ describe('resolve', () => {
             url: new URL('https://example2.com'),
             format: Format.unknown,
             isExternal: true,
-            error: new TimeoutError(new URL('https://example2.com')),
+            error: new BlockedError(new URL('https://example2.com'), BlockedReason.cloudflare_challenge, {}),
             label: 'hoster.com',
             ttl: this.ttl,
             meta: {
@@ -247,7 +152,7 @@ describe('resolve', () => {
             url: new URL('https://example3.com'),
             format: Format.unknown,
             isExternal: true,
-            error: new QueueIsFullError(new URL('https://example3.com')),
+            error: new BlockedError(new URL('https://example3.com'), BlockedReason.cloudflare_censor, {}),
             label: 'hoster.com',
             ttl: this.ttl,
             meta: {
@@ -258,7 +163,7 @@ describe('resolve', () => {
             url: new URL('https://example4.com'),
             format: Format.unknown,
             isExternal: true,
-            error: new HttpError(new URL('https://example4.com'), 500, 'Internal Server Error', { 'x-foo': 'bar' }),
+            error: new BlockedError(new URL('https://example4.com'), BlockedReason.media_flow_proxy_auth, {}),
             label: 'hoster.com',
             ttl: this.ttl,
             meta: {
@@ -269,7 +174,102 @@ describe('resolve', () => {
             url: new URL('https://example5.com'),
             format: Format.unknown,
             isExternal: true,
-            error: new HttpError(new URL('https://example5.com'), 418, 'I\'m a tea pot', { 'x-foo': 'bar' }),
+            error: new BlockedError(new URL('https://example5.com'), BlockedReason.unknown, {}),
+            label: 'hoster.com',
+            ttl: this.ttl,
+            meta: {
+              countryCodes: [CountryCode.de],
+            },
+          },
+          {
+            url: new URL('https://example6.com'),
+            format: Format.unknown,
+            label: 'working1',
+            ttl: this.ttl,
+            meta: {
+              countryCodes: [CountryCode.de],
+            },
+          },
+          {
+            url: new URL('https://example7.com'),
+            format: Format.unknown,
+            isExternal: true,
+            error: new TooManyRequestsError(new URL('https://example7.com'), 10),
+            label: 'hoster.com',
+            ttl: this.ttl,
+            meta: {
+              countryCodes: [CountryCode.de],
+            },
+          },
+          {
+            url: new URL('https://example8.com'),
+            format: Format.unknown,
+            isExternal: true,
+            error: new TooManyTimeoutsError(new URL('https://example8.com')),
+            label: 'hoster.com',
+            ttl: this.ttl,
+            meta: {
+              countryCodes: [CountryCode.de],
+            },
+          },
+          {
+            url: new URL('https://example9.com'),
+            format: Format.unknown,
+            label: 'working2',
+            ttl: this.ttl,
+            meta: {
+              countryCodes: [CountryCode.de],
+            },
+          },
+          {
+            url: new URL('https://example10.com'),
+            format: Format.unknown,
+            isExternal: true,
+            error: new TypeError(),
+            label: 'hoster.com',
+            ttl: this.ttl,
+            meta: {
+              countryCodes: [CountryCode.de],
+            },
+          },
+          {
+            url: new URL('https://example11.com'),
+            format: Format.unknown,
+            isExternal: true,
+            error: new TimeoutError(new URL('https://example11.com')),
+            label: 'hoster.com',
+            ttl: this.ttl,
+            meta: {
+              countryCodes: [CountryCode.de],
+            },
+          },
+          {
+            url: new URL('https://example12.com'),
+            format: Format.unknown,
+            isExternal: true,
+            error: new QueueIsFullError(new URL('https://example12.com')),
+            label: 'hoster.com',
+            ttl: this.ttl,
+            meta: {
+              countryCodes: [CountryCode.de],
+            },
+          },
+          {
+            url: new URL('https://example13.com'),
+            format: Format.unknown,
+            isExternal: true,
+            error: new HttpError(new URL('https://example13.com'), 500, 'Internal Server Error', { 'x-foo': 'bar' }),
+            label: 'hoster.com',
+            ttl: this.ttl,
+            meta: {
+              countryCodes: [CountryCode.de],
+            },
+          },
+          {
+            url: new URL('https://example14.com'),
+            format: Format.unknown,
+            isExternal: true,
+            error: new HttpError(new URL('https://example14.com'), 418, 'I\'m a tea pot', { 'x-foo': 'bar' }),
             label: 'hoster.com',
             ttl: this.ttl,
             meta: {

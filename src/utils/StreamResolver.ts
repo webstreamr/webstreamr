@@ -144,6 +144,10 @@ export class StreamResolver {
 
     streams.push(
       ...urlResults.filter(urlResult => (!urlResult.error || showErrors(ctx.config)) && !isResolutionExcluded(ctx.config, getClosestResolution(urlResult.meta?.height)))
+        .filter((urlResult, index, self) =>
+          // Remove duplicate URLs
+          index === self.findIndex(t => t.url.href === urlResult.url.href),
+        )
         .map(urlResult => ({
           ...this.buildUrl(urlResult),
           name: this.buildName(ctx, urlResult),
