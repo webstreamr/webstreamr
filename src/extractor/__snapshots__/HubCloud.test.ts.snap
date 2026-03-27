@@ -8,6 +8,7 @@ exports[`HubCloud handle crayon shin-chan 1993 1`] = `
     "meta": {
       "bytes": 28550795100,
       "extractorId": "hubcloud_fsl",
+      "height": 1080,
       "title": "Crayon Shinchan Action Kamen vs Demon (1993) 1080p BluRay REMUX AVC [Hindi DD 2.0 + Japanese FLAC 2.0] (PitiPati-Ionicboy) (4kHDHub.com).mkv",
     },
     "ttl": 43200000,
@@ -24,6 +25,7 @@ exports[`HubCloud handle dark 2017 s03e08 1`] = `
     "meta": {
       "bytes": 3382286745,
       "extractorId": "hubcloud_fsl",
+      "height": 1080,
       "title": "Dark.S03E08.The.Paradise.1080p.NF.WEB-DL.English.DDP5.1-German.DDP5.1.H.264-4kHdHub.Com.mkv",
     },
     "ttl": 43200000,
@@ -35,6 +37,7 @@ exports[`HubCloud handle dark 2017 s03e08 1`] = `
     "meta": {
       "bytes": 3382286745,
       "extractorId": "hubcloud_pixelserver",
+      "height": 1080,
       "title": "Dark.S03E08.The.Paradise.1080p.NF.WEB-DL.English.DDP5.1-German.DDP5.1.H.264-4kHdHub.Com.mkv",
     },
     "requestHeaders": {
@@ -54,6 +57,7 @@ exports[`HubCloud handle dexter original sin 2024 s01e01 1`] = `
     "meta": {
       "bytes": 5733781340,
       "extractorId": "hubcloud_fsl",
+      "height": 2160,
       "title": "Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv",
     },
     "ttl": 43200000,
@@ -65,6 +69,7 @@ exports[`HubCloud handle dexter original sin 2024 s01e01 1`] = `
     "meta": {
       "bytes": 5733781340,
       "extractorId": "hubcloud_pixelserver",
+      "height": 2160,
       "title": "Dexter.Original.Sin.S01E01.2160p.SKST.WEB-DL.H.265.DDP5.1-Tyrell.mkv",
     },
     "requestHeaders": {
@@ -84,6 +89,7 @@ exports[`HubCloud handle goat 2026 1`] = `
     "meta": {
       "bytes": 19091129630,
       "extractorId": "hubcloud_fsl",
+      "height": 2160,
       "title": "Goat (2026) 2160p 10bit HDR10+ DV iTunes WEB-DL HEVC x265 [Hindi AMZN DDP 5.1 640kbps + English DDP Atmos 5.1] ESub-(BYNDR-4kHdHub).mkv",
     },
     "ttl": 43200000,
@@ -95,6 +101,7 @@ exports[`HubCloud handle goat 2026 1`] = `
     "meta": {
       "bytes": 19091129630,
       "extractorId": "hubcloud_fslv2",
+      "height": 2160,
       "title": "Goat (2026) 2160p 10bit HDR10+ DV iTunes WEB-DL HEVC x265 [Hindi AMZN DDP 5.1 640kbps + English DDP Atmos 5.1] ESub-(BYNDR-4kHdHub).mkv",
     },
     "ttl": 43200000,

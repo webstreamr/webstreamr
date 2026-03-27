@@ -22,3 +22,11 @@ export const getClosestResolution = (height: number | undefined) => {
       return Math.abs(curr - height) < Math.abs(prev - height) ? curr : prev;
     })}p`;
 };
+
+export const findHeight = (value: string): number | undefined => {
+  /* istanbul ignore next */
+  const height = parseInt(RESOLUTIONS.find(res => value.toLowerCase().includes(res))?.replace('p', '') ?? '', 10);
+
+  /* istanbul ignore next */
+  return isNaN(height) ? undefined : height;
+};

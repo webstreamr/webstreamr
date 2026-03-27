@@ -8,6 +8,7 @@ exports[`HubDrive handle avatar 1`] = `
     "meta": {
       "bytes": 64649995223,
       "extractorId": "hubcloud_fsl",
+      "height": 2160,
       "title": "Avatar (2009) Extended Collector's Edition IMAX 2160p UHD BluRay REMUX DV HDR 10bit HEVC [Hindi DDP 5.1 + English DTS-HD MA 5.1] x265 (LM-LUMiX) 4KHDHUB.[Com].mkv",
     },
     "ttl": 43200000,
