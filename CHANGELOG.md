@@ -1,5 +1,30 @@
 # Changelog
 
+## [0.69.0](https://github.com/webstreamr/webstreamr/compare/v0.68.0...v0.69.0) (2026-03-27)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency axios to v1.14.0 ([#800](https://github.com/webstreamr/webstreamr/issues/800)) ([ad47aec](https://github.com/webstreamr/webstreamr/commit/ad47aecea3f3d34700add442e023bd54f73451c8))
+* **extractor:** detect languages from HubCloud title ([89e57d4](https://github.com/webstreamr/webstreamr/commit/89e57d48d95a6f8dd6446048ae72de51dd481f37))
+* **extractor:** detect resolution from HubCloud title ([f192fd0](https://github.com/webstreamr/webstreamr/commit/f192fd0b7523094746148989e0cf06717db8152e))
+* remove duplicate URLs ([b87bf62](https://github.com/webstreamr/webstreamr/commit/b87bf62362f3cd6b3ea055ecdaec44511bf2ec84))
+
+
+### Features
+
+* **source:** add HDHub4u ([43f0445](https://github.com/webstreamr/webstreamr/commit/43f04455f17063e459df7e7a34af44de36afd6fc))
+
+
+### Bug Fixes
+
+* **extractor:** don't fail for HubDrive if HubCloud link is missing ([557efd2](https://github.com/webstreamr/webstreamr/commit/557efd207945ea7ada0bcaf475b0b9b9d60d8f5b))
+
+
+### Code Refactoring
+
+* **source:** extract hd hub link redirect resolver ([43637a2](https://github.com/webstreamr/webstreamr/commit/43637a2ff4280db208ec9c94c0a5d52a49dc6672))
+
 ## [0.68.0](https://github.com/webstreamr/webstreamr/compare/v0.67.0...v0.68.0) (2026-03-26)
 
 
