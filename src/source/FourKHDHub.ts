@@ -4,10 +4,10 @@ import { BasicAcceptedElems, CheerioAPI } from 'cheerio';
 import { AnyNode } from 'domhandler';
 import levenshtein from 'fast-levenshtein';
 import memoize from 'memoizee';
-import rot13Cipher from 'rot13-cipher';
 import { ContentType } from 'stremio-addon-sdk';
 import { Context, CountryCode, Meta } from '../types';
 import { Fetcher, findCountryCodes, getTmdbId, getTmdbNameAndYear, Id, TmdbId } from '../utils';
+import { resolveRedirectUrl } from './hd-hub-helper';
 import { Source, SourceResult } from './Source';
 
 export class FourKHDHub extends Source {
@@ -115,7 +115,7 @@ export class FourKHDHub extends Source {
       .get(0);
 
     if (redirectUrlHubCloud) {
-      return { url: await this.resolveRedirectUrl(ctx, redirectUrlHubCloud), meta };
+      return { url: await resolveRedirectUrl(ctx, this.fetcher, redirectUrlHubCloud), meta };
     }
 
     const redirectUrlHubDrive = $('a', el)
@@ -123,16 +123,8 @@ export class FourKHDHub extends Source {
       .map((_i, el) => new URL($(el).attr('href') as string))
       .get(0) as URL;
 
-    return { url: await this.resolveRedirectUrl(ctx, redirectUrlHubDrive), meta };
+    return { url: await resolveRedirectUrl(ctx, this.fetcher, redirectUrlHubDrive), meta };
   };
-
-  private async resolveRedirectUrl(ctx: Context, redirectUrl: URL): Promise<URL> {
-    const redirectHtml = await this.fetcher.text(ctx, redirectUrl);
-    const redirectDataMatch = redirectHtml.match(/'o','(.*?)'/) as string[];
-    const redirectData = JSON.parse(atob(rot13Cipher(atob(atob(redirectDataMatch[1] as string))))) as { o: string };
-
-    return new URL(atob(redirectData['o']));
-  }
 
   private readonly getBaseUrl = async (ctx: Context): Promise<URL> => {
     return await this.fetcher.getFinalRedirectUrl(ctx, new URL(this.baseUrl));
